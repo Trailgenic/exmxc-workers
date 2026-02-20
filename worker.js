@@ -264,7 +264,8 @@ export default {
           { id: "ex.lab.get", endpoint: "https://exmxc.ai/standards-lab" },
           { id: "ex.about.get", endpoint: "https://exmxc.ai/about" },
           { id: "ex.diagnostic.run", endpoint: "https://exmxc.ai/entity-clarity-review" },
-          { id: "ex.search.query", endpoint: "https://exmxc.ai" }
+          { id: "ex.search.query", endpoint: "https://exmxc.ai" },
+          { id: "ex.cashflowroutes.registry.get", endpoint: "https://cashflowroutes.com/.well-known/tool-registry.json" }
 
         ]
       };
