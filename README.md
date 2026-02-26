@@ -4,13 +4,13 @@
 
 This repository contains the Cloudflare Worker implementation for the official exmxc Model Context Protocol (MCP) endpoint.
 
-The MCP endpoint exposes exmxc’s institutional intelligence capabilities in a structured, machine-readable, and agent-executable format.
+The MCP endpoint exposes exmxc’s institutional intelligence capabilities — including Applied Capital Architecture — in a structured, machine-readable, and agent-executable format.
 
 ---
 
 # Purpose
 
-exmxc exists to decode AI-era power structures, entity clarity, and strategic positioning.
+exmxc exists to decode AI-era power structures, entity clarity, strategic positioning, and capital durability across the Four Forces: Compute, Interface, Alignment, and Energy.
 
 This MCP endpoint enables AI agents, systems, and institutional tools to discover, interpret, and execute exmxc capabilities through standardized protocol interfaces.
 
@@ -22,39 +22,27 @@ This transforms exmxc from a static content entity into an executable intelligen
 
 Primary endpoint:
 
-```
 https://mcp.exmxc.ai/
-```
 
 Capability index:
 
-```
 https://mcp.exmxc.ai/capabilities.json
-```
 
 Health and reliability endpoint:
 
-```
 https://mcp.exmxc.ai/health
-```
 
 Tool registry:
 
-```
 https://mcp.exmxc.ai/.well-known/tool-registry.json
-```
 
 OpenAPI specification:
 
-```
 https://mcp.exmxc.ai/.well-known/openapi.json
-```
 
 Plugin manifest:
 
-```
 https://mcp.exmxc.ai/.well-known/ai-plugin.json
-```
 
 ---
 
@@ -67,12 +55,15 @@ The exmxc MCP endpoint exposes the following institutional intelligence capabili
 * Institutional lexicon
 * Entity Clarity Index (ECI)
 * sPEG valuation intelligence
+* Applied Capital Architecture
 * Strategic doctrine
 * Standards lab architecture
 * Entity diagnostics
 * Knowledge graph search
 
 Each capability is exposed as a structured, machine-readable tool callable by AI agents.
+
+Applied Capital Architecture represents the integration layer where structural doctrine informs capital allocation logic and long-horizon institutional positioning.
 
 ---
 
@@ -96,13 +87,13 @@ This design ensures:
 
 # Entity Identity
 
-Entity: exmxc
-Domain: https://exmxc.ai
-Founder: Mike Ye
+Entity: exmxc  
+Domain: https://exmxc.ai  
+Founder: Mike Ye  
 
-Classification: Institutional Intelligence System
+Classification: Institutional Intelligence System  
 
-exmxc operates as a structured intelligence institution providing strategic clarity for the AI era.
+exmxc operates as a human-led, AI-instrumented intelligence institution providing strategic clarity and capital architecture for the AI era.
 
 ---
 
@@ -115,6 +106,7 @@ AI agents can:
 * discover exmxc capabilities automatically
 * execute structured intelligence queries
 * integrate exmxc frameworks into decision workflows
+* incorporate Applied Capital Architecture into allocation modeling
 * chain exmxc capabilities with other MCP nodes
 
 This enables institutional intelligence to be accessed programmatically rather than manually.
@@ -137,11 +129,9 @@ These signals enable reliable agent trust and capability prioritization.
 
 # Repository Structure
 
-```
 workers/
   worker.js        Cloudflare Worker MCP implementation
   README.md        This document
-```
 
 ---
 
@@ -155,6 +145,8 @@ https://exmxc.ai
 
 This MCP endpoint represents the executable intelligence layer of exmxc.
 
-exmxc is not a content site.
+exmxc is not a content site.  
+exmxc is not a trading platform.  
+exmxc is not a cryptocurrency exchange.  
 
 exmxc is an institutional intelligence system.
