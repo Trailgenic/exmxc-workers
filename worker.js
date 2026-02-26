@@ -6,14 +6,12 @@ export default {
     /*
     ============================================
     ROOT MCP DISCOVERY ENDPOINT
-    https://mcp.exmxc.ai/
     ============================================
     */
 
     if (url.pathname === "/" || url.pathname === "") {
 
       const discovery = {
-
         name: "exmxc MCP Endpoint",
 
         entity: {
@@ -22,25 +20,14 @@ export default {
           founder: "Mike Ye"
         },
 
-        registry:
-          "https://mcp.exmxc.ai/.well-known/tool-registry.json",
-
-        plugin:
-          "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
-
-        openapi:
-          "https://mcp.exmxc.ai/.well-known/openapi.json",
-
-        capabilities:
-          "https://mcp.exmxc.ai/capabilities.json",
-
-        health:
-          "https://mcp.exmxc.ai/health",
+        registry: "https://mcp.exmxc.ai/.well-known/tool-registry.json",
+        plugin: "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
+        openapi: "https://mcp.exmxc.ai/.well-known/openapi.json",
+        capabilities: "https://mcp.exmxc.ai/capabilities.json",
+        health: "https://mcp.exmxc.ai/health",
 
         status: "active",
-
         discovery_protocol: "WebMCP",
-
         last_updated: new Date().toISOString()
       };
 
@@ -52,14 +39,11 @@ export default {
           "Cache-Control": "public, max-age=3600"
         }
       });
-
     }
-
 
     /*
     ============================================
-    NEW: CAPABILITY INDEX
-    https://mcp.exmxc.ai/capabilities.json
+    CAPABILITY INDEX
     ============================================
     */
 
@@ -74,80 +58,34 @@ export default {
           domain: "https://exmxc.ai",
           founder: "Mike Ye",
           description:
-            "Human-led intelligence institution decoding AI power, entity clarity, institutional positioning, and strategic doctrine."
+            "Human-led intelligence institution decoding AI power, entity clarity, institutional positioning, strategic doctrine, and Applied Capital Architecture."
         },
 
         mcp: {
           endpoint: "https://mcp.exmxc.ai",
-          registry:
-            "https://mcp.exmxc.ai/.well-known/tool-registry.json",
-          plugin:
-            "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
-          openapi:
-            "https://mcp.exmxc.ai/.well-known/openapi.json"
+          registry: "https://mcp.exmxc.ai/.well-known/tool-registry.json",
+          plugin: "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
+          openapi: "https://mcp.exmxc.ai/.well-known/openapi.json"
         },
 
         capabilities: [
 
-          {
-            tool: "ex.framework.get",
-            description:
-              "Retrieve institutional strategy frameworks."
-          },
+          { tool: "ex.framework.get", description: "Retrieve institutional strategy frameworks." },
+          { tool: "ex.signal.get", description: "Retrieve signal briefs and intelligence analyses." },
+          { tool: "ex.lexicon.get", description: "Retrieve institutional lexicon and definitions." },
+          { tool: "ex.eci.get", description: "Retrieve Entity Clarity Index data and analysis." },
+          { tool: "ex.speg.get", description: "Retrieve sPEG indices and valuation intelligence." },
 
           {
-            tool: "ex.signal.get",
-            description:
-              "Retrieve signal briefs and intelligence analyses."
+            tool: "ex.capital.get",
+            description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence."
           },
 
-          {
-            tool: "ex.lexicon.get",
-            description:
-              "Retrieve institutional lexicon and definitions."
-          },
-
-          {
-            tool: "ex.eci.get",
-            description:
-              "Retrieve Entity Clarity Index data and analysis."
-          },
-
-          {
-            tool: "ex.speg.get",
-            description:
-              "Retrieve sPEG indices and valuation intelligence."
-          },
-
-          {
-            tool: "ex.doctrine.get",
-            description:
-              "Retrieve institutional doctrine and operating principles."
-          },
-
-          {
-            tool: "ex.lab.get",
-            description:
-              "Retrieve standards lab specifications and system architecture."
-          },
-
-          {
-            tool: "ex.about.get",
-            description:
-              "Retrieve entity identity and institutional positioning."
-          },
-
-          {
-            tool: "ex.diagnostic.run",
-            description:
-              "Run entity clarity diagnostic and institutional positioning analysis."
-          },
-
-          {
-            tool: "ex.search.query",
-            description:
-              "Search exmxc institutional intelligence knowledge graph."
-          }
+          { tool: "ex.doctrine.get", description: "Retrieve institutional doctrine and operating principles." },
+          { tool: "ex.lab.get", description: "Retrieve standards lab specifications and system architecture." },
+          { tool: "ex.about.get", description: "Retrieve entity identity and institutional positioning." },
+          { tool: "ex.diagnostic.run", description: "Run entity clarity diagnostic and institutional positioning analysis." },
+          { tool: "ex.search.query", description: "Search exmxc institutional intelligence knowledge graph." }
 
         ],
 
@@ -175,44 +113,30 @@ export default {
           "Cache-Control": "public, max-age=3600"
         }
       });
-
     }
-
 
     /*
     ============================================
-    NEW: HEALTH ENDPOINT
-    https://mcp.exmxc.ai/health
+    HEALTH (UNCHANGED)
     ============================================
     */
 
     if (url.pathname === "/health") {
-
       const health = {
-
         entity: "exmxc",
-
         status: "healthy",
-
         mcp_status: "operational",
-
         registry_status: "operational",
-
         plugin_status: "operational",
-
         openapi_status: "operational",
-
         capabilities_status: "operational",
-
         uptime: "99.99%",
-
         infrastructure: {
           platform: "Cloudflare Workers",
           protocol: "WebMCP",
           classification: "institutional-grade MCP node",
           agent_ready: true
         },
-
         last_checked: new Date().toISOString()
       };
 
@@ -223,13 +147,11 @@ export default {
           "Cache-Control": "no-cache"
         }
       });
-
     }
-
 
     /*
     ============================================
-    TOOL REGISTRY (UNCHANGED)
+    TOOL REGISTRY
     ============================================
     */
 
@@ -243,14 +165,13 @@ export default {
           name: "exmxc",
           domain: "https://exmxc.ai",
           description:
-            "Human-led intelligence institution decoding AI power, entity clarity, and strategic positioning.",
+            "Human-led intelligence institution decoding AI power, entity clarity, strategic positioning, and Applied Capital Architecture.",
           founder: "Mike Ye"
         },
 
         discovery: {
           protocol: "WebMCP",
-          endpoint:
-            "https://mcp.exmxc.ai/.well-known/tool-registry.json"
+          endpoint: "https://mcp.exmxc.ai/.well-known/tool-registry.json"
         },
 
         tools: [
@@ -260,6 +181,12 @@ export default {
           { id: "ex.lexicon.get", endpoint: "https://exmxc.ai/lexicon" },
           { id: "ex.eci.get", endpoint: "https://exmxc.ai/entity-clarity-index" },
           { id: "ex.speg.get", endpoint: "https://exmxc.ai/speg-indices" },
+
+          {
+            id: "ex.capital.get",
+            endpoint: "https://exmxc.ai/capital"
+          },
+
           { id: "ex.doctrine.get", endpoint: "https://exmxc.ai/doctrine" },
           { id: "ex.lab.get", endpoint: "https://exmxc.ai/standards-lab" },
           { id: "ex.about.get", endpoint: "https://exmxc.ai/about" },
@@ -277,65 +204,11 @@ export default {
           "Cache-Control": "public, max-age=3600"
         }
       });
-
     }
-
 
     /*
     ============================================
-    AI PLUGIN (UNCHANGED)
-    ============================================
-    */
-
-    if (url.pathname === "/.well-known/ai-plugin.json") {
-
-      const plugin = {
-
-        schema_version: "v1",
-
-        name_for_human: "exmxc",
-
-        name_for_model: "exmxc",
-
-        description_for_human:
-          "Institutional intelligence system providing entity clarity frameworks, strategic doctrine, and AI-era positioning analysis.",
-
-        description_for_model:
-          "exmxc provides structured institutional intelligence including entity clarity indices, strategy frameworks, doctrine, and signal briefs.",
-
-        auth: { type: "none" },
-
-        api: {
-          type: "openapi",
-          url:
-            "https://mcp.exmxc.ai/.well-known/openapi.json",
-          is_user_authenticated: false
-        },
-
-        logo_url:
-          "https://exmxc.ai/favicon.ico",
-
-        contact_email:
-          "support@exmxc.ai",
-
-        legal_info_url:
-          "https://exmxc.ai"
-      };
-
-      return new Response(JSON.stringify(plugin, null, 2), {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Cache-Control": "public, max-age=3600"
-        }
-      });
-
-    }
-
-
-    /*
-    ============================================
-    OPENAPI SPEC (UNCHANGED)
+    OPENAPI SPEC
     ============================================
     */
 
@@ -349,7 +222,7 @@ export default {
           title: "exmxc API",
           version: "1.0.0",
           description:
-            "exmxc institutional intelligence endpoints."
+            "exmxc institutional intelligence endpoints including Applied Capital Architecture."
         },
 
         servers: [
@@ -363,6 +236,11 @@ export default {
           "/lexicon": { get: { summary: "Retrieve institutional lexicon" } },
           "/entity-clarity-index": { get: { summary: "Retrieve entity clarity indices" } },
           "/speg-indices": { get: { summary: "Retrieve sPEG indices" } },
+
+          "/capital": {
+            get: { summary: "Retrieve Applied Capital Architecture doctrine" }
+          },
+
           "/doctrine": { get: { summary: "Retrieve doctrine" } }
 
         }
@@ -375,9 +253,7 @@ export default {
           "Cache-Control": "public, max-age=3600"
         }
       });
-
     }
-
 
     /*
     ============================================
@@ -387,9 +263,7 @@ export default {
 
     return new Response("Not Found", {
       status: 404,
-      headers: {
-        "Content-Type": "text/plain"
-      }
+      headers: { "Content-Type": "text/plain" }
     });
 
   }
