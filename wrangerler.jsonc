@@ -2,6 +2,9 @@
   "name": "exmxc-workers",
   "main": "worker.js",
   "compatibility_date": "2026-02-19",
+  "routes": [
+    "mcp.exmxc.ai/*"
+  ],
 
   "observability": {
     "enabled": true,
