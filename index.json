@@ -1,0 +1,11 @@
+{
+  "dataset": "exmxc-entity-intelligence",
+  "version": "1.0",
+  "description": "Entity Intelligence dataset tracking strategic technology and infrastructure companies.",
+  "maintainer": "exmxc.ai",
+  "last_updated": "2026-03-03",
+  "total_entities": 750,
+  "schema": "schema/schema.json",
+  "definitions": "schema/definitions.json",
+  "data": "data/entities.json"
+}
