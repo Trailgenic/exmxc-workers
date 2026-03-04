@@ -23,6 +23,7 @@ export default {
         registry: "https://mcp.exmxc.ai/.well-known/tool-registry.json",
         plugin: "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
         openapi: "https://mcp.exmxc.ai/.well-known/openapi.json",
+        manifest: "https://mcp.exmxc.ai/.well-known/manifest.json",
         capabilities: "https://mcp.exmxc.ai/capabilities.json",
         health: "https://mcp.exmxc.ai/health",
 
@@ -254,7 +255,76 @@ export default {
         }
       });
     }
+/*
+============================================
+MANIFEST
+============================================
+*/
 
+if (url.pathname === "/.well-known/manifest.json") {
+
+  const manifest = {
+
+    name: "exmxc MCP Manifest",
+
+    entity: {
+      name: "exmxc",
+      domain: "https://exmxc.ai",
+      founder: "Mike Ye"
+    },
+
+    discovery: {
+      root: "https://mcp.exmxc.ai",
+      protocol: "WebMCP"
+    },
+
+    endpoints: {
+
+      discovery: "/",
+      capabilities: "/capabilities.json",
+      health: "/health",
+
+      registry: "/.well-known/tool-registry.json",
+      openapi: "/.well-known/openapi.json",
+
+      entities: "/entities",
+      schema: "/schema",
+      definitions: "/definitions",
+      index: "/index"
+
+    },
+
+    dataset: {
+      name: "exmxc Entity Intelligence Dataset",
+      fields: [
+        "company",
+        "industry",
+        "entity_type",
+        "posture",
+        "capability",
+        "ecc"
+      ]
+    },
+
+    trust: {
+      structured: true,
+      deterministic_schema: true,
+      machine_readable: true,
+      agent_ready: true
+    },
+
+    last_updated: new Date().toISOString()
+
+  };
+
+  return new Response(JSON.stringify(manifest, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
 /*
 ============================================
 ENTITY INTELLIGENCE DATASET
