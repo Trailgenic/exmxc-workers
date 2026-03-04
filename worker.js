@@ -275,7 +275,11 @@ if (url.pathname === "/entities") {
     });
   }
 
-  const entities = await response.json();
+  // Load full dataset
+  const dataset = await response.json();
+
+  // Claude structure: { metadata: {...}, entities: [...] }
+  const entities = dataset.entities;
 
   const industry = url.searchParams.get("industry");
   const entity_type = url.searchParams.get("entity_type");
