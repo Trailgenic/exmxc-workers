@@ -275,11 +275,13 @@ if (url.pathname === "/entities") {
     });
   }
 
-  // Load full dataset
   const dataset = await response.json();
 
-  // Claude structure: { metadata: {...}, entities: [...] }
-  const entities = dataset.entities;
+  // Support both structures just in case
+  const entities =
+    Array.isArray(dataset)
+      ? dataset
+      : dataset.entities || dataset.data?.entities || [];
 
   const industry = url.searchParams.get("industry");
   const entity_type = url.searchParams.get("entity_type");
@@ -312,7 +314,6 @@ if (url.pathname === "/entities") {
     }
   });
 }
-
 /*
 ============================================
 SCHEMA
