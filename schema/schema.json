@@ -1,1 +1,81 @@
+{
+  "version": "1.0",
+  "dataset": "exmxc-entity-intelligence",
+  "description": "Structured dataset of global institutions evaluated for AI-era posture, capability, and entity control characteristics.",
 
+  "fields": {
+
+    "entity_name": {
+      "type": "string",
+      "description": "Canonical name of the organization or institution."
+    },
+
+    "industry": {
+      "type": "string",
+      "allowed_values": [
+        "Financial",
+        "E-Commerce & Retail",
+        "Healthcare",
+        "Energy",
+        "Technology",
+        "Fintech",
+        "Marketplace",
+        "Consulting",
+        "Restaurants & Hospitality",
+        "Media",
+        "Education",
+        "Defense & Aerospace",
+        "Nuclear Energy",
+        "Artificial Intelligence",
+        "Cloud & Data Infrastructure",
+        "Sovereign Wealth Fund",
+        "Mining & Materials",
+        "Semiconductors & Industrial",
+        "Financial Infrastructure",
+        "Telecommunications",
+        "Government"
+      ]
+    },
+
+    "entity_type": {
+      "type": "string",
+      "allowed_values": [
+        "Public Company",
+        "Private Company",
+        "Sovereign Wealth Fund",
+        "Government Agency",
+        "Multilateral Institution",
+        "University",
+        "Media Organization",
+        "Consulting Firm"
+      ]
+    },
+
+    "posture": {
+      "type": "string",
+      "allowed_values": [
+        "Open",
+        "Defensive",
+        "Blocked"
+      ]
+    },
+
+    "capability": {
+      "type": "string",
+      "allowed_values": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+
+    "ecc": {
+      "type": "integer",
+      "range": {
+        "min": 0,
+        "max": 100
+      },
+      "description": "Entity Control Coefficient score representing degree of operational and structural control."
+    }
+  }
+}
