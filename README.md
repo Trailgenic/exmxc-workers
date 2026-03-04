@@ -135,6 +135,48 @@ workers/
 
 ---
 
+# Entity Intelligence Dataset
+
+This repository also includes the structured dataset used by the exmxc Entity Intelligence system.
+
+Dataset files:
+
+data/
+  entities.json      Full entity dataset
+schema/
+  schema.json        Entity schema contract
+  definitions.json   Semantic definitions for fields
+index.json           Dataset entry point
+
+Each entity record contains:
+
+- entity_name
+- industry
+- entity_type
+- posture
+- capability
+- ecc
+
+Example entity record:
+
+{
+  "entity_name": "BlackRock",
+  "industry": "Financial",
+  "entity_type": "Public Company",
+  "posture": "Open",
+  "capability": "High",
+  "ecc": 86
+}
+
+The dataset is used by exmxc intelligence tools including:
+
+* Entity Clarity Index analysis
+* strategic posture mapping
+* institutional capability evaluation
+* ecosystem influence mapping
+
+---
+
 # Contact
 
 https://exmxc.ai
