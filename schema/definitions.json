@@ -1,1 +1,37 @@
+{
+  "definitions_version": "1.0",
 
+  "posture": {
+    "Open": "Entity operates openly within global markets and cross-border systems with minimal political or regulatory restriction.",
+    "Defensive": "Entity operates globally but is increasingly influenced by national policy, regulation, or strategic protection.",
+    "Blocked": "Entity is restricted or isolated from parts of the global system due to political, regulatory, or geopolitical barriers."
+  },
+
+  "capability": {
+    "Low": "Limited ability to influence supply chains, standards, or ecosystem control.",
+    "Medium": "Meaningful operational capability with influence over certain markets or technologies.",
+    "High": "Global system-level capability influencing supply chains, infrastructure, or industry standards."
+  },
+
+  "ecc": {
+    "definition": "Entity Control Coefficient measuring degree of operational and structural control.",
+    "interpretation": {
+      "0-20": "Minimal control over infrastructure or ecosystems.",
+      "21-40": "Limited control with regional influence.",
+      "41-60": "Moderate structural control and market influence.",
+      "61-80": "High operational leverage across systems or supply chains.",
+      "81-100": "Strategic control over critical infrastructure or global ecosystems."
+    }
+  },
+
+  "entity_type": {
+    "Public Company": "Listed corporate entity operating within public capital markets.",
+    "Private Company": "Privately held corporation without public market listing.",
+    "Sovereign Wealth Fund": "State-controlled investment vehicle managing national capital.",
+    "Government Agency": "State-run institution responsible for policy, regulation, or operations.",
+    "Multilateral Institution": "Organization jointly governed by multiple nations.",
+    "University": "Academic institution producing research, talent, and technological innovation.",
+    "Media Organization": "Institution responsible for information distribution and narrative influence.",
+    "Consulting Firm": "Professional services organization advising corporations and governments."
+  }
+}
