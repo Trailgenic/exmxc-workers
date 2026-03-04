@@ -255,7 +255,7 @@ export default {
       });
     }
 
-    /*
+ /*
 ============================================
 ENTITY INTELLIGENCE DATASET
 ============================================
@@ -266,86 +266,37 @@ if (url.pathname === "/entities") {
   const data = await fetch("https://raw.githubusercontent.com/exmxc/exmxc-audit/main/data/entities.json");
   const entities = await data.json();
 
-  return new Response(JSON.stringify(entities, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
+  const industry = url.searchParams.get("industry");
+  const entity_type = url.searchParams.get("entity_type");
+  const posture = url.searchParams.get("posture");
+  const capability = url.searchParams.get("capability");
 
-if (url.pathname.startsWith("/entity/")) {
+  let results = entities;
 
-  const name = decodeURIComponent(url.pathname.split("/")[2]).toLowerCase();
-
-  const data = await fetch("https://raw.githubusercontent.com/exmxc/exmxc-audit/main/data/entities.json");
-  const entities = await data.json();
-
-  const entity = entities.find(e =>
-    e.entity_name.toLowerCase() === name
-  );
-
-  if (!entity) {
-    return new Response(JSON.stringify({ error: "Entity not found" }), {
-      status: 404,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      }
-    });
+  if (industry) {
+    results = results.filter(e => e.industry?.toLowerCase() === industry.toLowerCase());
   }
 
-  return new Response(JSON.stringify(entity, null, 2), {
+  if (entity_type) {
+    results = results.filter(e => e.entity_type?.toLowerCase() === entity_type.toLowerCase());
+  }
+
+  if (posture) {
+    results = results.filter(e => e.posture?.toLowerCase() === posture.toLowerCase());
+  }
+
+  if (capability) {
+    results = results.filter(e => e.capability?.toLowerCase() === capability.toLowerCase());
+  }
+
+  return new Response(JSON.stringify(results, null, 2), {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       "Cache-Control": "public, max-age=3600"
     }
   });
-}
-
-if (url.pathname === "/schema") {
-
-  const data = await fetch("https://raw.githubusercontent.com/exmxc/exmxc-audit/main/schema/schema.json");
-  const schema = await data.json();
-
-  return new Response(JSON.stringify(schema, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
-
-if (url.pathname === "/definitions") {
-
-  const data = await fetch("https://raw.githubusercontent.com/exmxc/exmxc-audit/main/schema/definitions.json");
-  const definitions = await data.json();
-
-  return new Response(JSON.stringify(definitions, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
-
-if (url.pathname === "/index") {
-
-  const data = await fetch("https://raw.githubusercontent.com/exmxc/exmxc-audit/main/index.json");
-  const index = await data.json();
-
-  return new Response(JSON.stringify(index, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
+} 
     /*
     ============================================
     FALLBACK
