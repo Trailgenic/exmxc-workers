@@ -255,7 +255,7 @@ export default {
       });
     }
 
- /*
+/*
 ============================================
 ENTITY INTELLIGENCE DATASET
 ============================================
@@ -263,7 +263,7 @@ ENTITY INTELLIGENCE DATASET
 
 if (url.pathname === "/entities") {
 
-  const data = await fetch("https://raw.githubusercontent.com/exmxc/exmxc-audit/main/data/entities.json");
+  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/entities.json");
   const entities = await data.json();
 
   const industry = url.searchParams.get("industry");
@@ -296,17 +296,78 @@ if (url.pathname === "/entities") {
       "Cache-Control": "public, max-age=3600"
     }
   });
-} 
-    /*
-    ============================================
-    FALLBACK
-    ============================================
-    */
+}
 
-    return new Response("Not Found", {
-      status: 404,
-      headers: { "Content-Type": "text/plain" }
-    });
+/*
+============================================
+SCHEMA
+============================================
+*/
+
+if (url.pathname === "/schema") {
+
+  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/schema.json");
+  const schema = await data.json();
+
+  return new Response(JSON.stringify(schema, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
+
+/*
+============================================
+DEFINITIONS
+============================================
+*/
+
+if (url.pathname === "/definitions") {
+
+  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/definitions.json");
+  const definitions = await data.json();
+
+  return new Response(JSON.stringify(definitions, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
+
+/*
+============================================
+INDEX
+============================================
+*/
+
+if (url.pathname === "/index") {
+
+  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/index.json");
+  const index = await data.json();
+
+  return new Response(JSON.stringify(index, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
+
+/*
+============================================
+FALLBACK
+============================================
+*/
+
+return new Response("Not Found", {
+  status: 404,
+  headers: { "Content-Type": "text/plain" }
+});
 
   }
 };
