@@ -288,7 +288,7 @@ if (url.pathname === "/entities") {
   const posture = url.searchParams.get("posture");
   const capability = url.searchParams.get("capability");
 
-  let results = entities;
+  let results = [...entities];
 
   if (industry) {
     results = results.filter(e => e.industry?.toLowerCase() === industry.toLowerCase());
