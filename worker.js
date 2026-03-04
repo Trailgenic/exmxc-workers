@@ -263,8 +263,19 @@ ENTITY INTELLIGENCE DATASET
 
 if (url.pathname === "/entities") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/entities.json");
-  const entities = await data.json();
+  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/entities.json");
+
+  if (!response.ok) {
+    return new Response(JSON.stringify({
+      error: "dataset fetch failed",
+      status: response.status
+    }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+
+  const entities = await response.json();
 
   const industry = url.searchParams.get("industry");
   const entity_type = url.searchParams.get("entity_type");
