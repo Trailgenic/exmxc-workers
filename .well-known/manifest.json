@@ -1,0 +1,23 @@
+{
+  "name": "exmxc Entity Intelligence",
+  "version": "1.0",
+  "description": "Machine-readable intelligence dataset of global institutions categorized by industry, entity type, posture, capability, and ECC score.",
+  "base_url": "https://mcp.exmxc.ai",
+  "resources": {
+    "entities": "/entities",
+    "schema": "/schema",
+    "definitions": "/definitions",
+    "index": "/index"
+  },
+  "dataset": {
+    "entity_count": 751,
+    "primary_fields": [
+      "company",
+      "industry",
+      "entity_type",
+      "posture",
+      "capability",
+      "ecc"
+    ]
+  }
+}
