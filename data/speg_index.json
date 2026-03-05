@@ -2,8 +2,10 @@
   "metadata": {
     "source": "exmxc.ai",
     "dataset": "speg_index",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "as_of_date": "2026-02-13",
+    "price_as_of": "2026-02-13",
+    "data_freshness": "snapshot",
     "currency": "USD",
     "entity_count": 25
   },
