@@ -25,6 +25,8 @@ export default {
         openapi: "https://mcp.exmxc.ai/.well-known/openapi.json",
         manifest: "https://mcp.exmxc.ai/.well-known/manifest.json",
         capabilities: "https://mcp.exmxc.ai/capabilities.json",
+        entities: "https://mcp.exmxc.ai/entities",
+        speg: "https://mcp.exmxc.ai/speg",
         health: "https://mcp.exmxc.ai/health",
 
         status: "active",
@@ -42,6 +44,54 @@ export default {
       });
     }
 
+    /*
+============================================
+sPEG INDEX DATASET
+============================================
+*/
+
+if (url.pathname === "/speg") {
+
+  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/speg_index.json");
+
+  if (!response.ok) {
+    return new Response(JSON.stringify({
+      error: "dataset fetch failed",
+      status: response.status
+    }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+
+  const dataset = await response.json();
+
+  const sector = url.searchParams.get("sector");
+  const scarcity_layer = url.searchParams.get("scarcity_layer");
+  const ticker = url.searchParams.get("ticker");
+
+  let results = dataset.rows || dataset;
+
+  if (sector) {
+    results = results.filter(e => e.sector?.toLowerCase() === sector.toLowerCase());
+  }
+
+  if (scarcity_layer) {
+    results = results.filter(e => e.scarcity_layer?.toLowerCase() === scarcity_layer.toLowerCase());
+  }
+
+  if (ticker) {
+    results = results.filter(e => e.ticker?.toLowerCase() === ticker.toLowerCase());
+  }
+
+  return new Response(JSON.stringify(results, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
     /*
     ============================================
     CAPABILITY INDEX
@@ -76,11 +126,8 @@ export default {
           { tool: "ex.lexicon.get", description: "Retrieve institutional lexicon and definitions." },
           { tool: "ex.eci.get", description: "Retrieve Entity Clarity Index data and analysis." },
           { tool: "ex.speg.get", description: "Retrieve sPEG indices and valuation intelligence." },
-
-          {
-            tool: "ex.capital.get",
-            description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence."
-          },
+          { tool: "ex.speg.index.get", description: "Retrieve sPEG valuation index and AI infrastructure scarcity layers." },
+          { tool: "ex.capital.get", description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence." },
 
           { tool: "ex.doctrine.get", description: "Retrieve institutional doctrine and operating principles." },
           { tool: "ex.lab.get", description: "Retrieve standards lab specifications and system architecture." },
