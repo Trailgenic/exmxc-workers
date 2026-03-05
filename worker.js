@@ -493,6 +493,53 @@ if (url.pathname === "/index") {
 
 /*
 ============================================
+AI PLUGIN MANIFEST
+============================================
+*/
+
+if (url.pathname === "/.well-known/ai-plugin.json") {
+
+  const plugin = {
+
+    schema_version: "v1",
+
+    name_for_human: "exmxc",
+
+    name_for_model: "exmxc",
+
+    description_for_human:
+      "exmxc institutional intelligence system decoding AI power structures, entity clarity, and Applied Capital Architecture.",
+
+    description_for_model:
+      "Provides institutional intelligence including sPEG valuation models, entity clarity frameworks, signal analysis, and strategic doctrine.",
+
+    auth: { type: "none" },
+
+    api: {
+      type: "openapi",
+      url: "https://mcp.exmxc.ai/.well-known/openapi.json",
+      is_user_authenticated: false
+    },
+
+    logo_url: "https://exmxc.ai/favicon.ico",
+
+    contact_email: "support@exmxc.ai",
+
+    legal_info_url: "https://exmxc.ai"
+
+  };
+
+  return new Response(JSON.stringify(plugin, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}    
+    
+/*
+============================================
 FALLBACK
 ============================================
 */
