@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "source": "exmxc.ai",
+    "dataset": "speg_index",
+    "version": "1.0.0",
+    "as_of_date": "2026-02-13",
+    "currency": "USD",
+    "entity_count": 25
+  },
+  "rows": [
+    {
+      "entity_id": "sk_hynix",
+      "company": "SK Hynix",
+      "ticker": "000660.KS",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "HBM Memory",
+      "date": "2026-02-13",
+      "price_usd": 610.50,
+      "speg": 0.24
+    },
+    {
+      "entity_id": "micron_technology",
+      "company": "Micron Technology",
+      "ticker": "MU",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "HBM Memory",
+      "date": "2026-02-13",
+      "price_usd": 411.66,
+      "speg": 0.29
+    },
+    {
+      "entity_id": "taiwan_semiconductor",
+      "company": "Taiwan Semiconductor",
+      "ticker": "TSM",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Fabrication",
+      "date": "2026-02-13",
+      "price_usd": 366.36,
+      "speg": 0.51
+    },
+    {
+      "entity_id": "samsung_electronics",
+      "company": "Samsung Electronics",
+      "ticker": "005930.KS",
+      "sector": "Memory & Storage",
+      "scarcity_layer": "Memory + Foundry Hybrid",
+      "date": "2026-02-13",
+      "price_usd": 124.50,
+      "speg": 0.52
+    },
+    {
+      "entity_id": "asml",
+      "company": "ASML",
+      "ticker": "ASML",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Lithography",
+      "date": "2026-02-13",
+      "price_usd": 1406.61,
+      "speg": 0.59
+    },
+    {
+      "entity_id": "nvidia",
+      "company": "NVIDIA",
+      "ticker": "NVDA",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Compute",
+      "date": "2026-02-13",
+      "price_usd": 182.78,
+      "speg": 0.63
+    },
+    {
+      "entity_id": "western_digital",
+      "company": "Western Digital",
+      "ticker": "WDC",
+      "sector": "Memory & Storage",
+      "scarcity_layer": "NAND Storage",
+      "date": "2026-02-13",
+      "price_usd": 281.58,
+      "speg": 0.66
+    },
+    {
+      "entity_id": "arista_networks",
+      "company": "Arista Networks",
+      "ticker": "ANET",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Network Infrastructure",
+      "date": "2026-02-13",
+      "price_usd": 141.59,
+      "speg": 0.69
+    },
+    {
+      "entity_id": "ge_vernova",
+      "company": "GE Vernova",
+      "ticker": "GEV",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Power Generation Technology",
+      "date": "2026-02-13",
+      "price_usd": 802.13,
+      "speg": 0.78
+    },
+    {
+      "entity_id": "vertiv",
+      "company": "Vertiv",
+      "ticker": "VRT",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Power & Cooling",
+      "date": "2026-02-13",
+      "price_usd": 234.53,
+      "speg": 0.80
+    },
+    {
+      "entity_id": "seagate_technology",
+      "company": "Seagate Technology",
+      "ticker": "STX",
+      "sector": "Memory & Storage",
+      "scarcity_layer": "HDD Storage",
+      "date": "2026-02-13",
+      "price_usd": 425.91,
+      "speg": 0.88
+    },
+    {
+      "entity_id": "vistra_corp",
+      "company": "Vistra Corp",
+      "ticker": "VST",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Power Generation",
+      "date": "2026-02-13",
+      "price_usd": 171.49,
+      "speg": 0.89
+    },
+    {
+      "entity_id": "marvell_technology",
+      "company": "Marvell Technology",
+      "ticker": "MRVL",
+      "sector": "Memory & Storage",
+      "scarcity_layer": "Memory Controllers",
+      "date": "2026-02-13",
+      "price_usd": 78.61,
+      "speg": 0.91
+    },
+    {
+      "entity_id": "schneider_electric",
+      "company": "Schneider Electric",
+      "ticker": "SBGSY",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Power Management",
+      "date": "2026-02-13",
+      "price_usd": 62.43,
+      "speg": 1.11
+    },
+    {
+      "entity_id": "synopsys",
+      "company": "Synopsys",
+      "ticker": "SNPS",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Chip Design",
+      "date": "2026-02-13",
+      "price_usd": 437.09,
+      "speg": 1.15
+    },
+    {
+      "entity_id": "quanta_services",
+      "company": "Quanta Services",
+      "ticker": "PWR",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Grid Infrastructure",
+      "date": "2026-02-13",
+      "price_usd": 524.08,
+      "speg": 1.16
+    },
+    {
+      "entity_id": "cadence",
+      "company": "Cadence",
+      "ticker": "CDNS",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Chip Design",
+      "date": "2026-02-13",
+      "price_usd": 299.46,
+      "speg": 1.17
+    },
+    {
+      "entity_id": "netapp",
+      "company": "NetApp",
+      "ticker": "NTAP",
+      "sector": "Memory & Storage",
+      "scarcity_layer": "Enterprise Storage Systems",
+      "date": "2026-02-13",
+      "price_usd": 102.42,
+      "speg": 1.19
+    },
+    {
+      "entity_id": "pure_storage",
+      "company": "Pure Storage",
+      "ticker": "PSTG",
+      "sector": "Memory & Storage",
+      "scarcity_layer": "Flash Storage Systems",
+      "date": "2026-02-13",
+      "price_usd": 73.91,
+      "speg": 1.22
+    },
+    {
+      "entity_id": "constellation_energy",
+      "company": "Constellation Energy",
+      "ticker": "CEG",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Nuclear Energy",
+      "date": "2026-02-13",
+      "price_usd": 288.43,
+      "speg": 1.34
+    },
+    {
+      "entity_id": "eaton_corp",
+      "company": "Eaton Corp",
+      "ticker": "ETN",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Electrification Systems",
+      "date": "2026-02-13",
+      "price_usd": 389.25,
+      "speg": 1.40
+    },
+    {
+      "entity_id": "analog_devices",
+      "company": "Analog Devices",
+      "ticker": "ADI",
+      "sector": "AI Semiconductor",
+      "scarcity_layer": "Analog Control",
+      "date": "2026-02-13",
+      "price_usd": 337.10,
+      "speg": 1.41
+    },
+    {
+      "entity_id": "nrg_energy",
+      "company": "NRG Energy",
+      "ticker": "NRG",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Power Generation",
+      "date": "2026-02-13",
+      "price_usd": 172.35,
+      "speg": 1.43
+    },
+    {
+      "entity_id": "nextera_energy",
+      "company": "NextEra Energy",
+      "ticker": "NEE",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Utility Infrastructure",
+      "date": "2026-02-13",
+      "price_usd": 93.80,
+      "speg": 1.64
+    },
+    {
+      "entity_id": "abb_ltd",
+      "company": "ABB Ltd",
+      "ticker": "ABBNY",
+      "sector": "Power & Energy",
+      "scarcity_layer": "Grid Automation",
+      "date": "2026-02-13",
+      "price_usd": 91.00,
+      "speg": 1.66
+    }
+  ]
+}
