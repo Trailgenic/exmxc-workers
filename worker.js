@@ -372,6 +372,31 @@ if (url.pathname === "/.well-known/manifest.json") {
     }
   });
 }
+
+/*
+============================================
+MCP DISCOVERY POINTER
+============================================
+*/
+
+if (url.pathname === "/.well-known/mcp.json") {
+
+  const pointer = {
+    mcp_host: "https://mcp.exmxc.ai",
+    registry: "https://mcp.exmxc.ai/.well-known/tool-registry.json",
+    openapi: "https://mcp.exmxc.ai/.well-known/openapi.json",
+    ai_plugin: "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
+    manifest: "https://mcp.exmxc.ai/.well-known/manifest.json"
+  };
+
+  return new Response(JSON.stringify(pointer, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
 /*
 ============================================
 ENTITY INTELLIGENCE DATASET
