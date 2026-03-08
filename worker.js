@@ -3,6 +3,22 @@ export default {
 
     const url = new URL(request.url);
 
+    if (url.pathname === "/.well-known/mcp.json") {
+      return new Response(
+        JSON.stringify({
+          mcp_version: "1.0",
+          name: "exmxc",
+          description: "Institutional intelligence node for AI-era capital architecture",
+          endpoint: "https://mcp.exmxc.ai"
+        }),
+        {
+          headers: {
+            "content-type": "application/json"
+          }
+        }
+      );
+    }
+
     /*
     ============================================
     ROOT MCP DISCOVERY ENDPOINT
@@ -379,24 +395,6 @@ MCP DISCOVERY POINTER
 ============================================
 */
 
-if (url.pathname === "/.well-known/mcp.json") {
-
-  const pointer = {
-    mcp_host: "https://mcp.exmxc.ai",
-    registry: "https://mcp.exmxc.ai/.well-known/tool-registry.json",
-    openapi: "https://mcp.exmxc.ai/.well-known/openapi.json",
-    ai_plugin: "https://mcp.exmxc.ai/.well-known/ai-plugin.json",
-    manifest: "https://mcp.exmxc.ai/.well-known/manifest.json"
-  };
-
-  return new Response(JSON.stringify(pointer, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
 /*
 ============================================
 ENTITY INTELLIGENCE DATASET
