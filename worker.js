@@ -3,6 +3,22 @@ export default {
 
     const url = new URL(request.url);
 
+    if (url.pathname === "/.well-known/mcp.json") {
+      return new Response(
+        JSON.stringify({
+          mcp_version: "1.0",
+          name: "exmxc",
+          description: "Institutional intelligence node for AI-era capital architecture",
+          endpoint: "https://mcp.exmxc.ai"
+        }),
+        {
+          headers: {
+            "content-type": "application/json"
+          }
+        }
+      );
+    }
+
     /*
     ============================================
     ROOT MCP DISCOVERY ENDPOINT
@@ -372,6 +388,13 @@ if (url.pathname === "/.well-known/manifest.json") {
     }
   });
 }
+
+/*
+============================================
+MCP DISCOVERY POINTER
+============================================
+*/
+
 /*
 ============================================
 ENTITY INTELLIGENCE DATASET
