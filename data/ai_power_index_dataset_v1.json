@@ -88,19 +88,19 @@
     },
     {
       "entity_name": "KLA",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
     },
     {
       "entity_name": "Tokyo Electron",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
     },
     {
       "entity_name": "Broadcom",
@@ -128,27 +128,27 @@
     },
     {
       "entity_name": "Arm Holdings",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 5,
+      "ai_power_index": 6.65
     },
     {
       "entity_name": "Cadence Design Systems",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 7,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 4,
+      "ai_power_index": 5.65
     },
     {
       "entity_name": "Synopsys",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 4,
+      "ai_power_index": 5.95
     },
     {
       "entity_name": "GlobalFoundries",
