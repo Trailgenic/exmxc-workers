@@ -8,35 +8,35 @@
   "scores": [
     {
       "entity_name": "NVIDIA",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 10,
+      "interface_exposure": 9,
+      "alignment_exposure": 7,
+      "energy_exposure": 8,
+      "ai_power_index": 8.6
     },
     {
       "entity_name": "AMD",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 9,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 7,
+      "ai_power_index": 7.35
     },
     {
       "entity_name": "Intel",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 7,
+      "ai_power_index": 6.55
     },
     {
       "entity_name": "TSMC",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 10,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 10,
+      "ai_power_index": 7.25
     },
     {
       "entity_name": "Samsung Electronics",
@@ -48,43 +48,43 @@
     },
     {
       "entity_name": "SK Hynix",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 6.0
     },
     {
       "entity_name": "Micron Technology",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 6.0
     },
     {
       "entity_name": "ASML",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 9,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 6.3
     },
     {
       "entity_name": "Applied Materials",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
     },
     {
       "entity_name": "Lam Research",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
     },
     {
       "entity_name": "KLA",
@@ -104,11 +104,11 @@
     },
     {
       "entity_name": "Broadcom",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 6,
+      "ai_power_index": 6.35
     },
     {
       "entity_name": "Marvell Technology",
