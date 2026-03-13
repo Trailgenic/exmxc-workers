@@ -144,6 +144,7 @@ if (url.pathname === "/speg") {
           { tool: "ex.speg.index.get", description: "Retrieve sPEG valuation index and AI infrastructure scarcity layers." },
           { tool: "ex.datasets.index.get", description: "Retrieve index of all datasets available through the exmxc MCP node." },
           { tool: "ex.ai_power_index.get", description: "Retrieve the AI Power Index dataset ranking global AI ecosystem entities across compute, interface, alignment, and energy." },
+          { tool: "ex.ai_power.analysis.top", description: "Retrieve top entities from the AI Power Index ranking." },
           { tool: "ex.capital.get", description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence." },
 
           { tool: "ex.doctrine.get", description: "Retrieve institutional doctrine and operating principles." },
@@ -248,6 +249,7 @@ if (url.pathname === "/speg") {
           { id: "ex.speg.get", endpoint: "https://exmxc.ai/speg-indices" },
           { id: "ex.datasets.index.get", endpoint: "https://mcp.exmxc.ai/datasets" },
           { id: "ex.ai_power_index.get", endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index" },
+          { id: "ex.ai_power.analysis.top", endpoint: "https://mcp.exmxc.ai/analysis/ai_power/top" },
 
           {
             id: "ex.capital.get",
@@ -319,6 +321,10 @@ if (url.pathname === "/speg") {
           "/datasets/ai_power_index/schema": {
             get: { summary: "Retrieve AI Power Index dataset schema" }
           },
+          "/analysis/ai_power/top": {
+            get: { summary: "Retrieve top entities from the AI Power Index" }
+          },
+
 
           "/doctrine": { get: { summary: "Retrieve doctrine" } }
 
