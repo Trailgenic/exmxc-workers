@@ -1,0 +1,682 @@
+{
+  "dataset": "ai_power_index_dataset_v1",
+  "version": "1.0",
+  "metadata": {
+    "source_dataset": "data/four_forces_dataset_v1.json",
+    "description": "AI Power Index scoring scaffold derived from Four Forces exposures"
+  },
+  "scores": [
+    {
+      "entity_name": "NVIDIA",
+      "compute_exposure": 10,
+      "interface_exposure": 9,
+      "alignment_exposure": 7,
+      "energy_exposure": 8,
+      "ai_power_index": 8.6
+    },
+    {
+      "entity_name": "AMD",
+      "compute_exposure": 9,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 7,
+      "ai_power_index": 7.35
+    },
+    {
+      "entity_name": "Intel",
+      "compute_exposure": 8,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 7,
+      "ai_power_index": 6.55
+    },
+    {
+      "entity_name": "TSMC",
+      "compute_exposure": 10,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 10,
+      "ai_power_index": 7.25
+    },
+    {
+      "entity_name": "Samsung Electronics",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "SK Hynix",
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 6.0
+    },
+    {
+      "entity_name": "Micron Technology",
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 6.0
+    },
+    {
+      "entity_name": "ASML",
+      "compute_exposure": 9,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 6.3
+    },
+    {
+      "entity_name": "Applied Materials",
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
+    },
+    {
+      "entity_name": "Lam Research",
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
+    },
+    {
+      "entity_name": "KLA",
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
+    },
+    {
+      "entity_name": "Tokyo Electron",
+      "compute_exposure": 8,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 7,
+      "ai_power_index": 5.8
+    },
+    {
+      "entity_name": "Broadcom",
+      "compute_exposure": 8,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 6,
+      "ai_power_index": 6.35
+    },
+    {
+      "entity_name": "Marvell Technology",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Qualcomm",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Arm Holdings",
+      "compute_exposure": 8,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 5,
+      "ai_power_index": 6.65
+    },
+    {
+      "entity_name": "Cadence Design Systems",
+      "compute_exposure": 7,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 4,
+      "ai_power_index": 5.65
+    },
+    {
+      "entity_name": "Synopsys",
+      "compute_exposure": 8,
+      "interface_exposure": 6,
+      "alignment_exposure": 5,
+      "energy_exposure": 4,
+      "ai_power_index": 5.95
+    },
+    {
+      "entity_name": "GlobalFoundries",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "SMIC",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Amazon",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Microsoft",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Google",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Oracle",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Alibaba",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Tencent",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Baidu",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Huawei",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "CoreWeave",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Lambda Labs",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "OpenAI",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Anthropic",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "DeepMind",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Meta",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Apple",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "ByteDance",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Salesforce",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Adobe",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "ServiceNow",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Snowflake",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Databricks",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Palantir",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Zoom",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Shopify",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Stripe",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "NIST",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Partnership on AI",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "OECD AI Policy Observatory",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "EU AI Office",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "UK AI Safety Institute",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Stanford HAI",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "MIT CSAIL",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "OpenAI (Alignment Research)",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Anthropic (Constitutional AI)",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "DeepMind Safety",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "NextEra Energy",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Constellation Energy",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Duke Energy",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Southern Company",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Dominion Energy",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Vistra",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Exelon",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "GE Vernova",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Siemens Energy",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Schneider Electric",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "ABB",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Eaton",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Rockwell Automation",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Vertiv",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Bloom Energy",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Plug Power",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "NuScale Power",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Oklo",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "TerraPower",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Arista Networks",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Cisco",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Juniper Networks",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Supermicro",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Dell Technologies",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Hewlett Packard Enterprise",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Equinix",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Digital Realty",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Cloudflare",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": "Fastly",
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    }
+  ]
+}
