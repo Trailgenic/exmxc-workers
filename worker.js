@@ -142,6 +142,7 @@ if (url.pathname === "/speg") {
           { tool: "ex.eci.get", description: "Retrieve Entity Clarity Index data and analysis." },
           { tool: "ex.speg.get", description: "Retrieve sPEG indices and valuation intelligence." },
           { tool: "ex.speg.index.get", description: "Retrieve sPEG valuation index and AI infrastructure scarcity layers." },
+          { tool: "ex.ai_power_index.get", description: "Retrieve the AI Power Index dataset ranking global AI ecosystem entities across compute, interface, alignment, and energy." },
           { tool: "ex.capital.get", description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence." },
 
           { tool: "ex.doctrine.get", description: "Retrieve institutional doctrine and operating principles." },
@@ -244,6 +245,7 @@ if (url.pathname === "/speg") {
           { id: "ex.lexicon.get", endpoint: "https://exmxc.ai/lexicon" },
           { id: "ex.eci.get", endpoint: "https://exmxc.ai/entity-clarity-index" },
           { id: "ex.speg.get", endpoint: "https://exmxc.ai/speg-indices" },
+          { id: "ex.ai_power_index.get", endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index" },
 
           {
             id: "ex.capital.get",
@@ -302,6 +304,14 @@ if (url.pathname === "/speg") {
 
           "/capital": {
             get: { summary: "Retrieve Applied Capital Architecture doctrine" }
+          },
+
+          "/datasets/ai_power_index": {
+            get: { summary: "Retrieve AI Power Index dataset" }
+          },
+
+          "/datasets/ai_power_index/schema": {
+            get: { summary: "Retrieve AI Power Index dataset schema" }
           },
 
           "/doctrine": { get: { summary: "Retrieve doctrine" } }
@@ -446,6 +456,68 @@ if (url.pathname === "/entities") {
   }
 
   return new Response(JSON.stringify(results, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
+
+/*
+============================================
+AI POWER INDEX DATASET
+============================================
+*/
+
+if (url.pathname === "/datasets/ai_power_index") {
+
+  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/ai_power_index_dataset_v1.json");
+
+  if (!response.ok) {
+    return new Response(JSON.stringify({
+      error: "dataset fetch failed",
+      status: response.status
+    }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+
+  const dataset = await response.json();
+
+  return new Response(JSON.stringify(dataset, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600"
+    }
+  });
+}
+
+/*
+============================================
+AI POWER INDEX DATASET SCHEMA
+============================================
+*/
+
+if (url.pathname === "/datasets/ai_power_index/schema") {
+
+  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/four_forces_dataset_v1.json");
+
+  if (!response.ok) {
+    return new Response(JSON.stringify({
+      error: "dataset fetch failed",
+      status: response.status
+    }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+
+  const schema = await response.json();
+
+  return new Response(JSON.stringify(schema, null, 2), {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
