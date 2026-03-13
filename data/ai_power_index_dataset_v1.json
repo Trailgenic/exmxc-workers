@@ -40,11 +40,11 @@
     },
     {
       "entity_name": "Samsung Electronics",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "SK Hynix",
@@ -112,19 +112,19 @@
     },
     {
       "entity_name": "Marvell Technology",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Qualcomm",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Arm Holdings",
@@ -152,19 +152,19 @@
     },
     {
       "entity_name": "GlobalFoundries",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "SMIC",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Amazon",
@@ -232,19 +232,19 @@
     },
     {
       "entity_name": "CoreWeave",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Lambda Labs",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "OpenAI",
@@ -264,11 +264,11 @@
     },
     {
       "entity_name": "DeepMind",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Meta",
@@ -344,11 +344,11 @@
     },
     {
       "entity_name": "Zoom",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Shopify",
@@ -368,83 +368,83 @@
     },
     {
       "entity_name": "NIST",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Partnership on AI",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "OECD AI Policy Observatory",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "EU AI Office",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "UK AI Safety Institute",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Stanford HAI",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "MIT CSAIL",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "OpenAI (Alignment Research)",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Anthropic (Constitutional AI)",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "DeepMind Safety",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "NextEra Energy",
@@ -480,11 +480,11 @@
     },
     {
       "entity_name": "Dominion Energy",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Vistra",
@@ -496,27 +496,27 @@
     },
     {
       "entity_name": "Exelon",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "GE Vernova",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Siemens Energy",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Schneider Electric",
@@ -536,19 +536,19 @@
     },
     {
       "entity_name": "Eaton",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Rockwell Automation",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Vertiv",
@@ -560,43 +560,43 @@
     },
     {
       "entity_name": "Bloom Energy",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Plug Power",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "NuScale Power",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Oklo",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "TerraPower",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 5,
+      "alignment_exposure": 5,
+      "energy_exposure": 5,
+      "ai_power_index": 5.0
     },
     {
       "entity_name": "Arista Networks",
