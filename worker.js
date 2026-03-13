@@ -1,3 +1,6 @@
+import { fetchJsonOrError, jsonResponse } from "./lib/http.js";
+import { datasetRegistry } from "./lib/dataset-registry.js";
+
 export default {
   async fetch(request) {
 
@@ -67,19 +70,10 @@ sPEG INDEX DATASET
 
 if (url.pathname === "/speg") {
 
-  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/speg_index.json");
-
-  if (!response.ok) {
-    return new Response(JSON.stringify({
-      error: "dataset fetch failed",
-      status: response.status
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
+  const dataset = await fetchJsonOrError(datasetRegistry.speg.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
   }
-
-  const dataset = await response.json();
 
   const sector = url.searchParams.get("sector");
   const scarcity_layer = url.searchParams.get("scarcity_layer");
@@ -99,13 +93,7 @@ if (url.pathname === "/speg") {
     results = results.filter(e => e.ticker?.toLowerCase() === ticker.toLowerCase());
   }
 
-  return new Response(JSON.stringify(results, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(results);
 }
     /*
     ============================================
@@ -424,19 +412,10 @@ ENTITY INTELLIGENCE DATASET
 
 if (url.pathname === "/entities") {
 
-  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/entities.json");
-
-  if (!response.ok) {
-    return new Response(JSON.stringify({
-      error: "dataset fetch failed",
-      status: response.status
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
+  const dataset = await fetchJsonOrError(datasetRegistry.entities.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
   }
-
-  const dataset = await response.json();
 
   // Support both structures just in case
   const entities =
@@ -467,13 +446,7 @@ if (url.pathname === "/entities") {
     results = results.filter(e => e.capability?.toLowerCase() === capability.toLowerCase());
   }
 
-  return new Response(JSON.stringify(results, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(results);
 }
 
 /*
@@ -484,6 +457,71 @@ AI POWER INDEX DATASET
 
 
 if (url.pathname === "/datasets/ai_power_index") {
+
+  const dataset = await fetchJsonOrError(datasetRegistry.ai_power_index.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
+  }
+
+  return jsonResponse(dataset);
+}
+
+/*
+============================================
+AI POWER INDEX DATASET SCHEMA
+============================================
+*/
+
+if (url.pathname === "/datasets/ai_power_index/schema") {
+
+  const schema = await fetchJsonOrError(datasetRegistry.ai_power_index.schemaUrl);
+  if (schema instanceof Response) {
+    return schema;
+  }
+
+  return jsonResponse(schema);
+}
+
+/*
+============================================
+DATASET INDEX
+============================================
+*/
+
+if (url.pathname === "/datasets") {
+
+  const datasets = Object.values(datasetRegistry).map((dataset) => ({
+    name:
+      dataset.id === "entities"
+        ? "Entity Intelligence Dataset"
+        : dataset.id === "speg"
+          ? "sPEG Valuation Dataset"
+          : "AI Power Index",
+    endpoint: `https://mcp.exmxc.ai${dataset.route}`,
+    description: dataset.description
+  }));
+
+  const datasetIndex = {
+    dataset_index_version: "1.0",
+    entity: {
+      name: "exmxc",
+      domain: "https://exmxc.ai"
+    },
+    datasets,
+    status: "active",
+    last_updated: new Date().toISOString()
+  };
+
+  return jsonResponse(datasetIndex);
+}
+
+/*
+============================================
+AI POWER TOP ANALYSIS
+============================================
+*/
+
+if (url.pathname === "/analysis/ai_power/top") {
 
   const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/ai_power_index_dataset_v1.json");
 
@@ -499,7 +537,29 @@ if (url.pathname === "/datasets/ai_power_index") {
 
   const dataset = await response.json();
 
-  return new Response(JSON.stringify(dataset, null, 2), {
+  const records =
+    Array.isArray(dataset)
+      ? dataset
+      : dataset.scores || dataset.entities || dataset.rows || [];
+
+  const sorted = [...records].sort((a, b) => {
+    const av = Number(a?.ai_power_index ?? -Infinity);
+    const bv = Number(b?.ai_power_index ?? -Infinity);
+    return bv - av;
+  });
+
+  const limitParam = parseInt(url.searchParams.get("limit") || "10", 10);
+  const limit = Number.isFinite(limitParam) && limitParam > 0 ? limitParam : 10;
+
+  const results = sorted.slice(0, limit);
+
+  return new Response(JSON.stringify({
+    analysis: "AI Power Top Entities",
+    limit,
+    results,
+    source_dataset: "ai_power_index_dataset_v1",
+    generated_at: new Date().toISOString()
+  }, null, 2), {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
@@ -508,38 +568,6 @@ if (url.pathname === "/datasets/ai_power_index") {
   });
 }
 
-/*
-============================================
-AI POWER INDEX DATASET SCHEMA
-============================================
-*/
-
-if (url.pathname === "/datasets/ai_power_index/schema") {
-
-  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/four_forces_dataset_v1.json");
-
-  if (!response.ok) {
-    return new Response(JSON.stringify({
-      error: "dataset fetch failed",
-      status: response.status
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
-  }
-
-  const schema = await response.json();
-
-  return new Response(JSON.stringify(schema, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
-
-/*
 /*
 ============================================
 SCHEMA
@@ -548,16 +576,12 @@ SCHEMA
 
 if (url.pathname === "/schema") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/schema.json");
-  const schema = await data.json();
+  const schema = await fetchJsonOrError("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/schema.json");
+  if (schema instanceof Response) {
+    return schema;
+  }
 
-  return new Response(JSON.stringify(schema, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(schema);
 }
 
 /*
@@ -568,16 +592,12 @@ DEFINITIONS
 
 if (url.pathname === "/definitions") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/definitions.json");
-  const definitions = await data.json();
+  const definitions = await fetchJsonOrError("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/definitions.json");
+  if (definitions instanceof Response) {
+    return definitions;
+  }
 
-  return new Response(JSON.stringify(definitions, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(definitions);
 }
 
 /*
@@ -588,16 +608,12 @@ INDEX
 
 if (url.pathname === "/index") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/index.json");
-  const index = await data.json();
+  const index = await fetchJsonOrError("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/index.json");
+  if (index instanceof Response) {
+    return index;
+  }
 
-  return new Response(JSON.stringify(index, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(index);
 }
 
 /*
