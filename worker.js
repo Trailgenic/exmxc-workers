@@ -534,48 +534,6 @@ if (url.pathname === "/datasets/ai_power_index/schema") {
 }
 
 /*
-============================================
-DATASET INDEX
-============================================
-*/
-
-if (url.pathname === "/datasets") {
-
-  const datasetIndex = {
-    dataset_index_version: "1.0",
-    entity: {
-      name: "exmxc",
-      domain: "https://exmxc.ai"
-    },
-    datasets: [
-      {
-        name: "Entity Intelligence Dataset",
-        endpoint: "https://mcp.exmxc.ai/entities",
-        description: "Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring."
-      },
-      {
-        name: "sPEG Valuation Dataset",
-        endpoint: "https://mcp.exmxc.ai/speg",
-        description: "Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies."
-      },
-      {
-        name: "AI Power Index",
-        endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index",
-        description: "Global AI ecosystem ranking dataset measuring compute, interface, alignment, and energy influence."
-      }
-    ],
-    status: "active",
-    last_updated: new Date().toISOString()
-  };
-
-  return new Response(JSON.stringify(datasetIndex, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
-}
 /*
 ============================================
 SCHEMA
