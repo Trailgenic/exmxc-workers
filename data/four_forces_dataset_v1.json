@@ -393,31 +393,31 @@
     },
     {
       "entity_name": "NextEra Energy",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 4,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 10
     },
     {
       "entity_name": "Constellation Energy",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 4,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 10
     },
     {
       "entity_name": "Duke Energy",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 3,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 9
     },
     {
       "entity_name": "Southern Company",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 3,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 9
     },
     {
       "entity_name": "Dominion Energy",
@@ -428,10 +428,10 @@
     },
     {
       "entity_name": "Vistra",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 4,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 9
     },
     {
       "entity_name": "Exelon",
@@ -526,24 +526,24 @@
     },
     {
       "entity_name": "Arista Networks",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Cisco",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Juniper Networks",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 7,
+      "alignment_exposure": 4,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Supermicro",
@@ -582,17 +582,17 @@
     },
     {
       "entity_name": "Cloudflare",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Fastly",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 5,
+      "interface_exposure": 7,
+      "alignment_exposure": 4,
+      "energy_exposure": 5
     }
   ]
 }
