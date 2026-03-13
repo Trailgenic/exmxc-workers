@@ -148,59 +148,59 @@
     },
     {
       "entity_name": "Amazon",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 9,
+      "interface_exposure": 9,
+      "alignment_exposure": 7,
+      "energy_exposure": 8
     },
     {
       "entity_name": "Microsoft",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 9,
+      "interface_exposure": 9,
+      "alignment_exposure": 8,
+      "energy_exposure": 8
     },
     {
       "entity_name": "Google",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 9,
+      "interface_exposure": 9,
+      "alignment_exposure": 8,
+      "energy_exposure": 8
     },
     {
       "entity_name": "Oracle",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 7,
+      "alignment_exposure": 5,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Alibaba",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 8,
+      "interface_exposure": 8,
+      "alignment_exposure": 6,
+      "energy_exposure": 7
     },
     {
       "entity_name": "Tencent",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 8,
+      "alignment_exposure": 6,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Baidu",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Huawei",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 8,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 7
     },
     {
       "entity_name": "CoreWeave",
