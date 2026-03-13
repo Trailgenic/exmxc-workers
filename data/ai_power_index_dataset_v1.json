@@ -248,19 +248,19 @@
     },
     {
       "entity_name": "OpenAI",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 9,
+      "interface_exposure": 10,
+      "alignment_exposure": 9,
+      "energy_exposure": 7,
+      "ai_power_index": 8.85
     },
     {
       "entity_name": "Anthropic",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 8,
+      "alignment_exposure": 9,
+      "energy_exposure": 6,
+      "ai_power_index": 7.85
     },
     {
       "entity_name": "DeepMind",
@@ -272,27 +272,27 @@
     },
     {
       "entity_name": "Meta",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 8,
+      "interface_exposure": 9,
+      "alignment_exposure": 6,
+      "energy_exposure": 7,
+      "ai_power_index": 7.55
     },
     {
       "entity_name": "Apple",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 7,
+      "interface_exposure": 9,
+      "alignment_exposure": 6,
+      "energy_exposure": 6,
+      "ai_power_index": 7.05
     },
     {
       "entity_name": "ByteDance",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 7,
+      "interface_exposure": 9,
+      "alignment_exposure": 5,
+      "energy_exposure": 6,
+      "ai_power_index": 6.8
     },
     {
       "entity_name": "Salesforce",
