@@ -1,0 +1,8 @@
+{
+  "dataset": "ai_power_universe_v1",
+  "version": "1.0",
+  "metadata": {
+    "description": "Subset of entities from entity_dataset_v1 participating in the exmxc AI Power model"
+  },
+  "entities": []
+}
