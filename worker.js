@@ -523,19 +523,10 @@ AI POWER TOP ANALYSIS
 
 if (url.pathname === "/analysis/ai_power/top") {
 
-  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/ai_power_index_dataset_v1.json");
-
-  if (!response.ok) {
-    return new Response(JSON.stringify({
-      error: "dataset fetch failed",
-      status: response.status
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
+  const dataset = await fetchJsonOrError(datasetRegistry.ai_power_index.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
   }
-
-  const dataset = await response.json();
 
   const records =
     Array.isArray(dataset)
@@ -553,18 +544,12 @@ if (url.pathname === "/analysis/ai_power/top") {
 
   const results = sorted.slice(0, limit);
 
-  return new Response(JSON.stringify({
+  return jsonResponse({
     analysis: "AI Power Top Entities",
     limit,
     results,
     source_dataset: "ai_power_index_dataset_v1",
     generated_at: new Date().toISOString()
-  }, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
   });
 }
 
