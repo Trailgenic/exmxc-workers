@@ -456,17 +456,17 @@
     },
     {
       "entity_name": "Schneider Electric",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 5,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 9
     },
     {
       "entity_name": "ABB",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 4,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 8
     },
     {
       "entity_name": "Eaton",
@@ -484,10 +484,10 @@
     },
     {
       "entity_name": "Vertiv",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 5,
+      "interface_exposure": 4,
+      "alignment_exposure": 3,
+      "energy_exposure": 9
     },
     {
       "entity_name": "Bloom Energy",
@@ -568,17 +568,17 @@
     },
     {
       "entity_name": "Equinix",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 8
     },
     {
       "entity_name": "Digital Realty",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 8
     },
     {
       "entity_name": "Cloudflare",

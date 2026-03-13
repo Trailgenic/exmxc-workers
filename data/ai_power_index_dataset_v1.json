@@ -520,19 +520,19 @@
     },
     {
       "entity_name": "Schneider Electric",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 4,
+      "alignment_exposure": 4,
+      "energy_exposure": 9,
+      "ai_power_index": 5.3
     },
     {
       "entity_name": "ABB",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 4,
+      "interface_exposure": 3,
+      "alignment_exposure": 3,
+      "energy_exposure": 8,
+      "ai_power_index": 4.3
     },
     {
       "entity_name": "Eaton",
@@ -552,11 +552,11 @@
     },
     {
       "entity_name": "Vertiv",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 5,
+      "interface_exposure": 4,
+      "alignment_exposure": 3,
+      "energy_exposure": 9,
+      "ai_power_index": 5.05
     },
     {
       "entity_name": "Bloom Energy",
@@ -648,19 +648,19 @@
     },
     {
       "entity_name": "Equinix",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 6,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 5.65
     },
     {
       "entity_name": "Digital Realty",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null,
-      "ai_power_index": null
+      "compute_exposure": 6,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 8,
+      "ai_power_index": 5.65
     },
     {
       "entity_name": "Cloudflare",
