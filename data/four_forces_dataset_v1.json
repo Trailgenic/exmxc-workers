@@ -260,45 +260,45 @@
     },
     {
       "entity_name": "Salesforce",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Adobe",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 5,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 4
     },
     {
       "entity_name": "ServiceNow",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 7,
+      "alignment_exposure": 5,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Snowflake",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Databricks",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 8,
+      "alignment_exposure": 6,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Palantir",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 7,
+      "alignment_exposure": 6,
+      "energy_exposure": 5
     },
     {
       "entity_name": "Zoom",
@@ -309,17 +309,17 @@
     },
     {
       "entity_name": "Shopify",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 5,
+      "interface_exposure": 8,
+      "alignment_exposure": 4,
+      "energy_exposure": 4
     },
     {
       "entity_name": "Stripe",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 5,
+      "interface_exposure": 8,
+      "alignment_exposure": 5,
+      "energy_exposure": 4
     },
     {
       "entity_name": "NIST",
@@ -547,24 +547,24 @@
     },
     {
       "entity_name": "Supermicro",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 7,
+      "interface_exposure": 5,
+      "alignment_exposure": 4,
+      "energy_exposure": 7
     },
     {
       "entity_name": "Dell Technologies",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 6,
+      "alignment_exposure": 4,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Hewlett Packard Enterprise",
-      "compute_exposure": null,
-      "interface_exposure": null,
-      "alignment_exposure": null,
-      "energy_exposure": null
+      "compute_exposure": 6,
+      "interface_exposure": 6,
+      "alignment_exposure": 4,
+      "energy_exposure": 6
     },
     {
       "entity_name": "Equinix",
