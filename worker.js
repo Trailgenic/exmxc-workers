@@ -142,6 +142,7 @@ if (url.pathname === "/speg") {
           { tool: "ex.eci.get", description: "Retrieve Entity Clarity Index data and analysis." },
           { tool: "ex.speg.get", description: "Retrieve sPEG indices and valuation intelligence." },
           { tool: "ex.speg.index.get", description: "Retrieve sPEG valuation index and AI infrastructure scarcity layers." },
+          { tool: "ex.datasets.index.get", description: "Retrieve index of all datasets available through the exmxc MCP node." },
           { tool: "ex.ai_power_index.get", description: "Retrieve the AI Power Index dataset ranking global AI ecosystem entities across compute, interface, alignment, and energy." },
           { tool: "ex.capital.get", description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence." },
 
@@ -245,6 +246,7 @@ if (url.pathname === "/speg") {
           { id: "ex.lexicon.get", endpoint: "https://exmxc.ai/lexicon" },
           { id: "ex.eci.get", endpoint: "https://exmxc.ai/entity-clarity-index" },
           { id: "ex.speg.get", endpoint: "https://exmxc.ai/speg-indices" },
+          { id: "ex.datasets.index.get", endpoint: "https://mcp.exmxc.ai/datasets" },
           { id: "ex.ai_power_index.get", endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index" },
 
           {
@@ -304,6 +306,10 @@ if (url.pathname === "/speg") {
 
           "/capital": {
             get: { summary: "Retrieve Applied Capital Architecture doctrine" }
+          },
+
+          "/datasets": {
+            get: { summary: "Retrieve dataset index for exmxc MCP node" }
           },
 
           "/datasets/ai_power_index": {
@@ -470,6 +476,7 @@ AI POWER INDEX DATASET
 ============================================
 */
 
+
 if (url.pathname === "/datasets/ai_power_index") {
 
   const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/ai_power_index_dataset_v1.json");
@@ -525,6 +532,8 @@ if (url.pathname === "/datasets/ai_power_index/schema") {
     }
   });
 }
+
+/*
 /*
 ============================================
 SCHEMA
