@@ -1,0 +1,5971 @@
+{
+  "dataset": "ai_power_index_dataset_v1",
+  "version": "1.0",
+  "metadata": {
+    "source_dataset": "data/four_forces_dataset_v1.json",
+    "exposure_count": 745,
+    "description": "AI Power Index scoring scaffold derived from Four Forces exposure dataset. Values initialized to null."
+  },
+  "scores": [
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    },
+    {
+      "entity_name": null,
+      "compute_exposure": null,
+      "interface_exposure": null,
+      "alignment_exposure": null,
+      "energy_exposure": null,
+      "ai_power_index": null
+    }
+  ]
+}
