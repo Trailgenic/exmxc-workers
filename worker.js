@@ -1,3 +1,6 @@
+import { fetchJsonOrError, jsonResponse } from "./lib/http.js";
+import { datasetRegistry } from "./lib/dataset-registry.js";
+
 export default {
   async fetch(request) {
 
@@ -67,19 +70,10 @@ sPEG INDEX DATASET
 
 if (url.pathname === "/speg") {
 
-  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/speg_index.json");
-
-  if (!response.ok) {
-    return new Response(JSON.stringify({
-      error: "dataset fetch failed",
-      status: response.status
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
+  const dataset = await fetchJsonOrError(datasetRegistry.speg.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
   }
-
-  const dataset = await response.json();
 
   const sector = url.searchParams.get("sector");
   const scarcity_layer = url.searchParams.get("scarcity_layer");
@@ -99,13 +93,7 @@ if (url.pathname === "/speg") {
     results = results.filter(e => e.ticker?.toLowerCase() === ticker.toLowerCase());
   }
 
-  return new Response(JSON.stringify(results, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(results);
 }
     /*
     ============================================
@@ -142,6 +130,9 @@ if (url.pathname === "/speg") {
           { tool: "ex.eci.get", description: "Retrieve Entity Clarity Index data and analysis." },
           { tool: "ex.speg.get", description: "Retrieve sPEG indices and valuation intelligence." },
           { tool: "ex.speg.index.get", description: "Retrieve sPEG valuation index and AI infrastructure scarcity layers." },
+          { tool: "ex.datasets.index.get", description: "Retrieve index of all datasets available through the exmxc MCP node." },
+          { tool: "ex.ai_power_index.get", description: "Retrieve the AI Power Index dataset ranking global AI ecosystem entities across compute, interface, alignment, and energy." },
+          { tool: "ex.ai_power.analysis.top", description: "Retrieve top entities from the AI Power Index ranking." },
           { tool: "ex.capital.get", description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence." },
 
           { tool: "ex.doctrine.get", description: "Retrieve institutional doctrine and operating principles." },
@@ -244,6 +235,9 @@ if (url.pathname === "/speg") {
           { id: "ex.lexicon.get", endpoint: "https://exmxc.ai/lexicon" },
           { id: "ex.eci.get", endpoint: "https://exmxc.ai/entity-clarity-index" },
           { id: "ex.speg.get", endpoint: "https://exmxc.ai/speg-indices" },
+          { id: "ex.datasets.index.get", endpoint: "https://mcp.exmxc.ai/datasets" },
+          { id: "ex.ai_power_index.get", endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index" },
+          { id: "ex.ai_power.analysis.top", endpoint: "https://mcp.exmxc.ai/analysis/ai_power/top" },
 
           {
             id: "ex.capital.get",
@@ -303,6 +297,22 @@ if (url.pathname === "/speg") {
           "/capital": {
             get: { summary: "Retrieve Applied Capital Architecture doctrine" }
           },
+
+          "/datasets": {
+            get: { summary: "Retrieve dataset index for exmxc MCP node" }
+          },
+
+          "/datasets/ai_power_index": {
+            get: { summary: "Retrieve AI Power Index dataset" }
+          },
+
+          "/datasets/ai_power_index/schema": {
+            get: { summary: "Retrieve AI Power Index dataset schema" }
+          },
+          "/analysis/ai_power/top": {
+            get: { summary: "Retrieve top entities from the AI Power Index" }
+          },
+
 
           "/doctrine": { get: { summary: "Retrieve doctrine" } }
 
@@ -402,19 +412,10 @@ ENTITY INTELLIGENCE DATASET
 
 if (url.pathname === "/entities") {
 
-  const response = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/data/entities.json");
-
-  if (!response.ok) {
-    return new Response(JSON.stringify({
-      error: "dataset fetch failed",
-      status: response.status
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
-    });
+  const dataset = await fetchJsonOrError(datasetRegistry.entities.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
   }
-
-  const dataset = await response.json();
 
   // Support both structures just in case
   const entities =
@@ -445,14 +446,318 @@ if (url.pathname === "/entities") {
     results = results.filter(e => e.capability?.toLowerCase() === capability.toLowerCase());
   }
 
-  return new Response(JSON.stringify(results, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
+  return jsonResponse(results);
+}
+
+/*
+============================================
+AI POWER INDEX DATASET
+============================================
+*/
+
+
+if (url.pathname === "/datasets/ai_power_index") {
+
+  const dataset = await fetchJsonOrError(datasetRegistry.ai_power_index.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
+  }
+
+  return jsonResponse(dataset);
+}
+
+/*
+============================================
+AI POWER INDEX DATASET SCHEMA
+============================================
+*/
+
+if (url.pathname === "/datasets/ai_power_index/schema") {
+
+  const schema = await fetchJsonOrError(datasetRegistry.ai_power_index.schemaUrl);
+  if (schema instanceof Response) {
+    return schema;
+  }
+
+  return jsonResponse(schema);
+}
+
+/*
+============================================
+DATASET INDEX
+============================================
+*/
+
+if (url.pathname === "/datasets") {
+
+  const datasets = Object.values(datasetRegistry).map((dataset) => ({
+    name:
+      dataset.id === "entities"
+        ? "Entity Intelligence Dataset"
+        : dataset.id === "speg"
+          ? "sPEG Valuation Dataset"
+          : "AI Power Index",
+    endpoint: `https://mcp.exmxc.ai${dataset.route}`,
+    description: dataset.description
+  }));
+
+  const datasetIndex = {
+    dataset_index_version: "1.0",
+    entity: {
+      name: "exmxc",
+      domain: "https://exmxc.ai"
+    },
+    datasets,
+    status: "active",
+    last_updated: new Date().toISOString()
+  };
+
+  return jsonResponse(datasetIndex);
+}
+
+/*
+============================================
+AI POWER TOP ANALYSIS
+============================================
+*/
+
+if (url.pathname === "/analysis/ai_power/top") {
+
+  const dataset = await fetchJsonOrError(datasetRegistry.ai_power_index.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
+  }
+
+  const records =
+    Array.isArray(dataset)
+      ? dataset
+      : dataset.scores || dataset.entities || dataset.rows || [];
+
+  const sorted = [...records].sort((a, b) => {
+    const av = Number(a?.ai_power_index ?? -Infinity);
+    const bv = Number(b?.ai_power_index ?? -Infinity);
+    return bv - av;
+  });
+
+  const limitParam = parseInt(url.searchParams.get("limit") || "10", 10);
+  const limit = Number.isFinite(limitParam) && limitParam > 0 ? limitParam : 10;
+
+  const results = sorted.slice(0, limit);
+
+  return jsonResponse({
+    analysis: "AI Power Top Entities",
+    limit,
+    results,
+    source_dataset: "ai_power_index_dataset_v1",
+    generated_at: new Date().toISOString()
   });
 }
+
+/*
+============================================
+GRAPH INTERSECTION
+============================================
+*/
+
+if (url.pathname === "/graph/intersection") {
+
+  const datasetsParam = url.searchParams.get("datasets") || "";
+  const datasetsUsed = datasetsParam
+    .split(",")
+    .map((d) => d.trim())
+    .filter(Boolean);
+
+  if (datasetsUsed.length < 2) {
+    return jsonResponse({
+      error: "at least two datasets are required",
+      query: { datasets: datasetsUsed }
+    });
+  }
+
+  const supported = ["entities", "speg", "ai_power_index"];
+  const invalid = datasetsUsed.filter((d) => !supported.includes(d));
+
+  if (invalid.length > 0) {
+    return jsonResponse({
+      error: "unsupported datasets requested",
+      invalid,
+      supported,
+      query: { datasets: datasetsUsed }
+    });
+  }
+
+  function extractRecords(dataset) {
+    if (Array.isArray(dataset)) return dataset;
+    return dataset.scores || dataset.entities || dataset.rows || dataset.data?.entities || [];
+  }
+
+  function recordToKey(record) {
+    const ticker = (record.ticker || "").trim();
+    if (ticker) return { key: ticker.toLowerCase(), company: record.company || record.entity_name || record.name || null, ticker };
+
+    const name = (record.company || record.entity_name || record.name || "").trim();
+    if (!name) return null;
+    return { key: name.toLowerCase(), company: name, ticker: null };
+  }
+
+  const datasetMaps = {};
+
+  for (const datasetId of datasetsUsed) {
+    const dataset = await fetchJsonOrError(datasetRegistry[datasetId].rawUrl);
+    if (dataset instanceof Response) {
+      return dataset;
+    }
+
+    const records = extractRecords(dataset);
+    const map = new Map();
+
+    for (const record of records) {
+      const entry = recordToKey(record || {});
+      if (!entry) continue;
+      if (!map.has(entry.key)) {
+        map.set(entry.key, {
+          company: entry.company,
+          ticker: entry.ticker
+        });
+      }
+    }
+
+    datasetMaps[datasetId] = map;
+  }
+
+  const [firstId, ...restIds] = datasetsUsed;
+  const intersectionKeys = [...datasetMaps[firstId].keys()].filter((key) =>
+    restIds.every((datasetId) => datasetMaps[datasetId].has(key))
+  );
+
+  const entities = intersectionKeys
+    .map((key) => {
+      const first = datasetMaps[firstId].get(key);
+      return {
+        company: first?.company || null,
+        ticker: first?.ticker || null
+      };
+    })
+    .sort((a, b) => (a.company || "").localeCompare(b.company || ""));
+
+  return jsonResponse({
+    query: {
+      datasets: datasetsUsed
+    },
+    intersection_count: entities.length,
+    entities,
+    datasets_used: datasetsUsed,
+    generated_at: new Date().toISOString()
+  });
+}
+
+/*
+============================================
+ENTITY INTELLIGENCE GRAPH
+============================================
+*/
+
+if (url.pathname === "/graph/entity") {
+
+  const companyQuery = url.searchParams.get("company");
+  const tickerQuery = url.searchParams.get("ticker");
+
+  const entitiesDataset = await fetchJsonOrError(datasetRegistry.entities.rawUrl);
+  if (entitiesDataset instanceof Response) {
+    return entitiesDataset;
+  }
+
+  const spegDataset = await fetchJsonOrError(datasetRegistry.speg.rawUrl);
+  if (spegDataset instanceof Response) {
+    return spegDataset;
+  }
+
+  const aiPowerDataset = await fetchJsonOrError(datasetRegistry.ai_power_index.rawUrl);
+  if (aiPowerDataset instanceof Response) {
+    return aiPowerDataset;
+  }
+
+  const entities =
+    Array.isArray(entitiesDataset)
+      ? entitiesDataset
+      : entitiesDataset.entities || entitiesDataset.data?.entities || [];
+
+  const spegRows = Array.isArray(spegDataset) ? spegDataset : spegDataset.rows || [];
+  const aiPowerRows =
+    Array.isArray(aiPowerDataset)
+      ? aiPowerDataset
+      : aiPowerDataset.scores || aiPowerDataset.entities || aiPowerDataset.rows || [];
+
+  const companyNeedle = (companyQuery || "").toLowerCase();
+  const tickerNeedle = (tickerQuery || "").toLowerCase();
+
+  const spegMatch = spegRows.find((row) => {
+    const companyOk = companyNeedle && row.company?.toLowerCase() === companyNeedle;
+    const tickerOk = tickerNeedle && row.ticker?.toLowerCase() === tickerNeedle;
+    return companyOk || tickerOk;
+  });
+
+  const entitiesMatch = entities.find((row) => {
+    const companyOk = companyNeedle && row.company?.toLowerCase() === companyNeedle;
+    const tickerOk = tickerNeedle && row.ticker?.toLowerCase() === tickerNeedle;
+    return companyOk || tickerOk;
+  });
+
+  const inferredCompany =
+    companyQuery ||
+    spegMatch?.company ||
+    entitiesMatch?.company ||
+    null;
+
+  const aiPowerMatch = aiPowerRows.find((row) => {
+    const name = (row.entity_name || row.company || "").toLowerCase();
+    return inferredCompany ? name === inferredCompany.toLowerCase() : false;
+  });
+
+  const entityProfile = {
+    entity: inferredCompany || aiPowerMatch?.entity_name || null,
+    ticker: tickerQuery || spegMatch?.ticker || entitiesMatch?.ticker || null,
+    sector: spegMatch?.sector || null,
+    industry: entitiesMatch?.industry || null,
+    ai_power: aiPowerMatch
+      ? {
+          ai_power_index: aiPowerMatch.ai_power_index ?? null,
+          compute_exposure: aiPowerMatch.compute_exposure ?? null,
+          interface_exposure: aiPowerMatch.interface_exposure ?? null,
+          alignment_exposure: aiPowerMatch.alignment_exposure ?? null,
+          energy_exposure: aiPowerMatch.energy_exposure ?? null
+        }
+      : null,
+    speg: spegMatch
+      ? {
+          sector: spegMatch.sector ?? null,
+          speg: spegMatch.speg ?? null,
+          scarcity_layer: spegMatch.scarcity_layer ?? null,
+          ticker: spegMatch.ticker ?? null
+        }
+      : null,
+    entity_clarity: entitiesMatch
+      ? {
+          company: entitiesMatch.company ?? null,
+          industry: entitiesMatch.industry ?? null,
+          entity_type: entitiesMatch.entity_type ?? null,
+          posture: entitiesMatch.posture ?? null,
+          capability: entitiesMatch.capability ?? null,
+          ecc: entitiesMatch.ecc ?? null
+        }
+      : null
+  };
+
+  return jsonResponse({
+    query: {
+      company: companyQuery || null,
+      ticker: tickerQuery || null
+    },
+    entity_profile: entityProfile,
+    datasets_used: ["entities", "speg", "ai_power_index"]
+  });
+}
+
 /*
 ============================================
 SCHEMA
@@ -461,16 +766,12 @@ SCHEMA
 
 if (url.pathname === "/schema") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/schema.json");
-  const schema = await data.json();
+  const schema = await fetchJsonOrError("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/schema.json");
+  if (schema instanceof Response) {
+    return schema;
+  }
 
-  return new Response(JSON.stringify(schema, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(schema);
 }
 
 /*
@@ -481,16 +782,12 @@ DEFINITIONS
 
 if (url.pathname === "/definitions") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/definitions.json");
-  const definitions = await data.json();
+  const definitions = await fetchJsonOrError("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/schema/definitions.json");
+  if (definitions instanceof Response) {
+    return definitions;
+  }
 
-  return new Response(JSON.stringify(definitions, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(definitions);
 }
 
 /*
@@ -501,16 +798,12 @@ INDEX
 
 if (url.pathname === "/index") {
 
-  const data = await fetch("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/index.json");
-  const index = await data.json();
+  const index = await fetchJsonOrError("https://raw.githubusercontent.com/Trailgenic/exmxc-workers/main/index.json");
+  if (index instanceof Response) {
+    return index;
+  }
 
-  return new Response(JSON.stringify(index, null, 2), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=3600"
-    }
-  });
+  return jsonResponse(index);
 }
 
 /*
