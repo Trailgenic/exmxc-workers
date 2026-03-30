@@ -1,8 +1,10 @@
 import { fetchJsonOrError, jsonResponse } from "./lib/http.js";
 import { datasetRegistry } from "./lib/dataset-registry.js";
+import { classifyPostings, computeADS } from "./lib/ads-classifier.js";
+import baseline from "./data/ads-baseline.json" assert { type: "json" };
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
 
     const url = new URL(request.url);
 
@@ -649,6 +651,107 @@ if (url.pathname === "/.well-known/ai-plugin.json") {
   });
 }    
     
+
+if (url.pathname === '/api/ai-jobs-signal') {
+  const mode = url.searchParams.get('mode') || (url.searchParams.get('query') ? 'signal' : 'benchmark');
+  const query = url.searchParams.get('query') || 'agentic AI engineer';
+  const count = parseInt(url.searchParams.get('count') || '15', 10);
+
+  if (mode === 'benchmark') {
+    return jsonResponse({
+      tool: 'ai-jobs-signal',
+      version: '1.0',
+      mode: 'benchmark',
+      generated_at: new Date().toISOString(),
+      methodology: 'https://exmxc.ai/frameworks/ads',
+      data: baseline
+    });
+  }
+
+  try {
+    if (!env?.ANTHROPIC_API_KEY) {
+      return jsonResponse({
+        tool: 'ai-jobs-signal',
+        version: '1.0',
+        mode: 'signal',
+        error: 'missing ANTHROPIC_API_KEY binding'
+      });
+    }
+
+    const genRes = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: `You are a job market research assistant with deep knowledge
+of the US AI/ML hiring market as of early 2026. Generate realistic
+remote US AI job postings matching the search query.
+Return ONLY a valid JSON array, no markdown, no preamble:
+[{"posting_id":"synthetic-001","title":"string","company":"string",
+"location":"Remote","skills_raw":["skill1","skill2"],
+"posted_date":"2026-03","compensation":"$120,000 - $180,000"}]
+Base postings on real market patterns. Include realistic mix of
+seniority levels and company types.`,
+        messages: [{
+          role: 'user',
+          content: `Generate ${count} AI job postings for query: ${query}`
+        }]
+      })
+    });
+
+    if (!genRes.ok) {
+      return jsonResponse({
+        tool: 'ai-jobs-signal',
+        version: '1.0',
+        mode: 'signal',
+        error: 'failed to generate synthetic postings',
+        status: genRes.status
+      });
+    }
+
+    const generatedPayload = await genRes.json();
+    const generatedText = generatedPayload?.content?.[0]?.text || '[]';
+    const postings = JSON.parse(generatedText);
+
+    const normalizedPostings = Array.isArray(postings)
+      ? postings.map((posting, index) => ({
+        posting_id: posting?.posting_id || `synthetic-${String(index + 1).padStart(3, '0')}`,
+        title: posting?.title || '',
+        skills_raw: Array.isArray(posting?.skills_raw) ? posting.skills_raw : []
+      }))
+      : [];
+
+    const classified = await classifyPostings(normalizedPostings, env.ANTHROPIC_API_KEY);
+    const metrics = computeADS(classified, normalizedPostings.length, baseline.sample_size);
+
+    return jsonResponse({
+      tool: 'ai-jobs-signal',
+      version: '1.0',
+      mode: 'signal',
+      generated_at: new Date().toISOString(),
+      query,
+      requested_count: count,
+      generated_count: normalizedPostings.length,
+      prior_count: baseline.sample_size,
+      metrics,
+      classified
+    });
+  } catch (error) {
+    return jsonResponse({
+      tool: 'ai-jobs-signal',
+      version: '1.0',
+      mode: 'signal',
+      error: 'ai-jobs-signal failed',
+      detail: String(error?.message || error)
+    });
+  }
+}
+
 /*
 ============================================
 FALLBACK
