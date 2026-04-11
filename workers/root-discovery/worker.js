@@ -3,22 +3,19 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/.well-known/mcp.json") {
-      const discovery = {
-        mcp_host: "https://mcp.exmxc.ai",
-        registry: "https://mcp.exmxc.ai/.well-known/tool-registry.json",
-        openapi: "https://mcp.exmxc.ai/.well-known/openapi.json",
-        manifest: "https://mcp.exmxc.ai/.well-known/manifest.json",
-        ai_plugin: "https://mcp.exmxc.ai/.well-known/ai-plugin.json"
-      };
-
-      return new Response(JSON.stringify(discovery, null, 2), {
-        status: 200,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Cache-Control": "public, max-age=3600"
-        }
+      return new Response(JSON.stringify({
+        name: "exmxc",
+        endpoints: {
+          mcp: "https://mcp.exmxc.ai"
+        },
+        ontology_layers: ["entity_in_a_box_v1"]
+      }), {
+        headers: { "Content-Type": "application/json" }
       });
+    }
+
+    if (url.pathname.startsWith("/.well-known/")) {
+      return new Response("Not Found", { status: 404 });
     }
 
     return Response.redirect("https://exmxc.ai", 302);
