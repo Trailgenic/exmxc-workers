@@ -1,0 +1,362 @@
+{
+  "datasets": [
+    {
+      "canonical_name": "entities",
+      "file_path": "data/entities.json",
+      "endpoint": "/entities",
+      "category": "entity",
+      "purpose": "Entity Clarity Index dataset with posture, capability, and ECC scoring.",
+      "shape": "schema + embedded data payload (data.metadata, data.entities)"
+    },
+    {
+      "canonical_name": "speg",
+      "file_path": "data/speg_index.json",
+      "endpoint": "/speg",
+      "category": "valuation",
+      "purpose": "sPEG valuation index across AI infrastructure scarcity layers.",
+      "shape": "metadata + rows array"
+    },
+    {
+      "canonical_name": "ai_power_index",
+      "file_path": "data/ai_power_index_dataset_v1.json",
+      "endpoint": "/datasets/ai_power_index",
+      "category": "ai_power",
+      "purpose": "AI Power Index scoring dataset with Four Forces exposure and composite index.",
+      "shape": "dataset metadata + scores array"
+    },
+    {
+      "canonical_name": "ai_power_index_schema_source",
+      "file_path": "data/four_forces_dataset_v1.json",
+      "endpoint": "/datasets/ai_power_index/schema",
+      "category": "ai_power",
+      "purpose": "Four Forces exposure scaffold referenced by ai_power_index schema endpoint.",
+      "shape": "dataset metadata + exposures array"
+    },
+    {
+      "canonical_name": "ai_power_universe_v1",
+      "file_path": "data/ai_power_universe_v1.json",
+      "endpoint": null,
+      "category": "ai_power",
+      "purpose": "Universe list of entities for AI Power model.",
+      "shape": "dataset metadata + entities string array"
+    },
+    {
+      "canonical_name": "exmxc_entity_dataset_v1",
+      "file_path": "data/entity_dataset_v1.json",
+      "endpoint": null,
+      "category": "entity",
+      "purpose": "Expanded entity dataset variant with entity_class plus headquarters/founded/primary_market fields.",
+      "shape": "dataset metadata + entities array"
+    },
+    {
+      "canonical_name": "ai_job_market_benchmark",
+      "file_path": "data/ads-baseline.json",
+      "endpoint": "/api/ai-jobs-signal?mode=benchmark",
+      "category": "signal",
+      "purpose": "Baseline benchmark metrics for ADS job-market signal endpoint.",
+      "shape": "single benchmark object"
+    },
+    {
+      "canonical_name": "exmxc-entity-intelligence-index",
+      "file_path": "index.json",
+      "endpoint": "/index",
+      "category": "index",
+      "purpose": "Dataset index pointer to schema, definitions, and entities data.",
+      "shape": "single index object"
+    },
+    {
+      "canonical_name": "exmxc-entity-intelligence-schema",
+      "file_path": "schema/schema.json",
+      "endpoint": "/schema",
+      "category": "schema",
+      "purpose": "Field contract for entity intelligence dataset.",
+      "shape": "schema object"
+    },
+    {
+      "canonical_name": "exmxc-entity-intelligence-definitions",
+      "file_path": "schema/definitions.json",
+      "endpoint": "/definitions",
+      "category": "schema",
+      "purpose": "Semantic definitions for posture/capability/ecc/entity_type.",
+      "shape": "definitions object"
+    }
+  ],
+  "endpoints": [
+    {
+      "path": "/datasets",
+      "type": "dataset index",
+      "notes": "Builds dataset list from lib/dataset-registry.js"
+    },
+    {
+      "path": "/capabilities.json",
+      "type": "capability index"
+    },
+    {
+      "path": "/.well-known/openapi.json",
+      "type": "openapi"
+    },
+    {
+      "path": "/.well-known/tool-registry.json",
+      "type": "tool registry"
+    },
+    {
+      "path": "/.well-known/mcp.json",
+      "type": "mcp discovery"
+    },
+    {
+      "path": "/.well-known/manifest.json",
+      "type": "manifest"
+    },
+    {
+      "path": "/.well-known/ai-plugin.json",
+      "type": "plugin manifest"
+    },
+    {
+      "path": "/entities",
+      "type": "dataset",
+      "source": "data/entities.json"
+    },
+    {
+      "path": "/speg",
+      "type": "dataset",
+      "source": "data/speg_index.json"
+    },
+    {
+      "path": "/datasets/ai_power_index",
+      "type": "dataset",
+      "source": "data/ai_power_index_dataset_v1.json"
+    },
+    {
+      "path": "/datasets/ai_power_index/schema",
+      "type": "dataset schema source",
+      "source": "data/four_forces_dataset_v1.json"
+    },
+    {
+      "path": "/analysis/ai_power/top",
+      "type": "analysis endpoint",
+      "source": "data/ai_power_index_dataset_v1.json"
+    },
+    {
+      "path": "/schema",
+      "type": "schema endpoint"
+    },
+    {
+      "path": "/definitions",
+      "type": "definitions endpoint"
+    },
+    {
+      "path": "/index",
+      "type": "index endpoint"
+    },
+    {
+      "path": "/api/ai-jobs-signal",
+      "type": "signal endpoint",
+      "modes": [
+        "benchmark",
+        "signal"
+      ]
+    },
+    {
+      "path": "https://exmxc.ai/.well-known/mcp.json",
+      "type": "root discovery pointer",
+      "served_by": "workers/root-discovery/worker.js"
+    }
+  ],
+  "repository_structure": {
+    "top_level_folders": [
+      "data",
+      "lib",
+      "schema",
+      "workers"
+    ],
+    "workers": {
+      "main_worker": "worker.js",
+      "root_discovery_worker": "workers/root-discovery/worker.js"
+    },
+    "dataset_groupings": {
+      "entity": [
+        "data/entities.json",
+        "data/entity_dataset_v1.json",
+        "schema/schema.json",
+        "schema/definitions.json",
+        "index.json"
+      ],
+      "ai_power": [
+        "data/ai_power_universe_v1.json",
+        "data/four_forces_dataset_v1.json",
+        "data/ai_power_index_dataset_v1.json"
+      ],
+      "valuation": [
+        "data/speg_index.json"
+      ],
+      "signal": [
+        "data/ads-baseline.json"
+      ]
+    },
+    "naming_conventions": {
+      "data_files": [
+        "*_v1.json",
+        "*_dataset_v1.json",
+        "*_index.json",
+        "entities.json"
+      ],
+      "endpoint_patterns": [
+        "/datasets/*",
+        "/.well-known/*",
+        "/analysis/*",
+        "direct dataset routes (/entities, /speg)"
+      ],
+      "field_name_styles": [
+        "snake_case in dataset records",
+        "mixed company/entity_name naming across files"
+      ]
+    }
+  },
+  "schema_patterns": {
+    "common_required_fields_by_dataset": [
+      {
+        "dataset": "data/entities.json ($defs.Entity)",
+        "required_fields": [
+          "company",
+          "industry",
+          "entity_type",
+          "posture",
+          "capability",
+          "ecc"
+        ]
+      },
+      {
+        "dataset": "data/entity_dataset_v1.json (observed records)",
+        "required_fields_present_in_records": [
+          "entity_name",
+          "entity_class",
+          "entity_type",
+          "industry",
+          "posture",
+          "capability",
+          "ecc",
+          "headquarters",
+          "founded",
+          "primary_market"
+        ]
+      },
+      {
+        "dataset": "data/speg_index.json (rows)",
+        "required_fields_present_in_records": [
+          "entity_id",
+          "company",
+          "ticker",
+          "sector",
+          "scarcity_layer",
+          "date",
+          "price_usd",
+          "speg"
+        ]
+      },
+      {
+        "dataset": "data/four_forces_dataset_v1.json (exposures)",
+        "required_fields_present_in_records": [
+          "entity_name",
+          "compute_exposure",
+          "interface_exposure",
+          "alignment_exposure",
+          "energy_exposure"
+        ]
+      },
+      {
+        "dataset": "data/ai_power_index_dataset_v1.json (scores)",
+        "required_fields_present_in_records": [
+          "entity_name",
+          "compute_exposure",
+          "interface_exposure",
+          "alignment_exposure",
+          "energy_exposure",
+          "ai_power_index"
+        ]
+      }
+    ],
+    "structural_consistency": {
+      "consistent": [
+        "All row-oriented datasets use snake_case keys.",
+        "Four Forces and AI Power Index records share the same four exposure fields plus ai_power_index in the latter.",
+        "Metadata blocks are present in major datasets."
+      ],
+      "inconsistencies": [
+        "Entity canonical field differs: company (entities.json) vs entity_name (entity_dataset_v1.json).",
+        "entities.json stores rows under data.entities while other datasets use top-level arrays (rows/scores/exposures/entities).",
+        "ai_power_index schema endpoint serves four_forces dataset content, not a standalone schema contract.",
+        "index.json reports total_entities 750 while data/entities.json metadata.entity_count is 751 and record count is 745."
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "from": "data/ai_power_universe_v1.json",
+      "to": "data/four_forces_dataset_v1.json",
+      "type": "declared_dependency",
+      "evidence": "four_forces metadata.source_dataset"
+    },
+    {
+      "from": "data/four_forces_dataset_v1.json",
+      "to": "data/ai_power_index_dataset_v1.json",
+      "type": "declared_dependency",
+      "evidence": "ai_power_index metadata.source_dataset"
+    },
+    {
+      "from": "lib/dataset-registry.js",
+      "to": "data/entities.json",
+      "type": "served_by_endpoint",
+      "evidence": "datasetRegistry.entities.rawUrl used by /entities"
+    },
+    {
+      "from": "lib/dataset-registry.js",
+      "to": "data/speg_index.json",
+      "type": "served_by_endpoint",
+      "evidence": "datasetRegistry.speg.rawUrl used by /speg"
+    },
+    {
+      "from": "lib/dataset-registry.js",
+      "to": "data/ai_power_index_dataset_v1.json",
+      "type": "served_by_endpoint",
+      "evidence": "datasetRegistry.ai_power_index.rawUrl used by /datasets/ai_power_index and /analysis/ai_power/top"
+    },
+    {
+      "from": "lib/dataset-registry.js",
+      "to": "data/four_forces_dataset_v1.json",
+      "type": "served_by_endpoint",
+      "evidence": "datasetRegistry.ai_power_index.schemaUrl used by /datasets/ai_power_index/schema"
+    },
+    {
+      "from": "data/ads-baseline.json",
+      "to": "/api/ai-jobs-signal",
+      "type": "runtime_dependency",
+      "evidence": "benchmark mode returns baseline and signal mode uses baseline.sample_size"
+    }
+  ],
+  "gaps": [
+    {
+      "type": "missing_canonical_field",
+      "observation": "Entity name key is not canonical across entity datasets (company vs entity_name)."
+    },
+    {
+      "type": "duplicate_concept",
+      "observation": "Two parallel entity datasets exist (entities.json and entity_dataset_v1.json) with overlapping semantics and different shapes."
+    },
+    {
+      "type": "inconsistent_naming",
+      "observation": "Entity Control/Clarity terminology varies: ECC described as Entity Clarity Coefficient in entities.json and Entity Control Coefficient in schema/definitions."
+    },
+    {
+      "type": "inconsistent_counts",
+      "observation": "Entity totals differ across artifacts (index.json total_entities 750, entities.json metadata.entity_count 751, observed data.entities count 745)."
+    },
+    {
+      "type": "incomplete_dataset",
+      "observation": "entity_dataset_v1 contains three fields that are null for all observed records: headquarters, founded, primary_market."
+    },
+    {
+      "type": "endpoint_schema_mismatch",
+      "observation": "/datasets/ai_power_index/schema returns four_forces_dataset_v1 data scaffold rather than a formal schema document."
+    }
+  ]
+}
