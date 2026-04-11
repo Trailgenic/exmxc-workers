@@ -1,0 +1,12 @@
+{
+  "name": "exmxc-root-discovery",
+  "main": "worker.js",
+  "compatibility_date": "2026-01-01",
+  "routes": [
+    {
+      "pattern": "exmxc.ai/.well-known/*",
+      "zone_name": "exmxc.ai"
+    }
+  ],
+  "workers_dev": false
+}
