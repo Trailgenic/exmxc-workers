@@ -14,7 +14,8 @@ export default {
           mcp_version: "1.0",
           name: "exmxc",
           description: "Institutional intelligence node for AI-era capital architecture",
-          endpoint: "https://mcp.exmxc.ai"
+          endpoint: "https://mcp.exmxc.ai",
+          ontology_layers: ["entity_in_a_box_v1"]
         }),
         {
           status: 200,
@@ -241,7 +242,7 @@ if (url.pathname === "/speg") {
           { id: "ex.datasets.index.get", endpoint: "https://mcp.exmxc.ai/datasets" },
           { id: "ex.ai_power_index.get", endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index" },
           { id: "ex.ai_power.analysis.top", endpoint: "https://mcp.exmxc.ai/analysis/ai_power/top" },
-          { id: "ex.entity_in_a_box.get", endpoint: "https://mcp.exmxc.ai/datasets/entity_in_a_box" },
+          { id: "ex.entity_in_a_box.get", endpoint: "https://mcp.exmxc.ai/datasets/entity_in_a_box_v1" },
 
           {
             id: "ex.capital.get",
@@ -313,7 +314,7 @@ if (url.pathname === "/speg") {
           "/datasets/ai_power_index/schema": {
             get: { summary: "Retrieve AI Power Index dataset schema" }
           },
-          "/datasets/entity_in_a_box": {
+          "/datasets/entity_in_a_box_v1": {
             get: { summary: "Retrieve Entity-in-a-Box ontology dataset" }
           },
           "/analysis/ai_power/top": {
@@ -495,7 +496,7 @@ ENTITY IN A BOX DATASET
 ============================================
 */
 
-if (url.pathname === "/datasets/entity_in_a_box") {
+if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") {
 
   const dataset = await fetchJsonOrError(datasetRegistry.entity_in_a_box.rawUrl);
   if (dataset instanceof Response) {
@@ -523,7 +524,8 @@ if (url.pathname === "/datasets") {
             ? "AI Power Index"
             : "Entity in a Box Ontology Dataset",
     endpoint: `https://mcp.exmxc.ai${dataset.route}`,
-    description: dataset.description
+    description: dataset.description,
+    category: dataset.type || "dataset"
   }));
 
   const datasetIndex = {
