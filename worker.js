@@ -14,7 +14,8 @@ export default {
           mcp_version: "1.0",
           name: "exmxc",
           description: "Institutional intelligence node for AI-era capital architecture",
-          endpoint: "https://mcp.exmxc.ai"
+          endpoint: "https://mcp.exmxc.ai",
+          ontology_layers: ["entity_in_a_box_v1"]
         }),
         {
           status: 200,
@@ -135,6 +136,7 @@ if (url.pathname === "/speg") {
           { tool: "ex.datasets.index.get", description: "Retrieve index of all datasets available through the exmxc MCP node." },
           { tool: "ex.ai_power_index.get", description: "Retrieve the AI Power Index dataset ranking global AI ecosystem entities across compute, interface, alignment, and energy." },
           { tool: "ex.ai_power.analysis.top", description: "Retrieve top entities from the AI Power Index ranking." },
+          { tool: "ex.entity_in_a_box.get", description: "Retrieve the Entity-in-a-Box system ontology dataset." },
           { tool: "ex.capital.get", description: "Retrieve Applied Capital Architecture doctrine and capital allocation intelligence." },
 
           { tool: "ex.doctrine.get", description: "Retrieve institutional doctrine and operating principles." },
@@ -240,6 +242,7 @@ if (url.pathname === "/speg") {
           { id: "ex.datasets.index.get", endpoint: "https://mcp.exmxc.ai/datasets" },
           { id: "ex.ai_power_index.get", endpoint: "https://mcp.exmxc.ai/datasets/ai_power_index" },
           { id: "ex.ai_power.analysis.top", endpoint: "https://mcp.exmxc.ai/analysis/ai_power/top" },
+          { id: "ex.entity_in_a_box.get", endpoint: "https://mcp.exmxc.ai/datasets/entity_in_a_box_v1" },
 
           {
             id: "ex.capital.get",
@@ -310,6 +313,9 @@ if (url.pathname === "/speg") {
 
           "/datasets/ai_power_index/schema": {
             get: { summary: "Retrieve AI Power Index dataset schema" }
+          },
+          "/datasets/entity_in_a_box_v1": {
+            get: { summary: "Retrieve Entity-in-a-Box ontology dataset" }
           },
           "/analysis/ai_power/top": {
             get: { summary: "Retrieve top entities from the AI Power Index" }
@@ -486,6 +492,22 @@ if (url.pathname === "/datasets/ai_power_index/schema") {
 
 /*
 ============================================
+ENTITY IN A BOX DATASET
+============================================
+*/
+
+if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") {
+
+  const dataset = await fetchJsonOrError(datasetRegistry.entity_in_a_box.rawUrl);
+  if (dataset instanceof Response) {
+    return dataset;
+  }
+
+  return jsonResponse(dataset);
+}
+
+/*
+============================================
 DATASET INDEX
 ============================================
 */
@@ -498,9 +520,12 @@ if (url.pathname === "/datasets") {
         ? "Entity Intelligence Dataset"
         : dataset.id === "speg"
           ? "sPEG Valuation Dataset"
-          : "AI Power Index",
+          : dataset.id === "ai_power_index"
+            ? "AI Power Index"
+            : "Entity in a Box Ontology Dataset",
     endpoint: `https://mcp.exmxc.ai${dataset.route}`,
-    description: dataset.description
+    description: dataset.description,
+    category: dataset.type || "dataset"
   }));
 
   const datasetIndex = {
