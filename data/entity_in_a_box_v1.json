@@ -1,0 +1,77 @@
+{
+  "dataset": "entity_in_a_box_v1",
+  "version": "1.0",
+  "metadata": {
+    "source": "exmxc.ai",
+    "classification": "system_ontology",
+    "description": "System-level ontology for machine-readable, MCP-callable entity construction.",
+    "last_updated": "2026-04-11"
+  },
+  "canonical_name": "entity_in_a_box_v1",
+  "category": "ontology",
+  "description": "Ontology dataset defining system requirements for AI-era entities.",
+  "core_principles": [
+    "schema_first",
+    "ai_callable",
+    "persistence_across_applications",
+    "authority_based_datasets"
+  ],
+  "system_layers": {
+    "L1": {
+      "name": "Ontology",
+      "role": "definition layer"
+    },
+    "L2": {
+      "name": "Dataset",
+      "role": "structured truth"
+    },
+    "L3": {
+      "name": "Schema",
+      "role": "machine readability"
+    },
+    "L4": {
+      "name": "MCP Endpoint",
+      "role": "agent access"
+    },
+    "L5": {
+      "name": "Interpretation Layer",
+      "role": "EllaEntity"
+    }
+  },
+  "comparison": {
+    "openai_model": {
+      "name": "startup_in_a_box",
+      "focus": "company creation through tools, capital, and infrastructure",
+      "stack": [
+        "tools",
+        "capital",
+        "infrastructure"
+      ],
+      "dependency": "application execution context"
+    },
+    "exmxc_model": {
+      "name": "entity_in_a_box",
+      "focus": "entity creation through ontology, schema, and MCP access",
+      "stack": [
+        "ontology",
+        "dataset",
+        "schema",
+        "mcp_endpoint",
+        "interpretation_layer"
+      ],
+      "dependency": "dataset authority and protocol-level access"
+    }
+  },
+  "implications": [
+    "entities become reusable across multiple applications",
+    "entity definitions can be interpreted by agents deterministically",
+    "entity identity remains stable as application surfaces change"
+  ],
+  "tags": [
+    "ontology",
+    "entity_system",
+    "mcp",
+    "schema_first",
+    "machine_readable"
+  ]
+}
