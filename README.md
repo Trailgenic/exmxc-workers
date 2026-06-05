@@ -169,6 +169,30 @@ There is exactly one Wrangler config per worker:
 - `wrangler.jsonc` — main `mcp.exmxc.ai/*` Worker with observability enabled
 - `workers/root-discovery/wrangler.jsonc` — root discovery Worker for `exmxc.ai/.well-known/*`
 
+## Deployment
+
+Deploys are automatic on every push to `main` through `.github/workflows/deploy.yml`; no manual `wrangler deploy` is required for normal releases. The workflow also supports `workflow_dispatch` for an explicit redeploy.
+
+The deploy job uses a matrix to deploy both Cloudflare Workers from their own Wrangler config directories:
+
+- `exmxc-workers` from the repository root (`.`)
+- `exmxc-root-discovery` from `workers/root-discovery`
+
+After both deploy attempts complete, the `verify live` job waits for edge propagation and runs:
+
+```bash
+node scripts/live-acceptance.mjs
+```
+
+The live acceptance harness checks the production origins, including `POST /mcp`, REST discovery, tool inventory consistency, dataset/schema endpoints, CORS, health semantics, and the apex `https://exmxc.ai/.well-known/mcp.json` pointer. The workflow fails if the deployed live result does not pass these checks.
+
+One-time GitHub Actions secret setup is required in repo Settings → Secrets and variables → Actions:
+
+- `CLOUDFLARE_API_TOKEN` — scoped Cloudflare API token for deploying Workers and routes
+- `CLOUDFLARE_ACCOUNT_ID` — `aeb064fbc195ef8f54ebce0f51897a63`
+
+Do not commit the Cloudflare API token or any other secret value to source.
+
 ## Repository structure
 
 ```text
