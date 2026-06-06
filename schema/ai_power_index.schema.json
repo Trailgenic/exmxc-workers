@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/datasets/ai_power_index/schema",
+  "title": "AI Power Index Record Schema",
+  "description": "Schema for AI Power Index records measuring compute, interface, alignment, energy, and aggregate AI power exposure.",
+  "type": "object",
+  "required": [
+    "entity_name",
+    "compute_exposure",
+    "interface_exposure",
+    "alignment_exposure",
+    "energy_exposure",
+    "ai_power_index"
+  ],
+  "properties": {
+    "entity_name": { "type": "string" },
+    "compute_exposure": { "type": "number" },
+    "interface_exposure": { "type": "number" },
+    "alignment_exposure": { "type": "number" },
+    "energy_exposure": { "type": "number" },
+    "ai_power_index": { "type": "number" }
+  },
+  "additionalProperties": true
+}
