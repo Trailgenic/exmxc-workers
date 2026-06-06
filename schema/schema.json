@@ -2,14 +2,7 @@
   "version": "1.0",
   "dataset": "exmxc-entity-intelligence",
   "description": "Structured dataset of global institutions evaluated for AI-era posture, capability, and entity control characteristics.",
-
   "fields": {
-
-    "entity_name": {
-      "type": "string",
-      "description": "Canonical name of the organization or institution."
-    },
-
     "industry": {
       "type": "string",
       "allowed_values": [
@@ -36,7 +29,6 @@
         "Government"
       ]
     },
-
     "entity_type": {
       "type": "string",
       "allowed_values": [
@@ -50,7 +42,6 @@
         "Consulting Firm"
       ]
     },
-
     "posture": {
       "type": "string",
       "allowed_values": [
@@ -59,7 +50,6 @@
         "Blocked"
       ]
     },
-
     "capability": {
       "type": "string",
       "allowed_values": [
@@ -68,7 +58,6 @@
         "High"
       ]
     },
-
     "ecc": {
       "type": "integer",
       "range": {
@@ -76,6 +65,10 @@
         "max": 100
       },
       "description": "Entity Control Coefficient score representing degree of operational and structural control."
+    },
+    "company": {
+      "type": "string",
+      "description": "Canonical name of the organization or institution."
     }
   }
 }
