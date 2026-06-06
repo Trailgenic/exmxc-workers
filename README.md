@@ -1,153 +1,114 @@
-# exmxc MCP Endpoint
+# exmxc Workers
 
-**Institutional Intelligence. Structured for the Agentic Internet.**
+Cloudflare Worker implementation for the `mcp.exmxc.ai` executable intelligence node. The service is both:
 
-This repository contains the Cloudflare Worker implementation for the official exmxc Model Context Protocol (MCP) endpoint.
+1. an agent-discoverable REST/JSON intelligence API, and
+2. a spec-compatible MCP JSON-RPC 2.0 server at `POST /mcp`.
 
-The MCP endpoint exposes exmxc’s institutional intelligence capabilities — including Applied Capital Architecture and the sPEG valuation framework — in a structured, machine-readable, and agent-executable format.
+The code keeps the ES-module Worker entrypoint (`export default { fetch(request, env) }`) and stores no secrets in source.
 
----
+## Canonical identity and build
 
-# Purpose
+- Entity: `exmxc`
+- Domain: `https://exmxc.ai`
+- Founder: Mike Ye
+- Worker host: `https://mcp.exmxc.ai`
+- Build version: `2.0.0`
+- Stable build date / `last_updated`: `2026-06-05`
 
-exmxc exists to decode AI-era power structures, entity clarity, strategic positioning, and capital durability across the Four Forces:
+`lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
-- Compute  
-- Interface  
-- Alignment  
-- Energy  
+## Discovery endpoints
 
-This MCP endpoint enables AI agents, systems, and institutional tools to discover, interpret, and execute exmxc capabilities through standardized protocol interfaces.
+- `GET /` — REST/WebMCP discovery document
+- `GET /.well-known/mcp.json` — MCP discovery pointer
+- `GET /capabilities.json` — generated capability inventory
+- `GET /.well-known/tool-registry.json` — generated tool registry
+- `GET /.well-known/openapi.json` — OpenAPI document with `servers: [{ url: "https://mcp.exmxc.ai" }]`
+- `GET /.well-known/manifest.json` — generated manifest
+- `GET /.well-known/ai-plugin.json` — plugin manifest pointing at the OpenAPI document
+- `GET /health` — operational health check; uptime is not asserted in the payload and is observed through Cloudflare observability
 
-This transforms exmxc from a static content entity into an executable intelligence node.
+All JSON responses use shared CORS headers. `OPTIONS` returns `204` with `Access-Control-Allow-Methods: GET, POST, OPTIONS` and `Access-Control-Allow-Headers: content-type, mcp-protocol-version`.
 
----
+## MCP JSON-RPC transport
 
-# MCP Endpoint
+`POST /mcp` accepts one JSON-RPC 2.0 request per HTTP request and returns an `application/json` response for synchronous tools. `GET /mcp` returns `405` with `Allow: POST`.
 
-Primary endpoint
+Supported methods:
 
-https://mcp.exmxc.ai/
+- `initialize`
+- `notifications/initialized`
+- `ping`
+- `tools/list`
+- `tools/call`
 
-Capability index
-
-https://mcp.exmxc.ai/capabilities.json
-
-Health and reliability endpoint
-
-https://mcp.exmxc.ai/health
-
-Tool registry
-
-https://mcp.exmxc.ai/.well-known/tool-registry.json
-
-OpenAPI specification
-
-https://mcp.exmxc.ai/.well-known/openapi.json
-
-Plugin manifest
-
-https://mcp.exmxc.ai/.well-known/ai-plugin.json
-
----
-
-# Data Endpoints
-
-The MCP endpoint also exposes structured institutional datasets used by exmxc intelligence systems.
-
-Entity dataset
-
-https://mcp.exmxc.ai/entities
-
-sPEG valuation index
-
-https://mcp.exmxc.ai/speg
-
-These datasets allow agents to traverse the exmxc intelligence graph and combine structural analysis with valuation intelligence.
-
----
-
-# Capabilities Exposed
-
-The exmxc MCP endpoint exposes the following institutional intelligence capabilities:
-
-- Strategy frameworks  
-- Signal briefs  
-- Institutional lexicon  
-- Entity Clarity Index (ECI)  
-- sPEG valuation intelligence  
-- Applied Capital Architecture  
-- Strategic doctrine  
-- Standards lab architecture  
-- Entity diagnostics  
-- Knowledge graph search  
-
-Each capability is exposed as a structured, machine-readable tool callable by AI agents.
-
-Applied Capital Architecture represents the integration layer where structural doctrine informs capital allocation logic and long-horizon institutional positioning.
-
----
-
-# Architecture
-
-Infrastructure stack
-
-- Cloudflare Workers (execution layer)
-- WebMCP protocol (discovery and capability interface)
-- Structured JSON capability schemas
-- OpenAPI compatibility layer
-- Modular dataset registry
-
-This design ensures:
-
-- deterministic agent interaction
-- capability clarity
-- execution reliability
-- institutional-grade availability
-- scalable dataset expansion
-
----
-
-# Repository Structure
-
-```
-workers/
-  worker.js        Cloudflare Worker MCP implementation
-  README.md        This document
-
-data/
-  entities.json        Entity Intelligence dataset
-  speg_index.json      sPEG valuation index dataset
-
-schema/
-  schema.json          Entity schema contract
-  definitions.json     Semantic definitions
-
-index.json             Dataset discovery index
-```
-
-Each dataset is exposed as a modular endpoint through the MCP worker, allowing agents to query datasets independently.
-
----
-
-# Entity Intelligence Dataset
-
-The Entity Intelligence dataset provides structured records used by the exmxc intelligence system.
-
-Dataset fields include:
-
-- entity_name  
-- industry  
-- entity_type  
-- posture  
-- capability  
-- ecc  
-
-Example entity record:
+Example initialize request:
 
 ```json
 {
-  "entity_name": "BlackRock",
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "initialize",
+  "params": { "protocolVersion": "2025-06-18" }
+}
+```
+
+Example tool call:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "method": "tools/call",
+  "params": {
+    "name": "ex.speg.get",
+    "arguments": { "ticker": "NVDA" }
+  }
+}
+```
+
+`tools/list`, `/capabilities.json`, and `/.well-known/tool-registry.json` are generated from the same `DATA_TOOLS` registry so tool IDs and counts stay consistent.
+
+## REST data endpoints
+
+Bundled datasets are imported directly into the Worker. Dataset updates require a Worker deploy.
+
+- `GET /entities`
+  - Source: `data/entities.json`
+  - Filters: `industry`, `entity_type`, `posture`, `capability`
+  - Canonical entity-name field: `company`
+- `GET /speg`
+  - Source: `data/speg_index.json`
+  - Filters: `sector`, `scarcity_layer`, `ticker`
+- `GET /datasets`
+  - Generated dataset index
+- `GET /datasets/ai_power_index`
+  - Source: `data/ai_power_index_dataset_v1.json`
+- `GET /datasets/ai_power_index/schema`
+  - Source: `schema/ai_power_index.schema.json`
+- `GET /datasets/four_forces`
+  - Source: `data/four_forces_dataset_v1.json`
+- `GET /datasets/entity_in_a_box_v1`
+  - Source: `data/entity_in_a_box_v1.json`
+- `GET /datasets/entity_in_a_box`
+  - Compatibility alias for `/datasets/entity_in_a_box_v1`
+- `GET /analysis/ai_power/top?limit=10`
+  - Top AI Power Index records sorted by `ai_power_index`
+- `GET /schema`
+  - Source: `schema/schema.json`
+- `GET /definitions`
+  - Source: `schema/definitions.json`
+- `GET /index`
+  - Source: `index.json`, with `total_entities` computed dynamically from the bundled entities length
+
+## Dataset examples
+
+Entity record example using canonical `company`:
+
+```json
+{
+  "company": "BlackRock",
   "industry": "Financial",
   "entity_type": "Public Company",
   "posture": "Open",
@@ -156,33 +117,7 @@ Example entity record:
 }
 ```
 
-This dataset powers intelligence tools including:
-
-- Entity Clarity Index analysis
-- strategic posture mapping
-- institutional capability evaluation
-- ecosystem influence mapping
-
----
-
-# sPEG Valuation Dataset
-
-The sPEG dataset provides a structural valuation index for AI infrastructure and capital-critical industries.
-
-sPEG (Scarcity-adjusted PEG) integrates growth, structural scarcity, and infrastructure positioning into a unified valuation metric.
-
-Dataset fields include:
-
-- entity_id  
-- company  
-- ticker  
-- sector  
-- scarcity_layer  
-- price_usd  
-- speg  
-- price_as_of  
-
-Example record:
+sPEG record example using the row-level `date` field:
 
 ```json
 {
@@ -191,73 +126,86 @@ Example record:
   "ticker": "NVDA",
   "sector": "AI Semiconductor",
   "scarcity_layer": "Compute",
+  "date": "2026-02-13",
   "price_usd": 182.78,
-  "speg": 0.63,
-  "price_as_of": "2026-02-13"
+  "speg": 0.63
 }
 ```
 
-The dataset represents valuation snapshots, while the sPEG methodology itself remains durable.
+AI Power Index record shape:
 
----
+```json
+{
+  "entity_name": "NVIDIA",
+  "compute_exposure": 10,
+  "interface_exposure": 9,
+  "alignment_exposure": 7,
+  "energy_exposure": 8,
+  "ai_power_index": 8.6
+}
+```
 
-# Entity Identity
+## AI jobs signal endpoint
 
-Entity: exmxc  
-Domain: https://exmxc.ai  
-Founder: Mike Ye  
+`GET /api/ai-jobs-signal` remains an experimental ADS endpoint backed by Anthropic for synthetic posting generation. Benchmark and signal responses include:
 
-Classification: Institutional Intelligence System
+- `data_provenance: "synthetic-llm-generated"`
+- `disclaimer: "Postings are model-generated illustrations for ADS analysis, not scraped or verified labor-market data."`
 
-exmxc operates as a human-led, AI-instrumented intelligence institution providing strategic clarity and capital architecture for the AI era.
+## Required Worker secret
 
----
+The ADS signal route requires an Anthropic Worker secret binding:
 
-# Role in the Agentic Internet
+```bash
+wrangler secret put ANTHROPIC_API_KEY
+```
 
-The exmxc MCP endpoint functions as a capability node within the global agent execution graph.
+Do not place `ANTHROPIC_API_KEY` in `wrangler.jsonc`, source files, or documentation beyond the binding name.
 
-AI agents can:
+## Wrangler configuration
 
-- discover exmxc capabilities automatically
-- execute structured intelligence queries
-- integrate exmxc frameworks into decision workflows
-- incorporate Applied Capital Architecture into allocation modeling
-- traverse entity intelligence datasets
-- integrate sPEG valuation intelligence into capital analysis
-- chain exmxc capabilities with other MCP nodes
+There is exactly one Wrangler config per worker:
 
-This enables institutional intelligence to be accessed programmatically rather than manually.
+- `wrangler.jsonc` — main `mcp.exmxc.ai/*` Worker with observability enabled
+- `workers/root-discovery/wrangler.jsonc` — root discovery Worker for `exmxc.ai/.well-known/*`
 
----
+## Deployment
 
-# Trust Signals
+Deploys are automatic on every push to `main` through `.github/workflows/deploy.yml`; no manual `wrangler deploy` is required for normal releases. The workflow also supports `workflow_dispatch` for an explicit redeploy.
 
-This endpoint provides:
+The deploy job uses a matrix to deploy both Cloudflare Workers from their own Wrangler config directories:
 
-- deterministic structured outputs
-- explicit capability indexing
-- health and uptime signaling
-- stable institutional identity
-- machine-readable schema definitions
-- transparent dataset provenance
+- `exmxc-workers` from the repository root (`.`)
+- `exmxc-root-discovery` from `workers/root-discovery`
 
-These signals enable reliable agent trust and capability prioritization.
+After both deploy attempts complete, the `verify live` job waits for edge propagation and runs:
 
----
+```bash
+node scripts/live-acceptance.mjs
+```
 
-# Contact
+The live acceptance harness checks the production origins, including `POST /mcp`, REST discovery, tool inventory consistency, dataset/schema endpoints, CORS, health semantics, and the apex `https://exmxc.ai/.well-known/mcp.json` pointer. The workflow fails if the deployed live result does not pass these checks.
 
-https://exmxc.ai
+One-time GitHub Actions secret setup is required in repo Settings → Secrets and variables → Actions:
 
----
+- `CLOUDFLARE_API_TOKEN` — scoped Cloudflare API token for deploying Workers and routes
+- `CLOUDFLARE_ACCOUNT_ID` — `aeb064fbc195ef8f54ebce0f51897a63`
 
-# Declaration
+Do not commit the Cloudflare API token or any other secret value to source.
 
-This MCP endpoint represents the executable intelligence layer of exmxc.
+## Repository structure
 
-exmxc is not a content site.  
-exmxc is not a trading platform.  
-exmxc is not a cryptocurrency exchange.
-
-exmxc is an institutional intelligence system.
+```text
+worker.js                         Main Cloudflare Worker
+lib/http.js                       Shared JSON/CORS response helpers
+lib/registry.js                   Single source of truth for metadata, datasets, tools, links, federation
+lib/queries.js                    Shared REST + MCP query implementations
+lib/ads-classifier.js             ADS classification helper
+lib/ads-taxonomy.js               ADS taxonomy definitions
+data/*.json                       Bundled datasets
+schema/schema.json                Entity dataset schema with canonical company field
+schema/definitions.json           Semantic definitions
+schema/ai_power_index.schema.json AI Power Index JSON Schema
+index.json                        Static entity dataset index baseline
+workers/root-discovery/worker.js  Root .well-known MCP pointer Worker
+```

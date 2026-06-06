@@ -85,7 +85,7 @@
     {
       "path": "/datasets",
       "type": "dataset index",
-      "notes": "Builds dataset list from lib/dataset-registry.js"
+      "notes": "Builds dataset list from lib/registry.js"
     },
     {
       "path": "/capabilities.json",
@@ -303,25 +303,25 @@
       "evidence": "ai_power_index metadata.source_dataset"
     },
     {
-      "from": "lib/dataset-registry.js",
+      "from": "lib/registry.js",
       "to": "data/entities.json",
       "type": "served_by_endpoint",
       "evidence": "datasetRegistry.entities.rawUrl used by /entities"
     },
     {
-      "from": "lib/dataset-registry.js",
+      "from": "lib/registry.js",
       "to": "data/speg_index.json",
       "type": "served_by_endpoint",
       "evidence": "datasetRegistry.speg.rawUrl used by /speg"
     },
     {
-      "from": "lib/dataset-registry.js",
+      "from": "lib/registry.js",
       "to": "data/ai_power_index_dataset_v1.json",
       "type": "served_by_endpoint",
       "evidence": "datasetRegistry.ai_power_index.rawUrl used by /datasets/ai_power_index and /analysis/ai_power/top"
     },
     {
-      "from": "lib/dataset-registry.js",
+      "from": "lib/registry.js",
       "to": "data/four_forces_dataset_v1.json",
       "type": "served_by_endpoint",
       "evidence": "datasetRegistry.ai_power_index.schemaUrl used by /datasets/ai_power_index/schema"
