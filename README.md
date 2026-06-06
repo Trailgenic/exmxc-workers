@@ -20,6 +20,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 
 ## Discovery endpoints
 
+Canonical MCP discovery is served from `https://mcp.exmxc.ai/.well-known/mcp.json`; the apex `https://exmxc.ai/.well-known/mcp.json` is intentionally not served because the apex is Webflow on a DNS-only record. The transport endpoint is `https://mcp.exmxc.ai/mcp`.
+
 - `GET /` — REST/WebMCP discovery document
 - `GET /.well-known/mcp.json` — MCP discovery pointer
 - `GET /capabilities.json` — generated capability inventory
@@ -164,27 +166,25 @@ Do not place `ANTHROPIC_API_KEY` in `wrangler.jsonc`, source files, or documenta
 
 ## Wrangler configuration
 
-There is exactly one Wrangler config per worker:
+The active deployed Worker config is:
 
 - `wrangler.jsonc` — main `mcp.exmxc.ai/*` Worker with observability enabled
-- `workers/root-discovery/wrangler.jsonc` — root discovery Worker for `exmxc.ai/.well-known/*`
+
+The legacy `workers/root-discovery/wrangler.jsonc` remains in the repo for reference only. Its apex `exmxc.ai/.well-known/*` route is intentionally abandoned because the apex is Webflow on a DNS-only record and canonical discovery is served by `mcp.exmxc.ai`.
 
 ## Deployment
 
 Deploys are automatic on every push to `main` through `.github/workflows/deploy.yml`; no manual `wrangler deploy` is required for normal releases. The workflow also supports `workflow_dispatch` for an explicit redeploy.
 
-The deploy job uses a matrix to deploy both Cloudflare Workers from their own Wrangler config directories:
+The deploy job deploys the canonical `exmxc-workers` Worker from `wrangler.jsonc`. The abandoned `exmxc-root-discovery` Worker is not deployed by CI because apex discovery is intentionally not served; canonical discovery lives on `mcp.exmxc.ai`.
 
-- `exmxc-workers` from the repository root (`.`)
-- `exmxc-root-discovery` from `workers/root-discovery`
-
-After both deploy attempts complete, the `verify live` job waits for edge propagation and runs:
+After deployment completes, the `verify live` job waits for edge propagation and runs:
 
 ```bash
 node scripts/live-acceptance.mjs
 ```
 
-The live acceptance harness checks the production origins, including `POST /mcp`, REST discovery, tool inventory consistency, dataset/schema endpoints, CORS, health semantics, and the apex `https://exmxc.ai/.well-known/mcp.json` pointer. The workflow fails if the deployed live result does not pass these checks.
+The live acceptance harness checks the production origins, including `POST /mcp`, canonical REST/MCP discovery on `mcp.exmxc.ai`, tool inventory consistency, dataset/schema endpoints, CORS, and health semantics. Apex discovery is probed for information only and never fails CI. The workflow fails if the canonical live result does not pass these checks.
 
 One-time GitHub Actions secret setup is required in repo Settings → Secrets and variables → Actions:
 
@@ -192,6 +192,22 @@ One-time GitHub Actions secret setup is required in repo Settings → Secrets an
 - `CLOUDFLARE_ACCOUNT_ID` — `aeb064fbc195ef8f54ebce0f51897a63`
 
 Do not commit the Cloudflare API token or any other secret value to source.
+
+## Registry submission packet
+
+The `registry/` directory contains a generated MCP registry submission packet for external discovery directories. Regenerate it whenever `lib/registry.js` changes:
+
+```bash
+node scripts/build-registry-packet.mjs
+```
+
+The generator imports the canonical entity, build, transport, and `DATA_TOOLS` definitions from `lib/registry.js`, then rewrites:
+
+- `registry/packet.json`
+- `registry/server.json`
+- `registry/SUBMISSION.md`
+
+This keeps registry submission metadata aligned with the live MCP tool inventory.
 
 ## Repository structure
 
@@ -207,5 +223,8 @@ schema/schema.json                Entity dataset schema with canonical company f
 schema/definitions.json           Semantic definitions
 schema/ai_power_index.schema.json AI Power Index JSON Schema
 index.json                        Static entity dataset index baseline
-workers/root-discovery/worker.js  Root .well-known MCP pointer Worker
+scripts/live-acceptance.mjs        Live deploy acceptance harness
+scripts/build-registry-packet.mjs   Registry packet generator
+registry/                           Generated MCP registry submission packet
+workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```

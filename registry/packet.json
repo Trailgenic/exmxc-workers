@@ -1,0 +1,54 @@
+{
+  "name": "exmxc",
+  "description": "Human-led intelligence institution decoding AI power, entity clarity, institutional positioning, strategic doctrine, and Applied Capital Architecture.",
+  "server_url": "https://mcp.exmxc.ai/mcp",
+  "transport": "streamable-http",
+  "response_mode": "json",
+  "auth": "none",
+  "homepage": "https://exmxc.ai",
+  "repository": "https://github.com/Trailgenic/exmxc-workers",
+  "version": "2.0.0",
+  "categories": [
+    "institutional intelligence",
+    "AI capital architecture",
+    "entity intelligence"
+  ],
+  "tool_count": 7,
+  "tools": [
+    {
+      "name": "ex.entities.get",
+      "title": "Get Entity Intelligence Records",
+      "description": "Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring."
+    },
+    {
+      "name": "ex.speg.get",
+      "title": "Get sPEG Valuation Records",
+      "description": "Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies."
+    },
+    {
+      "name": "ex.datasets.index.get",
+      "title": "Get Dataset Index",
+      "description": "Retrieve index of all bundled datasets available through the exmxc MCP node."
+    },
+    {
+      "name": "ex.ai_power_index.get",
+      "title": "Get AI Power Index Dataset",
+      "description": "Global AI ecosystem ranking dataset measuring compute, interface, alignment, and energy influence."
+    },
+    {
+      "name": "ex.four_forces.get",
+      "title": "Get Four Forces Exposure Dataset",
+      "description": "Four Forces exposure scaffold for AI Power universe entities across compute, interface, alignment, and energy."
+    },
+    {
+      "name": "ex.entity_in_a_box.get",
+      "title": "Get Entity-in-a-Box Ontology",
+      "description": "System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers."
+    },
+    {
+      "name": "ex.ai_power.analysis.top",
+      "title": "Get Top AI Power Index Entities",
+      "description": "Retrieve top-ranked entities from the AI Power Index ranking."
+    }
+  ]
+}

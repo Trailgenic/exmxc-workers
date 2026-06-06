@@ -47,8 +47,10 @@ ok(caps.cors === "*", "CORS present");
 ok((await call("/health")).d?.uptime === null, "health uptime not fabricated");
 ok((await call("/nope")).status === 404, "unknown path -> 404");
 
-const rootDisc = await fetch("https://exmxc.ai/.well-known/mcp.json").then(r => r.json()).catch(() => null);
-ok(rootDisc?.mcp_transport === "https://mcp.exmxc.ai/mcp", "apex /.well-known/mcp.json advertises mcp_transport");
+ok((await call("/.well-known/mcp.json")).d?.mcp_transport === "https://mcp.exmxc.ai/mcp", "canonical /.well-known/mcp.json advertises mcp_transport");
+// apex is intentionally not served (Webflow on DNS-only apex); informational only, never fails CI
+const apex = await fetch("https://exmxc.ai/.well-known/mcp.json").then(r => r.ok).catch(() => false);
+console.log(apex ? "INFO apex discovery present" : "INFO apex discovery intentionally absent (canonical = mcp.exmxc.ai)");
 
 console.log(`
 ${pass} passed, ${fail} failed`);

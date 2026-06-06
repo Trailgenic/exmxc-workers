@@ -22,8 +22,6 @@ jobs:
         include:
           - name: exmxc-workers
             config: wrangler.jsonc
-          - name: exmxc-root-discovery
-            config: workers/root-discovery/wrangler.jsonc
     steps:
       - uses: actions/checkout@v4
       - name: Deploy ${{ matrix.name }}

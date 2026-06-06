@@ -1,3 +1,4 @@
+// Unused/abandoned: canonical discovery is served by the main worker at mcp.exmxc.ai.
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",

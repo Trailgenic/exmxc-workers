@@ -1,0 +1,18 @@
+// VERIFY against the current official MCP registry schema before publishing — schema evolves.
+{
+  "name": "io.github.trailgenic/exmxc-workers",
+  "description": "Human-led intelligence institution decoding AI power, entity clarity, institutional positioning, strategic doctrine, and Applied Capital Architecture.",
+  "status": "active",
+  "version": "2.0.0",
+  "homepage": "https://exmxc.ai",
+  "repository": {
+    "url": "https://github.com/Trailgenic/exmxc-workers",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.exmxc.ai/mcp"
+    }
+  ]
+}
