@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.0.0`
-- Stable build date / `last_updated`: `2026-06-05`
+- Build version: `2.1.0`
+- Stable build date / `last_updated`: `2026-06-10`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -72,6 +72,29 @@ Example tool call:
 
 `tools/list`, `/capabilities.json`, and `/.well-known/tool-registry.json` are generated from the same `DATA_TOOLS` registry so tool IDs and counts stay consistent.
 
+## Tool inventory
+
+Callable JSON tools from `DATA_TOOLS`:
+
+- `ex.entities.get`
+- `ex.speg.get`
+- `ex.datasets.index.get`
+- `ex.ai_power_index.get`
+- `ex.four_forces.get`
+- `ex.entity_in_a_box.get`
+- `ex.ai_power.analysis.top`
+- `ex.eei.audit.run`
+
+Content links from `CONTENT_LINKS`:
+
+- `ex.framework.get` — `https://exmxc.ai/frameworks`
+- `ex.signal.get` — `https://exmxc.ai/signal-briefs`
+- `ex.lexicon.get` — `https://exmxc.ai/lexicon`
+- `ex.capital.get` — `https://exmxc.ai/capital`
+- `ex.doctrine.get` — `https://exmxc.ai/leadership-doctrine`
+- `ex.about.get` — `https://exmxc.ai/about-us`
+- `ex.audit.page` — `https://www.exmxc.ai/audit`
+
 ## REST data endpoints
 
 Bundled datasets are imported directly into the Worker. Dataset updates require a Worker deploy.
@@ -97,6 +120,8 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
   - Compatibility alias for `/datasets/entity_in_a_box_v1`
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
+- `GET /audit/run?url=https://exmxc.ai`
+  - Live Entity Engineering Index audit for a public URL
 - `GET /schema`
   - Source: `schema/schema.json`
 - `GET /definitions`

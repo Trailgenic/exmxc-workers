@@ -7,13 +7,13 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
     "entity intelligence"
   ],
-  "tool_count": 7,
+  "tool_count": 8,
   "tools": [
     {
       "name": "ex.entities.get",
@@ -49,6 +49,11 @@
       "name": "ex.ai_power.analysis.top",
       "title": "Get Top AI Power Index Entities",
       "description": "Retrieve top-ranked entities from the AI Power Index ranking."
+    },
+    {
+      "name": "ex.eei.audit.run",
+      "title": "Run Entity Clarity (EEI) Audit",
+      "description": "Run a live Entity Engineering Index audit against any public URL, returning entity score, tier breakdown, crawl health, and structural profile per the exmxc EEI v2.1 methodology."
     }
   ]
 }

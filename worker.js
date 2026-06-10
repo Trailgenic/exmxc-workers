@@ -161,7 +161,8 @@ function openApiDocument() {
   const toolParameterMap = {
     "ex.entities.get": ["industry", "entity_type", "posture", "capability"].map(parameter),
     "ex.speg.get": ["sector", "scarcity_layer", "ticker"].map(parameter),
-    "ex.ai_power.analysis.top": [parameter("limit", "Maximum number of records")]
+    "ex.ai_power.analysis.top": [parameter("limit", "Maximum number of records")],
+    "ex.eei.audit.run": [{ ...parameter("url", "Public URL to audit"), required: true }]
   };
   const datasetPaths = Object.fromEntries(
     Object.values(DATASETS).map((dataset) => [
@@ -248,7 +249,7 @@ async function handleMcp(request) {
   if (method === "tools/call") {
     const handler = TOOL_HANDLERS[params?.name];
     if (!handler) return jsonRpcError(id, -32602, "Unknown tool");
-    const result = handler(params?.arguments || {});
+    const result = await handler(params?.arguments || {});
     return jsonRpcResponse(id, {
       content: [{ type: "text", text: JSON.stringify(result) }],
       structuredContent: result
@@ -434,6 +435,7 @@ export default {
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());
     if (url.pathname === "/analysis/ai_power/top") return jsonResponse(getAiPowerTop(queryArgs(url, ["limit"])));
+    if (url.pathname === "/audit/run") return jsonResponse(await TOOL_HANDLERS["ex.eei.audit.run"](queryArgs(url, ["url"])));
     if (url.pathname === "/schema") return jsonResponse(BUNDLED_SCHEMA);
     if (url.pathname === "/definitions") return jsonResponse(BUNDLED_DEFINITIONS);
     if (url.pathname === "/index") return jsonResponse(getIndex());

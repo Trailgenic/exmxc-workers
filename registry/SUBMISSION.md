@@ -16,9 +16,9 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.0.0
+- Version: 2.1.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
-- Tool count: 7
+- Tool count: 8
 
 ## Tools
 
@@ -29,6 +29,7 @@ node scripts/build-registry-packet.mjs
 - ex.four_forces.get — Get Four Forces Exposure Dataset: Four Forces exposure scaffold for AI Power universe entities across compute, interface, alignment, and energy.
 - ex.entity_in_a_box.get — Get Entity-in-a-Box Ontology: System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers.
 - ex.ai_power.analysis.top — Get Top AI Power Index Entities: Retrieve top-ranked entities from the AI Power Index ranking.
+- ex.eei.audit.run — Run Entity Clarity (EEI) Audit: Run a live Entity Engineering Index audit against any public URL, returning entity score, tier breakdown, crawl health, and structural profile per the exmxc EEI v2.1 methodology.
 
 ## Submission targets
 
