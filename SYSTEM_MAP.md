@@ -87,6 +87,8 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
   - Compatibility alias
 - `/analysis/ai_power/top`
   - Shared implementation in `lib/queries.js`
+- `/audit/run`
+  - Shared implementation in `lib/queries.js` via `ex.eei.audit.run`
 - `/schema`
   - Source: `schema/schema.json`
 - `/definitions`
@@ -105,6 +107,7 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `getFourForces`
 - `getEntityInABox`
 - `getAiPowerTop`
+- `runEeiAudit`
 - `getIndex`
 - `TOOL_HANDLERS`
 
@@ -119,14 +122,23 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 - `ex.four_forces.get`
 - `ex.entity_in_a_box.get`
 - `ex.ai_power.analysis.top`
+- `ex.eei.audit.run`
 
-Content pages are listed separately as `CONTENT_LINKS` and are not exposed as callable MCP tools.
+Content pages are listed separately as `CONTENT_LINKS` and are not exposed as callable MCP tools:
+
+- `ex.framework.get` — `https://exmxc.ai/frameworks`
+- `ex.signal.get` — `https://exmxc.ai/signal-briefs`
+- `ex.lexicon.get` — `https://exmxc.ai/lexicon`
+- `ex.capital.get` — `https://exmxc.ai/capital`
+- `ex.doctrine.get` — `https://exmxc.ai/leadership-doctrine`
+- `ex.about.get` — `https://exmxc.ai/about-us`
+- `ex.audit.page` — `https://www.exmxc.ai/audit`
 
 Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not exposed as callable MCP tools.
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.0.0`, `BUILD.released = 2026-06-05`.
+- Build metadata is stable: `BUILD.version = 2.1.0`, `BUILD.released = 2026-06-10`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.

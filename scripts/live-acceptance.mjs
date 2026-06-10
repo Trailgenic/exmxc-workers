@@ -18,7 +18,8 @@ const inited = await call("/mcp", "POST", { jsonrpc: "2.0", method: "notificatio
 ok(inited.status === 202, "notifications/initialized -> 202");
 const list = await rpc(2, "tools/list", {});
 const tools = (list.d?.result?.tools || []).map(t => t.name).sort();
-ok(tools.length === 7, "tools/list returns 7 tools");
+ok(tools.length === 8, "tools/list returns 8 tools");
+ok(tools.includes("ex.eei.audit.run"), "tools/list includes ex.eei.audit.run");
 const ent = await rpc(3, "tools/call", { name: "ex.entities.get", arguments: { industry: "Energy" } });
 const entRows = JSON.parse(ent.d.result.content[0].text);
 ok(Array.isArray(entRows) && entRows.length > 0 && entRows.every(e => e.industry === "Energy"), "tools/call ex.entities.get filters");
@@ -35,6 +36,12 @@ const reg = await call("/.well-known/tool-registry.json");
 const capIds = (caps.d.tools || []).map(t => t.id).sort();
 const regIds = (reg.d.tools || []).map(t => t.id).sort();
 ok(JSON.stringify(capIds) === JSON.stringify(tools) && JSON.stringify(regIds) === JSON.stringify(tools), "tool ids consistent across capabilities/registry/tools-list");
+ok(capIds.includes("ex.eei.audit.run") && regIds.includes("ex.eei.audit.run"), "capabilities and registry include ex.eei.audit.run");
+ok(reg.d?.registry_version === "2.0" && regIds.length === 8, "tool-registry has version 2.0 and 8 tools");
+const registryText = JSON.stringify(reg.d);
+ok(!registryText.includes('"url":"https://exmxc.ai/doctrine"') && !registryText.includes('"url":"https://exmxc.ai/about"'), "tool-registry excludes stale /doctrine and /about URLs");
+const auditMissingUrl = await call("/audit/run");
+ok(auditMissingUrl.status === 200 && auditMissingUrl.d?.success === false && typeof auditMissingUrl.d?.error === "string", "GET /audit/run without url returns JSON error");
 
 ok((await call("/index")).d?.total_entities === 745, "/index total_entities == 745");
 const sch = await call("/datasets/ai_power_index/schema");
@@ -42,6 +49,7 @@ ok(sch.d?.$schema && (sch.d.title || "").includes("AI Power Index"), "ai_power_i
 ok(!!(await call("/datasets/four_forces")).d?.exposures, "/datasets/four_forces returns exposures");
 const oa = await call("/.well-known/openapi.json");
 ok(oa.d?.servers?.[0]?.url === "https://mcp.exmxc.ai" && oa.d.paths?.["/entities"] && oa.d.paths?.["/speg"], "openapi server + /entities + /speg");
+ok(!!oa.d?.paths?.["/audit/run"], "openapi includes /audit/run");
 ok((await call("/x", "OPTIONS")).status === 204, "OPTIONS -> 204");
 ok(caps.cors === "*", "CORS present");
 ok((await call("/health")).d?.uptime === null, "health uptime not fabricated");
