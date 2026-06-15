@@ -14,6 +14,8 @@ import {
 } from "./lib/registry.js";
 import {
   getAiPowerTop,
+  getConvergenceLatest,
+  getConvergenceLog,
   getDatasetIndex,
   getEntities,
   getFourForces,
@@ -162,6 +164,7 @@ function openApiDocument() {
     "ex.entities.get": ["industry", "entity_type", "posture", "capability"].map(parameter),
     "ex.speg.get": ["sector", "scarcity_layer", "ticker"].map(parameter),
     "ex.ai_power.analysis.top": [parameter("limit", "Maximum number of records")],
+    "ex.convergence.log": [parameter("limit", "Maximum number of log entries (most recent first)")],
     "ex.eei.audit.run": [{ ...parameter("url", "Public URL to audit"), required: true }]
   };
   const datasetPaths = Object.fromEntries(
@@ -435,6 +438,9 @@ export default {
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());
     if (url.pathname === "/analysis/ai_power/top") return jsonResponse(getAiPowerTop(queryArgs(url, ["limit"])));
+    if (url.pathname === "/datasets/convergence_monitor") return jsonResponse(DATASETS.convergence_monitor.data);
+    if (url.pathname === "/convergence/latest") return jsonResponse(getConvergenceLatest());
+    if (url.pathname === "/convergence/log") return jsonResponse(getConvergenceLog(queryArgs(url, ["limit"])));
     if (url.pathname === "/audit/run") return jsonResponse(await TOOL_HANDLERS["ex.eei.audit.run"](queryArgs(url, ["url"])));
     if (url.pathname === "/schema") return jsonResponse(BUNDLED_SCHEMA);
     if (url.pathname === "/definitions") return jsonResponse(BUNDLED_DEFINITIONS);
