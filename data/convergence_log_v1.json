@@ -1,0 +1,27 @@
+{
+  "framework": "AI Infrastructure Convergence Framework",
+  "framework_url": "https://www.exmxc.ai/frameworks/ai-infrastructure-convergence-framework",
+  "monitor_url": "https://www.exmxc.ai/capital/convergence-monitor",
+  "methodology": "Six independent signal categories (credit, capex, cloud, energy, IPO, demand-broadening) are read against fixed thresholds and classified Latent, Watch, or Breach. Convergence posture is a function of how many categories sit in Breach within a trailing 14-day window, weighed against demand-broadening as an anti-convergence offset. Liquid signals are re-read weekly; structural signals refresh on the hyperscaler earnings cycle.",
+  "disclaimer": "Structural reference layer demonstrating conviction through dated, falsifiable reads. Records posture and signal state, not positions. Not investment advice, an investment product, a performance claim, or a solicitation. Human judgment governs; AI serves as instrumentation.",
+  "status_ladder": ["Quiet", "Watch", "Warning", "Convergence Firing"],
+  "categories": ["credit", "capex", "cloud", "energy", "ipo", "demand_broadening"],
+  "log": [
+    {
+      "date": "2026-06-15",
+      "status": "Warning",
+      "breaches": 2,
+      "categories_breached": ["capex", "ipo"],
+      "signals": {
+        "credit":            { "state": "Latent",  "refreshed": "2026-06-15", "note": "Liquid spreads calm; high-yield OAS near cycle lows with no widening. Private-credit channel carries an amber early-warning baseline, not co-occurring with any liquid-market widening — no migration tell." },
+        "capex":             { "state": "Breach",  "refreshed": "2026-06-10", "note": "Hyperscaler capex/revenue ratio expanding, not compressing — elevated and rising across the named buyers. Benign read: spend rising into demand that is still arriving." },
+        "cloud":             { "state": "Latent",  "refreshed": "2026-04-30", "note": "All three hyperscaler cloud segments growing comfortably above breach thresholds. No deceleration concentration. Next refresh on the late-July earnings cycle." },
+        "energy":            { "state": "Pending", "refreshed": "2026-06-15", "note": "Wholesale-hub instrumentation being configured. No grid-stress narrative present in current reporting — a soft tell the power constraint is not breaking this week." },
+        "ipo":               { "state": "Breach",  "refreshed": "2026-06-12", "note": "A marquee AI-adjacent listing posted a sub-20% day-one pop — technically a regime-change tell — but a strong aftermarket and broad demand cut against the cold-reception read. Treated as a soft breach." },
+        "demand_broadening": { "state": "Latent",  "refreshed": "2026-06-10", "note": "Broadening intact and strengthening — sovereign and custom-silicon demand widening rather than concentrating. The active anti-convergence offset; extends the window." }
+      },
+      "posture": "pre-position",
+      "note": "Inaugural read. Both breaches soft: capex is buildout-into-demand; the IPO breach is marginal and contradicted by a strong aftermarket. Demand-broadening intact. Posture: pre-position; staged de-risking not triggered."
+    }
+  ]
+}
