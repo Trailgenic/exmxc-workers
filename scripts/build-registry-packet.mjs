@@ -23,7 +23,6 @@ const packet = {
   repository: REPOSITORY,
   version: BUILD.version,
   categories: CATEGORIES,
-  tool_count: tools.length,
   tools
 };
 
@@ -65,7 +64,6 @@ node scripts/build-registry-packet.mjs
 - Repository: ${packet.repository}
 - Version: ${packet.version}
 - Categories: ${packet.categories.join(", ")}
-- Tool count: ${packet.tool_count}
 
 ## Tools
 
@@ -98,7 +96,7 @@ ${packet.tools.map((tool) => `- ${tool.name} — ${tool.title}: ${tool.descripti
 - Ready-to-paste entry:
 
 \`\`\`markdown
-- [exmxc](https://exmxc.ai) — institutional intelligence MCP node (sPEG valuation, entity intelligence, AI Power Index). Remote: https://mcp.exmxc.ai/mcp
+- [exmxc](https://exmxc.ai) — institutional intelligence MCP server (sPEG valuation, entity intelligence, AI Power Index). Remote: https://mcp.exmxc.ai/mcp
 \`\`\`
 `;
 
