@@ -196,7 +196,7 @@ describe('ADS, audit, cache, and registry', () => {
   });
 
   it('detects registry packet drift', async () => {
-    const packet = JSON.parse(await readFile('registry/packet.json', 'utf8'));
+    const packet = (await import('../registry/packet.json', { with: { type: 'json' } })).default;
     expect(packet.version).toBe(BUILD.version);
     expect(packet.tools.map((tool) => tool.name).sort()).toEqual(toolIds());
   });
