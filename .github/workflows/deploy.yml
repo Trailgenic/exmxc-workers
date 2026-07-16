@@ -26,5 +26,8 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} 
       - run: sleep 30
       - run: node scripts/live-acceptance.mjs
