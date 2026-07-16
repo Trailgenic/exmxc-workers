@@ -1,0 +1,27 @@
+{
+  "name": "exmxc-workers",
+  "version": "2.3.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "node scripts/source-check.mjs",
+    "test": "node tests/registry.test.mjs",
+    "test:workers": "vitest run --config vitest.config.mjs",
+    "validate:json": "node scripts/validate-json.mjs",
+    "registry:check": "node scripts/check-registry-packet.mjs",
+    "deploy:dry-run": "wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "agents": "0.17.4",
+    "ajv": "^8.17.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.18.4",
+    "@vitest/runner": "^4.1.10",
+    "@vitest/snapshot": "^4.1.10",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.110.0"
+  }
+}

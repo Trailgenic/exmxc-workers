@@ -22,7 +22,7 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 
 Canonical MCP discovery is served from `https://mcp.exmxc.ai/.well-known/mcp.json`; the apex `https://exmxc.ai/.well-known/mcp.json` is intentionally not served because the apex is Webflow on a DNS-only record. The transport endpoint is `https://mcp.exmxc.ai/mcp`.
 
-- `GET /` — REST/WebMCP discovery document
+- `GET /` — REST/MCP discovery document
 - `GET /.well-known/mcp.json` — MCP discovery pointer
 - `GET /capabilities.json` — generated capability inventory
 - `GET /.well-known/tool-registry.json` — generated tool registry
@@ -253,3 +253,19 @@ scripts/build-registry-packet.mjs   Registry packet generator
 registry/                           Generated MCP registry submission packet
 workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```
+
+## MCP modernization notes (v2.3.0)
+
+exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable HTTP on Cloudflare Workers. Tool and resource inventories are generated from `lib/registry.js`; public REST aliases and bundled dataset payloads are preserved.
+
+### ADS signal route
+
+`GET /api/ai-jobs-signal` without signal parameters returns the deterministic public benchmark. Paid signal generation uses `POST /api/ai-jobs-signal` and requires `Authorization: Bearer <ADS_SIGNAL_KEY>`. The Cloudflare deployment should add a rate rule on this path as defense in depth.
+
+### Audit route
+
+`/audit/run` and the `ex.eei.audit.run` tool remain public but validate targets before contacting the upstream audit service. The upstream service at `exmxc-audit.vercel.app` must independently enforce DNS-resolution and redirect checks against private, loopback, link-local, and reserved ranges; that external security dependency is not satisfied by this repository alone. Conservative Cloudflare rate limiting should be applied to `/audit/run` and audit calls arriving via `/mcp` as deployment configuration.
+
+### Structured content compatibility
+
+Successful tool calls keep `content[0].text` as the JSON serialization of the complete handler result. `structuredContent` is only emitted for protocol-valid object results; top-level array results remain text-only to avoid introducing an unapproved wrapper.

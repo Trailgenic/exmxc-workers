@@ -7,53 +7,22 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
     "entity intelligence"
   ],
-  "tool_count": 8,
   "tools": [
-    {
-      "name": "ex.entities.get",
-      "title": "Get Entity Intelligence Records",
-      "description": "Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring."
-    },
-    {
-      "name": "ex.speg.get",
-      "title": "Get sPEG Valuation Records",
-      "description": "Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies."
-    },
-    {
-      "name": "ex.datasets.index.get",
-      "title": "Get Dataset Index",
-      "description": "Retrieve index of all bundled datasets available through the exmxc MCP node."
-    },
-    {
-      "name": "ex.ai_power_index.get",
-      "title": "Get AI Power Index Dataset",
-      "description": "Global AI ecosystem ranking dataset measuring compute, interface, alignment, and energy influence."
-    },
-    {
-      "name": "ex.four_forces.get",
-      "title": "Get Four Forces Exposure Dataset",
-      "description": "Four Forces exposure scaffold for AI Power universe entities across compute, interface, alignment, and energy."
-    },
-    {
-      "name": "ex.entity_in_a_box.get",
-      "title": "Get Entity-in-a-Box Ontology",
-      "description": "System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers."
-    },
-    {
-      "name": "ex.ai_power.analysis.top",
-      "title": "Get Top AI Power Index Entities",
-      "description": "Retrieve top-ranked entities from the AI Power Index ranking."
-    },
-    {
-      "name": "ex.eei.audit.run",
-      "title": "Run Entity Clarity (EEI) Audit",
-      "description": "Run a live Entity Engineering Index audit against any public URL, returning entity score, tier breakdown, crawl health, and structural profile per the exmxc EEI v2.1 methodology."
-    }
+    { "name": "ex.entities.get", "title": "Get Entity Intelligence Records", "description": "Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring." },
+    { "name": "ex.speg.get", "title": "Get sPEG Valuation Records", "description": "Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies." },
+    { "name": "ex.datasets.index.get", "title": "Get Dataset Index", "description": "Retrieve index of all bundled datasets available through the exmxc MCP server." },
+    { "name": "ex.ai_power_index.get", "title": "Get AI Power Index Dataset", "description": "Global AI ecosystem ranking dataset measuring compute, interface, alignment, and energy influence." },
+    { "name": "ex.four_forces.get", "title": "Get Four Forces Exposure Dataset", "description": "Four Forces exposure scaffold for AI Power universe entities across compute, interface, alignment, and energy." },
+    { "name": "ex.entity_in_a_box.get", "title": "Get Entity-in-a-Box Ontology", "description": "System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers." },
+    { "name": "ex.ai_power.analysis.top", "title": "Get Top AI Power Index Entities", "description": "Retrieve top-ranked entities from the AI Power Index ranking." },
+    { "name": "ex.eei.audit.run", "title": "Run Entity Clarity (EEI) Audit", "description": "Run a live Entity Engineering Index audit against any public URL, returning entity score, tier breakdown, crawl health, and structural profile per the exmxc EEI v2.1 methodology." },
+    { "name": "ex.convergence.latest", "title": "Get Latest Convergence Read", "description": "Retrieve the most recent weekly read of the AI Infrastructure Convergence Framework — overall status, count of categories in breach, per-signal state (Latent/Watch/Breach/Pending), and exit posture. Derived reference layer; not investment advice." },
+    { "name": "ex.convergence.log", "title": "Get Convergence Monitor Log", "description": "Retrieve the longitudinal weekly log of convergence reads — each entry time-stamping status, breach count, categories breached, per-signal state, and posture. Optional limit returns the most recent N entries (newest first). Derived reference layer; not investment advice." }
   ]
 }

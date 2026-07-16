@@ -41,7 +41,7 @@ The following surfaces are generated from these constants rather than hand-maint
 
 ## Transport routes
 
-### REST/WebMCP discovery
+### REST/MCP discovery
 
 - `GET /`
 - `GET /.well-known/mcp.json`
