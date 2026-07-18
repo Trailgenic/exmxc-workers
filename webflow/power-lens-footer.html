@@ -1,0 +1,309 @@
+<style>
+  .pl-root { max-width: 980px; margin: 0 auto; padding: 72px 40px 88px; box-sizing: border-box; }
+  .pl-masthead { margin-bottom: 46px; padding-bottom: 36px; border-bottom: 0.5px solid var(--ex-border-gold); }
+  .pl-headline { font-family: var(--ex-font-display); font-size: clamp(2.45rem, 6vw, 4.5rem); font-weight: 400; line-height: 0.98; letter-spacing: -0.035em; color: #fff; margin: 0 0 20px; max-width: 760px; }
+  .pl-headline em { color: var(--ex-lavender); font-style: normal; }
+  .pl-tagline { font-family: var(--ex-font-body); font-size: 1.08rem; color: var(--ex-text-dim); line-height: 1.65; max-width: 700px; margin: 0; }
+  .pl-rule { display: flex; align-items: center; gap: 16px; margin: 40px 0 22px; }
+  .pl-rule-label { font-family: var(--ex-font-mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--ex-gold); white-space: nowrap; }
+  .pl-rule-line { flex: 1; height: .5px; background: var(--ex-border-gold); }
+  .pl-search { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+  .pl-input { width: 100%; font-family: var(--ex-font-body); font-size: 1.05rem; color: #fff; background: var(--ex-surface-mid); border: .5px solid var(--ex-border-mid); padding: 14px 16px; box-sizing: border-box; border-radius: 0; -webkit-appearance: none; }
+  .pl-input:focus { outline: none; border-color: var(--ex-lavender-dim); }
+  .pl-input::placeholder { color: var(--ex-text-muted); font-style: italic; }
+  .pl-btn { font-family: var(--ex-font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; background: var(--ex-lavender); color: var(--ex-bg); border: .5px solid var(--ex-lavender); padding: 14px 24px; cursor: pointer; white-space: nowrap; border-radius: 0; }
+  .pl-btn:hover:not(:disabled) { opacity: .84; }
+  .pl-btn:disabled { opacity: .45; cursor: default; }
+  .pl-btn--ghost { background: transparent; color: var(--ex-lavender); padding: 10px 14px; }
+  .pl-note { margin: 14px 0 0; font-family: var(--ex-font-body); font-size: .9rem; font-style: italic; color: var(--ex-text-muted); line-height: 1.6; }
+  .pl-examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .pl-chip { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--ex-text-dim); background: transparent; border: .5px solid var(--ex-border-mid); padding: 7px 10px; cursor: pointer; }
+  .pl-chip:hover { color: var(--ex-lavender); border-color: var(--ex-lavender-dim); }
+  .pl-status { display: none; margin-top: 28px; padding: 16px 18px; border: .5px solid var(--ex-border-mid); color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .95rem; line-height: 1.55; }
+  .pl-status.is-visible { display: block; }
+  .pl-status.is-error { border-color: #C45C4A; color: #E0A39A; }
+  .pl-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .pl-results { display: none; margin-top: 46px; }
+  .pl-results.is-visible { display: block; }
+  .pl-card { border: .5px solid var(--ex-border-gold); background: var(--ex-surface); padding: 34px; }
+  .pl-card-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: start; }
+  .pl-entity-kicker { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--ex-text-muted); margin-bottom: 12px; }
+  .pl-entity { font-family: var(--ex-font-display); font-size: clamp(2rem, 5vw, 3.3rem); font-weight: 400; line-height: 1; letter-spacing: -.025em; color: #fff; margin: 0 0 12px; }
+  .pl-summary { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: .98rem; line-height: 1.65; max-width: 620px; margin: 0; }
+  .pl-index { text-align: right; min-width: 150px; }
+  .pl-index-label { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; color: var(--ex-text-muted); }
+  .pl-index-number { font-family: var(--ex-font-display); font-size: 4.8rem; line-height: .95; letter-spacing: -.045em; color: var(--ex-lavender); margin: 5px 0 8px; }
+  .pl-tier { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--ex-gold); }
+  .pl-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; padding-top: 24px; border-top: .5px solid var(--ex-border); }
+  .pl-force-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .pl-force { background: var(--ex-surface); border: .5px solid var(--ex-border); padding: 22px 18px; min-width: 0; }
+  .pl-force-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 18px; }
+  .pl-force-name { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .11em; text-transform: uppercase; color: var(--ex-text-dim); }
+  .pl-force-score { font-family: var(--ex-font-display); font-size: 1.8rem; color: #fff; }
+  .pl-bar { height: 2px; background: var(--ex-border); overflow: hidden; }
+  .pl-bar-fill { width: 0; height: 100%; background: var(--ex-lavender); transition: width .55s ease; }
+  .pl-weight { margin-top: 10px; font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .08em; text-transform: uppercase; color: var(--ex-text-muted); }
+  .pl-evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .pl-evidence { border: .5px solid var(--ex-border); background: var(--ex-surface); padding: 26px; }
+  .pl-evidence-title { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ex-gold); margin-bottom: 20px; }
+  .pl-ledger { display: grid; gap: 12px; margin: 0; }
+  .pl-ledger-row { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding-bottom: 10px; border-bottom: .5px solid var(--ex-border); }
+  .pl-ledger dt { font-family: var(--ex-font-body); color: var(--ex-text-muted); font-size: .9rem; }
+  .pl-ledger dd { font-family: var(--ex-font-mono); color: #fff; font-size: .82rem; text-align: right; margin: 0; }
+  .pl-empty { font-family: var(--ex-font-body); color: var(--ex-text-muted); font-style: italic; font-size: .92rem; line-height: 1.55; }
+  .pl-analysis { border-left: 2px solid var(--ex-lavender-dim); padding: 4px 0 4px 22px; }
+  .pl-analysis p { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: .98rem; line-height: 1.65; margin: 0 0 12px; }
+  .pl-analysis p:last-child { margin-bottom: 0; }
+  .pl-boundary { margin-top: 24px; padding: 18px; border: .5px solid var(--ex-border); font-family: var(--ex-font-body); color: var(--ex-text-muted); font-size: .88rem; line-height: 1.6; }
+  .pl-footer { margin-top: 58px; padding-top: 28px; border-top: .5px solid var(--ex-border-gold); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 760px) {
+    .pl-root { padding: 52px 24px 68px; }
+    .pl-card-top { grid-template-columns: 1fr; }
+    .pl-index { text-align: left; }
+    .pl-force-grid { grid-template-columns: 1fr 1fr; }
+    .pl-evidence-grid, .pl-footer { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .pl-search { grid-template-columns: 1fr; }
+    .pl-card { padding: 24px; }
+    .pl-force-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<main class="pl-root" id="power-lens">
+  <header class="pl-masthead">
+    <div class="ex-label" style="margin-bottom:16px;">Interactive Intelligence · Four Forces of AI Power</div>
+    <h1 class="pl-headline">See where AI power <em>actually resides.</em></h1>
+    <p class="pl-tagline">Power Lens synthesizes exmxc’s AI Power Index, Four Forces, Entity Clarity, and structural scarcity datasets into one evidence-bounded company card.</p>
+  </header>
+
+  <div class="pl-rule"><span class="pl-rule-label">Generate Power Card</span><div class="pl-rule-line"></div></div>
+  <div class="pl-search" role="search">
+    <input id="pl-query" class="pl-input" type="search" maxlength="120" autocomplete="off" placeholder="Enter a company or ticker (e.g., NVIDIA or NVDA)" aria-label="Company name or ticker" />
+    <button id="pl-run" class="pl-btn" type="button">Map Power</button>
+  </div>
+  <p class="pl-note">V1 searches the bundled 84-entity exmxc AI Power universe. Scores are deterministic dataset syntheses—not live market data or investment recommendations.</p>
+  <div class="pl-examples" aria-label="Example searches">
+    <button class="pl-chip" data-query="NVDA">NVDA</button>
+    <button class="pl-chip" data-query="Microsoft">Microsoft</button>
+    <button class="pl-chip" data-query="Google">Google</button>
+    <button class="pl-chip" data-query="TSM">TSM</button>
+    <button class="pl-chip" data-query="CEG">CEG</button>
+  </div>
+
+  <div id="pl-status" class="pl-status" role="status" aria-live="polite"></div>
+
+  <section id="pl-results" class="pl-results" aria-live="polite">
+    <article class="pl-card">
+      <div class="pl-card-top">
+        <div>
+          <div id="pl-kicker" class="pl-entity-kicker"></div>
+          <h2 id="pl-entity" class="pl-entity"></h2>
+          <p id="pl-summary" class="pl-summary"></p>
+        </div>
+        <div class="pl-index">
+          <div class="pl-index-label">AI Power Index</div>
+          <div id="pl-index" class="pl-index-number"></div>
+          <div id="pl-tier" class="pl-tier"></div>
+        </div>
+      </div>
+      <div class="pl-actions">
+        <button id="pl-copy" class="pl-btn pl-btn--ghost" type="button">Copy Share Link</button>
+        <a class="pl-btn pl-btn--ghost" href="https://mcp.exmxc.ai/.well-known/tool-registry.json" target="_blank" rel="noopener">Machine Access</a>
+      </div>
+    </article>
+
+    <div class="pl-rule"><span class="pl-rule-label">Four Forces Exposure</span><div class="pl-rule-line"></div></div>
+    <div id="pl-forces" class="pl-force-grid"></div>
+
+    <div class="pl-rule"><span class="pl-rule-label">Evidence Layers</span><div class="pl-rule-line"></div></div>
+    <div class="pl-evidence-grid">
+      <div class="pl-evidence"><div class="pl-evidence-title">Entity Clarity</div><div id="pl-clarity"></div></div>
+      <div class="pl-evidence"><div class="pl-evidence-title">Structural Scarcity</div><div id="pl-scarcity"></div></div>
+    </div>
+
+    <div class="pl-rule"><span class="pl-rule-label">Interpretation</span><div class="pl-rule-line"></div></div>
+    <div id="pl-analysis" class="pl-analysis"></div>
+    <div id="pl-boundary" class="pl-boundary"></div>
+  </section>
+
+  <footer class="pl-footer">
+    <div>
+      <div class="ex-nav-group-label">Methodology</div>
+      <div class="ex-nav-links">
+        <a href="/frameworks">Four Forces & Frameworks</a>
+        <a href="/entity-clarity-index">Entity Clarity Index</a>
+        <a href="/speg-index">sPEG Index Series</a>
+        <a href="/capital">Applied Capital Architecture</a>
+      </div>
+    </div>
+    <div>
+      <div class="ex-nav-group-label">Navigation</div>
+      <div class="ex-nav-links">
+        <a href="/signal-briefs">Signal Briefs</a>
+        <a href="/leadership-doctrine">Leadership &amp; Doctrine</a>
+        <a href="/">Home</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  const ENDPOINT = "https://mcp.exmxc.ai/power-lens";
+  const input = document.getElementById("pl-query");
+  const run = document.getElementById("pl-run");
+  const status = document.getElementById("pl-status");
+  const results = document.getElementById("pl-results");
+  const copy = document.getElementById("pl-copy");
+
+  function text(id, value) { document.getElementById(id).textContent = value == null ? "—" : String(value); }
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+  function showStatus(message, isError) {
+    clear(status);
+    status.textContent = message;
+    status.className = "pl-status is-visible" + (isError ? " is-error" : "");
+  }
+  function hideStatus() { status.className = "pl-status"; clear(status); }
+  function ledger(rows) {
+    const dl = document.createElement("dl");
+    dl.className = "pl-ledger";
+    rows.forEach(function (row) {
+      const wrap = document.createElement("div");
+      wrap.className = "pl-ledger-row";
+      const dt = document.createElement("dt");
+      const dd = document.createElement("dd");
+      dt.textContent = row[0];
+      dd.textContent = row[1] == null ? "—" : String(row[1]);
+      wrap.append(dt, dd);
+      dl.appendChild(wrap);
+    });
+    return dl;
+  }
+  function empty(message) {
+    const p = document.createElement("p");
+    p.className = "pl-empty";
+    p.textContent = message;
+    return p;
+  }
+  function renderSuggestions(data) {
+    showStatus("No Power Lens record matched “" + data.query + "”.", true);
+    if (!data.suggestions || !data.suggestions.length) return;
+    const wrap = document.createElement("div");
+    wrap.className = "pl-suggestions";
+    data.suggestions.forEach(function (name) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "pl-chip";
+      button.textContent = name;
+      button.addEventListener("click", function () { input.value = name; search(name); });
+      wrap.appendChild(button);
+    });
+    status.appendChild(wrap);
+  }
+  function render(data) {
+    hideStatus();
+    text("pl-kicker", "Rank #" + data.power.rank + " of " + data.power.universe_size + " · " + data.power.force_profile + " force profile");
+    text("pl-entity", data.match.canonical_entity);
+    text("pl-summary", data.interpretation.summary);
+    text("pl-index", Number(data.power.ai_power_index).toFixed(2).replace(/0$/, ""));
+    text("pl-tier", data.power.tier + " power tier");
+
+    const forces = document.getElementById("pl-forces");
+    clear(forces);
+    data.four_forces.forEach(function (force) {
+      const card = document.createElement("div");
+      card.className = "pl-force";
+      const head = document.createElement("div");
+      head.className = "pl-force-head";
+      const name = document.createElement("span");
+      name.className = "pl-force-name";
+      name.textContent = force.label;
+      const score = document.createElement("span");
+      score.className = "pl-force-score";
+      score.textContent = force.score + "/10";
+      head.append(name, score);
+      const bar = document.createElement("div");
+      bar.className = "pl-bar";
+      const fill = document.createElement("div");
+      fill.className = "pl-bar-fill";
+      fill.style.width = Math.max(0, Math.min(100, force.score * 10)) + "%";
+      bar.appendChild(fill);
+      const weight = document.createElement("div");
+      weight.className = "pl-weight";
+      weight.textContent = "Model weight " + Math.round(force.weight * 100) + "%";
+      card.append(head, bar, weight);
+      forces.appendChild(card);
+    });
+
+    const clarity = document.getElementById("pl-clarity");
+    clear(clarity);
+    clarity.appendChild(data.entity_clarity ? ledger([
+      ["ECC score", data.entity_clarity.ecc],
+      ["AI posture", data.entity_clarity.posture],
+      ["Capability", data.entity_clarity.capability],
+      ["Industry", data.entity_clarity.industry]
+    ]) : empty("No matched Entity Clarity record is bundled for this entity."));
+
+    const scarcity = document.getElementById("pl-scarcity");
+    clear(scarcity);
+    scarcity.appendChild(data.scarcity ? ledger([
+      ["Ticker", data.scarcity.ticker],
+      ["Scarcity layer", data.scarcity.scarcity_layer],
+      ["sPEG snapshot", data.scarcity.speg],
+      ["Snapshot date", data.scarcity.snapshot_date]
+    ]) : empty("No matched sPEG scarcity snapshot is bundled for this entity."));
+
+    const analysis = document.getElementById("pl-analysis");
+    clear(analysis);
+    [data.interpretation.strongest_exposure, data.interpretation.lowest_exposure].forEach(function (value) {
+      const p = document.createElement("p");
+      p.textContent = value;
+      analysis.appendChild(p);
+    });
+    text("pl-boundary", data.interpretation.evidence_boundary + " Reality Gap status: " + data.coverage.reality_gap.status.replace("_", " ") + ". " + data.disclaimer);
+    results.className = "pl-results is-visible";
+  }
+  async function search(raw) {
+    const query = String(raw == null ? input.value : raw).trim();
+    if (!query) { showStatus("Enter a company name or ticker.", true); return; }
+    run.disabled = true;
+    run.textContent = "Mapping…";
+    results.className = "pl-results";
+    showStatus("Resolving “" + query + "” across exmxc intelligence datasets…", false);
+    try {
+      const response = await fetch(ENDPOINT + "?query=" + encodeURIComponent(query), { headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error("HTTP_" + response.status);
+      const data = await response.json();
+      if (!data.found) { renderSuggestions(data); return; }
+      const url = new URL(window.location.href);
+      url.searchParams.set("q", data.match.canonical_entity);
+      window.history.replaceState({}, "", url.toString());
+      input.value = data.match.canonical_entity;
+      render(data);
+    } catch (error) {
+      console.error("[POWER LENS]", error);
+      showStatus("Power Lens is temporarily unavailable. Please try again shortly.", true);
+    } finally {
+      run.disabled = false;
+      run.textContent = "Map Power";
+    }
+  }
+  run.addEventListener("click", function () { search(); });
+  input.addEventListener("keydown", function (event) { if (event.key === "Enter") search(); });
+  document.querySelectorAll(".pl-chip[data-query]").forEach(function (button) {
+    button.addEventListener("click", function () { input.value = button.dataset.query; search(button.dataset.query); });
+  });
+  copy.addEventListener("click", async function () {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copy.textContent = "Link Copied";
+      window.setTimeout(function () { copy.textContent = "Copy Share Link"; }, 1600);
+    } catch (_) {
+      showStatus("Copy the page URL from the browser to share this Power Card.", false);
+    }
+  });
+  const initial = new URLSearchParams(window.location.search).get("q");
+  if (initial) { input.value = initial; search(initial); }
+})();
+</script>

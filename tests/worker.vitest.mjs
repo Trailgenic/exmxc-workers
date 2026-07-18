@@ -14,6 +14,7 @@ const validArgs = {
   'ex.ai_power_index.get': {},
   'ex.four_forces.get': {},
   'ex.entity_in_a_box.get': {},
+  'ex.power_lens.get': { query: 'NVDA' },
   'ex.ai_power.analysis.top': { limit: 1 },
   'ex.eei.audit.run': { url: 'https://example.com' },
   'ex.convergence.latest': {},
@@ -141,6 +142,30 @@ describe('tools and schemas', () => {
     const unknownTool = await rpc('tools/call', { name: 'ex.nope', arguments: {} });
     expect(unknownTool.json.error.code).toBe(-32602);
   });
+
+  it('generates deterministic Power Lens cards from company names and ticker aliases', async () => {
+    const byTicker = await req('/power-lens?query=NVDA');
+    expect(byTicker.status).toBe(200);
+    const card = await byTicker.json();
+    expect(card.found).toBe(true);
+    expect(card.match.canonical_entity).toBe('NVIDIA');
+    expect(card.power.ai_power_index).toBe(8.6);
+    expect(card.power.rank).toBeGreaterThan(0);
+    expect(card.four_forces).toHaveLength(4);
+    expect(card.four_forces.reduce((sum, force) => sum + force.weighted_contribution, 0)).toBe(8.6);
+    expect(card.entity_clarity.ecc).toBeTypeOf('number');
+    expect(card.scarcity.ticker).toBe('NVDA');
+    expect(card.coverage.reality_gap.status).toBe('not_scored');
+
+    const byAlias = await (await req('/power-lens?query=Alphabet')).json();
+    expect(byAlias.match.canonical_entity).toBe('Google');
+    expect(byAlias.match.matched_on).toBe('alias_or_ticker');
+
+    const notFound = await (await req('/power-lens?query=NVIDA')).json();
+    expect(notFound.found).toBe(false);
+    expect(notFound.suggestions).toContain('NVIDIA');
+    expect((await req('/power-lens')).status).toBe(400);
+  });
 });
 
 describe('resources', () => {
@@ -191,6 +216,7 @@ describe('ADS, audit, cache, and registry', () => {
     expect((await req('/')).headers.get('cache-control')).toBe('no-cache');
     expect((await req('/.well-known/openapi.json')).headers.get('cache-control')).toBe('no-cache');
     expect((await req('/entities')).headers.get('cache-control')).toBe('public, max-age=3600');
+    expect((await req('/power-lens?query=NVDA')).headers.get('cache-control')).toBe('public, max-age=3600');
     expect((await req('/api/ai-jobs-signal')).headers.get('cache-control')).toBe('public, max-age=3600');
     expect((await req('/audit/run?url=http%3A%2F%2Flocalhost')).headers.get('cache-control')).toBe('no-store');
   });

@@ -87,6 +87,11 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
   - Compatibility alias
 - `/analysis/ai_power/top`
   - Shared implementation in `lib/queries.js`
+- `/power-lens`
+  - Required query: `query` (canonical company name, supported alias, or ticker)
+  - Shared deterministic implementation in `lib/queries.js` via `ex.power_lens.get`
+- `/schemas/power-lens`
+  - Source: `schema/power_lens.schema.json`
 - `/audit/run`
   - Shared implementation in `lib/queries.js` via `ex.eei.audit.run`
 - `/schema`
@@ -107,6 +112,8 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `getFourForces`
 - `getEntityInABox`
 - `getAiPowerTop`
+- `getPowerLens`
+- `validatePowerLensQuery`
 - `runEeiAudit`
 - `getIndex`
 - `TOOL_HANDLERS`
@@ -121,8 +128,11 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 - `ex.ai_power_index.get`
 - `ex.four_forces.get`
 - `ex.entity_in_a_box.get`
+- `ex.power_lens.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
+- `ex.convergence.latest`
+- `ex.convergence.log`
 
 Content pages are listed separately as `CONTENT_LINKS` and are not exposed as callable MCP tools:
 
@@ -138,7 +148,7 @@ Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.1.0`, `BUILD.released = 2026-06-10`.
+- Build metadata is stable: `BUILD.version = 2.4.0`, `BUILD.released = 2026-07-18`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.

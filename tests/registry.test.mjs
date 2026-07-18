@@ -4,4 +4,6 @@ assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/index'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://content/index'));
+assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.power_lens.get'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://schemas/power_lens'));
 console.log('registry invariants pass');
