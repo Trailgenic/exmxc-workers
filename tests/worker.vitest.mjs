@@ -155,11 +155,24 @@ describe('tools and schemas', () => {
     expect(card.four_forces.reduce((sum, force) => sum + force.weighted_contribution, 0)).toBe(8.6);
     expect(card.entity_clarity.ecc).toBeTypeOf('number');
     expect(card.scarcity.ticker).toBe('NVDA');
+    expect(card.scarcity.snapshot_date).toBe('2026-07-16');
+    expect(card.scarcity.speg).toBe(0.27);
+    expect(card.scarcity.calculation_method).toBe('forward_fiscal_eps_midpoint_proxy');
+    expect(card.scarcity.forward_pe).toBe(24.69);
     expect(card.coverage.reality_gap.status).toBe('not_scored');
 
     const byAlias = await (await req('/power-lens?query=Alphabet')).json();
     expect(byAlias.match.canonical_entity).toBe('Google');
     expect(byAlias.match.matched_on).toBe('alias_or_ticker');
+
+    const skHynix = await (await req('/power-lens?query=SKHY')).json();
+    expect(skHynix.match.canonical_entity).toBe('SK Hynix');
+    expect(skHynix.scarcity.ticker).toBe('000660.KS');
+    expect(skHynix.scarcity.input_confidence).toBe('low');
+
+    const [wdc] = await (await req('/speg?ticker=WDC')).json();
+    expect(wdc.speg_display).toBe('≤0.38');
+    expect(wdc.growth_is_lower_bound).toBe(true);
 
     const notFound = await (await req('/power-lens?query=NVIDA')).json();
     expect(notFound.found).toBe(false);

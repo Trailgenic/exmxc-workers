@@ -8,7 +8,7 @@
     "Intel": ["INTC", "Intel Corporation"],
     "TSMC": ["TSM", "Taiwan Semiconductor", "Taiwan Semiconductor Manufacturing Company"],
     "Samsung Electronics": ["Samsung"],
-    "SK Hynix": ["SKHX"],
+    "SK Hynix": ["SKHX", "SKHY", "000660.KS"],
     "Micron Technology": ["MU", "Micron"],
     "ASML": ["ASML Holding"],
     "Applied Materials": ["AMAT"],

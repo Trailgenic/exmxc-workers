@@ -250,7 +250,11 @@
     scarcity.appendChild(data.scarcity ? ledger([
       ["Ticker", data.scarcity.ticker],
       ["Scarcity layer", data.scarcity.scarcity_layer],
-      ["sPEG snapshot", data.scarcity.speg],
+      ["sPEG snapshot", data.scarcity.speg_display || data.scarcity.speg],
+      ["Forward P/E", data.scarcity.forward_pe],
+      ["Forward EPS growth", (data.scarcity.growth_is_lower_bound ? "≥" : "") + data.scarcity.forward_eps_growth_pct + "%"],
+      ["Scarcity multiplier", data.scarcity.scarcity_multiplier + "×"],
+      ["Input confidence", data.scarcity.input_confidence],
       ["Snapshot date", data.scarcity.snapshot_date]
     ]) : empty("No matched sPEG scarcity snapshot is bundled for this entity."));
 
