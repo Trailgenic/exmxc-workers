@@ -2,12 +2,27 @@
   "metadata": {
     "source": "exmxc.ai",
     "dataset": "speg_index",
-    "version": "1.1.0",
-    "as_of_date": "2026-02-13",
-    "price_as_of": "2026-02-13",
+    "version": "2.0.0",
+    "methodology_version": "speg-forward-eps-proxy-v1",
+    "as_of_date": "2026-07-16",
+    "price_as_of": "2026-07-16",
     "data_freshness": "snapshot",
-    "currency": "USD",
-    "entity_count": 25
+    "snapshot_type": "forward_fiscal_eps_proxy",
+    "currency": "mixed",
+    "entity_count": 25,
+    "formula": "sPEG = Forward P/E ÷ (Forward EPS Growth Rate × Scarcity Multiplier)",
+    "price_input": "User-supplied July 16, 2026 closing-price table.",
+    "eps_input": "User-supplied Google research containing Year 1 and Year 2 forward EPS point estimates or ranges.",
+    "eps_method": "Range midpoints; growth = (Year 2 midpoint / Year 1 midpoint - 1) × 100.",
+    "growth_rate_units": "percentage points",
+    "scarcity_method": "Published exmxc infrastructure multipliers retained where available; remaining names assigned to existing exmxc scarcity bands for this snapshot.",
+    "caveats": [
+      "This is a forward fiscal EPS proxy snapshot, not a licensed point-in-time NTM consensus dataset.",
+      "Prices and forward EPS inputs were supplied by the user and were not independently verified against a licensed institutional data terminal.",
+      "SK Hynix uses the local ordinary share as canonical price and an implied normalization factor from the supplied USD reference; confidence remains low until the share ratio is independently verified.",
+      "Western Digital Year 2 EPS was supplied as $20.00+; its growth rate is a lower bound and its displayed sPEG is an upper bound.",
+      "Derived reference layer; not live market data or investment advice."
+    ]
   },
   "rows": [
     {
@@ -16,9 +31,36 @@
       "ticker": "000660.KS",
       "sector": "AI Semiconductor",
       "scarcity_layer": "HBM Memory",
-      "date": "2026-02-13",
-      "price_usd": 610.50,
-      "speg": 0.24
+      "date": "2026-07-16",
+      "price": 1842000,
+      "currency": "KRW",
+      "price_native": 1842000,
+      "price_usd_reference": 152.31,
+      "normalization_factor_native_per_usd": 12093.7562,
+      "forward_eps_year_1": {
+        "min": 12.5,
+        "max": 13.2,
+        "midpoint": 12.85,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 15.1,
+        "max": 16,
+        "midpoint": 15.55,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 11.85,
+      "forward_eps_growth_pct": 21.01,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2.5,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.23,
+      "speg_display": "0.23",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward periods supplied after conversion from native KRW.",
+      "input_confidence": "low",
+      "note": "Canonical close uses the local ordinary share. Forward EPS is normalized to KRW using the implied share-and-currency factor between the supplied local close and USD reference; independently verify the share ratio before investment use."
     },
     {
       "entity_id": "micron_technology",
@@ -26,9 +68,33 @@
       "ticker": "MU",
       "sector": "AI Semiconductor",
       "scarcity_layer": "HBM Memory",
-      "date": "2026-02-13",
-      "price_usd": 411.66,
-      "speg": 0.29
+      "date": "2026-07-16",
+      "price": 853.2,
+      "currency": "USD",
+      "price_usd": 853.2,
+      "forward_eps_year_1": {
+        "min": 57.71,
+        "max": 57.71,
+        "midpoint": 57.71,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 72.75,
+        "max": 97.77,
+        "midpoint": 85.26,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 14.78,
+      "forward_eps_growth_pct": 47.74,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.15,
+      "speg_display": "0.15",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27; fiscal year ends August.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "taiwan_semiconductor",
@@ -36,9 +102,33 @@
       "ticker": "TSM",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Fabrication",
-      "date": "2026-02-13",
-      "price_usd": 366.36,
-      "speg": 0.51
+      "date": "2026-07-16",
+      "price": 409.74,
+      "currency": "USD",
+      "price_usd": 409.74,
+      "forward_eps_year_1": {
+        "min": 11.1,
+        "max": 11.5,
+        "midpoint": 11.3,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 13.8,
+        "max": 14.2,
+        "midpoint": 14,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 36.26,
+      "forward_eps_growth_pct": 23.89,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 3.5,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.43,
+      "speg_display": "0.43",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "samsung_electronics",
@@ -46,9 +136,36 @@
       "ticker": "005930.KS",
       "sector": "Memory & Storage",
       "scarcity_layer": "Memory + Foundry Hybrid",
-      "date": "2026-02-13",
-      "price_usd": 124.50,
-      "speg": 0.52
+      "date": "2026-07-16",
+      "price": 255000,
+      "currency": "KRW",
+      "price_native": 255000,
+      "price_usd_reference": 172.41,
+      "normalization_factor_native_per_usd": 1479.0325,
+      "forward_eps_year_1": {
+        "min": 10.8,
+        "max": 11.4,
+        "midpoint": 11.1,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 12.8,
+        "max": 13.5,
+        "midpoint": 13.15,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 15.53,
+      "forward_eps_growth_pct": 18.47,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.42,
+      "speg_display": "0.42",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward EPS supplied after conversion from native KRW.",
+      "input_confidence": "medium",
+      "note": "Canonical close uses the local ordinary share. Forward EPS is normalized to KRW using the implied factor between supplied local and USD reference prices."
     },
     {
       "entity_id": "asml",
@@ -56,9 +173,33 @@
       "ticker": "ASML",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Lithography",
-      "date": "2026-02-13",
-      "price_usd": 1406.61,
-      "speg": 0.59
+      "date": "2026-07-16",
+      "price": 1784.87,
+      "currency": "USD",
+      "price_usd": 1784.87,
+      "forward_eps_year_1": {
+        "min": 38.5,
+        "max": 41,
+        "midpoint": 39.75,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 48,
+        "max": 52,
+        "midpoint": 50,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 44.9,
+      "forward_eps_growth_pct": 25.79,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 4,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.44,
+      "speg_display": "0.44",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward periods reflect the supplied High-NA EUV ramp assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "nvidia",
@@ -66,9 +207,33 @@
       "ticker": "NVDA",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Compute",
-      "date": "2026-02-13",
-      "price_usd": 182.78,
-      "speg": 0.63
+      "date": "2026-07-16",
+      "price": 207.4,
+      "currency": "USD",
+      "price_usd": 207.4,
+      "forward_eps_year_1": {
+        "min": 8.3,
+        "max": 8.5,
+        "midpoint": 8.4,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 11.2,
+        "max": 11.8,
+        "midpoint": 11.5,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 24.69,
+      "forward_eps_growth_pct": 36.9,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2.5,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.27,
+      "speg_display": "0.27",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY27 and FY28; fiscal year ends January.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "western_digital",
@@ -76,9 +241,34 @@
       "ticker": "WDC",
       "sector": "Memory & Storage",
       "scarcity_layer": "NAND Storage",
-      "date": "2026-02-13",
-      "price_usd": 281.58,
-      "speg": 0.66
+      "date": "2026-07-16",
+      "price": 466.81,
+      "currency": "USD",
+      "price_usd": 466.81,
+      "forward_eps_year_1": {
+        "min": 11.89,
+        "max": 11.89,
+        "midpoint": 11.89,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 20,
+        "max": null,
+        "midpoint": 20,
+        "source_currency": "USD",
+        "is_floor": true
+      },
+      "forward_pe": 39.26,
+      "forward_eps_growth_pct": 68.21,
+      "growth_is_lower_bound": true,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.38,
+      "speg_display": "≤0.38",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Year 2 supplied as $20.00+ multi-year target.",
+      "input_confidence": "low",
+      "note": "Year 2 EPS uses the supplied $20.00 floor. Growth is a lower bound and reported sPEG is therefore an upper bound."
     },
     {
       "entity_id": "arista_networks",
@@ -86,9 +276,33 @@
       "ticker": "ANET",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Network Infrastructure",
-      "date": "2026-02-13",
-      "price_usd": 141.59,
-      "speg": 0.69
+      "date": "2026-07-16",
+      "price": 168.56,
+      "currency": "USD",
+      "price_usd": 168.56,
+      "forward_eps_year_1": {
+        "min": 9.1,
+        "max": 9.5,
+        "midpoint": 9.3,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 11.2,
+        "max": 11.9,
+        "midpoint": 11.55,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 18.12,
+      "forward_eps_growth_pct": 24.19,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.37,
+      "speg_display": "0.37",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "ge_vernova",
@@ -96,9 +310,33 @@
       "ticker": "GEV",
       "sector": "Power & Energy",
       "scarcity_layer": "Power Generation Technology",
-      "date": "2026-02-13",
-      "price_usd": 802.13,
-      "speg": 0.78
+      "date": "2026-07-16",
+      "price": 1036.22,
+      "currency": "USD",
+      "price_usd": 1036.22,
+      "forward_eps_year_1": {
+        "min": 9.2,
+        "max": 9.8,
+        "midpoint": 9.5,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 13.5,
+        "max": 14.5,
+        "midpoint": 14,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 109.08,
+      "forward_eps_growth_pct": 47.37,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 3,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.77,
+      "speg_display": "0.77",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward range reflects supplied grid-backlog assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "vertiv",
@@ -106,9 +344,33 @@
       "ticker": "VRT",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Power & Cooling",
-      "date": "2026-02-13",
-      "price_usd": 234.53,
-      "speg": 0.80
+      "date": "2026-07-16",
+      "price": 294.11,
+      "currency": "USD",
+      "price_usd": 294.11,
+      "forward_eps_year_1": {
+        "min": 6.3,
+        "max": 6.5,
+        "midpoint": 6.4,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 7.8,
+        "max": 8.2,
+        "midpoint": 8,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 45.95,
+      "forward_eps_growth_pct": 25,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.92,
+      "speg_display": "0.92",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "seagate_technology",
@@ -116,9 +378,33 @@
       "ticker": "STX",
       "sector": "Memory & Storage",
       "scarcity_layer": "HDD Storage",
-      "date": "2026-02-13",
-      "price_usd": 425.91,
-      "speg": 0.88
+      "date": "2026-07-16",
+      "price": 745.49,
+      "currency": "USD",
+      "price_usd": 745.49,
+      "forward_eps_year_1": {
+        "min": 13.1,
+        "max": 14.89,
+        "midpoint": 13.995,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 18.5,
+        "max": 21,
+        "midpoint": 19.75,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 53.27,
+      "forward_eps_growth_pct": 41.12,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.86,
+      "speg_display": "0.86",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27; fiscal year ends June.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "vistra_corp",
@@ -126,9 +412,33 @@
       "ticker": "VST",
       "sector": "Power & Energy",
       "scarcity_layer": "Power Generation",
-      "date": "2026-02-13",
-      "price_usd": 171.49,
-      "speg": 0.89
+      "date": "2026-07-16",
+      "price": 152.56,
+      "currency": "USD",
+      "price_usd": 152.56,
+      "forward_eps_year_1": {
+        "min": 5.8,
+        "max": 6.2,
+        "midpoint": 6,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 7.5,
+        "max": 8.3,
+        "midpoint": 7.9,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 25.43,
+      "forward_eps_growth_pct": 31.67,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.54,
+      "speg_display": "0.54",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward range reflects supplied PJM capacity-pricing assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "marvell_technology",
@@ -136,9 +446,33 @@
       "ticker": "MRVL",
       "sector": "Memory & Storage",
       "scarcity_layer": "Memory Controllers",
-      "date": "2026-02-13",
-      "price_usd": 78.61,
-      "speg": 0.91
+      "date": "2026-07-16",
+      "price": 188.3,
+      "currency": "USD",
+      "price_usd": 188.3,
+      "forward_eps_year_1": {
+        "min": 2.4,
+        "max": 2.65,
+        "midpoint": 2.525,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 3.55,
+        "max": 3.9,
+        "midpoint": 3.725,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 74.57,
+      "forward_eps_growth_pct": 47.52,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 1.05,
+      "speg_display": "1.05",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY27 and FY28; fiscal year ends January.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "schneider_electric",
@@ -146,9 +480,33 @@
       "ticker": "SBGSY",
       "sector": "Power & Energy",
       "scarcity_layer": "Power Management",
-      "date": "2026-02-13",
-      "price_usd": 62.43,
-      "speg": 1.11
+      "date": "2026-07-16",
+      "price": 60.1,
+      "currency": "USD",
+      "price_usd": 60.1,
+      "forward_eps_year_1": {
+        "min": 1.95,
+        "max": 2.1,
+        "midpoint": 2.025,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 2.3,
+        "max": 2.5,
+        "midpoint": 2.4,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 29.68,
+      "forward_eps_growth_pct": 18.52,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.8,
+      "speg_display": "0.80",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "ADR representation.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "synopsys",
@@ -156,9 +514,33 @@
       "ticker": "SNPS",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Chip Design",
-      "date": "2026-02-13",
-      "price_usd": 437.09,
-      "speg": 1.15
+      "date": "2026-07-16",
+      "price": 417.03,
+      "currency": "USD",
+      "price_usd": 417.03,
+      "forward_eps_year_1": {
+        "min": 16.4,
+        "max": 16.8,
+        "midpoint": 16.6,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 19.2,
+        "max": 20.1,
+        "midpoint": 19.65,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 25.12,
+      "forward_eps_growth_pct": 18.37,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 3,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.46,
+      "speg_display": "0.46",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "quanta_services",
@@ -166,9 +548,33 @@
       "ticker": "PWR",
       "sector": "Power & Energy",
       "scarcity_layer": "Grid Infrastructure",
-      "date": "2026-02-13",
-      "price_usd": 524.08,
-      "speg": 1.16
+      "date": "2026-07-16",
+      "price": 631.02,
+      "currency": "USD",
+      "price_usd": 631.02,
+      "forward_eps_year_1": {
+        "min": 10.8,
+        "max": 11.3,
+        "midpoint": 11.05,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 13,
+        "max": 13.7,
+        "midpoint": 13.35,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 57.11,
+      "forward_eps_growth_pct": 20.81,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 1.83,
+      "speg_display": "1.83",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward range reflects supplied grid-infrastructure buildout assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "cadence",
@@ -176,9 +582,33 @@
       "ticker": "CDNS",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Chip Design",
-      "date": "2026-02-13",
-      "price_usd": 299.46,
-      "speg": 1.17
+      "date": "2026-07-16",
+      "price": 364.65,
+      "currency": "USD",
+      "price_usd": 364.65,
+      "forward_eps_year_1": {
+        "min": 6.7,
+        "max": 6.95,
+        "midpoint": 6.825,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 8.1,
+        "max": 8.45,
+        "midpoint": 8.275,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 53.43,
+      "forward_eps_growth_pct": 21.25,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 3,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 0.84,
+      "speg_display": "0.84",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "netapp",
@@ -186,9 +616,33 @@
       "ticker": "NTAP",
       "sector": "Memory & Storage",
       "scarcity_layer": "Enterprise Storage Systems",
-      "date": "2026-02-13",
-      "price_usd": 102.42,
-      "speg": 1.19
+      "date": "2026-07-16",
+      "price": 159.69,
+      "currency": "USD",
+      "price_usd": 159.69,
+      "forward_eps_year_1": {
+        "min": 7.2,
+        "max": 7.45,
+        "midpoint": 7.325,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 8.1,
+        "max": 8.5,
+        "midpoint": 8.3,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 21.8,
+      "forward_eps_growth_pct": 13.31,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 1.64,
+      "speg_display": "1.64",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY27 and FY28; fiscal year ends April.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "pure_storage",
@@ -196,9 +650,33 @@
       "ticker": "PSTG",
       "sector": "Memory & Storage",
       "scarcity_layer": "Flash Storage Systems",
-      "date": "2026-02-13",
-      "price_usd": 73.91,
-      "speg": 1.22
+      "date": "2026-07-16",
+      "price": 68.37,
+      "currency": "USD",
+      "price_usd": 68.37,
+      "forward_eps_year_1": {
+        "min": 1.85,
+        "max": 2,
+        "midpoint": 1.925,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 2.4,
+        "max": 2.65,
+        "midpoint": 2.525,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 35.52,
+      "forward_eps_growth_pct": 31.17,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.76,
+      "speg_display": "0.76",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY27 and FY28; fiscal year ends January.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "constellation_energy",
@@ -206,9 +684,33 @@
       "ticker": "CEG",
       "sector": "Power & Energy",
       "scarcity_layer": "Nuclear Energy",
-      "date": "2026-02-13",
-      "price_usd": 288.43,
-      "speg": 1.34
+      "date": "2026-07-16",
+      "price": 251.77,
+      "currency": "USD",
+      "price_usd": 251.77,
+      "forward_eps_year_1": {
+        "min": 10.68,
+        "max": 11.74,
+        "midpoint": 11.21,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 13.1,
+        "max": 14.2,
+        "midpoint": 13.65,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 22.46,
+      "forward_eps_growth_pct": 21.77,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.69,
+      "speg_display": "0.69",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward range reflects supplied nuclear PPA margin assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "eaton_corp",
@@ -216,9 +718,33 @@
       "ticker": "ETN",
       "sector": "Power & Energy",
       "scarcity_layer": "Electrification Systems",
-      "date": "2026-02-13",
-      "price_usd": 389.25,
-      "speg": 1.40
+      "date": "2026-07-16",
+      "price": 396.27,
+      "currency": "USD",
+      "price_usd": 396.27,
+      "forward_eps_year_1": {
+        "min": 13.4,
+        "max": 13.9,
+        "midpoint": 13.65,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 15.8,
+        "max": 16.4,
+        "midpoint": 16.1,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 29.03,
+      "forward_eps_growth_pct": 17.95,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 1.08,
+      "speg_display": "1.08",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward range reflects supplied data-center equipment assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "analog_devices",
@@ -226,9 +752,33 @@
       "ticker": "ADI",
       "sector": "AI Semiconductor",
       "scarcity_layer": "Analog Control",
-      "date": "2026-02-13",
-      "price_usd": 337.10,
-      "speg": 1.41
+      "date": "2026-07-16",
+      "price": 380.53,
+      "currency": "USD",
+      "price_usd": 380.53,
+      "forward_eps_year_1": {
+        "min": 7.9,
+        "max": 8.3,
+        "midpoint": 8.1,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 9.8,
+        "max": 10.5,
+        "midpoint": 10.15,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 46.98,
+      "forward_eps_growth_pct": 25.31,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "published_infrastructure_index",
+      "speg": 1.24,
+      "speg_display": "1.24",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27; fiscal year ends October.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "nrg_energy",
@@ -236,9 +786,33 @@
       "ticker": "NRG",
       "sector": "Power & Energy",
       "scarcity_layer": "Power Generation",
-      "date": "2026-02-13",
-      "price_usd": 172.35,
-      "speg": 1.43
+      "date": "2026-07-16",
+      "price": 132.75,
+      "currency": "USD",
+      "price_usd": 132.75,
+      "forward_eps_year_1": {
+        "min": 6.9,
+        "max": 7.3,
+        "midpoint": 7.1,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 8.2,
+        "max": 8.8,
+        "midpoint": 8.5,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 18.7,
+      "forward_eps_growth_pct": 19.72,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 0.95,
+      "speg_display": "0.95",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "FY26 and FY27.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "nextera_energy",
@@ -246,9 +820,33 @@
       "ticker": "NEE",
       "sector": "Power & Energy",
       "scarcity_layer": "Utility Infrastructure",
-      "date": "2026-02-13",
-      "price_usd": 93.80,
-      "speg": 1.64
+      "date": "2026-07-16",
+      "price": 89.32,
+      "currency": "USD",
+      "price_usd": 89.32,
+      "forward_eps_year_1": {
+        "min": 3.7,
+        "max": 3.9,
+        "midpoint": 3.8,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 4.1,
+        "max": 4.35,
+        "midpoint": 4.225,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 23.51,
+      "forward_eps_growth_pct": 11.18,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 1.5,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 1.4,
+      "speg_display": "1.40",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "Forward range reflects supplied regulated-utility pacing assumptions.",
+      "input_confidence": "medium"
     },
     {
       "entity_id": "abb_ltd",
@@ -256,9 +854,33 @@
       "ticker": "ABBNY",
       "sector": "Power & Energy",
       "scarcity_layer": "Grid Automation",
-      "date": "2026-02-13",
-      "price_usd": 91.00,
-      "speg": 1.66
+      "date": "2026-07-16",
+      "price": 96.61,
+      "currency": "USD",
+      "price_usd": 96.61,
+      "forward_eps_year_1": {
+        "min": 2.45,
+        "max": 2.6,
+        "midpoint": 2.525,
+        "source_currency": "USD"
+      },
+      "forward_eps_year_2": {
+        "min": 2.85,
+        "max": 3.1,
+        "midpoint": 2.975,
+        "source_currency": "USD",
+        "is_floor": false
+      },
+      "forward_pe": 38.26,
+      "forward_eps_growth_pct": 17.82,
+      "growth_is_lower_bound": false,
+      "scarcity_multiplier": 2,
+      "scarcity_multiplier_basis": "exmxc_band_application_2026-07-18",
+      "speg": 1.07,
+      "speg_display": "1.07",
+      "calculation_method": "forward_fiscal_eps_midpoint_proxy",
+      "calendar_note": "ADR representation.",
+      "input_confidence": "medium"
     }
   ]
 }

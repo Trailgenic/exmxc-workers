@@ -13,7 +13,7 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.4.0`
+- Build version: `2.5.0`
 - Stable build date / `last_updated`: `2026-07-18`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
@@ -161,11 +161,17 @@ sPEG record example using the row-level `date` field:
   "ticker": "NVDA",
   "sector": "AI Semiconductor",
   "scarcity_layer": "Compute",
-  "date": "2026-02-13",
-  "price_usd": 182.78,
-  "speg": 0.63
+  "date": "2026-07-16",
+  "price_usd": 207.4,
+  "forward_pe": 24.69,
+  "forward_eps_growth_pct": 36.9,
+  "scarcity_multiplier": 2.5,
+  "speg": 0.27,
+  "calculation_method": "forward_fiscal_eps_midpoint_proxy"
 }
 ```
+
+The active sPEG snapshot uses disclosed user-supplied July 16 closing prices and forward fiscal EPS ranges. It is a proxy dataset rather than licensed point-in-time NTM consensus data. The prior February snapshot is preserved at `data/speg_index_2026-02-13.json`.
 
 AI Power Index record shape:
 
@@ -265,7 +271,7 @@ webflow/power-lens-footer.html     Staged Power Lens responsive application bund
 workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```
 
-## MCP modernization notes (v2.4.0)
+## MCP modernization notes (v2.5.0)
 
 exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable HTTP on Cloudflare Workers. Tool and resource inventories are generated from `lib/registry.js`; public REST aliases and bundled dataset payloads are preserved.
 
