@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exmxc.ai/schemas/power-lens/v1",
+  "title": "exmxc Power Lens Response",
+  "description": "Deterministic synthesis of an entity's AI Power Index, Four Forces exposures, Entity Clarity record, and available sPEG scarcity snapshot.",
+  "type": "object",
+  "required": ["product", "version", "query", "found", "generated_at"],
+  "properties": {
+    "product": { "type": "string", "const": "exmxc Power Lens" },
+    "version": { "type": "string" },
+    "query": { "type": "string" },
+    "found": { "type": "boolean" },
+    "generated_at": { "type": "string" },
+    "match": { "type": ["object", "null"] },
+    "power": { "type": ["object", "null"] },
+    "four_forces": { "type": "array" },
+    "entity_clarity": { "type": ["object", "null"] },
+    "scarcity": { "type": ["object", "null"] },
+    "interpretation": { "type": ["object", "null"] },
+    "coverage": { "type": "object" },
+    "provenance": { "type": "object" },
+    "disclaimer": { "type": "string" },
+    "suggestions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

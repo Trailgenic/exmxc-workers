@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.1.0`
-- Stable build date / `last_updated`: `2026-06-10`
+- Build version: `2.4.0`
+- Stable build date / `last_updated`: `2026-07-18`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -82,8 +82,11 @@ Callable JSON tools from `DATA_TOOLS`:
 - `ex.ai_power_index.get`
 - `ex.four_forces.get`
 - `ex.entity_in_a_box.get`
+- `ex.power_lens.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
+- `ex.convergence.latest`
+- `ex.convergence.log`
 
 Content links from `CONTENT_LINKS`:
 
@@ -120,6 +123,11 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
   - Compatibility alias for `/datasets/entity_in_a_box_v1`
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
+- `GET /power-lens?query=NVDA`
+  - Resolves a supported company name, alias, or ticker against the bundled 84-entity AI Power universe
+  - Returns a deterministic Power Card with AI Power Index rank, Four Forces exposure, available Entity Clarity and sPEG evidence, explicit coverage gaps, and provenance
+- `GET /schemas/power-lens`
+  - Source: `schema/power_lens.schema.json`
 - `GET /audit/run?url=https://exmxc.ai`
   - Live Entity Engineering Index audit for a public URL
 - `GET /schema`
@@ -247,16 +255,23 @@ data/*.json                       Bundled datasets
 schema/schema.json                Entity dataset schema with canonical company field
 schema/definitions.json           Semantic definitions
 schema/ai_power_index.schema.json AI Power Index JSON Schema
+schema/power_lens.schema.json     Power Lens response JSON Schema
 index.json                        Static entity dataset index baseline
 scripts/live-acceptance.mjs        Live deploy acceptance harness
 scripts/build-registry-packet.mjs   Registry packet generator
 registry/                           Generated MCP registry submission packet
+webflow/power-lens-head.html       Staged Power Lens page head metadata and JSON-LD
+webflow/power-lens-footer.html     Staged Power Lens responsive application bundle
 workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```
 
-## MCP modernization notes (v2.3.0)
+## MCP modernization notes (v2.4.0)
 
 exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable HTTP on Cloudflare Workers. Tool and resource inventories are generated from `lib/registry.js`; public REST aliases and bundled dataset payloads are preserved.
+
+### Power Lens V1
+
+`GET /power-lens?query=...` and `ex.power_lens.get` share one deterministic implementation. V1 resolves only the bundled AI Power universe and never invents a score for an unsupported entity. The response distinguishes present evidence from absent coverage, exposes the Four Forces weighting, marks Reality Gap as `not_scored`, and does not claim live market coverage. The matching alias file identifies supported entities only; it is not a market-data source.
 
 ### ADS signal route
 

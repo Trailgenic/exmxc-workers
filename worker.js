@@ -24,9 +24,11 @@ import {
   getEntities,
   getFourForces,
   getIndex,
+  getPowerLens,
   getSpeg,
   TOOL_HANDLERS,
-  validateAuditTarget
+  validateAuditTarget,
+  validatePowerLensQuery
 } from "./lib/queries.js";
 import baseline from "./data/ads-baseline.json" with { type: "json" };
 
@@ -62,7 +64,7 @@ function openApiParameter(name, schema = { type: "string" }) {
   return {
     name,
     in: "query",
-    required: name === "url",
+    required: name === "url" || name === "query",
     schema: name === "limit" ? { type: "integer", minimum: 1, maximum: 100 } : schema,
     description: name
   };
@@ -312,10 +314,17 @@ export default {
     if (url.pathname === "/entities") return jsonResponse(getEntities(queryArgs(url, ["industry", "entity_type", "posture", "capability"])));
     if (url.pathname === "/datasets/ai_power_index") return jsonResponse(DATASETS.ai_power_index.data);
     if (url.pathname === "/datasets/ai_power_index/schema") return jsonResponse(DATASETS.ai_power_index.schema);
+    if (url.pathname === "/schemas/power-lens") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens")?.data);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());
     if (url.pathname === "/analysis/ai_power/top") return jsonResponse(getAiPowerTop(queryArgs(url, ["limit"])));
+    if (url.pathname === "/power-lens") {
+      const args = queryArgs(url, ["query"]);
+      const valid = validatePowerLensQuery(args.query);
+      if (!valid.ok) return jsonResponse({ success: false, error: valid.error }, { status: valid.status, headers: noStore });
+      return jsonResponse(getPowerLens(args));
+    }
     if (url.pathname === "/datasets/convergence_monitor") return jsonResponse(DATASETS.convergence_monitor.data);
     if (url.pathname === "/convergence/latest") return jsonResponse(getConvergenceLatest());
     if (url.pathname === "/convergence/log") return jsonResponse(getConvergenceLog(queryArgs(url, ["limit"])));

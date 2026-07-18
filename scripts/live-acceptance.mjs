@@ -42,5 +42,8 @@ ok((await raw('/api/ai-jobs-signal')).json?.mode === 'benchmark', 'ADS benchmark
 const auditOk = await raw('/audit/run?url=https%3A%2F%2Fexample.com');
 ok(auditOk.response.status < 500 && auditOk.contentType.includes('application/json'), 'audit valid controlled HTTPS target returns JSON without server error');
 ok((await raw('/audit/run?url=http%3A%2F%2Flocalhost')).response.status >= 400, 'audit rejects invalid target');
+const powerLens = await raw('/power-lens?query=NVDA');
+ok(powerLens.json?.found === true && powerLens.json?.match?.canonical_entity === 'NVIDIA', 'Power Lens resolves ticker to deterministic company card');
+ok((await raw('/power-lens')).response.status === 400, 'Power Lens rejects missing query');
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

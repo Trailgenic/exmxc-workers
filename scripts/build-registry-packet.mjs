@@ -46,6 +46,8 @@ const server = {
 
 const submission = `# exmxc MCP Registry Submission Packet
 
+> Verify \`registry/server.json\` against the current official MCP registry schema before publishing; the external schema evolves.
+
 Generated from \`lib/registry.js\` by running:
 
 \`\`\`bash
@@ -104,7 +106,7 @@ await mkdir(REGISTRY_DIR, { recursive: true });
 await writeFile(new URL("packet.json", REGISTRY_DIR), `${JSON.stringify(packet, null, 2)}\n`);
 await writeFile(
   new URL("server.json", REGISTRY_DIR),
-  `// VERIFY against the current official MCP registry schema before publishing — schema evolves.\n${JSON.stringify(server, null, 2)}\n`
+  `${JSON.stringify(server, null, 2)}\n`
 );
 await writeFile(new URL("SUBMISSION.md", REGISTRY_DIR), submission);
 
