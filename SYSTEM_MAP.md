@@ -85,6 +85,13 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
   - Source: `data/entity_in_a_box_v1.json`
 - `/datasets/entity_in_a_box`
   - Compatibility alias
+- `/datasets/reality_gap_index`
+  - Source: `data/reality_gap_index_v1.json`
+- `/datasets/reality_gap_index/schema`
+  - Source: `schema/reality_gap_index.schema.json`
+- `/reality-gap`
+  - Filters: `query`, `classification`, `sort`, `limit`
+  - Shared implementation in `lib/queries.js` via `ex.reality_gap.get`
 - `/analysis/ai_power/top`
   - Shared implementation in `lib/queries.js`
 - `/power-lens`
@@ -113,6 +120,9 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `getEntityInABox`
 - `getAiPowerTop`
 - `getPowerLens`
+- `getRealityGap`
+- `calculateRealityGapScores`
+- `realityGapClassification`
 - `validatePowerLensQuery`
 - `runEeiAudit`
 - `getIndex`
@@ -129,6 +139,7 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 - `ex.four_forces.get`
 - `ex.entity_in_a_box.get`
 - `ex.power_lens.get`
+- `ex.reality_gap.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
 - `ex.convergence.latest`
@@ -143,12 +154,13 @@ Content pages are listed separately as `CONTENT_LINKS` and are not exposed as ca
 - `ex.doctrine.get` — `https://exmxc.ai/leadership-doctrine`
 - `ex.about.get` — `https://exmxc.ai/about-us`
 - `ex.audit.page` — `https://www.exmxc.ai/audit`
+- `ex.reality_gap.page` — `https://www.exmxc.ai/reality-gap`
 
 Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not exposed as callable MCP tools.
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.5.0`, `BUILD.released = 2026-07-18`.
+- Build metadata is stable: `BUILD.version = 2.6.0`, `BUILD.released = 2026-07-21`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.

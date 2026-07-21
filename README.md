@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.5.0`
-- Stable build date / `last_updated`: `2026-07-18`
+- Build version: `2.6.0`
+- Stable build date / `last_updated`: `2026-07-21`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -83,6 +83,7 @@ Callable JSON tools from `DATA_TOOLS`:
 - `ex.four_forces.get`
 - `ex.entity_in_a_box.get`
 - `ex.power_lens.get`
+- `ex.reality_gap.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
 - `ex.convergence.latest`
@@ -121,11 +122,19 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
   - Source: `data/entity_in_a_box_v1.json`
 - `GET /datasets/entity_in_a_box`
   - Compatibility alias for `/datasets/entity_in_a_box_v1`
+- `GET /datasets/reality_gap_index`
+  - Source: `data/reality_gap_index_v1.json`
+  - Ten-company V1 evidence ledger comparing AI narrative and observed capability
+- `GET /datasets/reality_gap_index/schema`
+  - Source: `schema/reality_gap_index.schema.json`
+- `GET /reality-gap?query=AAPL&sort=gap_ascending`
+  - Filters: `query`, `classification`, `sort`, `limit`
+  - Returns transparent component scores, classification, confidence, and dated official evidence
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
 - `GET /power-lens?query=NVDA`
   - Resolves a supported company name, alias, or ticker against the bundled 84-entity AI Power universe
-  - Returns a deterministic Power Card with AI Power Index rank, Four Forces exposure, available Entity Clarity and sPEG evidence, explicit coverage gaps, and provenance
+  - Returns a deterministic Power Card with AI Power Index rank, Four Forces exposure, available Entity Clarity, sPEG, and AI Reality Gap evidence, explicit coverage gaps, and provenance
 - `GET /schemas/power-lens`
   - Source: `schema/power_lens.schema.json`
 - `GET /audit/run?url=https://exmxc.ai`
@@ -185,6 +194,23 @@ AI Power Index record shape:
   "ai_power_index": 8.6
 }
 ```
+
+AI Reality Gap record example:
+
+```json
+{
+  "entity_name": "Apple",
+  "ticker": "AAPL",
+  "ai_narrative_score": 89,
+  "ai_capability_score": 63,
+  "reality_gap": -26,
+  "classification": "narrative_outrunning_deployment",
+  "confidence": "medium",
+  "snapshot_date": "2026-07-21"
+}
+```
+
+Reality Gap uses `AI Capability Score - AI Narrative Score`. Positive values mean observed capability leads narrative; negative values mean narrative leads the evidence currently visible. V1 scores only ten companies from dated official disclosures and never imputes a score outside that ledger.
 
 ## AI jobs signal endpoint
 
@@ -262,22 +288,25 @@ schema/schema.json                Entity dataset schema with canonical company f
 schema/definitions.json           Semantic definitions
 schema/ai_power_index.schema.json AI Power Index JSON Schema
 schema/power_lens.schema.json     Power Lens response JSON Schema
+schema/reality_gap_index.schema.json Reality Gap dataset JSON Schema
 index.json                        Static entity dataset index baseline
 scripts/live-acceptance.mjs        Live deploy acceptance harness
 scripts/build-registry-packet.mjs   Registry packet generator
 registry/                           Generated MCP registry submission packet
 webflow/power-lens-head.html       Staged Power Lens page head metadata and JSON-LD
 webflow/power-lens-footer.html     Staged Power Lens responsive application bundle
+webflow/reality-gap-head.html      Staged Reality Gap page metadata and JSON-LD
+webflow/reality-gap-footer.html    Staged Reality Gap benchmark explorer
 workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```
 
-## MCP modernization notes (v2.5.0)
+## MCP modernization notes (v2.6.0)
 
 exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable HTTP on Cloudflare Workers. Tool and resource inventories are generated from `lib/registry.js`; public REST aliases and bundled dataset payloads are preserved.
 
-### Power Lens V1
+### Power Lens + AI Reality Gap V1
 
-`GET /power-lens?query=...` and `ex.power_lens.get` share one deterministic implementation. V1 resolves only the bundled AI Power universe and never invents a score for an unsupported entity. The response distinguishes present evidence from absent coverage, exposes the Four Forces weighting, marks Reality Gap as `not_scored`, and does not claim live market coverage. The matching alias file identifies supported entities only; it is not a market-data source.
+`GET /power-lens?query=...` and `ex.power_lens.get` share one deterministic implementation. Power Lens resolves only the bundled AI Power universe and never invents a score for an unsupported entity. Reality Gap V1 activates claim-to-capability evidence for ten companies; all other Power Lens results remain explicitly `not_scored`. `GET /reality-gap` and `ex.reality_gap.get` expose the benchmark, filters, weights, five-point scoring anchors, rounding policy, classifications, confidence policy, and dated official-source evidence.
 
 ### ADS signal route
 

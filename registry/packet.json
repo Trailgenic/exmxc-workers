@@ -7,7 +7,7 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
@@ -48,6 +48,11 @@
       "name": "ex.power_lens.get",
       "title": "Generate an exmxc Power Lens Card",
       "description": "Resolve a supported company name or ticker and synthesize its AI Power Index, Four Forces exposures, Entity Clarity record, available scarcity snapshot, coverage, and provenance."
+    },
+    {
+      "name": "ex.reality_gap.get",
+      "title": "Get AI Reality Gap Scores",
+      "description": "Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence."
     },
     {
       "name": "ex.ai_power.analysis.top",

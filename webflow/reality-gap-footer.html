@@ -1,0 +1,315 @@
+<style>
+  .rg-root { max-width: 1080px; margin: 0 auto; padding: 72px 40px 92px; box-sizing: border-box; }
+  .rg-masthead { margin-bottom: 44px; padding-bottom: 38px; border-bottom: .5px solid var(--ex-border-gold); }
+  .rg-headline { max-width: 900px; margin: 0 0 22px; color: #fff; font-family: var(--ex-font-display); font-size: clamp(2.6rem, 6vw, 4.9rem); font-weight: 400; line-height: .98; letter-spacing: -.038em; }
+  .rg-headline em { color: var(--ex-lavender); font-style: normal; }
+  .rg-tagline { max-width: 760px; margin: 0; color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: 1.08rem; line-height: 1.68; }
+  .rg-equation { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: center; margin-top: 30px; padding: 18px 20px; border: .5px solid var(--ex-border-mid); background: var(--ex-surface); }
+  .rg-equation-part { color: #fff; font-family: var(--ex-font-mono); font-size: .78rem; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+  .rg-equation-part span { display: block; margin-top: 5px; color: var(--ex-text-muted); font-size: .65rem; }
+  .rg-equation-op { color: var(--ex-gold); font-family: var(--ex-font-display); font-size: 2rem; }
+  .rg-rule { display: flex; align-items: center; gap: 16px; margin: 42px 0 20px; }
+  .rg-rule-label { color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
+  .rg-rule-line { flex: 1; height: .5px; background: var(--ex-border-gold); }
+  .rg-controls { display: grid; grid-template-columns: minmax(220px, 1.4fr) 1fr 1fr; gap: 8px; }
+  .rg-control { width: 100%; box-sizing: border-box; border: .5px solid var(--ex-border-mid); border-radius: 0; padding: 13px 14px; background: var(--ex-surface-mid); color: #fff; font-family: var(--ex-font-body); font-size: .92rem; -webkit-appearance: none; }
+  .rg-control:focus { border-color: var(--ex-lavender-dim); outline: none; }
+  .rg-status { display: none; margin-top: 18px; padding: 14px 16px; border: .5px solid var(--ex-border-mid); color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .92rem; }
+  .rg-status.is-visible { display: block; }
+  .rg-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 24px; }
+  .rg-stat { min-width: 0; padding: 20px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .rg-stat-label { color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .11em; text-transform: uppercase; }
+  .rg-stat-value { overflow: hidden; margin-top: 8px; color: #fff; font-family: var(--ex-font-display); font-size: 1.7rem; line-height: 1.05; text-overflow: ellipsis; white-space: nowrap; }
+  .rg-list { display: grid; gap: 7px; }
+  .rg-row { width: 100%; border: .5px solid var(--ex-border); border-radius: 0; padding: 22px; background: var(--ex-surface); color: inherit; text-align: left; cursor: pointer; }
+  .rg-row:hover, .rg-row.is-active { border-color: var(--ex-lavender-dim); background: var(--ex-surface-mid); }
+  .rg-row-top { display: grid; grid-template-columns: minmax(150px, 1.15fr) 1fr 1fr minmax(160px, 1.2fr); gap: 22px; align-items: center; }
+  .rg-company { color: #fff; font-family: var(--ex-font-display); font-size: 1.55rem; line-height: 1; }
+  .rg-ticker { margin-top: 6px; color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+  .rg-score-label { display: flex; justify-content: space-between; gap: 8px; color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+  .rg-score-label strong { color: #fff; font-size: .76rem; }
+  .rg-bar { height: 2px; margin-top: 9px; overflow: hidden; background: var(--ex-border); }
+  .rg-bar-fill { height: 100%; background: var(--ex-lavender); }
+  .rg-bar-fill--capability { background: var(--ex-gold); }
+  .rg-gap { color: #fff; font-family: var(--ex-font-body); text-align: right; }
+  .rg-gap-number { font-family: var(--ex-font-display); font-size: 2rem; line-height: 1; }
+  .rg-gap-number.is-negative { color: #E0A39A; }
+  .rg-gap-number.is-positive { color: #A9D6B1; }
+  .rg-class { margin-top: 7px; color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 7px; letter-spacing: .07em; line-height: 1.35; text-transform: uppercase; }
+  .rg-detail { display: none; margin-top: 8px; padding: 30px; border: .5px solid var(--ex-border-gold); background: var(--ex-surface); }
+  .rg-detail.is-visible { display: block; }
+  .rg-detail-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; }
+  .rg-detail h2 { margin: 0; color: #fff; font-family: var(--ex-font-display); font-size: 2.3rem; font-weight: 400; }
+  .rg-detail-summary { max-width: 760px; margin: 16px 0 0; color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .98rem; line-height: 1.65; }
+  .rg-detail-meta { color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .1em; line-height: 1.6; text-align: right; text-transform: uppercase; }
+  .rg-component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 28px; }
+  .rg-component { padding: 22px; border: .5px solid var(--ex-border); }
+  .rg-component h3 { margin: 0 0 16px; color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 9px; font-weight: 400; letter-spacing: .11em; text-transform: uppercase; }
+  .rg-component-row { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 9px 0; border-bottom: .5px solid var(--ex-border); }
+  .rg-component-row:last-child { border-bottom: 0; }
+  .rg-component-row span { color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .86rem; }
+  .rg-component-row strong { color: #fff; font-family: var(--ex-font-mono); font-size: .78rem; }
+  .rg-evidence { display: grid; gap: 8px; margin-top: 22px; }
+  .rg-source { display: block; padding: 16px; border: .5px solid var(--ex-border); color: var(--ex-text-dim); text-decoration: none; }
+  .rg-source:hover { border-color: var(--ex-lavender-dim); }
+  .rg-source-date { color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 7px; letter-spacing: .1em; text-transform: uppercase; }
+  .rg-source-copy { margin-top: 7px; color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .86rem; line-height: 1.55; }
+  .rg-method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .rg-method-card { padding: 26px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .rg-method-card h3 { margin: 0 0 14px; color: #fff; font-family: var(--ex-font-display); font-size: 1.6rem; font-weight: 400; }
+  .rg-method-card p, .rg-method-card li { color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .9rem; line-height: 1.6; }
+  .rg-method-card ul { margin: 0; padding-left: 18px; }
+  .rg-boundary { margin-top: 28px; padding: 18px; border: .5px solid var(--ex-border); color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .86rem; line-height: 1.6; }
+  .rg-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; padding-top: 28px; border-top: .5px solid var(--ex-border-gold); }
+  @media (max-width: 820px) {
+    .rg-controls, .rg-row-top { grid-template-columns: 1fr 1fr; }
+    .rg-stats { grid-template-columns: 1fr 1fr; }
+    .rg-gap { text-align: left; }
+  }
+  @media (max-width: 620px) {
+    .rg-root { padding: 52px 24px 72px; }
+    .rg-equation { grid-template-columns: 1fr; }
+    .rg-equation-op { text-align: center; }
+    .rg-controls, .rg-row-top, .rg-component-grid, .rg-method, .rg-footer, .rg-detail-head { grid-template-columns: 1fr; }
+    .rg-detail-meta { text-align: left; }
+  }
+</style>
+
+<main class="rg-root" id="reality-gap-index">
+  <header class="rg-masthead">
+    <div class="ex-label" style="margin-bottom:16px;">Interactive Intelligence · Evidence Ledger</div>
+    <h1 class="rg-headline">The gap between what companies <em>say about AI</em>—and what they can prove.</h1>
+    <p class="rg-tagline">The AI Reality Gap Index compares public narrative intensity with observable infrastructure, deployment, adoption, monetization, data, and developer evidence. It scores only what the dated record can support.</p>
+    <div class="rg-equation" aria-label="Reality Gap formula">
+      <div class="rg-equation-part">AI Capability Score<span>Observed evidence</span></div>
+      <div class="rg-equation-op">−</div>
+      <div class="rg-equation-part">AI Narrative Score<span>Public claim intensity</span></div>
+    </div>
+  </header>
+
+  <div class="rg-rule"><span class="rg-rule-label">Benchmark Explorer</span><div class="rg-rule-line"></div></div>
+  <div class="rg-controls">
+    <input id="rg-query" class="rg-control" type="search" maxlength="120" autocomplete="off" placeholder="Filter company or ticker" aria-label="Filter company or ticker" />
+    <select id="rg-classification" class="rg-control" aria-label="Filter classification">
+      <option value="">All classifications</option>
+      <option value="quiet_compounder">Quiet Compounder</option>
+      <option value="capability_leads_narrative">Capability Leads Narrative</option>
+      <option value="narrative_capability_aligned">Narrative / Capability Aligned</option>
+      <option value="narrative_leads_deployment">Narrative Leads Deployment</option>
+      <option value="narrative_outrunning_deployment">Narrative Outrunning Deployment</option>
+    </select>
+    <select id="rg-sort" class="rg-control" aria-label="Sort benchmark">
+      <option value="gap_ascending">Largest negative gap</option>
+      <option value="gap_descending">Capability leads most</option>
+      <option value="capability_descending">Highest capability</option>
+      <option value="narrative_descending">Highest narrative</option>
+    </select>
+  </div>
+  <div id="rg-status" class="rg-status" role="status" aria-live="polite"></div>
+  <div id="rg-stats" class="rg-stats"></div>
+  <div class="rg-rule"><span class="rg-rule-label">Company Scores</span><div class="rg-rule-line"></div></div>
+  <div id="rg-list" class="rg-list" aria-live="polite"></div>
+  <section id="rg-detail" class="rg-detail" aria-live="polite"></section>
+
+  <div class="rg-rule"><span class="rg-rule-label">Scoring Doctrine</span><div class="rg-rule-line"></div></div>
+  <div class="rg-method">
+    <article class="rg-method-card">
+      <h3>Narrative is measured.</h3>
+      <ul>
+        <li>Strategic centrality — 35%</li>
+        <li>Commercial commitment — 25%</li>
+        <li>Claim breadth — 20%</li>
+        <li>Claim frequency — 20%</li>
+      </ul>
+    </article>
+    <article class="rg-method-card">
+      <h3>Capability must be evidenced.</h3>
+      <ul>
+        <li>Infrastructure and model control — 20%</li>
+        <li>Product deployment — 20%</li>
+        <li>Monetization evidence — 20%</li>
+        <li>Adoption and usage — 15%</li>
+        <li>Proprietary data and distribution — 15%</li>
+        <li>Developer and agent surfaces — 10%</li>
+      </ul>
+    </article>
+    <article class="rg-method-card">
+      <h3>Judgment is anchored.</h3>
+      <p>Component scores use five disclosed anchors: 0 for no observable evidence, 2.5 for isolated or preview-stage evidence, 5 for bounded production evidence, 7.5 for material scaled evidence, and 10 for broad, quantified, controlled capability.</p>
+      <p>Confidence is high only when quantified disclosures support the principal score drivers; partial, aggregate, or preview-stage evidence is marked medium or low.</p>
+    </article>
+  </div>
+  <div class="rg-boundary">A negative score does not mean a company has no AI capability. It means its public AI narrative currently leads the observable evidence by the stated amount. Scores are versioned exmxc analytical judgments based on dated official disclosures—not audited facts, live market data, credit ratings, or investment recommendations.</div>
+
+  <footer class="rg-footer">
+    <div>
+      <div class="ex-nav-group-label">Related Intelligence</div>
+      <div class="ex-nav-links">
+        <a href="/power-lens">Power Lens</a>
+        <a href="/frameworks">Four Forces &amp; Frameworks</a>
+        <a href="/speg-index">sPEG Index Series</a>
+        <a href="/capital">Applied Capital Architecture</a>
+      </div>
+    </div>
+    <div>
+      <div class="ex-nav-group-label">Machine Access</div>
+      <div class="ex-nav-links">
+        <a href="https://mcp.exmxc.ai/reality-gap" target="_blank" rel="noopener">Reality Gap API</a>
+        <a href="https://mcp.exmxc.ai/datasets/reality_gap_index" target="_blank" rel="noopener">Raw Dataset</a>
+        <a href="https://mcp.exmxc.ai/.well-known/tool-registry.json" target="_blank" rel="noopener">MCP Tool Registry</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  const ENDPOINT = "https://mcp.exmxc.ai/reality-gap";
+  const query = document.getElementById("rg-query");
+  const classification = document.getElementById("rg-classification");
+  const sort = document.getElementById("rg-sort");
+  const status = document.getElementById("rg-status");
+  const stats = document.getElementById("rg-stats");
+  const list = document.getElementById("rg-list");
+  const detail = document.getElementById("rg-detail");
+  let timer = null;
+  let requestId = 0;
+
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+  function node(tag, className, value) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (value != null) el.textContent = String(value);
+    return el;
+  }
+  function label(key) {
+    return key.replace(/_/g, " ").replace(/\b\w/g, function (letter) { return letter.toUpperCase(); });
+  }
+  function gapText(value) { return (value > 0 ? "+" : "") + value; }
+  function scoreBlock(name, value, capability) {
+    const wrap = node("div", "rg-score");
+    const head = node("div", "rg-score-label");
+    head.append(node("span", "", name), node("strong", "", value));
+    const bar = node("div", "rg-bar");
+    const fill = node("div", "rg-bar-fill" + (capability ? " rg-bar-fill--capability" : ""));
+    fill.style.width = Math.max(0, Math.min(100, Number(value))) + "%";
+    bar.appendChild(fill);
+    wrap.append(head, bar);
+    return wrap;
+  }
+  function renderStats(rows, snapshot) {
+    clear(stats);
+    const gaps = rows.map(function (row) { return Number(row.reality_gap); }).sort(function (a, b) { return a - b; });
+    const median = gaps.length ? (gaps.length % 2 ? gaps[(gaps.length - 1) / 2] : (gaps[gaps.length / 2 - 1] + gaps[gaps.length / 2]) / 2) : null;
+    const worst = rows.slice().sort(function (a, b) { return a.reality_gap - b.reality_gap; })[0];
+    [
+      ["Companies shown", rows.length],
+      ["Most negative gap", worst ? worst.entity_name : "—"],
+      ["Median gap", median == null ? "—" : gapText(Number(median.toFixed(1)))],
+      ["Snapshot", snapshot]
+    ].forEach(function (item) {
+      const card = node("div", "rg-stat");
+      card.append(node("div", "rg-stat-label", item[0]), node("div", "rg-stat-value", item[1]));
+      stats.appendChild(card);
+    });
+  }
+  function componentCard(title, values, penalty) {
+    const card = node("div", "rg-component");
+    card.appendChild(node("h3", "", title));
+    Object.keys(values).forEach(function (key) {
+      const row = node("div", "rg-component-row");
+      row.append(node("span", "", label(key)), node("strong", "", values[key] + "/10"));
+      card.appendChild(row);
+    });
+    if (penalty != null) {
+      const row = node("div", "rg-component-row");
+      row.append(node("span", "", "Third-party dependence penalty"), node("strong", "", "−" + penalty));
+      card.appendChild(row);
+    }
+    return card;
+  }
+  function renderDetail(row) {
+    clear(detail);
+    const head = node("div", "rg-detail-head");
+    const copy = node("div");
+    copy.append(node("h2", "", row.entity_name), node("p", "rg-detail-summary", row.summary));
+    const meta = node("div", "rg-detail-meta", row.classification_label + "\nConfidence: " + row.confidence + "\nSnapshot: " + row.snapshot_date);
+    meta.style.whiteSpace = "pre-line";
+    head.append(copy, meta);
+    const components = node("div", "rg-component-grid");
+    components.append(
+      componentCard("Narrative Components", row.narrative_components),
+      componentCard("Capability Components", row.capability_components, row.third_party_dependence_penalty)
+    );
+    const evidence = node("div", "rg-evidence");
+    row.evidence.forEach(function (source) {
+      const link = node("a", "rg-source");
+      link.href = source.url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.append(node("div", "rg-source-date", source.source_type.replace(/_/g, " ") + " · " + source.published_date), node("div", "rg-source-copy", source.observation));
+      evidence.appendChild(link);
+    });
+    detail.append(head, components, evidence);
+    detail.className = "rg-detail is-visible";
+    detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  function renderRows(rows) {
+    clear(list);
+    detail.className = "rg-detail";
+    clear(detail);
+    if (!rows.length) {
+      status.textContent = "No scored company matches the current filters.";
+      status.className = "rg-status is-visible";
+      return;
+    }
+    status.className = "rg-status";
+    rows.forEach(function (row) {
+      const button = node("button", "rg-row");
+      button.type = "button";
+      const grid = node("div", "rg-row-top");
+      const identity = node("div");
+      identity.append(node("div", "rg-company", row.entity_name), node("div", "rg-ticker", row.ticker));
+      const gap = node("div", "rg-gap");
+      const number = node("div", "rg-gap-number" + (row.reality_gap < 0 ? " is-negative" : row.reality_gap > 0 ? " is-positive" : ""), gapText(row.reality_gap));
+      gap.append(number, node("div", "rg-class", row.classification_label));
+      grid.append(identity, scoreBlock("Narrative", row.ai_narrative_score, false), scoreBlock("Capability", row.ai_capability_score, true), gap);
+      button.appendChild(grid);
+      button.addEventListener("click", function () {
+        document.querySelectorAll(".rg-row.is-active").forEach(function (active) { active.classList.remove("is-active"); });
+        button.classList.add("is-active");
+        renderDetail(row);
+      });
+      list.appendChild(button);
+    });
+  }
+  async function load() {
+    const id = ++requestId;
+    const params = new URLSearchParams();
+    const search = query.value.trim();
+    if (search) params.set("query", search);
+    if (classification.value) params.set("classification", classification.value);
+    params.set("sort", sort.value);
+    status.textContent = "Reading the versioned evidence ledger…";
+    status.className = "rg-status is-visible";
+    try {
+      const response = await fetch(ENDPOINT + "?" + params.toString(), { headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error("HTTP_" + response.status);
+      const data = await response.json();
+      if (id !== requestId) return;
+      renderStats(data.results, data.snapshot_date);
+      renderRows(data.results);
+    } catch (error) {
+      if (id !== requestId) return;
+      console.error("[REALITY GAP]", error);
+      clear(list); clear(stats); clear(detail);
+      status.textContent = "The Reality Gap evidence ledger is temporarily unavailable.";
+      status.className = "rg-status is-visible";
+    }
+  }
+  query.addEventListener("input", function () { window.clearTimeout(timer); timer = window.setTimeout(load, 240); });
+  classification.addEventListener("change", load);
+  sort.addEventListener("change", load);
+  load();
+})();
+</script>
