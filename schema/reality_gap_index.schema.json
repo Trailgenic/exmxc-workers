@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exmxc.ai/schemas/reality-gap-index/v1",
+  "title": "exmxc AI Reality Gap Index Dataset",
+  "description": "Versioned evidence ledger comparing public AI narrative intensity with observed AI capability.",
+  "type": "object",
+  "required": ["metadata", "rows"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["dataset", "version", "as_of_date", "gap_formula", "rounding_policy", "scoring_anchors", "confidence_policy", "narrative_weights", "capability_weights", "classifications", "disclaimer"],
+      "properties": {
+        "scoring_anchors": {
+          "type": "object",
+          "required": ["narrative_components", "capability_components", "third_party_dependence_penalty"],
+          "properties": {
+            "narrative_components": { "$ref": "#/$defs/anchorScale" },
+            "capability_components": { "$ref": "#/$defs/anchorScale" },
+            "third_party_dependence_penalty": { "$ref": "#/$defs/anchorScale" }
+          },
+          "additionalProperties": false
+        },
+        "confidence_policy": {
+          "type": "object",
+          "required": ["high", "medium", "low"],
+          "properties": {
+            "high": { "type": "string" },
+            "medium": { "type": "string" },
+            "low": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entity_id",
+          "entity_name",
+          "ticker",
+          "snapshot_date",
+          "narrative_components",
+          "capability_components",
+          "third_party_dependence_penalty",
+          "ai_narrative_score",
+          "ai_capability_score",
+          "reality_gap",
+          "classification",
+          "classification_label",
+          "confidence",
+          "summary",
+          "evidence"
+        ],
+        "properties": {
+          "entity_id": { "type": "string" },
+          "entity_name": { "type": "string" },
+          "ticker": { "type": "string" },
+          "snapshot_date": { "type": "string", "format": "date" },
+          "narrative_components": { "$ref": "#/$defs/narrativeComponents" },
+          "capability_components": { "$ref": "#/$defs/capabilityComponents" },
+          "third_party_dependence_penalty": { "type": "number", "minimum": 0, "maximum": 10 },
+          "ai_narrative_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "ai_capability_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "reality_gap": { "type": "number", "minimum": -100, "maximum": 100 },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "quiet_compounder",
+              "capability_leads_narrative",
+              "narrative_capability_aligned",
+              "narrative_leads_deployment",
+              "narrative_outrunning_deployment"
+            ]
+          },
+          "classification_label": { "type": "string" },
+          "confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+          "summary": { "type": "string" },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["source_type", "published_date", "url", "observation"],
+              "properties": {
+                "source_type": { "type": "string" },
+                "published_date": { "type": "string", "format": "date" },
+                "url": { "type": "string", "format": "uri" },
+                "observation": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "score10": { "type": "number", "minimum": 0, "maximum": 10 },
+    "anchorScale": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["score", "meaning"],
+        "properties": {
+          "score": { "type": "number", "minimum": 0, "maximum": 10 },
+          "meaning": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "narrativeComponents": {
+      "type": "object",
+      "required": ["strategic_centrality", "claim_breadth", "claim_frequency", "commercial_commitment"],
+      "properties": {
+        "strategic_centrality": { "$ref": "#/$defs/score10" },
+        "claim_breadth": { "$ref": "#/$defs/score10" },
+        "claim_frequency": { "$ref": "#/$defs/score10" },
+        "commercial_commitment": { "$ref": "#/$defs/score10" }
+      },
+      "additionalProperties": false
+    },
+    "capabilityComponents": {
+      "type": "object",
+      "required": ["infrastructure_and_model_control", "product_deployment", "adoption_and_usage", "monetization_evidence", "proprietary_data_and_distribution", "developer_and_agent_surfaces"],
+      "properties": {
+        "infrastructure_and_model_control": { "$ref": "#/$defs/score10" },
+        "product_deployment": { "$ref": "#/$defs/score10" },
+        "adoption_and_usage": { "$ref": "#/$defs/score10" },
+        "monetization_evidence": { "$ref": "#/$defs/score10" },
+        "proprietary_data_and_distribution": { "$ref": "#/$defs/score10" },
+        "developer_and_agent_surfaces": { "$ref": "#/$defs/score10" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

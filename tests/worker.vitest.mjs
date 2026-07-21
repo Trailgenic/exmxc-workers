@@ -15,6 +15,7 @@ const validArgs = {
   'ex.four_forces.get': {},
   'ex.entity_in_a_box.get': {},
   'ex.power_lens.get': { query: 'NVDA' },
+  'ex.reality_gap.get': { query: 'AAPL' },
   'ex.ai_power.analysis.top': { limit: 1 },
   'ex.eei.audit.run': { url: 'https://example.com' },
   'ex.convergence.latest': {},
@@ -159,7 +160,12 @@ describe('tools and schemas', () => {
     expect(card.scarcity.speg).toBe(0.27);
     expect(card.scarcity.calculation_method).toBe('forward_fiscal_eps_midpoint_proxy');
     expect(card.scarcity.forward_pe).toBe(24.69);
-    expect(card.coverage.reality_gap.status).toBe('not_scored');
+    expect(card.reality_gap.ai_narrative_score).toBe(100);
+    expect(card.reality_gap.ai_capability_score).toBe(97);
+    expect(card.reality_gap.reality_gap).toBe(-3);
+    expect(card.reality_gap.classification).toBe('narrative_capability_aligned');
+    expect(card.reality_gap.evidence[0].url).toContain('investor.nvidia.com');
+    expect(card.coverage.reality_gap.status).toBe('scored');
 
     const byAlias = await (await req('/power-lens?query=Alphabet')).json();
     expect(byAlias.match.canonical_entity).toBe('Google');
@@ -178,6 +184,29 @@ describe('tools and schemas', () => {
     expect(notFound.found).toBe(false);
     expect(notFound.suggestions).toContain('NVIDIA');
     expect((await req('/power-lens')).status).toBe(400);
+
+    const appleGap = await (await req('/reality-gap?query=AAPL')).json();
+    expect(appleGap.found).toBe(true);
+    expect(appleGap.results).toHaveLength(1);
+    expect(appleGap.results[0].entity_name).toBe('Apple');
+    expect(appleGap.results[0].reality_gap).toBe(-26);
+    expect(appleGap.results[0].classification).toBe('narrative_outrunning_deployment');
+
+    const rankedGaps = await (await req('/reality-gap?limit=2')).json();
+    expect(rankedGaps.results.map((row) => row.entity_name)).toEqual(['Apple', 'Adobe']);
+    expect(rankedGaps.methodology.scoring_anchors.capability_components).toHaveLength(5);
+    expect(rankedGaps.methodology.confidence_policy.high).toContain('quantified');
+
+    const openApi = await (await req('/.well-known/openapi.json')).json();
+    const gapParameters = openApi.paths['/reality-gap'].get.parameters;
+    expect(gapParameters.find((parameter) => parameter.name === 'query').required).toBe(false);
+    expect(gapParameters.find((parameter) => parameter.name === 'classification').schema.enum).toContain('quiet_compounder');
+    expect(gapParameters.find((parameter) => parameter.name === 'limit').schema.maximum).toBe(100);
+    expect(openApi.paths['/power-lens'].get.parameters.find((parameter) => parameter.name === 'query').required).toBe(true);
+
+    const unscored = await (await req('/power-lens?query=TSM')).json();
+    expect(unscored.reality_gap).toBeNull();
+    expect(unscored.coverage.reality_gap.status).toBe('not_scored');
   });
 });
 

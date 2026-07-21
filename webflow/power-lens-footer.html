@@ -43,7 +43,7 @@
   .pl-bar { height: 2px; background: var(--ex-border); overflow: hidden; }
   .pl-bar-fill { width: 0; height: 100%; background: var(--ex-lavender); transition: width .55s ease; }
   .pl-weight { margin-top: 10px; font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .08em; text-transform: uppercase; color: var(--ex-text-muted); }
-  .pl-evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .pl-evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
   .pl-evidence { border: .5px solid var(--ex-border); background: var(--ex-surface); padding: 26px; }
   .pl-evidence-title { font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ex-gold); margin-bottom: 20px; }
   .pl-ledger { display: grid; gap: 12px; margin: 0; }
@@ -74,7 +74,7 @@
   <header class="pl-masthead">
     <div class="ex-label" style="margin-bottom:16px;">Interactive Intelligence · Four Forces of AI Power</div>
     <h1 class="pl-headline">See where AI power <em>actually resides.</em></h1>
-    <p class="pl-tagline">Power Lens synthesizes exmxc’s AI Power Index, Four Forces, Entity Clarity, and structural scarcity datasets into one evidence-bounded company card.</p>
+    <p class="pl-tagline">Power Lens synthesizes exmxc’s AI Power Index, Four Forces, Entity Clarity, structural scarcity, and AI Reality Gap datasets into one evidence-bounded company card.</p>
   </header>
 
   <div class="pl-rule"><span class="pl-rule-label">Generate Power Card</span><div class="pl-rule-line"></div></div>
@@ -82,7 +82,7 @@
     <input id="pl-query" class="pl-input" type="search" maxlength="120" autocomplete="off" placeholder="Enter a company or ticker (e.g., NVIDIA or NVDA)" aria-label="Company name or ticker" />
     <button id="pl-run" class="pl-btn" type="button">Map Power</button>
   </div>
-  <p class="pl-note">V1 searches the bundled 84-entity exmxc AI Power universe. Scores are deterministic dataset syntheses—not live market data or investment recommendations.</p>
+  <p class="pl-note">Power Lens searches the bundled 84-entity exmxc AI Power universe. Reality Gap V1 scores ten companies and explicitly marks every unscored entity—never inferring missing evidence.</p>
   <div class="pl-examples" aria-label="Example searches">
     <button class="pl-chip" data-query="NVDA">NVDA</button>
     <button class="pl-chip" data-query="Microsoft">Microsoft</button>
@@ -120,6 +120,7 @@
     <div class="pl-evidence-grid">
       <div class="pl-evidence"><div class="pl-evidence-title">Entity Clarity</div><div id="pl-clarity"></div></div>
       <div class="pl-evidence"><div class="pl-evidence-title">Structural Scarcity</div><div id="pl-scarcity"></div></div>
+      <div class="pl-evidence"><div class="pl-evidence-title">AI Reality Gap</div><div id="pl-reality-gap"></div></div>
     </div>
 
     <div class="pl-rule"><span class="pl-rule-label">Interpretation</span><div class="pl-rule-line"></div></div>
@@ -134,6 +135,7 @@
         <a href="/frameworks">Four Forces & Frameworks</a>
         <a href="/entity-clarity-index">Entity Clarity Index</a>
         <a href="/speg-index">sPEG Index Series</a>
+        <a href="/reality-gap">AI Reality Gap Index</a>
         <a href="/capital">Applied Capital Architecture</a>
       </div>
     </div>
@@ -258,9 +260,20 @@
       ["Snapshot date", data.scarcity.snapshot_date]
     ]) : empty("No matched sPEG scarcity snapshot is bundled for this entity."));
 
+    const realityGap = document.getElementById("pl-reality-gap");
+    clear(realityGap);
+    realityGap.appendChild(data.reality_gap ? ledger([
+      ["AI narrative", data.reality_gap.ai_narrative_score],
+      ["AI capability", data.reality_gap.ai_capability_score],
+      ["Reality Gap", (data.reality_gap.reality_gap > 0 ? "+" : "") + data.reality_gap.reality_gap],
+      ["Classification", data.reality_gap.classification_label],
+      ["Confidence", data.reality_gap.confidence],
+      ["Snapshot date", data.reality_gap.snapshot_date]
+    ]) : empty("No versioned Reality Gap evidence ledger is bundled for this entity."));
+
     const analysis = document.getElementById("pl-analysis");
     clear(analysis);
-    [data.interpretation.strongest_exposure, data.interpretation.lowest_exposure].forEach(function (value) {
+    [data.interpretation.strongest_exposure, data.interpretation.lowest_exposure, data.interpretation.claim_to_capability].forEach(function (value) {
       const p = document.createElement("p");
       p.textContent = value;
       analysis.appendChild(p);

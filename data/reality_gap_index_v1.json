@@ -1,0 +1,471 @@
+{
+  "metadata": {
+    "dataset": "reality_gap_index_v1",
+    "product": "exmxc AI Reality Gap Index",
+    "version": "1.0.0",
+    "methodology_version": "reality-gap-v1",
+    "as_of_date": "2026-07-21",
+    "evidence_window": "Latest official company disclosures available through 2026-07-21",
+    "entity_count": 10,
+    "score_scale": "0-100",
+    "gap_formula": "Reality Gap = AI Capability Score - AI Narrative Score",
+    "narrative_formula": "Weighted mean of four 0-10 narrative components, multiplied by 10.",
+    "capability_formula": "Weighted mean of six 0-10 capability components, multiplied by 10, less the 0-10 third-party dependence penalty.",
+    "rounding_policy": "Narrative and capability scores are rounded to one decimal before Reality Gap is calculated; Reality Gap is then rounded to one decimal.",
+    "scoring_anchors": {
+      "narrative_components": [
+        { "score": 0, "meaning": "No material public AI narrative identified in the evidence window." },
+        { "score": 2.5, "meaning": "Occasional or isolated AI claims with limited strategic or commercial emphasis." },
+        { "score": 5, "meaning": "Recurring AI narrative across a meaningful but bounded portion of the company strategy." },
+        { "score": 7.5, "meaning": "AI is a central, recurring strategic theme with visible commercial commitments." },
+        { "score": 10, "meaning": "AI is pervasive across strategy, product claims, executive communication, and quantified commercial commitment." }
+      ],
+      "capability_components": [
+        { "score": 0, "meaning": "No observable capability evidence identified in the evidence window." },
+        { "score": 2.5, "meaning": "Primarily announced, preview-stage, or narrowly experimental capability." },
+        { "score": 5, "meaning": "Limited production capability or adoption with incomplete scale or monetization evidence." },
+        { "score": 7.5, "meaning": "Material production deployment supported by adoption, control, or monetization evidence." },
+        { "score": 10, "meaning": "Broad, scaled, quantitatively disclosed capability with strong control of the relevant AI layer." }
+      ],
+      "third_party_dependence_penalty": [
+        { "score": 0, "meaning": "No material third-party dependence limiting control of a core AI layer." },
+        { "score": 2.5, "meaning": "Material outside dependency exists, but the company retains substantial product, data, distribution, or infrastructure control." },
+        { "score": 5, "meaning": "A core AI capability materially depends on an outside provider, constraining direct control or economics." },
+        { "score": 7.5, "meaning": "Multiple core AI layers are externally controlled, materially constraining differentiation and deployment autonomy." },
+        { "score": 10, "meaning": "The observable AI proposition is predominantly dependent on externally controlled core layers." }
+      ]
+    },
+    "confidence_policy": {
+      "high": "Multiple quantified operating, adoption, monetization, or infrastructure disclosures directly support the principal score drivers.",
+      "medium": "Official evidence supports the direction of the score, but one or more principal components rely on partial, preview-stage, aggregate, or non-segmented disclosure.",
+      "low": "Official evidence is sparse, indirect, or insufficiently current; low-confidence rows should be treated as provisional."
+    },
+    "narrative_weights": {
+      "strategic_centrality": 0.35,
+      "claim_breadth": 0.2,
+      "claim_frequency": 0.2,
+      "commercial_commitment": 0.25
+    },
+    "capability_weights": {
+      "infrastructure_and_model_control": 0.2,
+      "product_deployment": 0.2,
+      "adoption_and_usage": 0.15,
+      "monetization_evidence": 0.2,
+      "proprietary_data_and_distribution": 0.15,
+      "developer_and_agent_surfaces": 0.1
+    },
+    "classifications": [
+      {
+        "id": "quiet_compounder",
+        "label": "Quiet Compounder",
+        "minimum_gap": 20,
+        "maximum_gap": 100,
+        "meaning": "Observed AI capability materially exceeds the company's public AI narrative."
+      },
+      {
+        "id": "capability_leads_narrative",
+        "label": "Capability Leads Narrative",
+        "minimum_gap": 8,
+        "maximum_gap": 19.9,
+        "meaning": "Observed capability leads public narrative, but not by an extreme margin."
+      },
+      {
+        "id": "narrative_capability_aligned",
+        "label": "Narrative / Capability Aligned",
+        "minimum_gap": -7.9,
+        "maximum_gap": 7.9,
+        "meaning": "Public narrative and observed capability are broadly aligned within the model's tolerance band."
+      },
+      {
+        "id": "narrative_leads_deployment",
+        "label": "Narrative Leads Deployment",
+        "minimum_gap": -19.9,
+        "maximum_gap": -8,
+        "meaning": "Public narrative leads the deployment and monetization evidence currently visible."
+      },
+      {
+        "id": "narrative_outrunning_deployment",
+        "label": "Narrative Outrunning Deployment",
+        "minimum_gap": -100,
+        "maximum_gap": -20,
+        "meaning": "Public AI narrative materially exceeds the deployment, adoption, or monetization evidence currently visible."
+      }
+    ],
+    "evidence_policy": [
+      "Scores use dated, public, company-controlled disclosures such as investor-relations releases, earnings calls, and product announcements.",
+      "A product announcement is not treated as deployment when the disclosed status is preview, private beta, or future availability.",
+      "Aggregate cloud or company revenue is not treated as AI revenue unless the company explicitly connects or isolates the contribution.",
+      "Third-party model or infrastructure reliance is recorded as a penalty only when it limits direct control of a material AI layer.",
+      "Every score is a versioned exmxc analytical judgment, not an audited fact, credit rating, or investment recommendation."
+    ],
+    "disclaimer": "Derived institutional reference layer based on public company disclosures and transparent exmxc scoring judgments; not live data or investment advice."
+  },
+  "rows": [
+    {
+      "entity_id": "nvidia",
+      "entity_name": "NVIDIA",
+      "ticker": "NVDA",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 10,
+        "claim_breadth": 10,
+        "claim_frequency": 10,
+        "commercial_commitment": 10
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 10,
+        "product_deployment": 10,
+        "adoption_and_usage": 10,
+        "monetization_evidence": 10,
+        "proprietary_data_and_distribution": 8,
+        "developer_and_agent_surfaces": 10
+      },
+      "third_party_dependence_penalty": 0,
+      "ai_narrative_score": 100,
+      "ai_capability_score": 97,
+      "reality_gap": -3,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "high",
+      "summary": "NVIDIA's maximal AI narrative is supported by directly disclosed data-center revenue, deployed accelerated-computing platforms, and an expanding agent software surface.",
+      "evidence": [
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2026-05-20",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx",
+          "observation": "NVIDIA reported $81.6 billion of quarterly revenue, including $75.2 billion of Data Center revenue, and disclosed production agent and inference software surfaces."
+        }
+      ]
+    },
+    {
+      "entity_id": "microsoft",
+      "entity_name": "Microsoft",
+      "ticker": "MSFT",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 10,
+        "claim_breadth": 10,
+        "claim_frequency": 10,
+        "commercial_commitment": 10
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 10,
+        "product_deployment": 10,
+        "adoption_and_usage": 9.5,
+        "monetization_evidence": 9.5,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 10
+      },
+      "third_party_dependence_penalty": 1,
+      "ai_narrative_score": 100,
+      "ai_capability_score": 97.3,
+      "reality_gap": -2.7,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "high",
+      "summary": "Microsoft's pervasive AI narrative is supported by disclosed AI revenue, Azure demand, paid Copilot seats, and distribution across its cloud and productivity estate.",
+      "evidence": [
+        {
+          "source_type": "official_earnings_call",
+          "published_date": "2026-04-29",
+          "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+          "observation": "Microsoft disclosed an AI business annual revenue run rate above $37 billion, paid Microsoft 365 Copilot seats above 20 million, and continued infrastructure investment."
+        }
+      ]
+    },
+    {
+      "entity_id": "alphabet",
+      "entity_name": "Google",
+      "ticker": "GOOGL",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 10,
+        "claim_breadth": 9.5,
+        "claim_frequency": 9.5,
+        "commercial_commitment": 10
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 10,
+        "product_deployment": 10,
+        "adoption_and_usage": 10,
+        "monetization_evidence": 9,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 10
+      },
+      "third_party_dependence_penalty": 0,
+      "ai_narrative_score": 98,
+      "ai_capability_score": 98,
+      "reality_gap": 0,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "high",
+      "summary": "Alphabet's AI narrative is matched by first-party models and infrastructure, consumer-scale Gemini usage, paid enterprise seats, API volume, and accelerating cloud monetization.",
+      "evidence": [
+        {
+          "source_type": "official_earnings_call",
+          "published_date": "2026-02-04",
+          "url": "https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/default.aspx",
+          "observation": "Alphabet disclosed more than 750 million Gemini monthly users, 8 million Gemini Enterprise paid seats, 10 billion first-party model tokens per minute, and sharply higher generative-AI product revenue."
+        }
+      ]
+    },
+    {
+      "entity_id": "amazon",
+      "entity_name": "Amazon",
+      "ticker": "AMZN",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 9.5,
+        "claim_breadth": 9.5,
+        "claim_frequency": 9,
+        "commercial_commitment": 9.5
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 10,
+        "product_deployment": 9.5,
+        "adoption_and_usage": 9,
+        "monetization_evidence": 9,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 10
+      },
+      "third_party_dependence_penalty": 1.5,
+      "ai_narrative_score": 94,
+      "ai_capability_score": 94,
+      "reality_gap": 0,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "high",
+      "summary": "Amazon's AI narrative is matched by AWS scale, custom silicon revenue, deployed model and agent infrastructure, and AI integration across commerce, advertising, health, and devices.",
+      "evidence": [
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2026-04-29",
+          "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/",
+          "observation": "Amazon disclosed AWS quarterly revenue of $37.6 billion, a custom chips revenue run rate above $20 billion, 2.1 million AI chips landed, and production agent infrastructure across Bedrock and AgentCore."
+        }
+      ]
+    },
+    {
+      "entity_id": "meta",
+      "entity_name": "Meta",
+      "ticker": "META",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 10,
+        "claim_breadth": 9.5,
+        "claim_frequency": 10,
+        "commercial_commitment": 10
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 10,
+        "product_deployment": 9,
+        "adoption_and_usage": 9.5,
+        "monetization_evidence": 8.5,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 8.5
+      },
+      "third_party_dependence_penalty": 1,
+      "ai_narrative_score": 99,
+      "ai_capability_score": 91.8,
+      "reality_gap": -7.2,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "medium",
+      "summary": "Meta's personal-superintelligence narrative remains inside the alignment band because it is backed by enormous distribution, deployed recommendation systems, first-party models, and exceptional infrastructure commitment, although AI monetization is not separately disclosed.",
+      "evidence": [
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2026-04-29",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx",
+          "observation": "Meta disclosed 3.56 billion daily users, its first Meta Superintelligence Labs model, $19.84 billion of quarterly capital expenditures, and raised full-year capex guidance to $125-$145 billion."
+        }
+      ]
+    },
+    {
+      "entity_id": "apple",
+      "entity_name": "Apple",
+      "ticker": "AAPL",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 9,
+        "claim_breadth": 9,
+        "claim_frequency": 8.5,
+        "commercial_commitment": 9
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 8,
+        "product_deployment": 7,
+        "adoption_and_usage": 5,
+        "monetization_evidence": 3,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 7
+      },
+      "third_party_dependence_penalty": 2.5,
+      "ai_narrative_score": 89,
+      "ai_capability_score": 63,
+      "reality_gap": -26,
+      "classification": "narrative_outrunning_deployment",
+      "classification_label": "Narrative Outrunning Deployment",
+      "confidence": "medium",
+      "summary": "Apple controls unmatched device distribution and meaningful on-device and private-cloud architecture, but its most important Siri AI claims remained in developer testing with future beta availability and no disclosed AI revenue or adoption metric at the snapshot date.",
+      "evidence": [
+        {
+          "source_type": "official_product_announcement",
+          "published_date": "2026-06-08",
+          "url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+          "observation": "Apple introduced a rebuilt Siri AI and next-generation foundation-model architecture, while disclosing developer-test status, later beta availability, and geographic limitations."
+        }
+      ]
+    },
+    {
+      "entity_id": "oracle",
+      "entity_name": "Oracle",
+      "ticker": "ORCL",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 9,
+        "claim_breadth": 8.5,
+        "claim_frequency": 8.5,
+        "commercial_commitment": 9.5
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 9.5,
+        "product_deployment": 8.5,
+        "adoption_and_usage": 8,
+        "monetization_evidence": 9,
+        "proprietary_data_and_distribution": 8.5,
+        "developer_and_agent_surfaces": 8.5
+      },
+      "third_party_dependence_penalty": 2,
+      "ai_narrative_score": 89.3,
+      "ai_capability_score": 85.3,
+      "reality_gap": -4,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "high",
+      "summary": "Oracle's AI-cloud narrative is supported by rapid OCI growth, a large contracted backlog, deployed infrastructure, and enterprise data distribution, with some dependence on external frontier-model demand.",
+      "evidence": [
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2026-06-10",
+          "url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/",
+          "observation": "Oracle disclosed $638 billion of remaining performance obligations, quarterly cloud revenue of $9.9 billion, and OCI revenue growth of 93%."
+        }
+      ]
+    },
+    {
+      "entity_id": "salesforce",
+      "entity_name": "Salesforce",
+      "ticker": "CRM",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 10,
+        "claim_breadth": 10,
+        "claim_frequency": 10,
+        "commercial_commitment": 10
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 5,
+        "product_deployment": 9,
+        "adoption_and_usage": 9,
+        "monetization_evidence": 8.5,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 10
+      },
+      "third_party_dependence_penalty": 3,
+      "ai_narrative_score": 100,
+      "ai_capability_score": 80.5,
+      "reality_gap": -19.5,
+      "classification": "narrative_leads_deployment",
+      "classification_label": "Narrative Leads Deployment",
+      "confidence": "high",
+      "summary": "Salesforce has material Agentforce revenue, usage, data, and MCP evidence, but its totalizing agentic-enterprise narrative still exceeds the maturity and infrastructure control visible in current disclosures.",
+      "evidence": [
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2026-05-27",
+          "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-First-Quarter-Fiscal-2027-Results/default.aspx",
+          "observation": "Salesforce disclosed $1.2 billion of Agentforce ARR, $3.4 billion of combined AI and data ARR, 3.8 billion agentic work units, and more than one million active Slack MCP users."
+        }
+      ]
+    },
+    {
+      "entity_id": "adobe",
+      "entity_name": "Adobe",
+      "ticker": "ADBE",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 9.5,
+        "claim_breadth": 10,
+        "claim_frequency": 9.5,
+        "commercial_commitment": 9.5
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 6,
+        "product_deployment": 8,
+        "adoption_and_usage": 7,
+        "monetization_evidence": 6,
+        "proprietary_data_and_distribution": 10,
+        "developer_and_agent_surfaces": 9
+      },
+      "third_party_dependence_penalty": 2.5,
+      "ai_narrative_score": 96,
+      "ai_capability_score": 72,
+      "reality_gap": -24,
+      "classification": "narrative_outrunning_deployment",
+      "classification_label": "Narrative Outrunning Deployment",
+      "confidence": "medium",
+      "summary": "Adobe has genuine creative models, workflow distribution, and public AI products, but its broad agentic-infrastructure positioning ran ahead of the private-beta and public-beta deployment status disclosed across several flagship experiences.",
+      "evidence": [
+        {
+          "source_type": "official_product_announcement",
+          "published_date": "2026-06-18",
+          "url": "https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion",
+          "observation": "Adobe disclosed public-beta creative agents across core applications, a private-beta unified Firefly studio, and distribution through several third-party AI platforms."
+        }
+      ]
+    },
+    {
+      "entity_id": "ibm",
+      "entity_name": "IBM",
+      "ticker": "IBM",
+      "snapshot_date": "2026-07-21",
+      "narrative_components": {
+        "strategic_centrality": 7.5,
+        "claim_breadth": 8,
+        "claim_frequency": 7.5,
+        "commercial_commitment": 7.5
+      },
+      "capability_components": {
+        "infrastructure_and_model_control": 7,
+        "product_deployment": 8.5,
+        "adoption_and_usage": 8,
+        "monetization_evidence": 8,
+        "proprietary_data_and_distribution": 8.5,
+        "developer_and_agent_surfaces": 8.5
+      },
+      "third_party_dependence_penalty": 1.5,
+      "ai_narrative_score": 76,
+      "ai_capability_score": 78.8,
+      "reality_gap": 2.8,
+      "classification": "narrative_capability_aligned",
+      "classification_label": "Narrative / Capability Aligned",
+      "confidence": "medium",
+      "summary": "IBM's comparatively restrained enterprise-AI narrative is supported by deployed hybrid-cloud, software, consulting, and infrastructure capabilities, although the latest disclosure does not isolate the full AI revenue contribution.",
+      "evidence": [
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2026-04-22",
+          "url": "https://newsroom.ibm.com/2026-04-22-IBM-RELEASES-FIRST-QUARTER-RESULTS?lnk=hpln1id",
+          "observation": "IBM reported $15.9 billion of quarterly revenue, double-digit software and infrastructure growth, and described AI as embedded across hybrid enterprise deployments."
+        },
+        {
+          "source_type": "official_investor_release",
+          "published_date": "2025-04-23",
+          "url": "https://newsroom.ibm.com/2025-04-23-ibm-releases-first-quarter-results",
+          "observation": "IBM previously disclosed a generative-AI book of business above $6 billion, providing a dated monetization anchor while the later release used broader portfolio language."
+        }
+      ]
+    }
+  ]
+}

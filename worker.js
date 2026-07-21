@@ -25,6 +25,7 @@ import {
   getFourForces,
   getIndex,
   getPowerLens,
+  getRealityGap,
   getSpeg,
   TOOL_HANDLERS,
   validateAuditTarget,
@@ -60,12 +61,12 @@ function resourceInventory() {
   }));
 }
 
-function openApiParameter(name, schema = { type: "string" }) {
+function openApiParameter(name, schema = { type: "string" }, required = false) {
   return {
     name,
     in: "query",
-    required: name === "url" || name === "query",
-    schema: name === "limit" ? { type: "integer", minimum: 1, maximum: 100 } : schema,
+    required,
+    schema,
     description: name
   };
 }
@@ -140,7 +141,11 @@ function openApiDocument() {
   const json200 = { description: "JSON response" };
   const toolPaths = Object.fromEntries(DATA_TOOLS.map((tool) => [
     tool.route,
-    { get: { summary: tool.title, description: tool.description, parameters: (tool.openApiParameters || []).map((parameter) => openApiParameter(parameter)), responses: { 200: json200 } } }
+    { get: { summary: tool.title, description: tool.description, parameters: (tool.openApiParameters || []).map((parameter) => openApiParameter(
+      parameter,
+      tool.inputSchema?.properties?.[parameter] ?? { type: "string" },
+      tool.inputSchema?.required?.includes(parameter) ?? false
+    )), responses: { 200: json200 } } }
   ]));
   return {
     openapi: "3.0.1",
@@ -314,6 +319,8 @@ export default {
     if (url.pathname === "/entities") return jsonResponse(getEntities(queryArgs(url, ["industry", "entity_type", "posture", "capability"])));
     if (url.pathname === "/datasets/ai_power_index") return jsonResponse(DATASETS.ai_power_index.data);
     if (url.pathname === "/datasets/ai_power_index/schema") return jsonResponse(DATASETS.ai_power_index.schema);
+    if (url.pathname === "/datasets/reality_gap_index") return jsonResponse(DATASETS.reality_gap_index.data);
+    if (url.pathname === "/datasets/reality_gap_index/schema") return jsonResponse(DATASETS.reality_gap_index.schema);
     if (url.pathname === "/schemas/power-lens") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens")?.data);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
@@ -324,6 +331,9 @@ export default {
       const valid = validatePowerLensQuery(args.query);
       if (!valid.ok) return jsonResponse({ success: false, error: valid.error }, { status: valid.status, headers: noStore });
       return jsonResponse(getPowerLens(args));
+    }
+    if (url.pathname === "/reality-gap") {
+      return jsonResponse(getRealityGap(queryArgs(url, ["query", "classification", "sort", "limit"])));
     }
     if (url.pathname === "/datasets/convergence_monitor") return jsonResponse(DATASETS.convergence_monitor.data);
     if (url.pathname === "/convergence/latest") return jsonResponse(getConvergenceLatest());
