@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/strategic-consequence",
+  "title": "exmxc Strategic Consequence Engine Response",
+  "description": "Response contract for deterministic, relative scenario-exposure analysis across the bundled exmxc AI Power universe.",
+  "type": "object",
+  "required": [
+    "product",
+    "version",
+    "methodology_version",
+    "generated_at",
+    "mode",
+    "scenario",
+    "universe_size",
+    "methodology",
+    "first_order",
+    "entity_result",
+    "second_order_consequences",
+    "bottlenecks",
+    "assumptions",
+    "signals",
+    "coverage",
+    "provenance",
+    "disclaimer"
+  ],
+  "properties": {
+    "product": {
+      "const": "exmxc Strategic Consequence Engine"
+    },
+    "version": {
+      "type": "string"
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "leaderboard",
+        "entity"
+      ]
+    },
+    "query": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "found": {
+      "type": "boolean"
+    },
+    "suggestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "question",
+        "horizon",
+        "thesis",
+        "force_deltas"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "horizon": {
+          "type": "string"
+        },
+        "thesis": {
+          "type": "string"
+        },
+        "force_deltas": {
+          "type": "object",
+          "required": [
+            "compute",
+            "interface",
+            "alignment",
+            "energy"
+          ],
+          "properties": {
+            "compute": {
+              "type": "number"
+            },
+            "interface": {
+              "type": "number"
+            },
+            "alignment": {
+              "type": "number"
+            },
+            "energy": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "universe_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "methodology": {
+      "type": "object"
+    },
+    "first_order": {
+      "type": "object",
+      "required": [
+        "logic",
+        "most_advantaged",
+        "most_pressured"
+      ],
+      "properties": {
+        "logic": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "most_advantaged": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityImpact"
+          }
+        },
+        "most_pressured": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityImpact"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "entity_result": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/entityImpact"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "second_order_consequences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "consequence"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "consequence": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "bottlenecks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "direction",
+          "rationale"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signals": {
+      "type": "object",
+      "required": [
+        "confirming",
+        "invalidating"
+      ],
+      "properties": {
+        "confirming": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "invalidating": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "disclaimer": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "entityImpact": {
+      "type": "object",
+      "required": [
+        "entity_name",
+        "scenario_rank",
+        "universe_size",
+        "scenario_advantage_score",
+        "raw_impact_score",
+        "classification",
+        "classification_label",
+        "ai_power_index",
+        "force_contributions",
+        "scarcity",
+        "reality_gap",
+        "primary_drivers",
+        "coverage"
+      ],
+      "properties": {
+        "entity_name": {
+          "type": "string"
+        },
+        "scenario_rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "universe_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scenario_advantage_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "raw_impact_score": {
+          "type": "number"
+        },
+        "classification": {
+          "type": "string"
+        },
+        "classification_label": {
+          "type": "string"
+        },
+        "ai_power_index": {
+          "type": "number"
+        },
+        "force_contributions": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "force",
+              "exposure",
+              "scenario_delta",
+              "model_weight",
+              "contribution"
+            ],
+            "properties": {
+              "force": {
+                "type": "string",
+                "enum": [
+                  "compute",
+                  "interface",
+                  "alignment",
+                  "energy"
+                ]
+              },
+              "exposure": {
+                "type": "number"
+              },
+              "scenario_delta": {
+                "type": "number"
+              },
+              "model_weight": {
+                "type": "number"
+              },
+              "contribution": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "scarcity": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "reality_gap": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "primary_drivers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "coverage": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

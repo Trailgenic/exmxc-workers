@@ -18,7 +18,7 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.6.0
+- Version: 2.7.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
 
 ## Tools
@@ -31,6 +31,7 @@ node scripts/build-registry-packet.mjs
 - ex.entity_in_a_box.get — Get Entity-in-a-Box Ontology: System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers.
 - ex.power_lens.get — Generate an exmxc Power Lens Card: Resolve a supported company name or ticker and synthesize its AI Power Index, Four Forces exposures, Entity Clarity record, available scarcity snapshot, coverage, and provenance.
 - ex.reality_gap.get — Get AI Reality Gap Scores: Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence.
+- ex.strategic_consequence.get — Run a Strategic Consequence Scenario: Propagate one canonical counterfactual through the bundled Four Forces, AI Power, scarcity, and available Reality Gap layers. Returns conditional first-order advantage and pressure, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals.
 - ex.ai_power.analysis.top — Get Top AI Power Index Entities: Retrieve top-ranked entities from the AI Power Index ranking.
 - ex.eei.audit.run — Run Entity Clarity (EEI) Audit: Run a live Entity Engineering Index audit against any public URL, returning entity score, tier breakdown, crawl health, and structural profile per the exmxc EEI v2.1 methodology.
 - ex.convergence.latest — Get Latest Convergence Read: Retrieve the most recent weekly read of the AI Infrastructure Convergence Framework — overall status, count of categories in breach, per-signal state (Latent/Watch/Breach/Pending), and exit posture. Derived reference layer; not investment advice.

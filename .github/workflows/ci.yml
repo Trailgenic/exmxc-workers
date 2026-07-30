@@ -14,5 +14,6 @@ jobs:
       - run: npm test
       - run: npm run test:workers
       - run: npm run validate:json
+      - run: npm run validate:webflow
       - run: npm run registry:check
       - run: npm run deploy:dry-run

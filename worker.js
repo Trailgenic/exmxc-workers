@@ -27,9 +27,11 @@ import {
   getPowerLens,
   getRealityGap,
   getSpeg,
+  getStrategicConsequence,
   TOOL_HANDLERS,
   validateAuditTarget,
-  validatePowerLensQuery
+  validatePowerLensQuery,
+  validateStrategicConsequenceArgs
 } from "./lib/queries.js";
 import baseline from "./data/ads-baseline.json" with { type: "json" };
 
@@ -321,7 +323,9 @@ export default {
     if (url.pathname === "/datasets/ai_power_index/schema") return jsonResponse(DATASETS.ai_power_index.schema);
     if (url.pathname === "/datasets/reality_gap_index") return jsonResponse(DATASETS.reality_gap_index.data);
     if (url.pathname === "/datasets/reality_gap_index/schema") return jsonResponse(DATASETS.reality_gap_index.schema);
+    if (url.pathname === "/datasets/strategic_consequence_scenarios") return jsonResponse(DATASETS.strategic_consequence_scenarios.data);
     if (url.pathname === "/schemas/power-lens") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens")?.data);
+    if (url.pathname === "/schemas/strategic-consequence") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "strategic_consequence")?.data);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());
@@ -334,6 +338,17 @@ export default {
     }
     if (url.pathname === "/reality-gap") {
       return jsonResponse(getRealityGap(queryArgs(url, ["query", "classification", "sort", "limit"])));
+    }
+    if (url.pathname === "/strategic-consequence") {
+      const args = queryArgs(url, ["scenario", "query", "limit"]);
+      const valid = validateStrategicConsequenceArgs(args);
+      if (!valid.ok) {
+        return jsonResponse(
+          { success: false, error: valid.error, valid_scenarios: valid.valid_scenarios ?? [] },
+          { status: valid.status, headers: noStore }
+        );
+      }
+      return jsonResponse(getStrategicConsequence(args));
     }
     if (url.pathname === "/datasets/convergence_monitor") return jsonResponse(DATASETS.convergence_monitor.data);
     if (url.pathname === "/convergence/latest") return jsonResponse(getConvergenceLatest());

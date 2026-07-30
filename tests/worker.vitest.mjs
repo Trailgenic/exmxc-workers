@@ -16,6 +16,7 @@ const validArgs = {
   'ex.entity_in_a_box.get': {},
   'ex.power_lens.get': { query: 'NVDA' },
   'ex.reality_gap.get': { query: 'AAPL' },
+  'ex.strategic_consequence.get': { scenario: 'power_binding_constraint', query: 'NVDA', limit: 3 },
   'ex.ai_power.analysis.top': { limit: 1 },
   'ex.eei.audit.run': { url: 'https://example.com' },
   'ex.convergence.latest': {},
@@ -208,6 +209,54 @@ describe('tools and schemas', () => {
     expect(unscored.reality_gap).toBeNull();
     expect(unscored.coverage.reality_gap.status).toBe('not_scored');
   });
+
+  it('propagates canonical Strategic Consequence scenarios deterministically', async () => {
+    expect((await req('/strategic-consequence')).status).toBe(400);
+    expect((await req('/strategic-consequence?scenario=unknown')).status).toBe(400);
+
+    const power = await (await req('/strategic-consequence?scenario=power_binding_constraint&limit=3')).json();
+    expect(power.product).toBe('exmxc Strategic Consequence Engine');
+    expect(power.mode).toBe('leaderboard');
+    expect(power.scenario.id).toBe('power_binding_constraint');
+    expect(power.universe_size).toBe(84);
+    expect(power.first_order.most_advantaged).toHaveLength(3);
+    expect(power.first_order.most_pressured).toHaveLength(3);
+    expect(power.first_order.most_advantaged[0].entity_name).toBe('Constellation Energy');
+    expect(power.first_order.most_advantaged[0].scenario_advantage_score).toBe(100);
+    expect(power.first_order.most_pressured[0].scenario_advantage_score).toBe(0);
+    expect(power.second_order_consequences).toHaveLength(3);
+    expect(power.bottlenecks).toHaveLength(3);
+    expect(power.signals.confirming.length).toBeGreaterThan(0);
+    expect(power.coverage.company_overrides).toBe(false);
+
+    const nvidia = await (await req('/strategic-consequence?scenario=power_binding_constraint&query=NVDA')).json();
+    expect(nvidia.mode).toBe('entity');
+    expect(nvidia.found).toBe(true);
+    expect(nvidia.entity_result.entity_name).toBe('NVIDIA');
+    expect(nvidia.entity_result.force_contributions).toHaveLength(4);
+    expect(nvidia.entity_result.scarcity.scarcity_layer).toBe('Compute');
+    expect(nvidia.entity_result.reality_gap.reality_gap).toBe(-3);
+
+    const alias = await (await req('/strategic-consequence?scenario=agents%20control%20interface&query=Alphabet')).json();
+    expect(alias.scenario.id).toBe('agent_interface_shift');
+    expect(alias.entity_result.entity_name).toBe('Google');
+
+    const missing = await (await req('/strategic-consequence?scenario=power_binding_constraint&query=NVIDA')).json();
+    expect(missing.found).toBe(false);
+    expect(missing.suggestions).toContain('NVIDIA');
+
+    const scenarios = await (await req('/datasets/strategic_consequence_scenarios')).json();
+    expect(scenarios.scenarios).toHaveLength(6);
+    const schema = await (await req('/schemas/strategic-consequence')).json();
+    expect(schema.$id).toBe('https://mcp.exmxc.ai/schemas/strategic-consequence');
+
+    const openApi = await (await req('/.well-known/openapi.json')).json();
+    const parameters = openApi.paths['/strategic-consequence'].get.parameters;
+    expect(parameters.find((parameter) => parameter.name === 'scenario').required).toBe(true);
+    expect(parameters.find((parameter) => parameter.name === 'scenario').schema.enum).toContain('agent_interface_shift');
+    expect(parameters.find((parameter) => parameter.name === 'query').required).toBe(false);
+    expect(parameters.find((parameter) => parameter.name === 'limit').schema.maximum).toBe(25);
+  });
 });
 
 describe('resources', () => {
@@ -259,6 +308,7 @@ describe('ADS, audit, cache, and registry', () => {
     expect((await req('/.well-known/openapi.json')).headers.get('cache-control')).toBe('no-cache');
     expect((await req('/entities')).headers.get('cache-control')).toBe('public, max-age=3600');
     expect((await req('/power-lens?query=NVDA')).headers.get('cache-control')).toBe('public, max-age=3600');
+    expect((await req('/strategic-consequence?scenario=power_binding_constraint')).headers.get('cache-control')).toBe('public, max-age=3600');
     expect((await req('/api/ai-jobs-signal')).headers.get('cache-control')).toBe('public, max-age=3600');
     expect((await req('/audit/run?url=http%3A%2F%2Flocalhost')).headers.get('cache-control')).toBe('no-store');
   });

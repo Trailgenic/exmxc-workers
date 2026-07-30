@@ -1,0 +1,540 @@
+{
+  "metadata": {
+    "product": "exmxc Strategic Consequence Engine",
+    "dataset_id": "strategic_consequence_scenarios_v1",
+    "version": "1.0.0",
+    "methodology_version": "sce-v1.0",
+    "as_of_date": "2026-07-29",
+    "model_type": "deterministic_relative_scenario_exposure",
+    "universe": "Bundled exmxc 84-entity AI Power universe",
+    "score_formula": "sum(force_exposure × scenario_force_delta × canonical_force_weight) + matched_scarcity_layer_adjustment + bounded_reality_gap_modifier",
+    "force_weights": {
+      "compute": 0.3,
+      "interface": 0.25,
+      "alignment": 0.25,
+      "energy": 0.2
+    },
+    "normalization_policy": "Raw scenario scores are min-max normalized within the complete bundled AI Power universe. The highest raw score maps to 100 and the lowest maps to 0. Classification bands are relative structural exposure bands, not absolute return forecasts.",
+    "classification_bands": [
+      {
+        "id": "strongly_advantaged",
+        "label": "Strongly Advantaged",
+        "minimum_score": 85,
+        "maximum_score": 100
+      },
+      {
+        "id": "advantaged",
+        "label": "Advantaged",
+        "minimum_score": 65,
+        "maximum_score": 84.99
+      },
+      {
+        "id": "mixed",
+        "label": "Mixed / Contingent",
+        "minimum_score": 35,
+        "maximum_score": 64.99
+      },
+      {
+        "id": "pressured",
+        "label": "Pressured",
+        "minimum_score": 15,
+        "maximum_score": 34.99
+      },
+      {
+        "id": "strongly_pressured",
+        "label": "Strongly Pressured",
+        "minimum_score": 0,
+        "maximum_score": 14.99
+      }
+    ],
+    "coverage_policy": "Every entity requires a bundled AI Power and Four Forces record. Scarcity and Reality Gap modifiers are applied only when a matching versioned record exists; missing layers contribute zero and are disclosed.",
+    "interpretation_policy": "Scenario definitions, causal chains, assumptions, and validation signals are versioned analytical judgments. The engine performs no live web retrieval and generates no undisclosed company overrides.",
+    "disclaimer": "Counterfactual structural-exposure analysis derived from bundled exmxc datasets. Scores are conditional, relative, and analytical; they are not probabilities, price targets, investment recommendations, or predictions."
+  },
+  "scenarios": [
+    {
+      "id": "inference_cost_collapse",
+      "aliases": [
+        "inference costs down 80%",
+        "cheap inference",
+        "inference cost collapse"
+      ],
+      "title": "Inference Costs Fall 80%",
+      "question": "What changes if the unit cost of frontier-quality AI inference falls by 80%?",
+      "horizon": "12–36 months",
+      "thesis": "Lower inference costs expand application demand and distribution while compressing scarcity rents tied only to expensive model execution. Interface ownership, workflow integration, network movement, and proprietary data become relatively more important.",
+      "force_deltas": {
+        "compute": -0.65,
+        "interface": 0.9,
+        "alignment": 0.1,
+        "energy": -0.45
+      },
+      "scarcity_layer_adjustments": {
+        "Compute": -1,
+        "HBM Memory": -0.8,
+        "Fabrication": -0.6,
+        "Memory + Foundry Hybrid": -0.7,
+        "Lithography": -0.4,
+        "Power Generation": -0.4,
+        "Power Generation Technology": -0.4,
+        "Power & Cooling": -0.4,
+        "Network Infrastructure": 0.8,
+        "Enterprise Storage Systems": 0.6,
+        "Flash Storage Systems": 0.5
+      },
+      "reality_gap_weight": 0.35,
+      "first_order_logic": [
+        "Per-token economics improve for high-volume AI applications.",
+        "Model-serving scarcity rents face compression unless demand growth outruns the cost decline.",
+        "Distribution and workflow owners gain room to increase AI usage without equivalent cost growth."
+      ],
+      "second_order_consequences": [
+        {
+          "sequence": 1,
+          "consequence": "AI features become default product behavior rather than premium add-ons."
+        },
+        {
+          "sequence": 2,
+          "consequence": "Application competition shifts toward proprietary workflow data, retention, and interface control."
+        },
+        {
+          "sequence": 3,
+          "consequence": "Aggregate inference volume may eventually re-tighten networking, storage, and power constraints even as unit costs fall."
+        }
+      ],
+      "bottlenecks": [
+        {
+          "name": "Interface distribution",
+          "direction": "more_valuable",
+          "rationale": "Cheaper intelligence increases the value of controlling where users invoke it."
+        },
+        {
+          "name": "Proprietary workflow data",
+          "direction": "more_valuable",
+          "rationale": "Data and context differentiate applications when baseline model capability becomes inexpensive."
+        },
+        {
+          "name": "Raw inference scarcity",
+          "direction": "less_valuable",
+          "rationale": "The scenario explicitly assumes a sharp decline in unit execution cost."
+        }
+      ],
+      "assumptions": [
+        "The cost reduction reaches end users rather than being fully retained as supplier margin.",
+        "Demand elasticity is high but does not immediately overwhelm the cost decline.",
+        "Frontier-quality output remains available across multiple providers."
+      ],
+      "confirming_signals": [
+        "Sustained price-per-token declines at comparable quality and latency.",
+        "Rapid growth in AI feature usage without proportional inference spending.",
+        "Application vendors broadening included AI entitlements."
+      ],
+      "invalidating_signals": [
+        "Inference prices stabilize or rise at equivalent quality.",
+        "Compute demand growth consistently exceeds efficiency gains.",
+        "Users remain unwilling to adopt AI workflows despite lower cost."
+      ]
+    },
+    {
+      "id": "power_binding_constraint",
+      "aliases": [
+        "electricity constraint",
+        "power bottleneck",
+        "power becomes binding"
+      ],
+      "title": "Electricity Becomes the Binding Constraint",
+      "question": "What changes if power availability, grid interconnection, and cooling—not chips—become the binding constraint on AI deployment?",
+      "horizon": "18–60 months",
+      "thesis": "AI deployment value migrates toward generation, grid access, electrification, thermal management, and project execution. Compute assets without secured power face lower utilization and slower time to revenue.",
+      "force_deltas": {
+        "compute": -0.45,
+        "interface": -0.2,
+        "alignment": 0.1,
+        "energy": 1
+      },
+      "scarcity_layer_adjustments": {
+        "Compute": -0.5,
+        "HBM Memory": -0.25,
+        "Power Generation": 2,
+        "Power Generation Technology": 2,
+        "Nuclear Energy": 2,
+        "Utility Infrastructure": 1.8,
+        "Grid Infrastructure": 1.8,
+        "Grid Automation": 1.6,
+        "Electrification Systems": 1.6,
+        "Power Management": 1.5,
+        "Power & Cooling": 1.5,
+        "Analog Control": 0.8
+      },
+      "reality_gap_weight": 0.2,
+      "first_order_logic": [
+        "Power-secured data-center capacity receives a utilization and time-to-market advantage.",
+        "Generation, grid, cooling, and electrification backlogs gain strategic value.",
+        "Unpowered compute inventory becomes less valuable than deliverable powered capacity."
+      ],
+      "second_order_consequences": [
+        {
+          "sequence": 1,
+          "consequence": "AI infrastructure siting follows interconnection availability, generation access, and permitting speed."
+        },
+        {
+          "sequence": 2,
+          "consequence": "Long-duration power agreements and behind-the-meter generation become competitive assets."
+        },
+        {
+          "sequence": 3,
+          "consequence": "Efficiency improvements are monetized through additional deployment rather than lower aggregate electricity demand."
+        }
+      ],
+      "bottlenecks": [
+        {
+          "name": "Firm power",
+          "direction": "more_valuable",
+          "rationale": "The scenario makes deliverable electricity the limiting production input."
+        },
+        {
+          "name": "Grid interconnection",
+          "direction": "more_valuable",
+          "rationale": "Queue position and transmission access determine when capacity can operate."
+        },
+        {
+          "name": "Thermal management",
+          "direction": "more_valuable",
+          "rationale": "Higher rack density increases the importance of cooling and power conversion."
+        }
+      ],
+      "assumptions": [
+        "Data-center demand grows faster than new generation and grid capacity.",
+        "Interconnection and permitting timelines remain materially slower than compute procurement.",
+        "Efficiency gains are reinvested in additional AI workload."
+      ],
+      "confirming_signals": [
+        "Data-center projects delayed by power or interconnection rather than chip delivery.",
+        "Rising value of power-secured sites and long-term energy agreements.",
+        "Persistent multi-year backlogs in grid, generation, cooling, and electrification equipment."
+      ],
+      "invalidating_signals": [
+        "Grid and generation additions consistently outpace data-center demand.",
+        "AI workload efficiency reduces aggregate electricity consumption.",
+        "Compute supply remains the dominant deployment bottleneck."
+      ]
+    },
+    {
+      "id": "frontier_model_commoditization",
+      "aliases": [
+        "models become interchangeable",
+        "frontier models commoditize",
+        "model commoditization"
+      ],
+      "title": "Frontier Models Become Interchangeable",
+      "question": "What changes if frontier models become sufficiently interchangeable on capability, reliability, and price?",
+      "horizon": "12–36 months",
+      "thesis": "Economic power moves away from undifferentiated model access toward customer distribution, proprietary context, orchestration, switching layers, and workflow ownership. Infrastructure remains necessary but loses some model-specific scarcity premium.",
+      "force_deltas": {
+        "compute": -0.75,
+        "interface": 1,
+        "alignment": -0.2,
+        "energy": -0.25
+      },
+      "scarcity_layer_adjustments": {
+        "Compute": -1,
+        "HBM Memory": -0.8,
+        "Fabrication": -0.6,
+        "Memory + Foundry Hybrid": -0.7,
+        "Lithography": -0.5,
+        "Network Infrastructure": 0.5,
+        "Enterprise Storage Systems": 0.5,
+        "Flash Storage Systems": 0.4
+      },
+      "reality_gap_weight": 0.45,
+      "first_order_logic": [
+        "Model switching costs decline and buyer bargaining power rises.",
+        "Interface and workflow owners can route across models.",
+        "Standalone model differentiation must migrate toward data, distribution, trust, or specialized capability."
+      ],
+      "second_order_consequences": [
+        {
+          "sequence": 1,
+          "consequence": "Multi-model orchestration becomes a standard application-layer capability."
+        },
+        {
+          "sequence": 2,
+          "consequence": "Model providers bundle distribution, applications, or proprietary data to defend margins."
+        },
+        {
+          "sequence": 3,
+          "consequence": "Enterprise procurement emphasizes portability, governance, and outcome cost rather than model identity."
+        }
+      ],
+      "bottlenecks": [
+        {
+          "name": "Customer workflow ownership",
+          "direction": "more_valuable",
+          "rationale": "Interchangeable models increase the power of the layer selecting and presenting intelligence."
+        },
+        {
+          "name": "Proprietary context",
+          "direction": "more_valuable",
+          "rationale": "Private data and embedded workflow remain differentiating when base models converge."
+        },
+        {
+          "name": "Undifferentiated model access",
+          "direction": "less_valuable",
+          "rationale": "The scenario removes persistent capability scarcity between frontier suppliers."
+        }
+      ],
+      "assumptions": [
+        "Comparable models are available from several economically viable suppliers.",
+        "Enterprises can switch or route models without prohibitive revalidation costs.",
+        "No single provider sustains an exclusive capability lead."
+      ],
+      "confirming_signals": [
+        "Frequent benchmark leadership changes without durable pricing power.",
+        "Rapid adoption of model routers and multi-provider enterprise architectures.",
+        "Falling price dispersion for comparable capability."
+      ],
+      "invalidating_signals": [
+        "One model provider sustains a large, durable capability advantage.",
+        "Switching costs rise because of proprietary state, tools, or compliance.",
+        "Model identity remains the primary driver of enterprise buying decisions."
+      ]
+    },
+    {
+      "id": "agent_interface_shift",
+      "aliases": [
+        "agents control interface",
+        "agent interface",
+        "agent distribution shift"
+      ],
+      "title": "Agents Control the Customer Interface",
+      "question": "What changes if autonomous agents become the primary interface through which users discover, choose, and transact with digital services?",
+      "horizon": "18–48 months",
+      "thesis": "Power shifts toward entities that own high-frequency agent interfaces, identity, permissions, trusted context, and transaction completion. Products dependent on direct human navigation risk disintermediation unless they become preferred agent endpoints.",
+      "force_deltas": {
+        "compute": -0.2,
+        "interface": 1,
+        "alignment": 0.1,
+        "energy": -0.3
+      },
+      "scarcity_layer_adjustments": {
+        "Compute": -0.2,
+        "Chip Design": -0.1,
+        "Network Infrastructure": 0.75,
+        "Memory Controllers": 0.3,
+        "Enterprise Storage Systems": 0.4,
+        "Flash Storage Systems": 0.4
+      },
+      "reality_gap_weight": 0.55,
+      "first_order_logic": [
+        "Agent entry points aggregate demand and influence supplier selection.",
+        "Identity, permissions, memory, and transaction rails become core control points.",
+        "Human-facing brands lose leverage when agents can compare and substitute services automatically."
+      ],
+      "second_order_consequences": [
+        {
+          "sequence": 1,
+          "consequence": "Machine-readable products, APIs, and agent-accessible transaction paths become distribution requirements."
+        },
+        {
+          "sequence": 2,
+          "consequence": "Customer acquisition economics shift from human attention toward agent preference and verified fulfillment."
+        },
+        {
+          "sequence": 3,
+          "consequence": "Agent platforms face pressure to disclose ranking, conflicts, authorization, and accountability."
+        }
+      ],
+      "bottlenecks": [
+        {
+          "name": "Agent interface distribution",
+          "direction": "more_valuable",
+          "rationale": "The primary agent controls discovery, recommendation, and task routing."
+        },
+        {
+          "name": "Identity and permission state",
+          "direction": "more_valuable",
+          "rationale": "Autonomous action requires trusted authority, context, and revocable access."
+        },
+        {
+          "name": "Human navigation dependence",
+          "direction": "less_valuable",
+          "rationale": "Direct traffic and visual interface control weaken when agents mediate the transaction."
+        }
+      ],
+      "assumptions": [
+        "Users delegate meaningful discovery and transaction authority to agents.",
+        "Agents can call external services through reliable machine interfaces.",
+        "Trust, permissions, and liability frameworks permit autonomous execution."
+      ],
+      "confirming_signals": [
+        "Material transaction volume initiated and completed by agents.",
+        "Major platforms exposing persistent identity, memory, permissions, and tool ecosystems.",
+        "Businesses optimizing for agent discovery and machine-readable fulfillment."
+      ],
+      "invalidating_signals": [
+        "Users restrict agents to advice rather than action.",
+        "Liability or security constraints prevent broad transaction authority.",
+        "Closed platforms block cross-service agent execution."
+      ]
+    },
+    {
+      "id": "export_controls_tighten",
+      "aliases": [
+        "export controls",
+        "chip controls tighten",
+        "technology restrictions tighten"
+      ],
+      "title": "Advanced-AI Export Controls Tighten",
+      "question": "What changes if access to advanced AI chips, manufacturing equipment, and technical capability becomes more restricted across jurisdictions?",
+      "horizon": "12–48 months",
+      "thesis": "Control over compliant compute supply, fabrication, equipment, and sovereign alternatives gains structural leverage, while cross-border dependence and inaccessible capacity create execution risk. The engine measures conditional leverage, not the separate revenue cost of a particular regulation.",
+      "force_deltas": {
+        "compute": 0.75,
+        "interface": -0.5,
+        "alignment": 0.2,
+        "energy": -0.15
+      },
+      "scarcity_layer_adjustments": {
+        "Compute": 1,
+        "HBM Memory": 0.8,
+        "Fabrication": 1,
+        "Memory + Foundry Hybrid": 0.75,
+        "Lithography": 1,
+        "Chip Design": 0.6,
+        "Analog Control": 0.25
+      },
+      "reality_gap_weight": 0.15,
+      "first_order_logic": [
+        "Permitted advanced-compute capacity becomes more scarce and strategically allocated.",
+        "Domestic and allied production receives policy and capital support.",
+        "Entities dependent on restricted cross-border inputs face substitution cost and deployment delay."
+      ],
+      "second_order_consequences": [
+        {
+          "sequence": 1,
+          "consequence": "Regional AI stacks duplicate infrastructure, software, and supply chains."
+        },
+        {
+          "sequence": 2,
+          "consequence": "Sovereign compute procurement and domestic manufacturing incentives accelerate."
+        },
+        {
+          "sequence": 3,
+          "consequence": "Workarounds, older-node optimization, and alternative architectures receive more investment."
+        }
+      ],
+      "bottlenecks": [
+        {
+          "name": "Compliant leading-edge capacity",
+          "direction": "more_valuable",
+          "rationale": "Restrictions reduce the fungibility of otherwise similar compute supply."
+        },
+        {
+          "name": "Semiconductor manufacturing equipment",
+          "direction": "more_valuable",
+          "rationale": "A small number of production tools become policy-controlled strategic chokepoints."
+        },
+        {
+          "name": "Cross-border supply-chain flexibility",
+          "direction": "less_reliable",
+          "rationale": "Policy constraints can override economic sourcing choices."
+        }
+      ],
+      "assumptions": [
+        "Controls expand materially and enforcement remains credible.",
+        "Substitute supply cannot be created quickly at equivalent performance.",
+        "The scenario's structural-leverage score is interpreted separately from company-specific lost revenue or retaliation risk."
+      ],
+      "confirming_signals": [
+        "Broader licensing requirements covering chips, equipment, cloud access, or technical services.",
+        "Accelerating sovereign semiconductor and compute investment.",
+        "Persistent performance or capacity gaps between restricted and unrestricted markets."
+      ],
+      "invalidating_signals": [
+        "Controls are relaxed, inconsistently enforced, or rapidly circumvented.",
+        "Domestic substitutes reach equivalent scale and performance quickly.",
+        "Advanced compute becomes widely available through uncontrolled channels."
+      ]
+    },
+    {
+      "id": "capability_gap_consolidation",
+      "aliases": [
+        "acquisition gaps",
+        "ai m&a",
+        "capability gap acquisitions"
+      ],
+      "title": "Capability Gaps Trigger Consolidation",
+      "question": "What changes if incumbents increasingly acquire scarce AI capabilities rather than building them internally?",
+      "horizon": "12–48 months",
+      "thesis": "Strategic value rises for companies controlling difficult-to-replicate compute, chip design, data movement, orchestration, proprietary data, and embedded distribution. Narrative without operational capability increases pressure to buy, partner, or retreat.",
+      "force_deltas": {
+        "compute": 0.3,
+        "interface": 0.3,
+        "alignment": -0.2,
+        "energy": -0.4
+      },
+      "scarcity_layer_adjustments": {
+        "Chip Design": 1,
+        "Memory Controllers": 0.8,
+        "Network Infrastructure": 0.7,
+        "Analog Control": 0.6,
+        "Enterprise Storage Systems": 0.5,
+        "Flash Storage Systems": 0.5,
+        "Power Generation": -0.2,
+        "Utility Infrastructure": -0.2
+      },
+      "reality_gap_weight": 0.8,
+      "first_order_logic": [
+        "Scarce capabilities with short integration paths receive acquisition premiums.",
+        "Companies with large narrative-to-capability gaps face greater buy-versus-build pressure.",
+        "Regulatory feasibility and integration risk determine whether structural scarcity becomes transaction value."
+      ],
+      "second_order_consequences": [
+        {
+          "sequence": 1,
+          "consequence": "Partnerships and minority investments increase where full acquisitions face regulatory resistance."
+        },
+        {
+          "sequence": 2,
+          "consequence": "Independent capability suppliers gain negotiating leverage but may lose multi-customer neutrality after consolidation."
+        },
+        {
+          "sequence": 3,
+          "consequence": "Acquirers compete for teams, data rights, distribution, and technical integration—not only standalone revenue."
+        }
+      ],
+      "bottlenecks": [
+        {
+          "name": "Difficult-to-replicate capability",
+          "direction": "more_valuable",
+          "rationale": "Acquisition is rational only when internal replication is slower or less certain."
+        },
+        {
+          "name": "Regulatory clearance",
+          "direction": "more_valuable",
+          "rationale": "The most strategic combinations may face the greatest competition and national-security scrutiny."
+        },
+        {
+          "name": "Narrative without deployment",
+          "direction": "more_pressured",
+          "rationale": "A visible capability gap increases the strategic cost of waiting."
+        }
+      ],
+      "assumptions": [
+        "Acquirers retain access to capital and regulatory pathways.",
+        "Target capabilities can survive integration and remain strategically scarce.",
+        "Reality Gap evidence is available only for the initial scored benchmark and is never imputed."
+      ],
+      "confirming_signals": [
+        "Rising acquisition and minority-investment activity around AI infrastructure and workflow control.",
+        "Transactions justified by capability, data, talent, or distribution rather than near-term earnings.",
+        "Persistent build-versus-buy commentary from incumbents with visible capability gaps."
+      ],
+      "invalidating_signals": [
+        "Regulators consistently block strategic AI combinations.",
+        "Open models and standardized infrastructure sharply reduce build time.",
+        "Acquired capability repeatedly loses value during integration."
+      ]
+    }
+  ]
+}
