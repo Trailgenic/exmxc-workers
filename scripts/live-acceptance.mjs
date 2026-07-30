@@ -48,5 +48,16 @@ ok((await raw('/power-lens')).response.status === 400, 'Power Lens rejects missi
 const realityGap = await raw('/reality-gap?query=AAPL');
 ok(realityGap.json?.found === true && realityGap.json?.results?.[0]?.classification === 'narrative_outrunning_deployment', 'Reality Gap resolves Apple with versioned classification');
 ok((await raw('/datasets/reality_gap_index')).json?.rows?.length === 10, 'Reality Gap raw dataset exposes ten-company V1 benchmark');
+const consequence = await raw('/strategic-consequence?scenario=power_binding_constraint&query=NVDA&limit=3');
+ok(
+  consequence.json?.found === true
+    && consequence.json?.scenario?.id === 'power_binding_constraint'
+    && consequence.json?.entity_result?.entity_name === 'NVIDIA'
+    && consequence.json?.first_order?.most_advantaged?.[0]?.entity_name === 'Constellation Energy',
+  'Strategic Consequence Engine propagates canonical power scenario with entity-specific result'
+);
+ok((await raw('/strategic-consequence')).response.status === 400, 'Strategic Consequence Engine rejects missing scenario');
+ok((await raw('/datasets/strategic_consequence_scenarios')).json?.scenarios?.length === 6, 'Strategic Consequence scenario library exposes six canonical counterfactuals');
+ok((await raw('/schemas/strategic-consequence')).json?.$id === 'https://mcp.exmxc.ai/schemas/strategic-consequence', 'Strategic Consequence response schema is live');
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

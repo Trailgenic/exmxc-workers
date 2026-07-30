@@ -1,0 +1,410 @@
+<style>
+  .sc-root { max-width: 1080px; margin: 0 auto; padding: 72px 40px 92px; box-sizing: border-box; }
+  .sc-masthead { margin-bottom: 42px; padding-bottom: 38px; border-bottom: .5px solid var(--ex-border-gold); }
+  .sc-headline { max-width: 900px; margin: 0 0 22px; color: #fff; font-family: var(--ex-font-display); font-size: clamp(2.6rem, 6vw, 4.9rem); font-weight: 400; line-height: .98; letter-spacing: -.038em; }
+  .sc-headline em { color: var(--ex-lavender); font-style: normal; }
+  .sc-tagline { max-width: 790px; margin: 0; color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: 1.08rem; line-height: 1.68; }
+  .sc-chain { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin-top: 30px; }
+  .sc-chain-step { position: relative; padding: 18px 16px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .sc-chain-step:not(:last-child)::after { content: "→"; position: absolute; right: -10px; top: 50%; z-index: 2; color: var(--ex-gold); font-family: var(--ex-font-mono); transform: translateY(-50%); }
+  .sc-chain-num { color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
+  .sc-chain-label { margin-top: 7px; color: #fff; font-family: var(--ex-font-body); font-size: .92rem; line-height: 1.4; }
+  .sc-rule { display: flex; align-items: center; gap: 16px; margin: 42px 0 20px; }
+  .sc-rule-label { color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
+  .sc-rule-line { flex: 1; height: .5px; background: var(--ex-border-gold); }
+  .sc-controls { display: grid; grid-template-columns: minmax(260px, 1.2fr) minmax(220px, 1fr) auto; gap: 8px; }
+  .sc-field { width: 100%; box-sizing: border-box; border: .5px solid var(--ex-border-mid); border-radius: 0; padding: 14px 16px; color: #fff; background: var(--ex-surface-mid); font-family: var(--ex-font-body); font-size: .98rem; -webkit-appearance: none; appearance: none; }
+  .sc-field:focus { outline: none; border-color: var(--ex-lavender-dim); }
+  .sc-field::placeholder { color: var(--ex-text-muted); font-style: italic; }
+  .sc-select-wrap { position: relative; }
+  .sc-select-wrap::after { content: "⌄"; position: absolute; right: 16px; top: 50%; color: var(--ex-lavender); pointer-events: none; transform: translateY(-55%); }
+  .sc-select { padding-right: 42px; }
+  .sc-btn { border: .5px solid var(--ex-lavender); border-radius: 0; padding: 14px 22px; color: var(--ex-bg); background: var(--ex-lavender); cursor: pointer; font-family: var(--ex-font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+  .sc-btn:hover:not(:disabled) { opacity: .84; }
+  .sc-btn:disabled { opacity: .45; cursor: default; }
+  .sc-btn--ghost { padding: 10px 14px; color: var(--ex-lavender); background: transparent; }
+  .sc-note { max-width: 820px; margin: 14px 0 0; color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .9rem; font-style: italic; line-height: 1.6; }
+  .sc-status { display: none; margin-top: 26px; padding: 16px 18px; border: .5px solid var(--ex-border-mid); color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .95rem; line-height: 1.55; }
+  .sc-status.is-visible { display: block; }
+  .sc-status.is-error { border-color: #c45c4a; color: #e0a39a; }
+  .sc-results { display: none; margin-top: 46px; }
+  .sc-results.is-visible { display: block; }
+  .sc-scenario { padding: 34px; border: .5px solid var(--ex-border-gold); background: var(--ex-surface); }
+  .sc-scenario-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: start; }
+  .sc-kicker { margin-bottom: 12px; color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+  .sc-title { margin: 0 0 12px; color: #fff; font-family: var(--ex-font-display); font-size: clamp(2rem, 5vw, 3.3rem); font-weight: 400; line-height: 1; letter-spacing: -.025em; }
+  .sc-question { max-width: 720px; margin: 0; color: var(--ex-lavender); font-family: var(--ex-font-body); font-size: 1.02rem; line-height: 1.6; }
+  .sc-horizon { min-width: 130px; text-align: right; }
+  .sc-horizon-label { color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+  .sc-horizon-value { margin-top: 8px; color: var(--ex-gold); font-family: var(--ex-font-display); font-size: 2rem; }
+  .sc-thesis { margin: 26px 0 0; padding-top: 24px; border-top: .5px solid var(--ex-border); color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .98rem; line-height: 1.7; }
+  .sc-force-vector { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin-top: 22px; }
+  .sc-force-chip { display: flex; justify-content: space-between; gap: 12px; padding: 11px 12px; border: .5px solid var(--ex-border); }
+  .sc-force-chip span:first-child { color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .09em; text-transform: uppercase; }
+  .sc-force-chip span:last-child { color: var(--ex-lavender); font-family: var(--ex-font-mono); font-size: .78rem; }
+  .sc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .sc-entity { display: none; margin-top: 4px; padding: 28px; border: .5px solid var(--ex-lavender-dim); background: var(--ex-surface); }
+  .sc-entity.is-visible { display: block; }
+  .sc-entity-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: start; }
+  .sc-entity-name { margin: 0 0 8px; color: #fff; font-family: var(--ex-font-display); font-size: 2.2rem; font-weight: 400; line-height: 1; }
+  .sc-entity-meta { color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .09em; text-transform: uppercase; }
+  .sc-score { text-align: right; }
+  .sc-score-number { color: var(--ex-lavender); font-family: var(--ex-font-display); font-size: 3.8rem; line-height: .9; }
+  .sc-score-label { margin-top: 8px; color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+  .sc-drivers { display: grid; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+  .sc-drivers li { padding-left: 16px; border-left: 1px solid var(--ex-lavender-dim); color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .9rem; line-height: 1.55; }
+  .sc-leaderboards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sc-first-logic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin-bottom: 8px; }
+  .sc-first-logic-item { padding: 18px; border: .5px solid var(--ex-border); color: var(--ex-text-dim); background: var(--ex-surface); font-family: var(--ex-font-body); font-size: .88rem; line-height: 1.55; }
+  .sc-board { border: .5px solid var(--ex-border); background: var(--ex-surface); padding: 26px; }
+  .sc-board-title { margin-bottom: 20px; color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+  .sc-impact-list { display: grid; gap: 14px; }
+  .sc-impact { padding-bottom: 14px; border-bottom: .5px solid var(--ex-border); }
+  .sc-impact:last-child { padding-bottom: 0; border-bottom: 0; }
+  .sc-impact-top { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; }
+  .sc-rank { color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 9px; }
+  .sc-impact-name { overflow: hidden; color: #fff; font-family: var(--ex-font-body); font-size: .94rem; text-overflow: ellipsis; white-space: nowrap; }
+  .sc-impact-score { color: var(--ex-lavender); font-family: var(--ex-font-mono); font-size: .8rem; }
+  .sc-impact-bar { height: 2px; margin: 9px 0 8px 38px; overflow: hidden; background: var(--ex-border); }
+  .sc-impact-fill { height: 100%; background: var(--ex-lavender); }
+  .sc-impact-class { margin-left: 38px; color: var(--ex-text-muted); font-family: var(--ex-font-mono); font-size: 7px; letter-spacing: .08em; text-transform: uppercase; }
+  .sc-logic { display: grid; gap: 4px; }
+  .sc-logic-step { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 18px; padding: 22px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .sc-logic-num { color: var(--ex-gold); font-family: var(--ex-font-display); font-size: 2rem; line-height: 1; }
+  .sc-logic-text { color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .98rem; line-height: 1.65; }
+  .sc-bottlenecks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .sc-bottleneck { padding: 24px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .sc-direction { margin-bottom: 12px; color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 8px; letter-spacing: .11em; text-transform: uppercase; }
+  .sc-bottleneck h3 { margin: 0 0 12px; color: #fff; font-family: var(--ex-font-display); font-size: 1.55rem; font-weight: 400; line-height: 1.1; }
+  .sc-bottleneck p { margin: 0; color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .9rem; line-height: 1.6; }
+  .sc-evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .sc-evidence { padding: 24px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .sc-evidence-title { margin-bottom: 16px; color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+  .sc-evidence-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  .sc-evidence-list li { color: var(--ex-text-dim); font-family: var(--ex-font-body); font-size: .88rem; line-height: 1.55; }
+  .sc-evidence-list li::before { content: "—"; margin-right: 8px; color: var(--ex-lavender); }
+  .sc-boundary { margin-top: 28px; padding: 18px; border: .5px solid var(--ex-border); color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .87rem; line-height: 1.65; }
+  .sc-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 58px; padding-top: 28px; border-top: .5px solid var(--ex-border-gold); }
+  @media (max-width: 820px) {
+    .sc-controls { grid-template-columns: 1fr 1fr; }
+    .sc-controls .sc-btn { grid-column: 1 / -1; }
+    .sc-bottlenecks, .sc-evidence-grid, .sc-first-logic { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 700px) {
+    .sc-root { padding: 52px 24px 68px; }
+    .sc-chain { grid-template-columns: 1fr 1fr; }
+    .sc-chain-step::after { display: none; }
+    .sc-scenario-top, .sc-entity-grid, .sc-leaderboards, .sc-footer, .sc-force-vector { grid-template-columns: 1fr; }
+    .sc-horizon, .sc-score { text-align: left; }
+  }
+  @media (max-width: 520px) {
+    .sc-controls, .sc-chain { grid-template-columns: 1fr; }
+    .sc-scenario, .sc-board, .sc-entity { padding: 22px; }
+  }
+</style>
+
+<main class="sc-root" id="strategic-consequence">
+  <header class="sc-masthead">
+    <div class="ex-label" style="margin-bottom:16px;">Interactive Intelligence · Counterfactual Systems Analysis</div>
+    <h1 class="sc-headline">See what changes <em>after the premise changes.</em></h1>
+    <p class="sc-tagline">The Strategic Consequence Engine propagates canonical AI counterfactuals through exmxc’s Four Forces, AI Power, structural scarcity, and available Reality Gap evidence—revealing conditional first-order exposure and the consequences behind it.</p>
+    <div class="sc-chain" aria-label="Strategic Consequence Engine analysis chain">
+      <div class="sc-chain-step"><div class="sc-chain-num">01 · Premise</div><div class="sc-chain-label">Select a canonical counterfactual</div></div>
+      <div class="sc-chain-step"><div class="sc-chain-num">02 · Propagate</div><div class="sc-chain-label">Reweight Four Forces and scarcity</div></div>
+      <div class="sc-chain-step"><div class="sc-chain-num">03 · Reveal</div><div class="sc-chain-label">Map relative advantage and pressure</div></div>
+      <div class="sc-chain-step"><div class="sc-chain-num">04 · Test</div><div class="sc-chain-label">Track assumptions and signals</div></div>
+    </div>
+  </header>
+
+  <div class="sc-rule"><span class="sc-rule-label">Choose the Counterfactual</span><div class="sc-rule-line"></div></div>
+  <div class="sc-controls">
+    <div class="sc-select-wrap">
+      <select id="sc-scenario" class="sc-field sc-select" aria-label="Strategic scenario">
+        <option value="inference_cost_collapse">Inference costs fall 80%</option>
+        <option value="power_binding_constraint">Electricity becomes the binding constraint</option>
+        <option value="frontier_model_commoditization">Frontier models become interchangeable</option>
+        <option value="agent_interface_shift">Agents control the customer interface</option>
+        <option value="export_controls_tighten">Advanced-AI export controls tighten</option>
+        <option value="capability_gap_consolidation">Capability gaps trigger consolidation</option>
+      </select>
+    </div>
+    <input id="sc-query" class="sc-field" type="search" maxlength="120" autocomplete="off" placeholder="Optional company or ticker" aria-label="Optional company name or ticker" />
+    <button id="sc-run" class="sc-btn" type="button">Propagate</button>
+  </div>
+  <p class="sc-note">Scores measure relative structural advantage inside a selected scenario. They are not probabilities, stock-return forecasts, price targets, or investment recommendations.</p>
+
+  <div id="sc-status" class="sc-status" role="status" aria-live="polite"></div>
+
+  <section id="sc-results" class="sc-results" aria-live="polite">
+    <article class="sc-scenario">
+      <div class="sc-scenario-top">
+        <div>
+          <div id="sc-kicker" class="sc-kicker"></div>
+          <h2 id="sc-title" class="sc-title"></h2>
+          <p id="sc-question" class="sc-question"></p>
+        </div>
+        <div class="sc-horizon">
+          <div class="sc-horizon-label">Scenario Horizon</div>
+          <div id="sc-horizon" class="sc-horizon-value"></div>
+        </div>
+      </div>
+      <p id="sc-thesis" class="sc-thesis"></p>
+      <div id="sc-force-vector" class="sc-force-vector" aria-label="Scenario Four Forces shock vector"></div>
+      <div class="sc-actions">
+        <button id="sc-copy" class="sc-btn sc-btn--ghost" type="button">Copy Share Link</button>
+        <a class="sc-btn sc-btn--ghost" href="https://mcp.exmxc.ai/.well-known/tool-registry.json" target="_blank" rel="noopener">Machine Access</a>
+        <a class="sc-btn sc-btn--ghost" href="https://mcp.exmxc.ai/datasets/strategic_consequence_scenarios" target="_blank" rel="noopener">Scenario Dataset</a>
+      </div>
+    </article>
+
+    <div class="sc-rule"><span class="sc-rule-label">Company-Specific Exposure</span><div class="sc-rule-line"></div></div>
+    <article id="sc-entity" class="sc-entity">
+      <div class="sc-entity-grid">
+        <div>
+          <h3 id="sc-entity-name" class="sc-entity-name"></h3>
+          <div id="sc-entity-meta" class="sc-entity-meta"></div>
+        </div>
+        <div class="sc-score">
+          <div id="sc-entity-score" class="sc-score-number"></div>
+          <div class="sc-score-label">Relative Scenario Score · 0–100</div>
+        </div>
+      </div>
+      <ul id="sc-entity-drivers" class="sc-drivers"></ul>
+    </article>
+
+    <div class="sc-rule"><span class="sc-rule-label">First-Order Exposure</span><div class="sc-rule-line"></div></div>
+    <div id="sc-first-logic" class="sc-first-logic"></div>
+    <div class="sc-leaderboards">
+      <section class="sc-board">
+        <div class="sc-board-title">Most Relatively Advantaged</div>
+        <div id="sc-advantaged" class="sc-impact-list"></div>
+      </section>
+      <section class="sc-board">
+        <div class="sc-board-title">Most Relatively Pressured</div>
+        <div id="sc-pressured" class="sc-impact-list"></div>
+      </section>
+    </div>
+
+    <div class="sc-rule"><span class="sc-rule-label">Second-Order Consequences</span><div class="sc-rule-line"></div></div>
+    <div id="sc-second-order" class="sc-logic"></div>
+
+    <div class="sc-rule"><span class="sc-rule-label">Bottlenecks That Change Value</span><div class="sc-rule-line"></div></div>
+    <div id="sc-bottlenecks" class="sc-bottlenecks"></div>
+
+    <div class="sc-rule"><span class="sc-rule-label">What Must Be True</span><div class="sc-rule-line"></div></div>
+    <div class="sc-evidence-grid">
+      <section class="sc-evidence"><div class="sc-evidence-title">Critical Assumptions</div><ul id="sc-assumptions" class="sc-evidence-list"></ul></section>
+      <section class="sc-evidence"><div class="sc-evidence-title">Confirming Signals</div><ul id="sc-confirming" class="sc-evidence-list"></ul></section>
+      <section class="sc-evidence"><div class="sc-evidence-title">Invalidating Signals</div><ul id="sc-invalidating" class="sc-evidence-list"></ul></section>
+    </div>
+
+    <div id="sc-boundary" class="sc-boundary"></div>
+  </section>
+
+  <footer class="sc-footer">
+    <div>
+      <div class="ex-nav-group-label">Intelligence Stack</div>
+      <div class="ex-nav-links">
+        <a href="/power-lens">Power Lens</a>
+        <a href="/reality-gap">AI Reality Gap Index</a>
+        <a href="/frameworks">Four Forces &amp; Frameworks</a>
+        <a href="/speg-index">sPEG Index Series</a>
+      </div>
+    </div>
+    <div>
+      <div class="ex-nav-group-label">Navigation</div>
+      <div class="ex-nav-links">
+        <a href="/capital">Applied Capital Architecture</a>
+        <a href="/signal-briefs">Signal Briefs</a>
+        <a href="/leadership-doctrine">Leadership &amp; Doctrine</a>
+        <a href="/">Home</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  const ENDPOINT = "https://mcp.exmxc.ai/strategic-consequence";
+  const scenario = document.getElementById("sc-scenario");
+  const query = document.getElementById("sc-query");
+  const run = document.getElementById("sc-run");
+  const status = document.getElementById("sc-status");
+  const results = document.getElementById("sc-results");
+  const copy = document.getElementById("sc-copy");
+
+  function byId(id) { return document.getElementById(id); }
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+  function setText(id, value) { byId(id).textContent = value == null ? "—" : String(value); }
+  function element(tag, className, value) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (value != null) node.textContent = String(value);
+    return node;
+  }
+  function showStatus(message, isError) {
+    clear(status);
+    status.textContent = message;
+    status.className = "sc-status is-visible" + (isError ? " is-error" : "");
+  }
+  function hideStatus() { status.className = "sc-status"; clear(status); }
+  function renderSimpleList(id, values) {
+    const list = byId(id);
+    clear(list);
+    values.forEach(function (value) { list.appendChild(element("li", "", value)); });
+  }
+  function renderImpacts(id, impacts) {
+    const target = byId(id);
+    clear(target);
+    impacts.forEach(function (impact) {
+      const card = element("article", "sc-impact");
+      const top = element("div", "sc-impact-top");
+      top.append(
+        element("span", "sc-rank", "#" + impact.scenario_rank),
+        element("span", "sc-impact-name", impact.entity_name),
+        element("span", "sc-impact-score", Number(impact.scenario_advantage_score).toFixed(1))
+      );
+      const bar = element("div", "sc-impact-bar");
+      const fill = element("div", "sc-impact-fill");
+      fill.style.width = Math.max(0, Math.min(100, Number(impact.scenario_advantage_score))) + "%";
+      bar.appendChild(fill);
+      card.append(top, bar, element("div", "sc-impact-class", impact.classification_label));
+      target.appendChild(card);
+    });
+  }
+  function renderForceVector(forceDeltas) {
+    const target = byId("sc-force-vector");
+    clear(target);
+    ["compute", "interface", "alignment", "energy"].forEach(function (force) {
+      const value = Number(forceDeltas[force] || 0);
+      const card = element("div", "sc-force-chip");
+      card.append(
+        element("span", "", force),
+        element("span", "", (value > 0 ? "+" : "") + value.toFixed(2))
+      );
+      target.appendChild(card);
+    });
+  }
+  function renderEntity(data) {
+    const panel = byId("sc-entity");
+    clear(byId("sc-entity-drivers"));
+    if (!data.query) {
+      panel.className = "sc-entity";
+      return;
+    }
+    if (!data.entity_result) {
+      panel.className = "sc-entity";
+      showStatus("No bundled AI Power entity matched “" + data.query + "”. Try a supported company name or ticker.", true);
+      return;
+    }
+    const entity = data.entity_result;
+    setText("sc-entity-name", entity.entity_name);
+    setText("sc-entity-meta", "Rank #" + entity.scenario_rank + " of " + entity.universe_size + " · " + entity.classification_label + " · AI Power " + entity.ai_power_index);
+    setText("sc-entity-score", Number(entity.scenario_advantage_score).toFixed(1));
+    renderSimpleList("sc-entity-drivers", entity.primary_drivers);
+    panel.className = "sc-entity is-visible";
+  }
+  function render(data) {
+    hideStatus();
+    setText("sc-kicker", data.methodology_version + " · " + data.universe_size + "-entity relative scenario");
+    setText("sc-title", data.scenario.title);
+    setText("sc-question", data.scenario.question);
+    setText("sc-horizon", data.scenario.horizon);
+    setText("sc-thesis", data.scenario.thesis);
+    renderForceVector(data.scenario.force_deltas);
+    renderEntity(data);
+    const firstLogic = byId("sc-first-logic");
+    clear(firstLogic);
+    data.first_order.logic.forEach(function (value) {
+      firstLogic.appendChild(element("div", "sc-first-logic-item", value));
+    });
+    renderImpacts("sc-advantaged", data.first_order.most_advantaged);
+    renderImpacts("sc-pressured", data.first_order.most_pressured);
+
+    const secondOrder = byId("sc-second-order");
+    clear(secondOrder);
+    data.second_order_consequences.forEach(function (item) {
+      const row = element("div", "sc-logic-step");
+      row.append(
+        element("div", "sc-logic-num", String(item.sequence).padStart(2, "0")),
+        element("div", "sc-logic-text", item.consequence)
+      );
+      secondOrder.appendChild(row);
+    });
+
+    const bottlenecks = byId("sc-bottlenecks");
+    clear(bottlenecks);
+    data.bottlenecks.forEach(function (item) {
+      const card = element("article", "sc-bottleneck");
+      card.append(
+        element("div", "sc-direction", item.direction.replace(/_/g, " ")),
+        element("h3", "", item.name),
+        element("p", "", item.rationale)
+      );
+      bottlenecks.appendChild(card);
+    });
+
+    renderSimpleList("sc-assumptions", data.assumptions);
+    renderSimpleList("sc-confirming", data.signals.confirming);
+    renderSimpleList("sc-invalidating", data.signals.invalidating);
+    setText(
+      "sc-boundary",
+      data.methodology.normalization_policy + " Coverage: " + data.coverage.ai_power_universe + " AI Power entities, " + data.coverage.scarcity_records_available + " scarcity records, and " + data.coverage.reality_gap_records_available + " Reality Gap records. " + data.disclaimer
+    );
+    results.className = "sc-results is-visible";
+  }
+  async function propagate() {
+    const scenarioId = scenario.value;
+    const company = String(query.value || "").trim();
+    run.disabled = true;
+    run.textContent = "Propagating…";
+    results.className = "sc-results";
+    showStatus("Propagating the counterfactual through exmxc intelligence layers…", false);
+    const params = new URLSearchParams({ scenario: scenarioId, limit: "5" });
+    if (company) params.set("query", company);
+    try {
+      const response = await fetch(ENDPOINT + "?" + params.toString(), { headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error("HTTP_" + response.status);
+      const data = await response.json();
+      const url = new URL(window.location.href);
+      url.searchParams.set("scenario", data.scenario.id);
+      if (data.entity_result) {
+        url.searchParams.set("q", data.entity_result.entity_name);
+        query.value = data.entity_result.entity_name;
+      } else if (company) {
+        url.searchParams.set("q", company);
+      } else {
+        url.searchParams.delete("q");
+      }
+      window.history.replaceState({}, "", url.toString());
+      render(data);
+    } catch (error) {
+      console.error("[STRATEGIC CONSEQUENCE]", error);
+      showStatus("The Strategic Consequence Engine is temporarily unavailable. Please try again shortly.", true);
+    } finally {
+      run.disabled = false;
+      run.textContent = "Propagate";
+    }
+  }
+  run.addEventListener("click", propagate);
+  query.addEventListener("keydown", function (event) { if (event.key === "Enter") propagate(); });
+  scenario.addEventListener("change", propagate);
+  copy.addEventListener("click", async function () {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copy.textContent = "Link Copied";
+      window.setTimeout(function () { copy.textContent = "Copy Share Link"; }, 1600);
+    } catch (_) {
+      showStatus("Copy the page URL from the browser to share this scenario.", false);
+    }
+  });
+
+  const initial = new URLSearchParams(window.location.search);
+  const initialScenario = initial.get("scenario");
+  if (initialScenario && Array.from(scenario.options).some(function (option) { return option.value === initialScenario; })) {
+    scenario.value = initialScenario;
+  }
+  if (initial.get("q")) query.value = initial.get("q");
+  propagate();
+})();
+</script>

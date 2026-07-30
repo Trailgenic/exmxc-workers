@@ -7,7 +7,7 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
@@ -53,6 +53,11 @@
       "name": "ex.reality_gap.get",
       "title": "Get AI Reality Gap Scores",
       "description": "Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence."
+    },
+    {
+      "name": "ex.strategic_consequence.get",
+      "title": "Run a Strategic Consequence Scenario",
+      "description": "Propagate one canonical counterfactual through the bundled Four Forces, AI Power, scarcity, and available Reality Gap layers. Returns conditional first-order advantage and pressure, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals."
     },
     {
       "name": "ex.ai_power.analysis.top",

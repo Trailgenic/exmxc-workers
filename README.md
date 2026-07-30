@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.6.0`
-- Stable build date / `last_updated`: `2026-07-21`
+- Build version: `2.7.0`
+- Stable build date / `last_updated`: `2026-07-29`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -84,6 +84,7 @@ Callable JSON tools from `DATA_TOOLS`:
 - `ex.entity_in_a_box.get`
 - `ex.power_lens.get`
 - `ex.reality_gap.get`
+- `ex.strategic_consequence.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
 - `ex.convergence.latest`
@@ -98,6 +99,8 @@ Content links from `CONTENT_LINKS`:
 - `ex.doctrine.get` — `https://exmxc.ai/leadership-doctrine`
 - `ex.about.get` — `https://exmxc.ai/about-us`
 - `ex.audit.page` — `https://www.exmxc.ai/audit`
+- `ex.reality_gap.page` — `https://www.exmxc.ai/reality-gap`
+- `ex.strategic_consequence.page` — `https://www.exmxc.ai/strategic-consequence`
 
 ## REST data endpoints
 
@@ -130,6 +133,14 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /reality-gap?query=AAPL&sort=gap_ascending`
   - Filters: `query`, `classification`, `sort`, `limit`
   - Returns transparent component scores, classification, confidence, and dated official evidence
+- `GET /datasets/strategic_consequence_scenarios`
+  - Source: `data/strategic_consequence_scenarios_v1.json`
+  - Six canonical counterfactuals with force deltas, scarcity adjustments, causal chains, bottlenecks, assumptions, and validation signals
+- `GET /strategic-consequence?scenario=power_binding_constraint&query=NVDA`
+  - Required filter: `scenario`; optional filters: `query`, `limit`
+  - Returns deterministic relative advantage and pressure across the 84-entity AI Power universe, a company-specific result when requested, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals
+- `GET /schemas/strategic-consequence`
+  - Source: `schema/strategic_consequence.schema.json`
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
 - `GET /power-lens?query=NVDA`
@@ -212,6 +223,8 @@ AI Reality Gap record example:
 
 Reality Gap uses `AI Capability Score - AI Narrative Score`. Positive values mean observed capability leads narrative; negative values mean narrative leads the evidence currently visible. V1 scores only ten companies from dated official disclosures and never imputes a score outside that ledger.
 
+Strategic Consequence Engine V1 accepts one of six versioned counterfactuals: inference-cost collapse, power as the binding constraint, frontier-model commoditization, agent interface control, tighter advanced-AI export controls, or capability-gap consolidation. It computes a raw structural-impact score from Four Forces exposure, a matched sPEG scarcity-layer adjustment when available, and a bounded Reality Gap modifier when available. Raw scores are min-max normalized within the complete bundled universe to produce a relative 0–100 scenario advantage score. The score is conditional on the selected scenario and is not a probability or expected return.
+
 ## AI jobs signal endpoint
 
 `GET /api/ai-jobs-signal` remains an experimental ADS endpoint backed by Anthropic for synthetic posting generation. Benchmark and signal responses include:
@@ -289,6 +302,7 @@ schema/definitions.json           Semantic definitions
 schema/ai_power_index.schema.json AI Power Index JSON Schema
 schema/power_lens.schema.json     Power Lens response JSON Schema
 schema/reality_gap_index.schema.json Reality Gap dataset JSON Schema
+schema/strategic_consequence.schema.json Strategic Consequence response JSON Schema
 index.json                        Static entity dataset index baseline
 scripts/live-acceptance.mjs        Live deploy acceptance harness
 scripts/build-registry-packet.mjs   Registry packet generator
@@ -297,16 +311,22 @@ webflow/power-lens-head.html       Staged Power Lens page head metadata and JSON
 webflow/power-lens-footer.html     Staged Power Lens responsive application bundle
 webflow/reality-gap-head.html      Staged Reality Gap page metadata and JSON-LD
 webflow/reality-gap-footer.html    Staged Reality Gap benchmark explorer
+webflow/strategic-consequence-head.html Staged Strategic Consequence page metadata and JSON-LD
+webflow/strategic-consequence-footer.html Staged Strategic Consequence responsive application bundle
 workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```
 
-## MCP modernization notes (v2.6.0)
+## MCP modernization notes (v2.7.0)
 
 exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable HTTP on Cloudflare Workers. Tool and resource inventories are generated from `lib/registry.js`; public REST aliases and bundled dataset payloads are preserved.
 
 ### Power Lens + AI Reality Gap V1
 
 `GET /power-lens?query=...` and `ex.power_lens.get` share one deterministic implementation. Power Lens resolves only the bundled AI Power universe and never invents a score for an unsupported entity. Reality Gap V1 activates claim-to-capability evidence for ten companies; all other Power Lens results remain explicitly `not_scored`. `GET /reality-gap` and `ex.reality_gap.get` expose the benchmark, filters, weights, five-point scoring anchors, rounding policy, classifications, confidence policy, and dated official-source evidence.
+
+### Strategic Consequence Engine V1
+
+`GET /strategic-consequence` and `ex.strategic_consequence.get` share one deterministic implementation. V1 accepts only the six bundled canonical scenarios and performs no live retrieval, free-form scenario generation, hidden company overrides, or missing-evidence imputation. Every entity result discloses its Four Forces contributions and coverage for scarcity and Reality Gap modifiers. Leaderboards express relative conditional structural exposure inside the selected scenario; they are not investment recommendations or return forecasts.
 
 ### ADS signal route
 

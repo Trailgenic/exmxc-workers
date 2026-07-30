@@ -13,9 +13,9 @@
 ### Root discovery Worker
 
 - Config: `workers/root-discovery/wrangler.jsonc`
-- Route: `exmxc.ai/.well-known/*`
 - Entrypoint: `workers/root-discovery/worker.js`
-- Purpose: serve `https://exmxc.ai/.well-known/mcp.json` as a pointer to the MCP host and transport.
+- Status: legacy reference only; not deployed by the main CI workflow
+- Canonical discovery: `https://mcp.exmxc.ai/.well-known/mcp.json`
 
 ## Source of truth
 
@@ -92,6 +92,14 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `/reality-gap`
   - Filters: `query`, `classification`, `sort`, `limit`
   - Shared implementation in `lib/queries.js` via `ex.reality_gap.get`
+- `/datasets/strategic_consequence_scenarios`
+  - Source: `data/strategic_consequence_scenarios_v1.json`
+- `/strategic-consequence`
+  - Required filter: `scenario`
+  - Optional filters: `query`, `limit`
+  - Shared deterministic implementation in `lib/queries.js` via `ex.strategic_consequence.get`
+- `/schemas/strategic-consequence`
+  - Source: `schema/strategic_consequence.schema.json`
 - `/analysis/ai_power/top`
   - Shared implementation in `lib/queries.js`
 - `/power-lens`
@@ -123,7 +131,10 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `getRealityGap`
 - `calculateRealityGapScores`
 - `realityGapClassification`
+- `getStrategicConsequence`
+- `strategicConsequenceClassification`
 - `validatePowerLensQuery`
+- `validateStrategicConsequenceArgs`
 - `runEeiAudit`
 - `getIndex`
 - `TOOL_HANDLERS`
@@ -140,6 +151,7 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 - `ex.entity_in_a_box.get`
 - `ex.power_lens.get`
 - `ex.reality_gap.get`
+- `ex.strategic_consequence.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
 - `ex.convergence.latest`
@@ -155,12 +167,13 @@ Content pages are listed separately as `CONTENT_LINKS` and are not exposed as ca
 - `ex.about.get` — `https://exmxc.ai/about-us`
 - `ex.audit.page` — `https://www.exmxc.ai/audit`
 - `ex.reality_gap.page` — `https://www.exmxc.ai/reality-gap`
+- `ex.strategic_consequence.page` — `https://www.exmxc.ai/strategic-consequence`
 
 Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not exposed as callable MCP tools.
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.6.0`, `BUILD.released = 2026-07-21`.
+- Build metadata is stable: `BUILD.version = 2.7.0`, `BUILD.released = 2026-07-29`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.
