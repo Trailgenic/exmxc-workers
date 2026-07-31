@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/entity-registry",
+  "title": "exmxc Entity Registry",
+  "type": "object",
+  "required": ["version", "entity_count", "entities"],
+  "properties": {
+    "version": { "type": "string" },
+    "entity_count": { "type": "integer", "minimum": 0 },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity_id", "entity_name", "canonical_slug", "industry", "entity_type", "record_status"],
+        "properties": {
+          "entity_id": { "type": "string", "pattern": "^ent_" },
+          "entity_name": { "type": "string", "minLength": 1 },
+          "canonical_slug": { "type": "string", "minLength": 1 },
+          "industry": { "type": "string", "minLength": 1 },
+          "entity_type": { "type": "string", "minLength": 1 },
+          "entity_class": { "type": ["string", "null"] },
+          "headquarters": { "type": ["string", "null"] },
+          "founded": { "type": ["integer", "string", "null"] },
+          "primary_market": { "type": ["string", "null"] },
+          "record_status": { "enum": ["active", "inactive", "merged", "renamed"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

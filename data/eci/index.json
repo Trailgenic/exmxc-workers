@@ -1,0 +1,30 @@
+{
+  "series_id": "entity-clarity-index",
+  "title": "Entity Clarity Index",
+  "definition": "A longitudinal measure of how clearly institutions present machine-readable identity and how capably they support AI-mediated discovery, interpretation, and action.",
+  "methodology_id": "eci-ecc-v1",
+  "posture_values": [
+    "Open",
+    "Defensive",
+    "Blocked"
+  ],
+  "capability_values": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "registry_entity_count": 745,
+  "releases": [
+    {
+      "release_id": "eci-2026-07-30",
+      "release_date": "2026-07-30",
+      "baseline_date": "2026-01-20",
+      "dataset_version": "2.0.0",
+      "current_observation_count": 744,
+      "matched_panel_count": 744,
+      "release_file": "releases/2026-07-30.json",
+      "snapshot_file": "snapshots/2026-07-30.json",
+      "change_file": "changes/2026-01-20_to_2026-07-30.json"
+    }
+  ]
+}

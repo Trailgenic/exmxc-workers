@@ -1,11 +1,18 @@
 {
-  "dataset": "exmxc-entity-intelligence",
-  "version": "1.0",
-  "description": "Entity Intelligence dataset tracking strategic technology and infrastructure companies.",
+  "dataset": "exmxc-entity-clarity-current",
+  "version": "2.0.0",
+  "description": "Current Entity Clarity Index observations with a versioned longitudinal release ledger.",
   "maintainer": "exmxc.ai",
-  "last_updated": "2026-03-03",
-  "total_entities": 745,
+  "last_updated": "2026-07-30",
+  "methodology_id": "eci-ecc-v1",
+  "registry_entities": 745,
+  "current_observations": 744,
+  "current_coverage": 0.998658,
+  "matched_panel_entities": 744,
   "schema": "schema/schema.json",
   "definitions": "schema/definitions.json",
-  "data": "data/entities.json"
+  "data": "data/entities.json",
+  "registry": "data/entity-registry.json",
+  "series_index": "data/eci/index.json",
+  "latest_release": "data/eci/releases/2026-07-30.json"
 }

@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.7.0`
-- Stable build date / `last_updated`: `2026-07-29`
+- Build version: `2.8.0`
+- Stable build date / `last_updated`: `2026-07-30`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -141,6 +141,19 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
   - Returns deterministic relative advantage and pressure across the 84-entity AI Power universe, a company-specific result when requested, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals
 - `GET /schemas/strategic-consequence`
   - Source: `schema/strategic_consequence.schema.json`
+- `GET /datasets/entity_registry`
+  - Stable identifiers and canonical classifications for 745 registered entities
+- `GET /datasets/entity_clarity`
+  - Longitudinal release ledger
+- `GET /datasets/entity_clarity/snapshots/latest`
+  - Latest dated ECI observations; 744 of 745 registered entities are observed on 2026-07-30
+- `GET /datasets/entity_clarity/changes/latest`
+  - Computed change ledger for the 744-entity matched panel
+- `GET /datasets/entity_clarity/releases/latest`
+  - Release metadata, QA disclosures, summary metrics, and industry aggregates
+- `GET /schemas/entity-registry`
+- `GET /schemas/eci-observation`
+- `GET /schemas/eci-release`
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
 - `GET /power-lens?query=NVDA`
@@ -163,14 +176,22 @@ Entity record example using canonical `company`:
 
 ```json
 {
+  "entity_id": "ent_blackrock_...",
   "company": "BlackRock",
   "industry": "Financial",
   "entity_type": "Public Company",
   "posture": "Open",
   "capability": "High",
-  "ecc": 86
+  "ecc": 86,
+  "observed_at": "2026-07-30",
+  "methodology_id": "eci-ecc-v1"
 }
 ```
+
+`ECC` means Entity Clarity & Capability. It is interpreted alongside posture and
+capability, not as a standalone performance ranking. A Blocked observation is
+assigned ECC `0` by definition. The website-audit `EEI` methodology is a separate
+measurement family and must not be substituted for ECI/ECC observations.
 
 sPEG record example using the row-level `date` field:
 
