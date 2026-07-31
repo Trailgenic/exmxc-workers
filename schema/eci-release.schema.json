@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/eci-release",
+  "title": "Entity Clarity Release",
+  "type": "object",
+  "required": [
+    "release_id",
+    "series_id",
+    "title",
+    "release_date",
+    "baseline_date",
+    "methodology_id",
+    "dataset_version",
+    "registry_entity_count",
+    "current_observation_count",
+    "matched_panel_count",
+    "source_qa",
+    "summary"
+  ],
+  "properties": {
+    "release_id": { "type": "string" },
+    "series_id": { "type": "string" },
+    "title": { "type": "string" },
+    "release_date": { "type": "string", "format": "date" },
+    "baseline_date": { "type": "string", "format": "date" },
+    "comparison_days": { "type": "integer", "minimum": 1 },
+    "methodology_id": { "type": "string" },
+    "dataset_version": { "type": "string" },
+    "registry_entity_count": { "type": "integer", "minimum": 0 },
+    "current_observation_count": { "type": "integer", "minimum": 0 },
+    "matched_panel_count": { "type": "integer", "minimum": 0 },
+    "current_coverage_pct": { "type": "number", "minimum": 0, "maximum": 1 },
+    "excluded_from_matched_panel": { "type": "array" },
+    "source_qa": { "type": "object" },
+    "summary": { "type": "object" },
+    "industry_summary": { "type": "array" }
+  },
+  "additionalProperties": false
+}

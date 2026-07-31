@@ -324,8 +324,16 @@ export default {
     if (url.pathname === "/datasets/reality_gap_index") return jsonResponse(DATASETS.reality_gap_index.data);
     if (url.pathname === "/datasets/reality_gap_index/schema") return jsonResponse(DATASETS.reality_gap_index.schema);
     if (url.pathname === "/datasets/strategic_consequence_scenarios") return jsonResponse(DATASETS.strategic_consequence_scenarios.data);
+    if (url.pathname === "/datasets/entity_registry") return jsonResponse(DATASETS.entity_registry.data);
+    if (url.pathname === "/datasets/entity_clarity") return jsonResponse(DATASETS.entity_clarity_series.data);
+    if (url.pathname === "/datasets/entity_clarity/snapshots/latest") return jsonResponse(DATASETS.entity_clarity_latest_snapshot.data);
+    if (url.pathname === "/datasets/entity_clarity/changes/latest") return jsonResponse(DATASETS.entity_clarity_latest_changes.data);
+    if (url.pathname === "/datasets/entity_clarity/releases/latest") return jsonResponse(DATASETS.entity_clarity_latest_release.data);
     if (url.pathname === "/schemas/power-lens") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens")?.data);
     if (url.pathname === "/schemas/strategic-consequence") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "strategic_consequence")?.data);
+    if (url.pathname === "/schemas/entity-registry") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_registry_schema")?.data);
+    if (url.pathname === "/schemas/eci-observation") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_observation")?.data);
+    if (url.pathname === "/schemas/eci-release") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_release")?.data);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());

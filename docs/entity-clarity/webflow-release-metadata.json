@@ -1,0 +1,26 @@
+{
+  "name": "Entity Clarity Longitudinal Report — January to July 2026",
+  "slug": "entity-clarity-longitudinal-report-january-july-2026",
+  "report_type": "Longitudinal Report",
+  "series": "Entity Clarity Index",
+  "publish_date": "2026-07-30",
+  "baseline_date": "2026-01-20",
+  "data_as_of": "2026-07-30",
+  "methodology_id": "eci-ecc-v1",
+  "dataset_version": "2.0.0",
+  "registered_entity_count": 745,
+  "observed_entity_count": 744,
+  "matched_panel_count": 744,
+  "meaningful_mover_count": 214,
+  "record_status": "Draft",
+  "revision": "v0.9",
+  "short_summary": "Across 744 matched institutions, mean ECC rose 1.17 points while access posture became slightly more defensive. Capability deepened, but legibility entries and exits remained nearly balanced.",
+  "dataset_url": "https://mcp.exmxc.ai/datasets/entity_clarity/releases/latest",
+  "webflow": {
+    "report_collection_id": "696056353161fb7891b8374a",
+    "report_item_id": "6a6beb66a459a8709a05adcd",
+    "series_collection_id": "6a6beaf18f1ab5d97be16cf9",
+    "series_item_id": "6a6beb43c47d13fdf9206b06",
+    "last_published": null
+  }
+}

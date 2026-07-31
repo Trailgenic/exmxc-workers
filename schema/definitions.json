@@ -1,37 +1,43 @@
 {
-  "definitions_version": "1.0",
-
+  "definitions_version": "2.0",
+  "measurement_family": "Entity Clarity Index",
+  "methodology_id": "eci-ecc-v1",
   "posture": {
-    "Open": "Entity operates openly within global markets and cross-border systems with minimal political or regulatory restriction.",
-    "Defensive": "Entity operates globally but is increasingly influenced by national policy, regulation, or strategic protection.",
-    "Blocked": "Entity is restricted or isolated from parts of the global system due to political, regulatory, or geopolitical barriers."
+    "Open": "The entity is accessible to AI-mediated discovery and interpretation with limited structural friction.",
+    "Defensive": "The entity is discoverable but introduces material friction, restriction, ambiguity, or partial access.",
+    "Blocked": "The entity is not meaningfully legible to the evaluated AI pathway. Blocked observations receive ECC 0 by definition."
   },
-
   "capability": {
-    "Low": "Limited ability to influence supply chains, standards, or ecosystem control.",
-    "Medium": "Meaningful operational capability with influence over certain markets or technologies.",
-    "High": "Global system-level capability influencing supply chains, infrastructure, or industry standards."
+    "Low": "Limited machine-readable structure, verification, or actionability.",
+    "Medium": "Meaningful machine-readable structure and interpretation support, with material gaps.",
+    "High": "Strong machine-readable structure, verification, and support for AI-mediated interpretation or action."
   },
-
   "ecc": {
-    "definition": "Entity Control Coefficient measuring degree of operational and structural control.",
-    "interpretation": {
-      "0-20": "Minimal control over infrastructure or ecosystems.",
-      "21-40": "Limited control with regional influence.",
-      "41-60": "Moderate structural control and market influence.",
-      "61-80": "High operational leverage across systems or supply chains.",
-      "81-100": "Strategic control over critical infrastructure or global ecosystems."
-    }
+    "name": "Entity Clarity & Capability",
+    "definition": "A contextual 0–100 score summarizing the quality and completeness of an entity's AI-facing clarity and capability within the evaluated pathway.",
+    "interpretation_policy": "ECC is interpreted alongside posture and capability; it is not a standalone performance ranking.",
+    "blocked_policy": "Blocked observations receive ECC 0 by definition."
   },
-
+  "change_classes": {
+    "Stable": "No posture, capability, or ECC change.",
+    "Drift": "ECC changed by 1–4 points with no posture or capability change.",
+    "Score Mover": "ECC changed by at least 5 points with no posture or capability change.",
+    "Structural Mover": "Posture or capability changed without crossing into or out of Blocked.",
+    "Legibility Entry": "The entity moved from Blocked to Open or Defensive.",
+    "Legibility Exit": "The entity moved from Open or Defensive to Blocked."
+  },
   "entity_type": {
     "Public Company": "Listed corporate entity operating within public capital markets.",
-    "Private Company": "Privately held corporation without public market listing.",
+    "Private Company": "Privately held corporation without a public market listing.",
     "Sovereign Wealth Fund": "State-controlled investment vehicle managing national capital.",
     "Government Agency": "State-run institution responsible for policy, regulation, or operations.",
     "Multilateral Institution": "Organization jointly governed by multiple nations.",
     "University": "Academic institution producing research, talent, and technological innovation.",
-    "Media Organization": "Institution responsible for information distribution and narrative influence.",
-    "Consulting Firm": "Professional services organization advising corporations and governments."
+    "Media Organization": "Institution responsible for information production or distribution.",
+    "Consulting Firm": "Professional services organization advising corporations or governments."
+  },
+  "separation_of_measurement_families": {
+    "eci_ecc": "Longitudinal institutional posture, capability, and Entity Clarity & Capability measurement.",
+    "eei": "Entity Engineering Index website audit methodology. EEI results are not interchangeable with ECI/ECC observations."
   }
 }

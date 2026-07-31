@@ -1,0 +1,6714 @@
+{
+  "snapshot_id": "eci-2026-01-20",
+  "observed_at": "2026-01-20",
+  "methodology_id": "eci-ecc-v1",
+  "registry_entity_count": 745,
+  "observation_count": 745,
+  "observations": [
+    {
+      "entity_id": "ent_abb_715edf8ba8",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_abc-australia_481bfd6581",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_abc-news_9ebebd9b7e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_amd_240389f4b7",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_apa-corporation_307d0dde7f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_asml_3cb882789f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_at-and-t_b55e1037cf",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 92,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_avic-aviation-industry-corp-of-china_fc17166b45",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_abbvie_3ab2fef92c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_abbott-laboratories_8803c358bc",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_abu-dhabi-investment-authority-adia_87fb8aac06",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 44,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_accenture_4d748ebd71",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_accor_eab55a57cd",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_adelaide-university_10265d2877",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_adobe_ee9021c84f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 24,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_advantest_251435ef36",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_adyen_ee46e2d141",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_aeon_f7bed5a9de",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_affirm_934a426989",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_agilent-technologies_64ad1f1c98",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_agricultural-bank-of-china_cfcfe3b382",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 44,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ahold-delhaize_d39fe9d6e2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 51,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_airbnb_ab7d0a36ec",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_airbus_36aa04f433",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_al-jazeera_a33112be53",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_albemarle_91c3793601",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_alibaba_047364b9be",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_alimentation-couche-tard_f374d84410",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 42,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_alixpartners_4df3b4731d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_alnylam-pharmaceuticals_34d1a1fe69",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_alphabet-google_0054b4d896",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 40,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_alvarez-and-marsal_44b111f7bb",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_amazon_cbc6279491",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_american-express_066b5b5ad8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_amgen_4827271534",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_analog-devices_bb424f07fc",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_analysis-group_8a4e7df0a4",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_anthropic_c70eca6b0f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_aon_e2ca84db76",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_apollo-global-management_02dde53edb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_applovin_6f76bf69ae",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_apple_3a7bd3e236",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_applied-materials_e1f279a6a0",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_arista-networks_1095f172ec",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 7,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_arm-holdings_481f5171f1",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ars-technica_ff24d3740d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_arthur-d-little_614155e33f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_arthur-j-gallagher-and-co_11ec7e5de3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_associated-press_89ff63ce8d",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_astrazeneca_0ba6885476",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_atlassian_651b2c67d5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_atos_46ff0b8f24",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 90,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_australian-national-university-anu_ed8798241c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_autozone_bc02f7ea3f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_autodesk_320d597682",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_automatic-data-processing_ecf3241bb3",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_avenue-supermarts-dmart_d273a02746",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 9,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_axios_b45312c3f2",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bae-systems_1916eb4a70",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bbc_77e6f78af4",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bhp_c4f89db729",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bj-s-restaurants_dabbc0e2f5",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 19,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bp_226a193ae2",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bwx-technologies_86877d2e14",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 85,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_byd_f25bbea0b9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_baidu_a89151ba4b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bain-and-company_0b0eef0267",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bajaj-finance_cf69bcecb1",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_baker-hughes_3e13e313a6",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bank-for-international-settlements-bis_0e5033648f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bank-of-america_2cbb9e58bf",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bank-of-china_ba8c12a6f0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bank-of-montreal-bmo_7bd125fd5f",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bank-of-nova-scotia-scotiabank_0099aff85e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 41,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bayer_107eaa270b",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_becton-dickinson_2ed2d13860",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_berkshire-hathaway_aaefe7963f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 38,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bill-holdings_548ba28b1a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_blackrock_7e6578c2e3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_blackstone_5388a5a5ac",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bleacher-report_655b3f9c97",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_block-square_fdbd2984c2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bloomberg_0fb9765e58",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bloomin-brands_82f47b7f98",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 40,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_boeing_16f45b99ab",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_booking-holdings_1fbb450f32",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_boston-consulting-group-bcg_e3e9873567",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_boston-globe_e31c160621",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_boston-scientific_431a43c1cb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_boston-university_2c846bda50",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_breitbart_5b7179a89a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_brex_9db728d18b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_brinker-international_f40a5e46fa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 7,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_bristol-myers-squibb_1255780f71",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 92,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_broadcom_373ac021a2",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 16,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_brookfield-corporation_d1549beec8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_brookfield-renewable-partners_d8db42cb12",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_brown-university_9bfd678a76",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_burlington-stores_01c3d19bf0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 88,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_business-insider_ed3fd8621a",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_buzzfeed_d28bdbbdda",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_catl_8baf1838b7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cbc-news_713a855ec3",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cbs-news_45e68bda84",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cbs-sports_75f96592ba",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cgi-group_b7212ab1d9",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cme-group_ea2c709578",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cnbc_943fb8aa9c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cnet_4e8b72f8e2",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cnn_4aa08612a8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cnooc-limited_8db92576af",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cpp-investments_a83907090c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_csl-limited_7b8e035666",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cvs-health_ec69fc743c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cadence-design-systems_c72e480eea",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_caesars-entertainment_353932d2d5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 44,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_california-institute-of-technology-caltech_1c9280f906",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cambricon-technologies_8c344ff22b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 41,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cameco_3e0085df77",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_canadian-natural-resources-limited_bcceb0eb29",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_capgemini_f55a85b2f2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cargurus_42a561605c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cardinal-health_b275ebb5e3",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_carnegie-mellon-university_c5235efb76",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_carvana_63ea565077",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cava-group_732caaf637",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cenovus-energy_71176d84dd",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_charles-schwab_5b23c0a50e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 6,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_checkout-com_3a7f607fe0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cheesecake-factory_9e692ad1e9",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cheniere-energy_af1f17a71c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chevron_b55ac8822f",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chewy_5493694a6e",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chicago-tribune_9e5ef0d044",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_china-construction-bank_1071030068",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 44,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_china-investment-corporation-cic_0f2e0b784a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_china-mobile_85e2068389",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_china-tourism-group-duty-free_1f6dccf908",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chipotle-mexican-grill_d5a02d5340",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_choice-hotels-international_7be591fb78",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chron_8fc11cba85",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chubb_b244dfaa60",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_chugai-pharmaceutical_1a69c02345",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_circle_8a39178d32",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cisco_e73b79a0b1",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_citigroup_d1d760dba0",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 88,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_city-university-of-hong-kong_ec71dc4340",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_clearview-healthcare-partners_04ab4cf582",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cloudflare_738e22f0ac",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cognizant_86f73dfe7b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cohere_72e8088a05",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_coinbase_f80f21938e",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_coles-group_f15b7eba29",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_columbia-university_17bf653107",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_commonwealth-bank_12222831a7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_complex_ea4b35e8f8",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_conocophillips_483c829630",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_constellation-energy_9db78258c8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_constellation-software_51c1da1d3f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_copart_6a0a401d9b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_core-scientific_337f00a1e2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_coreweave_8348e0915f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cornell-university_556024ebbe",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cornerstone-research_80b9795e49",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "carried-from-canonical-baseline"
+    },
+    {
+      "entity_id": "ent_corpay_35b79c656a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cosmopolitan_b8da82a495",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_costco-wholesale_2171a4f252",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_coterra-energy_33a89ba12f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_coupang_5b8c59f6fd",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_cracker-barrel_f6130132d9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 20,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_crowdstrike_101958dadd",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_crusoe-energy_fe2383b633",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dbs-group_4dd09ab9c1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dxc-technology_799b0c7cf8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_daiichi-sankyo_b1cfab7ae3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 41,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_daily-mail_7432abe80f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_danaher_35100dc320",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_darden-restaurants_823dc7cdcb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_datadog_4d8bd97f03",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_deadline_dfc8aeb398",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_delft-university-of-technology_1b9badd4e5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_delivery-hero_53b2d48279",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dell_d0e2ece166",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_deloitte-consulting_6f78762a8e",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_delta-electronics_f4331b13b1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_delta-electronics-thailand_72c8d2e28a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 8,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_deutsche-telekom_8ccfa892db",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_devon-energy_82df31cfaf",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_diamondback-energy_3c180eade5",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_digital-realty_4f747d9068",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_digitalocean_042e9398f2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dine-brands_692ec7d763",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 56,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_discover-financial_bea01bbc78",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dollar-general_2182a02493",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dollar-tree_dba53cc855",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 9,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dollarama_b412090a9d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 43,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_domino-s-pizza_9d369c603c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_doordash_b0126946c5",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_drudge-report_41c13f0caa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 36,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_duke-energy_e766ad16b3",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_duke-university_781afa4ed5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_durham-university_c405475105",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dutch-bros_2cc12a196d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_eog-resources_d131962799",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 35,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_epam-systems_666b9f5485",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_epfl-ecole-polytechnique-federale-de-lausanne_ffa6af984b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_espn_c8268a17f9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_eth-zurich_8af390e38b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ey-parthenon_d9312da8a8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_eaton_28236bb680",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_economic-times_fe50af796f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 88,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_edwards-lifesciences_13cc85a2aa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_elastic_986051385f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_electronic-arts_6a5ebc8254",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_elevance-health_374c02ddca",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_eli-lilly_a1eac2323a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_enbridge_60b65a790c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_enel_c3f01efafd",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_engadget_49eedd508d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_engie_027d59970c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_enterprise-products_e448cea28e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 51,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_equinix_a7c0e2de64",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_equinor_8f32e4a36a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ericsson_f2ed4886e2",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_etsy_dfbf85cc71",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_euronet-worldwide_581bee576b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_european-central-bank-ecb_9df4fa4321",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_european-commission_e8f321cc7e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 33,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_european-medicines-agency-ema_a62e1a6753",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_evertec_d49dea26bc",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 89,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_expedia_bf4e1570f8",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_exxonmobil_e224e66fb8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fico_be37bbf098",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fti-consulting_560846a98a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 92,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_faire_7f802a7788",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_falabella_e630c3f619",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_farfetch_4109f19c32",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fast-retailing-uniqlo_449d03e1a1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 40,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_federal-reserve_857c94689f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_federal-trade-commission-ftc_c9128368ad",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fireblocks_778cbf1e58",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_first-watch_7199addfc3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_firstpost_14aac3c4e3",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fiserv_3f9d6ae763",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fiverr_ba94f39333",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_flexport_249304410f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fluor-corporation_0c9a274778",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_flywire_64157896d0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_forbes_5430bc4acb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_forrester_a9d21499d1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fortinet_da2f417984",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fortune_27a0113e9c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_four-seasons-hotels_26a9e99c93",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fox-news_bd29ab6d31",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_foxconn-hon-hai_c9d8616b03",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_freeport-mcmoran_cc40edf9bd",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_frost-and-sullivan_4a4ca6d1ab",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_fudan-university_baa1df7c4a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ge-vernova_be689f4e97",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ge-vernova-nuclear_31bb0a3756",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_gic-singapore_40507af37d",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_gsk-glaxosmithkline_ccf5999546",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_galderma_7b344c8b33",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_gartner_0616a26782",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_general-dynamics_cd0bf6280f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 39,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_genpact_e78186cbcd",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_georgia-institute-of-technology_c2dab080fa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_gilead-sciences_297e057d5c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_gizmodo_6f4803ef16",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_glencore_856ed7b9e6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_global-news_80f755bce3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_global-payments_14787f65dd",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_global-e_f420074d5d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 85,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_globalfoundries_47679f81be",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_globant_a9a1855f9c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_goal_0304523eff",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_goldman-sachs_7105a46cb4",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_google-news_c7826c5871",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_grab-holdings_fc02a262c0",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_green-dot_ec2e0693a1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_guidehouse_9168566a4a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_h-and-m-group_e241d10576",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hca-healthcare_17440b2924",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hdfc-bank_f43d0727cf",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hsbc-holdings_d6a14f30c2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_halliburton_8e60faf25c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hanwha_4530af81b3",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_harvard-university_5c3b510138",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hashicorp_fe64108583",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_heidelberg-university_f904c5dbc0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hello-magazine_2fab033a93",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hess-corporation_098a710f63",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hilton-worldwide_b84ee96ef2",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hindustan-times_a02714e653",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hitachi-energy_9f5b5b5b5b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hollywood-reporter_1b26ebeb6b",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_home-depot_ce409c401c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_huawei_b81c8201ac",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_huffpost_22bbf4ac02",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hugging-face_e3ce9cc5ef",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_huron-consulting_505e157e48",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_hyatt-hotels_aebff62efc",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ibm_916a98f0fa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ibm-consulting_b57746aac0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_icici-bank_bee4f75d30",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_idc_796e923025",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ign_73c344bbac",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ihg-hotels-and-resorts_c71dc8a95c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_iberdrola_0d25aef5a7",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_imperial-college-london_1ba4ddc675",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_imperial-oil_790ebffd79",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ind-and-comm-bank-of-china-icbc_11d0e7e62f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 43,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_india-times_08550950b5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_indian-express_7c7c7333a5",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_inditex-zara_cbf7ba989f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_infineon_feed58daa3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_inflection-ai_5309b5437e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_infosys_ab877737b6",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_instacart-maplebear_1f3518b90e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_intel_96eebba49d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_intercontinental-exchange_1b3224580e",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_international-monetary-fund-imf_53a21d8e26",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_international-money-express_40008c8994",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 56,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_intuit_80daf15e57",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_intuitive-surgical_2bfd766e49",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_investopedia_5657310984",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_itau-unibanco_2e8d4ce1e1",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_jcb-international_d518aa30eb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 39,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_jd-health_3ec79c01f0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_jd-com_59956d38b1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_jpmorgan-chase_309e31536d",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_jack-in-the-box_dd4032c65a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 11,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_jiangsu-hengrui-medicine_e306fafa91",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_johns-hopkins-university_c952a08fdb",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_johnson-and-johnson_5f2ec14067",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_just-eat-takeaway_15136f5c8b",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kaist-korea-advanced-institute-of-science-and-te_3ffd8e7627",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 9,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kkr-and-co_e9f51d1ebb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kla_d59ffd3512",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 92,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kpmg-advisory_542e6c60a6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kth-royal-institute-of-technology_10cbeaa5e1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ku-leuven_cf1c67afeb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kearney_d5fe9bdd65",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_keyence_e54d36c245",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kinder-morgan_e3bac6edd2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_king-abdulaziz-university-kau_515b680525",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_king-s-college-london_7478cdadd1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_klarna_e539cb6d87",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kroger_d515d8e806",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 98,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kuwait-investment-authority-kia_b0df8f95c5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_kyoto-university_70e78b1656",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_l-e-k-consulting_f702f56236",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_l3harris-technologies_05ca1eefd1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lam-research_b438424ba5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 88,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_las-vegas-sands_192459481b",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_leonardo_18ccba186d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_livemint_6aac1edba4",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_loblaw-companies_29220c9634",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lockheed-martin_c376013522",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lomonosov-moscow-state-university_5e015232aa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 7,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_london-school-of-economics-and-political-science_bd8f3e2f17",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lonza-group_d0a3e3f115",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_los-angeles-times_02ea91dd4f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lowe-s_5649703edb",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 6,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ludwig-maximilians-universitat-munchen-lmu_f225dc0da0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lululemon-athletica_a4e07bca0c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lund-university_fb406af205",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_lyft_09a2f48974",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mgm-resorts-international_155c3b8f5c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_msn_6fe63d928c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 6,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_makemytrip_06c08557f1",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_manchester-evening-news_6a6d39bf00",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marathon-oil_38058fb61d",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marathon-petroleum_5fa0bc73a7",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marketwatch_1f1bf29065",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marqeta_51b4183303",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marriott-international_6bacc5973f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marsh-mclennan_76d1d4074d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 56,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_marvell-technology_9c9af40cf8",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mashable_3a2927a908",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_massachusetts-institute-of-technology-mit_aabb64d8e1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mastercard_07863e7a6a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mcdonald-s_8128aa9710",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mcgill-university_f138c3615b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mckesson_5ac20c74a3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mckinsey-and-company_af7ddda9aa",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mediatek_7ae9124bce",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_medtronic_ee0ca20290",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_meituan_db36e7bd45",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 45,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mercadolibre_28239e9be1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 30,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mercer_d5f29c56ba",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_merck-and-co_e19a986e73",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_merck-kgaa_01788ea05b",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_meta-platforms_9d8ac7e23c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_micron-technology_4395ca378d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_microsoft_9fbf261b62",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ministry-of-industry-and-information-technology-_f7abad0202",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 43,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mistral-ai_c04bd5ebd1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mitsubishi-electric_ab4295abd5",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mitsubishi-ufj-fin-group_42275f37d4",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_monash-university_02e0cb0a82",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_moneygram_8139e763e2",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_moneycontrol_605622d8af",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mongodb_1cc9a79bda",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_monolithic-power-systems_896713e5c2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 7,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_moody-s-corporation_745d908179",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_morgan-stanley_6228a5824a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_mubadala_e192cd5626",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_murata-manufacturing_8a9274e8cc",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nato_5cae49b1fe",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_naura-technology_96d4c622d6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nba-com_7ea8a5e2ab",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nbc-news_d8865bb3b0",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ndtv_8e1c8cc9dc",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nec_9d9b90817f",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nfl-com_12a68b4408",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nj-com_0f1b6ba97f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ntt-data_68bad0bf4a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nvidia_8d4321d936",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nxp-semiconductors_9578702261",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nanyang-technological-university-ntu_aa1defd41d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_national-australia-bank_3a0aa387f3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_national-development-and-reform-commission-ndrc_37bd2f0992",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 44,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_national-grid_c9e6b9dc0f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_national-taiwan-university-ntu_486560086a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 43,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_national-university-of-singapore-nus_5bc37bffa7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_netease_4ebd3b8f03",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 26,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_netflix_13ed070478",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_new-york-post_8fc9828862",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_new-york-university-nyu_86ff482010",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_news-com-au_e3b464af58",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_news18_83805a8653",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_newsweek_d83d823df3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nexi_12f03d7926",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_next-plc_8050acb8d3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nextera-energy_48ab5abc29",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nintendo_c0a4942143",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nobu-hospitality_aa51848742",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 88,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nokia_2ab6d53e71",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_norges-bank-investment-management-nbim_a77c623e16",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_northrop-grumman_b588f6801a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_northwestern-university_9a7670ce91",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_novartis_9328b082a7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_novo-nordisk_12f8b4f550",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nu-holdings-nubank_3933398144",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_nuvei_7b4c98e6c9",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_o-reilly-automotive_ff53f1a0f4",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_oneok_50315fdf89",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ovhcloud_68a5bbea95",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 56,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_occidental-petroleum-oxy_a1e401b8b7",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_oliver-wyman_6fadffebe7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_openai_7d3194f79e",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_openrouter_7f871cbf90",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_opendoor_12d4e6fc47",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_oracle_9202af6ce9",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_orano_f9a5ddbd36",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_osaka-university_db5b69b2e5",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ozon_781d235297",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pcmag_64766d7f37",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pdd-holdings-temu-pinduoduo_a752629efe",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 19,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ppl-corporation_52b260506a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pagseguro-pagbank_366a0bdc6f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_palantir_c21b962e71",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 27,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_palo-alto-networks_099d992076",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pan-pacific-don-quijote_1dc6ab258f",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_papa-john-s_18dd7dc416",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_paris-sciences-et-lettres-university-psl_1bf2e1f41a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_paypal_afe4d16f40",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_paymentus_262b690de7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_payoneer_b21ef46cbb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_paysafe_9224389d70",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 88,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_peking-university_46e4866d3b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pembina-pipeline_a24cb2b237",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_penn-entertainment_84f80e31e5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_people_c9022680f8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_people-s-bank-of-china-pboc_7e5646acaf",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 45,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_petrochina_e5c416b130",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_petrobras_fc220981a7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pfizer_69d9f7657d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_phillips-66_177da9cdc6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_plaid_45cd2fb5a1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pohang-university-of-science-and-technology-post_e6665798da",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_politico_a7898b637d",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pontificia-universidad-catolica-de-chile-uc_feeea065af",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_portillo-s_cdccabf5ec",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_poshmark_f44230f529",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_princeton-university_6f4241a769",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_progressive-corp_d3fd146b45",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_public-investment-fund-pif_f584126729",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_publicis-sapient_b9caea0395",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_purdue-university_90b5893258",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_pwc-advisory_663fef0bf7",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_qatar-investment-authority-qia_45f7eb33bb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_qualcomm_f31639a23c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 15,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_quanta-services_5a96c27b3d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_rtx-raytheon_936dd72db1",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_rwe_79e09ccba8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_radisson-hotel-group_9178d47a09",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ramp_f7d9f5a904",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_rapyd_4578cc04d9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 85,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_realreal_d9d5136427",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_red-robin_95a5bb83fc",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_reddit_2e183f2a7a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_redfin_0f18472668",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_regeneron-pharmaceuticals_6c0bc743d6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_reliance-industries-limited-ril_6fd0300a53",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_remitly_1d9dfcf7c8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 85,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_repay-holdings_c1ce3dbf83",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_restaurant-brands-international_fb1a8d3371",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_reuters_234330834c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_revolve_68067ae139",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_rio-tinto_088aa4c28a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ripple_591b66b117",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_robinhood_5815755fc6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_roche_132ee7fe2a",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_roland-berger_38475a5494",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_rolling-stone_ee24ee4b19",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_roper-technologies_74649911b9",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_rosewood-hotel-group_30aa55bd04",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ross-stores_252d948a7b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_royal-bank-of-canada_bc743206cc",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_runway_ae679821f0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_s-and-p-global_24d9197fd8",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sap_7a9c94a8c2",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sfgate_75216545f1",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sk-hynix_026836921a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_slb-formerly-schlumberger_7186961b0b",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_smic_e1401bc433",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ss-and-c-technologies_3227dfa3e2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_swift_a33603bf79",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_salesforce_3ccbd9105a",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_samsung_968e2d5b08",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sanofi_9d44b649c5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_saudi-aramco_e06ce2f797",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_scale-ai_0dc8f791ab",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 28,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_schneider-electric_bc3067ac45",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sea-limited-shopee_8bd599bace",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_seagate-technology_02db8a1d07",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_seoul-national-university_cce1b89e53",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 76,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_servicenow_b5738c169b",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_seven-and-i-holdings-7-eleven_1d399988a8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_shake-shack_5da1dbf178",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_shanghai-jiao-tong-university_fccd5d0ac9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 28,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_shell_ce635c4eab",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 13,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_shift4-payments_e437459845",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_shopify_8a72266588",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_siemens-energy_cf2fe92dfa",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_siemens-healthineers_216554390a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_simon-kucher_365e65ec22",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sinopec_621391a126",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 33,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sky-news_ee1804fe2b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sky-sports_682dbed990",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_slalom_630a78299e",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_slate_b62f3b3b1b",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_snowflake_de5a1adf4f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 15,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sony_587d392b6c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sorbonne-university_6688d0d34a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_south-china-morning-post_1850c1dfd6",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_southern-company_ca54cf1bb5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sports-illustrated_b96e3fb2db",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_spotify_2b78da3dc8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 31,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_stability-ai_336ab1deb4",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_stanford-university_ed72534d79",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_starbucks_b21492b15d",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_state-bank-of-india-sbi_b9032e2c48",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 20,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_stockx_fef28b85aa",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_stoneco_0161007188",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_strategy-microstrategy_efe4f26a8b",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_strategy-and_314e65e859",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_stripe_2bed2032ed",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_stryker_09792abb14",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 30,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sumitomo-mitsui-financial-group_aebbeb8387",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 51,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sun-pharmaceutical_868085ba66",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sweetgreen_79878e5bbc",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_synopsys_2e92046b6f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_sysco_e706338a1a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 22,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tao-group_5d3baceea4",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tc-energy_7debfc6deb",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_te-connectivity_8939130ee8",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tjx-companies_80e2444701",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tsmc_17b7a45dc3",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_take-two-interactive_960c068a8b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_takeda-pharmaceutical_54bf74a91d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_target_34a04005bc",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 42,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tata-consultancy-services-tcs_eb56588546",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_techradar_af6abad73e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_technical-university-of-munich-tum_945e9ab67e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_temasek_4fbddb45c8",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tencent_9c8ae69b84",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 56,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tesco_b922b7e0ba",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 14,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tesla_7358bd4ec8",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_texas-instruments_08bca3e557",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_texas-roadhouse_f1d29722d8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_thales-group_5960b8dfb3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 5,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-atlantic_26c521a9c9",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-chinese-university-of-hong-kong-cuhk_baab9892c0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 7,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-cigna-group_b6bc5e9006",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-daily-beast_579e389767",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-express_cf818df908",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-guardian_ad28013200",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-hill_63c8cc1101",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-hong-kong-polytechnic-university_31f980eaa4",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-hong-kong-university-of-science-and-technolo_910d4609f3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-independent_108f5f3af7",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-mirror_2ef9caf19d",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-new-york-times_3365037c85",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-one-group_de9857861d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-sun_f99f996daf",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-telegraph_dcc0e129a5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 72,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-edinburgh_8c01d1aa30",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-hong-kong-hku_a346878487",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-manchester_00331b00f9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-melbourne_221b70d586",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-nottingham_c614444294",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-queensland-uq_d5caeda0d7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 48,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-sheffield_62c2f91bdc",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-sydney_1984e5f97a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-university-of-western-australia_85454e059d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-verge_e51faada3e",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-washington-post_5ab376d8ec",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_the-williams-companies_d9aea99592",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_thermo-fisher-scientific_a7fc7daf4d",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_thoughtworks_27b78f50b2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 85,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_time_336074805f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 89,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_times-of-india_f9992be87e",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_times-of-israel_239ce2bfe5",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_toast_a60ec1cf58",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tokyo-electron_789b8f9173",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 65,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tom-s-guide_d75b495529",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_toronto-dominion-bank_c55144c56a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_totalenergies_d7922c08b6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tractor-supply_3b342e6374",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_trinity-college-dublin_b370a10db2",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_trip-com_98bb1d75d3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tripadvisor_d88a7a0307",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_truist-financial_ef4ae35f58",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_trupanion_d9820fe8fe",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_tsinghua-university_4ae45b121f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_u-s-bancorp_705d088ec8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_u-s-department-of-defense_6664765973",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_u-s-department-of-energy_187b65f8f6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_u-s-department-of-the-treasury_c67df0e10b",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_u-s-securities-and-exchange-commission-sec_48ded42fec",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 52,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ubs-group_e74adbbfde",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ucb_8b8da5eb02",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_us-weekly_8c1b724efd",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 91,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_usa-today_a70926df8a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_uber_74c860f636",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ulta-beauty_b619c4d48d",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_unionpay_d31300d0ce",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_united-microelectronics-umc_df3a39787c",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_unitedhealth-group_9a2a0523f5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_universidad-nacional-autonoma-de-mexico-unam_7532dd2000",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_universidad-de-buenos-aires-uba_189030876d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_universidade-de-sao-paulo_3bae762768",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 38,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_universiti-malaya-um_86ca563416",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-college-london-ucl_a40cf49fd5",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-alberta_c86097ab77",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-amsterdam_4a9a14dbf4",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-birmingham_4704f9ebf0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-bristol_246fbc2366",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-british-columbia_05b67f44dd",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 47,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-california-berkeley-ucb_e832e9b811",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-california-los-angeles-ucla_4551e71768",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-california-san-diego-ucsd_a6d31bc06e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-cambridge_0418834df0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-chicago_7d7f56dced",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-glasgow_6a23c221ad",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 59,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-illinois-at-urbana-champaign_a439d9645e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-leeds_71f12656a0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 61,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-michigan-ann-arbor_4770a9e629",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-new-south-wales-unsw_c47e86d992",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 69,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-oxford_87d9a45b33",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-pennsylvania_9b1dca853f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-science-and-technology-of-china_e721b03b6f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 31,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-southampton_a0c3927e4d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-texas-at-austin_5d8a75c45c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-tokyo_c1a65f9853",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-toronto_6a892bbe4e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-warwick_4d3dd6848c",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 64,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-washington_d5e3b6658d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 51,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-waterloo_7417258b2e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_university-of-wisconsin-madison_eab7eabf1a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_universite-paris-saclay_858ac6df56",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_universite-de-montreal_7365674b49",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_upwork_c1e84f7c3e",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_valero-energy_3f856a568e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vanity-fair_05d5d7eef0",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 89,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_variety_b530f329d6",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 75,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_veeva-systems_c594a38bb9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_verizon_aacca8bcb3",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vertex-pharmaceuticals_7c5215c76f",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vertiv_0a148cbf4e",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vipshop_b7829e8e5f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 16,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_visa_e759968ca9",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 43,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vodafone_c09dee9996",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vogue_0d553bc857",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 90,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vox_b675469b94",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vroom_90250dea65",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 28,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_vultr_439fc2dcdf",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 77,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wex_4fa78aa043",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 84,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wales-online_16bb88a0d6",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 63,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wall-street-journal_fa6baa9541",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_walmart_943c3eeb25",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 74,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_walmex-walmart-de-mexico_e096b2a1fe",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wayfair_b337951cb8",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wells-fargo_311ff2d712",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 81,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wendy-s_e7fefa7e58",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 58,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wesfarmers-bunnings-kmart_e263d71e96",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_west-monroe_142cd80c68",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_western-union_d07e976b38",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 82,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_westinghouse-nuclear_74070ed78d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_westpac-banking-corp_ef485df3b4",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 70,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_whatnot_fd6d671e85",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_williams-sonoma_b2ea46c07f",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 41,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_willis-towers-watson_21a82bf14b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 80,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wingstop_59f9477df7",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 28,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wipro_5528a266f1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wired_5358fb4a86",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 90,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wise_c88af1b793",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_woodside-energy_de8c6f535f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_woolworths-group_d5ff8f6088",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 50,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_workday_4e44ddffb6",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "High",
+      "ecc": 83,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_world-bank_ec80eba460",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_world-trade-organization-wto_1fa311c7e1",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 51,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_worldline_6e1ae5dc1a",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wuxi-apptec_ed7077680c",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 60,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wyndham-hotels-and-resorts_65cf51d602",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_wynn-resorts_0fc32e3b85",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_xiaomi_c608c47878",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_yahoo-finance_693a8eac74",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 73,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_yahoo-news_c51627d3b0",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 44,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_yale-university_0d3d34a24d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 49,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_yelp_bd11be25fd",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "High",
+      "ecc": 86,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_yonsei-university_52cbdd91a8",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 11,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_yum-brands_c50bbb3059",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_zs-associates_1aab4f3b2f",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 57,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_zhejiang-university_e433baf78e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 25,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_zillow_5a08fbb370",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Medium",
+      "ecc": 66,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_zoetis_aab63e847d",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 68,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_argenx_819e779464",
+      "observed_at": "2026-01-20",
+      "posture": "Defensive",
+      "capability": "Low",
+      "ecc": 53,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_dlocal_b783eb8f9e",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 67,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_ebay_743598aceb",
+      "observed_at": "2026-01-20",
+      "posture": "Blocked",
+      "capability": "Low",
+      "ecc": 0,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_monday-com_df9ba8c57b",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Medium",
+      "ecc": 78,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    },
+    {
+      "entity_id": "ent_xai_6fcba5d96a",
+      "observed_at": "2026-01-20",
+      "posture": "Open",
+      "capability": "Low",
+      "ecc": 55,
+      "methodology_id": "eci-ecc-v1",
+      "observation_status": "observed"
+    }
+  ]
+}

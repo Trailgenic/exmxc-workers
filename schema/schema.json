@@ -1,46 +1,22 @@
 {
-  "version": "1.0",
-  "dataset": "exmxc-entity-intelligence",
-  "description": "Structured dataset of global institutions evaluated for AI-era posture, capability, and entity control characteristics.",
+  "version": "2.0",
+  "dataset": "exmxc-entity-clarity-current",
+  "description": "Current Entity Clarity Index observations measuring institutional posture, AI-facing capability, and Entity Clarity & Capability (ECC).",
+  "methodology_id": "eci-ecc-v1",
   "fields": {
-    "industry": {
+    "entity_id": {
       "type": "string",
-      "allowed_values": [
-        "Financial",
-        "E-Commerce & Retail",
-        "Healthcare",
-        "Energy",
-        "Technology",
-        "Fintech",
-        "Marketplace",
-        "Consulting",
-        "Restaurants & Hospitality",
-        "Media",
-        "Education",
-        "Defense & Aerospace",
-        "Nuclear Energy",
-        "Artificial Intelligence",
-        "Cloud & Data Infrastructure",
-        "Sovereign Wealth Fund",
-        "Mining & Materials",
-        "Semiconductors & Industrial",
-        "Financial Infrastructure",
-        "Telecommunications",
-        "Government"
-      ]
+      "description": "Stable entity identifier used across longitudinal snapshots."
+    },
+    "company": {
+      "type": "string",
+      "description": "Canonical name of the organization or institution."
+    },
+    "industry": {
+      "type": "string"
     },
     "entity_type": {
-      "type": "string",
-      "allowed_values": [
-        "Public Company",
-        "Private Company",
-        "Sovereign Wealth Fund",
-        "Government Agency",
-        "Multilateral Institution",
-        "University",
-        "Media Organization",
-        "Consulting Firm"
-      ]
+      "type": "string"
     },
     "posture": {
       "type": "string",
@@ -64,11 +40,16 @@
         "min": 0,
         "max": 100
       },
-      "description": "Entity Control Coefficient score representing degree of operational and structural control."
+      "description": "Entity Clarity & Capability score. Blocked observations are assigned 0 by definition."
     },
-    "company": {
+    "observed_at": {
+      "type": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Date of the observation."
+    },
+    "methodology_id": {
       "type": "string",
-      "description": "Canonical name of the organization or institution."
+      "description": "Versioned scoring methodology identifier."
     }
   }
 }

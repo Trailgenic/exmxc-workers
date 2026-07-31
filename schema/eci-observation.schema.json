@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/eci-observation",
+  "title": "Entity Clarity Observation",
+  "type": "object",
+  "required": ["entity_id", "observed_at", "posture", "capability", "ecc", "methodology_id", "observation_status"],
+  "properties": {
+    "entity_id": { "type": "string", "pattern": "^ent_" },
+    "observed_at": { "type": "string", "format": "date" },
+    "posture": { "enum": ["Open", "Defensive", "Blocked"] },
+    "capability": { "enum": ["Low", "Medium", "High"] },
+    "ecc": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "methodology_id": { "type": "string", "minLength": 1 },
+    "observation_status": { "enum": ["observed", "carried-from-canonical-baseline", "not-observed"] }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "posture": { "const": "Blocked" } }, "required": ["posture"] },
+      "then": { "properties": { "capability": { "const": "Low" }, "ecc": { "const": 0 } } }
+    }
+  ],
+  "additionalProperties": false
+}
