@@ -18,7 +18,7 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.7.0
+- Version: 2.8.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
 
 ## Tools

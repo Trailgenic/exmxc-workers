@@ -331,7 +331,7 @@ export default {
     if (url.pathname === "/datasets/entity_clarity/releases/latest") return jsonResponse(DATASETS.entity_clarity_latest_release.data);
     if (url.pathname === "/schemas/power-lens") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens")?.data);
     if (url.pathname === "/schemas/strategic-consequence") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "strategic_consequence")?.data);
-    if (url.pathname === "/schemas/entity-registry") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_registry")?.data);
+    if (url.pathname === "/schemas/entity-registry") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_registry_schema")?.data);
     if (url.pathname === "/schemas/eci-observation") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_observation")?.data);
     if (url.pathname === "/schemas/eci-release") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_release")?.data);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
