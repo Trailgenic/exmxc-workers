@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.8.0`
-- Stable build date / `last_updated`: `2026-07-30`
+- Build version: `2.9.0`
+- Stable build date / `last_updated`: `2026-09-02`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -29,6 +29,7 @@ Canonical MCP discovery is served from `https://mcp.exmxc.ai/.well-known/mcp.jso
 - `GET /.well-known/openapi.json` — OpenAPI document with `servers: [{ url: "https://mcp.exmxc.ai" }]`
 - `GET /.well-known/manifest.json` — generated manifest
 - `GET /.well-known/ai-plugin.json` — plugin manifest pointing at the OpenAPI document
+- `GET /webmcp-power-lens.js` — browser-native Power Lens tools for the top-level Webflow page
 - `GET /health` — operational health check; uptime is not asserted in the payload and is observed through Cloudflare observability
 
 All JSON responses use shared CORS headers. `OPTIONS` returns `204` with `Access-Control-Allow-Methods: GET, POST, OPTIONS` and `Access-Control-Allow-Headers: content-type, mcp-protocol-version`.
@@ -101,6 +102,29 @@ Content links from `CONTENT_LINKS`:
 - `ex.audit.page` — `https://www.exmxc.ai/audit`
 - `ex.reality_gap.page` — `https://www.exmxc.ai/reality-gap`
 - `ex.strategic_consequence.page` — `https://www.exmxc.ai/strategic-consequence`
+
+## WebMCP Power Lens surface
+
+The Webflow Power Lens page loads `GET /webmcp-power-lens.js` after exposing its
+existing search and render workflow through `window.exmxcPowerLens`. Compatible
+browsers discover two page-scoped tools:
+
+- `run_exmxc_power_lens` — resolves one supported company or ticker through the
+  existing deterministic Power Lens workflow and renders the normal Power Card.
+- `get_exmxc_power_lens_result` — reads the Power Card currently visible on the
+  page without changing state.
+
+The browser layer does not create a second scoring model. The Worker remains the
+source of truth for the AI Power Index, Four Forces weights (Compute 30%,
+Interface 25%, Alignment 25%, Energy 20%), evidence coverage, provenance, and
+disclaimer. The page tools do not use live market data, place trades, or provide
+investment advice.
+
+Verify the browser contract with:
+
+```bash
+npm run verify:webmcp
+```
 
 ## REST data endpoints
 

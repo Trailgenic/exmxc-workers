@@ -158,6 +158,7 @@
   const status = document.getElementById("pl-status");
   const results = document.getElementById("pl-results");
   const copy = document.getElementById("pl-copy");
+  let currentResult = null;
 
   function text(id, value) { document.getElementById(id).textContent = value == null ? "—" : String(value); }
   function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
@@ -189,6 +190,7 @@
     return p;
   }
   function renderSuggestions(data) {
+    currentResult = null;
     showStatus("No Power Lens record matched “" + data.query + "”.", true);
     if (!data.suggestions || !data.suggestions.length) return;
     const wrap = document.createElement("div");
@@ -204,6 +206,7 @@
     status.appendChild(wrap);
   }
   function render(data) {
+    currentResult = data;
     hideStatus();
     text("pl-kicker", "Rank #" + data.power.rank + " of " + data.power.universe_size + " · " + data.power.force_profile + " force profile");
     text("pl-entity", data.match.canonical_entity);
@@ -284,6 +287,7 @@
   async function search(raw) {
     const query = String(raw == null ? input.value : raw).trim();
     if (!query) { showStatus("Enter a company name or ticker.", true); return; }
+    currentResult = null;
     run.disabled = true;
     run.textContent = "Mapping…";
     results.className = "pl-results";
@@ -292,20 +296,26 @@
       const response = await fetch(ENDPOINT + "?query=" + encodeURIComponent(query), { headers: { Accept: "application/json" } });
       if (!response.ok) throw new Error("HTTP_" + response.status);
       const data = await response.json();
-      if (!data.found) { renderSuggestions(data); return; }
+      if (!data.found) { renderSuggestions(data); return data; }
       const url = new URL(window.location.href);
       url.searchParams.set("q", data.match.canonical_entity);
       window.history.replaceState({}, "", url.toString());
       input.value = data.match.canonical_entity;
       render(data);
+      return data;
     } catch (error) {
       console.error("[POWER LENS]", error);
       showStatus("Power Lens is temporarily unavailable. Please try again shortly.", true);
+      return null;
     } finally {
       run.disabled = false;
       run.textContent = "Map Power";
     }
   }
+  window.exmxcPowerLens = {
+    run: search,
+    read: function () { return currentResult; }
+  };
   run.addEventListener("click", function () { search(); });
   input.addEventListener("keydown", function (event) { if (event.key === "Enter") search(); });
   document.querySelectorAll(".pl-chip[data-query]").forEach(function (button) {
@@ -324,3 +334,4 @@
   if (initial) { input.value = initial; search(initial); }
 })();
 </script>
+<script src="https://mcp.exmxc.ai/webmcp-power-lens.js"></script>

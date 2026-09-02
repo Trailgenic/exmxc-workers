@@ -12,7 +12,9 @@ async function walk(dir) {
 const files = await walk('.');
 for (const file of files) {
   const text = await readFile(file, 'utf8');
-  if (new RegExp("Web" + "MCP").test(text)) throw new Error(`Retired legacy transport term found in ${file}`);
+  if (/WebMCP\s+(?:endpoint|transport)/i.test(text)) {
+    throw new Error(`WebMCP must not be described as the server transport in ${file}`);
+  }
   if (/ANTHROPIC_API_KEY\s*=|ADS_SIGNAL_KEY\s*=/.test(text)) throw new Error(`Secret assignment found in ${file}`);
 }
 console.log(`checked ${files.length} source files`);

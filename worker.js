@@ -1,6 +1,7 @@
 import { createMcpHandler } from "agents/mcp";
 import { ADSUpstreamError, classifyPostings, computeADS } from "./lib/ads-classifier.js";
 import { CACHE, emptyResponse, jsonResponse, mcpCorsHeaders, textResponse } from "./lib/http.js";
+import { EXMXC_WEBMCP_POWER_LENS } from "./lib/webmcp-power-lens.js";
 import { createExmxcMcpServer, mcpResourceProjection, contentIndexResource, TOOL_IDS } from "./lib/mcp-server.js";
 import {
   BUILD,
@@ -309,6 +310,14 @@ export default {
 
     const discoveryHeaders = { "Cache-Control": CACHE.NO_CACHE };
     const noStore = { "Cache-Control": CACHE.NO_STORE };
+    if (url.pathname === "/webmcp-power-lens.js") {
+      return textResponse(EXMXC_WEBMCP_POWER_LENS, {
+        headers: {
+          "Content-Type": "application/javascript; charset=utf-8",
+          "Cache-Control": CACHE.NO_CACHE
+        }
+      });
+    }
     if (url.pathname === "/.well-known/mcp.json") return jsonResponse(mcpDiscoveryDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/" || url.pathname === "") return jsonResponse({ name: "exmxc MCP Endpoint", entity: { name: ENTITY.name, domain: ENTITY.domain, founder: ENTITY.founder }, registry: `${MCP_ORIGIN}/.well-known/tool-registry.json`, openapi: `${MCP_ORIGIN}/.well-known/openapi.json`, manifest: `${MCP_ORIGIN}/.well-known/manifest.json`, capabilities: `${MCP_ORIGIN}/capabilities.json`, mcp_transport: MCP_TRANSPORT, protocol_versions: MCP_PROTOCOL_VERSIONS, tools: toolInventory(), resources: resourceInventory().map((resource) => resource.uri), health: `${MCP_ORIGIN}/health`, status: "active", discovery_protocol: "MCP Streamable HTTP", last_updated: BUILD.released }, { headers: discoveryHeaders });
     if (url.pathname === "/capabilities.json") return jsonResponse(capabilitiesDocument(), { headers: discoveryHeaders });

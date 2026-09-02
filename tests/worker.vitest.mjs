@@ -70,6 +70,17 @@ function mockExternalFetch() {
 beforeEach(() => vi.restoreAllMocks());
 
 describe('MCP protocol and transport policy', () => {
+  it('serves the browser-native Power Lens WebMCP layer', async () => {
+    const response = await req('/webmcp-power-lens.js');
+    expect(response.status).toBe(200);
+    expect(response.headers.get('content-type')).toContain('application/javascript');
+    expect(response.headers.get('cache-control')).toBe('no-cache');
+    const source = await response.text();
+    expect(source).toContain('run_exmxc_power_lens');
+    expect(source).toContain('get_exmxc_power_lens_result');
+    expect(source).toContain('document.modelContext');
+  });
+
   it('negotiates supported initialize payload versions and rejects invalid subsequent headers', async () => {
     for (const version of ['2025-11-25', '2025-06-18']) {
       const { json } = await rpc('initialize', { protocolVersion: version, capabilities: {}, clientInfo: { name: 'vitest', version: BUILD.version } });

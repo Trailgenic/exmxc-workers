@@ -1,6 +1,6 @@
 {
   "name": "exmxc-workers",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "test:workers": "vitest run --config vitest.config.mjs",
     "validate:json": "node scripts/validate-json.mjs",
     "validate:webflow": "node scripts/check-webflow.mjs",
+    "verify:webmcp": "node scripts/verify-webmcp-power-lens.mjs",
     "registry:check": "node scripts/check-registry-packet.mjs",
     "deploy:dry-run": "wrangler deploy --dry-run"
   },
