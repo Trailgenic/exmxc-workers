@@ -96,7 +96,7 @@ Callable JSON tools from `DATA_TOOLS`:
 Content links from `CONTENT_LINKS`:
 
 - `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
-- `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index/methodology`
+- `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index-methodology`
 - `ex.framework.get` — `https://exmxc.ai/frameworks`
 - `ex.signal.get` — `https://exmxc.ai/signal-briefs`
 - `ex.lexicon.get` — `https://exmxc.ai/lexicon`

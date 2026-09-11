@@ -57,7 +57,7 @@
     {
       "name": "ex.power_lens.get",
       "title": "Generate a Legacy Power Lens v1 Card",
-      "description": "Historical v1 exposure view. It is not a current evidence-backed measurement of company power."
+      "description": "Historical v1 exposure view. Resolves a supported company name or ticker and returns the original weighted exposure scaffold and adjacent datasets. It is not a current evidence-backed measurement of company power."
     },
     {
       "name": "ex.reality_gap.get",

@@ -175,7 +175,7 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 Content pages are listed separately as `CONTENT_LINKS` and are not exposed as callable MCP tools:
 
 - `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
-- `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index/methodology`
+- `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index-methodology`
 - `ex.framework.get` — `https://exmxc.ai/frameworks`
 - `ex.signal.get` — `https://exmxc.ai/signal-briefs`
 - `ex.lexicon.get` — `https://exmxc.ai/lexicon`
