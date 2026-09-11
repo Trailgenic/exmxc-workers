@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/entity-clarity-evidence-v2",
+  "title": "Entity Clarity Evidence v2 Pilot Response",
+  "type": "object",
+  "required": ["success", "methodology", "run_id", "url", "collection", "robots", "declared_access", "machine_evidence", "assessment", "model_representation", "legacy_diagnostic", "timestamp"],
+  "properties": {
+    "success": { "const": true },
+    "methodology": { "const": "Entity Clarity evidence v2.0-pilot" },
+    "run_id": { "type": "string", "format": "uuid" },
+    "url": { "type": "string", "format": "uri" },
+    "hostname": { "type": "string" },
+    "collection": { "$ref": "#/$defs/fetchObservation" },
+    "robots": {
+      "allOf": [
+        { "$ref": "#/$defs/fetchObservation" },
+        {
+          "type": "object",
+          "required": ["document_status"],
+          "properties": { "document_status": { "enum": ["available", "unavailable", "unreachable", "fetch_error"] } }
+        }
+      ]
+    },
+    "declared_access": {
+      "type": "object",
+      "required": ["source", "posture", "provider_purpose", "indexing_directives", "interpretation_boundary"],
+      "properties": {
+        "source": { "const": "robots.txt" },
+        "posture": { "enum": ["permissive", "selective", "restrictive", "unknown"] },
+        "provider_purpose": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "purpose", "token", "decision", "reason"],
+            "properties": {
+              "provider": { "type": "string" },
+              "purpose": { "enum": ["training", "search", "user_request", "ai_use"] },
+              "token": { "type": "string" },
+              "decision": { "enum": ["allowed", "disallowed", "unknown"] },
+              "reason": { "type": "string" },
+              "rule": { "type": ["object", "null"] }
+            },
+            "additionalProperties": true
+          }
+        },
+        "indexing_directives": {
+          "type": "object",
+          "required": ["x_robots_tag", "meta_robots"],
+          "properties": {
+            "x_robots_tag": { "type": "array", "items": { "type": "string" } },
+            "meta_robots": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        },
+        "interpretation_boundary": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "machine_evidence": { "type": ["object", "null"] },
+    "assessment": {
+      "type": "object",
+      "required": ["methodology", "methodology_status", "score_meaning", "review_provenance", "coverage", "comparable", "score", "dimensions", "checks"],
+      "properties": {
+        "methodology": { "const": "Entity Clarity v2 pilot" },
+        "methodology_status": { "const": "experimental" },
+        "score_meaning": { "type": "string" },
+        "review_provenance": {
+          "type": "object",
+          "required": ["entity_id", "target_url", "reviewer_id", "reviewed_at", "complete"],
+          "properties": {
+            "entity_id": { "type": ["string", "null"] },
+            "target_url": { "type": ["string", "null"], "format": "uri" },
+            "reviewer_id": { "type": ["string", "null"] },
+            "reviewed_at": { "type": ["string", "null"], "format": "date-time" },
+            "complete": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        },
+        "coverage": {
+          "type": "object",
+          "required": ["assessed", "total", "percent"],
+          "properties": {
+            "assessed": { "type": "integer", "minimum": 0, "maximum": 9 },
+            "total": { "const": 9 },
+            "percent": { "type": "number", "minimum": 0, "maximum": 100 }
+          },
+          "additionalProperties": false
+        },
+        "comparable": { "type": "boolean" },
+        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "dimensions": {
+          "type": "object",
+          "required": ["identity", "consistency", "evidence"],
+          "properties": {
+            "identity": { "$ref": "#/$defs/dimensionSummary" },
+            "consistency": { "$ref": "#/$defs/dimensionSummary" },
+            "evidence": { "$ref": "#/$defs/dimensionSummary" }
+          },
+          "additionalProperties": false
+        },
+        "checks": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": { "$ref": "#/$defs/assessmentCheck" }
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "comparable": { "const": true } }, "required": ["comparable"] },
+          "then": {
+            "properties": {
+              "score": { "type": "number" },
+              "coverage": { "properties": { "assessed": { "const": 9 }, "percent": { "const": 100 } } },
+              "review_provenance": { "properties": { "complete": { "const": true } } }
+            }
+          },
+          "else": { "properties": { "score": { "const": null } } }
+        }
+      ]
+    },
+    "model_representation": {
+      "type": "object",
+      "required": ["status", "results", "note"],
+      "properties": {
+        "status": { "enum": ["not_tested", "tested"] },
+        "results": { "type": "array" },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "legacy_diagnostic": { "type": ["object", "null"] },
+    "interpretation_boundary": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "dimensionSummary": {
+      "type": "object",
+      "required": ["assessed", "eligible", "complete", "score"],
+      "properties": {
+        "assessed": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "eligible": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "complete": { "type": "boolean" },
+        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "assessmentCheck": {
+      "type": "object",
+      "required": ["id", "dimension", "label", "status", "points", "rationale", "evidence"],
+      "properties": {
+        "id": { "type": "string" },
+        "dimension": { "enum": ["identity", "consistency", "evidence"] },
+        "label": { "type": "string" },
+        "status": { "enum": ["assessed", "unassessable", "not_applicable"] },
+        "points": { "type": ["integer", "null"], "minimum": 0, "maximum": 2 },
+        "rationale": { "type": "string" },
+        "evidence": { "type": "array", "items": {} }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "assessed" } }, "required": ["status"] },
+          "then": {
+            "properties": {
+              "points": { "type": "integer", "minimum": 0, "maximum": 2 },
+              "evidence": { "minItems": 1 }
+            }
+          },
+          "else": { "properties": { "points": { "const": null } } }
+        }
+      ]
+    },
+    "fetchObservation": {
+      "type": "object",
+      "required": ["requested_url", "final_url", "fetch_status", "http_status", "surface_type", "collection_mode", "collector_version", "content_sha256", "error"],
+      "properties": {
+        "requested_url": { "type": "string", "format": "uri" },
+        "final_url": { "type": ["string", "null"], "format": "uri" },
+        "fetch_status": { "enum": ["delivered", "unsupported_content", "access_restricted", "not_found", "rate_limited", "server_error", "http_error", "rejected", "timeout", "dns_error", "tls_error", "redirect_error", "response_error", "network_error"] },
+        "http_status": { "type": ["integer", "null"], "minimum": 100, "maximum": 599 },
+        "content_type": { "type": ["string", "null"] },
+        "surface_type": { "enum": ["homepage", "robots"] },
+        "collection_mode": { "const": "static" },
+        "collector_version": { "type": "string" },
+        "content_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "x_robots_tag": { "type": "array", "items": { "type": "string" } },
+        "redirects": { "type": "array" },
+        "error": { "type": ["object", "null"] }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

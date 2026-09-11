@@ -13,7 +13,7 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.9.0`
+- Build version: `2.10.0`
 - Stable build date / `last_updated`: `2026-09-02`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
@@ -178,6 +178,8 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /schemas/entity-registry`
 - `GET /schemas/eci-observation`
 - `GET /schemas/eci-release`
+- `GET /schemas/entity-clarity-evidence-v2`
+  - Pilot response contract separating delivery, declared access, review coverage, model-test status, and legacy diagnostics
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
 - `GET /power-lens?query=NVDA`
@@ -186,7 +188,9 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /schemas/power-lens`
   - Source: `schema/power_lens.schema.json`
 - `GET /audit/run?url=https://exmxc.ai`
-  - Live Entity Engineering Index audit for a public URL
+  - Collects website delivery and declared provider-purpose access evidence for a public HTTPS URL
+  - Returns an uncompleted nine-check Entity Clarity v2 review template and labels the prior EEI score as a legacy website diagnostic
+  - Does not report independent model representation unless a separate recorded model test exists
 - `GET /schema`
   - Source: `schema/schema.json`
 - `GET /definitions`
@@ -379,7 +383,7 @@ exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable H
 
 ### Audit route
 
-`/audit/run` and the `ex.eei.audit.run` tool remain public but validate targets before contacting the upstream audit service. The upstream service at `exmxc-audit.vercel.app` must independently enforce DNS-resolution and redirect checks against private, loopback, link-local, and reserved ranges; that external security dependency is not satisfied by this repository alone. Conservative Cloudflare rate limiting should be applied to `/audit/run` and audit calls arriving via `/mcp` as deployment configuration.
+`/audit/run` and the `ex.eei.audit.run` tool validate targets before contacting the fixed upstream audit service. The paired audit build validates each HTTPS destination and redirect, uses a DNS lookup that rejects private, loopback, link-local, reserved, and mixed public/private answers, and limits redirects, response size, and request time. Deployment configuration should still apply conservative Cloudflare rate limiting to `/audit/run` and audit calls arriving via `/mcp`.
 
 ### Structured content compatibility
 

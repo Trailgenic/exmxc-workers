@@ -343,6 +343,7 @@ export default {
     if (url.pathname === "/schemas/entity-registry") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_registry_schema")?.data);
     if (url.pathname === "/schemas/eci-observation") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_observation")?.data);
     if (url.pathname === "/schemas/eci-release") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_release")?.data);
+    if (url.pathname === "/schemas/entity-clarity-evidence-v2") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_clarity_evidence_v2")?.data);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());
@@ -374,7 +375,8 @@ export default {
       const args = queryArgs(url, ["url"]);
       const valid = validateAuditTarget(args.url);
       if (!valid.ok) return jsonResponse({ success: false, error: valid.error }, { status: valid.status, headers: noStore });
-      return jsonResponse(await TOOL_HANDLERS["ex.eei.audit.run"](args), { headers: noStore });
+      const result = await TOOL_HANDLERS["ex.eei.audit.run"](args);
+      return jsonResponse(result, { status: result?.success === false ? (result.status || 502) : 200, headers: noStore });
     }
     if (url.pathname === "/schema") return jsonResponse(BUNDLED_SCHEMA);
     if (url.pathname === "/definitions") return jsonResponse(BUNDLED_DEFINITIONS);

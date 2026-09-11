@@ -1,8 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { SELF } from 'cloudflare:test';
 import { readFile } from 'node:fs/promises';
-import { BUILD, DATA_TOOLS, MCP_RESOURCES } from '../lib/registry.js';
+import Ajv2020 from 'ajv/dist/2020.js';
+import { BUILD, DATA_TOOLS, MCP_RESOURCES, DATASETS } from '../lib/registry.js';
 import { contentIndexResource, mcpResourceProjection } from '../lib/mcp-server.js';
+import pilotPanel from '../data/eci/pilots/2026-09-11-v2-panel.json' with { type: 'json' };
 
 const BASE = 'https://mcp.exmxc.ai';
 const toolIds = () => DATA_TOOLS.map((tool) => tool.id).sort();
@@ -57,7 +59,32 @@ function mockExternalFetch() {
     const url = String(input?.url || input);
     calls.push(url);
     if (url.includes('exmxc-audit.vercel.app')) {
-      return new Response(JSON.stringify({ success: true, score: 91, url }), { status: 200, headers: { 'content-type': 'application/json' } });
+      return new Response(JSON.stringify({
+        success: true,
+        methodology: 'Entity Clarity evidence v2.0-pilot',
+        run_id: '00000000-0000-4000-8000-000000000000',
+        url: 'https://example.com/',
+        hostname: 'example.com',
+        collection: { requested_url: 'https://example.com/', final_url: 'https://example.com/', fetch_status: 'delivered', http_status: 200, content_type: 'text/html', surface_type: 'homepage', collection_mode: 'static', collector_version: 'fixture', content_sha256: null, x_robots_tag: [], redirects: [], error: null },
+        robots: { requested_url: 'https://example.com/robots.txt', final_url: 'https://example.com/robots.txt', fetch_status: 'not_found', document_status: 'unavailable', http_status: 404, surface_type: 'robots', collection_mode: 'static', collector_version: 'fixture', content_sha256: null, error: null },
+        declared_access: { source: 'robots.txt', posture: 'permissive', provider_purpose: [], indexing_directives: { x_robots_tag: [], meta_robots: [] }, interpretation_boundary: 'Fixture boundary.' },
+        machine_evidence: null,
+        assessment: {
+          methodology: 'Entity Clarity v2 pilot', methodology_status: 'experimental', score_meaning: 'Fixture.',
+          review_provenance: { entity_id: null, target_url: null, reviewer_id: null, reviewed_at: null, complete: false },
+          coverage: { assessed: 0, total: 9, percent: 0 }, comparable: false, score: null,
+          dimensions: Object.fromEntries(['identity', 'consistency', 'evidence'].map((dimension) => [dimension, { assessed: 0, eligible: 3, complete: false, score: null }])),
+          checks: [
+            ['entity_domain_resolution', 'identity'], ['institutional_scope', 'identity'], ['entity_relationships', 'identity'],
+            ['material_claim_consistency', 'consistency'], ['canonical_structured_consistency', 'consistency'], ['official_record_consistency', 'consistency'],
+            ['claim_traceability', 'evidence'], ['source_provenance', 'evidence'], ['independent_corroboration', 'evidence']
+          ].map(([id, dimension]) => ({ id, dimension, label: id, status: 'unassessable', points: null, rationale: 'Requires reviewed evidence.', evidence: [] }))
+        },
+        model_representation: { status: 'not_tested', results: [], note: 'Fixture.' },
+        legacy_diagnostic: null,
+        interpretation_boundary: 'Fixture boundary.',
+        timestamp: '2026-09-11T00:00:00.000Z'
+      }), { status: 200, headers: { 'content-type': 'application/json' } });
     }
     if (url.includes('api.anthropic.com')) {
       return new Response(JSON.stringify({ content: [{ text: JSON.stringify([{ posting_id: 'synthetic-001', title: 'AI Agent Engineer', skills_raw: ['MCP'] }]) }] }), { status: 200, headers: { 'content-type': 'application/json' } });
@@ -293,6 +320,22 @@ describe('resources', () => {
 });
 
 describe('ADS, audit, cache, and registry', () => {
+  it('locks the uncollected Entity Clarity v2 pilot panel without inventing domains or observations', () => {
+    expect(pilotPanel.entities).toHaveLength(50);
+    expect(new Set(pilotPanel.entities.map((entity) => entity.entity_id)).size).toBe(50);
+    expect(new Set(pilotPanel.entities.map((entity) => entity.industry)).size).toBe(10);
+    const registryIds = new Set(DATASETS.entity_registry.data.entities.map((entity) => entity.entity_id));
+    expect(pilotPanel.entities.every((entity) => registryIds.has(entity.entity_id))).toBe(true);
+    expect(pilotPanel.entities.filter((entity) => entity.double_review)).toHaveLength(20);
+    expect(pilotPanel.entities.every((entity) => entity.target_url === null && entity.review_status === 'not_started')).toBe(true);
+    for (const industry of new Set(pilotPanel.entities.map((entity) => entity.industry))) {
+      const rows = pilotPanel.entities.filter((entity) => entity.industry === industry);
+      expect(rows.filter((entity) => entity.legacy_posture_stratum === 'Open')).toHaveLength(2);
+      expect(rows.filter((entity) => entity.legacy_posture_stratum === 'Defensive')).toHaveLength(2);
+      expect(rows.filter((entity) => entity.legacy_posture_stratum === 'Blocked')).toHaveLength(1);
+    }
+  });
+
   it('hardens ADS benchmark and paid rejection paths without Anthropic fetches', async () => {
     const calls = mockExternalFetch();
     const benchmark1 = await (await req('/api/ai-jobs-signal')).json();
@@ -310,7 +353,21 @@ describe('ADS, audit, cache, and registry', () => {
     expect((await req('/audit/run?url=https%3A%2F%2Flocalhost')).status).toBe(400);
     const ok = await req('/audit/run?url=https%3A%2F%2Fexample.com');
     expect(ok.status).toBe(200);
-    expect((await ok.json()).success).toBe(true);
+    const payload = await ok.json();
+    expect(payload.success).toBe(true);
+    expect(payload.methodology).toBe('Entity Clarity evidence v2.0-pilot');
+    expect(payload.collection.fetch_status).toBe('delivered');
+    expect(payload.declared_access.posture).toBe('permissive');
+    expect(payload.assessment.score).toBeNull();
+    expect(payload.model_representation.status).toBe('not_tested');
+
+    const schemaResponse = await req('/schemas/entity-clarity-evidence-v2');
+    expect(schemaResponse.status).toBe(200);
+    const schema = await schemaResponse.json();
+    expect(schema.title).toBe('Entity Clarity Evidence v2 Pilot Response');
+    expect(schema.required).toContain('declared_access');
+    const validate = new Ajv2020({ strict: false, validateFormats: false }).compile(schema);
+    expect(validate(payload), JSON.stringify(validate.errors)).toBe(true);
   });
 
   it('asserts route-class cache headers', async () => {
