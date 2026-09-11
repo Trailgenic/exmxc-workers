@@ -38,6 +38,7 @@
   },
   "separation_of_measurement_families": {
     "eci_ecc": "Longitudinal institutional posture, capability, and Entity Clarity & Capability measurement.",
-    "eei": "Entity Engineering Index website audit methodology. EEI results are not interchangeable with ECI/ECC observations."
+    "eei": "Historical Entity Engineering Index website audit methodology. EEI results are legacy structural proxies and are not interchangeable with ECI/ECC observations.",
+    "entity_clarity_evidence_v2": "Pilot evidence contract separating collector delivery, declared provider-purpose access, reviewed identity/consistency/evidence checks, and observed model representation. Unknown and untested states are not scored as zero."
   }
 }
