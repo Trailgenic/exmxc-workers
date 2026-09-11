@@ -4,9 +4,12 @@
     "dataset_id": "strategic_consequence_scenarios_v1",
     "version": "1.0.0",
     "methodology_version": "sce-v1.0",
+    "status": "experimental_legacy_v1",
+    "current_authority": false,
+    "compatibility_boundary": "Pinned to the legacy v1 Four Forces weighted exposure scaffold. AI Power v2 profile judgments are not inputs.",
     "as_of_date": "2026-07-29",
     "model_type": "deterministic_relative_scenario_exposure",
-    "universe": "Bundled exmxc 84-entity AI Power universe",
+    "universe": "Bundled exmxc 84-entity legacy v1 exposure universe",
     "score_formula": "sum(force_exposure × scenario_force_delta × canonical_force_weight) + matched_scarcity_layer_adjustment + bounded_reality_gap_modifier",
     "force_weights": {
       "compute": 0.3,
@@ -14,7 +17,7 @@
       "alignment": 0.25,
       "energy": 0.2
     },
-    "normalization_policy": "Raw scenario scores are min-max normalized within the complete bundled AI Power universe. The highest raw score maps to 100 and the lowest maps to 0. Classification bands are relative structural exposure bands, not absolute return forecasts.",
+    "normalization_policy": "Raw scenario scores are min-max normalized within the complete bundled legacy v1 exposure universe. The highest raw score maps to 100 and the lowest maps to 0. Classification bands are relative structural exposure bands, not absolute return forecasts.",
     "classification_bands": [
       {
         "id": "strongly_advantaged",
@@ -47,9 +50,9 @@
         "maximum_score": 14.99
       }
     ],
-    "coverage_policy": "Every entity requires a bundled AI Power and Four Forces record. Scarcity and Reality Gap modifiers are applied only when a matching versioned record exists; missing layers contribute zero and are disclosed.",
+    "coverage_policy": "Every entity requires a bundled legacy v1 weighted exposure and Four Forces record. Scarcity and Reality Gap modifiers are applied only when a matching versioned record exists; missing layers contribute zero and are disclosed.",
     "interpretation_policy": "Scenario definitions, causal chains, assumptions, and validation signals are versioned analytical judgments. The engine performs no live web retrieval and generates no undisclosed company overrides.",
-    "disclaimer": "Counterfactual structural-exposure analysis derived from bundled exmxc datasets. Scores are conditional, relative, and analytical; they are not probabilities, price targets, investment recommendations, or predictions."
+    "disclaimer": "Experimental legacy-v1 counterfactual exposure analysis. Scores are conditional, relative, and analytical; they are not AI Power v2 judgments, probabilities, price targets, investment recommendations, or predictions."
   },
   "scenarios": [
     {

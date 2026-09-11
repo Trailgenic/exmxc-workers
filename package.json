@@ -1,6 +1,6 @@
 {
   "name": "exmxc-workers",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -8,6 +8,8 @@
     "test": "node tests/registry.test.mjs",
     "test:workers": "vitest run --config vitest.config.mjs",
     "validate:json": "node scripts/validate-json.mjs",
+    "validate:ai-power": "node scripts/validate-json.mjs",
+    "assess:ai-power": "node scripts/assess-ai-power-v2.mjs",
     "validate:webflow": "node scripts/check-webflow.mjs",
     "verify:webmcp": "node scripts/verify-webmcp-power-lens.mjs",
     "registry:check": "node scripts/check-registry-packet.mjs",

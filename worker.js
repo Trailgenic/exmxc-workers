@@ -19,6 +19,9 @@ import {
 } from "./lib/registry.js";
 import {
   getAiPowerTop,
+  getAiPowerIndex,
+  getAiPowerMethodologyV2,
+  getAiPowerProfilesV2,
   getConvergenceLatest,
   getConvergenceLog,
   getDatasetIndex,
@@ -26,12 +29,14 @@ import {
   getFourForces,
   getIndex,
   getPowerLens,
+  getPowerLensV2,
   getRealityGap,
   getSpeg,
   getStrategicConsequence,
   TOOL_HANDLERS,
   validateAuditTarget,
   validatePowerLensQuery,
+  validateAiPowerV2Query,
   validateStrategicConsequenceArgs
 } from "./lib/queries.js";
 import baseline from "./data/ads-baseline.json" with { type: "json" };
@@ -328,8 +333,10 @@ export default {
     if (url.pathname === "/.well-known/ai-plugin.json") return jsonResponse(pluginDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/speg") return jsonResponse(getSpeg(queryArgs(url, ["sector", "scarcity_layer", "ticker"])));
     if (url.pathname === "/entities") return jsonResponse(getEntities(queryArgs(url, ["industry", "entity_type", "posture", "capability"])));
-    if (url.pathname === "/datasets/ai_power_index") return jsonResponse(DATASETS.ai_power_index.data);
+    if (url.pathname === "/datasets/ai_power_index") return jsonResponse(getAiPowerIndex());
     if (url.pathname === "/datasets/ai_power_index/schema") return jsonResponse(DATASETS.ai_power_index.schema);
+    if (url.pathname === "/datasets/ai_power_methodology_v2") return jsonResponse(getAiPowerMethodologyV2());
+    if (url.pathname === "/datasets/ai_power_profiles_v2") return jsonResponse(getAiPowerProfilesV2(queryArgs(url, ["query", "group", "status"])));
     if (url.pathname === "/datasets/reality_gap_index") return jsonResponse(DATASETS.reality_gap_index.data);
     if (url.pathname === "/datasets/reality_gap_index/schema") return jsonResponse(DATASETS.reality_gap_index.schema);
     if (url.pathname === "/datasets/strategic_consequence_scenarios") return jsonResponse(DATASETS.strategic_consequence_scenarios.data);
@@ -339,6 +346,10 @@ export default {
     if (url.pathname === "/datasets/entity_clarity/changes/latest") return jsonResponse(DATASETS.entity_clarity_latest_changes.data);
     if (url.pathname === "/datasets/entity_clarity/releases/latest") return jsonResponse(DATASETS.entity_clarity_latest_release.data);
     if (url.pathname === "/schemas/power-lens") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens")?.data);
+    if (url.pathname === "/schemas/power-lens-v2") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "power_lens_v2")?.data);
+    if (url.pathname === "/schemas/ai-power-methodology-v2") return jsonResponse(DATASETS.ai_power_methodology_v2.schema);
+    if (url.pathname === "/schemas/ai-power-profile-v2") return jsonResponse(DATASETS.ai_power_profiles_v2.schema);
+    if (url.pathname === "/schemas/ai-power-source-manifest-v2") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "ai_power_source_manifest_v2_schema")?.data);
     if (url.pathname === "/schemas/strategic-consequence") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "strategic_consequence")?.data);
     if (url.pathname === "/schemas/entity-registry") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_registry_schema")?.data);
     if (url.pathname === "/schemas/eci-observation") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_observation")?.data);
@@ -353,6 +364,12 @@ export default {
       const valid = validatePowerLensQuery(args.query);
       if (!valid.ok) return jsonResponse({ success: false, error: valid.error }, { status: valid.status, headers: noStore });
       return jsonResponse(getPowerLens(args));
+    }
+    if (url.pathname === "/power-lens/v2") {
+      const args = queryArgs(url, ["query"]);
+      const valid = validateAiPowerV2Query(args.query);
+      if (!valid.ok) return jsonResponse({ success: false, error: valid.error }, { status: valid.status, headers: noStore });
+      return jsonResponse(getPowerLensV2(args));
     }
     if (url.pathname === "/reality-gap") {
       return jsonResponse(getRealityGap(queryArgs(url, ["query", "classification", "sort", "limit"])));

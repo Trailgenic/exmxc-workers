@@ -105,9 +105,9 @@
 
 <main class="sc-root" id="strategic-consequence">
   <header class="sc-masthead">
-    <div class="ex-label" style="margin-bottom:16px;">Interactive Intelligence · Counterfactual Systems Analysis</div>
+    <div class="ex-label" style="margin-bottom:16px;">Legacy v1 · Experimental Counterfactual Analysis</div>
     <h1 class="sc-headline">See what changes <em>after the premise changes.</em></h1>
-    <p class="sc-tagline">The Strategic Consequence Engine propagates canonical AI counterfactuals through exmxc’s Four Forces, AI Power, structural scarcity, and available Reality Gap evidence—revealing conditional first-order exposure and the consequences behind it.</p>
+    <p class="sc-tagline">The Strategic Consequence Engine propagates canonical counterfactuals through exmxc’s legacy v1 Four Forces weighted exposure scaffold, structural scarcity, and available Reality Gap evidence. It does not use AI Power v2 profile judgments.</p>
     <div class="sc-chain" aria-label="Strategic Consequence Engine analysis chain">
       <div class="sc-chain-step"><div class="sc-chain-num">01 · Premise</div><div class="sc-chain-label">Select a canonical counterfactual</div></div>
       <div class="sc-chain-step"><div class="sc-chain-num">02 · Propagate</div><div class="sc-chain-label">Reweight Four Forces and scarcity</div></div>
@@ -131,7 +131,7 @@
     <input id="sc-query" class="sc-field" type="search" maxlength="120" autocomplete="off" placeholder="Optional company or ticker" aria-label="Optional company name or ticker" />
     <button id="sc-run" class="sc-btn" type="button">Propagate</button>
   </div>
-  <p class="sc-note">Scores measure relative structural advantage inside a selected scenario. They are not probabilities, stock-return forecasts, price targets, or investment recommendations.</p>
+  <p class="sc-note">This is an experimental legacy-v1 exposure model. Scores are relative within a selected scenario; they are not AI Power v2 judgments, probabilities, stock-return forecasts, price targets, or investment recommendations.</p>
 
   <div id="sc-status" class="sc-status" role="status" aria-live="polite"></div>
 
@@ -294,12 +294,12 @@
     }
     if (!data.entity_result) {
       panel.className = "sc-entity";
-      showStatus("No bundled AI Power entity matched “" + data.query + "”. Try a supported company name or ticker.", true);
+      showStatus("No bundled legacy v1 entity matched “" + data.query + "”. Try a supported company name or ticker.", true);
       return;
     }
     const entity = data.entity_result;
     setText("sc-entity-name", entity.entity_name);
-    setText("sc-entity-meta", "Rank #" + entity.scenario_rank + " of " + entity.universe_size + " · " + entity.classification_label + " · AI Power " + entity.ai_power_index);
+    setText("sc-entity-meta", "Scenario rank #" + entity.scenario_rank + " of " + entity.universe_size + " · " + entity.classification_label + " · legacy v1 exposure " + entity.ai_power_index);
     setText("sc-entity-score", Number(entity.scenario_advantage_score).toFixed(1));
     renderSimpleList("sc-entity-drivers", entity.primary_drivers);
     panel.className = "sc-entity is-visible";
@@ -349,7 +349,7 @@
     renderSimpleList("sc-invalidating", data.signals.invalidating);
     setText(
       "sc-boundary",
-      data.methodology.normalization_policy + " Coverage: " + data.coverage.ai_power_universe + " AI Power entities, " + data.coverage.scarcity_records_available + " scarcity records, and " + data.coverage.reality_gap_records_available + " Reality Gap records. " + data.disclaimer
+      data.compatibility_boundary + " " + data.methodology.normalization_policy + " Coverage: " + data.coverage.ai_power_universe + " legacy v1 entities, " + data.coverage.scarcity_records_available + " scarcity records, and " + data.coverage.reality_gap_records_available + " Reality Gap records. " + data.disclaimer
     );
     results.className = "sc-results is-visible";
   }

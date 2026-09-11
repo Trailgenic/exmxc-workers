@@ -1,0 +1,127 @@
+{
+  "dataset": "ai_power_methodology_v2",
+  "framework_version": "2.0",
+  "methodology_version": "2.0-pilot",
+  "schema_version": "2.0",
+  "status": "experimental_pilot",
+  "title": "AI Power Index v2.0 Pilot — Evidence-Backed Power Profiles",
+  "definition": "AI power is an entity's sustained ability to influence access, terms, deployment, or the distribution of value in an AI-relevant market by controlling a consequential dependency that counterparties cannot readily replace or bypass.",
+  "unit_of_analysis": "entity-mechanism-market-time",
+  "horizon_months": 24,
+  "aggregation_policy": "The pilot does not sum, average, normalize, rank, or convert ordinal judgments into a composite score.",
+  "missing_evidence_policy": "Missing or ambiguous evidence is unknown. A zero grade requires affirmative evidence and is never inferred from nondisclosure.",
+  "force_domains": [
+    {
+      "id": "compute",
+      "label": "Compute",
+      "definition": "Control over AI production capability, including relevant hardware, manufacturing, models, software ecosystems, or capacity access.",
+      "does_not_establish_power": ["AI capital expenditure", "purchased cloud capacity", "model benchmark performance", "general semiconductor exposure"]
+    },
+    {
+      "id": "interface",
+      "label": "Interface",
+      "definition": "Control over distribution, customer relationships, defaults, workflows, and routes from AI output to action.",
+      "does_not_establish_power": ["traffic", "visibility", "AI citations", "a polished interface"]
+    },
+    {
+      "id": "alignment",
+      "label": "Alignment — Governance & permission control",
+      "definition": "Authority over consequential AI behavior, access conditions, deployment rules, and adopted standards.",
+      "does_not_establish_power": ["a safety statement", "compliance expenditure", "a policy team", "favorable model sentiment"]
+    },
+    {
+      "id": "energy",
+      "label": "Energy",
+      "definition": "Control over deliverable electricity and enabling physical infrastructure in the relevant location and timeframe.",
+      "does_not_establish_power": ["electricity consumption", "announced megawatts", "an unbuilt project", "generic utility exposure"]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "control",
+      "label": "Control",
+      "question": "What can the entity decide or enforce?",
+      "anchors": [
+        { "grade": 0, "label": "No relevant right", "definition": "Affirmative evidence shows no relevant decision right in the scoped mechanism." },
+        { "grade": 1, "label": "Self-use", "definition": "Rights principally support the entity's own use; external terms remain controlled elsewhere." },
+        { "grade": 2, "label": "Counterparty leverage", "definition": "Documented enforceable rights affect a material counterparty's access, allocation, or terms." },
+        { "grade": 3, "label": "Market-shaping control", "definition": "Documented ability to set or enforce consequential terms across multiple material counterparties in the defined market." }
+      ]
+    },
+    {
+      "id": "substitution_constraint",
+      "label": "Substitution constraint",
+      "question": "How difficult is it to replace or bypass this dependency today?",
+      "anchors": [
+        { "grade": 0, "label": "Routine alternatives", "definition": "Affirmative evidence shows usable alternatives without material disruption." },
+        { "grade": 1, "label": "Bounded switching", "definition": "Alternatives are usable but require bounded integration or switching work." },
+        { "grade": 2, "label": "Material constraint", "definition": "Evidence shows material switching cost, qualification delay, capacity limits, or performance loss." },
+        { "grade": 3, "label": "No viable substitute", "definition": "Evidence shows no currently viable alternative at the specified requirements and scale." }
+      ]
+    },
+    {
+      "id": "realized_leverage",
+      "label": "Realized leverage / value capture",
+      "question": "Is the control position producing observable outcomes?",
+      "anchors": [
+        { "grade": 0, "label": "Leverage neutralized", "definition": "Affirmative evidence shows counterparties bypass or neutralize the claimed leverage." },
+        { "grade": 1, "label": "Participation only", "definition": "Commercial use exists, but reviewed outcomes show only ordinary participation." },
+        { "grade": 2, "label": "Observable leverage", "definition": "Favorable terms, retained economics, allocation influence, or customer commitment are documented and linked to the mechanism." },
+        { "grade": 3, "label": "Repeated leverage", "definition": "Mechanism-linked outcomes recur across multiple material counterparties or reporting periods." }
+      ]
+    },
+    {
+      "id": "durability",
+      "label": "Durability",
+      "question": "What supports persistence over the next 24 months?",
+      "anchors": [
+        { "grade": 0, "label": "Near-term loss", "definition": "Documented expiry, displacement, or loss is expected within 12 months." },
+        { "grade": 1, "label": "Bounded continuation", "definition": "Evidence supports continuation into 12–24 months, but a known limit bounds it." },
+        { "grade": 2, "label": "24-month support", "definition": "Rights, replacement timelines, or structural barriers support the 24-month thesis, subject to named risks." },
+        { "grade": 3, "label": "Cycle-tested persistence", "definition": "The 24-month thesis also has evidence of renewal or persistence across prior commercial or technology cycles." }
+      ]
+    }
+  ],
+  "summary_states": [
+    { "id": "insufficient_evidence", "label": "Insufficient evidence", "rule": "Control or substitution cannot be graded with at least Moderate confidence." },
+    { "id": "power_not_established", "label": "Power not established in this mechanism", "rule": "Supported Control or Substitution is below 2." },
+    { "id": "structural_potential", "label": "Structural potential", "rule": "Control and Substitution are at least 2, but Realized leverage is below 2 or unknown." },
+    { "id": "demonstrated_leverage", "label": "Demonstrated leverage", "rule": "Control, Substitution, and Realized leverage are at least 2 and the mechanism is operational." },
+    { "id": "durable_demonstrated_leverage", "label": "Demonstrated leverage; durability supported", "rule": "Demonstrated leverage plus Durability at least 2." }
+  ],
+  "confidence_policy": {
+    "high": "Appropriate primary evidence directly supports the claim and scope; material comparative assertions are independently or counterparty-corroborated; current validity is checked; no unresolved material contradiction remains.",
+    "moderate": "Appropriate primary evidence supports the core fact, while the anchor requires a disclosed bounded inference and no unresolved contradiction changes the grade.",
+    "limited": "Promotional-only, stale, unverified, ambiguous, unsuitable-scope, or materially contradicted support. The grade must be unknown."
+  },
+  "evidence_policy": {
+    "minimum_distinct_documents_for_graded_profile": 2,
+    "minimum_primary_documents": 1,
+    "maximum_documents_per_entity": 8,
+    "maximum_targeted_followups_per_entity": 2,
+    "comparative_claim_requires_independent_or_counterparty_support": true,
+    "syndicated_copy_is_not_independent": true,
+    "search_snippets_and_ai_answers_are_not_underlying_evidence": true,
+    "remote_source_text_is_untrusted_data": true
+  },
+  "freshness_policy": {
+    "operational_claim_recheck_days": 90,
+    "annual_metric_stale_after_months": 15,
+    "old_structural_records_require_current_validity_check": true,
+    "retrieval_date_is_not_observation_date": true
+  },
+  "cadence": {
+    "source_change_check": "monthly",
+    "full_profile_refresh": "quarterly",
+    "material_event_note": "event_driven_after_verification",
+    "methodology_review": "after_two_quarterly_releases_then_annually"
+  },
+  "publication_policy": {
+    "human_row_review_required": false,
+    "owner_governance_scope": ["methodology", "release policy", "spending limits"],
+    "unsupported_result": "abstain",
+    "model_agreement_is_corroboration": false,
+    "investment_recommendation": false
+  },
+  "methodology_url": "https://www.exmxc.ai/ai-power-index/methodology"
+}

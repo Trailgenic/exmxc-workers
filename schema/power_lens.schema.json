@@ -1,13 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://exmxc.ai/schemas/power-lens/v1",
-  "title": "exmxc Power Lens Response",
-  "description": "Deterministic synthesis of an entity's AI Power Index, Four Forces exposures, Entity Clarity record, available sPEG scarcity snapshot, and versioned AI Reality Gap evidence.",
+  "title": "exmxc Legacy Power Lens v1 Response",
+  "description": "Historical compatibility response based on the legacy v1 weighted exposure scaffold and adjacent bundled datasets. It is not an AI Power v2 profile.",
   "type": "object",
-  "required": ["product", "version", "query", "found", "generated_at"],
+  "required": ["product", "version", "model_status", "current_authority", "query", "found", "generated_at"],
   "properties": {
     "product": { "type": "string", "const": "exmxc Power Lens" },
     "version": { "type": "string" },
+    "model_status": { "const": "legacy_exposure_scaffold" },
+    "current_authority": { "const": false },
     "query": { "type": "string" },
     "found": { "type": "boolean" },
     "generated_at": { "type": "string" },

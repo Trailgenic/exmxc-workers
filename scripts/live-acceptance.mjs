@@ -50,14 +50,21 @@ ok(
 );
 ok((await raw('/audit/run?url=http%3A%2F%2Flocalhost')).response.status >= 400, 'audit rejects invalid target');
 const powerLens = await raw('/power-lens?query=NVDA');
-ok(powerLens.json?.found === true && powerLens.json?.match?.canonical_entity === 'NVIDIA' && powerLens.json?.reality_gap?.reality_gap === -3, 'Power Lens resolves ticker with deterministic Reality Gap evidence');
+ok(powerLens.json?.found === true && powerLens.json?.model_status === 'legacy_exposure_scaffold' && powerLens.json?.current_authority === false, 'Legacy Power Lens v1 exposes its compatibility boundary');
 ok((await raw('/power-lens')).response.status === 400, 'Power Lens rejects missing query');
+const powerLensV2 = await raw('/power-lens/v2?query=NVDA');
+ok(powerLensV2.json?.found === true && powerLensV2.json?.match?.canonical_entity === 'NVIDIA' && powerLensV2.json?.coverage?.composite_score_available === false, 'Power Lens v2 returns an evidence profile without a composite');
+ok((await raw('/power-lens/v2')).response.status === 400, 'Power Lens v2 rejects missing query');
+const powerProfilesV2 = await raw('/datasets/ai_power_profiles_v2');
+ok(powerProfilesV2.json?.total_profiles === 20 && powerProfilesV2.json?.release_status === 'staging', 'AI Power v2 staging release declares 20 pilot profiles');
+ok((await raw('/schemas/ai-power-source-manifest-v2')).json?.$id === 'https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2', 'AI Power v2 source manifest schema is live');
 const realityGap = await raw('/reality-gap?query=AAPL');
 ok(realityGap.json?.found === true && realityGap.json?.results?.[0]?.classification === 'narrative_outrunning_deployment', 'Reality Gap resolves Apple with versioned classification');
 ok((await raw('/datasets/reality_gap_index')).json?.rows?.length === 10, 'Reality Gap raw dataset exposes ten-company V1 benchmark');
 const consequence = await raw('/strategic-consequence?scenario=power_binding_constraint&query=NVDA&limit=3');
 ok(
   consequence.json?.found === true
+    && consequence.json?.model_status === 'experimental_legacy_v1'
     && consequence.json?.scenario?.id === 'power_binding_constraint'
     && consequence.json?.entity_result?.entity_name === 'NVIDIA'
     && consequence.json?.first_order?.most_advantaged?.[0]?.entity_name === 'Constellation Energy',

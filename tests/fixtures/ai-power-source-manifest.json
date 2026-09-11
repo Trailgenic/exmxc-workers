@@ -1,0 +1,23 @@
+{
+  "entity_id": "company-nvidia",
+  "sources": [
+    {
+      "id": "issuer-filing",
+      "url": "https://example.com/issuer-filing",
+      "publisher": "Example issuer",
+      "source_type": "filing",
+      "document_title": "Annual filing fixture",
+      "published_at": "2026-09-01T00:00:00Z",
+      "origin_id": "issuer-filing-2026"
+    },
+    {
+      "id": "counterparty-disclosure",
+      "url": "https://example.org/counterparty-disclosure",
+      "publisher": "Example counterparty",
+      "source_type": "counterparty_statement",
+      "document_title": "Counterparty disclosure fixture",
+      "published_at": "2026-09-02T00:00:00Z",
+      "origin_id": "counterparty-disclosure-2026"
+    }
+  ]
+}

@@ -15,6 +15,8 @@ const validArgs = {
   'ex.datasets.index.get': {},
   'ex.ai_power_index.get': {},
   'ex.four_forces.get': {},
+  'ex.ai_power.profiles.get': { query: 'ASML' },
+  'ex.power_lens.v2.get': { query: 'ASML' },
   'ex.entity_in_a_box.get': {},
   'ex.power_lens.get': { query: 'NVDA' },
   'ex.reality_gap.get': { query: 'AAPL' },
@@ -273,6 +275,60 @@ describe('tools and schemas', () => {
     const unscored = await (await req('/power-lens?query=TSM')).json();
     expect(unscored.reality_gap).toBeNull();
     expect(unscored.coverage.reality_gap.status).toBe('not_scored');
+  });
+
+  it('serves AI Power v2 as evidence profiles without composite leakage', async () => {
+    const methodology = await (await req('/datasets/ai_power_methodology_v2')).json();
+    expect(methodology.definition).toContain('controlling a consequential dependency');
+    expect(methodology.criteria.map((criterion) => criterion.id)).toEqual([
+      'control', 'substitution_constraint', 'realized_leverage', 'durability'
+    ]);
+    expect(methodology.aggregation_policy).toContain('does not sum');
+
+    const profiles = await (await req('/datasets/ai_power_profiles_v2')).json();
+    expect(profiles.release_status).toBe('staging');
+    expect(profiles.total_profiles).toBe(20);
+    expect(profiles.coverage.not_started).toBe(20);
+    expect(profiles.profiles.every((profile) => profile.assessment.summary_state === 'insufficient_evidence')).toBe(true);
+    expect(JSON.stringify(profiles)).not.toContain('ai_power_index');
+    expect(JSON.stringify(profiles)).not.toContain('weighted_contribution');
+
+    const asml = await (await req('/power-lens/v2?query=ASML')).json();
+    expect(asml.found).toBe(true);
+    expect(asml.match.entity_id).toBe('company-asml');
+    expect(asml.profile.mechanism.primary_force).toBe('compute');
+    expect(asml.profile.assessment.criteria).toHaveLength(4);
+    expect(asml.profile.assessment.criteria.every((criterion) => criterion.grade === null)).toBe(true);
+    expect(asml.coverage.composite_score_available).toBe(false);
+    expect(asml.coverage.universal_rank_available).toBe(false);
+    expect(asml.release.evidence_cutoff_at).toBeNull();
+
+    const alphabet = await (await req('/power-lens/v2?query=GOOG')).json();
+    expect(alphabet.match.canonical_entity).toBe('Alphabet');
+    expect(alphabet.match.matched_on).toBe('alias_or_ticker');
+
+    const missing = await (await req('/power-lens/v2?query=NVIDA')).json();
+    expect(missing.found).toBe(false);
+    expect(missing.suggestions).toContain('NVIDIA');
+    expect((await req('/power-lens/v2')).status).toBe(400);
+
+    const legacy = await (await req('/datasets/ai_power_index')).json();
+    expect(legacy.metadata.status).toBe('legacy_exposure_scaffold');
+    expect(legacy.metadata.current_authority).toBe(false);
+    const legacyLens = await (await req('/power-lens?query=NVDA')).json();
+    expect(legacyLens.model_status).toBe('legacy_exposure_scaffold');
+    expect(legacyLens.current_authority).toBe(false);
+
+    const scenario = await (await req('/strategic-consequence?scenario=power_binding_constraint&query=NVDA')).json();
+    expect(scenario.model_status).toBe('experimental_legacy_v1');
+    expect(scenario.compatibility_boundary).toContain('AI Power v2');
+
+    const profileSchema = await (await req('/schemas/ai-power-profile-v2')).json();
+    expect(profileSchema.$id).toBe('https://mcp.exmxc.ai/schemas/ai-power-profile/v2');
+    const lensSchema = await (await req('/schemas/power-lens-v2')).json();
+    expect(lensSchema.$id).toBe('https://mcp.exmxc.ai/schemas/power-lens/v2');
+    const manifestSchema = await (await req('/schemas/ai-power-source-manifest-v2')).json();
+    expect(manifestSchema.$id).toBe('https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2');
   });
 
   it('propagates canonical Strategic Consequence scenarios deterministically', async () => {

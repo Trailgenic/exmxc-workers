@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/ai-power-methodology/v2",
+  "title": "AI Power Index v2 Methodology",
+  "type": "object",
+  "required": ["dataset", "framework_version", "methodology_version", "schema_version", "status", "title", "definition", "unit_of_analysis", "horizon_months", "aggregation_policy", "missing_evidence_policy", "force_domains", "criteria", "summary_states", "confidence_policy", "evidence_policy", "freshness_policy", "cadence", "publication_policy", "methodology_url"],
+  "properties": {
+    "dataset": { "const": "ai_power_methodology_v2" },
+    "framework_version": { "type": "string" },
+    "methodology_version": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "status": { "const": "experimental_pilot" },
+    "title": { "type": "string", "minLength": 1 },
+    "definition": { "type": "string", "minLength": 1 },
+    "unit_of_analysis": { "const": "entity-mechanism-market-time" },
+    "horizon_months": { "type": "integer", "const": 24 },
+    "aggregation_policy": { "type": "string", "minLength": 1 },
+    "missing_evidence_policy": { "type": "string", "minLength": 1 },
+    "force_domains": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "definition", "does_not_establish_power"],
+        "properties": {
+          "id": { "enum": ["compute", "interface", "alignment", "energy"] },
+          "label": { "type": "string", "minLength": 1 },
+          "definition": { "type": "string", "minLength": 1 },
+          "does_not_establish_power": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "question", "anchors"],
+        "properties": {
+          "id": { "enum": ["control", "substitution_constraint", "realized_leverage", "durability"] },
+          "label": { "type": "string", "minLength": 1 },
+          "question": { "type": "string", "minLength": 1 },
+          "anchors": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": ["grade", "label", "definition"],
+              "properties": {
+                "grade": { "type": "integer", "minimum": 0, "maximum": 3 },
+                "label": { "type": "string", "minLength": 1 },
+                "definition": { "type": "string", "minLength": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary_states": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "object", "required": ["id", "label", "rule"], "properties": { "id": { "enum": ["insufficient_evidence", "power_not_established", "structural_potential", "demonstrated_leverage", "durable_demonstrated_leverage"] }, "label": { "type": "string", "minLength": 1 }, "rule": { "type": "string", "minLength": 1 } }, "additionalProperties": false } },
+    "confidence_policy": { "type": "object", "required": ["high", "moderate", "limited"], "properties": { "high": { "type": "string" }, "moderate": { "type": "string" }, "limited": { "type": "string" } }, "additionalProperties": false },
+    "evidence_policy": {
+      "type": "object",
+      "required": ["minimum_distinct_documents_for_graded_profile", "minimum_primary_documents", "maximum_documents_per_entity", "maximum_targeted_followups_per_entity", "comparative_claim_requires_independent_or_counterparty_support", "syndicated_copy_is_not_independent", "search_snippets_and_ai_answers_are_not_underlying_evidence", "remote_source_text_is_untrusted_data"],
+      "properties": {
+        "minimum_distinct_documents_for_graded_profile": { "const": 2 },
+        "minimum_primary_documents": { "const": 1 },
+        "maximum_documents_per_entity": { "const": 8 },
+        "maximum_targeted_followups_per_entity": { "const": 2 },
+        "comparative_claim_requires_independent_or_counterparty_support": { "const": true },
+        "syndicated_copy_is_not_independent": { "const": true },
+        "search_snippets_and_ai_answers_are_not_underlying_evidence": { "const": true },
+        "remote_source_text_is_untrusted_data": { "const": true }
+      },
+      "additionalProperties": false
+    },
+    "freshness_policy": {
+      "type": "object",
+      "required": ["operational_claim_recheck_days", "annual_metric_stale_after_months", "old_structural_records_require_current_validity_check", "retrieval_date_is_not_observation_date"],
+      "properties": {
+        "operational_claim_recheck_days": { "type": "integer", "minimum": 1 },
+        "annual_metric_stale_after_months": { "type": "integer", "minimum": 1 },
+        "old_structural_records_require_current_validity_check": { "const": true },
+        "retrieval_date_is_not_observation_date": { "const": true }
+      },
+      "additionalProperties": false
+    },
+    "cadence": {
+      "type": "object",
+      "required": ["source_change_check", "full_profile_refresh", "material_event_note", "methodology_review"],
+      "properties": {
+        "source_change_check": { "const": "monthly" },
+        "full_profile_refresh": { "const": "quarterly" },
+        "material_event_note": { "const": "event_driven_after_verification" },
+        "methodology_review": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "publication_policy": {
+      "type": "object",
+      "required": ["human_row_review_required", "owner_governance_scope", "unsupported_result", "model_agreement_is_corroboration", "investment_recommendation"],
+      "properties": {
+        "human_row_review_required": { "const": false },
+        "owner_governance_scope": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "unsupported_result": { "const": "abstain" },
+        "model_agreement_is_corroboration": { "const": false },
+        "investment_recommendation": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "methodology_url": { "type": "string", "format": "uri" }
+  },
+  "additionalProperties": false
+}

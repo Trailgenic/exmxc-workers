@@ -8,31 +8,20 @@ let currentResult = null;
 
 const fixture = {
   product: "exmxc Power Lens",
-  version: "1.1",
-  generated_at: "2026-09-02",
+  version: "2.0-pilot",
+  release: { release_id: "ai-power-v2.0-pilot-staging", status: "staging", evidence_cutoff_at: null },
   found: true,
-  match: { canonical_entity: "NVIDIA", matched_on: "alias_or_ticker" },
-  power: {
-    ai_power_index: 8.6,
-    rank: 3,
-    universe_size: 84,
-    tier: "System-Shaping"
+  match: { entity_id: "company-nvidia", canonical_entity: "NVIDIA", matched_on: "alias_or_ticker" },
+  profile: {
+    mechanism: { title: "AI accelerator platform and software ecosystem", primary_force: "compute", stage: "unverified" },
+    collection: { status: "not_started" },
+    assessment: { summary_state: "insufficient_evidence", summary_label: "Insufficient evidence", criteria: [] }
   },
-  four_forces: [
-    { id: "compute", label: "Compute", score: 10, weight: 0.3, weighted_contribution: 3 },
-    { id: "interface", label: "Interface", score: 9, weight: 0.25, weighted_contribution: 2.25 },
-    { id: "alignment", label: "Alignment", score: 7, weight: 0.25, weighted_contribution: 1.75 },
-    { id: "energy", label: "Energy", score: 8, weight: 0.2, weighted_contribution: 1.6 }
-  ],
-  entity_clarity: { ecc: 100, posture: "Open", capability: "High" },
-  scarcity: { ticker: "NVDA", speg: 0.27, snapshot_date: "2026-07-16" },
-  reality_gap: { reality_gap: -3, classification: "narrative_capability_aligned" },
-  interpretation: { summary: "NVIDIA ranks #3 of 84." },
-  coverage: { ai_power_index: true, four_forces: true },
-  provenance: {
-    methodology: "Four Forces weights: Compute 30%, Interface 25%, Alignment 25%, Energy 20%."
-  },
-  disclaimer: "Derived reference layer; not live market data or investment advice."
+  evidence: [],
+  methodology: { aggregation_policy: "No composite." },
+  coverage: { composite_score_available: false, universal_rank_available: false },
+  suggestions: [],
+  disclaimer: "Experimental evidence-backed analytical profile."
 };
 
 const document = {
@@ -77,7 +66,7 @@ assert.deepEqual(
 assert.equal(registeredTools[0].annotations.readOnlyHint, false);
 assert.equal(registeredTools[1].annotations.readOnlyHint, true);
 assert.deepEqual(plain(window.__exmxcWebMCP), {
-  version: "1.0",
+  version: "2.0",
   surface: "power-lens",
   tools: ["run_exmxc_power_lens", "get_exmxc_power_lens_result"]
 });
@@ -95,8 +84,8 @@ await assert.rejects(
 const completed = await runTool.execute({ query: "NVDA" });
 assert.equal(completed.structuredContent.completed, true);
 assert.equal(completed.structuredContent.match.canonical_entity, "NVIDIA");
-assert.equal(completed.structuredContent.power.ai_power_index, 8.6);
-assert.equal(completed.structuredContent.four_forces.length, 4);
+assert.equal(completed.structuredContent.profile.assessment.summary_state, "insufficient_evidence");
+assert.equal(completed.structuredContent.coverage.composite_score_available, false);
 
 const reread = await readTool.execute({});
 assert.deepEqual(

@@ -1,4 +1,4 @@
-# exmxc Workers System Map — v2.0
+# exmxc Workers System Map — v2.13
 
 ## Runtime topology
 
@@ -76,11 +76,19 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `/datasets`
   - Generated from `DATASETS`
 - `/datasets/ai_power_index`
-  - Source: `data/ai_power_index_dataset_v1.json`
+  - Source: `data/ai_power_index_dataset_v1.json`; legacy v1 compatibility output
 - `/datasets/ai_power_index/schema`
   - Source: `schema/ai_power_index.schema.json`
 - `/datasets/four_forces`
-  - Source: `data/four_forces_dataset_v1.json`
+  - Source: `data/four_forces_dataset_v1.json`; legacy v1 compatibility output
+- `/datasets/ai_power_methodology_v2`
+  - Source: `data/ai_power_v2/methodology.json`
+- `/datasets/ai_power_profiles_v2`
+  - Source: `data/ai_power_v2/releases/2026-09-11-pilot.json`
+  - Filters: `query`, `group`, `status`
+- `/schemas/ai-power-methodology-v2`
+- `/schemas/ai-power-profile-v2`
+- `/schemas/ai-power-source-manifest-v2`
 - `/datasets/entity_in_a_box_v1`
   - Source: `data/entity_in_a_box_v1.json`
 - `/datasets/entity_in_a_box`
@@ -103,8 +111,10 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `/analysis/ai_power/top`
   - Shared implementation in `lib/queries.js`
 - `/power-lens`
+  - Legacy v1 weighted exposure compatibility view
+- `/power-lens/v2`
   - Required query: `query` (canonical company name, supported alias, or ticker)
-  - Shared deterministic implementation in `lib/queries.js` via `ex.power_lens.get`
+  - Shared evidence-profile implementation in `lib/ai-power-v2.js` via `ex.power_lens.v2.get`
 - `/schemas/power-lens`
   - Source: `schema/power_lens.schema.json`
 - `/audit/run`
@@ -125,6 +135,9 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `getDatasetIndex`
 - `getAiPowerIndex`
 - `getFourForces`
+- `getAiPowerMethodologyV2`
+- `getAiPowerProfilesV2`
+- `getPowerLensV2`
 - `getEntityInABox`
 - `getAiPowerTop`
 - `getPowerLens`
@@ -148,6 +161,8 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 - `ex.datasets.index.get`
 - `ex.ai_power_index.get`
 - `ex.four_forces.get`
+- `ex.ai_power.profiles.get`
+- `ex.power_lens.v2.get`
 - `ex.entity_in_a_box.get`
 - `ex.power_lens.get`
 - `ex.reality_gap.get`
@@ -159,6 +174,8 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 
 Content pages are listed separately as `CONTENT_LINKS` and are not exposed as callable MCP tools:
 
+- `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
+- `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index/methodology`
 - `ex.framework.get` — `https://exmxc.ai/frameworks`
 - `ex.signal.get` — `https://exmxc.ai/signal-briefs`
 - `ex.lexicon.get` — `https://exmxc.ai/lexicon`
@@ -173,7 +190,7 @@ Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.12.0`, `BUILD.released = 2026-09-11`.
+- Build metadata is stable: `BUILD.version = 2.13.0`, `BUILD.released = 2026-09-11`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.

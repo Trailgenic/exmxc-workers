@@ -7,7 +7,7 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
@@ -31,13 +31,23 @@
     },
     {
       "name": "ex.ai_power_index.get",
-      "title": "Get AI Power Index Dataset",
-      "description": "Global AI ecosystem ranking dataset measuring compute, interface, alignment, and energy influence."
+      "title": "Get Legacy AI Power Exposure Scaffold",
+      "description": "Historical weighted exposure scaffold. Its 0–10 totals and ranks are not current evidence-backed measurements of company power."
     },
     {
       "name": "ex.four_forces.get",
-      "title": "Get Four Forces Exposure Dataset",
-      "description": "Four Forces exposure scaffold for AI Power universe entities across compute, interface, alignment, and energy."
+      "title": "Get Legacy Four Forces Exposure Dataset",
+      "description": "Historical v1 exposure scaffold across compute, interface, alignment, and energy; retained for compatibility, not as AI Power v2 judgments."
+    },
+    {
+      "name": "ex.ai_power.profiles.get",
+      "title": "Get AI Power v2 Evidence Profiles",
+      "description": "Evidence-backed entity–mechanism–market–time profiles. The pilot publishes anchored judgments or explicit unknowns; it has no universal composite or league table."
+    },
+    {
+      "name": "ex.power_lens.v2.get",
+      "title": "Read an AI Power v2 Evidence Profile",
+      "description": "Resolve a pilot company and return its scoped mechanism, Four Forces mapping, four anchored judgments or explicit unknowns, evidence status, confidence, and versioned release metadata. No universal composite or rank is generated."
     },
     {
       "name": "ex.entity_in_a_box.get",
@@ -46,8 +56,8 @@
     },
     {
       "name": "ex.power_lens.get",
-      "title": "Generate an exmxc Power Lens Card",
-      "description": "Resolve a supported company name or ticker and synthesize its AI Power Index, Four Forces exposures, Entity Clarity record, available scarcity snapshot, coverage, and provenance."
+      "title": "Generate a Legacy Power Lens v1 Card",
+      "description": "Historical v1 exposure view. It is not a current evidence-backed measurement of company power."
     },
     {
       "name": "ex.reality_gap.get",
@@ -56,13 +66,13 @@
     },
     {
       "name": "ex.strategic_consequence.get",
-      "title": "Run a Strategic Consequence Scenario",
-      "description": "Propagate one canonical counterfactual through the bundled Four Forces, AI Power, scarcity, and available Reality Gap layers. Returns conditional first-order advantage and pressure, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals."
+      "title": "Run a Legacy Experimental Strategic Consequence Scenario",
+      "description": "Experimental scenario engine pinned to the legacy v1 exposure scaffold. Its relative outputs are not AI Power v2 profiles, probabilities, or universal measures of advantage."
     },
     {
       "name": "ex.ai_power.analysis.top",
-      "title": "Get Top AI Power Index Entities",
-      "description": "Retrieve top-ranked entities from the AI Power Index ranking."
+      "title": "Get Legacy AI Power v1 Ranking",
+      "description": "Retrieve historical weighted exposure rankings from the v1 scaffold. Alphabetical presentation within ties does not imply different merit."
     },
     {
       "name": "ex.eei.audit.run",

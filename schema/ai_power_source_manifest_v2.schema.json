@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2",
+  "title": "AI Power v2 Source Manifest",
+  "type": "object",
+  "required": ["entity_id", "sources"],
+  "properties": {
+    "entity_id": { "type": "string", "pattern": "^company-" },
+    "sources": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "publisher", "source_type", "document_title", "published_at", "origin_id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "publisher": { "type": "string", "minLength": 1 },
+          "source_type": { "enum": ["filing", "executed_agreement", "regulator", "procurement", "operating_disclosure", "technical_documentation", "company_statement", "counterparty_statement", "independent_research"] },
+          "document_title": { "type": "string", "minLength": 1 },
+          "published_at": { "type": ["string", "null"], "format": "date-time" },
+          "origin_id": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
