@@ -18,7 +18,7 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.10.0
+- Version: 2.11.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
 
 ## Tools
@@ -33,7 +33,7 @@ node scripts/build-registry-packet.mjs
 - ex.reality_gap.get — Get AI Reality Gap Scores: Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence.
 - ex.strategic_consequence.get — Run a Strategic Consequence Scenario: Propagate one canonical counterfactual through the bundled Four Forces, AI Power, scarcity, and available Reality Gap layers. Returns conditional first-order advantage and pressure, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals.
 - ex.ai_power.analysis.top — Get Top AI Power Index Entities: Retrieve top-ranked entities from the AI Power Index ranking.
-- ex.eei.audit.run — Collect Entity Clarity Evidence: Collect page delivery, declared provider-purpose access policy, machine-readable identity evidence, an uncompleted Entity Clarity v2 review template, and a clearly labeled legacy website diagnostic for one public HTTPS URL.
+- ex.eei.audit.run — Collect Entity Clarity Evidence: Collect page delivery, declared provider-purpose access policy, machine-readable identity evidence, a deterministic five-dimension Entity Clarity v2.1 score when assessable, and a clearly labeled legacy website diagnostic for one public HTTPS URL.
 - ex.convergence.latest — Get Latest Convergence Read: Retrieve the most recent weekly read of the AI Infrastructure Convergence Framework — overall status, count of categories in breach, per-signal state (Latent/Watch/Breach/Pending), and exit posture. Derived reference layer; not investment advice.
 - ex.convergence.log — Get Convergence Monitor Log: Retrieve the longitudinal weekly log of convergence reads — each entry time-stamping status, breach count, categories breached, per-signal state, and posture. Optional limit returns the most recent N entries (newest first). Derived reference layer; not investment advice.
 
