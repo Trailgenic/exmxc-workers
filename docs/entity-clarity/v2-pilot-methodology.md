@@ -31,6 +31,22 @@ Each signal contributes its published points when present and zero when absent. 
 
 The score means only: structural identity clarity observed in delivered static homepage HTML. It is not a probability of model trust, citation, recommendation, factual correctness, or corporate intent. It does not grade writing quality or the truth of claims.
 
+## Static-content adequacy
+
+Every scored response carries a separate quality-control flag:
+
+- `adequate`: the delivered static HTML includes an identity anchor, at least 500 visible body-text characters, and at least five navigable links.
+- `limited`: usable HTML was delivered and scored, but one or more adequacy checks failed. This warns that a low score may reflect a thin static or JavaScript application shell.
+- `unassessable`: the page collection itself could not be scored.
+
+Adequacy does not add to, subtract from, suppress, or otherwise change the v2.1 score.
+
+## Automated batch calibration
+
+Every batch reports score median and distribution, dimension averages, prevalence for all 20 signals, adequacy counts, and calibration watch flags. A ceiling-concentration watch activates when at least 40% of ten or more scored entities receive 90 or above. A signal-saturation watch identifies signals present in at least 85% of a ten-or-more entity scored sample.
+
+These flags diagnose the measurement system rather than the entities. They do not create performance bands or change weights. Weight changes require a new methodology version after several industries and repeat collections have been analyzed.
+
 ## Panel design
 
 The scaffold contains 50 entities: five from each of ten industries. Within each industry, the July 30 legacy ECI snapshot supplies two Open, two Defensive, and one Blocked stratum. Those labels diversify test cases only; they are not accepted as verified current policy or truth.
@@ -42,10 +58,11 @@ Twenty profiles are predesignated for repeat collection. Repeat runs test score 
 1. Resolve targets from a versioned canonical-domain source using stable entity identifiers.
 2. Collect the homepage and robots document with the identified static collector.
 3. Preserve request and final URLs, redirect chain, status, content type, directives, collector version, timestamp, content hash, and bounded error details.
-4. Extract the published homepage signals and compute the five dimensions deterministically.
+4. Extract the published homepage signals, static-content adequacy metrics, and five score dimensions deterministically.
 5. Preserve missing signals as absent only after usable HTML is delivered. Preserve collection failures as unassessable.
-6. Repeat the designated 20 collections and report score changes alongside content hashes and delivery changes.
-7. Run model-answer tests only through the separate fixed protocol. Model-test status never changes this structural score.
+6. Calculate batch distribution, dimension, prevalence, adequacy, and watch diagnostics without changing entity scores.
+7. Repeat the designated 20 collections and report score changes alongside content hashes and delivery changes.
+8. Run model-answer tests only through the separate fixed protocol. Model-test status never changes this structural score.
 
 ## Access interpretation
 
@@ -55,4 +72,4 @@ Training, search, user-requested retrieval, and general AI-use controls remain p
 
 A scored profile requires delivered, non-empty HTML, a complete evidence object, all five computed dimensions, the methodology version, and collection provenance. A model panel may say `not_tested`; this does not block the automated structural score and does not count as zero.
 
-The pilot can expand only after repeat-collection stability is published, target resolution is deterministic, schema validation passes, and methodology changes remain distinguishable from entity changes. Historical ECI observations remain unchanged under their original methodology.
+The pilot can expand only after several industries have been measured, repeat-collection stability is published, target resolution is deterministic, schema validation passes, and methodology changes remain distinguishable from entity changes. Historical ECI observations remain unchanged under their original methodology.

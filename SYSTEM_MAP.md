@@ -173,7 +173,7 @@ Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.11.0`, `BUILD.released = 2026-09-11`.
+- Build metadata is stable: `BUILD.version = 2.12.0`, `BUILD.released = 2026-09-11`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.

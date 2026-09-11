@@ -68,7 +68,7 @@ function mockExternalFetch() {
         collection: { requested_url: 'https://example.com/', final_url: 'https://example.com/', fetch_status: 'delivered', http_status: 200, content_type: 'text/html', surface_type: 'homepage', collection_mode: 'static', collector_version: 'fixture', content_sha256: null, x_robots_tag: [], redirects: [], error: null },
         robots: { requested_url: 'https://example.com/robots.txt', final_url: 'https://example.com/robots.txt', fetch_status: 'not_found', document_status: 'unavailable', http_status: 404, surface_type: 'robots', collection_mode: 'static', collector_version: 'fixture', content_sha256: null, error: null },
         declared_access: { source: 'robots.txt', posture: 'permissive', provider_purpose: [], indexing_directives: { x_robots_tag: [], meta_robots: [] }, interpretation_boundary: 'Fixture boundary.' },
-        machine_evidence: { title: 'Example', description: null, h1: 'Example', canonical_href: null, meta_robots: [], html_lang: null, open_graph: { title: null, site_name: null, url: null }, schema: [] },
+        machine_evidence: { title: 'Example', description: null, h1: 'Example', canonical_href: null, meta_robots: [], html_lang: null, open_graph: { title: null, site_name: null, url: null }, page_metrics: { static_text_characters: 7, link_count: 0 }, schema: [] },
         assessment: {
           methodology: 'Automated Entity Clarity v2.1 pilot',
           methodology_status: 'experimental',
@@ -78,6 +78,17 @@ function mockExternalFetch() {
           score: 14,
           comparable: true,
           coverage: { measured: 5, total: 5, percent: 100 },
+          content_adequacy: {
+            status: 'limited',
+            passed: 1,
+            total: 3,
+            checks: [
+              { id: 'identity_anchor', label: 'Identity anchor', passed: true, observed: true, threshold: true },
+              { id: 'static_body_text', label: 'Static body text', passed: false, observed: 7, threshold: 500 },
+              { id: 'navigable_links', label: 'Navigable links', passed: false, observed: 0, threshold: 5 }
+            ],
+            interpretation_boundary: 'Fixture adequacy does not alter the score.'
+          },
           dimensions: Object.fromEntries([
             ['identity_resolution', 'Identity resolution', 25, 10],
             ['entity_consistency', 'Entity consistency', 25, 0],
@@ -376,6 +387,7 @@ describe('ADS, audit, cache, and registry', () => {
     expect(payload.declared_access.posture).toBe('permissive');
     expect(payload.assessment.score).toBe(14);
     expect(payload.assessment.assessment_mode).toBe('automated_deterministic');
+    expect(payload.assessment.content_adequacy.status).toBe('limited');
     expect(payload.model_representation.status).toBe('not_tested');
 
     const schemaResponse = await req('/schemas/entity-clarity-evidence-v2');

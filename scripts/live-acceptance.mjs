@@ -40,7 +40,14 @@ ok((await raw('/mcp', { method: 'OPTIONS', headers: { origin: 'https://evil.exam
 ok((await raw('/?cb=' + Date.now())).response.headers.get('cache-control')?.includes('no-cache'), 'root discovery no-cache');
 ok((await raw('/api/ai-jobs-signal')).json?.mode === 'benchmark', 'ADS benchmark only');
 const auditOk = await raw('/audit/run?url=https%3A%2F%2Fexample.com');
-ok(auditOk.response.status < 500 && auditOk.contentType.includes('application/json'), 'audit valid controlled HTTPS target returns JSON without server error');
+ok(
+  auditOk.response.status === 200
+    && auditOk.json?.methodology === 'Entity Clarity evidence v2.1-pilot'
+    && auditOk.json?.assessment?.assessment_mode === 'automated_deterministic'
+    && typeof auditOk.json?.assessment?.score === 'number'
+    && ['adequate', 'limited'].includes(auditOk.json?.assessment?.content_adequacy?.status),
+  'audit returns automated Entity Clarity v2.1 with static-content adequacy'
+);
 ok((await raw('/audit/run?url=http%3A%2F%2Flocalhost')).response.status >= 400, 'audit rejects invalid target');
 const powerLens = await raw('/power-lens?query=NVDA');
 ok(powerLens.json?.found === true && powerLens.json?.match?.canonical_entity === 'NVIDIA' && powerLens.json?.reality_gap?.reality_gap === -3, 'Power Lens resolves ticker with deterministic Reality Gap evidence');
