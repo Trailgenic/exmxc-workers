@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://mcp.exmxc.ai/schemas/entity-clarity-evidence-v2",
-  "title": "Entity Clarity Evidence v2 Pilot Response",
+  "title": "Automated Entity Clarity Evidence v2.1 Pilot Response",
   "type": "object",
   "required": ["success", "methodology", "run_id", "url", "collection", "robots", "declared_access", "machine_evidence", "assessment", "model_representation", "legacy_diagnostic", "timestamp"],
   "properties": {
     "success": { "const": true },
-    "methodology": { "const": "Entity Clarity evidence v2.0-pilot" },
+    "methodology": { "const": "Entity Clarity evidence v2.1-pilot" },
     "run_id": { "type": "string", "format": "uuid" },
     "url": { "type": "string", "format": "uri" },
     "hostname": { "type": "string" },
@@ -59,64 +59,69 @@
     "machine_evidence": { "type": ["object", "null"] },
     "assessment": {
       "type": "object",
-      "required": ["methodology", "methodology_status", "score_meaning", "review_provenance", "coverage", "comparable", "score", "dimensions", "checks"],
+      "required": ["methodology", "methodology_status", "assessment_mode", "status", "score_meaning", "score", "comparable", "coverage", "dimensions", "evidence_basis"],
       "properties": {
-        "methodology": { "const": "Entity Clarity v2 pilot" },
+        "methodology": { "const": "Automated Entity Clarity v2.1 pilot" },
         "methodology_status": { "const": "experimental" },
+        "assessment_mode": { "const": "automated_deterministic" },
+        "status": { "enum": ["scored", "unassessable"] },
         "score_meaning": { "type": "string" },
-        "review_provenance": {
-          "type": "object",
-          "required": ["entity_id", "target_url", "reviewer_id", "reviewed_at", "complete"],
-          "properties": {
-            "entity_id": { "type": ["string", "null"] },
-            "target_url": { "type": ["string", "null"], "format": "uri" },
-            "reviewer_id": { "type": ["string", "null"] },
-            "reviewed_at": { "type": ["string", "null"], "format": "date-time" },
-            "complete": { "type": "boolean" }
-          },
-          "additionalProperties": false
-        },
+        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "comparable": { "type": "boolean" },
         "coverage": {
           "type": "object",
-          "required": ["assessed", "total", "percent"],
+          "required": ["measured", "total", "percent"],
           "properties": {
-            "assessed": { "type": "integer", "minimum": 0, "maximum": 9 },
-            "total": { "const": 9 },
+            "measured": { "type": "integer", "minimum": 0, "maximum": 5 },
+            "total": { "const": 5 },
             "percent": { "type": "number", "minimum": 0, "maximum": 100 }
           },
           "additionalProperties": false
         },
-        "comparable": { "type": "boolean" },
-        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
         "dimensions": {
           "type": "object",
-          "required": ["identity", "consistency", "evidence"],
+          "required": ["identity_resolution", "entity_consistency", "relationship_clarity", "evidence_traceability", "machine_legibility"],
           "properties": {
-            "identity": { "$ref": "#/$defs/dimensionSummary" },
-            "consistency": { "$ref": "#/$defs/dimensionSummary" },
-            "evidence": { "$ref": "#/$defs/dimensionSummary" }
+            "identity_resolution": { "$ref": "#/$defs/dimensionSummary" },
+            "entity_consistency": { "$ref": "#/$defs/dimensionSummary" },
+            "relationship_clarity": { "$ref": "#/$defs/dimensionSummary" },
+            "evidence_traceability": { "$ref": "#/$defs/dimensionSummary" },
+            "machine_legibility": { "$ref": "#/$defs/dimensionSummary" }
           },
           "additionalProperties": false
         },
-        "checks": {
-          "type": "array",
-          "minItems": 9,
-          "maxItems": 9,
-          "items": { "$ref": "#/$defs/assessmentCheck" }
+        "evidence_basis": {
+          "type": "object",
+          "required": ["collection_status", "surface", "mode"],
+          "properties": {
+            "collection_status": { "type": "string" },
+            "surface": { "const": "homepage" },
+            "mode": { "const": "static" },
+            "content_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+            "note": { "type": "string" },
+            "limitations": { "type": "string" }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false,
       "allOf": [
         {
-          "if": { "properties": { "comparable": { "const": true } }, "required": ["comparable"] },
+          "if": { "properties": { "status": { "const": "scored" } }, "required": ["status"] },
           "then": {
             "properties": {
               "score": { "type": "number" },
-              "coverage": { "properties": { "assessed": { "const": 9 }, "percent": { "const": 100 } } },
-              "review_provenance": { "properties": { "complete": { "const": true } } }
+              "comparable": { "const": true },
+              "coverage": { "properties": { "measured": { "const": 5 }, "percent": { "const": 100 } } }
             }
           },
-          "else": { "properties": { "score": { "const": null } } }
+          "else": {
+            "properties": {
+              "score": { "const": null },
+              "comparable": { "const": false },
+              "coverage": { "properties": { "measured": { "const": 0 }, "percent": { "const": 0 } } }
+            }
+          }
         }
       ]
     },
@@ -137,40 +142,32 @@
   "$defs": {
     "dimensionSummary": {
       "type": "object",
-      "required": ["assessed", "eligible", "complete", "score"],
+      "required": ["label", "weight", "status", "score", "weighted_points", "max_points", "signals"],
       "properties": {
-        "assessed": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "eligible": { "type": "integer", "minimum": 0, "maximum": 3 },
-        "complete": { "type": "boolean" },
-        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }
+        "label": { "type": "string" },
+        "weight": { "type": "number", "minimum": 0, "maximum": 100 },
+        "status": { "enum": ["measured", "unassessable"] },
+        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "weighted_points": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "max_points": { "type": "number", "minimum": 0, "maximum": 100 },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "status", "points", "max", "evidence"],
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "status": { "enum": ["present", "absent"] },
+              "points": { "type": "number", "minimum": 0, "maximum": 100 },
+              "max": { "type": "number", "minimum": 0, "maximum": 100 },
+              "evidence": {}
+            },
+            "additionalProperties": false
+          }
+        }
       },
       "additionalProperties": false
-    },
-    "assessmentCheck": {
-      "type": "object",
-      "required": ["id", "dimension", "label", "status", "points", "rationale", "evidence"],
-      "properties": {
-        "id": { "type": "string" },
-        "dimension": { "enum": ["identity", "consistency", "evidence"] },
-        "label": { "type": "string" },
-        "status": { "enum": ["assessed", "unassessable", "not_applicable"] },
-        "points": { "type": ["integer", "null"], "minimum": 0, "maximum": 2 },
-        "rationale": { "type": "string" },
-        "evidence": { "type": "array", "items": {} }
-      },
-      "additionalProperties": false,
-      "allOf": [
-        {
-          "if": { "properties": { "status": { "const": "assessed" } }, "required": ["status"] },
-          "then": {
-            "properties": {
-              "points": { "type": "integer", "minimum": 0, "maximum": 2 },
-              "evidence": { "minItems": 1 }
-            }
-          },
-          "else": { "properties": { "points": { "const": null } } }
-        }
-      ]
     },
     "fetchObservation": {
       "type": "object",

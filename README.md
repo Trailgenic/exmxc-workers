@@ -13,7 +13,7 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.10.0`
+- Build version: `2.11.0`
 - Stable build date / `last_updated`: `2026-09-02`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
@@ -179,7 +179,7 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /schemas/eci-observation`
 - `GET /schemas/eci-release`
 - `GET /schemas/entity-clarity-evidence-v2`
-  - Pilot response contract separating delivery, declared access, review coverage, model-test status, and legacy diagnostics
+  - Automated pilot contract separating delivery, declared access, five-dimension Entity Clarity, model-test status, and legacy diagnostics
 - `GET /analysis/ai_power/top?limit=10`
   - Top AI Power Index records sorted by `ai_power_index`
 - `GET /power-lens?query=NVDA`
@@ -189,7 +189,8 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
   - Source: `schema/power_lens.schema.json`
 - `GET /audit/run?url=https://exmxc.ai`
   - Collects website delivery and declared provider-purpose access evidence for a public HTTPS URL
-  - Returns an uncompleted nine-check Entity Clarity v2 review template and labels the prior EEI score as a legacy website diagnostic
+  - Returns a deterministic five-dimension Entity Clarity v2.1 score when usable static HTML is delivered and labels the prior EEI score as a legacy website diagnostic
+  - Leaves failed, restricted, or unsupported collection unscored; no human review is required
   - Does not report independent model representation unless a separate recorded model test exists
 - `GET /schema`
   - Source: `schema/schema.json`

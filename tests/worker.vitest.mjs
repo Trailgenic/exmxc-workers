@@ -61,24 +61,40 @@ function mockExternalFetch() {
     if (url.includes('exmxc-audit.vercel.app')) {
       return new Response(JSON.stringify({
         success: true,
-        methodology: 'Entity Clarity evidence v2.0-pilot',
+        methodology: 'Entity Clarity evidence v2.1-pilot',
         run_id: '00000000-0000-4000-8000-000000000000',
         url: 'https://example.com/',
         hostname: 'example.com',
         collection: { requested_url: 'https://example.com/', final_url: 'https://example.com/', fetch_status: 'delivered', http_status: 200, content_type: 'text/html', surface_type: 'homepage', collection_mode: 'static', collector_version: 'fixture', content_sha256: null, x_robots_tag: [], redirects: [], error: null },
         robots: { requested_url: 'https://example.com/robots.txt', final_url: 'https://example.com/robots.txt', fetch_status: 'not_found', document_status: 'unavailable', http_status: 404, surface_type: 'robots', collection_mode: 'static', collector_version: 'fixture', content_sha256: null, error: null },
         declared_access: { source: 'robots.txt', posture: 'permissive', provider_purpose: [], indexing_directives: { x_robots_tag: [], meta_robots: [] }, interpretation_boundary: 'Fixture boundary.' },
-        machine_evidence: null,
+        machine_evidence: { title: 'Example', description: null, h1: 'Example', canonical_href: null, meta_robots: [], html_lang: null, open_graph: { title: null, site_name: null, url: null }, schema: [] },
         assessment: {
-          methodology: 'Entity Clarity v2 pilot', methodology_status: 'experimental', score_meaning: 'Fixture.',
-          review_provenance: { entity_id: null, target_url: null, reviewer_id: null, reviewed_at: null, complete: false },
-          coverage: { assessed: 0, total: 9, percent: 0 }, comparable: false, score: null,
-          dimensions: Object.fromEntries(['identity', 'consistency', 'evidence'].map((dimension) => [dimension, { assessed: 0, eligible: 3, complete: false, score: null }])),
-          checks: [
-            ['entity_domain_resolution', 'identity'], ['institutional_scope', 'identity'], ['entity_relationships', 'identity'],
-            ['material_claim_consistency', 'consistency'], ['canonical_structured_consistency', 'consistency'], ['official_record_consistency', 'consistency'],
-            ['claim_traceability', 'evidence'], ['source_provenance', 'evidence'], ['independent_corroboration', 'evidence']
-          ].map(([id, dimension]) => ({ id, dimension, label: id, status: 'unassessable', points: null, rationale: 'Requires reviewed evidence.', evidence: [] }))
+          methodology: 'Automated Entity Clarity v2.1 pilot',
+          methodology_status: 'experimental',
+          assessment_mode: 'automated_deterministic',
+          status: 'scored',
+          score_meaning: 'Structural identity clarity observed in delivered static HTML.',
+          score: 14,
+          comparable: true,
+          coverage: { measured: 5, total: 5, percent: 100 },
+          dimensions: Object.fromEntries([
+            ['identity_resolution', 'Identity resolution', 25, 10],
+            ['entity_consistency', 'Entity consistency', 25, 0],
+            ['relationship_clarity', 'Relationship clarity', 15, 0],
+            ['evidence_traceability', 'Evidence traceability', 15, 0],
+            ['machine_legibility', 'Machine legibility', 20, 4]
+          ].map(([id, label, weight, points]) => [id, {
+            label, weight, status: 'measured', score: 100 * points / weight,
+            weighted_points: points, max_points: weight,
+            signals: [{ id: `${id}_fixture`, label: `${label} fixture`, status: points ? 'present' : 'absent', points, max: weight, evidence: points ? 'fixture' : null }]
+          }])),
+          evidence_basis: {
+            collection_status: 'delivered',
+            surface: 'homepage',
+            mode: 'static',
+            limitations: 'Fixture evidence.'
+          }
         },
         model_representation: { status: 'not_tested', results: [], note: 'Fixture.' },
         legacy_diagnostic: null,
@@ -320,14 +336,14 @@ describe('resources', () => {
 });
 
 describe('ADS, audit, cache, and registry', () => {
-  it('locks the uncollected Entity Clarity v2 pilot panel without inventing domains or observations', () => {
+  it('locks the uncollected Entity Clarity v2 pilot panel and repeat-collection sample', () => {
     expect(pilotPanel.entities).toHaveLength(50);
     expect(new Set(pilotPanel.entities.map((entity) => entity.entity_id)).size).toBe(50);
     expect(new Set(pilotPanel.entities.map((entity) => entity.industry)).size).toBe(10);
     const registryIds = new Set(DATASETS.entity_registry.data.entities.map((entity) => entity.entity_id));
     expect(pilotPanel.entities.every((entity) => registryIds.has(entity.entity_id))).toBe(true);
-    expect(pilotPanel.entities.filter((entity) => entity.double_review)).toHaveLength(20);
-    expect(pilotPanel.entities.every((entity) => entity.target_url === null && entity.review_status === 'not_started')).toBe(true);
+    expect(pilotPanel.entities.filter((entity) => entity.repeat_collection)).toHaveLength(20);
+    expect(pilotPanel.entities.every((entity) => entity.target_url === null && entity.collection_status === 'not_started')).toBe(true);
     for (const industry of new Set(pilotPanel.entities.map((entity) => entity.industry))) {
       const rows = pilotPanel.entities.filter((entity) => entity.industry === industry);
       expect(rows.filter((entity) => entity.legacy_posture_stratum === 'Open')).toHaveLength(2);
@@ -355,16 +371,17 @@ describe('ADS, audit, cache, and registry', () => {
     expect(ok.status).toBe(200);
     const payload = await ok.json();
     expect(payload.success).toBe(true);
-    expect(payload.methodology).toBe('Entity Clarity evidence v2.0-pilot');
+    expect(payload.methodology).toBe('Entity Clarity evidence v2.1-pilot');
     expect(payload.collection.fetch_status).toBe('delivered');
     expect(payload.declared_access.posture).toBe('permissive');
-    expect(payload.assessment.score).toBeNull();
+    expect(payload.assessment.score).toBe(14);
+    expect(payload.assessment.assessment_mode).toBe('automated_deterministic');
     expect(payload.model_representation.status).toBe('not_tested');
 
     const schemaResponse = await req('/schemas/entity-clarity-evidence-v2');
     expect(schemaResponse.status).toBe(200);
     const schema = await schemaResponse.json();
-    expect(schema.title).toBe('Entity Clarity Evidence v2 Pilot Response');
+    expect(schema.title).toBe('Automated Entity Clarity Evidence v2.1 Pilot Response');
     expect(schema.required).toContain('declared_access');
     const validate = new Ajv2020({ strict: false, validateFormats: false }).compile(schema);
     expect(validate(payload), JSON.stringify(validate.errors)).toBe(true);
