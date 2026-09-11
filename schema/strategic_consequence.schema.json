@@ -2,12 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://mcp.exmxc.ai/schemas/strategic-consequence",
   "title": "exmxc Strategic Consequence Engine Response",
-  "description": "Response contract for deterministic, relative scenario-exposure analysis across the bundled exmxc AI Power universe.",
+  "description": "Response contract for an experimental deterministic scenario model pinned to the bundled legacy v1 weighted exposure universe. It does not use AI Power v2 judgments.",
   "type": "object",
   "required": [
     "product",
     "version",
     "methodology_version",
+    "model_status",
+    "compatibility_boundary",
     "generated_at",
     "mode",
     "scenario",
@@ -31,6 +33,12 @@
       "type": "string"
     },
     "methodology_version": {
+      "type": "string"
+    },
+    "model_status": {
+      "const": "experimental_legacy_v1"
+    },
+    "compatibility_boundary": {
       "type": "string"
     },
     "generated_at": {

@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.12.0`
-- Stable build date / `last_updated`: `2026-09-02`
+- Build version: `2.13.0`
+- Stable build date / `last_updated`: `2026-09-11`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -82,6 +82,8 @@ Callable JSON tools from `DATA_TOOLS`:
 - `ex.datasets.index.get`
 - `ex.ai_power_index.get`
 - `ex.four_forces.get`
+- `ex.ai_power.profiles.get`
+- `ex.power_lens.v2.get`
 - `ex.entity_in_a_box.get`
 - `ex.power_lens.get`
 - `ex.reality_gap.get`
@@ -93,6 +95,8 @@ Callable JSON tools from `DATA_TOOLS`:
 
 Content links from `CONTENT_LINKS`:
 
+- `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
+- `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index/methodology`
 - `ex.framework.get` — `https://exmxc.ai/frameworks`
 - `ex.signal.get` — `https://exmxc.ai/signal-briefs`
 - `ex.lexicon.get` — `https://exmxc.ai/lexicon`
@@ -109,16 +113,16 @@ The Webflow Power Lens page loads `GET /webmcp-power-lens.js` after exposing its
 existing search and render workflow through `window.exmxcPowerLens`. Compatible
 browsers discover two page-scoped tools:
 
-- `run_exmxc_power_lens` — resolves one supported company or ticker through the
-  existing deterministic Power Lens workflow and renders the normal Power Card.
+- `run_exmxc_power_lens` — resolves one v2 pilot company or ticker and renders
+  its evidence-backed profile or explicit unknown state.
 - `get_exmxc_power_lens_result` — reads the Power Card currently visible on the
   page without changing state.
 
 The browser layer does not create a second scoring model. The Worker remains the
-source of truth for the AI Power Index, Four Forces weights (Compute 30%,
-Interface 25%, Alignment 25%, Energy 20%), evidence coverage, provenance, and
-disclaimer. The page tools do not use live market data, place trades, or provide
-investment advice.
+source of truth for the scoped mechanism, four anchored judgments or unknowns,
+evidence, confidence, and release metadata. Power Lens v2 produces no composite
+score or universal rank. The page tools do not use live market data, place
+trades, or provide investment advice.
 
 Verify the browser contract with:
 
@@ -140,11 +144,18 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /datasets`
   - Generated dataset index
 - `GET /datasets/ai_power_index`
-  - Source: `data/ai_power_index_dataset_v1.json`
+  - Source: `data/ai_power_index_dataset_v1.json`; labeled legacy v1 compatibility output
 - `GET /datasets/ai_power_index/schema`
   - Source: `schema/ai_power_index.schema.json`
 - `GET /datasets/four_forces`
-  - Source: `data/four_forces_dataset_v1.json`
+  - Source: `data/four_forces_dataset_v1.json`; labeled legacy v1 compatibility output
+- `GET /datasets/ai_power_methodology_v2`
+  - Versioned definition, Four Forces domains, ordinal anchors, evidence rules, confidence, and cadence
+- `GET /datasets/ai_power_profiles_v2?query=NVDA`
+  - 20-company pilot release with scoped profiles, explicit collection coverage, and no universal composite
+- `GET /schemas/ai-power-methodology-v2`
+- `GET /schemas/ai-power-profile-v2`
+- `GET /schemas/ai-power-source-manifest-v2`
 - `GET /datasets/entity_in_a_box_v1`
   - Source: `data/entity_in_a_box_v1.json`
 - `GET /datasets/entity_in_a_box`
@@ -162,7 +173,7 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
   - Six canonical counterfactuals with force deltas, scarcity adjustments, causal chains, bottlenecks, assumptions, and validation signals
 - `GET /strategic-consequence?scenario=power_binding_constraint&query=NVDA`
   - Required filter: `scenario`; optional filters: `query`, `limit`
-  - Returns deterministic relative advantage and pressure across the 84-entity AI Power universe, a company-specific result when requested, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals
+  - Returns experimental relative advantage and pressure across the 84-entity legacy v1 exposure universe; it does not use AI Power v2 profiles
 - `GET /schemas/strategic-consequence`
   - Source: `schema/strategic_consequence.schema.json`
 - `GET /datasets/entity_registry`
@@ -181,12 +192,16 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /schemas/entity-clarity-evidence-v2`
   - Automated pilot contract separating delivery, declared access, five-dimension Entity Clarity, static-content adequacy, model-test status, and legacy diagnostics
 - `GET /analysis/ai_power/top?limit=10`
-  - Top AI Power Index records sorted by `ai_power_index`
+  - Labeled legacy v1 weighted exposure ranking retained for compatibility
 - `GET /power-lens?query=NVDA`
-  - Resolves a supported company name, alias, or ticker against the bundled 84-entity AI Power universe
-  - Returns a deterministic Power Card with AI Power Index rank, Four Forces exposure, available Entity Clarity, sPEG, and AI Reality Gap evidence, explicit coverage gaps, and provenance
+  - Labeled legacy v1 compatibility view
+- `GET /power-lens/v2?query=NVDA`
+  - Resolves a company in the 20-profile pilot and returns its mechanism, four anchored judgments or explicit unknowns, evidence, confidence, and release metadata
+  - Never emits an AI Power composite, percentile, or universal rank
 - `GET /schemas/power-lens`
-  - Source: `schema/power_lens.schema.json`
+  - Legacy v1 response schema
+- `GET /schemas/power-lens-v2`
+  - Source: `schema/power_lens_v2.schema.json`
 - `GET /audit/run?url=https://exmxc.ai`
   - Collects website delivery and declared provider-purpose access evidence for a public HTTPS URL
   - Returns a deterministic five-dimension Entity Clarity v2.1 score when usable static HTML is delivered and labels the prior EEI score as a legacy website diagnostic
@@ -244,7 +259,7 @@ sPEG record example using the row-level `date` field:
 
 The active sPEG snapshot uses disclosed user-supplied July 16 closing prices and forward fiscal EPS ranges. It is a proxy dataset rather than licensed point-in-time NTM consensus data. The prior February snapshot is preserved at `data/speg_index_2026-02-13.json`.
 
-AI Power Index record shape:
+Legacy AI Power v1 weighted exposure record shape (historical compatibility only):
 
 ```json
 {
@@ -256,6 +271,8 @@ AI Power Index record shape:
   "ai_power_index": 8.6
 }
 ```
+
+AI Power v2 does not convert this total. Its current staging release uses a 20-company `entity–mechanism–market–time` cohort, four anchored judgments or explicit unknowns, and no composite or universal rank. See `docs/ai-power-v2-operations.md` for the evidence workflow and release gates.
 
 AI Reality Gap record example:
 
@@ -274,7 +291,7 @@ AI Reality Gap record example:
 
 Reality Gap uses `AI Capability Score - AI Narrative Score`. Positive values mean observed capability leads narrative; negative values mean narrative leads the evidence currently visible. V1 scores only ten companies from dated official disclosures and never imputes a score outside that ledger.
 
-Strategic Consequence Engine V1 accepts one of six versioned counterfactuals: inference-cost collapse, power as the binding constraint, frontier-model commoditization, agent interface control, tighter advanced-AI export controls, or capability-gap consolidation. It computes a raw structural-impact score from Four Forces exposure, a matched sPEG scarcity-layer adjustment when available, and a bounded Reality Gap modifier when available. Raw scores are min-max normalized within the complete bundled universe to produce a relative 0–100 scenario advantage score. The score is conditional on the selected scenario and is not a probability or expected return.
+Strategic Consequence Engine V1 is an experimental legacy model accepting one of six versioned counterfactuals. It remains pinned to the v1 Four Forces weighted exposure scaffold and does not use AI Power v2 judgments. Its relative 0–100 scenario exposure score is conditional on the selected scenario and is not a probability or expected return.
 
 ## AI jobs signal endpoint
 
@@ -371,9 +388,9 @@ workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker ref
 
 exmxc exposes a REST/JSON intelligence API plus an MCP server using Streamable HTTP on Cloudflare Workers. Tool and resource inventories are generated from `lib/registry.js`; public REST aliases and bundled dataset payloads are preserved.
 
-### Power Lens + AI Reality Gap V1
+### Legacy Power Lens v1 + AI Reality Gap V1
 
-`GET /power-lens?query=...` and `ex.power_lens.get` share one deterministic implementation. Power Lens resolves only the bundled AI Power universe and never invents a score for an unsupported entity. Reality Gap V1 activates claim-to-capability evidence for ten companies; all other Power Lens results remain explicitly `not_scored`. `GET /reality-gap` and `ex.reality_gap.get` expose the benchmark, filters, weights, five-point scoring anchors, rounding policy, classifications, confidence policy, and dated official-source evidence.
+`GET /power-lens?query=...` and `ex.power_lens.get` preserve the historical v1 weighted exposure view and are explicitly labeled legacy. The current evidence-profile surface is `GET /power-lens/v2?query=...` and `ex.power_lens.v2.get`; it returns scoped judgments or unknowns without a composite or universal rank. Reality Gap V1 remains a separate evidence ledger.
 
 ### Strategic Consequence Engine V1
 

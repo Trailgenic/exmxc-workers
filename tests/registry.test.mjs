@@ -8,11 +8,19 @@ import {
   realityGapClassification,
   strategicConsequenceClassification
 } from '../lib/queries.js';
+import { AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
+import { assembleVerifiedProfile, recordFailedProfileAttempt, validateSourceManifest } from '../lib/ai-power-pipeline.js';
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/index'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://content/index'));
 assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.power_lens.get'));
+assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.power_lens.v2.get'));
+assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.ai_power.profiles.get'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/ai_power_profiles_v2'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/ai_power_methodology_v2'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://schemas/ai_power_profile_v2'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://schemas/ai_power_source_manifest_v2'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://schemas/power_lens'));
 assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.reality_gap.get'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/reality_gap_index'));
@@ -37,6 +45,80 @@ assert.equal(DATASETS.entity_clarity_latest_release.data.registry_entity_count, 
 assert.equal(DATASETS.speg.data.metadata.as_of_date, '2026-07-16');
 assert.equal(DATASETS.speg.data.metadata.snapshot_type, 'forward_fiscal_eps_proxy');
 assert.equal(DATASETS.speg.data.rows.length, 25);
+assert.equal(AI_POWER_V2_RELEASE.profiles.length, 20);
+assert.deepEqual(validateAiPowerReleaseSemantics(AI_POWER_V2_RELEASE), { ok: true, errors: [] });
+assert.equal(deriveAiPowerSummaryState(AI_POWER_V2_RELEASE.profiles[0]), 'insufficient_evidence');
+const syntheticCriteria = [
+  ['control', 2],
+  ['substitution_constraint', 2],
+  ['realized_leverage', 2],
+  ['durability', 2]
+].map(([id, grade]) => ({ id, grade, anchor_label: 'Fixture anchor', confidence: 'moderate', rationale: 'Fixture rationale.', evidence_refs: ['evidence-fixture-a', 'evidence-fixture-b'], inference: null, counterevidence: [], unknown_reason: null }));
+const syntheticProfile = {
+  ...AI_POWER_V2_RELEASE.profiles[0],
+  mechanism: { ...AI_POWER_V2_RELEASE.profiles[0].mechanism, stage: 'operational' },
+  assessment: { status: 'complete', summary_state: 'durable_demonstrated_leverage', prospective: false, criteria: syntheticCriteria, strongest_dependency: 'Fixture dependency.', invalidation_condition: 'Fixture invalidation.', overall_confidence: 'moderate' }
+};
+assert.equal(deriveAiPowerSummaryState(syntheticProfile), 'durable_demonstrated_leverage');
+assert.equal(deriveAiPowerSummaryState({ ...syntheticProfile, mechanism: { ...syntheticProfile.mechanism, stage: 'announced' } }), 'structural_potential');
+assert.equal(deriveAiPowerSummaryState({ ...syntheticProfile, assessment: { ...syntheticProfile.assessment, criteria: syntheticCriteria.map((criterion) => criterion.id === 'control' ? { ...criterion, grade: 1 } : criterion) } }), 'power_not_established');
+const invalidLimitedGrade = structuredClone(AI_POWER_V2_RELEASE);
+invalidLimitedGrade.profiles[0].assessment = {
+  status: 'partial',
+  summary_state: 'insufficient_evidence',
+  prospective: true,
+  criteria: syntheticCriteria.map((criterion) => ({ ...criterion, grade: criterion.id === 'control' ? 2 : null, confidence: 'limited', anchor_label: criterion.id === 'control' ? 'Fixture anchor' : null, evidence_refs: [], unknown_reason: criterion.id === 'control' ? null : 'Fixture unknown.' })),
+  strongest_dependency: null,
+  invalidation_condition: null,
+  overall_confidence: 'limited'
+};
+assert.ok(validateAiPowerReleaseSemantics(invalidLimitedGrade).errors.some((error) => error.includes('limited confidence requires an unknown grade')));
+const pipelineProfile = AI_POWER_V2_RELEASE.profiles[0];
+const sourceManifest = {
+  entity_id: pipelineProfile.entity.id,
+  sources: [
+    { id: 'source-a', url: 'https://example.com/a', publisher: 'Example issuer', source_type: 'company_statement', document_title: 'Issuer disclosure', published_at: '2026-09-01T00:00:00Z', origin_id: 'issuer-a' },
+    { id: 'source-b', url: 'https://example.org/b', publisher: 'Example researcher', source_type: 'independent_research', document_title: 'Independent corroboration', published_at: '2026-09-02T00:00:00Z', origin_id: 'research-b' }
+  ]
+};
+assert.deepEqual(validateSourceManifest(pipelineProfile, sourceManifest), { ok: true, errors: [] });
+const pipelineDocuments = sourceManifest.sources.map((source, index) => ({
+  ...source,
+  final_url: source.url,
+  content_type: 'text/html',
+  sha256: String(index + 1).repeat(64),
+  text: index === 0 ? 'Issuer evidence supports the scoped control mechanism.' : 'Independent evidence corroborates the substitution constraint.',
+  truncated: false,
+  collection_status: 'delivered',
+  collection_error: null,
+  retrieved_at: '2026-09-11T12:00:00Z'
+}));
+const pipelineVerified = {
+  mechanism: { relationship: 'controls', stage: 'operational', scope: 'Fixture market and period.' },
+  claims: [
+    { id: 'claim-a', source_id: 'source-a', assertion: 'Fixture issuer claim.', locator: 'fixture-a', extract: 'Issuer evidence supports the scoped control mechanism.', valid_from: '2026-09-01T00:00:00Z', valid_through: null, last_substantive_verification_at: '2026-09-11T12:00:00Z', claim_type: 'fact', criterion_ids: ['control', 'realized_leverage'], supports_anchor: true, counterevidence: [], freshness: 'current', verification: { status: 'verified', entity_match: true, scope_match: true, date_checked: true, contradiction_status: 'none_found' } },
+    { id: 'claim-b', source_id: 'source-b', assertion: 'Fixture corroborating claim.', locator: 'fixture-b', extract: 'Independent evidence corroborates the substitution constraint.', valid_from: '2026-09-02T00:00:00Z', valid_through: null, last_substantive_verification_at: '2026-09-11T12:00:00Z', claim_type: 'fact', criterion_ids: ['substitution_constraint', 'durability'], supports_anchor: true, counterevidence: [], freshness: 'current', verification: { status: 'verified', entity_match: true, scope_match: true, date_checked: true, contradiction_status: 'none_found' } }
+  ],
+  proposed_criteria: syntheticCriteria.map((criterion) => ({
+    ...criterion,
+    claim_ids: ['control', 'realized_leverage'].includes(criterion.id) ? ['claim-a'] : ['claim-b']
+  })),
+  strongest_dependency: 'Fixture dependency.',
+  invalidation_condition: 'A viable substitute becomes available.'
+};
+const assembledPipelineRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, pipelineVerified, '2026-09-11T12:00:00Z');
+assert.equal(assembledPipelineRelease.profiles[0].assessment.summary_state, 'durable_demonstrated_leverage');
+assert.equal(assembledPipelineRelease.coverage.attempted, 1);
+assert.equal(assembledPipelineRelease.coverage.complete, 1);
+assert.equal(assembledPipelineRelease.coverage.not_started, 19);
+assert.deepEqual(validateAiPowerReleaseSemantics(assembledPipelineRelease), { ok: true, errors: [] });
+const failedPipelineRelease = recordFailedProfileAttempt(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, 2, '2026-09-11T12:00:00Z', 'Automated fixture abstention.', 'partial');
+assert.equal(failedPipelineRelease.profiles[0].collection.attempted, true);
+assert.equal(failedPipelineRelease.profiles[0].collection.status, 'partial');
+assert.equal(failedPipelineRelease.profiles[0].assessment.status, 'insufficient_evidence');
+assert.equal(failedPipelineRelease.coverage.attempted, 1);
+assert.equal(failedPipelineRelease.coverage.unassessed, 19);
+assert.deepEqual(validateAiPowerReleaseSemantics(failedPipelineRelease), { ok: true, errors: [] });
 for (const row of DATASETS.speg.data.rows) {
   const y1 = row.forward_eps_year_1.midpoint * (row.normalization_factor_native_per_usd ?? 1);
   const expectedPe = row.price / y1;

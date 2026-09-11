@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/ai-power-profile/v2",
+  "title": "AI Power Index v2 Profile Release",
+  "$defs": {
+    "force": { "enum": ["compute", "interface", "alignment", "energy"] },
+    "criterion": {
+      "type": "object",
+      "required": ["id", "grade", "anchor_label", "confidence", "rationale", "evidence_refs", "inference", "counterevidence", "unknown_reason"],
+      "properties": {
+        "id": { "enum": ["control", "substitution_constraint", "realized_leverage", "durability"] },
+        "grade": { "type": ["integer", "null"], "minimum": 0, "maximum": 3 },
+        "anchor_label": { "type": ["string", "null"] },
+        "confidence": { "enum": ["high", "moderate", "limited"] },
+        "rationale": { "type": "string" },
+        "evidence_refs": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "inference": { "type": ["string", "null"] },
+        "counterevidence": { "type": "array", "items": { "type": "string" } },
+        "unknown_reason": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["id", "assertion", "entity_id", "source", "observation", "locator", "extract", "source_snapshot_sha256", "claim_type", "criterion_ids", "supports_anchor", "counterevidence", "freshness", "verification"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^evidence-" },
+        "assertion": { "type": "string", "minLength": 1 },
+        "entity_id": { "type": "string", "pattern": "^company-" },
+        "source": {
+          "type": "object",
+          "required": ["url", "publisher", "source_type", "document_title", "published_at", "retrieved_at", "origin_id"],
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "publisher": { "type": "string", "minLength": 1 },
+            "source_type": { "enum": ["filing", "executed_agreement", "regulator", "procurement", "operating_disclosure", "technical_documentation", "company_statement", "counterparty_statement", "independent_research"] },
+            "document_title": { "type": "string", "minLength": 1 },
+            "published_at": { "type": ["string", "null"], "format": "date-time" },
+            "retrieved_at": { "type": "string", "format": "date-time" },
+            "origin_id": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        },
+        "observation": { "type": "object", "required": ["valid_from", "valid_through", "last_substantive_verification_at"], "properties": { "valid_from": { "type": ["string", "null"], "format": "date-time" }, "valid_through": { "type": ["string", "null"], "format": "date-time" }, "last_substantive_verification_at": { "type": ["string", "null"], "format": "date-time" } }, "additionalProperties": false },
+        "locator": { "type": "string", "minLength": 1 },
+        "extract": { "type": "string", "minLength": 1 },
+        "source_snapshot_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "claim_type": { "enum": ["fact", "analytical_inference"] },
+        "criterion_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["control", "substitution_constraint", "realized_leverage", "durability"] } },
+        "supports_anchor": { "type": "boolean" },
+        "counterevidence": { "type": "array", "items": { "type": "string" } },
+        "freshness": { "enum": ["current", "stale", "historical", "unknown"] },
+        "verification": { "type": "object", "required": ["status", "entity_match", "scope_match", "date_checked", "contradiction_status"], "properties": { "status": { "enum": ["verified", "failed", "pending"] }, "entity_match": { "type": "boolean" }, "scope_match": { "type": "boolean" }, "date_checked": { "type": "boolean" }, "contradiction_status": { "enum": ["none_found", "resolved", "unresolved", "not_checked"] } }, "additionalProperties": false }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["dataset", "release_id", "release_status", "framework_version", "methodology_version", "schema_version", "evidence_cutoff_at", "assessed_at", "published_at", "pipeline", "coverage", "profiles", "evidence", "change_log", "limitations"],
+  "properties": {
+    "dataset": { "const": "ai_power_profiles_v2" },
+    "release_id": { "type": "string", "pattern": "^ai-power-v2" },
+    "release_status": { "enum": ["staging", "published", "superseded", "withdrawn"] },
+    "framework_version": { "type": "string" },
+    "methodology_version": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "evidence_cutoff_at": { "type": ["string", "null"], "format": "date-time" },
+    "assessed_at": { "type": ["string", "null"], "format": "date-time" },
+    "published_at": { "type": ["string", "null"], "format": "date-time" },
+    "pipeline": {
+      "type": "object",
+      "required": ["pipeline_version", "scoring_mode", "model_extraction_version", "model_verification_version", "source_snapshot_hashes_required"],
+      "properties": {
+        "pipeline_version": { "type": "string", "minLength": 1 },
+        "scoring_mode": { "const": "evidence_packet_then_deterministic_summary" },
+        "model_extraction_version": { "type": ["string", "null"] },
+        "model_verification_version": { "type": ["string", "null"] },
+        "source_snapshot_hashes_required": { "const": true }
+      },
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["legacy_registry_entities", "pilot_candidates", "attempted", "complete", "partial", "not_started", "unassessed", "disclosure_bias_warning"],
+      "properties": {
+        "legacy_registry_entities": { "type": "integer", "minimum": 0 },
+        "pilot_candidates": { "type": "integer", "minimum": 1 },
+        "attempted": { "type": "integer", "minimum": 0 },
+        "complete": { "type": "integer", "minimum": 0 },
+        "partial": { "type": "integer", "minimum": 0 },
+        "not_started": { "type": "integer", "minimum": 0 },
+        "unassessed": { "type": "integer", "minimum": 0 },
+        "disclosure_bias_warning": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["entity", "mechanism", "collection", "assessment", "evidence_refs"],
+        "properties": {
+          "entity": {
+            "type": "object",
+            "required": ["id", "name", "aliases", "ticker", "type", "coverage_group", "parent_id"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^company-" },
+              "name": { "type": "string", "minLength": 1 },
+              "aliases": { "type": "array", "items": { "type": "string" } },
+              "ticker": { "type": ["string", "null"] },
+              "type": { "const": "company" },
+              "coverage_group": { "enum": ["chips_manufacturing_memory", "cloud_ecosystems", "model_developers", "distribution_workflows", "energy_enabling_infrastructure"] },
+              "parent_id": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          },
+          "mechanism": {
+            "type": "object",
+            "required": ["id", "title", "primary_force", "secondary_forces", "relationship", "stage", "scope", "selection_basis"],
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string", "minLength": 1 },
+              "primary_force": { "$ref": "#/$defs/force" },
+              "secondary_forces": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/force" } },
+              "relationship": { "enum": ["controls", "depends_on", "both", "no_material_role", "unknown"] },
+              "stage": { "enum": ["operational", "contracted", "announced", "proposed", "unverified"] },
+              "scope": { "type": "string", "minLength": 1 },
+              "selection_basis": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          },
+          "collection": {
+            "type": "object",
+            "required": ["attempted", "status", "attempted_at", "source_documents", "targeted_followups", "reason"],
+            "properties": {
+              "attempted": { "type": "boolean" },
+              "status": { "enum": ["not_started", "complete", "partial", "failed"] },
+              "attempted_at": { "type": ["string", "null"], "format": "date-time" },
+              "source_documents": { "type": "integer", "minimum": 0, "maximum": 8 },
+              "targeted_followups": { "type": "integer", "minimum": 0, "maximum": 2 },
+              "reason": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "assessment": {
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "object",
+                "required": ["status", "summary_state", "prospective", "criteria", "strongest_dependency", "invalidation_condition", "overall_confidence"],
+                "properties": {
+                  "status": { "enum": ["complete", "partial", "insufficient_evidence"] },
+                  "summary_state": { "enum": ["insufficient_evidence", "power_not_established", "structural_potential", "demonstrated_leverage", "durable_demonstrated_leverage"] },
+                  "prospective": { "type": "boolean" },
+                  "criteria": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/criterion" } },
+                  "strongest_dependency": { "type": ["string", "null"] },
+                  "invalidation_condition": { "type": ["string", "null"] },
+                  "overall_confidence": { "enum": ["high", "moderate", "limited"] }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "evidence_refs": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "change_log": { "type": "array", "items": { "type": "object", "required": ["type", "date", "summary"], "properties": { "type": { "enum": ["methodology_change", "economic_change", "evidence_discovery", "correction", "cohort_change"] }, "date": { "type": "string", "format": "date" }, "summary": { "type": "string" } }, "additionalProperties": false } },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -1,7 +1,7 @@
 {
   "dataset": "power_lens_aliases_v1",
   "version": "1.0",
-  "description": "Deterministic aliases for resolving AI Power universe entities by common company name or public-market ticker. Aliases identify entities only and do not provide market data.",
+  "description": "Deterministic aliases for resolving legacy v1 weighted exposure entities by common company name or public-market ticker. Aliases identify entities only and do not provide market data.",
   "entities": {
     "NVIDIA": ["NVDA", "Nvidia Corporation"],
     "AMD": ["Advanced Micro Devices"],

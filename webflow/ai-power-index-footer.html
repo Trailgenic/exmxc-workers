@@ -1,0 +1,70 @@
+<style>
+  .api-root { max-width: 980px; margin: 0 auto; padding: 64px 40px 90px; box-sizing: border-box; }
+  .api-hero { padding-bottom: 38px; border-bottom: .5px solid var(--ex-border-gold); }
+  .api-title { font-family: var(--ex-font-display); font-size: clamp(2.55rem, 6vw, 4.8rem); line-height: .98; letter-spacing: -.04em; font-weight: 400; color: #fff; margin: 14px 0 22px; }
+  .api-title em { color: var(--ex-lavender); font-style: normal; }
+  .api-deck { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: 1.08rem; line-height: 1.7; max-width: 760px; }
+  .api-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .api-btn { display: inline-block; font-family: var(--ex-font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: 12px 16px; border: .5px solid var(--ex-lavender); color: var(--ex-lavender); }
+  .api-btn--solid { background: var(--ex-lavender); color: var(--ex-bg); }
+  .api-section { margin-top: 48px; }
+  .api-section h2 { font-family: var(--ex-font-display); color: #fff; font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 400; letter-spacing: -.02em; margin: 0 0 18px; }
+  .api-section p, .api-section li { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: 1rem; line-height: 1.7; }
+  .api-definition { border-left: 2px solid var(--ex-lavender); padding: 3px 0 3px 22px; font-family: var(--ex-font-display); color: #fff; font-size: 1.45rem; line-height: 1.45; }
+  .api-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .api-card { padding: 22px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
+  .api-card h3 { font-family: var(--ex-font-mono); font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; color: var(--ex-gold); margin: 0 0 12px; }
+  .api-card p { margin: 0; font-size: .92rem; }
+  .api-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 20px; }
+  .api-stat { padding: 20px; border: .5px solid var(--ex-border); }
+  .api-stat-label { font-family: var(--ex-font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ex-text-muted); }
+  .api-stat-value { font-family: var(--ex-font-display); color: #fff; font-size: 2rem; margin-top: 8px; }
+  .api-boundary { margin-top: 48px; padding: 20px; border: .5px solid var(--ex-border-gold); color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .92rem; line-height: 1.65; }
+  @media (max-width: 800px) { .api-grid, .api-status { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .api-root { padding: 48px 22px 68px; } .api-grid, .api-status { grid-template-columns: 1fr; } }
+</style>
+<main class="api-root">
+  <header class="api-hero">
+    <div class="ex-label">Power · v2.0 Pilot</div>
+    <h1 class="api-title">AI power is control over a <em>consequential dependency.</em></h1>
+    <p class="api-deck">The AI Power Index studies what an entity can decide or enforce, whether counterparties can replace it, whether leverage produces observable outcomes, and what could weaken that position. It separates power from AI spending, adoption, visibility, and exposure.</p>
+    <div class="api-actions">
+      <a class="api-btn api-btn--solid" href="/power-lens">Read a profile</a>
+      <a class="api-btn" href="/ai-power-index/methodology">Read methodology</a>
+      <a class="api-btn" href="https://mcp.exmxc.ai/datasets/ai_power_profiles_v2" target="_blank" rel="noopener">Machine-readable release</a>
+    </div>
+  </header>
+
+  <section class="api-section">
+    <h2>The construct</h2>
+    <div class="api-definition">AI power is an entity’s sustained ability to influence access, terms, deployment, or the distribution of value in an AI-relevant market by controlling a dependency that counterparties cannot readily replace or bypass.</div>
+  </section>
+
+  <section class="api-section">
+    <h2>Four judgments</h2>
+    <div class="api-grid">
+      <article class="api-card"><h3>Control</h3><p>What can the entity decide or enforce?</p></article>
+      <article class="api-card"><h3>Substitution</h3><p>How difficult is it to replace or bypass the dependency now?</p></article>
+      <article class="api-card"><h3>Realized leverage</h3><p>Is control producing observable terms, commitments, or economics?</p></article>
+      <article class="api-card"><h3>Durability</h3><p>What supports persistence over the next 24 months?</p></article>
+    </div>
+  </section>
+
+  <section class="api-section">
+    <h2>Where power operates</h2>
+    <p>Compute, Interface, Alignment, and Energy remain the Four Forces. They identify the domain of a control mechanism; they are not four numerical hurdles every company must maximize. Alignment is operationalized here as governance and permission control.</p>
+  </section>
+
+  <section class="api-section">
+    <h2>Pilot release status</h2>
+    <p>The current staging release declares 20 company scopes across chips, cloud, model development, distribution, and energy infrastructure. Evidence collection has not yet run, so the profiles abstain. This is a visible boundary, not a neutral score.</p>
+    <div class="api-status">
+      <div class="api-stat"><div class="api-stat-label">Pilot candidates</div><div class="api-stat-value">20</div></div>
+      <div class="api-stat"><div class="api-stat-label">Composite scores</div><div class="api-stat-value">0</div></div>
+      <div class="api-stat"><div class="api-stat-label">Universal ranks</div><div class="api-stat-value">0</div></div>
+      <div class="api-stat"><div class="api-stat-label">Refresh</div><div class="api-stat-value">Quarterly</div></div>
+    </div>
+  </section>
+
+  <div class="api-boundary">The v1 weighted exposure model is retained only as a labeled historical scaffold. v2 does not convert its scores, continue its rank history, or feed its judgments into the legacy Strategic Consequence Engine. AI Power profiles are analytical research, not probabilities, valuations, or investment recommendations.</div>
+</main>

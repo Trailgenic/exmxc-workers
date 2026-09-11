@@ -18,7 +18,7 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.12.0
+- Version: 2.13.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
 
 ## Tools
@@ -26,13 +26,15 @@ node scripts/build-registry-packet.mjs
 - ex.entities.get — Get Entity Intelligence Records: Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring.
 - ex.speg.get — Get sPEG Valuation Records: Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies.
 - ex.datasets.index.get — Get Dataset Index: Retrieve index of all bundled datasets available through the exmxc MCP server.
-- ex.ai_power_index.get — Get AI Power Index Dataset: Global AI ecosystem ranking dataset measuring compute, interface, alignment, and energy influence.
-- ex.four_forces.get — Get Four Forces Exposure Dataset: Four Forces exposure scaffold for AI Power universe entities across compute, interface, alignment, and energy.
+- ex.ai_power_index.get — Get Legacy AI Power Exposure Scaffold: Historical weighted exposure scaffold retained for compatibility; not a current AI Power v2 judgment.
+- ex.four_forces.get — Get Legacy Four Forces Exposure Dataset: Historical v1 exposure scaffold retained for compatibility.
+- ex.ai_power.profiles.get — Get AI Power v2 Evidence Profiles: Return versioned entity–mechanism–market–time profiles with anchored judgments or explicit unknowns and no universal composite.
+- ex.power_lens.v2.get — Read an AI Power v2 Evidence Profile: Resolve a pilot company and return its scoped mechanism, evidence, confidence, and release metadata without a rank.
 - ex.entity_in_a_box.get — Get Entity-in-a-Box Ontology: System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers.
-- ex.power_lens.get — Generate an exmxc Power Lens Card: Resolve a supported company name or ticker and synthesize its AI Power Index, Four Forces exposures, Entity Clarity record, available scarcity snapshot, coverage, and provenance.
+- ex.power_lens.get — Generate a Legacy Power Lens v1 Card: Historical v1 weighted exposure view; not a current evidence-backed measurement of company power.
 - ex.reality_gap.get — Get AI Reality Gap Scores: Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence.
-- ex.strategic_consequence.get — Run a Strategic Consequence Scenario: Propagate one canonical counterfactual through the bundled Four Forces, AI Power, scarcity, and available Reality Gap layers. Returns conditional first-order advantage and pressure, second-order consequences, bottlenecks, assumptions, and confirming or invalidating signals.
-- ex.ai_power.analysis.top — Get Top AI Power Index Entities: Retrieve top-ranked entities from the AI Power Index ranking.
+- ex.strategic_consequence.get — Run a Legacy Experimental Strategic Consequence Scenario: Experimental scenario engine pinned to the legacy v1 exposure scaffold; not an AI Power v2 output.
+- ex.ai_power.analysis.top — Get Legacy AI Power v1 Ranking: Historical weighted exposure ranking retained for compatibility.
 - ex.eei.audit.run — Collect Entity Clarity Evidence: Collect page delivery, declared provider-purpose access policy, machine-readable identity evidence, a deterministic five-dimension Entity Clarity v2.1 score when assessable, a separate static-content adequacy flag, and a clearly labeled legacy website diagnostic for one public HTTPS URL.
 - ex.convergence.latest — Get Latest Convergence Read: Retrieve the most recent weekly read of the AI Infrastructure Convergence Framework — overall status, count of categories in breach, per-signal state (Latent/Watch/Breach/Pending), and exit posture. Derived reference layer; not investment advice.
 - ex.convergence.log — Get Convergence Monitor Log: Retrieve the longitudinal weekly log of convergence reads — each entry time-stamping status, breach count, categories breached, per-signal state, and posture. Optional limit returns the most recent N entries (newest first). Derived reference layer; not investment advice.
@@ -64,5 +66,5 @@ node scripts/build-registry-packet.mjs
 - Ready-to-paste entry:
 
 ```markdown
-- [exmxc](https://exmxc.ai) — institutional intelligence MCP server (sPEG valuation, entity intelligence, AI Power Index). Remote: https://mcp.exmxc.ai/mcp
+- [exmxc](https://exmxc.ai) — institutional intelligence MCP server (evidence-backed AI Power profiles, Entity Clarity, and sPEG). Remote: https://mcp.exmxc.ai/mcp
 ```

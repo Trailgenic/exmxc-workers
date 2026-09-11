@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/power-lens/v2",
+  "title": "exmxc Power Lens v2 Response",
+  "type": "object",
+  "required": ["product", "version", "query", "found", "release", "match", "profile", "evidence", "methodology", "coverage", "suggestions", "disclaimer"],
+  "properties": {
+    "product": { "const": "exmxc Power Lens" },
+    "version": { "const": "2.0-pilot" },
+    "query": { "type": "string" },
+    "found": { "type": "boolean" },
+    "release": { "type": "object" },
+    "match": { "type": ["object", "null"] },
+    "profile": { "type": ["object", "null"] },
+    "evidence": { "type": "array" },
+    "methodology": { "type": ["object", "null"] },
+    "coverage": { "type": "object" },
+    "suggestions": { "type": "array", "items": { "type": "string" } },
+    "disclaimer": { "type": "string" }
+  },
+  "additionalProperties": false
+}
