@@ -59,7 +59,7 @@
     "machine_evidence": { "type": ["object", "null"] },
     "assessment": {
       "type": "object",
-      "required": ["methodology", "methodology_status", "assessment_mode", "status", "score_meaning", "score", "comparable", "coverage", "dimensions", "evidence_basis"],
+      "required": ["methodology", "methodology_status", "assessment_mode", "status", "score_meaning", "score", "comparable", "coverage", "content_adequacy", "dimensions", "evidence_basis"],
       "properties": {
         "methodology": { "const": "Automated Entity Clarity v2.1 pilot" },
         "methodology_status": { "const": "experimental" },
@@ -78,6 +78,7 @@
           },
           "additionalProperties": false
         },
+        "content_adequacy": { "$ref": "#/$defs/contentAdequacy" },
         "dimensions": {
           "type": "object",
           "required": ["identity_resolution", "entity_consistency", "relationship_clarity", "evidence_traceability", "machine_legibility"],
@@ -112,14 +113,16 @@
             "properties": {
               "score": { "type": "number" },
               "comparable": { "const": true },
-              "coverage": { "properties": { "measured": { "const": 5 }, "percent": { "const": 100 } } }
+              "coverage": { "properties": { "measured": { "const": 5 }, "percent": { "const": 100 } } },
+              "content_adequacy": { "properties": { "status": { "enum": ["adequate", "limited"] } } }
             }
           },
           "else": {
             "properties": {
               "score": { "const": null },
               "comparable": { "const": false },
-              "coverage": { "properties": { "measured": { "const": 0 }, "percent": { "const": 0 } } }
+              "coverage": { "properties": { "measured": { "const": 0 }, "percent": { "const": 0 } } },
+              "content_adequacy": { "properties": { "status": { "const": "unassessable" } } }
             }
           }
         }
@@ -140,6 +143,49 @@
     "timestamp": { "type": "string", "format": "date-time" }
   },
   "$defs": {
+    "contentAdequacy": {
+      "type": "object",
+      "required": ["status", "passed", "total", "checks", "interpretation_boundary"],
+      "properties": {
+        "status": { "enum": ["adequate", "limited", "unassessable"] },
+        "passed": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "total": { "const": 3 },
+        "checks": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "passed", "observed", "threshold"],
+            "properties": {
+              "id": { "enum": ["identity_anchor", "static_body_text", "navigable_links"] },
+              "label": { "type": "string" },
+              "passed": { "type": "boolean" },
+              "observed": { "type": ["boolean", "number"] },
+              "threshold": { "type": ["boolean", "number"] }
+            },
+            "additionalProperties": false
+          }
+        },
+        "interpretation_boundary": { "type": "string" }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "unassessable" } }, "required": ["status"] },
+          "then": {
+            "properties": {
+              "passed": { "const": 0 },
+              "checks": { "maxItems": 0 }
+            }
+          },
+          "else": {
+            "properties": {
+              "checks": { "minItems": 3, "maxItems": 3 }
+            }
+          }
+        }
+      ]
+    },
     "dimensionSummary": {
       "type": "object",
       "required": ["label", "weight", "status", "score", "weighted_points", "max_points", "signals"],
