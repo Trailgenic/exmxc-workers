@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-asml",
+  "sources": [
+    {
+      "id": "asml-euv-product-platform",
+      "url": "https://www.asml.com/en/products/euv-lithography-systems",
+      "publisher": "ASML",
+      "source_type": "technical_documentation",
+      "document_title": "EUV lithography systems",
+      "published_at": null,
+      "origin_id": "asml-euv-product-platform"
+    },
+    {
+      "id": "asml-q2-2026-results",
+      "url": "https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results",
+      "publisher": "ASML",
+      "source_type": "operating_disclosure",
+      "document_title": "ASML reports Q2 2026 financial results",
+      "published_at": "2026-07-15T00:00:00Z",
+      "origin_id": "asml-q2-2026-results"
+    },
+    {
+      "id": "asml-2025-annual-report-index",
+      "url": "https://www.asml.com/en/investors/annual-report",
+      "publisher": "ASML",
+      "source_type": "filing",
+      "document_title": "ASML 2025 Annual Report index and highlights",
+      "published_at": null,
+      "origin_id": "asml-2025-annual-report"
+    }
+  ]
+}
