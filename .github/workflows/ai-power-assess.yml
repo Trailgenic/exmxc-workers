@@ -77,7 +77,9 @@ jobs:
         if: inputs.assessment_scope == 'cohort'
         run: |
           mkdir -p artifacts
-          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-candidate.json
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-attempt-a.json
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-attempt-b.json
+          node scripts/reconcile-ai-power-v2.mjs artifacts/ai-power-v2-cohort-attempt-a.json artifacts/ai-power-v2-cohort-attempt-b.json > artifacts/ai-power-v2-cohort-consensus.json
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AI_POWER_MODEL: ${{ inputs.model }}
