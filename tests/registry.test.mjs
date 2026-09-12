@@ -151,6 +151,13 @@ assert.equal(shapeHardenedRelease.evidence[1].observation.valid_from, '2026-09-0
 assert.equal(shapeHardenedRelease.evidence[1].observation.valid_through, null);
 assert.deepEqual(shapeHardenedRelease.profiles[0].assessment.criteria[0].counterevidence, ['A normalized criterion counterpoint.']);
 assert.deepEqual(validateAiPowerReleaseSemantics(shapeHardenedRelease), { ok: true, errors: [] });
+const contextualOnlyFixture = structuredClone(pipelineVerified);
+contextualOnlyFixture.claims = contextualOnlyFixture.claims.map((claim) => ({ ...claim, supports_anchor: false }));
+const contextualOnlyRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, contextualOnlyFixture, '2026-09-11T12:00:00Z');
+assert.equal(contextualOnlyRelease.evidence.length, 2);
+assert.equal(contextualOnlyRelease.profiles[0].assessment.status, 'insufficient_evidence');
+assert.ok(contextualOnlyRelease.profiles[0].assessment.criteria.every((criterion) => criterion.grade === null));
+assert.deepEqual(validateAiPowerReleaseSemantics(contextualOnlyRelease), { ok: true, errors: [] });
 const failedPipelineRelease = recordFailedProfileAttempt(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, 2, '2026-09-11T12:00:00Z', 'Automated fixture abstention.', 'partial');
 assert.equal(failedPipelineRelease.profiles[0].collection.attempted, true);
 assert.equal(failedPipelineRelease.profiles[0].collection.status, 'partial');
