@@ -8,8 +8,9 @@ import {
   realityGapClassification,
   strategicConsequenceClassification
 } from '../lib/queries.js';
-import { AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
+import { AI_POWER_V2_METHODOLOGY, AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
 import { assembleVerifiedProfile, callOpenAIJson, recordFailedProfileAttempt, validateSourceManifest } from '../lib/ai-power-pipeline.js';
+import { buildRepeatConsensus } from '../lib/ai-power-consensus.js';
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/index'));
@@ -132,6 +133,19 @@ assert.equal(assembledPipelineRelease.coverage.attempted, 1);
 assert.equal(assembledPipelineRelease.coverage.complete, 1);
 assert.equal(assembledPipelineRelease.coverage.not_started, 19);
 assert.deepEqual(validateAiPowerReleaseSemantics(assembledPipelineRelease), { ok: true, errors: [] });
+const repeatedConsensusRelease = buildRepeatConsensus(assembledPipelineRelease, structuredClone(assembledPipelineRelease), '2026-09-11T13:00:00Z');
+assert.equal(repeatedConsensusRelease.pipeline.pipeline_version, 'ai-power-pipeline-v2.1.0-repeat-consensus');
+assert.equal(repeatedConsensusRelease.profiles[0].assessment.status, 'complete');
+assert.equal(repeatedConsensusRelease.evidence.length, 2);
+assert.deepEqual(validateAiPowerReleaseSemantics(repeatedConsensusRelease), { ok: true, errors: [] });
+const disagreementRelease = structuredClone(assembledPipelineRelease);
+disagreementRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').grade = 1;
+disagreementRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').anchor_label = AI_POWER_V2_METHODOLOGY.criteria.find((criterion) => criterion.id === 'realized_leverage').anchors.find((anchor) => anchor.grade === 1).label;
+disagreementRelease.profiles[0].assessment.summary_state = deriveAiPowerSummaryState(disagreementRelease.profiles[0]);
+const disagreementConsensus = buildRepeatConsensus(assembledPipelineRelease, disagreementRelease, '2026-09-11T13:00:00Z');
+assert.equal(disagreementConsensus.profiles[0].assessment.status, 'partial');
+assert.equal(disagreementConsensus.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').grade, null);
+assert.match(disagreementConsensus.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').unknown_reason, /did not agree/);
 const malformedShapeFixture = structuredClone(pipelineVerified);
 malformedShapeFixture.claims.push({
   ...malformedShapeFixture.claims[0],

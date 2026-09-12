@@ -10,6 +10,7 @@
     "validate:json": "node scripts/validate-json.mjs",
     "validate:ai-power": "node scripts/validate-json.mjs",
     "assess:ai-power": "node scripts/assess-ai-power-v2.mjs",
+    "reconcile:ai-power": "node scripts/reconcile-ai-power-v2.mjs",
     "validate:webflow": "node scripts/check-webflow.mjs",
     "verify:webmcp": "node scripts/verify-webmcp-power-lens.mjs",
     "registry:check": "node scripts/check-registry-packet.mjs",
