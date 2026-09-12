@@ -308,7 +308,9 @@ The ADS signal route requires an Anthropic Worker secret binding:
 wrangler secret put ANTHROPIC_API_KEY
 ```
 
-Do not place `ANTHROPIC_API_KEY` in `wrangler.jsonc`, source files, or documentation beyond the binding name.
+Do not place `ANTHROPIC_API_KEY` in `wrangler.jsonc` or source files.
+
+The separate manual AI Power assessment workflow requires `OPENAI_API_KEY` as a GitHub Actions repository secret. Do not place that value in source files, workflow inputs, logs, or configuration files.
 
 ## Wrangler configuration
 
