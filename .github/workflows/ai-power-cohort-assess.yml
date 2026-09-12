@@ -32,14 +32,14 @@ jobs:
           npm test
           npm run test:workers
           npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests --dry-run
-      - name: Require retrievable cohort sources before model calls
+      - name: Capture and validate one immutable cohort source snapshot
         run: |
           mkdir -p artifacts
-          node scripts/check-ai-power-sources.mjs --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-source-preflight.json
+          node scripts/snapshot-ai-power-sources.mjs --manifest-dir data/ai_power_v2/manifests --output-dir artifacts/ai-power-v2-source-snapshots > artifacts/ai-power-v2-source-preflight.json
       - name: Generate two non-publishing Luna attempts
         run: |
-          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-attempt-a.json
-          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-attempt-b.json
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests --documents-dir artifacts/ai-power-v2-source-snapshots > artifacts/ai-power-v2-cohort-attempt-a.json
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests --documents-dir artifacts/ai-power-v2-source-snapshots > artifacts/ai-power-v2-cohort-attempt-b.json
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AI_POWER_MODEL: gpt-5.6-luna
@@ -54,7 +54,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ai-power-v2-cohort-candidate-${{ github.run_id }}
-          path: artifacts/*.json
+          path: artifacts/
           if-no-files-found: error
           retention-days: 30
-
