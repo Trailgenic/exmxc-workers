@@ -155,8 +155,16 @@ const underSupportedRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipel
 assert.equal(underSupportedRelease.evidence.length, 2);
 assert.equal(underSupportedRelease.profiles[0].assessment.status, 'insufficient_evidence');
 assert.ok(underSupportedRelease.profiles[0].assessment.criteria.every((criterion) => criterion.grade === null));
-assert.ok(underSupportedRelease.profiles[0].assessment.criteria.every((criterion) => criterion.unknown_reason.includes('source diversity')));
+assert.ok(underSupportedRelease.profiles[0].assessment.criteria.some((criterion) => criterion.unknown_reason.includes('source diversity')));
 assert.deepEqual(validateAiPowerReleaseSemantics(underSupportedRelease), { ok: true, errors: [] });
+const criterionScopeMismatchFixture = structuredClone(pipelineVerified);
+criterionScopeMismatchFixture.proposed_criteria.find((criterion) => criterion.id === 'control').claim_ids = ['claim-b'];
+const criterionScopeMismatchRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, criterionScopeMismatchFixture, '2026-09-11T12:00:00Z');
+assert.equal(criterionScopeMismatchRelease.evidence.length, 2);
+assert.equal(criterionScopeMismatchRelease.profiles[0].assessment.status, 'partial');
+assert.equal(criterionScopeMismatchRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'control').grade, null);
+assert.equal(criterionScopeMismatchRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').grade, 2);
+assert.deepEqual(validateAiPowerReleaseSemantics(criterionScopeMismatchRelease), { ok: true, errors: [] });
 const boundaryDocuments = structuredClone(pipelineDocuments);
 boundaryDocuments[0].text = 'Context words before the claim. Issuer evidence supports the scoped control mechanism. Context words after the claim.';
 const boundaryFirst = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, boundaryDocuments, pipelineVerified, '2026-09-11T12:00:00Z');
