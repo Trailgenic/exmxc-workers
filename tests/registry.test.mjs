@@ -9,7 +9,7 @@ import {
   strategicConsequenceClassification
 } from '../lib/queries.js';
 import { AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
-import { assembleVerifiedProfile, recordFailedProfileAttempt, validateSourceManifest } from '../lib/ai-power-pipeline.js';
+import { assembleVerifiedProfile, callOpenAIJson, recordFailedProfileAttempt, validateSourceManifest } from '../lib/ai-power-pipeline.js';
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/index'));
@@ -82,6 +82,26 @@ const sourceManifest = {
   ]
 };
 assert.deepEqual(validateSourceManifest(pipelineProfile, sourceManifest), { ok: true, errors: [] });
+let openAiRequest;
+const openAiTelemetry = {};
+const parsedOpenAi = await callOpenAIJson('Return a fixture object.', 'test-key', 'gpt-5.6-luna', async (url, options) => {
+  openAiRequest = { url, options, body: JSON.parse(options.body) };
+  return new Response(JSON.stringify({
+    id: 'resp_fixture',
+    usage: { input_tokens: 100, output_tokens: 20, total_tokens: 120 },
+    output: [{ type: 'message', content: [{ type: 'output_text', text: '```json\n{"fixture":true}\n```' }] }]
+  }), { status: 200, headers: { 'content-type': 'application/json' } });
+}, 'medium', openAiTelemetry);
+assert.deepEqual(parsedOpenAi, { fixture: true });
+assert.equal(openAiRequest.url, 'https://api.openai.com/v1/responses');
+assert.equal(openAiRequest.options.headers.authorization, 'Bearer test-key');
+assert.equal(openAiRequest.body.model, 'gpt-5.6-luna');
+assert.equal(openAiRequest.body.reasoning.effort, 'medium');
+assert.equal(openAiRequest.body.store, false);
+assert.deepEqual(openAiTelemetry, {
+  response_id: 'resp_fixture',
+  usage: { input_tokens: 100, output_tokens: 20, total_tokens: 120 }
+});
 const pipelineDocuments = sourceManifest.sources.map((source, index) => ({
   ...source,
   final_url: source.url,

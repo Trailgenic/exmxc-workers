@@ -4,7 +4,7 @@ import Ajv2020 from "ajv/dist/2020.js";
 import { AI_POWER_V2_RELEASE, validateAiPowerReleaseSemantics } from "../lib/ai-power-v2.js";
 import {
   assembleVerifiedProfile,
-  callAnthropicJson,
+  callOpenAIJson,
   collectEvidenceDocuments,
   extractionPrompt,
   recordFailedProfileAttempt,
@@ -66,8 +66,9 @@ if (dryRun) {
 
 const model = process.env.AI_POWER_MODEL;
 if (!model) throw new Error("AI_POWER_MODEL is required so every assessment run records an explicit model version.");
-const apiKey = process.env.ANTHROPIC_API_KEY;
-if (!apiKey) throw new Error("ANTHROPIC_API_KEY is required to run evidence extraction and verification.");
+const apiKey = process.env.OPENAI_API_KEY;
+if (!apiKey) throw new Error("OPENAI_API_KEY is required to run evidence extraction and verification.");
+const reasoningEffort = process.env.AI_POWER_REASONING_EFFORT || "medium";
 const assessedAt = new Date().toISOString();
 let candidateRelease = structuredClone(AI_POWER_V2_RELEASE);
 candidateRelease.release_id = `ai-power-v2.0-pilot-candidate-${assessedAt.slice(0, 10)}`;
@@ -75,23 +76,24 @@ const runLog = [];
 
 for (const { profile, manifest } of specs) {
   let documents = [];
+  const modelUsage = { extraction: {}, verification: {} };
   try {
     documents = (await collectEvidenceDocuments(profile, manifest)).map((document) => ({ ...document, retrieved_at: new Date().toISOString() }));
     const delivered = documents.filter((document) => document.collection_status === "delivered");
     const distinctOrigins = new Set(delivered.map((document) => document.origin_id));
     if (delivered.length === 0) throw new Error("No declared source could be collected.");
     if (distinctOrigins.size < 2) throw new Error("Fewer than two distinct evidentiary origins were collected.");
-    const extracted = await callAnthropicJson(extractionPrompt(profile, documents), apiKey, model);
-    const verified = await callAnthropicJson(verificationPrompt(profile, documents, extracted), apiKey, model);
+    const extracted = await callOpenAIJson(extractionPrompt(profile, documents), apiKey, model, fetch, reasoningEffort, modelUsage.extraction);
+    const verified = await callOpenAIJson(verificationPrompt(profile, documents, extracted), apiKey, model, fetch, reasoningEffort, modelUsage.verification);
     candidateRelease = assembleVerifiedProfile(candidateRelease, profile.entity.id, documents, verified, assessedAt);
-    runLog.push({ entity_id: profile.entity.id, status: candidateRelease.profiles.find((item) => item.entity.id === profile.entity.id).assessment.status, error: null });
+    runLog.push({ entity_id: profile.entity.id, status: candidateRelease.profiles.find((item) => item.entity.id === profile.entity.id).assessment.status, error: null, model_usage: modelUsage });
   } catch (error) {
     if (/HTTP (401|403)\b/.test(String(error?.message || error))) throw error;
     const delivered = documents.filter((document) => document.collection_status === "delivered").length;
     const collectionStatus = documents.length === 0 || delivered === 0 ? "failed" : delivered === documents.length ? "complete" : "partial";
     const reason = `Automated assessment abstained: ${String(error?.message || error)}`;
     candidateRelease = recordFailedProfileAttempt(candidateRelease, profile.entity.id, manifest.sources.length, assessedAt, reason, collectionStatus);
-    runLog.push({ entity_id: profile.entity.id, status: "insufficient_evidence", error: reason });
+    runLog.push({ entity_id: profile.entity.id, status: "insufficient_evidence", error: reason, model_usage: modelUsage });
   }
 }
 
@@ -107,6 +109,7 @@ process.stdout.write(`${JSON.stringify({
   mode: allMode ? "cohort" : "single_entity",
   writes_repository: false,
   model,
+  reasoning_effort: reasoningEffort,
   run_log: runLog,
   release: candidateRelease
 }, null, 2)}\n`);

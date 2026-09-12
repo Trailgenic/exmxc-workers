@@ -10,11 +10,11 @@ The public unit is `entity–mechanism–market–time`. A profile may publish f
 
 1. Select one pilot entity and prepare a source manifest conforming to `schema/ai_power_source_manifest_v2.schema.json`.
 2. Run the dry-run command. It validates the entity and reports the fixed document and model-call budget without network access or repository writes.
-3. Run evidence collection with an explicit `AI_POWER_MODEL` and `ANTHROPIC_API_KEY`. Remote source text is treated as untrusted data. Collection accepts only credential-free public HTTPS, follows at most five revalidated redirects, rejects private-address hosts, caps each response at 2 MB, and retains at most 32,000 normalized characters.
+3. Run evidence collection with an explicit `AI_POWER_MODEL`, `AI_POWER_REASONING_EFFORT`, and `OPENAI_API_KEY`. The pilot defaults to `gpt-5.6-luna` with Medium reasoning for cost-efficient bounded extraction and verification. The pipeline uses OpenAI's Responses API with storage disabled. Remote source text is treated as untrusted data. Collection accepts only credential-free public HTTPS, follows at most five revalidated redirects, rejects private-address hosts, caps each response at 2 MB, and retains at most 32,000 normalized characters.
 4. The first model call extracts bounded claims from the collected packet. The second independently verifies entity, scope, dates, exact extracts, and contradictions.
 5. Deterministic assembly accepts only verified exact-source extracts. A grade requires Moderate or High confidence, a canonical methodology anchor, supporting evidence, at least one current claim, two distinct evidentiary origins across the graded profile, and at least one primary source.
-6. Single-entity mode supports development and diagnosis. Cohort mode reads all 20 manifests, accumulates every result into one candidate release, and records an automatic abstention when collection or model verification fails for one entity instead of aborting the cohort.
-7. The command emits a candidate release to standard output and does not alter the repository. Applying or publishing a candidate is a separate owner-controlled release action.
+6. Single-entity mode supports development and diagnosis. The manual GitHub Actions workflow defaults to a two-entity ASML and Microsoft canary before the full cohort is enabled. Cohort mode reads all 20 manifests, accumulates every result into one candidate release, and records an automatic abstention when collection or model verification fails for one entity instead of aborting the cohort.
+7. The command emits a candidate release and per-pass token usage to standard output and does not alter the repository. Applying or publishing a candidate is a separate owner-controlled release action.
 
 Example manifest:
 
@@ -46,8 +46,8 @@ Example manifest:
 
 ```bash
 npm run assess:ai-power -- --entity company-nvidia --manifest ./source-manifest.json --dry-run
-AI_POWER_MODEL=<explicit-version> ANTHROPIC_API_KEY=<secret> npm run assess:ai-power -- --entity company-nvidia --manifest ./source-manifest.json > candidate.json
-AI_POWER_MODEL=<explicit-version> ANTHROPIC_API_KEY=<secret> npm run assess:ai-power -- --all --manifest-dir ./manifests > cohort-candidate.json
+AI_POWER_MODEL=gpt-5.6-luna AI_POWER_REASONING_EFFORT=medium OPENAI_API_KEY=<secret> npm run assess:ai-power -- --entity company-nvidia --manifest ./source-manifest.json > candidate.json
+AI_POWER_MODEL=gpt-5.6-luna AI_POWER_REASONING_EFFORT=medium OPENAI_API_KEY=<secret> npm run assess:ai-power -- --all --manifest-dir ./manifests > cohort-candidate.json
 ```
 
 Cohort manifest filenames must equal the stable entity id plus `.json`, for example `company-nvidia.json` and `company-microsoft.json`.
@@ -87,7 +87,7 @@ npm test
 npm run test:workers
 npm run verify:webmcp
 npm run validate:webflow
-npm run source:check
+npm run lint
 npm run registry:check
 npm run deploy:dry-run
 ```

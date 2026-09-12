@@ -1,0 +1,79 @@
+name: AI Power Pilot Assessment
+
+on:
+  workflow_dispatch:
+    inputs:
+      assessment_scope:
+        description: Assessment run scope
+        required: true
+        default: canary
+        type: choice
+        options:
+          - canary
+          - cohort
+      model:
+        description: Explicit OpenAI model identifier
+        required: true
+        default: gpt-5.6-luna
+        type: string
+      reasoning_effort:
+        description: Responses API reasoning effort
+        required: true
+        default: medium
+        type: choice
+        options:
+          - medium
+          - high
+
+permissions:
+  contents: read
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate repository contracts
+        run: |
+          npm run validate:ai-power
+          npm test
+      - name: Validate canary manifests without network or model calls
+        if: inputs.assessment_scope == 'canary'
+        run: |
+          npm run assess:ai-power -- --entity company-asml --manifest data/ai_power_v2/manifests/company-asml.json --dry-run
+          npm run assess:ai-power -- --entity company-microsoft --manifest data/ai_power_v2/manifests/company-microsoft.json --dry-run
+      - name: Validate cohort manifests without network or model calls
+        if: inputs.assessment_scope == 'cohort'
+        run: npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests --dry-run
+      - name: Generate non-publishing canary candidates
+        if: inputs.assessment_scope == 'canary'
+        run: |
+          mkdir -p artifacts
+          npm run assess:ai-power -- --entity company-asml --manifest data/ai_power_v2/manifests/company-asml.json > artifacts/ai-power-v2-canary-asml.json
+          npm run assess:ai-power -- --entity company-microsoft --manifest data/ai_power_v2/manifests/company-microsoft.json > artifacts/ai-power-v2-canary-microsoft.json
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AI_POWER_MODEL: ${{ inputs.model }}
+          AI_POWER_REASONING_EFFORT: ${{ inputs.reasoning_effort }}
+      - name: Generate non-publishing cohort candidate
+        if: inputs.assessment_scope == 'cohort'
+        run: |
+          mkdir -p artifacts
+          npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-candidate.json
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AI_POWER_MODEL: ${{ inputs.model }}
+          AI_POWER_REASONING_EFFORT: ${{ inputs.reasoning_effort }}
+      - name: Upload candidate for validation
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-power-v2-${{ inputs.assessment_scope }}-candidate
+          path: artifacts/*.json
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-microsoft",
+  "sources": [
+    {
+      "id": "microsoft-2025-annual-report",
+      "url": "https://www.microsoft.com/investor/reports/ar25/index.html",
+      "publisher": "Microsoft",
+      "source_type": "filing",
+      "document_title": "Microsoft Annual Report 2025",
+      "published_at": null,
+      "origin_id": "microsoft-2025-annual-report"
+    },
+    {
+      "id": "microsoft-fy2026-q4-results",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "publisher": "Microsoft",
+      "source_type": "operating_disclosure",
+      "document_title": "Microsoft FY2026 Q4 earnings release",
+      "published_at": "2026-07-29T00:00:00Z",
+      "origin_id": "microsoft-fy2026-q4-results"
+    },
+    {
+      "id": "microsoft-investor-ai-disclosures",
+      "url": "https://www.microsoft.com/en-us/investor/default",
+      "publisher": "Microsoft",
+      "source_type": "company_statement",
+      "document_title": "Microsoft Investor Relations current disclosures",
+      "published_at": null,
+      "origin_id": "microsoft-investor-current-disclosures"
+    }
+  ]
+}
