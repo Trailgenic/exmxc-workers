@@ -15,6 +15,6 @@ for (const file of files) {
   if (/WebMCP\s+(?:endpoint|transport)/i.test(text)) {
     throw new Error(`WebMCP must not be described as the server transport in ${file}`);
   }
-  if (/ANTHROPIC_API_KEY\s*=|ADS_SIGNAL_KEY\s*=/.test(text)) throw new Error(`Secret assignment found in ${file}`);
+  if (/OPENAI_API_KEY\s*=|ANTHROPIC_API_KEY\s*=|ADS_SIGNAL_KEY\s*=/.test(text)) throw new Error(`Secret assignment found in ${file}`);
 }
 console.log(`checked ${files.length} source files`);
