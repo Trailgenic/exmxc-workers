@@ -1,0 +1,10 @@
+{
+  "run_id": "ai-power-v2.0-pilot-cohort-2026-09-12",
+  "authorized_at": "2026-09-12T00:00:00Z",
+  "scope": "20-entity-pilot",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "independent_attempts": 2,
+  "purpose": "artifact-only evidence extraction, verification, and repeat-run consensus",
+  "publishes": false
+}
