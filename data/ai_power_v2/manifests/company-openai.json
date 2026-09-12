@@ -2,13 +2,13 @@
   "entity_id": "company-openai",
   "sources": [
     {
-      "id": "openai-microsoft-partnership",
-      "url": "https://openai.com/index/continuing-microsoft-partnership/",
-      "publisher": "OpenAI",
-      "source_type": "company_statement",
-      "document_title": "Joint Statement from OpenAI and Microsoft",
+      "id": "microsoft-openai-model-documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure",
+      "publisher": "Microsoft",
+      "source_type": "technical_documentation",
+      "document_title": "Foundry Models Sold Directly by Azure",
       "published_at": null,
-      "origin_id": "openai-microsoft-partnership"
+      "origin_id": "microsoft-openai-model-documentation"
     },
     {
       "id": "microsoft-openai-partnership",
@@ -20,13 +20,13 @@
       "origin_id": "microsoft-openai-partnership"
     },
     {
-      "id": "openai-stargate-project",
-      "url": "https://openai.com/index/announcing-the-stargate-project/",
-      "publisher": "OpenAI",
-      "source_type": "company_statement",
-      "document_title": "Announcing The Stargate Project",
-      "published_at": "2025-01-21T00:00:00Z",
-      "origin_id": "openai-stargate-project"
+      "id": "microsoft-openai-extended-partnership",
+      "url": "https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/",
+      "publisher": "Microsoft",
+      "source_type": "counterparty_statement",
+      "document_title": "Microsoft and OpenAI Extend Partnership",
+      "published_at": "2023-01-23T00:00:00Z",
+      "origin_id": "microsoft-openai-extended-partnership"
     }
   ]
 }

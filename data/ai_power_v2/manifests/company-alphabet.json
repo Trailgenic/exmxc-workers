@@ -2,13 +2,13 @@
   "entity_id": "company-alphabet",
   "sources": [
     {
-      "id": "alphabet-2025-form-10k",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
-      "publisher": "U.S. Securities and Exchange Commission",
-      "source_type": "filing",
-      "document_title": "Alphabet 2025 Form 10-K",
+      "id": "google-ai-updates",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/",
+      "publisher": "Google",
+      "source_type": "company_statement",
+      "document_title": "Google AI News and Updates",
       "published_at": null,
-      "origin_id": "alphabet-2025-form-10k"
+      "origin_id": "google-ai-updates"
     },
     {
       "id": "alphabet-june-2026-presentation",
@@ -20,13 +20,13 @@
       "origin_id": "alphabet-june-2026-presentation"
     },
     {
-      "id": "google-gemini-enterprise-platform",
-      "url": "https://cloud.google.com/products/gemini-enterprise-agent-platform",
-      "publisher": "Google Cloud",
+      "id": "google-deepmind-gemini",
+      "url": "https://deepmind.google/models/gemini/",
+      "publisher": "Google DeepMind",
       "source_type": "technical_documentation",
-      "document_title": "Gemini Enterprise Agent Platform",
+      "document_title": "Gemini Model Portfolio",
       "published_at": null,
-      "origin_id": "google-gemini-enterprise-platform"
+      "origin_id": "google-deepmind-gemini"
     }
   ]
 }
