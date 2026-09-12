@@ -9,7 +9,7 @@ import {
   strategicConsequenceClassification
 } from '../lib/queries.js';
 import { AI_POWER_V2_METHODOLOGY, AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
-import { assembleVerifiedProfile, callOpenAIJson, recordFailedProfileAttempt, validateSourceManifest } from '../lib/ai-power-pipeline.js';
+import { assembleVerifiedProfile, callOpenAIJson, recordFailedProfileAttempt, validateEvidenceDocumentSnapshot, validateSourceManifest } from '../lib/ai-power-pipeline.js';
 import { buildRepeatConsensus } from '../lib/ai-power-consensus.js';
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
@@ -114,6 +114,17 @@ const pipelineDocuments = sourceManifest.sources.map((source, index) => ({
   collection_error: null,
   retrieved_at: '2026-09-11T12:00:00Z'
 }));
+const sourceSnapshotFixture = {
+  snapshot_version: 'ai-power-source-snapshot-v1',
+  entity_id: pipelineProfile.entity.id,
+  captured_at: '2026-09-11T12:00:00Z',
+  manifest_sha256: 'f'.repeat(64),
+  documents: pipelineDocuments
+};
+assert.deepEqual(validateEvidenceDocumentSnapshot(pipelineProfile, sourceManifest, sourceSnapshotFixture), { ok: true, errors: [] });
+const tamperedSourceSnapshot = structuredClone(sourceSnapshotFixture);
+tamperedSourceSnapshot.documents[0].origin_id = 'undeclared-origin';
+assert.ok(validateEvidenceDocumentSnapshot(pipelineProfile, sourceManifest, tamperedSourceSnapshot).errors.some((error) => error.includes('origin_id differs')));
 const pipelineVerified = {
   mechanism: { relationship: 'controls', stage: 'operational', scope: 'Fixture market and period.' },
   claims: [
@@ -138,6 +149,39 @@ assert.equal(repeatedConsensusRelease.pipeline.pipeline_version, 'ai-power-pipel
 assert.equal(repeatedConsensusRelease.profiles[0].assessment.status, 'complete');
 assert.equal(repeatedConsensusRelease.evidence.length, 2);
 assert.deepEqual(validateAiPowerReleaseSemantics(repeatedConsensusRelease), { ok: true, errors: [] });
+const underSupportedFixture = structuredClone(pipelineVerified);
+underSupportedFixture.proposed_criteria = underSupportedFixture.proposed_criteria.map((criterion) => ({ ...criterion, claim_ids: ['claim-a'] }));
+const underSupportedRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, underSupportedFixture, '2026-09-11T12:00:00Z');
+assert.equal(underSupportedRelease.evidence.length, 2);
+assert.equal(underSupportedRelease.profiles[0].assessment.status, 'insufficient_evidence');
+assert.ok(underSupportedRelease.profiles[0].assessment.criteria.every((criterion) => criterion.grade === null));
+assert.ok(underSupportedRelease.profiles[0].assessment.criteria.every((criterion) => criterion.unknown_reason.includes('source diversity')));
+assert.deepEqual(validateAiPowerReleaseSemantics(underSupportedRelease), { ok: true, errors: [] });
+const boundaryDocuments = structuredClone(pipelineDocuments);
+boundaryDocuments[0].text = 'Context words before the claim. Issuer evidence supports the scoped control mechanism. Context words after the claim.';
+const boundaryFirst = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, boundaryDocuments, pipelineVerified, '2026-09-11T12:00:00Z');
+const boundaryVerified = structuredClone(pipelineVerified);
+boundaryVerified.claims[0].extract = 'Context words before the claim. Issuer evidence supports the scoped control mechanism.';
+const boundarySecond = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, boundaryDocuments, boundaryVerified, '2026-09-11T12:05:00Z');
+assert.notEqual(boundaryFirst.evidence[0].id, boundarySecond.evidence[0].id);
+const boundaryConsensus = buildRepeatConsensus(boundaryFirst, boundarySecond, '2026-09-11T13:00:00Z');
+assert.equal(boundaryConsensus.evidence.length, 2);
+assert.equal(boundaryConsensus.profiles[0].assessment.status, 'complete');
+assert.deepEqual(validateAiPowerReleaseSemantics(boundaryConsensus), { ok: true, errors: [] });
+const differentClaimRelease = structuredClone(boundarySecond);
+const differentEvidence = differentClaimRelease.evidence.find((item) => item.source.origin_id === 'issuer-a');
+const priorDifferentId = differentEvidence.id;
+differentEvidence.id = 'evidence-fixture-different-claim';
+differentEvidence.extract = 'A distinct statement from the same source cannot establish repeat-run agreement.';
+differentClaimRelease.profiles[0].evidence_refs = differentClaimRelease.profiles[0].evidence_refs.map((ref) => ref === priorDifferentId ? differentEvidence.id : ref);
+for (const criterion of differentClaimRelease.profiles[0].assessment.criteria) {
+  criterion.evidence_refs = criterion.evidence_refs.map((ref) => ref === priorDifferentId ? differentEvidence.id : ref);
+}
+assert.deepEqual(validateAiPowerReleaseSemantics(differentClaimRelease), { ok: true, errors: [] });
+const differentClaimConsensus = buildRepeatConsensus(boundaryFirst, differentClaimRelease, '2026-09-11T13:00:00Z');
+assert.equal(differentClaimConsensus.evidence.length, 1);
+assert.equal(differentClaimConsensus.profiles[0].assessment.status, 'insufficient_evidence');
+assert.ok(differentClaimConsensus.profiles[0].assessment.criteria.every((criterion) => criterion.grade === null));
 const disagreementRelease = structuredClone(assembledPipelineRelease);
 disagreementRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').grade = 1;
 disagreementRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').anchor_label = AI_POWER_V2_METHODOLOGY.criteria.find((criterion) => criterion.id === 'realized_leverage').anchors.find((anchor) => anchor.grade === 1).label;

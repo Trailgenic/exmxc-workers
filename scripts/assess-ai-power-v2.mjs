@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import Ajv2020 from "ajv/dist/2020.js";
@@ -8,6 +9,7 @@ import {
   collectEvidenceDocuments,
   extractionPrompt,
   recordFailedProfileAttempt,
+  validateEvidenceDocumentSnapshot,
   validateSourceManifest,
   verificationPrompt
 } from "../lib/ai-power-pipeline.js";
@@ -22,10 +24,11 @@ function argument(name) {
 const entityId = argument("--entity");
 const manifestPath = argument("--manifest");
 const manifestDir = argument("--manifest-dir");
+const documentsDir = argument("--documents-dir");
 const allMode = process.argv.includes("--all");
 const dryRun = process.argv.includes("--dry-run");
 if (allMode ? (entityId || manifestPath || !manifestDir) : (!entityId || !manifestPath || manifestDir)) {
-  throw new Error("Usage: --entity company-id --manifest source-manifest.json OR --all --manifest-dir manifests [--dry-run]");
+  throw new Error("Usage: --entity company-id --manifest source-manifest.json OR --all --manifest-dir manifests [--documents-dir snapshots] [--dry-run]");
 }
 
 const ajv = new Ajv2020({ allErrors: true, strict: false, validateFormats: false });
@@ -33,11 +36,12 @@ const validateManifestSchema = ajv.compile(manifestSchema);
 const validateRelease = ajv.compile(profileSchema);
 
 async function loadAssessmentSpec(profile, path) {
-  const manifest = JSON.parse(await readFile(path, "utf8"));
+  const manifestText = await readFile(path, "utf8");
+  const manifest = JSON.parse(manifestText);
   if (!validateManifestSchema(manifest)) throw new Error(`${profile.entity.id}: source manifest schema failed: ${JSON.stringify(validateManifestSchema.errors)}`);
   const semantics = validateSourceManifest(profile, manifest);
   if (!semantics.ok) throw new Error(`${profile.entity.id}: source manifest semantics failed: ${semantics.errors.join(" | ")}`);
-  return { profile, manifest, path };
+  return { profile, manifest, manifestSha256: createHash("sha256").update(manifestText).digest("hex"), path };
 }
 
 let specs;
@@ -59,6 +63,7 @@ if (dryRun) {
     document_limit_per_entity: 8,
     followup_limit_per_entity: 2,
     model_calls_per_attempt: 2,
+    source_snapshot_mode: documentsDir ? "immutable_cache" : "live_collection",
     writes_repository: false
   }, null, 2)}\n`);
   process.exit(0);
@@ -74,12 +79,20 @@ let candidateRelease = structuredClone(AI_POWER_V2_RELEASE);
 candidateRelease.release_id = `ai-power-v2.0-pilot-candidate-${assessedAt.slice(0, 10)}`;
 const runLog = [];
 
-for (const { profile, manifest } of specs) {
+for (const { profile, manifest, manifestSha256 } of specs) {
   let documents = [];
   let verifiedClaimsReturned = 0;
   const modelUsage = { extraction: {}, verification: {} };
   try {
-    documents = (await collectEvidenceDocuments(profile, manifest)).map((document) => ({ ...document, retrieved_at: new Date().toISOString() }));
+    if (documentsDir) {
+      const snapshot = JSON.parse(await readFile(join(documentsDir, `${profile.entity.id}.json`), "utf8"));
+      const snapshotValidation = validateEvidenceDocumentSnapshot(profile, manifest, snapshot);
+      if (!snapshotValidation.ok) throw new Error(`Source snapshot failed validation: ${snapshotValidation.errors.join(" | ")}`);
+      if (snapshot.manifest_sha256 !== manifestSha256) throw new Error("Source snapshot manifest hash does not match the current declared source manifest.");
+      documents = structuredClone(snapshot.documents);
+    } else {
+      documents = (await collectEvidenceDocuments(profile, manifest)).map((document) => ({ ...document, retrieved_at: new Date().toISOString() }));
+    }
     const delivered = documents.filter((document) => document.collection_status === "delivered");
     const distinctOrigins = new Set(delivered.map((document) => document.origin_id));
     if (delivered.length === 0) throw new Error("No declared source could be collected.");
@@ -140,6 +153,7 @@ process.stdout.write(`${JSON.stringify({
   writes_repository: false,
   model,
   reasoning_effort: reasoningEffort,
+  source_snapshot_mode: documentsDir ? "immutable_cache" : "live_collection",
   run_log: runLog,
   validation_errors: validationErrors,
   release: candidateRelease
