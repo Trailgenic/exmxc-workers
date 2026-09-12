@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-alphabet",
+  "sources": [
+    {
+      "id": "alphabet-2025-form-10k",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "source_type": "filing",
+      "document_title": "Alphabet 2025 Form 10-K",
+      "published_at": null,
+      "origin_id": "alphabet-2025-form-10k"
+    },
+    {
+      "id": "alphabet-june-2026-presentation",
+      "url": "https://blog.google/alphabet/investor-presentation-june-2026/",
+      "publisher": "Alphabet",
+      "source_type": "operating_disclosure",
+      "document_title": "Alphabet Investor Presentation June 2026",
+      "published_at": "2026-06-03T00:00:00Z",
+      "origin_id": "alphabet-june-2026-presentation"
+    },
+    {
+      "id": "google-gemini-enterprise-platform",
+      "url": "https://cloud.google.com/products/gemini-enterprise-agent-platform",
+      "publisher": "Google Cloud",
+      "source_type": "technical_documentation",
+      "document_title": "Gemini Enterprise Agent Platform",
+      "published_at": null,
+      "origin_id": "google-gemini-enterprise-platform"
+    }
+  ]
+}

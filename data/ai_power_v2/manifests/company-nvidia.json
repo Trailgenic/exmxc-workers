@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-nvidia",
+  "sources": [
+    {
+      "id": "nvidia-q2-fy2027-results",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx",
+      "publisher": "NVIDIA",
+      "source_type": "operating_disclosure",
+      "document_title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
+      "published_at": "2026-08-26T00:00:00Z",
+      "origin_id": "nvidia-q2-fy2027-results"
+    },
+    {
+      "id": "nvidia-data-center-platform",
+      "url": "https://www.nvidia.com/en-us/data-center/",
+      "publisher": "NVIDIA",
+      "source_type": "technical_documentation",
+      "document_title": "NVIDIA Data Center Platform",
+      "published_at": null,
+      "origin_id": "nvidia-data-center-platform"
+    },
+    {
+      "id": "nvidia-vera-rubin-production",
+      "url": "https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory",
+      "publisher": "NVIDIA",
+      "source_type": "company_statement",
+      "document_title": "NVIDIA Vera Rubin Ramps Into Full Production",
+      "published_at": "2026-05-31T00:00:00Z",
+      "origin_id": "nvidia-vera-rubin-production"
+    }
+  ]
+}

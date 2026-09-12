@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-salesforce",
+  "sources": [
+    {
+      "id": "salesforce-quarterly-results",
+      "url": "https://investor.salesforce.com/financials/quarterly-results/default.aspx",
+      "publisher": "Salesforce",
+      "source_type": "operating_disclosure",
+      "document_title": "Salesforce Quarterly Results",
+      "published_at": null,
+      "origin_id": "salesforce-current-quarterly-results"
+    },
+    {
+      "id": "salesforce-agentforce-platform",
+      "url": "https://www.salesforce.com/agentforce/",
+      "publisher": "Salesforce",
+      "source_type": "technical_documentation",
+      "document_title": "Agentforce AI Agent Platform",
+      "published_at": null,
+      "origin_id": "salesforce-agentforce-platform"
+    },
+    {
+      "id": "salesforce-investor-news",
+      "url": "https://investor.salesforce.com/news/default.aspx",
+      "publisher": "Salesforce",
+      "source_type": "company_statement",
+      "document_title": "Salesforce Investor News",
+      "published_at": null,
+      "origin_id": "salesforce-investor-news"
+    }
+  ]
+}

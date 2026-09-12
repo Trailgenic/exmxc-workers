@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-vertiv",
+  "sources": [
+    {
+      "id": "vertiv-investor-relations",
+      "url": "https://investors.vertiv.com/",
+      "publisher": "Vertiv",
+      "source_type": "operating_disclosure",
+      "document_title": "Vertiv Investor Relations",
+      "published_at": null,
+      "origin_id": "vertiv-current-investor-relations"
+    },
+    {
+      "id": "vertiv-ai-infrastructure",
+      "url": "https://www.vertiv.com/en-us/solutions/vertiv-ai-hub/",
+      "publisher": "Vertiv",
+      "source_type": "technical_documentation",
+      "document_title": "Vertiv AI Infrastructure Solutions",
+      "published_at": null,
+      "origin_id": "vertiv-ai-infrastructure"
+    },
+    {
+      "id": "vertiv-direct-to-chip-cooling",
+      "url": "https://www.vertiv.com/en-us/about/news-and-insights/articles/educational-articles/understanding-direct-to-chip-cooling-in-hpc-infrastructure-a-deep-dive-into-liquid-cooling/",
+      "publisher": "Vertiv",
+      "source_type": "technical_documentation",
+      "document_title": "Understanding Direct-to-Chip Cooling in HPC Infrastructure",
+      "published_at": "2024-08-21T00:00:00Z",
+      "origin_id": "vertiv-direct-to-chip-cooling"
+    }
+  ]
+}

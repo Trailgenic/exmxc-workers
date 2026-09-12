@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-sk-hynix",
+  "sources": [
+    {
+      "id": "sk-hynix-q2-2026-results",
+      "url": "https://news.skhynix.com/en/q2-2026-business-results/",
+      "publisher": "SK hynix",
+      "source_type": "operating_disclosure",
+      "document_title": "SK hynix Announces 2Q26 Financial Results",
+      "published_at": null,
+      "origin_id": "sk-hynix-q2-2026-results"
+    },
+    {
+      "id": "nvidia-sk-hynix-partnership",
+      "url": "https://nvidianews.nvidia.com/news/sk-hynix-ai-factory",
+      "publisher": "NVIDIA",
+      "source_type": "counterparty_statement",
+      "document_title": "NVIDIA and SK hynix Announce Multiyear Technology Partnership",
+      "published_at": "2026-06-07T00:00:00Z",
+      "origin_id": "nvidia-sk-hynix-partnership"
+    },
+    {
+      "id": "sk-hynix-products",
+      "url": "https://product.skhynix.com/products/dram/hbm/hbm.go",
+      "publisher": "SK hynix",
+      "source_type": "technical_documentation",
+      "document_title": "SK hynix High Bandwidth Memory Products",
+      "published_at": null,
+      "origin_id": "sk-hynix-hbm-products"
+    }
+  ]
+}

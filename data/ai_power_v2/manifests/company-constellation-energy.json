@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-constellation-energy",
+  "sources": [
+    {
+      "id": "constellation-annual-reports",
+      "url": "https://investors.constellationenergy.com/financial-information/annual-reports",
+      "publisher": "Constellation Energy",
+      "source_type": "filing",
+      "document_title": "Constellation Energy Annual Reports",
+      "published_at": null,
+      "origin_id": "constellation-current-annual-reports"
+    },
+    {
+      "id": "constellation-contracted-loads",
+      "url": "https://www.constellationenergy.com/work/public-policy/contracted-loads.html",
+      "publisher": "Constellation Energy",
+      "source_type": "company_statement",
+      "document_title": "Contracted Loads",
+      "published_at": null,
+      "origin_id": "constellation-contracted-loads"
+    },
+    {
+      "id": "constellation-financial-performance",
+      "url": "https://investors.constellationenergy.com/financial-performance/income-statement",
+      "publisher": "Constellation Energy",
+      "source_type": "operating_disclosure",
+      "document_title": "Constellation Energy Financials and Performance",
+      "published_at": null,
+      "origin_id": "constellation-financial-performance"
+    }
+  ]
+}

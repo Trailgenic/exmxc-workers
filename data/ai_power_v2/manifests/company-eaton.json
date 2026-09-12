@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-eaton",
+  "sources": [
+    {
+      "id": "eaton-investor-relations",
+      "url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
+      "publisher": "Eaton",
+      "source_type": "operating_disclosure",
+      "document_title": "Eaton Investor Relations and Financial Reports",
+      "published_at": null,
+      "origin_id": "eaton-current-investor-relations"
+    },
+    {
+      "id": "eaton-data-center-solutions",
+      "url": "https://www.eaton.com/us/en-us/markets/data-centers.html",
+      "publisher": "Eaton",
+      "source_type": "technical_documentation",
+      "document_title": "Eaton Data Center Solutions",
+      "published_at": null,
+      "origin_id": "eaton-data-center-solutions"
+    },
+    {
+      "id": "eaton-siemens-data-center-collaboration",
+      "url": "https://www.eaton.com/us/en-us/markets/data-centers/eaton-and-siemens-energy.html",
+      "publisher": "Eaton",
+      "source_type": "company_statement",
+      "document_title": "Eaton and Siemens Energy Integrated Data Center Solution",
+      "published_at": null,
+      "origin_id": "eaton-siemens-data-center-collaboration"
+    }
+  ]
+}

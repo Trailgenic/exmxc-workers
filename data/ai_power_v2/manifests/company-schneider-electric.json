@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-schneider-electric",
+  "sources": [
+    {
+      "id": "schneider-annual-reports",
+      "url": "https://www.se.com/ww/en/about-us/investor-relations/regulatory-information/annual-reports/",
+      "publisher": "Schneider Electric",
+      "source_type": "filing",
+      "document_title": "Schneider Electric Annual Reports",
+      "published_at": null,
+      "origin_id": "schneider-current-annual-reports"
+    },
+    {
+      "id": "schneider-data-center-solutions",
+      "url": "https://www.se.com/ww/en/work/solutions/data-centers-and-networks/",
+      "publisher": "Schneider Electric",
+      "source_type": "technical_documentation",
+      "document_title": "EcoStruxure Data Center Solutions and Networks",
+      "published_at": null,
+      "origin_id": "schneider-data-center-solutions"
+    },
+    {
+      "id": "schneider-financial-results",
+      "url": "https://www.se.com/ww/en/about-us/investor-relations/financial-results/",
+      "publisher": "Schneider Electric",
+      "source_type": "operating_disclosure",
+      "document_title": "Schneider Electric Financial Results",
+      "published_at": null,
+      "origin_id": "schneider-current-financial-results"
+    }
+  ]
+}

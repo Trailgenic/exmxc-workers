@@ -1,0 +1,44 @@
+name: AI Power Source Preflight
+
+on:
+  pull_request:
+    paths:
+      - data/ai_power_v2/manifests/**
+      - lib/ai-power-pipeline.js
+      - scripts/check-ai-power-sources.mjs
+      - .github/workflows/ai-power-source-preflight.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate all manifest contracts
+        run: npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests --dry-run
+      - name: Retrieve declared sources without model calls
+        id: retrieve
+        continue-on-error: true
+        run: |
+          mkdir -p artifacts
+          npm run check:ai-power-sources -- --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-source-preflight.json
+      - name: Upload source preflight report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-power-v2-source-preflight
+          path: artifacts/ai-power-v2-source-preflight.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Enforce source eligibility
+        if: always() && steps.retrieve.outcome == 'failure'
+        run: exit 1

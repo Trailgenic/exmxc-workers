@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-servicenow",
+  "sources": [
+    {
+      "id": "servicenow-q2-2026-results",
+      "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+      "publisher": "ServiceNow",
+      "source_type": "operating_disclosure",
+      "document_title": "ServiceNow Reports Second Quarter 2026 Financial Results",
+      "published_at": "2026-07-22T00:00:00Z",
+      "origin_id": "servicenow-q2-2026-results"
+    },
+    {
+      "id": "servicenow-ai-control-tower",
+      "url": "https://www.servicenow.com/products/ai-control-tower.html",
+      "publisher": "ServiceNow",
+      "source_type": "technical_documentation",
+      "document_title": "ServiceNow AI Control Tower",
+      "published_at": null,
+      "origin_id": "servicenow-ai-control-tower"
+    },
+    {
+      "id": "servicenow-ai-agents",
+      "url": "https://www.servicenow.com/products/ai-agents.html",
+      "publisher": "ServiceNow",
+      "source_type": "technical_documentation",
+      "document_title": "ServiceNow AI Agents",
+      "published_at": null,
+      "origin_id": "servicenow-ai-agents"
+    }
+  ]
+}

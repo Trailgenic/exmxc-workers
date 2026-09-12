@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-tsmc",
+  "sources": [
+    {
+      "id": "tsmc-2025-annual-report",
+      "url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html",
+      "publisher": "TSMC",
+      "source_type": "filing",
+      "document_title": "TSMC 2025 Annual Report",
+      "published_at": null,
+      "origin_id": "tsmc-2025-annual-report"
+    },
+    {
+      "id": "tsmc-2nm-technology",
+      "url": "https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_2nm",
+      "publisher": "TSMC",
+      "source_type": "technical_documentation",
+      "document_title": "TSMC 2nm Technology",
+      "published_at": null,
+      "origin_id": "tsmc-2nm-technology"
+    },
+    {
+      "id": "tsmc-annual-reports-index",
+      "url": "https://investor.tsmc.com/english/annual-reports",
+      "publisher": "TSMC",
+      "source_type": "operating_disclosure",
+      "document_title": "TSMC Annual Reports and Current Disclosures",
+      "published_at": null,
+      "origin_id": "tsmc-current-disclosures"
+    }
+  ]
+}

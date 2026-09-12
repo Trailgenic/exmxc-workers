@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-meta",
+  "sources": [
+    {
+      "id": "meta-q2-2026-results",
+      "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+      "publisher": "Meta",
+      "source_type": "operating_disclosure",
+      "document_title": "Meta Reports Second Quarter 2026 Results",
+      "published_at": null,
+      "origin_id": "meta-q2-2026-results"
+    },
+    {
+      "id": "meta-llama-3-release",
+      "url": "https://ai.meta.com/blog/meta-llama-3/",
+      "publisher": "Meta",
+      "source_type": "technical_documentation",
+      "document_title": "Introducing Meta Llama 3",
+      "published_at": "2024-04-18T00:00:00Z",
+      "origin_id": "meta-llama-3-release"
+    },
+    {
+      "id": "meta-current-financials",
+      "url": "https://investor.atmeta.com/financials/default.aspx",
+      "publisher": "Meta",
+      "source_type": "filing",
+      "document_title": "Meta Current Financial Disclosures",
+      "published_at": null,
+      "origin_id": "meta-current-financials"
+    }
+  ]
+}
