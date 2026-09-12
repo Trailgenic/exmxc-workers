@@ -141,10 +141,14 @@ malformedShapeFixture.claims.push({
   counterevidence: 'Malformed model string.'
 });
 malformedShapeFixture.claims[1].counterevidence = 'A normalized counterpoint.';
+malformedShapeFixture.claims[1].valid_from = '2026-09-02';
+malformedShapeFixture.claims[1].valid_through = 'not-a-date';
 malformedShapeFixture.proposed_criteria[0].counterevidence = 'A normalized criterion counterpoint.';
 const shapeHardenedRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, malformedShapeFixture, '2026-09-11T12:00:00Z');
 assert.equal(shapeHardenedRelease.evidence.length, 2);
 assert.deepEqual(shapeHardenedRelease.evidence[1].counterevidence, ['A normalized counterpoint.']);
+assert.equal(shapeHardenedRelease.evidence[1].observation.valid_from, '2026-09-02T00:00:00.000Z');
+assert.equal(shapeHardenedRelease.evidence[1].observation.valid_through, null);
 assert.deepEqual(shapeHardenedRelease.profiles[0].assessment.criteria[0].counterevidence, ['A normalized criterion counterpoint.']);
 assert.deepEqual(validateAiPowerReleaseSemantics(shapeHardenedRelease), { ok: true, errors: [] });
 const failedPipelineRelease = recordFailedProfileAttempt(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, 2, '2026-09-11T12:00:00Z', 'Automated fixture abstention.', 'partial');

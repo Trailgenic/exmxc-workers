@@ -67,7 +67,7 @@ jobs:
           asml_status=$?
           node scripts/assess-ai-power-v2.mjs --entity company-microsoft --manifest data/ai_power_v2/manifests/company-microsoft.json > artifacts/ai-power-v2-canary-microsoft.json
           microsoft_status=$?
-          node -e 'const fs=require("fs"); for (const file of process.argv.slice(1)) { const r=JSON.parse(fs.readFileSync(file)); console.log(JSON.stringify({file,status:r.status,model:r.model,reasoning_effort:r.reasoning_effort,run_log:(r.run_log||[]).map(x=>({entity_id:x.entity_id,status:x.status,error:x.error,usage:{extraction:x.model_usage?.extraction?.usage||null,verification:x.model_usage?.verification?.usage||null}})),validation_errors:r.validation_errors},null,2)); }' artifacts/ai-power-v2-canary-asml.json artifacts/ai-power-v2-canary-microsoft.json
+          node -e 'const fs=require("fs"); for (const file of process.argv.slice(1)) { const r=JSON.parse(fs.readFileSync(file)); console.log(JSON.stringify({file,status:r.status,model:r.model,reasoning_effort:r.reasoning_effort,run_log:(r.run_log||[]).map(x=>({entity_id:x.entity_id,status:x.status,error:x.error,quality:x.quality,usage:{extraction:x.model_usage?.extraction?.usage||null,verification:x.model_usage?.verification?.usage||null}})),validation_errors:r.validation_errors},null,2)); }' artifacts/ai-power-v2-canary-asml.json artifacts/ai-power-v2-canary-microsoft.json
           test "$asml_status" -eq 0 -a "$microsoft_status" -eq 0
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
