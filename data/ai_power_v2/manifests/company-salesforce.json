@@ -2,13 +2,13 @@
   "entity_id": "company-salesforce",
   "sources": [
     {
-      "id": "salesforce-quarterly-results",
-      "url": "https://investor.salesforce.com/financials/quarterly-results/default.aspx",
+      "id": "salesforce-fy2026-q4-results",
+      "url": "https://www.salesforce.com/news/press-releases/2026/02/25/fy26-q4-earnings/",
       "publisher": "Salesforce",
       "source_type": "operating_disclosure",
-      "document_title": "Salesforce Quarterly Results",
-      "published_at": null,
-      "origin_id": "salesforce-current-quarterly-results"
+      "document_title": "Salesforce Fourth Quarter Fiscal 2026 Results",
+      "published_at": "2026-02-25T00:00:00Z",
+      "origin_id": "salesforce-fy2026-q4-results"
     },
     {
       "id": "salesforce-agentforce-platform",
@@ -20,13 +20,13 @@
       "origin_id": "salesforce-agentforce-platform"
     },
     {
-      "id": "salesforce-investor-news",
-      "url": "https://investor.salesforce.com/news/default.aspx",
+      "id": "salesforce-fy2026-q3-results",
+      "url": "https://www.salesforce.com/news/press-releases/2025/12/03/fy26-q3-earnings/",
       "publisher": "Salesforce",
-      "source_type": "company_statement",
-      "document_title": "Salesforce Investor News",
-      "published_at": null,
-      "origin_id": "salesforce-investor-news"
+      "source_type": "operating_disclosure",
+      "document_title": "Salesforce Third Quarter Fiscal 2026 Results",
+      "published_at": "2025-12-03T00:00:00Z",
+      "origin_id": "salesforce-fy2026-q3-results"
     }
   ]
 }
