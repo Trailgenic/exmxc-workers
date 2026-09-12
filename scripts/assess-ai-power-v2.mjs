@@ -76,6 +76,7 @@ const runLog = [];
 
 for (const { profile, manifest } of specs) {
   let documents = [];
+  let verifiedClaimsReturned = 0;
   const modelUsage = { extraction: {}, verification: {} };
   try {
     documents = (await collectEvidenceDocuments(profile, manifest)).map((document) => ({ ...document, retrieved_at: new Date().toISOString() }));
@@ -85,15 +86,41 @@ for (const { profile, manifest } of specs) {
     if (distinctOrigins.size < 2) throw new Error("Fewer than two distinct evidentiary origins were collected.");
     const extracted = await callOpenAIJson(extractionPrompt(profile, documents), apiKey, model, fetch, reasoningEffort, modelUsage.extraction);
     const verified = await callOpenAIJson(verificationPrompt(profile, documents, extracted), apiKey, model, fetch, reasoningEffort, modelUsage.verification);
+    verifiedClaimsReturned = Array.isArray(verified?.claims) ? verified.claims.length : 0;
     candidateRelease = assembleVerifiedProfile(candidateRelease, profile.entity.id, documents, verified, assessedAt);
-    runLog.push({ entity_id: profile.entity.id, status: candidateRelease.profiles.find((item) => item.entity.id === profile.entity.id).assessment.status, error: null, model_usage: modelUsage });
+    const assessedProfile = candidateRelease.profiles.find((item) => item.entity.id === profile.entity.id);
+    runLog.push({
+      entity_id: profile.entity.id,
+      status: assessedProfile.assessment.status,
+      error: null,
+      quality: {
+        source_documents_requested: manifest.sources.length,
+        source_documents_delivered: documents.filter((document) => document.collection_status === "delivered").length,
+        verified_claims_returned: verifiedClaimsReturned,
+        accepted_evidence_records: assessedProfile.evidence_refs.length,
+        graded_criteria: assessedProfile.assessment.criteria.filter((criterion) => criterion.grade !== null).length
+      },
+      model_usage: modelUsage
+    });
   } catch (error) {
     if (/HTTP (401|403)\b/.test(String(error?.message || error))) throw error;
     const delivered = documents.filter((document) => document.collection_status === "delivered").length;
     const collectionStatus = documents.length === 0 || delivered === 0 ? "failed" : delivered === documents.length ? "complete" : "partial";
     const reason = `Automated assessment abstained: ${String(error?.message || error)}`;
     candidateRelease = recordFailedProfileAttempt(candidateRelease, profile.entity.id, manifest.sources.length, assessedAt, reason, collectionStatus);
-    runLog.push({ entity_id: profile.entity.id, status: "insufficient_evidence", error: reason, model_usage: modelUsage });
+    runLog.push({
+      entity_id: profile.entity.id,
+      status: "insufficient_evidence",
+      error: reason,
+      quality: {
+        source_documents_requested: manifest.sources.length,
+        source_documents_delivered: delivered,
+        verified_claims_returned: verifiedClaimsReturned,
+        accepted_evidence_records: 0,
+        graded_criteria: 0
+      },
+      model_usage: modelUsage
+    });
   }
 }
 
