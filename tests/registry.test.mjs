@@ -132,6 +132,21 @@ assert.equal(assembledPipelineRelease.coverage.attempted, 1);
 assert.equal(assembledPipelineRelease.coverage.complete, 1);
 assert.equal(assembledPipelineRelease.coverage.not_started, 19);
 assert.deepEqual(validateAiPowerReleaseSemantics(assembledPipelineRelease), { ok: true, errors: [] });
+const malformedShapeFixture = structuredClone(pipelineVerified);
+malformedShapeFixture.claims.push({
+  ...malformedShapeFixture.claims[0],
+  id: 'claim-malformed',
+  claim_type: 'direct_fact',
+  criterion_ids: [],
+  counterevidence: 'Malformed model string.'
+});
+malformedShapeFixture.claims[1].counterevidence = 'A normalized counterpoint.';
+malformedShapeFixture.proposed_criteria[0].counterevidence = 'A normalized criterion counterpoint.';
+const shapeHardenedRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, malformedShapeFixture, '2026-09-11T12:00:00Z');
+assert.equal(shapeHardenedRelease.evidence.length, 2);
+assert.deepEqual(shapeHardenedRelease.evidence[1].counterevidence, ['A normalized counterpoint.']);
+assert.deepEqual(shapeHardenedRelease.profiles[0].assessment.criteria[0].counterevidence, ['A normalized criterion counterpoint.']);
+assert.deepEqual(validateAiPowerReleaseSemantics(shapeHardenedRelease), { ok: true, errors: [] });
 const failedPipelineRelease = recordFailedProfileAttempt(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, 2, '2026-09-11T12:00:00Z', 'Automated fixture abstention.', 'partial');
 assert.equal(failedPipelineRelease.profiles[0].collection.attempted, true);
 assert.equal(failedPipelineRelease.profiles[0].collection.status, 'partial');

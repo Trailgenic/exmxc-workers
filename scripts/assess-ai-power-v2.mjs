@@ -101,15 +101,20 @@ candidateRelease.pipeline.model_extraction_version = model;
 candidateRelease.pipeline.model_verification_version = model;
 candidateRelease.evidence_cutoff_at = new Date().toISOString();
 candidateRelease.assessed_at = candidateRelease.evidence_cutoff_at;
-if (!validateRelease(candidateRelease)) throw new Error(`Candidate release schema failed: ${JSON.stringify(validateRelease.errors)}`);
-const semantic = validateAiPowerReleaseSemantics(candidateRelease);
-if (!semantic.ok) throw new Error(`Candidate release semantic validation failed: ${semantic.errors.join(" | ")}`);
+const schemaValid = validateRelease(candidateRelease);
+const semantic = schemaValid ? validateAiPowerReleaseSemantics(candidateRelease) : { ok: false, errors: [] };
+const validationErrors = [
+  ...(schemaValid ? [] : (validateRelease.errors || []).map((error) => `${error.instancePath || "/"}: ${error.message}`)),
+  ...(semantic.ok ? [] : semantic.errors)
+];
 process.stdout.write(`${JSON.stringify({
-  status: "candidate_release",
+  status: schemaValid && semantic.ok ? "candidate_release" : "invalid_candidate",
   mode: allMode ? "cohort" : "single_entity",
   writes_repository: false,
   model,
   reasoning_effort: reasoningEffort,
   run_log: runLog,
+  validation_errors: validationErrors,
   release: candidateRelease
 }, null, 2)}\n`);
+if (validationErrors.length) process.exitCode = 1;

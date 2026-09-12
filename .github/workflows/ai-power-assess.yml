@@ -57,11 +57,18 @@ jobs:
         if: inputs.assessment_scope == 'cohort'
         run: npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests --dry-run
       - name: Generate non-publishing canary candidates
+        id: generate_canary
+        continue-on-error: true
         if: github.event_name == 'push' || inputs.assessment_scope == 'canary'
         run: |
           mkdir -p artifacts
-          npm run assess:ai-power -- --entity company-asml --manifest data/ai_power_v2/manifests/company-asml.json > artifacts/ai-power-v2-canary-asml.json
-          npm run assess:ai-power -- --entity company-microsoft --manifest data/ai_power_v2/manifests/company-microsoft.json > artifacts/ai-power-v2-canary-microsoft.json
+          set +e
+          node scripts/assess-ai-power-v2.mjs --entity company-asml --manifest data/ai_power_v2/manifests/company-asml.json > artifacts/ai-power-v2-canary-asml.json
+          asml_status=$?
+          node scripts/assess-ai-power-v2.mjs --entity company-microsoft --manifest data/ai_power_v2/manifests/company-microsoft.json > artifacts/ai-power-v2-canary-microsoft.json
+          microsoft_status=$?
+          node -e 'const fs=require("fs"); for (const file of process.argv.slice(1)) { const r=JSON.parse(fs.readFileSync(file)); console.log(JSON.stringify({file,status:r.status,model:r.model,reasoning_effort:r.reasoning_effort,run_log:(r.run_log||[]).map(x=>({entity_id:x.entity_id,status:x.status,error:x.error,usage:{extraction:x.model_usage?.extraction?.usage||null,verification:x.model_usage?.verification?.usage||null}})),validation_errors:r.validation_errors},null,2)); }' artifacts/ai-power-v2-canary-asml.json artifacts/ai-power-v2-canary-microsoft.json
+          test "$asml_status" -eq 0 -a "$microsoft_status" -eq 0
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AI_POWER_MODEL: ${{ inputs.model || 'gpt-5.6-luna' }}
@@ -70,15 +77,19 @@ jobs:
         if: inputs.assessment_scope == 'cohort'
         run: |
           mkdir -p artifacts
-          npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-candidate.json
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-candidate.json
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AI_POWER_MODEL: ${{ inputs.model }}
           AI_POWER_REASONING_EFFORT: ${{ inputs.reasoning_effort }}
       - name: Upload candidate for validation
+        if: always() && (github.event_name == 'push' || inputs.assessment_scope == 'canary' || inputs.assessment_scope == 'cohort')
         uses: actions/upload-artifact@v4
         with:
           name: ai-power-v2-${{ inputs.assessment_scope || 'canary' }}-candidate
           path: artifacts/*.json
           if-no-files-found: error
           retention-days: 14
+      - name: Enforce canary validation result
+        if: always() && (github.event_name == 'push' || inputs.assessment_scope == 'canary') && steps.generate_canary.outcome == 'failure'
+        run: exit 1
