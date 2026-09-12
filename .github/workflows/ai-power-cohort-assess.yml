@@ -1,0 +1,60 @@
+name: AI Power Cohort Assessment
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - data/ai_power_v2/cohort-trigger.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-power-v2-cohort-assessment
+  cancel-in-progress: false
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate repository and cohort contracts
+        run: |
+          npm run validate:ai-power
+          npm test
+          npm run test:workers
+          npm run assess:ai-power -- --all --manifest-dir data/ai_power_v2/manifests --dry-run
+      - name: Require retrievable cohort sources before model calls
+        run: |
+          mkdir -p artifacts
+          node scripts/check-ai-power-sources.mjs --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-source-preflight.json
+      - name: Generate two non-publishing Luna attempts
+        run: |
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-attempt-a.json
+          node scripts/assess-ai-power-v2.mjs --all --manifest-dir data/ai_power_v2/manifests > artifacts/ai-power-v2-cohort-attempt-b.json
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AI_POWER_MODEL: gpt-5.6-luna
+          AI_POWER_REASONING_EFFORT: medium
+      - name: Build conservative repeat-run consensus
+        run: node scripts/reconcile-ai-power-v2.mjs artifacts/ai-power-v2-cohort-attempt-a.json artifacts/ai-power-v2-cohort-attempt-b.json > artifacts/ai-power-v2-cohort-consensus.json
+      - name: Print bounded run diagnostics
+        run: |
+          node -e 'const fs=require("fs"); const r=JSON.parse(fs.readFileSync("artifacts/ai-power-v2-cohort-consensus.json","utf8")); console.log(JSON.stringify({status:r.status,writes_repository:r.writes_repository,repeat_policy:r.repeat_policy,usage:r.usage,profiles:r.diagnostics.length,graded_profiles:r.diagnostics.filter(x=>Object.values(x.consensus_grades).some(v=>v!==null)).length,insufficient_evidence:r.diagnostics.filter(x=>x.status==="insufficient_evidence").length},null,2));'
+      - name: Upload assessment evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-power-v2-cohort-candidate-${{ github.run_id }}
+          path: artifacts/*.json
+          if-no-files-found: error
+          retention-days: 30
+
