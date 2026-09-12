@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-vertiv",
+  "sources": [
+    {
+      "id": "vertiv-company-overview",
+      "url": "https://www.vertiv.com/en-us/",
+      "publisher": "Vertiv",
+      "source_type": "company_statement",
+      "document_title": "Vertiv Critical Digital Infrastructure Overview",
+      "published_at": null,
+      "origin_id": "vertiv-company-overview"
+    },
+    {
+      "id": "vertiv-direct-to-chip-cooling",
+      "url": "https://www.vertiv.com/en-us/insights/articles/educational-articles/understanding-direct-to-chip-cooling-in-hpc-infrastructure-a-deep-dive-into-liquid-cooling/",
+      "publisher": "Vertiv",
+      "source_type": "technical_documentation",
+      "document_title": "Understanding Direct-to-Chip Cooling in HPC Infrastructure",
+      "published_at": "2024-08-21T00:00:00Z",
+      "origin_id": "vertiv-direct-to-chip-cooling"
+    },
+    {
+      "id": "vertiv-ai-ready-cooling-capacity",
+      "url": "https://www.vertiv.com/en-us/about/news-and-events/corporate-news/2026/vertiv-expands-global-manufacturing-capacity-for-ai-ready-data-center-cooling-solutions/",
+      "publisher": "Vertiv",
+      "source_type": "operating_disclosure",
+      "document_title": "Vertiv Expands AI-Ready Cooling Manufacturing Capacity",
+      "published_at": "2026-07-21T00:00:00Z",
+      "origin_id": "vertiv-ai-ready-cooling-capacity"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-nextera-energy",
+  "sources": [
+    {
+      "id": "nextera-google-nuclear-agreement",
+      "url": "https://www.investor.nexteraenergy.com/news-and-events/news-releases/2025/10-27-2025-203948689",
+      "publisher": "NextEra Energy",
+      "source_type": "executed_agreement",
+      "document_title": "NextEra Energy and Google Announce Nuclear Energy Collaboration",
+      "published_at": "2025-10-27T00:00:00Z",
+      "origin_id": "nextera-google-nuclear-agreement"
+    },
+    {
+      "id": "nextera-company-overview",
+      "url": "https://www.investor.nexteraenergy.com/company-overview",
+      "publisher": "NextEra Energy",
+      "source_type": "operating_disclosure",
+      "document_title": "NextEra Energy Company Overview",
+      "published_at": null,
+      "origin_id": "nextera-company-overview"
+    },
+    {
+      "id": "nextera-sec-filings",
+      "url": "https://www.investor.nexteraenergy.com/reports-and-filings/sec-filings",
+      "publisher": "NextEra Energy",
+      "source_type": "filing",
+      "document_title": "NextEra Energy SEC Filings",
+      "published_at": null,
+      "origin_id": "nextera-current-sec-filings"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-tsmc",
+  "sources": [
+    {
+      "id": "nist-tsmc-chips-award",
+      "url": "https://www.nist.gov/news-events/news/2024/11/biden-harris-administration-announces-chips-incentives-award-tsmc-arizona",
+      "publisher": "National Institute of Standards and Technology",
+      "source_type": "regulator",
+      "document_title": "CHIPS Incentives Award to TSMC Arizona",
+      "published_at": "2024-11-15T00:00:00Z",
+      "origin_id": "nist-tsmc-chips-award"
+    },
+    {
+      "id": "apple-tsmc-arizona-supply",
+      "url": "https://www.apple.com/newsroom/2025/08/apple-increases-us-commitment-to-600-billion-usd-announces-ambitious-program/",
+      "publisher": "Apple",
+      "source_type": "counterparty_statement",
+      "document_title": "Apple U.S. Silicon Supply Chain Commitment",
+      "published_at": "2025-08-06T00:00:00Z",
+      "origin_id": "apple-tsmc-arizona-supply"
+    },
+    {
+      "id": "nvidia-tsmc-blackwell-manufacturing",
+      "url": "https://blogs.nvidia.com/blog/tsmc-blackwell-manufacturing/",
+      "publisher": "NVIDIA",
+      "source_type": "counterparty_statement",
+      "document_title": "NVIDIA and TSMC Celebrate First U.S.-Made Blackwell Wafer",
+      "published_at": "2025-10-17T00:00:00Z",
+      "origin_id": "nvidia-tsmc-blackwell-manufacturing"
+    }
+  ]
+}

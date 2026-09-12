@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-micron",
+  "sources": [
+    {
+      "id": "micron-quarterly-results",
+      "url": "https://investors.micron.com/financials/quarterly-results/default.aspx",
+      "publisher": "Micron Technology",
+      "source_type": "operating_disclosure",
+      "document_title": "Micron Quarterly Results",
+      "published_at": null,
+      "origin_id": "micron-current-quarterly-results"
+    },
+    {
+      "id": "micron-hbm-platform",
+      "url": "https://www.micron.com/products/memory/hbm",
+      "publisher": "Micron Technology",
+      "source_type": "technical_documentation",
+      "document_title": "Micron High-Bandwidth Memory",
+      "published_at": null,
+      "origin_id": "micron-hbm-platform"
+    },
+    {
+      "id": "micron-q3-2026-sec-release",
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "source_type": "filing",
+      "document_title": "Micron Fiscal Third Quarter 2026 Earnings Release",
+      "published_at": null,
+      "origin_id": "micron-q3-2026-sec-release"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-alphabet",
+  "sources": [
+    {
+      "id": "google-ai-updates",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/",
+      "publisher": "Google",
+      "source_type": "company_statement",
+      "document_title": "Google AI News and Updates",
+      "published_at": null,
+      "origin_id": "google-ai-updates"
+    },
+    {
+      "id": "alphabet-june-2026-presentation",
+      "url": "https://blog.google/alphabet/investor-presentation-june-2026/",
+      "publisher": "Alphabet",
+      "source_type": "operating_disclosure",
+      "document_title": "Alphabet Investor Presentation June 2026",
+      "published_at": "2026-06-03T00:00:00Z",
+      "origin_id": "alphabet-june-2026-presentation"
+    },
+    {
+      "id": "google-deepmind-gemini",
+      "url": "https://deepmind.google/models/gemini/",
+      "publisher": "Google DeepMind",
+      "source_type": "technical_documentation",
+      "document_title": "Gemini Model Portfolio",
+      "published_at": null,
+      "origin_id": "google-deepmind-gemini"
+    }
+  ]
+}

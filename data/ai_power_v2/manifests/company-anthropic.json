@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-anthropic",
+  "sources": [
+    {
+      "id": "anthropic-amazon-compute",
+      "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+      "publisher": "Anthropic",
+      "source_type": "company_statement",
+      "document_title": "Anthropic and Amazon Expand Compute Collaboration",
+      "published_at": "2026-04-20T00:00:00Z",
+      "origin_id": "anthropic-amazon-compute"
+    },
+    {
+      "id": "anthropic-google-broadcom-compute",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "publisher": "Anthropic",
+      "source_type": "company_statement",
+      "document_title": "Anthropic Expands Google and Broadcom Compute Deal",
+      "published_at": "2026-04-06T00:00:00Z",
+      "origin_id": "anthropic-google-broadcom-compute"
+    },
+    {
+      "id": "aws-anthropic-bedrock",
+      "url": "https://aws.amazon.com/bedrock/anthropic/",
+      "publisher": "Amazon Web Services",
+      "source_type": "counterparty_statement",
+      "document_title": "Claude by Anthropic in Amazon Bedrock",
+      "published_at": null,
+      "origin_id": "aws-anthropic-bedrock"
+    }
+  ]
+}

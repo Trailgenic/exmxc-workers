@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-meta",
+  "sources": [
+    {
+      "id": "meta-llama-3-1-release",
+      "url": "https://ai.meta.com/blog/meta-llama-3-1/",
+      "publisher": "Meta AI",
+      "source_type": "technical_documentation",
+      "document_title": "Introducing Llama 3.1",
+      "published_at": "2024-07-23T00:00:00Z",
+      "origin_id": "meta-llama-3-1-release"
+    },
+    {
+      "id": "meta-llama-3-release",
+      "url": "https://ai.meta.com/blog/meta-llama-3/",
+      "publisher": "Meta",
+      "source_type": "technical_documentation",
+      "document_title": "Introducing Meta Llama 3",
+      "published_at": "2024-04-18T00:00:00Z",
+      "origin_id": "meta-llama-3-release"
+    },
+    {
+      "id": "meta-ai-research-updates",
+      "url": "https://ai.meta.com/blog/",
+      "publisher": "Meta AI",
+      "source_type": "company_statement",
+      "document_title": "Meta AI Research and Product Updates",
+      "published_at": null,
+      "origin_id": "meta-ai-research-updates"
+    }
+  ]
+}

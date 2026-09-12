@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-amd",
+  "sources": [
+    {
+      "id": "amd-q2-2026-results",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
+      "publisher": "AMD",
+      "source_type": "operating_disclosure",
+      "document_title": "AMD Reports Second Quarter 2026 Financial Results",
+      "published_at": "2026-08-04T00:00:00Z",
+      "origin_id": "amd-q2-2026-results"
+    },
+    {
+      "id": "amd-instinct-platform",
+      "url": "https://www.amd.com/en/products/accelerators/instinct.html",
+      "publisher": "AMD",
+      "source_type": "technical_documentation",
+      "document_title": "AMD Instinct GPUs",
+      "published_at": null,
+      "origin_id": "amd-instinct-platform"
+    },
+    {
+      "id": "azure-amd-mi300x",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/ndmi300x-v5-series",
+      "publisher": "Microsoft",
+      "source_type": "counterparty_statement",
+      "document_title": "ND MI300X v5 virtual machine sizes",
+      "published_at": null,
+      "origin_id": "azure-amd-mi300x"
+    }
+  ]
+}

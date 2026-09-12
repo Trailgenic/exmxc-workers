@@ -1,0 +1,32 @@
+{
+  "entity_id": "company-amazon",
+  "sources": [
+    {
+      "id": "amazon-q2-2026-results",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+      "publisher": "Amazon",
+      "source_type": "operating_disclosure",
+      "document_title": "Amazon Announces Second Quarter 2026 Results",
+      "published_at": "2026-07-30T00:00:00Z",
+      "origin_id": "amazon-q2-2026-results"
+    },
+    {
+      "id": "amazon-bedrock-platform",
+      "url": "https://aws.amazon.com/bedrock/",
+      "publisher": "Amazon Web Services",
+      "source_type": "technical_documentation",
+      "document_title": "Amazon Bedrock",
+      "published_at": null,
+      "origin_id": "amazon-bedrock-platform"
+    },
+    {
+      "id": "amazon-trainium-platform",
+      "url": "https://aws.amazon.com/ai/machine-learning/trainium/",
+      "publisher": "Amazon Web Services",
+      "source_type": "technical_documentation",
+      "document_title": "AWS Trainium",
+      "published_at": null,
+      "origin_id": "amazon-trainium-platform"
+    }
+  ]
+}
