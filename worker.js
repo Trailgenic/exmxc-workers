@@ -1,6 +1,7 @@
 import { createMcpHandler } from "agents/mcp";
 import { ADSUpstreamError, classifyPostings, computeADS } from "./lib/ads-classifier.js";
 import { CACHE, emptyResponse, jsonResponse, mcpCorsHeaders, textResponse } from "./lib/http.js";
+import { getHyperliquidQuote, getHyperliquidQuotes } from "./lib/market-data.js";
 import { EXMXC_WEBMCP_POWER_LENS } from "./lib/webmcp-power-lens.js";
 import { createExmxcMcpServer, mcpResourceProjection, contentIndexResource, TOOL_IDS } from "./lib/mcp-server.js";
 import {
@@ -163,6 +164,28 @@ function openApiDocument() {
     paths: {
       ...Object.fromEntries(Object.values(DATASETS).map((dataset) => [dataset.route, { get: { summary: `Retrieve ${dataset.displayName}`, responses: { 200: json200 } } }])),
       ...toolPaths,
+      "/market/quote": {
+        get: {
+          summary: "Retrieve a Hyperliquid market signal for one symbol",
+          description: "Resolves the symbol across Hyperliquid perpetual and HIP-3 dex markets. Perpetual pricing is supplemental and is not an authoritative cash-equity quote.",
+          parameters: [
+            openApiParameter("symbol", { type: "string" }, true),
+            openApiParameter("dex", { type: "string" }, false)
+          ],
+          responses: { 200: json200, 400: { description: "Missing or invalid symbol" }, 404: { description: "Symbol unavailable on Hyperliquid" }, 502: { description: "Hyperliquid upstream failed" } }
+        }
+      },
+      "/market/quotes": {
+        get: {
+          summary: "Retrieve Hyperliquid market signals for multiple symbols",
+          description: "Accepts up to 25 comma-separated symbols and returns supplemental perpetual-market pricing signals.",
+          parameters: [
+            openApiParameter("symbols", { type: "string" }, true),
+            openApiParameter("dex", { type: "string" }, false)
+          ],
+          responses: { 200: json200, 400: { description: "Missing or invalid symbols" }, 502: { description: "Hyperliquid upstream failed" } }
+        }
+      },
       "/api/ai-jobs-signal": {
         get: { summary: "ADS benchmark", responses: { 200: json200, 405: { description: "Signal generation requires POST" } } },
         post: { summary: "Paid ADS signal generation", security: [{ AdsSignalBearer: [] }], responses: { 200: json200, 400: { description: "Invalid body" }, 401: { description: "Unauthorized" }, 502: { description: "Upstream failed" }, 504: { description: "Upstream timeout" } } }
@@ -327,6 +350,29 @@ export default {
     if (url.pathname === "/" || url.pathname === "") return jsonResponse({ name: "exmxc MCP Endpoint", entity: { name: ENTITY.name, domain: ENTITY.domain, founder: ENTITY.founder }, registry: `${MCP_ORIGIN}/.well-known/tool-registry.json`, openapi: `${MCP_ORIGIN}/.well-known/openapi.json`, manifest: `${MCP_ORIGIN}/.well-known/manifest.json`, capabilities: `${MCP_ORIGIN}/capabilities.json`, mcp_transport: MCP_TRANSPORT, protocol_versions: MCP_PROTOCOL_VERSIONS, tools: toolInventory(), resources: resourceInventory().map((resource) => resource.uri), health: `${MCP_ORIGIN}/health`, status: "active", discovery_protocol: "MCP Streamable HTTP", last_updated: BUILD.released }, { headers: discoveryHeaders });
     if (url.pathname === "/capabilities.json") return jsonResponse(capabilitiesDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/health") return jsonResponse({ entity: ENTITY.name, status: "healthy", mcp_status: "not_checked", registry_status: "not_checked", plugin_status: "not_checked", openapi_status: "not_checked", uptime: null, infrastructure: { platform: "Cloudflare Workers", protocol: "MCP Streamable HTTP" }, last_checked: new Date().toISOString() }, { headers: noStore });
+    if (url.pathname === "/market/quote") {
+      const symbol = url.searchParams.get("symbol");
+      const dex = url.searchParams.get("dex");
+      if (!symbol) return jsonResponse({ success: false, error: "symbol is required" }, { status: 400, headers: noStore });
+      try {
+        const result = await getHyperliquidQuote(symbol, { dex });
+        return jsonResponse(result, { status: result.success ? 200 : 404, headers: noStore });
+      } catch (error) {
+        return jsonResponse({ success: false, error: "Hyperliquid upstream failed", detail: String(error?.message || error) }, { status: 502, headers: noStore });
+      }
+    }
+    if (url.pathname === "/market/quotes") {
+      const symbols = url.searchParams.get("symbols");
+      const dex = url.searchParams.get("dex");
+      if (!symbols) return jsonResponse({ success: false, error: "symbols is required" }, { status: 400, headers: noStore });
+      try {
+        const result = await getHyperliquidQuotes(symbols, { dex });
+        const status = result.success ? 200 : (String(result.error || "").startsWith("Maximum") ? 400 : 404);
+        return jsonResponse(result, { status, headers: noStore });
+      } catch (error) {
+        return jsonResponse({ success: false, error: "Hyperliquid upstream failed", detail: String(error?.message || error) }, { status: 502, headers: noStore });
+      }
+    }
     if (url.pathname === "/.well-known/tool-registry.json") return jsonResponse(registryDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/.well-known/openapi.json") return jsonResponse(openApiDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/.well-known/manifest.json") return jsonResponse(manifestDocument(), { headers: discoveryHeaders });
