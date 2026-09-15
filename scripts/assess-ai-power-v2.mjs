@@ -162,6 +162,7 @@ for (const { profile, manifest, manifestSha256 } of specs) {
 
 candidateRelease.pipeline.model_extraction_version = model;
 candidateRelease.pipeline.model_verification_version = model;
+candidateRelease.pipeline.pipeline_version = "ai-power-pipeline-v2.2.0-deterministic-passages";
 candidateRelease.evidence_cutoff_at = new Date().toISOString();
 candidateRelease.assessed_at = candidateRelease.evidence_cutoff_at;
 const schemaValid = validateRelease(candidateRelease);
