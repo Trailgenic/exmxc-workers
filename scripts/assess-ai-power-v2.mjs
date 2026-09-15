@@ -21,14 +21,31 @@ function argument(name) {
   return index >= 0 ? process.argv[index + 1] : null;
 }
 
+function entityListArgument() {
+  const raw = argument("--entities");
+  if (!raw) return null;
+  const ids = raw.split(",").map((value) => value.trim()).filter(Boolean);
+  if (!ids.length || ids.some((id) => !/^company-[a-z0-9-]+$/.test(id))) {
+    throw new Error("--entities must be a comma-separated list of stable company ids.");
+  }
+  if (new Set(ids).size !== ids.length) throw new Error("--entities cannot contain duplicate company ids.");
+  return ids;
+}
+
 const entityId = argument("--entity");
+const entityIds = entityListArgument();
 const manifestPath = argument("--manifest");
 const manifestDir = argument("--manifest-dir");
 const documentsDir = argument("--documents-dir");
 const allMode = process.argv.includes("--all");
+const subsetMode = Boolean(entityIds);
 const dryRun = process.argv.includes("--dry-run");
-if (allMode ? (entityId || manifestPath || !manifestDir) : (!entityId || !manifestPath || manifestDir)) {
-  throw new Error("Usage: --entity company-id --manifest source-manifest.json OR --all --manifest-dir manifests [--documents-dir snapshots] [--dry-run]");
+const selectedModes = Number(allMode) + Number(subsetMode) + Number(Boolean(entityId || manifestPath));
+const singleModeValid = !allMode && !subsetMode && Boolean(entityId) && Boolean(manifestPath) && !manifestDir;
+const cohortModeValid = allMode && !subsetMode && !entityId && !manifestPath && Boolean(manifestDir);
+const subsetModeValid = subsetMode && !allMode && !entityId && !manifestPath && Boolean(manifestDir);
+if (selectedModes !== 1 || (!singleModeValid && !cohortModeValid && !subsetModeValid)) {
+  throw new Error("Usage: --entity company-id --manifest source-manifest.json OR --entities company-a,company-b --manifest-dir manifests OR --all --manifest-dir manifests [--documents-dir snapshots] [--dry-run]");
 }
 
 const ajv = new Ajv2020({ allErrors: true, strict: false, validateFormats: false });
@@ -49,6 +66,12 @@ if (allMode) {
   specs = await Promise.all(AI_POWER_V2_RELEASE.profiles.map((profile) =>
     loadAssessmentSpec(profile, join(manifestDir, `${profile.entity.id}.json`))
   ));
+} else if (subsetMode) {
+  specs = await Promise.all(entityIds.map((id) => {
+    const profile = AI_POWER_V2_RELEASE.profiles.find((candidate) => candidate.entity.id === id);
+    if (!profile) throw new Error(`Unknown pilot entity: ${id}`);
+    return loadAssessmentSpec(profile, join(manifestDir, `${id}.json`));
+  }));
 } else {
   const profile = AI_POWER_V2_RELEASE.profiles.find((candidate) => candidate.entity.id === entityId);
   if (!profile) throw new Error(`Unknown pilot entity: ${entityId}`);
@@ -57,7 +80,7 @@ if (allMode) {
 
 if (dryRun) {
   process.stdout.write(`${JSON.stringify({
-    mode: allMode ? "cohort" : "single_entity",
+    mode: allMode ? "cohort" : subsetMode ? "cohort_subset" : "single_entity",
     entities: specs.map(({ profile, manifest, path }) => ({ entity_id: profile.entity.id, name: profile.entity.name, manifest: path, requested_sources: manifest.sources.length })),
     pilot_candidates: AI_POWER_V2_RELEASE.profiles.length,
     document_limit_per_entity: 8,
@@ -149,7 +172,7 @@ const validationErrors = [
 ];
 process.stdout.write(`${JSON.stringify({
   status: schemaValid && semantic.ok ? "candidate_release" : "invalid_candidate",
-  mode: allMode ? "cohort" : "single_entity",
+  mode: allMode ? "cohort" : subsetMode ? "cohort_subset" : "single_entity",
   writes_repository: false,
   model,
   reasoning_effort: reasoningEffort,

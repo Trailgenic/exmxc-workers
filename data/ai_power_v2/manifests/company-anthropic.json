@@ -20,13 +20,22 @@
       "origin_id": "anthropic-google-broadcom-compute"
     },
     {
-      "id": "aws-anthropic-bedrock",
-      "url": "https://aws.amazon.com/bedrock/anthropic/",
-      "publisher": "Amazon Web Services",
+      "id": "amazon-anthropic-strategic-collaboration",
+      "url": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
+      "publisher": "Amazon",
       "source_type": "counterparty_statement",
-      "document_title": "Claude by Anthropic in Amazon Bedrock",
-      "published_at": null,
-      "origin_id": "aws-anthropic-bedrock"
+      "document_title": "Amazon and Anthropic Deepen Strategic Collaboration",
+      "published_at": "2024-11-22T00:00:00Z",
+      "origin_id": "amazon-anthropic-strategic-collaboration"
+    },
+    {
+      "id": "google-anthropic-tpu-expansion",
+      "url": "https://www.googlecloudpresscorner.com/2025-10-23-Anthropic-to-Expand-Use-of-Google-Cloud-TPUs-and-Services",
+      "publisher": "Google Cloud and Anthropic",
+      "source_type": "counterparty_statement",
+      "document_title": "Anthropic to Expand Use of Google Cloud TPUs and Services",
+      "published_at": "2025-10-23T00:00:00Z",
+      "origin_id": "google-anthropic-tpu-expansion"
     }
   ]
 }

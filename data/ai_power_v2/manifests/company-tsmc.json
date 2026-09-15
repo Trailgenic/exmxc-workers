@@ -27,6 +27,24 @@
       "document_title": "NVIDIA and TSMC Celebrate First U.S.-Made Blackwell Wafer",
       "published_at": "2025-10-17T00:00:00Z",
       "origin_id": "nvidia-tsmc-blackwell-manufacturing"
+    },
+    {
+      "id": "tsmc-2026-q2-results",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "source_type": "filing",
+      "document_title": "TSMC Reports Second Quarter EPS of NT$27.25, Exhibit 99.1",
+      "published_at": "2026-07-16T00:00:00Z",
+      "origin_id": "tsmc-2026-q2-results"
+    },
+    {
+      "id": "asml-tsmc-high-na-euv-initiative",
+      "url": "https://www.asml.com/en/news/press-releases/2026/tsmc-and-asml-announce-industry-transition-to-large-format-photomasks-for-high-na-euv",
+      "publisher": "ASML and TSMC",
+      "source_type": "counterparty_statement",
+      "document_title": "ASML and TSMC Announce Initiative for Large-Format High NA EUV Photomasks",
+      "published_at": "2026-09-08T00:00:00Z",
+      "origin_id": "asml-tsmc-high-na-euv-initiative"
     }
   ]
 }
