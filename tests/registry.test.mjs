@@ -9,7 +9,7 @@ import {
   strategicConsequenceClassification
 } from '../lib/queries.js';
 import { AI_POWER_V2_METHODOLOGY, AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
-import { assembleVerifiedProfile, callOpenAIJson, recordFailedProfileAttempt, validateEvidenceDocumentSnapshot, validateSourceManifest } from '../lib/ai-power-pipeline.js';
+import { assembleVerifiedProfile, buildDeterministicPassages, callOpenAIJson, extractionPrompt, recordFailedProfileAttempt, validateEvidenceDocumentSnapshot, validateSourceManifest, verificationPrompt } from '../lib/ai-power-pipeline.js';
 import { buildRepeatConsensus } from '../lib/ai-power-consensus.js';
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
@@ -114,22 +114,41 @@ const pipelineDocuments = sourceManifest.sources.map((source, index) => ({
   collection_error: null,
   retrieved_at: '2026-09-11T12:00:00Z'
 }));
+const deterministicPassages = buildDeterministicPassages(pipelineDocuments);
+assert.deepEqual(deterministicPassages, buildDeterministicPassages(structuredClone(pipelineDocuments)));
+assert.equal(deterministicPassages.length, 2);
+assert.match(deterministicPassages[0].passage_id, /^source-a::p0001::[a-f0-9]{12}$/);
+assert.ok(extractionPrompt(pipelineProfile, pipelineDocuments).includes(deterministicPassages[0].passage_id));
+assert.ok(extractionPrompt(pipelineProfile, pipelineDocuments).includes('passage_id'));
+assert.ok(!extractionPrompt(pipelineProfile, pipelineDocuments).includes('source_text'));
+assert.ok(verificationPrompt(pipelineProfile, pipelineDocuments, { claims: [] }).includes(deterministicPassages[1].passage_id));
+const longPassageDocument = { ...pipelineDocuments[0], text: Array.from({ length: 240 }, (_, index) => `word${index}`).join(' ') };
+assert.ok(buildDeterministicPassages([longPassageDocument]).every((passage) => passage.text.length <= 900));
+const unbrokenPassageDocument = { ...pipelineDocuments[0], text: 'x'.repeat(1900) };
+assert.ok(buildDeterministicPassages([unbrokenPassageDocument]).every((passage) => passage.text.length <= 900));
+const snapshotDocuments = pipelineDocuments.map((document) => ({
+  ...document,
+  passages: buildDeterministicPassages([document])
+}));
 const sourceSnapshotFixture = {
-  snapshot_version: 'ai-power-source-snapshot-v1',
+  snapshot_version: 'ai-power-source-snapshot-v2',
   entity_id: pipelineProfile.entity.id,
   captured_at: '2026-09-11T12:00:00Z',
   manifest_sha256: 'f'.repeat(64),
-  documents: pipelineDocuments
+  documents: snapshotDocuments
 };
 assert.deepEqual(validateEvidenceDocumentSnapshot(pipelineProfile, sourceManifest, sourceSnapshotFixture), { ok: true, errors: [] });
 const tamperedSourceSnapshot = structuredClone(sourceSnapshotFixture);
 tamperedSourceSnapshot.documents[0].origin_id = 'undeclared-origin';
 assert.ok(validateEvidenceDocumentSnapshot(pipelineProfile, sourceManifest, tamperedSourceSnapshot).errors.some((error) => error.includes('origin_id differs')));
+const tamperedPassageSnapshot = structuredClone(sourceSnapshotFixture);
+tamperedPassageSnapshot.documents[0].passages[0].text = 'Tampered passage text.';
+assert.ok(validateEvidenceDocumentSnapshot(pipelineProfile, sourceManifest, tamperedPassageSnapshot).errors.some((error) => error.includes('passage catalog')));
 const pipelineVerified = {
   mechanism: { relationship: 'controls', stage: 'operational', scope: 'Fixture market and period.' },
   claims: [
-    { id: 'claim-a', source_id: 'source-a', assertion: 'Fixture issuer claim.', locator: 'fixture-a', extract: 'Issuer evidence supports the scoped control mechanism.', valid_from: '2026-09-01T00:00:00Z', valid_through: null, last_substantive_verification_at: '2026-09-11T12:00:00Z', claim_type: 'fact', criterion_ids: ['control', 'realized_leverage'], supports_anchor: true, counterevidence: [], freshness: 'current', verification: { status: 'verified', entity_match: true, scope_match: true, date_checked: true, contradiction_status: 'none_found' } },
-    { id: 'claim-b', source_id: 'source-b', assertion: 'Fixture corroborating claim.', locator: 'fixture-b', extract: 'Independent evidence corroborates the substitution constraint.', valid_from: '2026-09-02T00:00:00Z', valid_through: null, last_substantive_verification_at: '2026-09-11T12:00:00Z', claim_type: 'fact', criterion_ids: ['substitution_constraint', 'durability'], supports_anchor: true, counterevidence: [], freshness: 'current', verification: { status: 'verified', entity_match: true, scope_match: true, date_checked: true, contradiction_status: 'none_found' } }
+    { id: 'claim-a', source_id: 'source-a', passage_id: deterministicPassages.find((passage) => passage.source_id === 'source-a').passage_id, assertion: 'Fixture issuer claim.', locator: 'model-locator-is-ignored', extract: 'Model extract is ignored.', valid_from: '2026-09-01T00:00:00Z', valid_through: null, last_substantive_verification_at: '2026-09-11T12:00:00Z', claim_type: 'fact', criterion_ids: ['control', 'realized_leverage'], supports_anchor: true, counterevidence: [], freshness: 'current', verification: { status: 'verified', entity_match: true, scope_match: true, date_checked: true, contradiction_status: 'none_found' } },
+    { id: 'claim-b', source_id: 'source-b', passage_id: deterministicPassages.find((passage) => passage.source_id === 'source-b').passage_id, assertion: 'Fixture corroborating claim.', locator: 'model-locator-is-ignored', extract: 'Model extract is ignored.', valid_from: '2026-09-02T00:00:00Z', valid_through: null, last_substantive_verification_at: '2026-09-11T12:00:00Z', claim_type: 'fact', criterion_ids: ['substitution_constraint', 'durability'], supports_anchor: true, counterevidence: [], freshness: 'current', verification: { status: 'verified', entity_match: true, scope_match: true, date_checked: true, contradiction_status: 'none_found' } }
   ],
   proposed_criteria: syntheticCriteria.map((criterion) => ({
     ...criterion,
@@ -139,13 +158,15 @@ const pipelineVerified = {
   invalidation_condition: 'A viable substitute becomes available.'
 };
 const assembledPipelineRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, pipelineVerified, '2026-09-11T12:00:00Z');
+assert.equal(assembledPipelineRelease.evidence[0].locator, pipelineVerified.claims[0].passage_id);
+assert.equal(assembledPipelineRelease.evidence[0].extract, pipelineDocuments[0].text);
 assert.equal(assembledPipelineRelease.profiles[0].assessment.summary_state, 'durable_demonstrated_leverage');
 assert.equal(assembledPipelineRelease.coverage.attempted, 1);
 assert.equal(assembledPipelineRelease.coverage.complete, 1);
 assert.equal(assembledPipelineRelease.coverage.not_started, 19);
 assert.deepEqual(validateAiPowerReleaseSemantics(assembledPipelineRelease), { ok: true, errors: [] });
 const repeatedConsensusRelease = buildRepeatConsensus(assembledPipelineRelease, structuredClone(assembledPipelineRelease), '2026-09-11T13:00:00Z');
-assert.equal(repeatedConsensusRelease.pipeline.pipeline_version, 'ai-power-pipeline-v2.1.0-repeat-consensus');
+assert.equal(repeatedConsensusRelease.pipeline.pipeline_version, 'ai-power-pipeline-v2.2.0-deterministic-passage-consensus');
 assert.equal(repeatedConsensusRelease.profiles[0].assessment.status, 'complete');
 assert.equal(repeatedConsensusRelease.evidence.length, 2);
 assert.deepEqual(validateAiPowerReleaseSemantics(repeatedConsensusRelease), { ok: true, errors: [] });
@@ -165,18 +186,27 @@ assert.equal(criterionScopeMismatchRelease.profiles[0].assessment.status, 'parti
 assert.equal(criterionScopeMismatchRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'control').grade, null);
 assert.equal(criterionScopeMismatchRelease.profiles[0].assessment.criteria.find((criterion) => criterion.id === 'realized_leverage').grade, 2);
 assert.deepEqual(validateAiPowerReleaseSemantics(criterionScopeMismatchRelease), { ok: true, errors: [] });
-const boundaryDocuments = structuredClone(pipelineDocuments);
-boundaryDocuments[0].text = 'Context words before the claim. Issuer evidence supports the scoped control mechanism. Context words after the claim.';
-const boundaryFirst = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, boundaryDocuments, pipelineVerified, '2026-09-11T12:00:00Z');
-const boundaryVerified = structuredClone(pipelineVerified);
-boundaryVerified.claims[0].extract = 'Context words before the claim. Issuer evidence supports the scoped control mechanism.';
-const boundarySecond = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, boundaryDocuments, boundaryVerified, '2026-09-11T12:05:00Z');
-assert.notEqual(boundaryFirst.evidence[0].id, boundarySecond.evidence[0].id);
-const boundaryConsensus = buildRepeatConsensus(boundaryFirst, boundarySecond, '2026-09-11T13:00:00Z');
-assert.equal(boundaryConsensus.evidence.length, 2);
-assert.equal(boundaryConsensus.profiles[0].assessment.status, 'complete');
-assert.deepEqual(validateAiPowerReleaseSemantics(boundaryConsensus), { ok: true, errors: [] });
-const differentClaimRelease = structuredClone(boundarySecond);
+const alternateModelShape = structuredClone(pipelineVerified);
+alternateModelShape.claims[0].id = 'alternate-claim-a';
+alternateModelShape.claims[0].locator = 'a different generated locator';
+alternateModelShape.claims[0].extract = 'a different generated extract';
+alternateModelShape.proposed_criteria = alternateModelShape.proposed_criteria.map((criterion) => ({
+  ...criterion,
+  claim_ids: criterion.claim_ids.map((id) => id === 'claim-a' ? 'alternate-claim-a' : id)
+}));
+const alternatePassageRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, alternateModelShape, '2026-09-11T12:05:00Z');
+assert.deepEqual(alternatePassageRelease.evidence.map((item) => item.id), assembledPipelineRelease.evidence.map((item) => item.id));
+assert.deepEqual(alternatePassageRelease.evidence.map((item) => item.extract), assembledPipelineRelease.evidence.map((item) => item.extract));
+const deterministicPassageConsensus = buildRepeatConsensus(assembledPipelineRelease, alternatePassageRelease, '2026-09-11T13:00:00Z');
+assert.equal(deterministicPassageConsensus.evidence.length, 2);
+assert.equal(deterministicPassageConsensus.profiles[0].assessment.status, 'complete');
+assert.deepEqual(validateAiPowerReleaseSemantics(deterministicPassageConsensus), { ok: true, errors: [] });
+const invalidPassageFixture = structuredClone(pipelineVerified);
+invalidPassageFixture.claims[0].passage_id = 'source-a::p9999::000000000000';
+const invalidPassageRelease = assembleVerifiedProfile(AI_POWER_V2_RELEASE, pipelineProfile.entity.id, pipelineDocuments, invalidPassageFixture, '2026-09-11T12:10:00Z');
+assert.equal(invalidPassageRelease.evidence.length, 1);
+assert.equal(invalidPassageRelease.profiles[0].assessment.status, 'insufficient_evidence');
+const differentClaimRelease = structuredClone(alternatePassageRelease);
 const differentEvidence = differentClaimRelease.evidence.find((item) => item.source.origin_id === 'issuer-a');
 const priorDifferentId = differentEvidence.id;
 differentEvidence.id = 'evidence-fixture-different-claim';
@@ -186,7 +216,7 @@ for (const criterion of differentClaimRelease.profiles[0].assessment.criteria) {
   criterion.evidence_refs = criterion.evidence_refs.map((ref) => ref === priorDifferentId ? differentEvidence.id : ref);
 }
 assert.deepEqual(validateAiPowerReleaseSemantics(differentClaimRelease), { ok: true, errors: [] });
-const differentClaimConsensus = buildRepeatConsensus(boundaryFirst, differentClaimRelease, '2026-09-11T13:00:00Z');
+const differentClaimConsensus = buildRepeatConsensus(assembledPipelineRelease, differentClaimRelease, '2026-09-11T13:00:00Z');
 assert.equal(differentClaimConsensus.evidence.length, 1);
 assert.equal(differentClaimConsensus.profiles[0].assessment.status, 'insufficient_evidence');
 assert.ok(differentClaimConsensus.profiles[0].assessment.criteria.every((criterion) => criterion.grade === null));
