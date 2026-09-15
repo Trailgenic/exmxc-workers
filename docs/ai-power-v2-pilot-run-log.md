@@ -8,8 +8,9 @@ This log records non-publishing methodology diagnostics. Candidate artifacts rem
 |---|---|---:|---:|---:|---:|---:|---:|
 | [Cohort 1](https://github.com/Trailgenic/exmxc-workers/actions/runs/34669229072) | Live collection per attempt | 89 / 94 | 2 / 2 | 14 | 0 | 1,130,454 | $0.46 |
 | [Cohort 2](https://github.com/Trailgenic/exmxc-workers/actions/runs/34671408259) | One immutable snapshot | 108 / 87 | 3 / 2 | 45 | 0 | 1,140,352 | $0.47 |
+| [Calibration 1](https://github.com/Trailgenic/exmxc-workers/actions/runs/34998172781) | One immutable four-entity snapshot | 24 / 25 | 8 / 8 | 13 | 3 | 270,831 | $0.11 |
 
-Both runs used `gpt-5.6-luna` with Medium reasoning, two model passes per entity per attempt, 20 entities, 60 declared sources, and no repository or public API writes. Cost estimates apply the September 12, 2026 short-context standard rates of $0.20 per million input tokens and $1.20 per million output tokens from [OpenAI API pricing](https://developers.openai.com/api/docs/pricing). Actual billing remains the account usage record.
+All runs used `gpt-5.6-luna` with Medium reasoning, two model passes per entity per attempt, and no repository or public API writes. The cohort runs covered 20 entities; Calibration 1 was bounded to TSMC, NextEra Energy, Microsoft, and Anthropic. Cost estimates apply the September 12, 2026 short-context standard rates of $0.20 per million input tokens and $1.20 per million output tokens from [OpenAI API pricing](https://developers.openai.com/api/docs/pricing). Actual billing remains the account usage record.
 
 ## Findings
 
@@ -28,3 +29,14 @@ Do not publish either candidate as a company assessment or ranking. Preserve the
 The next authorized run is bounded to TSMC, NextEra Energy, Microsoft, and Anthropic. Their manifests add dated issuer, filing, and counterparty evidence aimed at the exact failure modes observed in Cohort 2: current mechanism-linked economics, enforceable rights, substitution constraints, and forward durability.
 
 The workflow must capture one immutable four-entity source snapshot before invoking a model, require two distinct delivered origins for every entity, run two `gpt-5.6-luna` Medium attempts against that same snapshot, and reconcile them with the unchanged conservative repeat policy. It writes no repository or public API state. A full 20-entity rerun remains unauthorized until this calibration demonstrates materially better repeatability without weakened evidence gates.
+
+## Calibration 1 findings
+
+- All 16 declared documents were delivered, both candidate attempts passed schema and semantic validation, and the reconciliation completed without repository or public API writes.
+- NextEra Energy retained three Moderate-confidence consensus grades: Control 2, Realized leverage 2, and Durability 2. Substitution constraint remained unknown. Five evidence records repeated across the two attempts and the graded evidence spanned the Meta contract disclosure, Google agreement, and SEC-filed operating disclosure.
+- Microsoft received Control 2, Substitution constraint 2, Realized leverage 2, and Durability 2 in both attempts. Reconciliation still withheld all four grades because only one current anchor-supporting origin repeated across the criteria; the profile-wide two-origin gate worked as designed.
+- TSMC retained four repeated contextual records but no repeated anchor-supporting grade. Anthropic retained two repeated records, while the attempts disagreed on whether Durability 1 was supportable.
+
+## Calibration 1 decision
+
+Do not run the full 20-entity cohort yet and do not publish Calibration 1 as a company ranking. The improved packets demonstrate that stable automated judgments are possible, but one stable profile out of four is not sufficient evidence of cohort-scale reliability. The next pipeline change should give the model deterministic passage identifiers from each immutable source snapshot so repeat attempts select from the same candidate passages instead of regenerating quote boundaries. Evidence, freshness, source-diversity, primary-source, and abstention gates remain unchanged.
