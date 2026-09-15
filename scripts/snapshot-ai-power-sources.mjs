@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { AI_POWER_V2_RELEASE } from "../lib/ai-power-v2.js";
-import { collectEvidenceDocuments, validateEvidenceDocumentSnapshot, validateSourceManifest } from "../lib/ai-power-pipeline.js";
+import { buildDeterministicPassages, collectEvidenceDocuments, validateEvidenceDocumentSnapshot, validateSourceManifest } from "../lib/ai-power-pipeline.js";
 
 function argument(name) {
   const index = process.argv.indexOf(name);
@@ -40,12 +40,15 @@ async function capture(profile) {
   const manifestValidation = validateSourceManifest(profile, manifest);
   if (!manifestValidation.ok) throw new Error(`${profile.entity.id}: ${manifestValidation.errors.join(" | ")}`);
   const capturedAt = new Date().toISOString();
-  const documents = (await collectEvidenceDocuments(profile, manifest)).map((document) => ({
-    ...document,
-    retrieved_at: capturedAt
-  }));
+  const documents = (await collectEvidenceDocuments(profile, manifest)).map((document) => {
+    const captured = { ...document, retrieved_at: capturedAt };
+    return {
+      ...captured,
+      passages: captured.collection_status === "delivered" ? buildDeterministicPassages([captured]) : []
+    };
+  });
   const snapshot = {
-    snapshot_version: "ai-power-source-snapshot-v1",
+    snapshot_version: "ai-power-source-snapshot-v2",
     entity_id: profile.entity.id,
     captured_at: capturedAt,
     manifest_sha256: createHash("sha256").update(manifestText).digest("hex"),
@@ -70,6 +73,7 @@ async function capture(profile) {
       content_type: document.content_type,
       source_snapshot_sha256: document.sha256,
       bytes_retained: Buffer.byteLength(document.text || "", "utf8"),
+      passage_count: document.passages.length,
       truncated: document.truncated,
       error: document.collection_error
     }))
@@ -87,7 +91,7 @@ await Promise.all(Array.from({ length: concurrency }, () => worker()));
 results.sort((left, right) => left.entity_id.localeCompare(right.entity_id));
 const failures = results.filter((result) => !result.eligible_for_model_attempt);
 process.stdout.write(`${JSON.stringify({
-  snapshot_version: "ai-power-source-snapshot-v1",
+  snapshot_version: "ai-power-source-snapshot-v2",
   checked_at: new Date().toISOString(),
   manifests: results.length,
   requested_sources: results.reduce((sum, result) => sum + result.requested, 0),
