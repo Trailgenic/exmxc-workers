@@ -40,3 +40,9 @@ The workflow must capture one immutable four-entity source snapshot before invok
 ## Calibration 1 decision
 
 Do not run the full 20-entity cohort yet and do not publish Calibration 1 as a company ranking. The improved packets demonstrate that stable automated judgments are possible, but one stable profile out of four is not sufficient evidence of cohort-scale reliability. The next pipeline change should give the model deterministic passage identifiers from each immutable source snapshot so repeat attempts select from the same candidate passages instead of regenerating quote boundaries. Evidence, freshness, source-diversity, primary-source, and abstention gates remain unchanged.
+
+## Calibration 2 protocol
+
+Calibration 2 keeps the same four entities, source manifests, `gpt-5.6-luna` Medium model configuration, two-attempt design, and non-publishing boundary. The only methodological change is evidence identity: snapshot v2 creates a deterministic passage catalog from each retained source, both model passes must cite supplied passage identifiers, and the assembler retrieves canonical locators and extracts from that catalog.
+
+No scoring anchor or evidence gate changes. The full 20-entity cohort remains unauthorized unless Calibration 2 produces materially broader repeatability than Calibration 1 without reducing abstention discipline.
