@@ -20,13 +20,22 @@
       "origin_id": "microsoft-fy2026-q4-results"
     },
     {
-      "id": "microsoft-investor-ai-disclosures",
-      "url": "https://www.microsoft.com/en-us/investor/default",
-      "publisher": "Microsoft",
-      "source_type": "company_statement",
-      "document_title": "Microsoft Investor Relations current disclosures",
-      "published_at": null,
-      "origin_id": "microsoft-investor-current-disclosures"
+      "id": "openai-microsoft-definitive-agreement",
+      "url": "https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/",
+      "publisher": "Microsoft and OpenAI",
+      "source_type": "counterparty_statement",
+      "document_title": "The Next Chapter of the Microsoft-OpenAI Partnership",
+      "published_at": "2025-10-28T00:00:00Z",
+      "origin_id": "openai-microsoft-definitive-agreement"
+    },
+    {
+      "id": "microsoft-openai-continuing-partnership",
+      "url": "https://blogs.microsoft.com/blog/2026/02/27/microsoft-and-openai-joint-statement-on-continuing-partnership/",
+      "publisher": "Microsoft and OpenAI",
+      "source_type": "executed_agreement",
+      "document_title": "Microsoft and OpenAI Joint Statement on Continuing Partnership",
+      "published_at": "2026-02-27T00:00:00Z",
+      "origin_id": "microsoft-openai-continuing-partnership"
     }
   ]
 }

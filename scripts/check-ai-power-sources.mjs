@@ -8,9 +8,24 @@ function argument(name) {
   return index >= 0 ? process.argv[index + 1] : null;
 }
 
+function selectedProfiles() {
+  const raw = argument("--entities");
+  if (!raw) return AI_POWER_V2_RELEASE.profiles;
+  const ids = raw.split(",").map((value) => value.trim()).filter(Boolean);
+  if (!ids.length || ids.some((id) => !/^company-[a-z0-9-]+$/.test(id))) {
+    throw new Error("--entities must be a comma-separated list of stable company ids.");
+  }
+  if (new Set(ids).size !== ids.length) throw new Error("--entities cannot contain duplicate company ids.");
+  return ids.map((id) => {
+    const profile = AI_POWER_V2_RELEASE.profiles.find((candidate) => candidate.entity.id === id);
+    if (!profile) throw new Error(`Unknown pilot entity: ${id}`);
+    return profile;
+  });
+}
+
 const manifestDir = argument("--manifest-dir") || "data/ai_power_v2/manifests";
 const concurrency = Math.max(1, Math.min(Number(argument("--concurrency")) || 4, 8));
-const pending = [...AI_POWER_V2_RELEASE.profiles];
+const pending = [...selectedProfiles()];
 const results = [];
 
 async function check(profile) {

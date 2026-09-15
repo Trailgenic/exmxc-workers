@@ -22,3 +22,9 @@ Both runs used `gpt-5.6-luna` with Medium reasoning, two model passes per entity
 ## Decision
 
 Do not publish either candidate as a company assessment or ranking. Preserve the v1 compatibility surface unchanged. Before another full paid cohort, improve source selection for enforceable rights, switching constraints, mechanism-linked economics, and 24-month persistence, then validate the revised protocol on a small canary.
+
+## Targeted calibration protocol
+
+The next authorized run is bounded to TSMC, NextEra Energy, Microsoft, and Anthropic. Their manifests add dated issuer, filing, and counterparty evidence aimed at the exact failure modes observed in Cohort 2: current mechanism-linked economics, enforceable rights, substitution constraints, and forward durability.
+
+The workflow must capture one immutable four-entity source snapshot before invoking a model, require two distinct delivered origins for every entity, run two `gpt-5.6-luna` Medium attempts against that same snapshot, and reconcile them with the unchanged conservative repeat policy. It writes no repository or public API state. A full 20-entity rerun remains unauthorized until this calibration demonstrates materially better repeatability without weakened evidence gates.
