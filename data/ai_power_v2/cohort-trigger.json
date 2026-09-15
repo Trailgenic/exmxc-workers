@@ -1,10 +1,10 @@
 {
-  "run_id": "ai-power-v2.0-pilot-cohort-2026-09-12-repeat-2",
-  "authorized_at": "2026-09-12T03:50:00Z",
+  "run_id": "ai-power-v2.0-pilot-cohort-2026-09-15-deterministic-passages",
+  "authorized_at": "2026-09-15T17:37:00Z",
   "scope": "20-entity-pilot",
   "model": "gpt-5.6-luna",
   "reasoning_effort": "medium",
   "independent_attempts": 2,
-  "purpose": "artifact-only evidence extraction, verification, and repeat-run consensus against one immutable source snapshot",
+  "purpose": "artifact-only evidence extraction, verification, and repeat-run consensus against one immutable deterministic-passage snapshot",
   "publishes": false
 }
