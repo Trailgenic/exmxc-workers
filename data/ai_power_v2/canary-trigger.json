@@ -1,8 +1,10 @@
 {
-  "run_id": "2026-09-12-luna-canary-v3-stability",
+  "run_id": "2026-09-15-luna-four-company-calibration-v1",
   "scope": [
-    "company-asml",
-    "company-microsoft"
+    "company-tsmc",
+    "company-nextera-energy",
+    "company-microsoft",
+    "company-anthropic"
   ],
   "model": "gpt-5.6-luna",
   "reasoning_effort": "medium",
