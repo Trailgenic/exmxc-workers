@@ -26,20 +26,21 @@
 </style>
 <main class="spi-root">
   <header class="spi-hero">
-    <div class="ex-label">Capital · Research constitution RC1</div>
+    <div class="ex-label">Capital · Released constituent research index</div>
     <h1 class="spi-title">Durable scarcity selection. <em>Valuation stays separate.</em></h1>
     <p class="spi-deck">The sPEG Index identifies listed companies with evidence-supported capacity to retain economic benefits from constrained alternatives over a three-to-five-year horizon. Every decision exposes its mechanism, five-part ordinal score, evidence confidence, counterevidence, and next falsifier.</p>
     <div class="spi-actions">
       <a class="spi-btn spi-btn--solid" href="/speg-methodology">Read the method</a>
       <a class="spi-btn" href="https://mcp.exmxc.ai/speg/index/v1" target="_blank" rel="noopener">Machine-readable release</a>
+      <a class="spi-btn" href="/speg-index/releases/speg-index-2026-09-17-v1">Release record</a>
       <a class="spi-btn" href="https://mcp.exmxc.ai/schemas/speg-index-profile-v1" target="_blank" rel="noopener">Schema</a>
     </div>
-    <div class="spi-boundary"><strong>Business quality is not price.</strong> Membership does not mean “cheap,” and a missing PEG does not erase durable scarcity. SDS never changes PEG or an economic multiplier. RC1 is a draft research constitution: include recommendations are not yet live membership, and all valuation fields remain unavailable.</div>
+    <div class="spi-boundary"><strong>Business quality is not price.</strong> Membership does not mean “cheap,” and a missing PEG does not erase durable scarcity. SDS never changes PEG or an economic multiplier. Release v1 names five members; all valuation fields remain unavailable until a separately qualified valuation packet exists.</div>
     <div class="spi-status" id="spi-status" aria-live="polite"></div>
   </header>
 
   <section class="spi-section" aria-labelledby="spi-includes-title">
-    <div class="spi-eyebrow">Research decision · include</div>
+    <div class="spi-eyebrow">Membership state · member</div>
     <h2 id="spi-includes-title">Meets every admission gate</h2>
     <div class="spi-grid" id="spi-includes"><div class="spi-empty">Loading profiles…</div></div>
   </section>
@@ -73,9 +74,9 @@
     status.replaceChildren();
     const stats = [
       ["Candidates", release.coverage.candidate_count],
-      ["Draft includes", release.coverage.include_recommendations],
+      ["Members", release.coverage.released_members],
       ["Watchlist", release.coverage.watchlist],
-      ["Released members", release.coverage.released_members]
+      ["Qualified members", release.coverage.qualified_member_count]
     ];
     for (const [label, value] of stats) {
       const box = element("div", "spi-stat");
@@ -87,7 +88,7 @@
   const renderCard = (profile) => {
     const link = element("a", "spi-card");
     link.href = `/speg-index/companies/${encodeURIComponent(profile.identity.stable_slug)}`;
-    link.append(element("div", "spi-eyebrow", `${profile.decision.research_decision} · ${profile.dimensions.constraint.confidence} confidence`));
+    link.append(element("div", "spi-eyebrow", `${profile.decision.membership_state ?? profile.decision.research_decision} · ${profile.dimensions.constraint.confidence} confidence`));
     link.append(element("h3", "", profile.identity.display_name));
     link.append(element("div", "spi-vector", `SDS ${profile.score.total ?? "—"}/20 · [${profile.score.vector.map(value => value ?? "?").join(" · ")}]`));
     const meta = element("div", "spi-meta");
@@ -110,7 +111,7 @@
     })
     .then((release) => {
       renderStats(release);
-      renderGroup(includes, release.profiles.filter(profile => profile.decision.research_decision === "include"));
+      renderGroup(includes, release.profiles.filter(profile => profile.decision.membership_state === "member"));
       renderGroup(watch, release.profiles.filter(profile => profile.decision.research_decision === "watchlist"));
     })
     .catch(() => {

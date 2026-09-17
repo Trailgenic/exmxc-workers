@@ -14,6 +14,7 @@ import { assembleVerifiedProfile, buildDeterministicPassages, callOpenAIJson, ex
 import { buildRepeatConsensus } from '../lib/ai-power-consensus.js';
 import {
   SPEG_INDEX_RELEASE,
+  SPEG_INDEX_DRAFT_RELEASE,
   calculateSpegIndexScore,
   evaluateSpegIndexEligibility,
   validateSpegIndexReleaseSemantics
@@ -56,12 +57,15 @@ assert.equal(DATASETS.entity_clarity_latest_release.data.registry_entity_count, 
 assert.equal(DATASETS.speg.data.metadata.as_of_date, '2026-07-16');
 assert.equal(DATASETS.speg.data.metadata.snapshot_type, 'forward_fiscal_eps_proxy');
 assert.equal(DATASETS.speg.data.rows.length, 25);
-assert.equal(DATASETS.speg_index_v1.data.release_id, 'speg-index-2026-09-17-rc1');
+assert.equal(DATASETS.speg_index_v1.data.release_id, 'speg-index-2026-09-17-v1');
 assert.equal(SPEG_INDEX_RELEASE.profiles.length, 10);
 assert.equal(SPEG_INDEX_RELEASE.coverage.include_recommendations, 5);
 assert.equal(SPEG_INDEX_RELEASE.coverage.watchlist, 5);
-assert.equal(SPEG_INDEX_RELEASE.coverage.released_members, 0);
-assert.equal(SPEG_INDEX_RELEASE.membership_mutated, false);
+assert.equal(SPEG_INDEX_RELEASE.coverage.released_members, 5);
+assert.equal(SPEG_INDEX_RELEASE.coverage.qualified_member_count, 5);
+assert.equal(SPEG_INDEX_RELEASE.membership_mutated, true);
+assert.equal(SPEG_INDEX_DRAFT_RELEASE.coverage.released_members, 0);
+assert.equal(SPEG_INDEX_DRAFT_RELEASE.membership_mutated, false);
 assert.deepEqual(validateSpegIndexReleaseSemantics(SPEG_INDEX_RELEASE), { ok: true, errors: [] });
 const validateSpegIndex = new Ajv2020({ strict: false, validateFormats: false }).compile(spegIndexProfileV1Schema);
 assert.equal(validateSpegIndex(SPEG_INDEX_RELEASE), true, JSON.stringify(validateSpegIndex.errors));

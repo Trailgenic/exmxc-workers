@@ -1,0 +1,647 @@
+{
+  "release_id": "speg-index-2026-09-17-v1",
+  "method": "speg-index-scarcity-v1.0.0",
+  "status": "released",
+  "research_cutoff": "2026-09-17",
+  "reviewed_at": "2026-09-17T23:48:49Z",
+  "publication_at": "2026-09-18T00:15:00Z",
+  "effective_at": "2026-09-18T00:15:00Z",
+  "predecessor_release_id": "speg-index-2026-09-17-rc1",
+  "content_hash": "sha256:dd781d157b8ea937d6797ce3e6b29b04685993d631fda989e15bfb0b2eb5592a",
+  "membership_mutated": true,
+  "notes": "First released sPEG Index snapshot. Five profiles satisfy every admission gate and become members; five remain non-member watchlist research. SDS remains ordinal selection evidence, valuation remains null, and no return or portfolio-weight claim is made.",
+  "sources": {
+    "A1": {
+      "title": "ASML Q2 results",
+      "url": "https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results",
+      "date_and_locator": "July 15, 2026; results/CEO statement",
+      "limitation": "Reported capture; planned capacity is not shipments",
+      "retrieved_on": "2026-09-17"
+    },
+    "A2": {
+      "title": "ASML EUV systems",
+      "url": "https://www.asml.com/en/products/euv-lithography-systems",
+      "date_and_locator": "Undated; product description",
+      "limitation": "Technical perimeter; not willingness-to-pay evidence",
+      "retrieved_on": "2026-09-17"
+    },
+    "A3": {
+      "title": "Intel/ASML High-NA update",
+      "url": "https://www.intc.com/news-events/press-releases/detail/1781/intel-foundry-and-asml-collaborate-to-accelerate-industry",
+      "date_and_locator": "September 8, 2026; production discussion",
+      "limitation": "Joint commercial origin; selected layers, not universal adoption",
+      "retrieved_on": "2026-09-17"
+    },
+    "A4": {
+      "title": "ASML 2025 annual report highlights",
+      "url": "https://www.asml.com/en/investors/annual-report/2025",
+      "date_and_locator": "FY2025; profitability/R&D",
+      "limitation": "Earnings after engineering; not full maintenance-capex attribution",
+      "retrieved_on": "2026-09-17"
+    },
+    "A5": {
+      "title": "Reuters customer-adoption report",
+      "url": "https://www.reuters.com/business/asml-says-first-chips-new-high-na-machines-arrive-months-2026-05-19/",
+      "date_and_locator": "May 19, 2026; TSMC comments",
+      "limitation": "External reporting of customer cost reservations; dated, not a September plan",
+      "retrieved_on": "2026-09-17"
+    },
+    "C1": {
+      "title": "Cadence Q2 results",
+      "url": "https://investor.cadence.com/news/news-details/2026/Cadence-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+      "date_and_locator": "July 27, 2026; results/reconciliation",
+      "limitation": "GAAP, R&D, core versus acquired growth",
+      "retrieved_on": "2026-09-17"
+    },
+    "S1": {
+      "title": "Synopsys Q3 results",
+      "url": "https://news.synopsys.com/2026-08-26-Synopsys-Posts-Financial-Results-for-Third-Quarter-Fiscal-Year-2026",
+      "date_and_locator": "August 26, 2026; results/outlook/reconciliation",
+      "limitation": "Acquisition perimeter and GAAP adjustment limits",
+      "retrieved_on": "2026-09-17"
+    },
+    "X1": {
+      "title": "TSMC EDA Alliance",
+      "url": "https://www.tsmc.com/english/dedicatedFoundry/oip/eda_alliance",
+      "date_and_locator": "Partner list April 22; certification tables July 10, 2026",
+      "limitation": "External structural support and competing providers; no unobserved icon-level claims",
+      "retrieved_on": "2026-09-17"
+    },
+    "N1": {
+      "title": "NVIDIA Q2 FY2027 results",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "date_and_locator": "August 26, 2026; financial tables/platform highlights",
+      "limitation": "Current economics and perimeter; issuer assertions about superiority",
+      "retrieved_on": "2026-09-17"
+    },
+    "N2": {
+      "title": "AWS Trainium",
+      "url": "https://aws.amazon.com/ai/machine-learning/trainium/",
+      "date_and_locator": "Undated; architecture/Neuron/customers",
+      "limitation": "Independent commercial alternative; performance/migration claims unverified",
+      "retrieved_on": "2026-09-17"
+    },
+    "N3": {
+      "title": "NVIDIA agreement to acquire Hugging Face",
+      "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "date_and_locator": "September 3, 2026; transaction announcement and open-platform commitments",
+      "limitation": "Announced transaction, not a closed acquisition; consideration, financing, integration costs and realized platform effects remain unobserved",
+      "retrieved_on": "2026-09-17"
+    },
+    "T1": {
+      "title": "TSMC Q2 results",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+      "date_and_locator": "July 16, 2026; actuals",
+      "limitation": "Reported margins; fresh retrieval does not renew forecast vintage",
+      "retrieved_on": "2026-09-17"
+    },
+    "T2": {
+      "title": "TSMC Q2 earnings release",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/a80d7933be643644081584087731f73b22ea5a2c/2Q26%20EarningsRelease.pdf",
+      "date_and_locator": "July 16, 2026; page 1",
+      "limitation": "Wafer mix denominator distinguished",
+      "retrieved_on": "2026-09-17"
+    },
+    "T3": {
+      "title": "TSMC Q2 call",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+      "date_and_locator": "July 16 event; pages 3–4",
+      "limitation": "Capex and dilution are management disclosures; LSEG transcript hosted by issuer",
+      "retrieved_on": "2026-09-17"
+    },
+    "X2": {
+      "title": "Samsung Q2 results",
+      "url": "https://news.samsung.com/global/samsung-electronics-announces-second-quarter-2026-results",
+      "date_and_locator": "July 30, 2026; DS section",
+      "limitation": "Rival HBM/foundry activity; plans not equivalent qualified scale",
+      "retrieved_on": "2026-09-17"
+    },
+    "D1": {
+      "title": "ADI Q3 results",
+      "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-reports-record-fiscal-third-quarter-2026",
+      "date_and_locator": "August 19, 2026; financial tables",
+      "limitation": "Reported capture, company-defined FCF",
+      "retrieved_on": "2026-09-17"
+    },
+    "D2": {
+      "title": "ADI lifecycle policy",
+      "url": "https://www.analog.com/en/support/product-life-cycle-information.html",
+      "date_and_locator": "Undated; lifecycle support",
+      "limitation": "Issuer continuity policy, not observed switching cost",
+      "retrieved_on": "2026-09-17"
+    },
+    "D3": {
+      "title": "TI lifecycle policy",
+      "url": "https://www.ti.com/quality-reliability/quality/product-life-cycle.html",
+      "date_and_locator": "Undated; lifecycle",
+      "limitation": "Rival continuity counters uniqueness inference",
+      "retrieved_on": "2026-09-17"
+    },
+    "D4": {
+      "title": "ADI investor news",
+      "url": "https://investor.analog.com/",
+      "date_and_locator": "September 9, 2026 acquisition headline",
+      "limitation": "Event flag only; no deal economics incorporated",
+      "retrieved_on": "2026-09-17"
+    },
+    "R1": {
+      "title": "Arista Q2 results",
+      "url": "https://www.arista.com/company/news/press-release/24401-pr-20260804",
+      "date_and_locator": "August 4, 2026; results/risks",
+      "limitation": "Margin plus customer/supplier/competition risks",
+      "retrieved_on": "2026-09-17"
+    },
+    "R2": {
+      "title": "Arista EOS",
+      "url": "https://www.arista.com/en/products/eos",
+      "date_and_locator": "Undated; architecture/open choices",
+      "limitation": "Integration and countervailing interoperability",
+      "retrieved_on": "2026-09-17"
+    },
+    "H1": {
+      "title": "SK hynix Q2 results",
+      "url": "https://news.skhynix.com/en/q2-2026-business-results/",
+      "date_and_locator": "July 29, 2026; results/contracts/ramp",
+      "limitation": "Preliminary K-IFRS, current capture not guaranteed future rents",
+      "retrieved_on": "2026-09-17"
+    },
+    "H2": {
+      "title": "SK hynix Indiana project",
+      "url": "https://news.skhynix.com/en/groundbreaking-ceremony-in-indiana/",
+      "date_and_locator": "August 28, 2026; timing/investment",
+      "limitation": "Future construction/ramp, not today's qualified output",
+      "retrieved_on": "2026-09-17"
+    },
+    "M1": {
+      "title": "Micron Q3 results",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx",
+      "date_and_locator": "June 24, 2026; reported results",
+      "limitation": "Current reported quarter in prior pilot, not four-year consensus",
+      "retrieved_on": "2026-09-17"
+    },
+    "M2": {
+      "title": "Micron prepared remarks",
+      "url": "https://s25.q4cdn.com/621799436/files/doc_financials/2026/q3/Q3-FY26-Prepared-Remarks.pdf",
+      "date_and_locator": "June 24, 2026; SCAs/capex/deposits",
+      "limitation": "Management terms/plans; executed versus planned coverage",
+      "retrieved_on": "2026-09-17"
+    },
+    "V1": {
+      "title": "Vertiv Q2 results",
+      "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Second-Quarter-2026-with-Diluted-EPS-Growth-of-53-Adjusted-Diluted-EPS-Growth-of-60-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/default.aspx",
+      "date_and_locator": "July 29, 2026; tables/price-cost/risks",
+      "limitation": "GAAP distinction and order-conversion limits",
+      "retrieved_on": "2026-09-17"
+    },
+    "V2": {
+      "title": "Schneider/Motivair factory",
+      "url": "https://www.se.com/in/en/about-us/newsroom/news/press-releases/Schneider-Electric-launches-Motivair-liquid-cooling-solutions-factory-to-accelerate-India%E2%80%99s-highdensity-AI-infrastructure-699493fd07a7fbd2c30cbafa/",
+      "date_and_locator": "February 18, 2026; factory announcement",
+      "limitation": "Rival capacity activity; no current lead-time parity inferred",
+      "retrieved_on": "2026-09-17"
+    }
+  },
+  "profiles": [
+    {
+      "issuer_id": "asml",
+      "name": "ASML",
+      "scores": {
+        "constraint": 4,
+        "substitution_resistance": 4,
+        "economic_capture": 3,
+        "persistence": 3,
+        "cost_of_defense": 3
+      },
+      "score_total": 17,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": true,
+      "research_decision": "include",
+      "sources": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ],
+      "rationale_and_falsifiers": "17/20; include\n\n**Perimeter:** integrated advanced lithography, installed support and process ecosystem. Company-level attribution uses the integrated-capability route; no unsupported EUV revenue percentage is assigned. Non-EUV products are not assumed equally scarce.\n\n**Evidence:** Q2 sales were €9.326bn, gross margin 54%, and installed-base management €2.762bn; that last category includes services and field options. The 2025 report shows €11.3bn operating income after €4.7bn R&D. Intel's September announcement documents High-NA use on selected production layers; it is a joint commercial origin, not independent validation of all adoption economics. [A1–A4]\n\n**Judgment:** C4/S4 reflect the specific EUV capability and the process changes needed to substitute; E3 reflects retained earnings, not a measured scarcity rent; P3 limits the claim to a defensible three-to-five-year path; D3 recognizes profit after substantial engineering while retaining uncertainty over future support and capacity spending. No claim that every customer must adopt High-NA now. Reuters reported TSMC cost reservations and continued use of existing EUV in May; that is dated customer counterevidence, not a current adoption schedule. [A5]\n\n**Review/removal trigger:** a commercially credible alternative for the relevant layers; customer process changes materially bypassing the capability; or sustained failure to retain economics after required development/support. Reassess adoption delays separately from a complete thesis failure. Next full review by December 16, or next results/material adoption news earlier. Quantified customer willingness to pay remains missing.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": true,
+        "substitution_resistance": true,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": true
+      }
+    },
+    {
+      "issuer_id": "cadence",
+      "name": "Cadence",
+      "scores": {
+        "constraint": 3,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 3,
+        "cost_of_defense": 3
+      },
+      "score_total": 15,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": true,
+      "research_decision": "include",
+      "sources": [
+        "C1",
+        "X1"
+      ],
+      "rationale_and_falsifiers": "15/20; include\n\n**Perimeter:** integrated EDA and system-design workflows; qualitative company-level route. Acquired system-analysis activity is not automatically assigned core EDA scarcity.\n\n**Evidence:** Q2 revenue $1.584bn, GAAP operating margin 28.4% versus adjusted 45.5%, R&D $531.3m; core EDA grew 18%. TSMC's alliance documents design-flow collaboration and lists Cadence, Synopsys, Siemens and specialists. The extracted tables do not establish every product's certification status. [C1, X1]\n\n**Judgment:** C3/S3 for difficult-to-reproduce, process-linked workflows; E3/D3 for meaningful earnings after R&D and compensation costs; P3 for recurring process/design integration. The existence of qualified competitors prevents a uniqueness claim. Backlog is contractual visibility, not proof of five-year scarcity.\n\n**Review/removal trigger:** loss of relevance at major process transitions, material customer migration to competing flows, or deteriorating retained economics despite rising engineering spending. Next review at results or by December 16. Renewal pricing, actual switching costs and a fuller cash/SBC history remain missing. The same total as NVIDIA is not an assertion of identical economics.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": true
+      }
+    },
+    {
+      "issuer_id": "nvidia",
+      "name": "NVIDIA",
+      "scores": {
+        "constraint": 3,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 3,
+        "cost_of_defense": 3
+      },
+      "score_total": 15,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": true,
+      "research_decision": "include",
+      "sources": [
+        "N1",
+        "N2",
+        "N3"
+      ],
+      "rationale_and_falsifiers": "15/20; include\n\n**Perimeter:** accelerated-computing platform spanning hardware, networking and software. Reported Data Center revenue of $89.0bn out of $96.221bn in Q2 FY2027 establishes material exposure (about 92.5%); not all that revenue is separately identified scarcity rent. GAAP gross margin was 75%, operating income $63.734bn, and operating expenses $8.408bn. Results include comparative periods. [N1]\n\n**Judgment:** C3/S3/P3 rest on integration and software/ecosystem continuity, not an assertion that GPUs have no substitutes. E3/D3 recognize strong retained current economics after operating spending, without a through-downturn claim. AWS offers a competing integrated Trainium/Neuron architecture and asserts lower migration friction; those are interested-vendor claims, but they are a concrete response path. [N2]\n\n**Material-event review:** NVIDIA's September 3 agreement to acquire Hugging Face for $12.9303bn is incorporated as an announced, not closed, perimeter and defense-cost event. The announcement says Hugging Face will remain open, multi-cloud and multi-accelerator and will not require NVIDIA compute. The transaction therefore is not credited as additional constraint or switching cost, does not change the current C/S/E/P/D anchors, and remains a named funding, integration and ecosystem-neutrality dependency. [N3]\n\n**Review/removal trigger:** documented migration that materially weakens platform retention, persistent margin/cash leakage to suppliers or customers, transaction funding or integration costs that absorb retained benefit, or loss of the announced multi-platform posture. Next review at transaction filing, close, earnings, or by December 16. Customer concentration, purchase commitments and financing arrangements need fuller recurring review; no benchmark marketing claim is treated as independent performance proof. This score is not a conclusion about today's share price.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": true
+      }
+    },
+    {
+      "issuer_id": "synopsys",
+      "name": "Synopsys",
+      "scores": {
+        "constraint": 3,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 3,
+        "cost_of_defense": 2
+      },
+      "score_total": 14,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": true,
+      "research_decision": "include",
+      "sources": [
+        "S1",
+        "X1"
+      ],
+      "rationale_and_falsifiers": "14/20; include, at the admission floor\n\n**Perimeter:** integrated silicon-to-systems design, with explicit separation of established EDA/IP from newly consolidated Ansys operations. The company-level route is qualitative; the acquisition's entire revenue increase is not scarcity.\n\n**Evidence:** Q3 FY2026 revenue $2.477bn, GAAP operating margin 14.4% versus adjusted 41.6%, R&D $719.7m. The outlook includes substantial Ansys revenue; comparison with the prior perimeter needs care. TSMC lists Synopsys among multiple EDA partners, supporting integration while documenting alternatives. [S1, X1]\n\n**Judgment:** C3/S3/P3 for established process-linked workflows and IP; E3 for current retained operating earnings, not adjusted growth alone. D2 explicitly reflects the acquisition/integration burden and wide GAAP adjustment gap. Inclusion relies on the established core capability, not on an assumed Ansys synergy premium.\n\n**Review/removal trigger:** integration or funding costs make D1 appropriate, core workflows lose qualified relevance, or evidence shows the economic benefit is not retained. Next review at results, material integration update, or December 16. An acquisition-normalized cash and compensation series remains a priority. Any one-point downgrade changes eligibility; this is one of the two proposed admissions with no score-floor headroom and must be shown as such.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    },
+    {
+      "issuer_id": "tsmc",
+      "name": "TSMC",
+      "scores": {
+        "constraint": 3,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 3,
+        "cost_of_defense": 2
+      },
+      "score_total": 14,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": true,
+      "research_decision": "include",
+      "sources": [
+        "T1",
+        "T2",
+        "T3",
+        "X2"
+      ],
+      "rationale_and_falsifiers": "14/20; include\n\n**Perimeter:** advanced process manufacturing and its qualification/design ecosystem, with packaging as a related capability. Q2 wafer mix was 77% at 7nm and below; this is wafer revenue, not consolidated revenue. The integrated-capability route supports company-level selection. Q2 revenue was $40.2bn, operating margin 60.3%; management reported $15.7bn quarterly capex and a $60–64bn annual capital budget. Management also anticipates margin dilution from new-node and overseas ramps. [T1–T3]\n\n**Judgment:** C3 reflects the combined manufacturing/qualification ecosystem and the existence of competing foundries. S3/E3/P3 recognize customer process integration and earnings retention with a reasoned three-to-five-year path. D2 captures the material cost of maintaining capability. Samsung's own results describe 2nm engagements and planned ramps, demonstrating an active competitive response rather than proving equivalent scale or yield. [X2]\n\n**Review/removal trigger:** rival production proves sufficiently substitutable at relevant performance/yield/scale, leading customers shift meaningful designs, or defense investment persistently consumes retained economics. Next review at results or by December 16. Geographic and customer concentration are additional risks, not score bonuses. A full capital-return comparison and customer-specific switching evidence remain incomplete.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    },
+    {
+      "issuer_id": "analog-devices",
+      "name": "Analog Devices",
+      "scores": {
+        "constraint": 2,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 3,
+        "cost_of_defense": 3
+      },
+      "score_total": 14,
+      "dimension_confidence": {
+        "constraint": "Low",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Low",
+      "score_floors_pass": false,
+      "research_decision": "watchlist",
+      "sources": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "rationale_and_falsifiers": "14/20; watchlist\n\nQ3 FY2026 revenue was $4.022bn with GAAP operating margin 40.1%; trailing company-defined FCF was $4.937bn after $607.8m capex. ADI describes long product lives and discontinuation notice. TI also describes long product lives, so continuity alone is not unique. [D1–D3]\n\n**Judgment:** S3/E3/P3/D3 recognize embedded design continuity and retained economics. C2 and Low confidence in whole-company scarcity prevent admission despite total 14. Industrial and automotive categories cannot be labeled entirely scarce. The September 9 announced Alif acquisition is an additional perimeter-review item, not credited as an established capability. [D4]\n\n**Admission evidence needed:** identify demanding signal-chain applications, qualified substitutes and requalification burdens, then demonstrate material company exposure. Review after that packet or at next results/by December 16. Commodity-like replacement or deterioration after normal cycle adjustment would weaken the case further.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    },
+    {
+      "issuer_id": "arista",
+      "name": "Arista",
+      "scores": {
+        "constraint": 2,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 2,
+        "cost_of_defense": 3
+      },
+      "score_total": 13,
+      "dimension_confidence": {
+        "constraint": "Low",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Low",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Low",
+      "score_floors_pass": false,
+      "research_decision": "watchlist",
+      "sources": [
+        "R1",
+        "R2"
+      ],
+      "rationale_and_falsifiers": "13/20; watchlist\n\nQ2 revenue was $3.036bn and GAAP operating margin 45.4%. Its release identifies large-customer concentration, merchant-silicon dependence and competition. EOS documents operational consistency, but also open standards, disaggregation and customer alternatives including SONiC. [R1–R2]\n\n**Judgment:** S3/E3/D3 reflect integration and retained economics; C2/P2 reflect unresolved limits on customer alternatives and durable rent retention. Low confidence applies to the broad scarcity claim, not to the reported margin. A component shortage may hurt delivery rather than enrich Arista.\n\n**Admission evidence needed:** external customer evidence of switching/qualification costs and retention through rival offerings, with a credible three-to-five-year path. Next review at results or by December 16. Material customer migration, lower support renewals or supplier capture would weaken the thesis.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    },
+    {
+      "issuer_id": "sk-hynix",
+      "name": "SK hynix",
+      "scores": {
+        "constraint": 3,
+        "substitution_resistance": 3,
+        "economic_capture": 3,
+        "persistence": 2,
+        "cost_of_defense": 2
+      },
+      "score_total": 13,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": false,
+      "research_decision": "watchlist",
+      "sources": [
+        "H1",
+        "H2",
+        "X2"
+      ],
+      "rationale_and_falsifiers": "13/20; watchlist\n\nQ2 release reports HBM4 mass shipments, approximately ten customer LTAs and capacity expansion; it attributes strong economics partly to memory-price increases. The Indiana project targets production in the second half of 2029. Samsung reports HBM4 sales and HBM4E sampling, an active rival response. [H1–H2, X2]\n\n**Judgment:** C3/S3 reflect qualified memory/packaging capability; E3 reflects operating capture rather than net-income windfalls; P2 reflects unresolved pricing and competition through renewals; D2 recognizes continued investment. The narrower HBM thesis cannot automatically cover all DRAM/NAND economics. Moderate confidence does not mean LTAs fix prices or margins.\n\n**Admission evidence needed:** contract coverage and resets, customer retention across generations, and retained economics after rival ramps/defense spending sufficient for P3. Next results or material qualification update/by December 16. Do not import the old internal symbol “SKH” as a verified current US security identifier; the issuer record and selected share class require separate verification before price/PEG ingestion.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    },
+    {
+      "issuer_id": "micron",
+      "name": "Micron",
+      "scores": {
+        "constraint": 3,
+        "substitution_resistance": 2,
+        "economic_capture": 3,
+        "persistence": 2,
+        "cost_of_defense": 2
+      },
+      "score_total": 12,
+      "dimension_confidence": {
+        "constraint": "Moderate",
+        "substitution_resistance": "Moderate",
+        "economic_capture": "Moderate",
+        "persistence": "Moderate",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Moderate",
+      "score_floors_pass": false,
+      "research_decision": "watchlist",
+      "sources": [
+        "M1",
+        "M2",
+        "H1",
+        "X2"
+      ],
+      "rationale_and_falsifiers": "12/20; watchlist\n\nThe June Q3 release and prepared remarks document strong current economics, strategic agreements, planned versus executed coverage, caps/floors and significant capital commitments. Refundable customer deposits are not free equity. Rival memory progress is documented by Samsung and SK hynix. [M1–M2, H1, X2]\n\n**Judgment:** C3/E3 for capability barriers and current capture; S2/P2 because the packet does not establish durable company-wide resistance to qualified rival supply through a three-to-five-year cycle; D2 for investment sensitivity. This is not a claim that all memory is a commodity. The earlier uncalibrated premium experiment is not evidence for a higher score.\n\n**Admission evidence needed:** executed coverage, reset economics, qualification/switching evidence and retention beyond the present tight market. Next review at new results/contract disclosure, and no later than December 16. Sustained pricing normalization without cost relief or increased required investment would weaken the case. Current June guidance is not fresh consensus; the unusual fiscal-week count remains relevant to future valuation.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    },
+    {
+      "issuer_id": "vertiv",
+      "name": "Vertiv",
+      "scores": {
+        "constraint": 2,
+        "substitution_resistance": 2,
+        "economic_capture": 3,
+        "persistence": 2,
+        "cost_of_defense": 2
+      },
+      "score_total": 11,
+      "dimension_confidence": {
+        "constraint": "Low",
+        "substitution_resistance": "Low",
+        "economic_capture": "Moderate",
+        "persistence": "Low",
+        "cost_of_defense": "Moderate"
+      },
+      "overall_confidence": "Low",
+      "score_floors_pass": false,
+      "research_decision": "watchlist",
+      "sources": [
+        "V1",
+        "V2"
+      ],
+      "rationale_and_falsifiers": "11/20; watchlist\n\nQ2 revenue was $3.274bn; GAAP operating profit $638m versus adjusted $738m. Growth included organic, acquisition and FX components. Management identifies project timing/supply congestion, while Schneider/Motivair's factory announcement demonstrates expanding competing supply. [V1–V2]\n\n**Judgment:** E3 acknowledges current operating capture; C2/S2/P2/D2 reflect unresolved product-level alternatives, contract price-cost retention and investment needs. Low confidence applies to durable company-wide scarcity. An order backlog or physical cooling requirement does not prove persistent bargaining power.\n\n**Admission evidence needed:** product-specific qualification constraints and retained price-cost economics as rival capacity expands, plus a material company-perimeter bridge. Next results/competitive-capacity update/by December 16. The earlier September transaction lead remains unverified in definitive primary documents; it receives no numerical credit and keeps current equity valuation blocked. No admission is justified by growth alone.\n",
+      "reviewed_on": "2026-09-17",
+      "next_review_due": "2026-12-16",
+      "event_review": "as specified in narrative; refresh at public release",
+      "publication_state": "draft",
+      "live_membership_changed": false,
+      "peg": null,
+      "peg_reason": "qualified_reference_path_not_assembled",
+      "economic_speg": null,
+      "economic_speg_reason": "paired_valuation_uncalibrated",
+      "single_dimension_downgrade_floor_results": {
+        "constraint": false,
+        "substitution_resistance": false,
+        "economic_capture": false,
+        "persistence": false,
+        "cost_of_defense": false
+      }
+    }
+  ]
+}

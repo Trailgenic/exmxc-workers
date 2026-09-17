@@ -332,18 +332,20 @@ describe('tools and schemas', () => {
     expect(manifestSchema.$id).toBe('https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2');
   });
 
-  it('serves the draft sPEG Index without mutating membership or coupling SDS to valuation', async () => {
+  it('serves the released sPEG Index while preserving the immutable RC1 draft and valuation boundary', async () => {
     const releaseResponse = await req('/speg/index/v1');
     expect(releaseResponse.status).toBe(200);
     const release = await releaseResponse.json();
-    expect(release.release_id).toBe('speg-index-2026-09-17-rc1');
-    expect(release.release_state).toBe('draft');
-    expect(release.membership_mutated).toBe(false);
+    expect(release.release_id).toBe('speg-index-2026-09-17-v1');
+    expect(release.release_state).toBe('released');
+    expect(release.membership_mutated).toBe(true);
     expect(release.coverage.candidate_count).toBe(10);
     expect(release.coverage.include_recommendations).toBe(5);
     expect(release.coverage.watchlist).toBe(5);
-    expect(release.coverage.released_members).toBe(0);
-    expect(release.profiles.every((profile) => profile.decision.membership_state === null)).toBe(true);
+    expect(release.coverage.released_members).toBe(5);
+    expect(release.coverage.qualified_member_count).toBe(5);
+    expect(release.profiles.filter((profile) => profile.decision.research_decision === 'include').every((profile) => profile.decision.membership_state === 'member')).toBe(true);
+    expect(release.profiles.filter((profile) => profile.decision.research_decision === 'watchlist').every((profile) => profile.decision.membership_state === null)).toBe(true);
     expect(release.profiles.every((profile) => profile.valuation.sds_used_as_valuation_input === false)).toBe(true);
     expect(release.profiles.every((profile) => profile.valuation.peg === null && profile.valuation.economic_speg === null)).toBe(true);
 
@@ -368,10 +370,14 @@ describe('tools and schemas', () => {
     expect((await req('/speg/index/v1/profiles/not-a-company')).status).toBe(404);
     expect((await req('/speg/index/v1/releases/not-a-release')).status).toBe(404);
     const ledger = await (await req('/speg/index/v1/releases')).json();
-    expect(ledger.latest_published_release_id).toBeNull();
+    expect(ledger.latest_published_release_id).toBe('speg-index-2026-09-17-v1');
     expect(ledger.draft_release_ids).toEqual(['speg-index-2026-09-17-rc1']);
-    const exactRelease = await (await req('/speg/index/v1/releases/speg-index-2026-09-17-rc1')).json();
+    const exactRelease = await (await req('/speg/index/v1/releases/speg-index-2026-09-17-v1')).json();
     expect(exactRelease).toEqual(release);
+    const draftRelease = await (await req('/speg/index/v1/releases/speg-index-2026-09-17-rc1')).json();
+    expect(draftRelease.release_state).toBe('draft');
+    expect(draftRelease.coverage.released_members).toBe(0);
+    expect(draftRelease.profiles.every((profile) => profile.decision.membership_state === null)).toBe(true);
 
     const methodology = await (await req('/speg/index/v1/methodology')).json();
     expect(methodology.method_id).toBe('speg-index-scarcity-v1.0.0');
