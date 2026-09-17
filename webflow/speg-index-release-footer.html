@@ -28,6 +28,7 @@
       return response.json();
     })
     .then((release) => {
+      document.title = `${release.release_id} — sPEG Index Release | exmxc`;
       root.replaceChildren();
       const header = document.createElement("header");
       header.append(element("div", "ex-label", `sPEG Index · ${release.release_state}`));
@@ -35,7 +36,7 @@
       header.append(element("p", "", release.provenance.notes));
       header.append(element("div", "spr-meta", `Method ${release.method_id} · Schema ${release.schema_version} · Cutoff ${release.research_cutoff} · Publication ${release.publication_at ?? "not published"} · Effective ${release.effective_at ?? "not effective"}`));
       root.append(header);
-      const boundary = element("div", "spr-boundary", release.membership_mutated ? "This release changes membership." : "This draft does not mutate live membership. Include is a research recommendation until a dated released snapshot assigns membership state and effective time.");
+      const boundary = element("div", "spr-boundary", release.membership_mutated ? `This release changes membership: ${release.coverage.released_members} profiles are members. Watchlist profiles remain non-members and are not mislabeled as removed.` : "This draft does not mutate live membership. Include is a research recommendation until a dated released snapshot assigns membership state and effective time.");
       root.append(boundary);
 
       const section = element("section", "spr-section");
@@ -44,7 +45,7 @@
         const row = element("div", "spr-row");
         row.append(element("div", "spr-name", profile.identity.display_name));
         row.append(element("div", "spr-score", `SDS ${profile.score.total ?? "—"} · [${profile.score.vector.map(value => value ?? "?").join("/")}]`));
-        row.append(element("div", "spr-decision", profile.decision.research_decision));
+        row.append(element("div", "spr-decision", profile.decision.membership_state ?? profile.decision.research_decision));
         section.append(row);
       }
       root.append(section);

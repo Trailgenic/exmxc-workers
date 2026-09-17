@@ -100,6 +100,7 @@
   },
   "research_decisions": ["include", "watchlist", "insufficient_evidence", "exclude"],
   "membership_states": ["member", "under_review", "removed"],
+  "membership_null_policy": "Null means the profile is a candidate or watchlist record that has never been admitted. It must not be relabeled removed merely because it appears in a released research cohort.",
   "confidence": {
     "levels": ["High", "Moderate", "Low", "Unassessable"],
     "overall_rule": "The minimum confidence among admission-critical dimensions; never average confidence and never interpret it as probability."
@@ -131,7 +132,8 @@
     "valuation_price_max_exchange_sessions": 5,
     "valuation_estimate_max_age_days": 30
   },
-  "release_policy": "Quarterly immutable snapshots plus interim releases for decisive changes. Information cutoff, publication time, and effective membership time remain separate. Draft include recommendations never mutate membership.",
+  "release_policy": "Quarterly immutable snapshots plus interim releases for decisive changes. Information cutoff, publication time, and effective membership time remain separate. Draft include recommendations never mutate membership. A released cohort may contain non-member candidate records with null membership; member, under_review, and removed are reserved for the membership ledger.",
+  "content_hash_policy": "Released snapshots publish a SHA-256 digest of a canonical key-sorted JSON representation of the complete API release with root and profile content_hash fields set to null. CI must reproduce the digest before deployment.",
   "limitations": [
     "The five dimensions are correlated and have not been statistically validated as independent factors.",
     "The first cohort is purposive and cannot establish sector neutrality, diversification, or predictive validity.",

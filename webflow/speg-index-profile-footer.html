@@ -42,9 +42,10 @@
     })
     .then((release) => {
       const profile = release.profiles[0];
+      document.title = `${profile.identity.display_name} — sPEG Index Profile | exmxc`;
       root.replaceChildren();
       const header = document.createElement("header");
-      header.append(element("div", "ex-label", `sPEG Index · ${profile.decision.research_decision}`));
+      header.append(element("div", "ex-label", `sPEG Index · ${profile.decision.membership_state ?? profile.decision.research_decision}`));
       header.append(element("h1", "spp-title", profile.identity.display_name));
       header.append(element("div", "spp-vector", `SDS ${profile.score.total ?? "—"}/20 · [${profile.score.vector.map(value => value ?? "?").join(" · ")}] · ${profile.score.scale}`));
       header.append(element("p", "", profile.scope.business_perimeter));
