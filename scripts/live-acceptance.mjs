@@ -58,6 +58,22 @@ ok((await raw('/power-lens/v2')).response.status === 400, 'Power Lens v2 rejects
 const powerProfilesV2 = await raw('/datasets/ai_power_profiles_v2');
 ok(powerProfilesV2.json?.total_profiles === 20 && powerProfilesV2.json?.release_status === 'staging', 'AI Power v2 staging release declares 20 pilot profiles');
 ok((await raw('/schemas/ai-power-source-manifest-v2')).json?.$id === 'https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2', 'AI Power v2 source manifest schema is live');
+const spegIndex = await raw('/speg/index/v1');
+ok(
+  spegIndex.json?.release_id === 'speg-index-2026-09-17-rc1'
+    && spegIndex.json?.release_state === 'draft'
+    && spegIndex.json?.coverage?.candidate_count === 10
+    && spegIndex.json?.coverage?.include_recommendations === 5
+    && spegIndex.json?.coverage?.released_members === 0
+    && spegIndex.json?.membership_mutated === false
+    && spegIndex.json?.profiles?.every((profile) => profile?.valuation?.sds_used_as_valuation_input === false),
+  'sPEG Index RC1 exposes draft recommendations without membership or valuation coupling'
+);
+const spegIndexResource = await rpc(5, 'resources/read', { uri: 'exmxc://datasets/speg-index/v1' });
+ok(JSON.stringify(JSON.parse(spegIndexResource.json.result.contents[0].text)) === JSON.stringify(spegIndex.json), 'sPEG Index MCP resource matches REST');
+ok((await raw('/speg/index/v1/profiles/not-a-company')).response.status === 404, 'sPEG Index rejects unknown issuer');
+ok((await raw('/speg/index/v1/releases/not-a-release')).response.status === 404, 'sPEG Index rejects unknown release');
+ok((await raw('/schemas/speg-index-profile-v1')).json?.$id === 'https://mcp.exmxc.ai/schemas/speg-index-profile/v1', 'sPEG Index profile schema is live');
 const realityGap = await raw('/reality-gap?query=AAPL');
 ok(realityGap.json?.found === true && realityGap.json?.results?.[0]?.classification === 'narrative_outrunning_deployment', 'Reality Gap resolves Apple with versioned classification');
 ok((await raw('/datasets/reality_gap_index')).json?.rows?.length === 10, 'Reality Gap raw dataset exposes ten-company V1 benchmark');

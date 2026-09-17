@@ -13,8 +13,8 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.13.0`
-- Stable build date / `last_updated`: `2026-09-11`
+- Build version: `2.14.0`
+- Stable build date / `last_updated`: `2026-09-17`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -79,6 +79,7 @@ Callable JSON tools from `DATA_TOOLS`:
 
 - `ex.entities.get`
 - `ex.speg.get`
+- `ex.speg.index.get`
 - `ex.datasets.index.get`
 - `ex.ai_power_index.get`
 - `ex.four_forces.get`
@@ -95,6 +96,8 @@ Callable JSON tools from `DATA_TOOLS`:
 
 Content links from `CONTENT_LINKS`:
 
+- `ex.speg_index.page` — `https://www.exmxc.ai/speg-index`
+- `ex.speg_index.methodology` — `https://www.exmxc.ai/speg-methodology`
 - `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
 - `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index-methodology`
 - `ex.framework.get` — `https://exmxc.ai/frameworks`
@@ -141,6 +144,21 @@ Bundled datasets are imported directly into the Worker. Dataset updates require 
 - `GET /speg`
   - Source: `data/speg_index.json`
   - Filters: `sector`, `scarcity_layer`, `ticker`
+- `GET /speg/index/v1`
+  - Sources: `data/speg_index_v1/methodology.json` and the immutable RC1 authoring packet under `data/speg_index_v1/releases/`
+  - Filters: `query`, `decision`, `membership_state`, `release`
+  - Returns ten durable-scarcity profiles with C/S/E/P/D judgments, independent eligibility gates, source provenance, review state, rule sensitivity, and separately nullable valuation links
+  - RC1 is a draft research constitution: five include recommendations, five watchlist decisions, zero released members, and no live membership mutation
+- `GET /speg/index/v1/profiles/{stable-slug}`
+  - Exact issuer profile lookup; unknown issuers return `404`
+- `GET /speg/index/v1/methodology`
+  - Locked `speg-index-scarcity-v1.0.0` construct, anchors, gates, confidence, evidence, limits, and cadence
+- `GET /speg/index/v1/releases`
+  - Release ledger with a null latest-published pointer while only RC1 exists as a draft
+- `GET /speg/index/v1/releases/{release-id}`
+  - Exact immutable release lookup; unknown releases return `404`
+- `GET /schemas/speg-index-profile-v1`
+  - Source: `schema/speg_index_profile_v1.schema.json`
 - `GET /datasets`
   - Generated dataset index
 - `GET /datasets/ai_power_index`
@@ -259,6 +277,8 @@ sPEG record example using the row-level `date` field:
 
 The active sPEG snapshot uses disclosed user-supplied July 16 closing prices and forward fiscal EPS ranges. It is a proxy dataset rather than licensed point-in-time NTM consensus data. The prior February snapshot is preserved at `data/speg_index_2026-02-13.json`.
 
+The additive sPEG Index v1 does not overwrite that legacy ratio dataset. It measures durable economic scarcity as an ordinal, evidence-linked selection judgment across Constraint, Substitution resistance, Economic capture, Persistence, and Cost of defense. SDS is summed only when all five dimensions are known; it never changes PEG or an economic multiplier. RC1 contains no security pricing records, PEG values, economic-sPEG values, performance history, weights, buy/sell calls, or return claims.
+
 Legacy AI Power v1 weighted exposure record shape (historical compatibility only):
 
 ```json
@@ -364,15 +384,18 @@ worker.js                         Main Cloudflare Worker
 lib/http.js                       Shared JSON/CORS response helpers
 lib/registry.js                   Single source of truth for metadata, datasets, tools, links, federation
 lib/queries.js                    Shared REST + MCP query implementations
+lib/speg-index-v1.js              Deterministic sPEG Index score, gate, release, filter, and semantic validation engine
 lib/ads-classifier.js             ADS classification helper
 lib/ads-taxonomy.js               ADS taxonomy definitions
 data/*.json                       Bundled datasets
+data/speg_index_v1/               Versioned sPEG Index methodology and immutable authoring releases
 schema/schema.json                Entity dataset schema with canonical company field
 schema/definitions.json           Semantic definitions
 schema/ai_power_index.schema.json AI Power Index JSON Schema
 schema/power_lens.schema.json     Power Lens response JSON Schema
 schema/reality_gap_index.schema.json Reality Gap dataset JSON Schema
 schema/strategic_consequence.schema.json Strategic Consequence response JSON Schema
+schema/speg_index_profile_v1.schema.json sPEG Index profile-release JSON Schema
 index.json                        Static entity dataset index baseline
 scripts/live-acceptance.mjs        Live deploy acceptance harness
 scripts/build-registry-packet.mjs   Registry packet generator
@@ -383,6 +406,8 @@ webflow/reality-gap-head.html      Staged Reality Gap page metadata and JSON-LD
 webflow/reality-gap-footer.html    Staged Reality Gap benchmark explorer
 webflow/strategic-consequence-head.html Staged Strategic Consequence page metadata and JSON-LD
 webflow/strategic-consequence-footer.html Staged Strategic Consequence responsive application bundle
+webflow/speg-index-*.html          Staged sPEG Index hub, profile, and release templates; noindex until release approval
+webflow/speg-methodology-*.html    Staged sPEG Index methodology page; noindex until release approval
 workers/root-discovery/worker.js  Unused root .well-known MCP pointer Worker reference
 ```
 

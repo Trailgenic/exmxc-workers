@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/speg-index-profile/v1",
+  "title": "sPEG Index profile release v1",
+  "description": "Versioned durable-scarcity research profiles. SDS is ordinal selection evidence and is never a numerical valuation input.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product",
+    "release_id",
+    "release_state",
+    "method_id",
+    "schema_version",
+    "research_cutoff",
+    "publication_at",
+    "effective_at",
+    "predecessor_release_id",
+    "content_hash",
+    "membership_mutated",
+    "coverage",
+    "profiles",
+    "sources",
+    "provenance",
+    "links"
+  ],
+  "properties": {
+    "product": { "const": "sPEG Index — durable scarcity selection with valuation context" },
+    "release_id": { "type": "string", "minLength": 1 },
+    "release_state": { "enum": ["draft", "released", "superseded"] },
+    "method_id": { "const": "speg-index-scarcity-v1.0.0" },
+    "schema_version": { "const": "speg-index-profile-v1.0.0" },
+    "research_cutoff": { "type": "string", "format": "date" },
+    "publication_at": { "type": ["string", "null"], "format": "date-time" },
+    "effective_at": { "type": ["string", "null"], "format": "date-time" },
+    "predecessor_release_id": { "type": ["string", "null"] },
+    "content_hash": { "type": ["string", "null"] },
+    "membership_mutated": { "type": "boolean" },
+    "coverage": { "$ref": "#/$defs/coverage" },
+    "profiles": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/profile" }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "links": { "$ref": "#/$defs/links" }
+  },
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "confidence": { "enum": ["High", "Moderate", "Low", "Unassessable"] },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_count", "include_recommendations", "watchlist", "insufficient_evidence", "exclude", "released_members", "qualified_member_count"],
+      "properties": {
+        "candidate_count": { "type": "integer", "minimum": 0 },
+        "include_recommendations": { "type": "integer", "minimum": 0 },
+        "watchlist": { "type": "integer", "minimum": 0 },
+        "insufficient_evidence": { "type": "integer", "minimum": 0 },
+        "exclude": { "type": "integer", "minimum": 0 },
+        "released_members": { "type": "integer", "minimum": 0 },
+        "qualified_member_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "scope", "dimensions", "score", "eligibility", "decision", "review", "sensitivity", "release", "valuation"],
+      "properties": {
+        "identity": { "$ref": "#/$defs/identity" },
+        "scope": { "$ref": "#/$defs/scope" },
+        "dimensions": { "$ref": "#/$defs/dimensions" },
+        "score": { "$ref": "#/$defs/score" },
+        "eligibility": { "$ref": "#/$defs/eligibility" },
+        "decision": { "$ref": "#/$defs/decision" },
+        "review": { "$ref": "#/$defs/review" },
+        "sensitivity": { "$ref": "#/$defs/sensitivity" },
+        "release": { "$ref": "#/$defs/profileRelease" },
+        "valuation": { "$ref": "#/$defs/valuation" }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuer_id", "stable_slug", "legal_name", "display_name", "securities", "pricing_identity_status"],
+      "properties": {
+        "issuer_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "stable_slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "legal_name": { "type": "string" },
+        "display_name": { "type": "string" },
+        "securities": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/security" }
+        },
+        "pricing_identity_status": { "enum": ["verified", "not_assembled", "unresolved"] }
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["security_id", "share_class", "exchange", "ticker", "currency", "security_ratio", "verified_at", "source_ids"],
+      "properties": {
+        "security_id": { "type": "string" },
+        "share_class": { "type": "string" },
+        "exchange": { "type": "string" },
+        "ticker": { "type": "string" },
+        "currency": { "type": "string" },
+        "security_ratio": { "type": "number", "exclusiveMinimum": 0 },
+        "verified_at": { "type": "string", "format": "date-time" },
+        "source_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanism_id", "mechanism_family", "customer_problem", "business_perimeter", "company_attribution_route", "coverage", "materiality_status", "materiality_rationale", "dependencies"],
+      "properties": {
+        "mechanism_id": { "type": "string" },
+        "mechanism_family": { "enum": ["manufacturing_qualification", "ecosystem_software", "design_workflow", "embedded_component", "systems_service"] },
+        "customer_problem": { "type": "string" },
+        "business_perimeter": { "type": "string" },
+        "company_attribution_route": { "enum": ["quantitative_revenue", "integrated_capability", "not_established"] },
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["numerator", "denominator", "period", "qualitative_rationale"],
+          "properties": {
+            "numerator": { "type": ["number", "null"] },
+            "denominator": { "type": ["number", "null"] },
+            "period": { "$ref": "#/$defs/nullableString" },
+            "qualitative_rationale": { "$ref": "#/$defs/nullableString" }
+          }
+        },
+        "materiality_status": { "enum": ["adequate", "inadequate", "unassessable"] },
+        "materiality_rationale": { "type": "string" },
+        "dependencies": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["constraint", "substitution_resistance", "economic_capture", "persistence", "cost_of_defense"],
+      "properties": {
+        "constraint": { "$ref": "#/$defs/dimension" },
+        "substitution_resistance": { "$ref": "#/$defs/dimension" },
+        "economic_capture": { "$ref": "#/$defs/dimension" },
+        "persistence": { "$ref": "#/$defs/dimension" },
+        "cost_of_defense": { "$ref": "#/$defs/dimension" }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "anchor_id", "reason", "source_ids", "counterevidence", "confidence", "confidence_reason", "plausible_alternative_anchor"],
+      "properties": {
+        "value": { "type": ["integer", "null"], "minimum": 0, "maximum": 4 },
+        "anchor_id": { "type": ["string", "null"] },
+        "reason": { "type": "string" },
+        "source_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "counterevidence": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "confidence_reason": { "type": "string" },
+        "plausible_alternative_anchor": { "type": ["integer", "null"], "minimum": 0, "maximum": 4 }
+      }
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method_id", "total", "vector", "scale", "label", "meaning"],
+      "properties": {
+        "method_id": { "const": "speg-index-scarcity-v1.0.0" },
+        "total": { "type": ["integer", "null"], "minimum": 0, "maximum": 20 },
+        "vector": {
+          "type": "array",
+          "prefixItems": [
+            { "type": ["integer", "null"] },
+            { "type": ["integer", "null"] },
+            { "type": ["integer", "null"] },
+            { "type": ["integer", "null"] },
+            { "type": ["integer", "null"] }
+          ],
+          "items": false,
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "scale": { "const": "ordinal" },
+        "label": { "const": "Scarcity Durability Score" },
+        "meaning": { "type": "string" }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible_for_inclusion", "dimension_floors", "materiality", "decisive_confidence", "source_packet", "current_review", "material_event", "reason_codes"],
+      "properties": {
+        "eligible_for_inclusion": { "type": "boolean" },
+        "dimension_floors": { "$ref": "#/$defs/gate" },
+        "materiality": { "$ref": "#/$defs/gate" },
+        "decisive_confidence": { "$ref": "#/$defs/gate" },
+        "source_packet": { "$ref": "#/$defs/gate" },
+        "current_review": { "$ref": "#/$defs/gate" },
+        "material_event": { "$ref": "#/$defs/gate" },
+        "reason_codes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pass", "reason"],
+      "properties": {
+        "pass": { "type": "boolean" },
+        "reason": { "type": "string" }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["research_decision", "membership_state", "owner", "prepared_by", "rationale", "falsifiers", "next_observation", "due_date"],
+      "properties": {
+        "research_decision": { "enum": ["include", "watchlist", "insufficient_evidence", "exclude"] },
+        "membership_state": { "type": ["string", "null"], "enum": ["member", "under_review", "removed", null] },
+        "owner": { "type": "string" },
+        "prepared_by": { "type": "string" },
+        "rationale": { "type": "string" },
+        "falsifiers": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "next_observation": { "type": "string" },
+        "due_date": { "type": "string", "format": "date" }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["as_of_cutoff", "reviewed_at", "source_dates", "next_review_due", "event_status", "publication_at", "effective_at"],
+      "properties": {
+        "as_of_cutoff": { "type": "string", "format": "date" },
+        "reviewed_at": { "type": "string", "format": "date-time" },
+        "source_dates": { "type": "array", "items": { "type": ["string", "null"] } },
+        "next_review_due": { "type": "string", "format": "date" },
+        "event_status": { "enum": ["clear_at_research_cutoff", "review_open", "refresh_required_before_release"] },
+        "publication_at": { "type": ["string", "null"], "format": "date-time" },
+        "effective_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "sensitivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["single_dimension_downgrade_pass", "binding_dimensions", "interpretation"],
+      "properties": {
+        "single_dimension_downgrade_pass": {
+          "type": "object",
+          "additionalProperties": { "type": "boolean" }
+        },
+        "binding_dimensions": { "type": "array", "items": { "type": "string" } },
+        "interpretation": { "const": "rule_sensitivity_not_confidence_interval" }
+      }
+    },
+    "profileRelease": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "release_id", "predecessor_release_id", "change_reasons", "content_hash"],
+      "properties": {
+        "state": { "enum": ["draft", "released", "superseded"] },
+        "release_id": { "type": "string" },
+        "predecessor_release_id": { "type": ["string", "null"] },
+        "change_reasons": { "type": "array", "items": { "type": "string" } },
+        "content_hash": { "type": ["string", "null"] }
+      }
+    },
+    "valuation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["peg_eligible", "peg", "peg_null_reason", "economic_profile_id", "economic_speg", "economic_speg_null_reason", "sds_used_as_valuation_input"],
+      "properties": {
+        "peg_eligible": { "type": "boolean" },
+        "peg": { "type": ["number", "null"] },
+        "peg_null_reason": { "$ref": "#/$defs/nullableString" },
+        "economic_profile_id": { "$ref": "#/$defs/nullableString" },
+        "economic_speg": { "type": ["number", "null"] },
+        "economic_speg_null_reason": { "$ref": "#/$defs/nullableString" },
+        "sds_used_as_valuation_input": { "const": false }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "publisher", "url", "title", "publication_date", "event_date", "reporting_period", "retrieval_date", "locator", "origin_group", "claim_type", "factual_summary", "limitations"],
+      "properties": {
+        "id": { "type": "string" },
+        "publisher": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "title": { "type": "string" },
+        "publication_date": { "type": ["string", "null"], "format": "date" },
+        "event_date": { "type": ["string", "null"], "format": "date" },
+        "reporting_period": { "$ref": "#/$defs/nullableString" },
+        "retrieval_date": { "type": "string", "format": "date" },
+        "locator": { "type": "string" },
+        "origin_group": { "type": "string" },
+        "claim_type": { "enum": ["reported_fact", "management_assertion", "analyst_inference", "future_plan", "technical_description", "counterevidence"] },
+        "factual_summary": { "type": "string" },
+        "limitations": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["research_owner", "prepared_by", "source_count", "source_origin_groups", "notes"],
+      "properties": {
+        "research_owner": { "type": "string" },
+        "prepared_by": { "type": "string" },
+        "source_count": { "type": "integer", "minimum": 0 },
+        "source_origin_groups": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["self", "methodology", "schema", "release", "public_hub", "public_methodology"],
+      "properties": {
+        "self": { "type": "string", "format": "uri" },
+        "methodology": { "type": "string", "format": "uri" },
+        "schema": { "type": "string", "format": "uri" },
+        "release": { "type": "string", "format": "uri" },
+        "public_hub": { "type": "string", "format": "uri" },
+        "public_methodology": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

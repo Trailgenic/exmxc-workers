@@ -18,13 +18,14 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.13.0
+- Version: 2.14.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
 
 ## Tools
 
 - ex.entities.get — Get Entity Intelligence Records: Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring.
 - ex.speg.get — Get sPEG Valuation Records: Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies.
+- ex.speg.index.get — Get sPEG Index v1 Profiles: Evidence-backed durable-scarcity profiles with independently gated draft inclusion recommendations, immutable release semantics, full source provenance, and valuation fields kept separately nullable.
 - ex.datasets.index.get — Get Dataset Index: Retrieve index of all bundled datasets available through the exmxc MCP server.
 - ex.ai_power_index.get — Get Legacy AI Power Exposure Scaffold: Historical weighted exposure scaffold. Its 0–10 totals and ranks are not current evidence-backed measurements of company power.
 - ex.four_forces.get — Get Legacy Four Forces Exposure Dataset: Historical v1 exposure scaffold across compute, interface, alignment, and energy; retained for compatibility, not as AI Power v2 judgments.

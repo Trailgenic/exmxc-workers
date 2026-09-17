@@ -1,4 +1,4 @@
-# exmxc Workers System Map — v2.13
+# exmxc Workers System Map — v2.14
 
 ## Runtime topology
 
@@ -73,6 +73,17 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 - `/speg`
   - Source: `data/speg_index.json`
   - Filters: `sector`, `scarcity_layer`, `ticker`
+- `/speg/index/v1`
+  - Source: frozen RC1 authoring packet under `data/speg_index_v1/releases/`
+  - Filters: `query`, `decision`, `membership_state`, `release`
+  - Shared deterministic implementation in `lib/speg-index-v1.js` via `ex.speg.index.get`
+- `/speg/index/v1/profiles/{stable-slug}`
+- `/speg/index/v1/methodology`
+  - Source: `data/speg_index_v1/methodology.json`
+- `/speg/index/v1/releases`
+- `/speg/index/v1/releases/{release-id}`
+- `/schemas/speg-index-profile-v1`
+  - Source: `schema/speg_index_profile_v1.schema.json`
 - `/datasets`
   - Generated from `DATASETS`
 - `/datasets/ai_power_index`
@@ -132,6 +143,7 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 
 - `getEntities`
 - `getSpeg`
+- `getSpegIndexV1`
 - `getDatasetIndex`
 - `getAiPowerIndex`
 - `getFourForces`
@@ -158,6 +170,7 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 
 - `ex.entities.get`
 - `ex.speg.get`
+- `ex.speg.index.get`
 - `ex.datasets.index.get`
 - `ex.ai_power_index.get`
 - `ex.four_forces.get`
@@ -174,6 +187,8 @@ Callable JSON tools are the entries in `DATA_TOOLS`:
 
 Content pages are listed separately as `CONTENT_LINKS` and are not exposed as callable MCP tools:
 
+- `ex.speg_index.page` — `https://www.exmxc.ai/speg-index`
+- `ex.speg_index.methodology` — `https://www.exmxc.ai/speg-methodology`
 - `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
 - `ex.ai_power.methodology` — `https://www.exmxc.ai/ai-power-index-methodology`
 - `ex.framework.get` — `https://exmxc.ai/frameworks`
@@ -190,7 +205,7 @@ Federated registries are listed separately as `FEDERATED_REGISTRIES` and are not
 
 ## Trust and operations
 
-- Build metadata is stable: `BUILD.version = 2.13.0`, `BUILD.released = 2026-09-11`.
+- Build metadata is stable: `BUILD.version = 2.14.0`, `BUILD.released = 2026-09-17`.
 - Discovery, capabilities, registry, manifest, and dataset index `last_updated` values use `BUILD.released`.
 - `/health` uses `last_checked: new Date().toISOString()` because it is a live check time.
 - `/health` does not assert a hardcoded uptime; Cloudflare observability is the source for uptime.

@@ -1,6 +1,6 @@
 {
   "name": "exmxc-workers",
-  "version": "2.13.0",
+  "version": "2.14.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "test:workers": "vitest run --config vitest.config.mjs",
     "validate:json": "node scripts/validate-json.mjs",
     "validate:ai-power": "node scripts/validate-json.mjs",
+    "validate:speg-index": "node scripts/validate-speg-index.mjs",
     "assess:ai-power": "node scripts/assess-ai-power-v2.mjs",
     "check:ai-power-sources": "node scripts/check-ai-power-sources.mjs",
     "reconcile:ai-power": "node scripts/reconcile-ai-power-v2.mjs",

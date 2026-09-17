@@ -1,0 +1,64 @@
+<style>
+  .spr-root { max-width: 960px; margin: 0 auto; padding: 64px 40px 90px; box-sizing: border-box; }
+  .spr-title { font-family: var(--ex-font-display); font-size: clamp(2.35rem, 6vw, 4.2rem); line-height: 1; letter-spacing: -.04em; font-weight: 400; color: #fff; margin: 14px 0 18px; overflow-wrap: anywhere; }
+  .spr-root p, .spr-root li { font-family: var(--ex-font-body); color: var(--ex-text-dim); line-height: 1.7; }
+  .spr-meta { font-family: var(--ex-font-mono); color: var(--ex-text-muted); font-size: .73rem; line-height: 1.7; }
+  .spr-section { margin-top: 44px; }
+  .spr-section h2 { font-family: var(--ex-font-display); color: #fff; font-size: 2.1rem; font-weight: 400; margin: 0 0 17px; }
+  .spr-row { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: baseline; border-bottom: .5px solid var(--ex-border); padding: 13px 0; }
+  .spr-name { color: #fff; font-family: var(--ex-font-body); }
+  .spr-score, .spr-decision { color: var(--ex-lavender); font-family: var(--ex-font-mono); font-size: .76rem; text-transform: uppercase; }
+  .spr-boundary, .spr-error { border: .5px solid var(--ex-border-gold); padding: 19px; color: var(--ex-text-dim); font-family: var(--ex-font-body); line-height: 1.65; }
+  @media (max-width: 580px) { .spr-root { padding: 48px 22px 68px; } .spr-row { grid-template-columns: 1fr; } }
+</style>
+<main class="spr-root" id="spr-root"><div class="spr-error">Loading release…</div></main>
+<script>
+(() => {
+  const root = document.getElementById("spr-root");
+  const releaseId = decodeURIComponent(location.pathname.split("/").filter(Boolean).at(-1) || "");
+  const element = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+  fetch(`https://mcp.exmxc.ai/speg/index/v1/releases/${encodeURIComponent(releaseId)}`, { headers: { accept: "application/json" } })
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then((release) => {
+      root.replaceChildren();
+      const header = document.createElement("header");
+      header.append(element("div", "ex-label", `sPEG Index · ${release.release_state}`));
+      header.append(element("h1", "spr-title", release.release_id));
+      header.append(element("p", "", release.provenance.notes));
+      header.append(element("div", "spr-meta", `Method ${release.method_id} · Schema ${release.schema_version} · Cutoff ${release.research_cutoff} · Publication ${release.publication_at ?? "not published"} · Effective ${release.effective_at ?? "not effective"}`));
+      root.append(header);
+      const boundary = element("div", "spr-boundary", release.membership_mutated ? "This release changes membership." : "This draft does not mutate live membership. Include is a research recommendation until a dated released snapshot assigns membership state and effective time.");
+      root.append(boundary);
+
+      const section = element("section", "spr-section");
+      section.append(element("h2", "", "Profiles"));
+      for (const profile of release.profiles) {
+        const row = element("div", "spr-row");
+        row.append(element("div", "spr-name", profile.identity.display_name));
+        row.append(element("div", "spr-score", `SDS ${profile.score.total ?? "—"} · [${profile.score.vector.map(value => value ?? "?").join("/")}]`));
+        row.append(element("div", "spr-decision", profile.decision.research_decision));
+        section.append(row);
+      }
+      root.append(section);
+
+      const provenance = element("section", "spr-section");
+      provenance.append(element("h2", "", "Provenance and coverage"));
+      provenance.append(element("p", "", `${release.provenance.source_count} source records across ${release.provenance.source_origin_groups.length} grouped origins. ${release.coverage.include_recommendations} include recommendations, ${release.coverage.watchlist} watchlist decisions, and ${release.coverage.released_members} released members.`));
+      const api = element("a", "spr-score", "Open immutable JSON");
+      api.href = release.links.release;
+      api.target = "_blank";
+      api.rel = "noopener";
+      provenance.append(api);
+      root.append(provenance);
+    })
+    .catch(() => root.replaceChildren(element("div", "spr-error", "This sPEG Index release is unavailable.")));
+})();
+</script>

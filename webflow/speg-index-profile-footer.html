@@ -1,0 +1,100 @@
+<style>
+  .spp-root { max-width: 960px; margin: 0 auto; padding: 64px 40px 90px; box-sizing: border-box; }
+  .spp-title { font-family: var(--ex-font-display); font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.04em; font-weight: 400; color: #fff; margin: 14px 0 18px; }
+  .spp-root p, .spp-root li { font-family: var(--ex-font-body); color: var(--ex-text-dim); line-height: 1.7; }
+  .spp-meta { font-family: var(--ex-font-mono); color: var(--ex-text-muted); font-size: .73rem; letter-spacing: .07em; text-transform: uppercase; }
+  .spp-section { margin-top: 44px; }
+  .spp-section h2 { font-family: var(--ex-font-display); color: #fff; font-size: 2.1rem; font-weight: 400; margin: 0 0 17px; }
+  .spp-vector { color: var(--ex-lavender); font-family: var(--ex-font-mono); font-size: 1rem; }
+  .spp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .spp-card { border: .5px solid var(--ex-border); background: var(--ex-surface); padding: 20px; }
+  .spp-card h3 { color: var(--ex-gold); font-family: var(--ex-font-mono); font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 10px; }
+  .spp-score { color: #fff; font-family: var(--ex-font-display); font-size: 2rem; }
+  .spp-note { padding: 18px; border-left: 2px solid var(--ex-lavender); color: var(--ex-text-dim); font-family: var(--ex-font-body); line-height: 1.65; white-space: pre-line; }
+  .spp-gate-pass { color: #9ed7b5; } .spp-gate-fail { color: #f0b0a8; }
+  .spp-source { display: block; padding: 12px 0; border-bottom: .5px solid var(--ex-border); color: var(--ex-lavender); font-family: var(--ex-font-body); text-decoration: none; }
+  .spp-error { border: .5px solid var(--ex-border); padding: 20px; color: var(--ex-text-dim); font-family: var(--ex-font-body); }
+  @media (max-width: 700px) { .spp-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .spp-root { padding: 48px 22px 68px; } }
+</style>
+<main class="spp-root" id="spp-root">
+  <div class="spp-error">Loading company profile…</div>
+</main>
+<script>
+(() => {
+  const root = document.getElementById("spp-root");
+  const slug = decodeURIComponent(location.pathname.split("/").filter(Boolean).at(-1) || "");
+  const element = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+  const section = (title) => {
+    const node = element("section", "spp-section");
+    node.append(element("h2", "", title));
+    return node;
+  };
+  fetch(`https://mcp.exmxc.ai/speg/index/v1/profiles/${encodeURIComponent(slug)}`, { headers: { accept: "application/json" } })
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then((release) => {
+      const profile = release.profiles[0];
+      root.replaceChildren();
+      const header = document.createElement("header");
+      header.append(element("div", "ex-label", `sPEG Index · ${profile.decision.research_decision}`));
+      header.append(element("h1", "spp-title", profile.identity.display_name));
+      header.append(element("div", "spp-vector", `SDS ${profile.score.total ?? "—"}/20 · [${profile.score.vector.map(value => value ?? "?").join(" · ")}] · ${profile.score.scale}`));
+      header.append(element("p", "", profile.scope.business_perimeter));
+      header.append(element("div", "spp-meta", `Reviewed ${profile.review.as_of_cutoff} · Next review ${profile.review.next_review_due} · ${release.release_state} ${release.release_id}`));
+      root.append(header);
+
+      const dimensions = section("Five judgments");
+      const dimensionGrid = element("div", "spp-grid");
+      const labels = { constraint: "Constraint", substitution_resistance: "Substitution resistance", economic_capture: "Economic capture", persistence: "Persistence", cost_of_defense: "Cost of defense" };
+      for (const [key, dimension] of Object.entries(profile.dimensions)) {
+        const card = element("article", "spp-card");
+        card.append(element("h3", "", `${labels[key]} · ${dimension.confidence}`));
+        card.append(element("div", "spp-score", dimension.value === null ? "Unknown" : `${dimension.value}/4`));
+        card.append(element("p", "", dimension.reason));
+        card.append(element("p", "", `Counterevidence: ${dimension.counterevidence.join(" ")}`));
+        dimensionGrid.append(card);
+      }
+      dimensions.append(dimensionGrid);
+      root.append(dimensions);
+
+      const gates = section("Admission gates");
+      const gateList = document.createElement("ul");
+      for (const [name, gate] of Object.entries(profile.eligibility).filter(([, value]) => value && typeof value === "object" && "pass" in value)) {
+        const item = element("li", gate.pass ? "spp-gate-pass" : "spp-gate-fail", `${name.replaceAll("_", " ")}: ${gate.pass ? "pass" : "fail"} — ${gate.reason}`);
+        gateList.append(item);
+      }
+      gates.append(gateList);
+      root.append(gates);
+
+      const rationale = section("Rationale, falsifiers, and next observation");
+      rationale.append(element("div", "spp-note", profile.decision.rationale));
+      const falsifiers = document.createElement("ul");
+      for (const falsifier of profile.decision.falsifiers) falsifiers.append(element("li", "", falsifier));
+      rationale.append(falsifiers, element("p", "", `Next: ${profile.decision.next_observation}`));
+      root.append(rationale);
+
+      const valuation = section("Valuation context");
+      valuation.append(element("p", "", `PEG: unavailable (${profile.valuation.peg_null_reason.replaceAll("_", " ")}). Economic sPEG: unavailable (${profile.valuation.economic_speg_null_reason.replaceAll("_", " ")}). SDS is not a valuation input.`));
+      root.append(valuation);
+
+      const sources = section("Source packet");
+      for (const source of release.sources) {
+        const link = element("a", "spp-source", `${source.id} · ${source.publisher} · ${source.title} — ${source.limitations}`);
+        link.href = source.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        sources.append(link);
+      }
+      root.append(sources);
+    })
+    .catch(() => root.replaceChildren(element("div", "spp-error", "This sPEG Index company profile is unavailable.")));
+})();
+</script>

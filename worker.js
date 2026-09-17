@@ -33,6 +33,7 @@ import {
   getPowerLensV2,
   getRealityGap,
   getSpeg,
+  getSpegIndexV1,
   getStrategicConsequence,
   TOOL_HANDLERS,
   validateAuditTarget,
@@ -40,6 +41,7 @@ import {
   validateAiPowerV2Query,
   validateStrategicConsequenceArgs
 } from "./lib/queries.js";
+import { getSpegIndexMethodologyV1, getSpegIndexReleasesV1 } from "./lib/speg-index-v1.js";
 import baseline from "./data/ads-baseline.json" with { type: "json" };
 
 const SYNTHETIC_DISCLAIMER = "Postings are model-generated illustrations for ADS analysis, not scraped or verified labor-market data.";
@@ -164,6 +166,29 @@ function openApiDocument() {
     paths: {
       ...Object.fromEntries(Object.values(DATASETS).map((dataset) => [dataset.route, { get: { summary: `Retrieve ${dataset.displayName}`, responses: { 200: json200 } } }])),
       ...toolPaths,
+      "/speg/index/v1/methodology": {
+        get: { summary: "Retrieve the sPEG Index v1 methodology", responses: { 200: json200 } }
+      },
+      "/speg/index/v1/profiles/{stable_slug}": {
+        get: {
+          summary: "Retrieve one sPEG Index company profile",
+          parameters: [{ name: "stable_slug", in: "path", required: true, schema: { type: "string" }, description: "Stable issuer slug, name, or common ticker alias." }],
+          responses: { 200: json200, 404: { description: "Unknown issuer" } }
+        }
+      },
+      "/speg/index/v1/releases": {
+        get: { summary: "Retrieve the sPEG Index release ledger", responses: { 200: json200 } }
+      },
+      "/speg/index/v1/releases/{release_id}": {
+        get: {
+          summary: "Retrieve one immutable sPEG Index release",
+          parameters: [{ name: "release_id", in: "path", required: true, schema: { type: "string" }, description: "Exact release identifier." }],
+          responses: { 200: json200, 404: { description: "Unknown release" } }
+        }
+      },
+      "/schemas/speg-index-profile-v1": {
+        get: { summary: "Retrieve the sPEG Index profile-release schema", responses: { 200: json200 } }
+      },
       "/market/quote": {
         get: {
           summary: "Retrieve a Hyperliquid market signal for one symbol",
@@ -378,6 +403,22 @@ export default {
     if (url.pathname === "/.well-known/manifest.json") return jsonResponse(manifestDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/.well-known/ai-plugin.json") return jsonResponse(pluginDocument(), { headers: discoveryHeaders });
     if (url.pathname === "/speg") return jsonResponse(getSpeg(queryArgs(url, ["sector", "scarcity_layer", "ticker"])));
+    if (url.pathname === "/speg/index/v1/methodology") return jsonResponse(getSpegIndexMethodologyV1());
+    if (url.pathname === "/speg/index/v1/releases") return jsonResponse(getSpegIndexReleasesV1());
+    if (url.pathname.startsWith("/speg/index/v1/releases/")) {
+      const release = decodeURIComponent(url.pathname.slice("/speg/index/v1/releases/".length));
+      const result = getSpegIndexV1({ release });
+      return jsonResponse(result, { status: result.found === false ? 404 : 200 });
+    }
+    if (url.pathname.startsWith("/speg/index/v1/profiles/")) {
+      const query = decodeURIComponent(url.pathname.slice("/speg/index/v1/profiles/".length));
+      const result = getSpegIndexV1({ query });
+      return jsonResponse(result, { status: result.found === false ? 404 : 200 });
+    }
+    if (url.pathname === "/speg/index/v1" || url.pathname === "/speg/index/v1/profiles") {
+      const result = getSpegIndexV1(queryArgs(url, ["query", "decision", "membership_state", "release"]));
+      return jsonResponse(result, { status: result.found === false ? 404 : 200 });
+    }
     if (url.pathname === "/entities") return jsonResponse(getEntities(queryArgs(url, ["industry", "entity_type", "posture", "capability"])));
     if (url.pathname === "/datasets/ai_power_index") return jsonResponse(getAiPowerIndex());
     if (url.pathname === "/datasets/ai_power_index/schema") return jsonResponse(DATASETS.ai_power_index.schema);
@@ -401,6 +442,7 @@ export default {
     if (url.pathname === "/schemas/eci-observation") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_observation")?.data);
     if (url.pathname === "/schemas/eci-release") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "eci_release")?.data);
     if (url.pathname === "/schemas/entity-clarity-evidence-v2") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "entity_clarity_evidence_v2")?.data);
+    if (url.pathname === "/schemas/speg-index-profile-v1") return jsonResponse(DATASETS.speg_index_v1.schema);
     if (url.pathname === "/datasets/four_forces") return jsonResponse(getFourForces());
     if (url.pathname === "/datasets/entity_in_a_box" || url.pathname === "/datasets/entity_in_a_box_v1") return jsonResponse(DATASETS.entity_in_a_box.data);
     if (url.pathname === "/datasets") return jsonResponse(getDatasetIndex());

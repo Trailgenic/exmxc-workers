@@ -1,0 +1,141 @@
+{
+  "method_id": "speg-index-scarcity-v1.0.0",
+  "schema_id": "speg-index-profile-v1.0.0",
+  "product_name": "sPEG Index — durable scarcity selection with valuation context",
+  "status": "locked_research_method",
+  "definition": "The sPEG Index identifies listed companies with evidence-supported capacity to retain economic benefits from constrained alternatives over a three-to-five-year research horizon.",
+  "measurement_boundary": "Membership is a business-quality judgment. Valuation is a separate question. The index is not a weighted or investable return benchmark and publishes no performance series, portfolio weights, buy/sell calls, or return claims.",
+  "unit_of_assessment": "An identified capability inside a stated business perimeter, followed by an independently gated company-level materiality decision.",
+  "horizon": "three_to_five_years",
+  "dimensions": [
+    {
+      "id": "constraint",
+      "code": "C",
+      "label": "Constraint",
+      "question": "How constrained are feasible competitive alternatives?",
+      "anchors": [
+        "Equivalent capacity or capability is broadly available.",
+        "A short-lived shortage has a straightforward expansion response.",
+        "Meaningful barriers exist, but qualified alternatives or expansion are credible.",
+        "Few feasible alternatives exist; replication requires substantial technical, ecosystem, or qualification work.",
+        "The capability is unique in the defined application, with no demonstrated equivalent and documented multi-stage replication barriers."
+      ]
+    },
+    {
+      "id": "substitution_resistance",
+      "code": "S",
+      "label": "Substitution resistance",
+      "question": "What must the customer change to replace or bypass the capability?",
+      "anchors": [
+        "Switching is routine.",
+        "Switching creates modest friction.",
+        "Migration costs are material, but practical alternatives exist.",
+        "Redesign, qualification, or workflow rebuilding imposes substantial operational burden.",
+        "Replacement requires fundamental architecture or process change with demonstrated performance or execution obstacles."
+      ]
+    },
+    {
+      "id": "economic_capture",
+      "code": "E",
+      "label": "Economic capture",
+      "question": "Does the company retain economic benefit attributable to the capability?",
+      "anchors": [
+        "The benefit is captured elsewhere or demand persists alongside losses.",
+        "Demand or revenue exists without demonstrated retained benefit.",
+        "Economics are positive, but scarcity attribution is weak or mainly temporary.",
+        "Retained operating economics appear across more than one period and are plausibly linked to the capability.",
+        "Retention survives adverse conditions or renewals with strong bargaining-power evidence and limited leakage."
+      ]
+    },
+    {
+      "id": "persistence",
+      "code": "P",
+      "label": "Persistence",
+      "question": "How long can the mechanism persist through specified competitive responses?",
+      "anchors": [
+        "The mechanism has broken.",
+        "Credible erosion is expected within roughly one year.",
+        "Protection is plausible for one to three years, but the three-to-five-year case is unresolved.",
+        "Three-to-five-year persistence is credible through specified competitive responses.",
+        "Multi-generation evidence supports a path beyond five years and tests specific erosion mechanisms."
+      ]
+    },
+    {
+      "id": "cost_of_defense",
+      "code": "D",
+      "label": "Cost of defending scarcity",
+      "question": "What economics remain after the spending required to defend the capability?",
+      "anchors": [
+        "Defense destroys retained economics or cannot be funded.",
+        "Necessary spending consumes most of the benefit.",
+        "The spending burden is substantial or uncertain; positive retention is plausible but sensitive.",
+        "Material benefit remains after reviewed R&D, operating, and capital demands.",
+        "Retention remains resilient through an adverse period after full defense spending."
+      ]
+    }
+  ],
+  "score_policy": {
+    "name": "Scarcity Durability Score",
+    "abbreviation": "SDS",
+    "range": [0, 20],
+    "aggregation": "integer_sum_when_all_five_dimensions_are_known",
+    "unknown_policy": "Any unknown dimension makes the total null. Unknown is never zero or imputed.",
+    "meaning": "Ordinal editorial measurement; not a probability, percentile, price input, or return forecast.",
+    "display": "Always show the five-component vector with the total. Do not fabricate ranks inside ties."
+  },
+  "admission_gates": {
+    "dimension_floors": {
+      "constraint": 3,
+      "substitution_resistance": 3,
+      "economic_capture": 3,
+      "persistence": 3,
+      "cost_of_defense": 2
+    },
+    "materiality": "adequate",
+    "minimum_decisive_confidence": "Moderate",
+    "source_packet": "required",
+    "structural_review_max_age_days": 90,
+    "material_event_status": "no_unresolved_material_eligibility_event",
+    "total_note": "The floors imply a minimum total of 14; the total is not an independent admission gate."
+  },
+  "research_decisions": ["include", "watchlist", "insufficient_evidence", "exclude"],
+  "membership_states": ["member", "under_review", "removed"],
+  "confidence": {
+    "levels": ["High", "Moderate", "Low", "Unassessable"],
+    "overall_rule": "The minimum confidence among admission-critical dimensions; never average confidence and never interpret it as probability."
+  },
+  "minimum_admission_packet": [
+    "Current reported financials with a prior-period comparator",
+    "Structural capability evidence",
+    "One external-origin customer, supplier, competitor, or technical source",
+    "Explicit economic-capture argument",
+    "Defense-cost review",
+    "Company-perimeter rationale",
+    "At least one credible counter-hypothesis"
+  ],
+  "materiality_policy": {
+    "quantitative_route": "The capability perimeter represents at least 50% of trailing revenue.",
+    "integrated_route": "The capability is demonstrably central across the main business, with a written attribution rationale and no unsupported percentage.",
+    "unknown_or_immaterial": "Watchlist or insufficient evidence; never multiply a segment score by revenue weight."
+  },
+  "valuation_separation": {
+    "peg": "Conventional PEG may be shown only from a matched, current, positive FY1–FY4 EPS path and verified security basis.",
+    "economic_speg": "Economic sPEG requires a separately qualified paired economic model.",
+    "prohibition": "SDS must not change PEG, the economic multiplier, or economic sPEG. Missing multiplier is never replaced with 1."
+  },
+  "freshness": {
+    "full_review": "quarterly",
+    "structural_review_max_age_days": 90,
+    "event_review_target_trading_sessions": 5,
+    "unresolved_event_limit_trading_sessions": 20,
+    "valuation_price_max_exchange_sessions": 5,
+    "valuation_estimate_max_age_days": 30
+  },
+  "release_policy": "Quarterly immutable snapshots plus interim releases for decisive changes. Information cutoff, publication time, and effective membership time remain separate. Draft include recommendations never mutate membership.",
+  "limitations": [
+    "The five dimensions are correlated and have not been statistically validated as independent factors.",
+    "The first cohort is purposive and cannot establish sector neutrality, diversification, or predictive validity.",
+    "Thresholds are conservative governance choices, not cutoffs optimized against returns.",
+    "Cross-sector comparison is structured by common anchors but remains mechanism-sensitive and judgment-based."
+  ]
+}
