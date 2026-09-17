@@ -12,6 +12,7 @@ const resourceUris = () => MCP_RESOURCES.filter((resource) => resource.includeIn
 const validArgs = {
   'ex.entities.get': { industry: 'Energy' },
   'ex.speg.get': { ticker: 'NVDA' },
+  'ex.speg.index.get': { query: 'ASML' },
   'ex.datasets.index.get': {},
   'ex.ai_power_index.get': {},
   'ex.four_forces.get': {},
@@ -329,6 +330,64 @@ describe('tools and schemas', () => {
     expect(lensSchema.$id).toBe('https://mcp.exmxc.ai/schemas/power-lens/v2');
     const manifestSchema = await (await req('/schemas/ai-power-source-manifest-v2')).json();
     expect(manifestSchema.$id).toBe('https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2');
+  });
+
+  it('serves the draft sPEG Index without mutating membership or coupling SDS to valuation', async () => {
+    const releaseResponse = await req('/speg/index/v1');
+    expect(releaseResponse.status).toBe(200);
+    const release = await releaseResponse.json();
+    expect(release.release_id).toBe('speg-index-2026-09-17-rc1');
+    expect(release.release_state).toBe('draft');
+    expect(release.membership_mutated).toBe(false);
+    expect(release.coverage.candidate_count).toBe(10);
+    expect(release.coverage.include_recommendations).toBe(5);
+    expect(release.coverage.watchlist).toBe(5);
+    expect(release.coverage.released_members).toBe(0);
+    expect(release.profiles.every((profile) => profile.decision.membership_state === null)).toBe(true);
+    expect(release.profiles.every((profile) => profile.valuation.sds_used_as_valuation_input === false)).toBe(true);
+    expect(release.profiles.every((profile) => profile.valuation.peg === null && profile.valuation.economic_speg === null)).toBe(true);
+
+    const includes = await (await req('/speg/index/v1?decision=include')).json();
+    expect(includes.profiles).toHaveLength(5);
+    expect(includes.profiles.map((profile) => profile.identity.display_name)).toEqual(['ASML', 'Cadence', 'NVIDIA', 'Synopsys', 'TSMC']);
+    const referenced = new Set(includes.profiles.flatMap((profile) => Object.values(profile.dimensions).flatMap((dimension) => dimension.source_ids)));
+    expect(includes.sources.every((source) => referenced.has(source.id))).toBe(true);
+    expect(includes.provenance.source_count).toBe(includes.sources.length);
+
+    const adi = await (await req('/speg/index/v1/profiles/ADI')).json();
+    expect(adi.profiles).toHaveLength(1);
+    expect(adi.profiles[0].score.total).toBe(14);
+    expect(adi.profiles[0].eligibility.dimension_floors.pass).toBe(false);
+    expect(adi.profiles[0].decision.research_decision).toBe('watchlist');
+
+    const snps = await (await req('/speg/index/v1?query=SNPS')).json();
+    expect(snps.profiles[0].score.vector).toEqual([3, 3, 3, 3, 2]);
+    expect(snps.profiles[0].eligibility.eligible_for_inclusion).toBe(true);
+    expect(snps.profiles[0].sensitivity.binding_dimensions).toEqual(['constraint', 'substitution_resistance', 'economic_capture', 'persistence', 'cost_of_defense']);
+
+    expect((await req('/speg/index/v1/profiles/not-a-company')).status).toBe(404);
+    expect((await req('/speg/index/v1/releases/not-a-release')).status).toBe(404);
+    const ledger = await (await req('/speg/index/v1/releases')).json();
+    expect(ledger.latest_published_release_id).toBeNull();
+    expect(ledger.draft_release_ids).toEqual(['speg-index-2026-09-17-rc1']);
+    const exactRelease = await (await req('/speg/index/v1/releases/speg-index-2026-09-17-rc1')).json();
+    expect(exactRelease).toEqual(release);
+
+    const methodology = await (await req('/speg/index/v1/methodology')).json();
+    expect(methodology.method_id).toBe('speg-index-scarcity-v1.0.0');
+    expect(methodology.valuation_separation.prohibition).toContain('must not change PEG');
+    const schema = await (await req('/schemas/speg-index-profile-v1')).json();
+    expect(schema.$id).toBe('https://mcp.exmxc.ai/schemas/speg-index-profile/v1');
+    const validate = new Ajv2020({ strict: false, validateFormats: false }).compile(schema);
+    expect(validate(release), JSON.stringify(validate.errors)).toBe(true);
+    const openApi = await (await req('/.well-known/openapi.json')).json();
+    expect(openApi.paths['/speg/index/v1'].get.parameters.map((parameter) => parameter.name)).toEqual(['query', 'decision', 'membership_state', 'release']);
+    expect(openApi.paths['/speg/index/v1/profiles/{stable_slug}'].get.parameters[0].in).toBe('path');
+    expect(openApi.paths['/speg/index/v1/releases/{release_id}'].get.responses[404].description).toBe('Unknown release');
+
+    const legacy = await (await req('/speg?ticker=NVDA')).json();
+    expect(legacy).toHaveLength(1);
+    expect(legacy[0].speg).toBe(0.27);
   });
 
   it('propagates canonical Strategic Consequence scenarios deterministically', async () => {

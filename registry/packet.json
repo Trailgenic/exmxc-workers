@@ -7,7 +7,7 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.13.0",
+  "version": "2.14.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
@@ -23,6 +23,11 @@
       "name": "ex.speg.get",
       "title": "Get sPEG Valuation Records",
       "description": "Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies."
+    },
+    {
+      "name": "ex.speg.index.get",
+      "title": "Get sPEG Index v1 Profiles",
+      "description": "Evidence-backed durable-scarcity profiles with independently gated draft inclusion recommendations, immutable release semantics, full source provenance, and valuation fields kept separately nullable."
     },
     {
       "name": "ex.datasets.index.get",

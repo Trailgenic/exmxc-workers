@@ -1,0 +1,84 @@
+<style>
+  .spm-root { max-width: 960px; margin: 0 auto; padding: 64px 40px 90px; box-sizing: border-box; }
+  .spm-title { font-family: var(--ex-font-display); font-size: clamp(2.45rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.04em; font-weight: 400; color: #fff; margin: 14px 0 18px; }
+  .spm-deck, .spm-root p, .spm-root li { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: 1rem; line-height: 1.7; }
+  .spm-meta { font-family: var(--ex-font-mono); color: var(--ex-text-muted); font-size: .73rem; letter-spacing: .08em; text-transform: uppercase; }
+  .spm-section { margin-top: 46px; }
+  .spm-section h2 { font-family: var(--ex-font-display); color: #fff; font-size: 2.2rem; font-weight: 400; margin: 0 0 18px; }
+  .spm-callout { border-left: 2px solid var(--ex-lavender); padding: 4px 0 4px 20px; color: #fff; font-family: var(--ex-font-display); font-size: 1.3rem; line-height: 1.5; }
+  .spm-table-wrap { overflow-x: auto; }
+  .spm-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+  .spm-table th, .spm-table td { padding: 13px; border: .5px solid var(--ex-border); text-align: left; vertical-align: top; font-family: var(--ex-font-body); font-size: .88rem; line-height: 1.5; color: var(--ex-text-dim); }
+  .spm-table th { font-family: var(--ex-font-mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ex-gold); background: var(--ex-surface); }
+  .spm-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 42px; }
+  .spm-link { display: inline-block; font-family: var(--ex-font-mono); font-size: .73rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; padding: 10px 13px; border: .5px solid var(--ex-lavender); color: var(--ex-lavender); }
+  @media (max-width: 560px) { .spm-root { padding: 48px 22px 68px; } }
+</style>
+<main class="spm-root">
+  <header>
+    <div class="ex-label">sPEG Index · Methodology</div>
+    <h1 class="spm-title">Scarcity that survives the defense bill.</h1>
+    <p class="spm-deck">The index asks whether a stated capability has constrained alternatives, resists substitution, produces retained economics, can persist through a named competitive response, and still matters after the spending required to defend it.</p>
+    <div class="spm-meta">Method speg-index-scarcity-v1.0.0 · Schema speg-index-profile-v1.0.0 · Three-to-five-year horizon</div>
+  </header>
+
+  <section class="spm-section">
+    <h2>Construct and boundary</h2>
+    <div class="spm-callout">The unit is an identified capability inside a stated business perimeter—not a brand impression, a growth rate, or a stock-price story.</div>
+    <p>Company admission requires a documented route from that capability to a material company perimeter: at least half of trailing revenue, or a qualitative integrated-capability case central across the main business. Unknown or immaterial exposure cannot be rescued by a high score elsewhere.</p>
+  </section>
+
+  <section class="spm-section">
+    <h2>Five anchored judgments</h2>
+    <div class="spm-table-wrap"><table class="spm-table">
+      <thead><tr><th>Dimension</th><th>Admission floor</th><th>What a 3 means</th><th>What a 4 requires</th></tr></thead>
+      <tbody>
+        <tr><td>Constraint (C)</td><td>3</td><td>Few feasible alternatives; substantial technical, ecosystem, or qualification work</td><td>No demonstrated equivalent in the defined application plus multi-stage replication barriers</td></tr>
+        <tr><td>Substitution resistance (S)</td><td>3</td><td>Substantial redesign, qualification, or workflow rebuilding</td><td>Fundamental architecture or process change with demonstrated obstacles</td></tr>
+        <tr><td>Economic capture (E)</td><td>3</td><td>Retained operating economics across periods, plausibly linked to the capability</td><td>Retention through adverse conditions or renewals with limited leakage</td></tr>
+        <tr><td>Persistence (P)</td><td>3</td><td>A credible three-to-five-year path through specified competitive responses</td><td>Multi-generation evidence and a supported path beyond five years</td></tr>
+        <tr><td>Cost of defense (D)</td><td>2</td><td>Material benefit after reviewed R&amp;D, operating, and capital demands</td><td>Resilient retention through an adverse period after full defense spending</td></tr>
+      </tbody>
+    </table></div>
+    <p>Each dimension is an integer from 0 to 4. Unknown is null, never zero. SDS is the sum only when all five are known. It is ordinal, always displayed with its C/S/E/P/D vector, and never treated as a probability, percentile, or return rank.</p>
+  </section>
+
+  <section class="spm-section">
+    <h2>Admission is gated, not ranked</h2>
+    <ul>
+      <li>C, S, E, and P must each be at least 3; D must be at least 2.</li>
+      <li>The company-level materiality route must be adequate.</li>
+      <li>Every admission-critical dimension must be at least Moderate confidence.</li>
+      <li>The minimum evidence packet, current structural review, and event check must pass independently.</li>
+      <li>A total of 14 follows from the floors. It is not a sixth gate: ADI can total 14 and fail C, while Synopsys can total 14 and pass the score floors.</li>
+    </ul>
+  </section>
+
+  <section class="spm-section">
+    <h2>Minimum evidence</h2>
+    <p>An admission packet needs current financials with a prior-period comparator, structural capability evidence, one external-origin source bearing on the mechanism or feasible alternatives, an explicit capture argument, a defense-cost review, a company-perimeter rationale, and a credible counter-hypothesis. Reposts and joint announcements do not become independent origins merely by appearing at several URLs.</p>
+    <p><strong>High</strong> and <strong>Moderate</strong> confidence are eligible but remain qualitative research judgments. <strong>Low</strong> cannot admit. <strong>Unassessable</strong> makes the affected dimension and total null. Overall confidence is the weakest decisive dimension; it is never averaged.</p>
+  </section>
+
+  <section class="spm-section">
+    <h2>Valuation is adjacent, never embedded</h2>
+    <div class="spm-callout">SDS does not become a multiplier. It changes neither PEG nor economic sPEG.</div>
+    <p>Conventional PEG requires a current, matched, positive FY1–FY4 EPS path and a verified security basis. Economic sPEG requires a separately qualified paired economic model. Either valuation can be unavailable while the scarcity judgment remains useful. Missing economic inputs stay null; the system never inserts M=1 or relabels PEG as sPEG.</p>
+  </section>
+
+  <section class="spm-section">
+    <h2>Cadence, events, and history</h2>
+    <p>Full reviews are quarterly and structural reviews may not exceed 90 days. Material customer losses, substitute qualification, pricing resets, new capacity, acquisitions, financing strain, and operative restrictions trigger event review. The target is five trading sessions after adequate primary evidence; an unresolved event moves a member under review and stops it counting as currently qualified. Immutable releases preserve the original cutoff, publication time, effective time, and predecessor.</p>
+  </section>
+
+  <section class="spm-section">
+    <h2>Limits</h2>
+    <p>The dimensions are correlated and not statistically validated as independent factors. The ten-company cohort is purposive and cannot establish diversification, sector neutrality, predictive validity, or superior returns. Thresholds are governance choices, not cutoffs optimized against outcomes. Cross-sector comparison is structured by common anchors but remains mechanism-sensitive and judgment-based.</p>
+  </section>
+
+  <div class="spm-links">
+    <a class="spm-link" href="/speg-index">sPEG Index</a>
+    <a class="spm-link" href="https://mcp.exmxc.ai/speg/index/v1/methodology" target="_blank" rel="noopener">Methodology JSON</a>
+    <a class="spm-link" href="https://mcp.exmxc.ai/schemas/speg-index-profile-v1" target="_blank" rel="noopener">Profile schema</a>
+  </div>
+</main>

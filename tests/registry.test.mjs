@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import Ajv2020 from 'ajv/dist/2020.js';
 import { DATASETS, DATA_TOOLS, MCP_RESOURCES, MCP_PROTOCOL_VERSIONS } from '../lib/registry.js';
 import strategicConsequenceSchema from '../schema/strategic_consequence.schema.json' with { type: 'json' };
+import spegIndexProfileV1Schema from '../schema/speg_index_profile_v1.schema.json' with { type: 'json' };
 import {
   calculateRealityGapScores,
   getStrategicConsequence,
@@ -11,11 +12,20 @@ import {
 import { AI_POWER_V2_METHODOLOGY, AI_POWER_V2_RELEASE, deriveAiPowerSummaryState, validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
 import { assembleVerifiedProfile, buildDeterministicPassages, callOpenAIJson, extractionPrompt, recordFailedProfileAttempt, validateEvidenceDocumentSnapshot, validateSourceManifest, verificationPrompt } from '../lib/ai-power-pipeline.js';
 import { buildRepeatConsensus } from '../lib/ai-power-consensus.js';
+import {
+  SPEG_INDEX_RELEASE,
+  calculateSpegIndexScore,
+  evaluateSpegIndexEligibility,
+  validateSpegIndexReleaseSemantics
+} from '../lib/speg-index-v1.js';
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/index'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://content/index'));
 assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.power_lens.get'));
+assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.speg.index.get'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/speg-index/v1'));
+assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://schemas/speg-index-profile/v1'));
 assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.power_lens.v2.get'));
 assert.ok(DATA_TOOLS.some(t=>t.id === 'ex.ai_power.profiles.get'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/ai_power_profiles_v2'));
@@ -46,6 +56,26 @@ assert.equal(DATASETS.entity_clarity_latest_release.data.registry_entity_count, 
 assert.equal(DATASETS.speg.data.metadata.as_of_date, '2026-07-16');
 assert.equal(DATASETS.speg.data.metadata.snapshot_type, 'forward_fiscal_eps_proxy');
 assert.equal(DATASETS.speg.data.rows.length, 25);
+assert.equal(DATASETS.speg_index_v1.data.release_id, 'speg-index-2026-09-17-rc1');
+assert.equal(SPEG_INDEX_RELEASE.profiles.length, 10);
+assert.equal(SPEG_INDEX_RELEASE.coverage.include_recommendations, 5);
+assert.equal(SPEG_INDEX_RELEASE.coverage.watchlist, 5);
+assert.equal(SPEG_INDEX_RELEASE.coverage.released_members, 0);
+assert.equal(SPEG_INDEX_RELEASE.membership_mutated, false);
+assert.deepEqual(validateSpegIndexReleaseSemantics(SPEG_INDEX_RELEASE), { ok: true, errors: [] });
+const validateSpegIndex = new Ajv2020({ strict: false, validateFormats: false }).compile(spegIndexProfileV1Schema);
+assert.equal(validateSpegIndex(SPEG_INDEX_RELEASE), true, JSON.stringify(validateSpegIndex.errors));
+
+const admissionConfidence = Object.fromEntries(['constraint', 'substitution_resistance', 'economic_capture', 'persistence', 'cost_of_defense'].map((key) => [key, 'Moderate']));
+const adiFixture = { constraint: 2, substitution_resistance: 3, economic_capture: 3, persistence: 3, cost_of_defense: 3 };
+assert.equal(calculateSpegIndexScore(adiFixture), 14);
+assert.equal(evaluateSpegIndexEligibility({ dimensions: adiFixture, dimensionConfidence: admissionConfidence, materialityStatus: 'adequate', sourcePacketPass: true, currentReviewPass: true, materialEventPass: true }).eligible_for_inclusion, false);
+const snpsFixture = { constraint: 3, substitution_resistance: 3, economic_capture: 3, persistence: 3, cost_of_defense: 2 };
+assert.equal(calculateSpegIndexScore(snpsFixture), 14);
+assert.equal(evaluateSpegIndexEligibility({ dimensions: snpsFixture, dimensionConfidence: admissionConfidence, materialityStatus: 'adequate', sourcePacketPass: true, currentReviewPass: true, materialEventPass: true }).eligible_for_inclusion, true);
+assert.equal(calculateSpegIndexScore({ ...snpsFixture, persistence: null }), null);
+assert.equal(evaluateSpegIndexEligibility({ dimensions: { constraint: 4, substitution_resistance: 4, economic_capture: 4, persistence: 4, cost_of_defense: 4 }, dimensionConfidence: { ...admissionConfidence, constraint: 'Low' }, materialityStatus: 'adequate', sourcePacketPass: true, currentReviewPass: true, materialEventPass: true }).eligible_for_inclusion, false);
+assert.ok(SPEG_INDEX_RELEASE.profiles.every(profile => profile.valuation.sds_used_as_valuation_input === false));
 assert.equal(AI_POWER_V2_RELEASE.profiles.length, 20);
 assert.deepEqual(validateAiPowerReleaseSemantics(AI_POWER_V2_RELEASE), { ok: true, errors: [] });
 assert.equal(deriveAiPowerSummaryState(AI_POWER_V2_RELEASE.profiles[0]), 'insufficient_evidence');

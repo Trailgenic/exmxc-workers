@@ -1,0 +1,122 @@
+<style>
+  .spi-root { max-width: 1100px; margin: 0 auto; padding: 64px 40px 90px; box-sizing: border-box; }
+  .spi-hero { padding-bottom: 38px; border-bottom: .5px solid var(--ex-border-gold); }
+  .spi-title { font-family: var(--ex-font-display); font-size: clamp(2.55rem, 6vw, 4.8rem); line-height: .98; letter-spacing: -.04em; font-weight: 400; color: #fff; margin: 14px 0 22px; }
+  .spi-title em { color: var(--ex-lavender); font-style: normal; }
+  .spi-deck, .spi-root p { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: 1rem; line-height: 1.7; }
+  .spi-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .spi-btn { display: inline-block; font-family: var(--ex-font-mono); font-size: .73rem; letter-spacing: .09em; text-transform: uppercase; text-decoration: none; padding: 11px 14px; border: .5px solid var(--ex-lavender); color: var(--ex-lavender); }
+  .spi-btn--solid { background: var(--ex-lavender); color: var(--ex-bg); }
+  .spi-boundary { margin-top: 34px; padding: 18px 20px; border: .5px solid var(--ex-border-gold); font-family: var(--ex-font-body); color: var(--ex-text-dim); line-height: 1.65; }
+  .spi-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 34px; }
+  .spi-stat { border: .5px solid var(--ex-border); padding: 18px; }
+  .spi-stat-label, .spi-eyebrow { font-family: var(--ex-font-mono); color: var(--ex-text-muted); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+  .spi-stat-value { font-family: var(--ex-font-display); color: #fff; font-size: 1.75rem; margin-top: 8px; }
+  .spi-section { margin-top: 50px; }
+  .spi-section h2 { margin: 0 0 18px; font-family: var(--ex-font-display); color: #fff; font-size: clamp(1.8rem, 4vw, 2.65rem); font-weight: 400; }
+  .spi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .spi-card { display: block; border: .5px solid var(--ex-border); background: var(--ex-surface); padding: 22px; text-decoration: none; }
+  .spi-card h3 { color: #fff; font-family: var(--ex-font-display); font-size: 1.5rem; font-weight: 400; margin: 8px 0 12px; }
+  .spi-vector { font-family: var(--ex-font-mono); color: var(--ex-lavender); font-size: .82rem; letter-spacing: .05em; }
+  .spi-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  .spi-meta div { border-top: .5px solid var(--ex-border); padding-top: 10px; font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: .86rem; line-height: 1.45; }
+  .spi-empty, .spi-error { border: .5px solid var(--ex-border); padding: 20px; color: var(--ex-text-dim); font-family: var(--ex-font-body); }
+  @media (max-width: 760px) { .spi-grid { grid-template-columns: 1fr; } .spi-status { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .spi-root { padding: 48px 22px 68px; } .spi-status { grid-template-columns: 1fr; } }
+</style>
+<main class="spi-root">
+  <header class="spi-hero">
+    <div class="ex-label">Capital · Research constitution RC1</div>
+    <h1 class="spi-title">Durable scarcity selection. <em>Valuation stays separate.</em></h1>
+    <p class="spi-deck">The sPEG Index identifies listed companies with evidence-supported capacity to retain economic benefits from constrained alternatives over a three-to-five-year horizon. Every decision exposes its mechanism, five-part ordinal score, evidence confidence, counterevidence, and next falsifier.</p>
+    <div class="spi-actions">
+      <a class="spi-btn spi-btn--solid" href="/speg-methodology">Read the method</a>
+      <a class="spi-btn" href="https://mcp.exmxc.ai/speg/index/v1" target="_blank" rel="noopener">Machine-readable release</a>
+      <a class="spi-btn" href="https://mcp.exmxc.ai/schemas/speg-index-profile-v1" target="_blank" rel="noopener">Schema</a>
+    </div>
+    <div class="spi-boundary"><strong>Business quality is not price.</strong> Membership does not mean “cheap,” and a missing PEG does not erase durable scarcity. SDS never changes PEG or an economic multiplier. RC1 is a draft research constitution: include recommendations are not yet live membership, and all valuation fields remain unavailable.</div>
+    <div class="spi-status" id="spi-status" aria-live="polite"></div>
+  </header>
+
+  <section class="spi-section" aria-labelledby="spi-includes-title">
+    <div class="spi-eyebrow">Research decision · include</div>
+    <h2 id="spi-includes-title">Meets every admission gate</h2>
+    <div class="spi-grid" id="spi-includes"><div class="spi-empty">Loading profiles…</div></div>
+  </section>
+
+  <section class="spi-section" aria-labelledby="spi-watch-title">
+    <div class="spi-eyebrow">Research decision · watchlist</div>
+    <h2 id="spi-watch-title">A named gate remains unmet</h2>
+    <div class="spi-grid" id="spi-watch"><div class="spi-empty">Loading profiles…</div></div>
+  </section>
+
+  <section class="spi-section">
+    <h2>What the number means</h2>
+    <p>SDS is the integer sum of Constraint, Substitution resistance, Economic capture, Persistence, and Cost of defense only when all five are known. It is ordinal: 16 is not twice 8, and 15 is not 75% confidence. Admission requires C/S/E/P of at least 3, D of at least 2, adequate company materiality, at least Moderate decisive confidence, a complete evidence packet, a current review, and no unresolved material eligibility event.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const endpoint = "https://mcp.exmxc.ai/speg/index/v1";
+  const status = document.getElementById("spi-status");
+  const includes = document.getElementById("spi-includes");
+  const watch = document.getElementById("spi-watch");
+
+  const element = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+
+  const renderStats = (release) => {
+    status.replaceChildren();
+    const stats = [
+      ["Candidates", release.coverage.candidate_count],
+      ["Draft includes", release.coverage.include_recommendations],
+      ["Watchlist", release.coverage.watchlist],
+      ["Released members", release.coverage.released_members]
+    ];
+    for (const [label, value] of stats) {
+      const box = element("div", "spi-stat");
+      box.append(element("div", "spi-stat-label", label), element("div", "spi-stat-value", String(value)));
+      status.append(box);
+    }
+  };
+
+  const renderCard = (profile) => {
+    const link = element("a", "spi-card");
+    link.href = `/speg-index/companies/${encodeURIComponent(profile.identity.stable_slug)}`;
+    link.append(element("div", "spi-eyebrow", `${profile.decision.research_decision} · ${profile.dimensions.constraint.confidence} confidence`));
+    link.append(element("h3", "", profile.identity.display_name));
+    link.append(element("div", "spi-vector", `SDS ${profile.score.total ?? "—"}/20 · [${profile.score.vector.map(value => value ?? "?").join(" · ")}]`));
+    const meta = element("div", "spi-meta");
+    meta.append(element("div", "", `Mechanism: ${profile.scope.mechanism_id.replaceAll("-", " ")}`));
+    meta.append(element("div", "", profile.valuation.peg_eligible ? `PEG ${profile.valuation.peg}` : `PEG unavailable: ${profile.valuation.peg_null_reason.replaceAll("_", " ")}`));
+    link.append(meta);
+    return link;
+  };
+
+  const renderGroup = (node, profiles) => {
+    node.replaceChildren();
+    if (!profiles.length) node.append(element("div", "spi-empty", "No profiles in this group."));
+    for (const profile of profiles) node.append(renderCard(profile));
+  };
+
+  fetch(endpoint, { headers: { accept: "application/json" } })
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then((release) => {
+      renderStats(release);
+      renderGroup(includes, release.profiles.filter(profile => profile.decision.research_decision === "include"));
+      renderGroup(watch, release.profiles.filter(profile => profile.decision.research_decision === "watchlist"));
+    })
+    .catch(() => {
+      status.replaceChildren(element("div", "spi-error", "The index feed is temporarily unavailable."));
+      includes.replaceChildren(element("div", "spi-error", "Profiles could not be loaded."));
+      watch.replaceChildren(element("div", "spi-error", "Profiles could not be loaded."));
+    });
+})();
+</script>
