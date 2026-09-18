@@ -15,7 +15,7 @@
 <script>
 (() => {
   const root = document.getElementById("spr-root");
-  const releaseId = decodeURIComponent(location.pathname.split("/").filter(Boolean).at(-1) || "");
+  const releaseId = decodeURIComponent(location.pathname.split("/").filter(Boolean).at(-1) || "").replace(/^speg-index-release-/, "speg-index-");
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
     if (className) node.className = className;
