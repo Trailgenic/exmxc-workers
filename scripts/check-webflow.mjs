@@ -11,7 +11,7 @@ for (const file of files) {
     scriptCount += 1;
     const attributes = match[1];
     const source = match[2];
-    if (/application\/ld\+json/i.test(attributes)) {
+    if (/application\/(?:ld\+)?json/i.test(attributes)) {
       JSON.parse(source);
     } else {
       // Parse browser JavaScript without executing DOM or network behavior.

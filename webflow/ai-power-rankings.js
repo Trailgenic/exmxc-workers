@@ -35,7 +35,7 @@
     const fragment = document.createDocumentFragment();
     for (const row of snapshot.rows) {
       const tr = document.createElement('tr'), name = document.createElement('th');
-      name.scope='row'; name.className='apr-company'; name.textContent=row.company; tr.appendChild(name);
+      name.scope='row'; name.className='apr-company'; const link=document.createElement('a'); link.textContent=row.company; link.href='/power-lens?company='+encodeURIComponent(row.id)+'&edition='+encodeURIComponent(snapshot.edition_id); name.appendChild(link); tr.appendChild(name);
       for (const y of years) {
         const value = row.assessments[y];
         if (!Number.isInteger(value.rank) || !Number.isFinite(value.score)) throw new Error('Invalid scores');
