@@ -47,7 +47,9 @@ describe('monthly AI Power rankings', () => {
     expect((await req('/ai-power/rankings?year=2028')).status).toBe(400);
     expect((await req('/ai-power/rankings', { method: 'POST' })).status).toBe(405);
     const ledger = await (await req('/ai-power/rankings/editions')).json();
-    expect(ledger.latest).toBe('2026-09-18');
+    expect(ledger.editions.some(entry => entry.edition_id === ledger.latest)).toBe(true);
+    const latest = await (await req('/ai-power/rankings')).json();
+    expect(latest.edition_id).toBe(ledger.latest);
   });
 });
 

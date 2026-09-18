@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "node scripts/source-check.mjs",
-    "test": "node tests/registry.test.mjs && node tests/ai-power-rankings.test.mjs",
+    "test": "node tests/registry.test.mjs && node tests/ai-power-rankings.test.mjs && node tests/power-lens.test.mjs",
     "test:workers": "vitest run --config vitest.config.mjs",
     "validate:json": "node scripts/validate-json.mjs",
     "validate:ai-power": "node scripts/validate-json.mjs",

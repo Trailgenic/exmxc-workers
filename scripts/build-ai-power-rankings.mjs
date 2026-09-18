@@ -21,14 +21,14 @@ const css=await readFile('webflow/ai-power-rankings.css','utf8');
 const js=await readFile('webflow/ai-power-rankings.js','utf8');
 const api='https://mcp.exmxc.ai/ai-power/rankings';
 const forceHtml=Object.entries(method.definitions).map(([name,definition])=>`<div><strong>${esc(name[0].toUpperCase()+name.slice(1))}</strong><p>${esc(definition)}</p></div>`).join('');
-const rows=snapshot.rows.map(row=>`<tr ${snapshot.years.map(y=>`data-rank${y}="${row.assessments[y].rank}"`).join(' ')}><th scope="row" class="apr-company">${esc(row.company)}</th>${snapshot.years.map(y=>`<td data-year="${y}">#${row.assessments[y].rank}</td><td data-year="${y}">${row.assessments[y].score.toFixed(1)}</td>`).join('')}</tr>`).join('\n');
+const rows=snapshot.rows.map(row=>`<tr ${snapshot.years.map(y=>`data-rank${y}="${row.assessments[y].rank}"`).join(' ')}><th scope="row" class="apr-company"><a href="/power-lens?company=${encodeURIComponent(row.id)}&amp;edition=${snapshot.edition_id}">${esc(row.company)}</a></th>${snapshot.years.map(y=>`<td data-year="${y}">#${row.assessments[y].rank}</td><td data-year="${y}">${row.assessments[y].score.toFixed(1)}</td>`).join('')}</tr>`).join('\n');
 const options=[...manifest.editions].reverse().map(e=>`<option value="${e.edition_id}"${e.edition_id===snapshot.edition_id?' selected':''}>${esc(e.label)}</option>`).join('');
 const kind=y=>snapshot.rows[0].assessments[y].kind==='forecast'?'Forecast':snapshot.rows[0].assessments[y].kind==='historical_assessment'?'Historical':'Assessment';
 const body=`<style>${css}</style>
 <main class="apr" id="ai-power-rankings" data-edition="${snapshot.edition_id}">
 <header><div class="apr-kicker">exmxc · Four Forces of AI Power</div><h1>AI Power Index</h1><p class="apr-deck">50 companies. Three views of AI power. Our assessment of who controls Compute, Interface, Alignment, and Energy—and where that power is headed.</p></header>
 <div class="apr-toolbar"><label class="apr-label">Edition <select aria-label="Monthly edition">${options}</select></label><span class="apr-meta" data-as-of>As of ${snapshot.as_of} · Monthly editions</span></div>
-<p class="apr-note">Select a year heading to rank companies from highest to lowest power. Scores are out of 100. Scroll the table sideways on smaller screens.</p>
+<p class="apr-note">Select a year heading to rank companies from highest to lowest power. Select a company to read our power thesis and Four Forces breakdown. Scores are out of 100. Scroll the table sideways on smaller screens.</p>
 <div class="apr-scroll" tabindex="0" role="region" aria-label="AI Power rankings, horizontally scrollable"><table class="apr-table"><caption>exmxc editorial assessments and forecasts. Methodology 1.0.0.</caption><thead><tr><th rowspan="2" scope="col" class="apr-company">Company</th>${snapshot.years.map(y=>`<th colspan="2" scope="colgroup"><button type="button" data-sort-year="${y}" aria-pressed="${y===2026}" aria-label="Sort by ${y} power, highest first">${y} ↓</button><span class="apr-kind" data-kind="${y}">${kind(y)}</span></th>`).join('')}</tr><tr>${snapshot.years.map(y=>`<th scope="col" class="apr-subhead" data-year="${y}">Rank</th><th scope="col" class="apr-subhead" data-year="${y}">Score</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
 <p class="apr-note" role="status" aria-live="polite">Sorted by 2026 power, highest first. 50 companies.</p>
 <p class="apr-note" data-change-note>${esc(snapshot.change_note)}</p>
@@ -46,3 +46,26 @@ await writeFile('webflow/ai-power-index-head.html',head('ai-power-index','AI Pow
 await writeFile('webflow/ai-power-index-methodology-head.html',head('ai-power-index-methodology','AI Power Index Methodology — Four Forces | exmxc','The fixed Four Forces scoring formula, anchors, ranking rules, company boundaries, and monthly edition policy for the exmxc AI Power Index.'));
 if(body.length>50000||methodBody.length>50000)throw new Error('Webflow custom-code limit exceeded');
 console.log(`Built ${snapshot.rows.length} companies; index footer ${body.length} characters.`);
+
+// Power Lens is another view of this same edition, not a second scoring system.
+const {packLens,renderLensProfile}=await import('../lib/power-lens-view.js');
+const lensCss=await readFile('webflow/power-lens.css','utf8');
+const lensView=(await readFile('lib/power-lens-view.js','utf8')).replace(/^export /gm,'');
+const lensJs=await readFile('webflow/power-lens.js','utf8');
+const safeJson=value=>JSON.stringify(value).replace(/</g,'\\u003c');
+const lensHead=head('power-lens','Power Lens — Company Profiles & Four Forces | exmxc','Explore all 50 AI Power Index companies: ranks, force scores, power theses, forecasts, reconsideration conditions, and monthly history.').replace('"TechArticle"','"WebPage"').replace(method.locked_on,snapshot.as_of)+`<script type="application/json" id="power-lens-data">${safeJson(packLens(snapshot))}</script>`;
+const lensBody=`<style>${css}\n${lensCss}</style>
+<main class="apr" id="power-lens" data-ledger="${esc(JSON.stringify(manifest))}">
+<header><div class="apr-kicker">exmxc · AI Power Index</div><h1>Power Lens</h1><p class="apr-deck">The judgment behind the ranking. Explore what each company controls, where we see its power heading, and what would change our mind.</p></header>
+<div class="apr-toolbar pl-controls"><label>Company<select data-company-select aria-label="Company">${[...snapshot.rows].sort((a,b)=>a.company.localeCompare(b.company)).map(r=>`<option value="${r.id}"${r.id===snapshot.rows[0].id?' selected':''}>${esc(r.company)}</option>`).join('')}</select></label><label>Monthly edition<select data-edition-select aria-label="Monthly edition">${options}</select></label><span class="apr-meta" data-as-of>As of ${snapshot.as_of} · Methodology 1.0.0</span></div>
+<p class="apr-note" role="status" aria-live="polite">${esc(snapshot.rows[0].company)} · ${snapshot.edition_id} edition.</p>
+<noscript><p>JavaScript is needed to switch companies and editions. The saved ${esc(snapshot.rows[0].company)} profile appears below; all company records are available in the edition data.</p></noscript>
+<article data-profile aria-labelledby="profile-company">${renderLensProfile(snapshot.rows[0],snapshot)}</article>
+<div class="pl-actions"><button type="button" data-copy>Copy profile link</button><a data-permalink href="/power-lens?company=${snapshot.rows[0].id}&amp;edition=${snapshot.edition_id}">Permanent profile link</a><a data-index-link href="/ai-power-index?edition=${snapshot.edition_id}">All 50 rankings →</a></div>
+<section class="pl-history"><h2>Monthly history</h2><div data-history><p>September 2026 begins the series. Monthly editions preserve the forecasts made at each point in time.</p></div><p class="apr-note" data-change-note>${esc(snapshot.change_note)}</p></section>
+<section class="apr-method"><h2>One fixed methodology.</h2><p class="apr-formula">Power Score = 50% strongest force + 50% average of all four.</p><p>Compute, Interface, Alignment, and Energy are scored in five-point steps. Scores are editorial judgments; 2027 and 2030 are forecasts. Rankings compare the same 50-company cohort. Equal displayed scores may have different ranks under our fixed tie-break rules.</p><p><a href="/ai-power-index-methodology">Full methodology</a> · <a data-data-link href="${api}?edition=${snapshot.edition_id}">Edition data and research notes</a> · <a href="/frameworks/four-forces-of-ai-power">Four Forces framework</a></p><p class="apr-note">exmxc sets the judgments. Each monthly edition retains its original research cutoff, scores, and forecasts.</p></section>
+</main><script>(()=>{${lensView}\n${lensJs}})();</script>`;
+if(lensHead.length>50000||lensBody.length>50000)throw new Error('Power Lens exceeds Webflow code limit');
+await writeFile('webflow/power-lens-head.html',lensHead);
+await writeFile('webflow/power-lens-footer.html',lensBody);
+console.log(`Power Lens: ${snapshot.rows.length} profiles; head ${lensHead.length}, footer ${lensBody.length} characters.`);
