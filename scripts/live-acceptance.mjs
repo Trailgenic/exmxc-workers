@@ -60,14 +60,25 @@ ok(powerProfilesV2.json?.total_profiles === 20 && powerProfilesV2.json?.release_
 ok((await raw('/schemas/ai-power-source-manifest-v2')).json?.$id === 'https://mcp.exmxc.ai/schemas/ai-power-source-manifest/v2', 'AI Power v2 source manifest schema is live');
 const spegIndex = await raw('/speg/index/v1');
 ok(
-  spegIndex.json?.release_id === 'speg-index-2026-09-17-rc1'
-    && spegIndex.json?.release_state === 'draft'
+  spegIndex.json?.release_id === 'speg-index-2026-09-17-v1'
+    && spegIndex.json?.release_state === 'released'
     && spegIndex.json?.coverage?.candidate_count === 10
     && spegIndex.json?.coverage?.include_recommendations === 5
-    && spegIndex.json?.coverage?.released_members === 0
-    && spegIndex.json?.membership_mutated === false
+    && spegIndex.json?.coverage?.released_members === 5
+    && spegIndex.json?.coverage?.qualified_member_count === 5
+    && spegIndex.json?.membership_mutated === true
+    && spegIndex.json?.profiles?.filter((profile) => profile?.decision?.membership_state === 'member').length === 5
+    && spegIndex.json?.profiles?.filter((profile) => profile?.decision?.research_decision === 'watchlist').every((profile) => profile?.decision?.membership_state === null)
     && spegIndex.json?.profiles?.every((profile) => profile?.valuation?.sds_used_as_valuation_input === false),
-  'sPEG Index RC1 exposes draft recommendations without membership or valuation coupling'
+  'sPEG Index v1 exposes five released members without valuation coupling'
+);
+const spegRc1 = await raw('/speg/index/v1/releases/speg-index-2026-09-17-rc1');
+ok(
+  spegRc1.json?.release_state === 'draft'
+    && spegRc1.json?.coverage?.released_members === 0
+    && spegRc1.json?.membership_mutated === false
+    && spegRc1.json?.profiles?.every((profile) => profile?.decision?.membership_state === null),
+  'sPEG Index exact RC1 remains a non-membership draft'
 );
 const spegIndexResource = await rpc(5, 'resources/read', { uri: 'exmxc://datasets/speg-index/v1' });
 ok(JSON.stringify(JSON.parse(spegIndexResource.json.result.contents[0].text)) === JSON.stringify(spegIndex.json), 'sPEG Index MCP resource matches REST');
