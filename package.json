@@ -1,11 +1,11 @@
 {
   "name": "exmxc-workers",
-  "version": "2.14.0",
+  "version": "2.15.0",
   "type": "module",
   "private": true,
   "scripts": {
     "lint": "node scripts/source-check.mjs",
-    "test": "node tests/registry.test.mjs",
+    "test": "node tests/registry.test.mjs && node tests/ai-power-rankings.test.mjs",
     "test:workers": "vitest run --config vitest.config.mjs",
     "validate:json": "node scripts/validate-json.mjs",
     "validate:ai-power": "node scripts/validate-json.mjs",
@@ -16,7 +16,9 @@
     "validate:webflow": "node scripts/check-webflow.mjs",
     "verify:webmcp": "node scripts/verify-webmcp-power-lens.mjs",
     "registry:check": "node scripts/check-registry-packet.mjs",
-    "deploy:dry-run": "wrangler deploy --dry-run"
+    "deploy:dry-run": "wrangler deploy --dry-run",
+    "test:ai-power-rankings": "node tests/ai-power-rankings.test.mjs",
+    "build:ai-power-rankings": "node scripts/build-ai-power-rankings.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.29.0",

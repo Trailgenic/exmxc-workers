@@ -1,0 +1,14 @@
+{
+  "latest": "2026-09-18",
+  "methodology_id": "ai-power-rankings-1.0.0",
+  "methodology_sha256": "e6ce8222876707cad5ff4c97d9be9b9d93fcdbe2984f07fbb40dc71429d8d7fc",
+  "editions": [
+    {
+      "edition_id": "2026-09-18",
+      "as_of": "2026-09-18",
+      "label": "September 2026",
+      "sha256": "252e1ff94f495d14d3fc5aa83fa3dabb43e4622e4398cb4c3cfa0554ac5a346e",
+      "change_note": "Inaugural ranked edition. New longitudinal baseline; prior v1 exposure and v2 pilot profiles are separate series."
+    }
+  ]
+}

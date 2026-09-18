@@ -7,14 +7,20 @@ Cloudflare Worker implementation for the `mcp.exmxc.ai` executable intelligence 
 
 The code keeps the ES-module Worker entrypoint (`export default { fetch(request, env) }`) and stores no secrets in source.
 
+## AI Power Index — monthly ranked edition
+
+The current ranked index is served at `GET /ai-power/rankings` and exposed to agents through `ex.ai_power.rankings.get`. It covers 50 companies with scores and ranks for 2026, 2027, and 2030. Query `year=2030` to sort that forecast, and `edition=2026-09-18` for the immutable inaugural edition. The ledger is `/ai-power/rankings/editions`; the fixed method is `/ai-power/rankings/methodology`.
+
+GitHub stores dated editions and the locked Four Forces methodology. Webflow presents a complete static table enhanced with year sorting and an edition selector. Run `npm run build:ai-power-rankings` to generate the page code from the same implementation used by the API. See [monthly operations](docs/ai-power-rankings-operations.md). Earlier v1 exposure and v2 pilot material below remains separate historical compatibility output.
+
 ## Canonical identity and build
 
 - Entity: `exmxc`
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.14.0`
-- Stable build date / `last_updated`: `2026-09-17`
+- Build version: `2.15.0`
+- Stable build date / `last_updated`: `2026-09-18`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 

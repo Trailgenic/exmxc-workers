@@ -1,0 +1,47 @@
+{
+  "id": "ai-power-rankings-1.0.0",
+  "locked_on": "2026-09-18",
+  "name": "exmxc AI Power Index — Four Forces",
+  "forces": [
+    "compute",
+    "interface",
+    "alignment",
+    "energy"
+  ],
+  "formula": "0.5 * max(forces) + 0.5 * mean(forces)",
+  "score_step": 5,
+  "minimum": 0,
+  "maximum": 100,
+  "display_decimals": 1,
+  "rounding": "half-up",
+  "tie_break": [
+    "unrounded score descending",
+    "force vector sorted descending, lexicographic descending",
+    "company name case-insensitive alphabetical ascending"
+  ],
+  "anchors": {
+    "0": "No material independent control",
+    "25": "Limited control; substantial dependence",
+    "50": "Meaningful control with credible substitutes",
+    "75": "Major control position difficult to replace",
+    "100": "Defining global bottleneck or platform position"
+  },
+  "definitions": {
+    "compute": "Control over the infrastructure and consequential bottlenecks needed to train and run AI.",
+    "interface": "Control over where people and institutions encounter AI, express intent, and act.",
+    "alignment": "Authority and capacity to govern what AI may do: permissions, containment, monitoring, interruption, accountability, and recovery.",
+    "energy": "Control over electricity, continuity, location, and enabling power infrastructure."
+  },
+  "framework_url": "https://www.exmxc.ai/frameworks/four-forces-of-ai-power",
+  "canonical_url": "https://www.exmxc.ai/ai-power-index-methodology",
+  "assessment_type": "exmxc editorial judgment",
+  "cadence": "monthly",
+  "years": [
+    2026,
+    2027,
+    2030
+  ],
+  "history_policy": "Append immutable editions; corrections use a new edition with supersedes and correction_reason. Never rewrite earlier scores or forecasts. Keep named target years; freeze completed-year assessments rather than rolling them forward.",
+  "company_policy": "Consolidate controlled subsidiaries. Do not assign a partner’s assets to the company. Preserve the 50-company baseline cohort; document any subsequently authorized membership change separately.",
+  "forecast_policy": "Central editorial forecast from current research. Announced capacity is prospective. Scores are neither probabilities nor measured market shares."
+}
