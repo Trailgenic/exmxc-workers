@@ -7,13 +7,18 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.14.0",
+  "version": "2.15.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
     "entity intelligence"
   ],
   "tools": [
+    {
+      "name": "ex.ai_power.rankings.get",
+      "title": "Get AI Power rankings",
+      "description": "Current exmxc editorial rankings and forecasts for 50 companies in 2026, 2027, and 2030 using the fixed Four Forces methodology. Immutable monthly editions preserve prior judgments."
+    },
     {
       "name": "ex.entities.get",
       "title": "Get Entity Intelligence Records",

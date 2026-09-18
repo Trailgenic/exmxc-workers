@@ -18,11 +18,12 @@ node scripts/build-registry-packet.mjs
 - Auth: none
 - Homepage: https://exmxc.ai
 - Repository: https://github.com/Trailgenic/exmxc-workers
-- Version: 2.14.0
+- Version: 2.15.0
 - Categories: institutional intelligence, AI capital architecture, entity intelligence
 
 ## Tools
 
+- ex.ai_power.rankings.get — Get AI Power rankings: Current exmxc editorial rankings and forecasts for 50 companies in 2026, 2027, and 2030 using the fixed Four Forces methodology. Immutable monthly editions preserve prior judgments.
 - ex.entities.get — Get Entity Intelligence Records: Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring.
 - ex.speg.get — Get sPEG Valuation Records: Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies.
 - ex.speg.index.get — Get sPEG Index v1 Profiles: Evidence-backed durable-scarcity profiles with independently gated draft inclusion recommendations, immutable release semantics, full source provenance, and valuation fields kept separately nullable.

@@ -1,70 +1,145 @@
-<style>
-  .api-root { max-width: 980px; margin: 0 auto; padding: 64px 40px 90px; box-sizing: border-box; }
-  .api-hero { padding-bottom: 38px; border-bottom: .5px solid var(--ex-border-gold); }
-  .api-title { font-family: var(--ex-font-display); font-size: clamp(2.55rem, 6vw, 4.8rem); line-height: .98; letter-spacing: -.04em; font-weight: 400; color: #fff; margin: 14px 0 22px; }
-  .api-title em { color: var(--ex-lavender); font-style: normal; }
-  .api-deck { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: 1.08rem; line-height: 1.7; max-width: 760px; }
-  .api-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-  .api-btn { display: inline-block; font-family: var(--ex-font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: 12px 16px; border: .5px solid var(--ex-lavender); color: var(--ex-lavender); }
-  .api-btn--solid { background: var(--ex-lavender); color: var(--ex-bg); }
-  .api-section { margin-top: 48px; }
-  .api-section h2 { font-family: var(--ex-font-display); color: #fff; font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 400; letter-spacing: -.02em; margin: 0 0 18px; }
-  .api-section p, .api-section li { font-family: var(--ex-font-body); color: var(--ex-text-dim); font-size: 1rem; line-height: 1.7; }
-  .api-definition { border-left: 2px solid var(--ex-lavender); padding: 3px 0 3px 22px; font-family: var(--ex-font-display); color: #fff; font-size: 1.45rem; line-height: 1.45; }
-  .api-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
-  .api-card { padding: 22px; border: .5px solid var(--ex-border); background: var(--ex-surface); }
-  .api-card h3 { font-family: var(--ex-font-mono); font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; color: var(--ex-gold); margin: 0 0 12px; }
-  .api-card p { margin: 0; font-size: .92rem; }
-  .api-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 20px; }
-  .api-stat { padding: 20px; border: .5px solid var(--ex-border); }
-  .api-stat-label { font-family: var(--ex-font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ex-text-muted); }
-  .api-stat-value { font-family: var(--ex-font-display); color: #fff; font-size: 2rem; margin-top: 8px; }
-  .api-boundary { margin-top: 48px; padding: 20px; border: .5px solid var(--ex-border-gold); color: var(--ex-text-muted); font-family: var(--ex-font-body); font-size: .92rem; line-height: 1.65; }
-  @media (max-width: 800px) { .api-grid, .api-status { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 520px) { .api-root { padding: 48px 22px 68px; } .api-grid, .api-status { grid-template-columns: 1fr; } }
+<style>.apr{max-width:1120px;margin:auto;padding:48px 28px 80px;color:var(--ex-text,#f3f1fa);font-family:var(--ex-font-body,Arial,sans-serif);font-size:16px;line-height:1.6}
+.apr *{box-sizing:border-box}.apr h1{font-family:var(--ex-font-display,Georgia,serif);font-size:clamp(2.6rem,6vw,4.4rem);font-weight:400;letter-spacing:-.035em;line-height:1.08;margin:12px 0 20px}.apr h2{font-family:var(--ex-font-display,Georgia,serif);font-size:2rem;font-weight:400;margin:32px 0 14px}.apr p{max-width:850px}.apr a{color:var(--ex-lavender,#cbb8fa);text-underline-offset:4px}.apr-kicker{font-size:14px;color:var(--ex-gold,#d5bd7c);letter-spacing:.12em;text-transform:uppercase}.apr-deck{color:var(--ex-text-dim,#c8c4d2);max-width:750px}.apr-toolbar{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:28px 0 12px}.apr select{font:inherit;background:var(--ex-surface,#181622);color:#fff;border:1px solid #696074;padding:10px 36px 10px 12px;border-radius:0;max-width:100%}.apr-label{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.apr-meta{font-size:14px;color:var(--ex-text-dim,#c8c4d2)}.apr-scroll{overflow-x:auto;border:1px solid var(--ex-border,#4e475d);margin:14px 0 18px}.apr-table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-variant-numeric:tabular-nums}.apr-table th,.apr-table td{padding:12px 16px;border-bottom:1px solid var(--ex-border,#393344);text-align:right;white-space:nowrap;font-size:16px}.apr-table thead th{background:var(--ex-surface,#181622);font-weight:400}.apr-table thead tr:first-child th{text-align:center;border-bottom:0}.apr-table tr>*:first-child.apr-company{position:sticky;left:0;text-align:left;background:var(--ex-bg,#100e17);z-index:1;width:240px;max-width:240px;white-space:normal}.apr-table tbody th{font-weight:500}.apr-table tbody tr:last-child>*{border-bottom:0}.apr-table button{font:inherit;font-size:20px;cursor:pointer;border:0;border-bottom:2px solid transparent;background:transparent;color:#d5cede;padding:8px 18px;width:100%;min-height:44px}.apr-table button[aria-pressed=true]{color:var(--ex-lavender,#d1b8ff);border-color:var(--ex-lavender,#d1b8ff)}.apr button:focus-visible,.apr select:focus-visible,.apr-scroll:focus-visible{outline:2px solid #d1b8ff;outline-offset:3px}.apr-table .apr-active{background:rgba(179,148,236,.09);color:#e1d1ff}.apr-table .apr-subhead{font-size:14px;color:#bab3c8}.apr-kind{display:block;font-size:12px;color:#c8c4d2;letter-spacing:.06em;text-transform:uppercase}.apr-table caption{text-align:left;padding:14px 16px;font-size:14px;color:#c8c4d2}.apr-note{font-size:14px;color:var(--ex-text-dim,#c8c4d2)}.apr-method{margin-top:30px;border-top:1px solid var(--ex-border,#4e475d);padding-top:8px}.apr-formula{padding:18px 20px;border-left:2px solid var(--ex-lavender,#cbb8fa);background:var(--ex-surface,#181622);font-size:18px}.apr-forces{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}.apr-forces p{margin:4px 0 16px}.apr-error{color:#f0c69e}.apr [hidden]{display:none!important}@media(max-width:600px){.apr{padding:32px 16px 60px}.apr-toolbar{gap:10px}.apr-table th,.apr-table td{padding:12px 10px}.apr-table tr>*:first-child.apr-company{width:145px;max-width:145px;min-width:130px}.apr-forces{grid-template-columns:1fr}}
 </style>
-<main class="api-root">
-  <header class="api-hero">
-    <div class="ex-label">Power · v2.0 Pilot</div>
-    <h1 class="api-title">AI power is control over a <em>consequential dependency.</em></h1>
-    <p class="api-deck">The AI Power Index studies what an entity can decide or enforce, whether counterparties can replace it, whether leverage produces observable outcomes, and what could weaken that position. It separates power from AI spending, adoption, visibility, and exposure.</p>
-    <div class="api-actions">
-      <a class="api-btn api-btn--solid" href="/power-lens">Read a profile</a>
-      <a class="api-btn" href="/ai-power-index-methodology">Read methodology</a>
-      <a class="api-btn" href="https://mcp.exmxc.ai/datasets/ai_power_profiles_v2" target="_blank" rel="noopener">Machine-readable release</a>
-    </div>
-  </header>
-
-  <section class="api-section">
-    <h2>The construct</h2>
-    <div class="api-definition">AI power is an entity’s sustained ability to influence access, terms, deployment, or the distribution of value in an AI-relevant market by controlling a dependency that counterparties cannot readily replace or bypass.</div>
-  </section>
-
-  <section class="api-section">
-    <h2>Four judgments</h2>
-    <div class="api-grid">
-      <article class="api-card"><h3>Control</h3><p>What can the entity decide or enforce?</p></article>
-      <article class="api-card"><h3>Substitution</h3><p>How difficult is it to replace or bypass the dependency now?</p></article>
-      <article class="api-card"><h3>Realized leverage</h3><p>Is control producing observable terms, commitments, or economics?</p></article>
-      <article class="api-card"><h3>Durability</h3><p>What supports persistence over the next 24 months?</p></article>
-    </div>
-  </section>
-
-  <section class="api-section">
-    <h2>Where power operates</h2>
-    <p>Compute, Interface, Alignment, and Energy remain the Four Forces. They identify the domain of a control mechanism; they are not four numerical hurdles every company must maximize. Alignment is operationalized here as governance and permission control.</p>
-  </section>
-
-  <section class="api-section">
-    <h2>Pilot release status</h2>
-    <p>The current staging release declares 20 company scopes across chips, cloud, model development, distribution, and energy infrastructure. Evidence collection has not yet run, so the profiles abstain. This is a visible boundary, not a neutral score.</p>
-    <div class="api-status">
-      <div class="api-stat"><div class="api-stat-label">Pilot candidates</div><div class="api-stat-value">20</div></div>
-      <div class="api-stat"><div class="api-stat-label">Composite scores</div><div class="api-stat-value">0</div></div>
-      <div class="api-stat"><div class="api-stat-label">Universal ranks</div><div class="api-stat-value">0</div></div>
-      <div class="api-stat"><div class="api-stat-label">Refresh</div><div class="api-stat-value">Quarterly</div></div>
-    </div>
-  </section>
-
-  <div class="api-boundary">The v1 weighted exposure model is retained only as a labeled historical scaffold. v2 does not convert its scores, continue its rank history, or feed its judgments into the legacy Strategic Consequence Engine. AI Power profiles are analytical research, not probabilities, valuations, or investment recommendations.</div>
-</main>
+<main class="apr" id="ai-power-rankings" data-edition="2026-09-18">
+<header><div class="apr-kicker">exmxc · Four Forces of AI Power</div><h1>AI Power Index</h1><p class="apr-deck">50 companies. Three views of AI power. Our assessment of who controls Compute, Interface, Alignment, and Energy—and where that power is headed.</p></header>
+<div class="apr-toolbar"><label class="apr-label">Edition <select aria-label="Monthly edition"><option value="2026-09-18" selected>September 2026</option></select></label><span class="apr-meta" data-as-of>As of 2026-09-18 · Monthly editions</span></div>
+<p class="apr-note">Select a year heading to rank companies from highest to lowest power. Scores are out of 100. Scroll the table sideways on smaller screens.</p>
+<div class="apr-scroll" tabindex="0" role="region" aria-label="AI Power rankings, horizontally scrollable"><table class="apr-table"><caption>exmxc editorial assessments and forecasts. Methodology 1.0.0.</caption><thead><tr><th rowspan="2" scope="col" class="apr-company">Company</th><th colspan="2" scope="colgroup"><button type="button" data-sort-year="2026" aria-pressed="true" aria-label="Sort by 2026 power, highest first">2026 ↓</button><span class="apr-kind" data-kind="2026">Assessment</span></th><th colspan="2" scope="colgroup"><button type="button" data-sort-year="2027" aria-pressed="false" aria-label="Sort by 2027 power, highest first">2027 ↓</button><span class="apr-kind" data-kind="2027">Forecast</span></th><th colspan="2" scope="colgroup"><button type="button" data-sort-year="2030" aria-pressed="false" aria-label="Sort by 2030 power, highest first">2030 ↓</button><span class="apr-kind" data-kind="2030">Forecast</span></th></tr><tr><th scope="col" class="apr-subhead" data-year="2026">Rank</th><th scope="col" class="apr-subhead" data-year="2026">Score</th><th scope="col" class="apr-subhead" data-year="2027">Rank</th><th scope="col" class="apr-subhead" data-year="2027">Score</th><th scope="col" class="apr-subhead" data-year="2030">Rank</th><th scope="col" class="apr-subhead" data-year="2030">Score</th></tr></thead><tbody><tr data-rank2026="1" data-rank2027="1" data-rank2030="1"><th scope="row" class="apr-company">Alphabet</th><td data-year="2026">#1</td><td data-year="2026">94.4</td><td data-year="2027">#1</td><td data-year="2027">96.9</td><td data-year="2030">#1</td><td data-year="2030">98.1</td></tr>
+<tr data-rank2026="2" data-rank2027="2" data-rank2030="2"><th scope="row" class="apr-company">Microsoft</th><td data-year="2026">#2</td><td data-year="2026">91.9</td><td data-year="2027">#2</td><td data-year="2027">96.3</td><td data-year="2030">#2</td><td data-year="2030">98.1</td></tr>
+<tr data-rank2026="3" data-rank2027="3" data-rank2030="4"><th scope="row" class="apr-company">Amazon</th><td data-year="2026">#3</td><td data-year="2026">91.9</td><td data-year="2027">#3</td><td data-year="2027">96.3</td><td data-year="2030">#4</td><td data-year="2030">97.5</td></tr>
+<tr data-rank2026="4" data-rank2027="5" data-rank2030="5"><th scope="row" class="apr-company">Meta</th><td data-year="2026">#4</td><td data-year="2026">86.9</td><td data-year="2027">#5</td><td data-year="2027">88.8</td><td data-year="2030">#5</td><td data-year="2030">91.3</td></tr>
+<tr data-rank2026="5" data-rank2027="6" data-rank2030="11"><th scope="row" class="apr-company">NVIDIA</th><td data-year="2026">#5</td><td data-year="2026">85.6</td><td data-year="2027">#6</td><td data-year="2027">86.9</td><td data-year="2030">#11</td><td data-year="2030">85.6</td></tr>
+<tr data-rank2026="6" data-rank2027="4" data-rank2030="3"><th scope="row" class="apr-company">OpenAI</th><td data-year="2026">#6</td><td data-year="2026">85.6</td><td data-year="2027">#4</td><td data-year="2027">93.1</td><td data-year="2030">#3</td><td data-year="2030">97.5</td></tr>
+<tr data-rank2026="7" data-rank2027="8" data-rank2030="12"><th scope="row" class="apr-company">Apple</th><td data-year="2026">#7</td><td data-year="2026">83.8</td><td data-year="2027">#8</td><td data-year="2027">85.0</td><td data-year="2030">#12</td><td data-year="2030">83.8</td></tr>
+<tr data-rank2026="8" data-rank2027="12" data-rank2030="15"><th scope="row" class="apr-company">ByteDance</th><td data-year="2026">#8</td><td data-year="2026">80.6</td><td data-year="2027">#12</td><td data-year="2027">82.5</td><td data-year="2030">#15</td><td data-year="2030">81.3</td></tr>
+<tr data-rank2026="9" data-rank2027="7" data-rank2030="9"><th scope="row" class="apr-company">Oracle</th><td data-year="2026">#9</td><td data-year="2026">80.6</td><td data-year="2027">#7</td><td data-year="2027">85.6</td><td data-year="2030">#9</td><td data-year="2030">87.5</td></tr>
+<tr data-rank2026="10" data-rank2027="14" data-rank2030="13"><th scope="row" class="apr-company">Tencent</th><td data-year="2026">#10</td><td data-year="2026">78.8</td><td data-year="2027">#14</td><td data-year="2027">80.6</td><td data-year="2030">#13</td><td data-year="2030">83.1</td></tr>
+<tr data-rank2026="11" data-rank2027="10" data-rank2030="10"><th scope="row" class="apr-company">Alibaba</th><td data-year="2026">#11</td><td data-year="2026">78.8</td><td data-year="2027">#10</td><td data-year="2027">83.8</td><td data-year="2030">#10</td><td data-year="2030">86.3</td></tr>
+<tr data-rank2026="12" data-rank2027="11" data-rank2030="7"><th scope="row" class="apr-company">Huawei</th><td data-year="2026">#12</td><td data-year="2026">78.1</td><td data-year="2027">#11</td><td data-year="2027">83.8</td><td data-year="2030">#7</td><td data-year="2030">90.0</td></tr>
+<tr data-rank2026="13" data-rank2027="13" data-rank2030="8"><th scope="row" class="apr-company">SpaceX (including xAI)</th><td data-year="2026">#13</td><td data-year="2026">74.4</td><td data-year="2027">#13</td><td data-year="2027">80.6</td><td data-year="2030">#8</td><td data-year="2030">87.5</td></tr>
+<tr data-rank2026="14" data-rank2027="9" data-rank2030="6"><th scope="row" class="apr-company">Anthropic</th><td data-year="2026">#14</td><td data-year="2026">74.4</td><td data-year="2027">#9</td><td data-year="2027">83.8</td><td data-year="2030">#6</td><td data-year="2030">90.0</td></tr>
+<tr data-rank2026="15" data-rank2027="15" data-rank2030="16"><th scope="row" class="apr-company">Samsung Electronics</th><td data-year="2026">#15</td><td data-year="2026">73.1</td><td data-year="2027">#15</td><td data-year="2027">77.5</td><td data-year="2030">#16</td><td data-year="2030">78.8</td></tr>
+<tr data-rank2026="16" data-rank2027="24" data-rank2030="28"><th scope="row" class="apr-company">TSMC</th><td data-year="2026">#16</td><td data-year="2026">68.1</td><td data-year="2027">#24</td><td data-year="2027">68.8</td><td data-year="2030">#28</td><td data-year="2030">68.8</td></tr>
+<tr data-rank2026="17" data-rank2027="16" data-rank2030="14"><th scope="row" class="apr-company">Tesla</th><td data-year="2026">#17</td><td data-year="2026">68.1</td><td data-year="2027">#16</td><td data-year="2027">73.1</td><td data-year="2030">#14</td><td data-year="2030">83.1</td></tr>
+<tr data-rank2026="18" data-rank2027="17" data-rank2030="18"><th scope="row" class="apr-company">Palantir</th><td data-year="2026">#18</td><td data-year="2026">67.5</td><td data-year="2027">#17</td><td data-year="2027">71.9</td><td data-year="2030">#18</td><td data-year="2030">73.8</td></tr>
+<tr data-rank2026="19" data-rank2027="27" data-rank2030="44"><th scope="row" class="apr-company">IBM</th><td data-year="2026">#19</td><td data-year="2026">67.5</td><td data-year="2027">#27</td><td data-year="2027">67.5</td><td data-year="2030">#44</td><td data-year="2030">63.1</td></tr>
+<tr data-rank2026="20" data-rank2027="28" data-rank2030="35"><th scope="row" class="apr-company">ASML</th><td data-year="2026">#20</td><td data-year="2026">66.3</td><td data-year="2027">#28</td><td data-year="2027">66.3</td><td data-year="2030">#35</td><td data-year="2030">66.3</td></tr>
+<tr data-rank2026="21" data-rank2027="21" data-rank2030="21"><th scope="row" class="apr-company">SAP</th><td data-year="2026">#21</td><td data-year="2026">66.3</td><td data-year="2027">#21</td><td data-year="2027">69.4</td><td data-year="2030">#21</td><td data-year="2030">73.1</td></tr>
+<tr data-rank2026="22" data-rank2027="19" data-rank2030="23"><th scope="row" class="apr-company">Schneider Electric</th><td data-year="2026">#22</td><td data-year="2026">65.6</td><td data-year="2027">#19</td><td data-year="2027">70.6</td><td data-year="2030">#23</td><td data-year="2030">71.9</td></tr>
+<tr data-rank2026="23" data-rank2027="20" data-rank2030="25"><th scope="row" class="apr-company">Broadcom</th><td data-year="2026">#23</td><td data-year="2026">65.6</td><td data-year="2027">#20</td><td data-year="2027">69.4</td><td data-year="2030">#25</td><td data-year="2030">71.3</td></tr>
+<tr data-rank2026="24" data-rank2027="22" data-rank2030="24"><th scope="row" class="apr-company">AMD</th><td data-year="2026">#24</td><td data-year="2026">65.0</td><td data-year="2027">#22</td><td data-year="2027">69.4</td><td data-year="2030">#24</td><td data-year="2030">71.9</td></tr>
+<tr data-rank2026="25" data-rank2027="18" data-rank2030="27"><th scope="row" class="apr-company">CoreWeave</th><td data-year="2026">#25</td><td data-year="2026">65.0</td><td data-year="2027">#18</td><td data-year="2027">71.9</td><td data-year="2030">#27</td><td data-year="2030">69.4</td></tr>
+<tr data-rank2026="26" data-rank2027="25" data-rank2030="22"><th scope="row" class="apr-company">ServiceNow</th><td data-year="2026">#26</td><td data-year="2026">64.4</td><td data-year="2027">#25</td><td data-year="2027">68.8</td><td data-year="2030">#22</td><td data-year="2030">72.5</td></tr>
+<tr data-rank2026="27" data-rank2027="26" data-rank2030="19"><th scope="row" class="apr-company">Databricks</th><td data-year="2026">#27</td><td data-year="2026">63.8</td><td data-year="2027">#26</td><td data-year="2027">68.8</td><td data-year="2030">#19</td><td data-year="2030">73.8</td></tr>
+<tr data-rank2026="28" data-rank2027="38" data-rank2030="42"><th scope="row" class="apr-company">SK hynix</th><td data-year="2026">#28</td><td data-year="2026">62.5</td><td data-year="2027">#38</td><td data-year="2027">63.1</td><td data-year="2030">#42</td><td data-year="2030">63.8</td></tr>
+<tr data-rank2026="29" data-rank2027="30" data-rank2030="30"><th scope="row" class="apr-company">Salesforce</th><td data-year="2026">#29</td><td data-year="2026">62.5</td><td data-year="2027">#30</td><td data-year="2027">65.6</td><td data-year="2030">#30</td><td data-year="2030">68.8</td></tr>
+<tr data-rank2026="30" data-rank2027="32" data-rank2030="38"><th scope="row" class="apr-company">Constellation Energy</th><td data-year="2026">#30</td><td data-year="2026">61.3</td><td data-year="2027">#32</td><td data-year="2027">64.4</td><td data-year="2030">#38</td><td data-year="2030">65.0</td></tr>
+<tr data-rank2026="31" data-rank2027="31" data-rank2030="33"><th scope="row" class="apr-company">Arm</th><td data-year="2026">#31</td><td data-year="2026">61.3</td><td data-year="2027">#31</td><td data-year="2027">65.6</td><td data-year="2030">#33</td><td data-year="2030">67.5</td></tr>
+<tr data-rank2026="32" data-rank2027="23" data-rank2030="17"><th scope="row" class="apr-company">Cloudflare</th><td data-year="2026">#32</td><td data-year="2026">61.3</td><td data-year="2027">#23</td><td data-year="2027">69.4</td><td data-year="2030">#17</td><td data-year="2030">75.0</td></tr>
+<tr data-rank2026="33" data-rank2027="29" data-rank2030="26"><th scope="row" class="apr-company">Palo Alto Networks</th><td data-year="2026">#33</td><td data-year="2026">60.6</td><td data-year="2027">#29</td><td data-year="2027">65.6</td><td data-year="2030">#26</td><td data-year="2030">69.4</td></tr>
+<tr data-rank2026="34" data-rank2027="36" data-rank2030="40"><th scope="row" class="apr-company">GE Vernova</th><td data-year="2026">#34</td><td data-year="2026">60.0</td><td data-year="2027">#36</td><td data-year="2027">63.8</td><td data-year="2030">#40</td><td data-year="2030">64.4</td></tr>
+<tr data-rank2026="35" data-rank2027="34" data-rank2030="37"><th scope="row" class="apr-company">Synopsys</th><td data-year="2026">#35</td><td data-year="2026">60.0</td><td data-year="2027">#34</td><td data-year="2027">64.4</td><td data-year="2030">#37</td><td data-year="2030">65.6</td></tr>
+<tr data-rank2026="36" data-rank2027="33" data-rank2030="29"><th scope="row" class="apr-company">Vertiv</th><td data-year="2026">#36</td><td data-year="2026">59.4</td><td data-year="2027">#33</td><td data-year="2027">64.4</td><td data-year="2030">#29</td><td data-year="2030">68.8</td></tr>
+<tr data-rank2026="37" data-rank2027="37" data-rank2030="31"><th scope="row" class="apr-company">Snowflake</th><td data-year="2026">#37</td><td data-year="2026">59.4</td><td data-year="2027">#37</td><td data-year="2027">63.8</td><td data-year="2030">#31</td><td data-year="2030">68.8</td></tr>
+<tr data-rank2026="38" data-rank2027="46" data-rank2030="45"><th scope="row" class="apr-company">NextEra Energy</th><td data-year="2026">#38</td><td data-year="2026">58.1</td><td data-year="2027">#46</td><td data-year="2027">58.8</td><td data-year="2030">#45</td><td data-year="2030">61.9</td></tr>
+<tr data-rank2026="39" data-rank2027="39" data-rank2030="43"><th scope="row" class="apr-company">Eaton</th><td data-year="2026">#39</td><td data-year="2026">58.1</td><td data-year="2027">#39</td><td data-year="2027">62.5</td><td data-year="2030">#43</td><td data-year="2030">63.8</td></tr>
+<tr data-rank2026="40" data-rank2027="43" data-rank2030="39"><th scope="row" class="apr-company">Cisco</th><td data-year="2026">#40</td><td data-year="2026">58.1</td><td data-year="2027">#43</td><td data-year="2027">61.9</td><td data-year="2030">#39</td><td data-year="2030">65.0</td></tr>
+<tr data-rank2026="41" data-rank2027="40" data-rank2030="32"><th scope="row" class="apr-company">Equinix</th><td data-year="2026">#41</td><td data-year="2026">57.5</td><td data-year="2027">#40</td><td data-year="2027">62.5</td><td data-year="2030">#32</td><td data-year="2030">68.1</td></tr>
+<tr data-rank2026="42" data-rank2027="44" data-rank2030="41"><th scope="row" class="apr-company">Siemens Energy</th><td data-year="2026">#42</td><td data-year="2026">56.9</td><td data-year="2027">#44</td><td data-year="2027">60.6</td><td data-year="2030">#41</td><td data-year="2030">64.4</td></tr>
+<tr data-rank2026="43" data-rank2027="41" data-rank2030="36"><th scope="row" class="apr-company">CrowdStrike</th><td data-year="2026">#43</td><td data-year="2026">56.9</td><td data-year="2027">#41</td><td data-year="2027">61.9</td><td data-year="2030">#36</td><td data-year="2030">65.6</td></tr>
+<tr data-rank2026="44" data-rank2027="42" data-rank2030="34"><th scope="row" class="apr-company">Cadence</th><td data-year="2026">#44</td><td data-year="2026">56.9</td><td data-year="2027">#42</td><td data-year="2027">61.9</td><td data-year="2030">#34</td><td data-year="2030">66.9</td></tr>
+<tr data-rank2026="45" data-rank2027="49" data-rank2030="50"><th scope="row" class="apr-company">Applied Materials</th><td data-year="2026">#45</td><td data-year="2026">56.3</td><td data-year="2027">#49</td><td data-year="2027">56.9</td><td data-year="2030">#50</td><td data-year="2030">56.9</td></tr>
+<tr data-rank2026="46" data-rank2027="45" data-rank2030="47"><th scope="row" class="apr-company">Micron</th><td data-year="2026">#46</td><td data-year="2026">55.6</td><td data-year="2027">#45</td><td data-year="2027">59.4</td><td data-year="2030">#47</td><td data-year="2030">60.6</td></tr>
+<tr data-rank2026="47" data-rank2027="35" data-rank2030="20"><th scope="row" class="apr-company">DeepSeek</th><td data-year="2026">#47</td><td data-year="2026">55.6</td><td data-year="2027">#35</td><td data-year="2027">64.4</td><td data-year="2030">#20</td><td data-year="2030">73.8</td></tr>
+<tr data-rank2026="48" data-rank2027="47" data-rank2030="46"><th scope="row" class="apr-company">Vistra</th><td data-year="2026">#48</td><td data-year="2026">55.0</td><td data-year="2027">#47</td><td data-year="2027">58.8</td><td data-year="2030">#46</td><td data-year="2030">61.9</td></tr>
+<tr data-rank2026="49" data-rank2027="48" data-rank2030="49"><th scope="row" class="apr-company">KLA</th><td data-year="2026">#49</td><td data-year="2026">54.4</td><td data-year="2027">#48</td><td data-year="2027">57.5</td><td data-year="2030">#49</td><td data-year="2030">58.8</td></tr>
+<tr data-rank2026="50" data-rank2027="50" data-rank2030="48"><th scope="row" class="apr-company">Lam Research</th><td data-year="2026">#50</td><td data-year="2026">51.9</td><td data-year="2027">#50</td><td data-year="2027">55.6</td><td data-year="2030">#48</td><td data-year="2030">59.4</td></tr></tbody></table></div>
+<p class="apr-note" role="status" aria-live="polite">Sorted by 2026 power, highest first. 50 companies.</p>
+<p class="apr-note" data-change-note>Inaugural ranked edition. New longitudinal baseline; prior v1 exposure and v2 pilot profiles are separate series.</p>
+<section class="apr-method"><h2>The methodology stays fixed.</h2><p>We set the rankings through our <a href="/frameworks/four-forces-of-ai-power">Four Forces</a>. Each force receives a judgment from 0 to 100 in five-point steps.</p><p class="apr-formula">Power Score = 50% strongest force + 50% average of all four.</p><div class="apr-forces"><div><strong>Compute</strong><p>Control over the infrastructure and consequential bottlenecks needed to train and run AI.</p></div><div><strong>Interface</strong><p>Control over where people and institutions encounter AI, express intent, and act.</p></div><div><strong>Alignment</strong><p>Authority and capacity to govern what AI may do: permissions, containment, monitoring, interruption, accountability, and recovery.</p></div><div><strong>Energy</strong><p>Control over electricity, continuity, location, and enabling power infrastructure.</p></div></div><p class="apr-note">Research informs our judgments. Forecasts are our central view of future power. Rankings compare the same 50 companies. Equal displayed scores can have different ranks because we use unrounded scores and fixed tie-break rules.</p><p><a href="/ai-power-index-methodology">Full methodology</a> · <a data-json-link href="https://mcp.exmxc.ai/ai-power/rankings?edition=2026-09-18">Edition data, force scores &amp; research notes</a></p><p class="apr-note">Each monthly edition preserves the judgments and forecasts made at that time. September 2026 begins this series.</p></section>
+</main><script>(() => {
+  const root = document.querySelector('#ai-power-rankings');
+  if (!root) return;
+  const table = root.querySelector('table'), body = table.tBodies[0];
+  const select = root.querySelector('select'), status = root.querySelector('[role=status]');
+  const api = 'https://mcp.exmxc.ai/ai-power/rankings';
+  const years = ['2026','2027','2030'];
+  let edition = root.dataset.edition, year = '2026', requestId = 0;
+  const originalUrl = new URL(location.href);
+  function urlState() {
+    const url = new URL(location.href);
+    url.searchParams.set('year',year); url.searchParams.set('edition',edition);
+    history.replaceState(null,'',url);
+  }
+  function sort(target, updateUrl = true) {
+    year = years.includes(String(target)) ? String(target) : '2026';
+    [...body.rows].sort((a,b) => Number(a.dataset['rank'+year])-Number(b.dataset['rank'+year])).forEach(row => body.appendChild(row));
+    root.querySelectorAll('[data-sort-year]').forEach(button => {
+      const active = button.dataset.sortYear === year;
+      button.setAttribute('aria-pressed',String(active));
+      if (active) button.parentElement.setAttribute('aria-sort','descending');
+      else button.parentElement.removeAttribute('aria-sort');
+    });
+    root.querySelectorAll('[data-year]').forEach(cell => cell.classList.toggle('apr-active',cell.dataset.year===year));
+    status.textContent = 'Sorted by '+year+' power, highest first. 50 companies.';
+    if (updateUrl) urlState();
+  }
+  async function read(url) {
+    const response = await fetch(url,{signal:AbortSignal.timeout(12000)});
+    if (!response.ok) throw new Error('Unavailable');
+    return response.json();
+  }
+  function render(snapshot) {
+    if (!Array.isArray(snapshot.rows) || snapshot.rows.length !== 50 || snapshot.methodology_id !== 'ai-power-rankings-1.0.0') throw new Error('Invalid edition');
+    const fragment = document.createDocumentFragment();
+    for (const row of snapshot.rows) {
+      const tr = document.createElement('tr'), name = document.createElement('th');
+      name.scope='row'; name.className='apr-company'; name.textContent=row.company; tr.appendChild(name);
+      for (const y of years) {
+        const value = row.assessments[y];
+        if (!Number.isInteger(value.rank) || !Number.isFinite(value.score)) throw new Error('Invalid scores');
+        tr.dataset['rank'+y]=String(value.rank);
+        for (const content of ['#'+value.rank, value.score.toFixed(1)]) {
+          const cell=document.createElement('td');cell.dataset.year=y;cell.textContent=content;tr.appendChild(cell);
+        }
+      }
+      fragment.appendChild(tr);
+    }
+    body.replaceChildren(fragment);edition=snapshot.edition_id;select.value=edition;
+    root.querySelector('[data-as-of]').textContent='As of '+snapshot.as_of+' · Monthly editions';
+    root.querySelector('[data-change-note]').textContent=snapshot.change_note;
+    root.querySelector('[data-json-link]').href=api+'?edition='+encodeURIComponent(edition);
+    for (const y of years) {
+      const kind=snapshot.rows[0].assessments[y].kind;
+      root.querySelector('[data-kind="'+y+'"]').textContent=kind==='forecast'?'Forecast':kind==='historical_assessment'?'Historical':'Assessment';
+    }
+  }
+  async function load(target) {
+    const sequence=++requestId;
+    status.textContent='Loading edition…';select.disabled=true;
+    try {
+      const snapshot=await read(api+'?edition='+encodeURIComponent(target));
+      if(sequence!==requestId)return;
+      render(snapshot);sort(year);
+    } catch (_) {
+      if(sequence!==requestId)return;
+      select.value=edition;urlState();
+      status.textContent='Could not load that edition. Showing '+edition+'; year sorting is still available.';
+    } finally { if(sequence===requestId)select.disabled=false; }
+  }
+  root.querySelectorAll('[data-sort-year]').forEach(button => button.addEventListener('click',() => sort(button.dataset.sortYear)));
+  select.addEventListener('change',() => load(select.value));
+  sort(originalUrl.searchParams.get('year'),false);
+  read(api+'/editions').then(ledger => {
+    const requested=originalUrl.searchParams.get('edition');
+    select.replaceChildren(...ledger.editions.map(item => new Option(item.label,item.edition_id)));
+    select.value=edition;
+    const target=requested || ledger.latest;
+    if (!ledger.editions.some(item=>item.edition_id===target)) {
+      status.textContent='Edition unavailable. Showing '+edition+'.';urlState();return;
+    }
+    if(target!==edition)load(target);else urlState();
+  }).catch(() => { status.textContent='Showing saved edition '+edition+'. The archive is temporarily unavailable; year sorting still works.'; });
+})();
+</script>

@@ -10,6 +10,7 @@ const BASE = 'https://mcp.exmxc.ai';
 const toolIds = () => DATA_TOOLS.map((tool) => tool.id).sort();
 const resourceUris = () => MCP_RESOURCES.filter((resource) => resource.includeInDiscovery).map((resource) => resource.uri).sort();
 const validArgs = {
+  'ex.ai_power.rankings.get': { year: '2030', edition: '2026-09-18' },
   'ex.entities.get': { industry: 'Energy' },
   'ex.speg.get': { ticker: 'NVDA' },
   'ex.speg.index.get': { query: 'ASML' },
@@ -32,6 +33,23 @@ expect(Object.keys(validArgs).sort()).toEqual(toolIds());
 function req(path, init = {}) {
   return SELF.fetch(`${BASE}${path}`, init);
 }
+
+describe('monthly AI Power rankings', () => {
+  it('serves an immutable edition, sorts a forecast, and rejects unknown inputs', async () => {
+    const response = await req('/ai-power/rankings?edition=2026-09-18&year=2030');
+    expect(response.status).toBe(200);
+    expect(response.headers.get('cache-control')).toContain('immutable');
+    const data = await response.json();
+    expect(data.rows).toHaveLength(50);
+    expect(data.rows[2].company).toBe('OpenAI');
+    expect(data.rows[2].assessments['2030'].rank).toBe(3);
+    expect((await req('/ai-power/rankings?edition=missing')).status).toBe(404);
+    expect((await req('/ai-power/rankings?year=2028')).status).toBe(400);
+    expect((await req('/ai-power/rankings', { method: 'POST' })).status).toBe(405);
+    const ledger = await (await req('/ai-power/rankings/editions')).json();
+    expect(ledger.latest).toBe('2026-09-18');
+  });
+});
 
 function mcp(body, headers = {}) {
   return req('/mcp', {

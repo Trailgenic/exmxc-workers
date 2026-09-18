@@ -1,0 +1,2366 @@
+{
+  "edition_id": "2026-09-18",
+  "as_of": "2026-09-18",
+  "methodology_id": "ai-power-rankings-1.0.0",
+  "cohort_id": "global-50-2026-09",
+  "company_count": 50,
+  "years": [
+    2026,
+    2027,
+    2030
+  ],
+  "change_note": "Inaugural ranked edition. New longitudinal baseline; prior v1 exposure and v2 pilot profiles are separate series.",
+  "supersedes": null,
+  "rows": [
+    {
+      "id": "alphabet",
+      "company": "Alphabet",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 90,
+            "energy": 70
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 80
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Google describes TPUs as the infrastructure behind Gemini and its billion-user products. Ironwood is generally available; eighth-generation TPUs are still listed as coming soon.",
+      "thesis": "Own silicon, consumer distribution, cloud operations, and enterprise controls give Alphabet the broadest position. We expect that combination to preserve first place through 2030; new chips enter the forecast, not today’s deployed inventory.",
+      "reconsider_if": "Agents displace Google’s discovery surfaces faster than Gemini captures the new interaction.",
+      "sources": [
+        {
+          "title": "TPU product and deployment status",
+          "url": "https://cloud.google.com/tpu",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "microsoft",
+      "company": "Microsoft",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 95,
+            "alignment": 95,
+            "energy": 75
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 80
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 100,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Microsoft’s July earnings release reports more than 30 million paid Microsoft 365 Copilot seats and Azure annual revenue above $100 billion.",
+      "thesis": "Enterprise distribution and authority over work reinforce Azure. We expect Microsoft to become a leading institutional permission layer for agents, retaining second place even as independent model companies grow.",
+      "reconsider_if": "Customers move their agent orchestration and identities outside Microsoft’s products.",
+      "sources": [
+        {
+          "title": "FY2026 Q4 results",
+          "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
+          "date_label": "2026-07-29",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "amazon",
+      "company": "Amazon",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 90,
+            "energy": 80
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 90,
+            "alignment": 95,
+            "energy": 85
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 95,
+            "alignment": 95,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Amazon’s Q2 release describes AWS growth, Trainium commitments, Bedrock, and AgentCore capabilities, including tools for agent execution.",
+      "thesis": "AWS combines infrastructure, custom chips, model distribution, and operating permissions. Power procurement supports expansion. Amazon gains absolute power, but we expect OpenAI to capture enough direct interaction to move ahead by 2030.",
+      "reconsider_if": "Custom-chip commitments fail to convert into useful capacity or customers bypass AWS’s agent layer.",
+      "sources": [
+        {
+          "title": "Q2 2026 results",
+          "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/",
+          "date_label": "2026-07-30",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "nvidia",
+      "company": "NVIDIA",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 30
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 90,
+            "alignment": 70,
+            "energy": 35
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 75,
+            "energy": 45
+          }
+        }
+      },
+      "research_premise": "NVIDIA’s August results report $89 billion in quarterly data-center revenue and describe Vera Rubin production, software, and infrastructure partnerships.",
+      "thesis": "The leading compute supplier also controls a powerful developer interface. We expect custom silicon and competing software to reduce its relative dominance by 2030, while model platforms gain permissions and direct users. Infrastructure partnerships are not ownership of partners’ electricity.",
+      "reconsider_if": "CUDA and NVIDIA systems become even harder to substitute as custom-chip deployments disappoint.",
+      "sources": [
+        {
+          "title": "Q2 FY2027 results",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+          "date_label": "2026-08-26",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "meta",
+      "company": "Meta",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 95,
+            "alignment": 65,
+            "energy": 65
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 95,
+            "alignment": 70,
+            "energy": 70
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 95,
+            "alignment": 80,
+            "energy": 80
+          }
+        }
+      },
+      "research_premise": "Meta reports 3.6 billion daily active people for June and substantial AI infrastructure spending. Its release distinguishes actual quarterly spending from full-year guidance.",
+      "thesis": "Mass consumer distribution gives Meta immediate AI reach. Compute and contracted energy support growth; enterprise authorization remains a weaker force. We expect its score to rise while agent-native competitors climb faster.",
+      "reconsider_if": "Meta turns messaging into the dominant environment for commercial agent transactions.",
+      "sources": [
+        {
+          "title": "Q2 2026 results",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+          "date_label": "2026-07-29",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "company": "OpenAI",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 95,
+            "alignment": 80,
+            "energy": 45
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 85,
+            "energy": 65
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 85
+          }
+        }
+      },
+      "research_premise": "OpenAI’s September infrastructure account describes serving products used by more than one billion people weekly across 40 regions.",
+      "thesis": "Direct user intent is its strategic asset. We forecast rising control of compute, powered capacity, and agent permissions, taking OpenAI to fourth in 2027 and third in 2030. This assumes execution, not automatic ownership of partners’ infrastructure.",
+      "reconsider_if": "Agent usage does not translate into durable workflow control, or infrastructure obligations outpace delivery.",
+      "sources": [
+        {
+          "title": "Scaling storage for one billion users",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+          "date_label": "2026-09-11",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "apple",
+      "company": "Apple",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 65,
+            "interface": 100,
+            "alignment": 85,
+            "energy": 20
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 70,
+            "interface": 100,
+            "alignment": 85,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 95,
+            "alignment": 90,
+            "energy": 30
+          }
+        }
+      },
+      "research_premise": "Apple’s July results describe the new Siri announced at WWDC26 and another record for its active installed device base.",
+      "thesis": "Devices and operating-system permissions make Apple a gatekeeper even when another company supplies the model. We expect some interaction to move into cross-platform agents, reducing relative interface dominance by 2030.",
+      "reconsider_if": "Siri becomes the default agent for most device actions, preserving Apple’s maximum interface position.",
+      "sources": [
+        {
+          "title": "Q3 FY2026 results",
+          "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+          "date_label": "2026-07-30",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "huawei",
+      "company": "Huawei",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 80,
+            "alignment": 75,
+            "energy": 45
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 85,
+            "alignment": 80,
+            "energy": 55
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "Huawei’s current Connect program centers on Kunpeng, Ascend, cloud, and the infrastructure for agentic AI.",
+      "thesis": "We expect Huawei to consolidate a major alternative AI stack across Chinese compute, devices, enterprise systems, and digital power. Its rise assumes manufacturing and software progress; announced chip roadmaps are not deployed 2026 capacity.",
+      "reconsider_if": "Manufacturing limits or weak developer adoption prevent Ascend from becoming a durable alternative.",
+      "sources": [
+        {
+          "title": "Huawei Connect",
+          "url": "https://www.huawei.com/en/events/huaweiconnect",
+          "date_label": "Current 2026 conference material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "alibaba",
+      "company": "Alibaba",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 85,
+            "alignment": 75,
+            "energy": 50
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 90,
+            "alignment": 80,
+            "energy": 55
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 65
+          }
+        }
+      },
+      "research_premise": "Alibaba’s investor materials organize its AI activity around models, cloud infrastructure, responsible AI, and governance alongside commerce.",
+      "thesis": "Cloud, Qwen distribution, and commerce give Alibaba several routes to agent adoption. We forecast stronger enterprise control and infrastructure, with less global interface dominance than the leading US platforms.",
+      "reconsider_if": "Model use grows without Alibaba retaining the cloud workload or customer interaction.",
+      "sources": [
+        {
+          "title": "Alibaba investor materials",
+          "url": "https://www.alibabagroup.com/en-US/ir-financial-reports-financial-results",
+          "date_label": "Current investor materials",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "tencent",
+      "company": "Tencent",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 70,
+            "interface": 90,
+            "alignment": 75,
+            "energy": 35
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 90,
+            "alignment": 80,
+            "energy": 40
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 50
+          }
+        }
+      },
+      "research_premise": "Tencent’s corporate materials describe Weixin/WeChat distribution and its cloud and enterprise services.",
+      "thesis": "We expect messaging, transactions, and enterprise integration to keep Tencent powerful in China. It strengthens across the forces but faces faster growth elsewhere in the cohort.",
+      "reconsider_if": "Commercial agents bypass Tencent’s interaction and transaction environment.",
+      "sources": [
+        {
+          "title": "Tencent corporate overview",
+          "url": "https://www.tencent.com/",
+          "date_label": "Current company material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "bytedance",
+      "company": "ByteDance",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 95,
+            "alignment": 55,
+            "energy": 35
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 95,
+            "alignment": 60,
+            "energy": 40
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 50
+          }
+        }
+      },
+      "research_premise": "ByteDance’s Seed1.8 paper describes work on agents that use tools and graphical interfaces.",
+      "thesis": "Content distribution and recommendation remain powerful interfaces. We forecast growth in compute and agents, but reduced relative interface dominance as intent-driven interaction spreads. This is a group-level judgment, not an assumption of unrestricted ownership of every regional TikTok operation.",
+      "reconsider_if": "Agent products capture enterprise permissions at the same scale as its consumer products capture attention.",
+      "sources": [
+        {
+          "title": "Seed1.8 research paper",
+          "url": "https://arxiv.org/abs/2603.20633",
+          "date_label": "2026-03-21",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "oracle",
+      "company": "Oracle",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 70,
+            "alignment": 85,
+            "energy": 65
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 75,
+            "alignment": 85,
+            "energy": 75
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 80
+          }
+        }
+      },
+      "research_premise": "Oracle’s current OCI offering spans public, dedicated, hybrid, and multicloud deployments alongside its database environment.",
+      "thesis": "Database permissions and infrastructure demand reinforce each other. We expect Oracle to gain compute and powered capacity while keeping meaningful institutional control; concentration in a few major AI customers limits our forecast.",
+      "reconsider_if": "Large AI customers internalize capacity or fail to meet commitments.",
+      "sources": [
+        {
+          "title": "Oracle Cloud Infrastructure",
+          "url": "https://www.oracle.com/cloud/",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "company": "Anthropic",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 80,
+            "alignment": 80,
+            "energy": 35
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 50
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 95,
+            "alignment": 90,
+            "energy": 65
+          }
+        }
+      },
+      "research_premise": "Anthropic’s August update describes containment and monitoring changes following evaluation incidents, including interventions that block actions and alert humans.",
+      "thesis": "We forecast Claude becoming a major interface for delegated work, with greater compute access and enforceable controls. Its Alignment score reflects the ability to govern deployment, not a claim that its models cannot misbehave.",
+      "reconsider_if": "Incidents or dependence on outside infrastructure prevent Claude from becoming an institutional operating layer.",
+      "sources": [
+        {
+          "title": "Alignment and security practices update",
+          "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+          "date_label": "2026-08-31",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "spacex",
+      "company": "SpaceX (including xAI)",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 80,
+            "alignment": 50,
+            "energy": 40
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 85,
+            "alignment": 55,
+            "energy": 55
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "xAI announced that it joined SpaceX in February 2026.",
+      "thesis": "We score SpaceX, xAI, Grok, and X once at the group level. Our forecast combines terrestrial AI infrastructure and interfaces with expanded operating reach. It gives no 2026 credit for hypothetical orbital data centers and does not include Tesla’s assets.",
+      "reconsider_if": "Infrastructure expansion fails to produce durable AI usage and governing authority.",
+      "sources": [
+        {
+          "title": "xAI joins SpaceX",
+          "url": "https://x.ai/news/xai-joins-spacex",
+          "date_label": "2026-02-02",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "samsung-electronics",
+      "company": "Samsung Electronics",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 80,
+            "alignment": 60,
+            "energy": 20
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 65,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 70,
+            "energy": 30
+          }
+        }
+      },
+      "research_premise": "Samsung’s Q2 results describe HBM4 production expansion, HBM4E samples, advanced foundry activity, and its Galaxy ecosystem.",
+      "thesis": "Memory, foundry, and devices produce unusual breadth. We expect better compute execution and stronger device controls, but continued dependence on external AI platforms. Other Samsung group companies are excluded.",
+      "reconsider_if": "Memory and foundry improvements fail to turn into durable competitive positions.",
+      "sources": [
+        {
+          "title": "Q2 2026 results",
+          "url": "https://news.samsung.com/global/samsung-electronics-announces-second-quarter-2026-results",
+          "date_label": "2026-07-30",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "tsmc",
+      "company": "TSMC",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 20
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 25
+          }
+        }
+      },
+      "research_premise": "TSMC’s Q2 investor release reports operating results separately from Q3 guidance.",
+      "thesis": "We assign maximum Compute power to the manufacturing bottleneck, with limited interface and AI-permission control. Its score stays strong; its rank falls as broader platforms expand. The index deliberately distinguishes manufacturing indispensability from control of the entire AI stack.",
+      "reconsider_if": "Leading-edge production diversifies enough to weaken TSMC’s bottleneck.",
+      "sources": [
+        {
+          "title": "Q2 2026 results",
+          "url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+          "date_label": "2026 Q2 reporting",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "asml",
+      "company": "ASML",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "ASML’s Q2 reporting provides its current operating and order outlook for semiconductor manufacturing equipment.",
+      "thesis": "We assign maximum Compute power to its lithography position and expect that bottleneck to persist. Limited control of AI interfaces, permissions, and electricity keeps the composite below broad platform owners.",
+      "reconsider_if": "Customers achieve comparable leading-edge production with materially less dependence on ASML.",
+      "sources": [
+        {
+          "title": "Q2 2026 results",
+          "url": "https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results",
+          "date_label": "2026 Q2 reporting",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "broadcom",
+      "company": "Broadcom",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 35,
+            "alignment": 35,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 40,
+            "alignment": 35,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 45,
+            "alignment": 45,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "Broadcom’s September results attribute substantial AI semiconductor growth to custom accelerators and networking.",
+      "thesis": "Custom AI silicon and connectivity gain importance as hyperscalers diversify compute. We expect growing Compute power and some enterprise-software control, while its customers retain most end-user authority.",
+      "reconsider_if": "Hyperscalers internalize chip design and networking value faster than Broadcom expands.",
+      "sources": [
+        {
+          "title": "Q3 FY2026 results",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+          "date_label": "2026-09-02",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "amd",
+      "company": "AMD",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 55,
+            "alignment": 30,
+            "energy": 10
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 60,
+            "alignment": 35,
+            "energy": 10
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 70,
+            "alignment": 40,
+            "energy": 15
+          }
+        }
+      },
+      "research_premise": "AMD markets Instinct accelerators as its AI and high-performance computing platform.",
+      "thesis": "We expect AMD to become a more credible second compute ecosystem. The forecast requires adoption of both hardware and software; price competition alone does not create interface power.",
+      "reconsider_if": "Accelerator adoption remains episodic and developers remain locked into competing stacks.",
+      "sources": [
+        {
+          "title": "AMD Instinct",
+          "url": "https://www.amd.com/en/products/accelerators/instinct.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "sk-hynix",
+      "company": "SK hynix",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 20,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "SK hynix’s September AI infrastructure material covers HBM, enterprise storage, and newer memory approaches.",
+      "thesis": "We expect advanced memory to remain a critical compute bottleneck, supporting a high Compute score. It gains little control over the applications or permissions that run on that memory.",
+      "reconsider_if": "Competing supply or architectural changes reduce memory scarcity and differentiation.",
+      "sources": [
+        {
+          "title": "AI Infra Summit 2026",
+          "url": "https://news.skhynix.com/en/ai-infra-summit-2026/",
+          "date_label": "2026-09-17",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "micron",
+      "company": "Micron",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "Micron’s current HBM page describes high-volume HBM4 production.",
+      "thesis": "We forecast a stronger position in AI memory as diversification expands. This is primarily a Compute story; efficiency improvements do not mean Micron controls electricity supply.",
+      "reconsider_if": "HBM execution or customer qualification fails to sustain the expected gains.",
+      "sources": [
+        {
+          "title": "Micron high-bandwidth memory",
+          "url": "https://www.micron.com/products/memory/hbm",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "arm",
+      "company": "Arm",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 60,
+            "alignment": 25,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 65,
+            "alignment": 30,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 70,
+            "alignment": 35,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Arm’s current newsroom highlights its AI CPU and Neoverse platform activity.",
+      "thesis": "Instruction-set and software ecosystem reach become more valuable as AI spreads across cloud and devices. We expect gains in Compute and developer Interface, with much less control of application permissions.",
+      "reconsider_if": "Customers capture AI growth through architectures or software layers that reduce Arm’s influence.",
+      "sources": [
+        {
+          "title": "Arm newsroom",
+          "url": "https://newsroom.arm.com/",
+          "date_label": "Current September 2026 material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "tesla",
+      "company": "Tesla",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 65,
+            "interface": 75,
+            "alignment": 50,
+            "energy": 55
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 70,
+            "interface": 80,
+            "alignment": 55,
+            "energy": 60
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "Tesla describes custom inference chips, fleet-based neural networks, evaluation infrastructure, and an Optimus development program.",
+      "thesis": "We forecast stronger physical Interface power through vehicles and robotics, supported by compute and energy storage. Optimus remains an execution-dependent forecast rather than assumed mass deployment. Tesla is separate from SpaceX.",
+      "reconsider_if": "Autonomy and robotics fail to scale operationally, or deployments require substantially more human supervision.",
+      "sources": [
+        {
+          "title": "Tesla AI and Robotics",
+          "url": "https://www.tesla.com/AI",
+          "date_label": "Current company material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "palantir",
+      "company": "Palantir",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 70,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 25,
+            "interface": 75,
+            "alignment": 95,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 25,
+            "interface": 85,
+            "alignment": 95,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "AIP documentation describes operational agents, access controls, auditing, governance, and deployment across enterprise and edge environments.",
+      "thesis": "We expect authority over operational actions to become more valuable as models become interchangeable. Palantir gains Interface and Alignment power without needing to own frontier training infrastructure.",
+      "reconsider_if": "Customers standardize agent permissions and workflows on competing enterprise platforms.",
+      "sources": [
+        {
+          "title": "Palantir AIP overview",
+          "url": "https://www.palantir.com/docs/foundry/aip/overview",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "servicenow",
+      "company": "ServiceNow",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 75,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 85,
+            "alignment": 95,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "AI Control Tower is presented as a system for governing and managing AI across an organization.",
+      "thesis": "Workflow position can become authority over which agents may act. We forecast strong Alignment gains and expanding Interface control, with limited physical infrastructure power.",
+      "reconsider_if": "The control layer remains a reporting dashboard while other platforms enforce permissions.",
+      "sources": [
+        {
+          "title": "AI Control Tower",
+          "url": "https://www.servicenow.com/products/ai-control-tower.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "sap",
+      "company": "SAP",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 85,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 25,
+            "interface": 80,
+            "alignment": 95,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "SAP’s Joule offering connects agents to business processes, enterprise context, security, and governance.",
+      "thesis": "Control over business transactions can outlast changes in the conversational front end. We expect SAP’s Alignment power to grow as agents execute consequential enterprise actions.",
+      "reconsider_if": "Customers move authoritative business actions and permissions outside SAP.",
+      "sources": [
+        {
+          "title": "SAP Business AI",
+          "url": "https://www.sap.com/products/artificial-intelligence.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "salesforce",
+      "company": "Salesforce",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 80,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "The September AIforce announcement describes exposing business data, workflows, logic, and permissions through multiple interfaces.",
+      "thesis": "We expect Salesforce to retain authority over customer-related actions even when agents use another interface. Alignment rises, but interface growth is constrained by that same openness.",
+      "reconsider_if": "External agents reduce Salesforce to replaceable data storage and capture the workflow logic.",
+      "sources": [
+        {
+          "title": "AIforce announcement",
+          "url": "https://www.salesforce.com/news/stories/aiforce-announcement/",
+          "date_label": "2026-09-15",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "ibm",
+      "company": "IBM",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 60,
+            "alignment": 80,
+            "energy": 25
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 60,
+            "alignment": 80,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 50,
+            "interface": 55,
+            "alignment": 75,
+            "energy": 25
+          }
+        }
+      },
+      "research_premise": "IBM’s July results discuss its hybrid software businesses and AI-related portfolio.",
+      "thesis": "Hybrid infrastructure and institutional governance support its current position. We forecast relative erosion as cloud-native and agent-native platforms capture more work, while IBM remains relevant in demanding deployments.",
+      "reconsider_if": "Its hybrid governance becomes the default across heterogeneous AI environments.",
+      "sources": [
+        {
+          "title": "Q2 2026 results",
+          "url": "https://newsroom.ibm.com/2026-07-22-IBM-RELEASES-SECOND-QUARTER-RESULTS",
+          "date_label": "2026-07-22",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "coreweave",
+      "company": "CoreWeave",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 35,
+            "alignment": 30,
+            "energy": 55
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 45,
+            "alignment": 35,
+            "energy": 70
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 40,
+            "alignment": 45,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "CoreWeave’s current platform centers on specialized GPU cloud infrastructure, orchestration, and storage for AI workloads.",
+      "thesis": "We forecast a strong 2027 buildout, then greater competitive pressure by 2030 as major customers integrate capacity. Energy access grows, but reliance on suppliers, financiers, and concentrated customers limits sovereignty.",
+      "reconsider_if": "Independent GPU cloud platforms retain pricing and customer control as infrastructure matures.",
+      "sources": [
+        {
+          "title": "CoreWeave platform",
+          "url": "https://www.coreweave.com/",
+          "date_label": "Current company material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "company": "DeepSeek",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 65,
+            "interface": 60,
+            "alignment": 45,
+            "energy": 15
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 70,
+            "alignment": 50,
+            "energy": 20
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 80,
+            "alignment": 60,
+            "energy": 25
+          }
+        }
+      },
+      "research_premise": "DeepSeek’s current API documentation lists recent model and developer-platform updates, including September changes.",
+      "thesis": "We expect efficient models and developer adoption to expand its Compute and Interface power. Broad model distribution does not automatically give the producer permission control over downstream deployments.",
+      "reconsider_if": "Adoption fails to create durable infrastructure access or direct user relationships.",
+      "sources": [
+        {
+          "title": "DeepSeek API documentation",
+          "url": "https://api-docs.deepseek.com/",
+          "date_label": "Current September 2026 documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "databricks",
+      "company": "Databricks",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 40,
+            "interface": 65,
+            "alignment": 80,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 45,
+            "interface": 75,
+            "alignment": 85,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 50,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Unity Catalog describes governance for data, models, and agents, with permissions, lineage, and AI gateway controls.",
+      "thesis": "We expect enterprise data context and enforceable access to become a major Alignment position. Its forecast also assumes developers increasingly build agent workflows within its environment.",
+      "reconsider_if": "Open standards or cloud-native catalogs displace its authority over AI execution.",
+      "sources": [
+        {
+          "title": "Unity Catalog",
+          "url": "https://www.databricks.com/product/unity-catalog",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "snowflake",
+      "company": "Snowflake",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 35,
+            "interface": 60,
+            "alignment": 75,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 40,
+            "interface": 65,
+            "alignment": 80,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 45,
+            "interface": 70,
+            "alignment": 85,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Snowflake’s June Horizon Catalog announcement emphasizes centralized governance, context, and security for enterprise AI.",
+      "thesis": "We expect governed enterprise data to support more agent activity, improving Interface and Alignment. Cloud suppliers still control most underlying compute and energy.",
+      "reconsider_if": "Agent builders access governed data without adopting Snowflake’s execution or control layer.",
+      "sources": [
+        {
+          "title": "Horizon Catalog announcement",
+          "url": "https://www.snowflake.com/en/news/press-releases/snowflake-advances-trusted-ai-with-snowflake-horizon-catalog-centralizing-governance-context-and-security-across-the-enterprise/",
+          "date_label": "2026-06-02",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "company": "Cloudflare",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 45,
+            "interface": 60,
+            "alignment": 75,
+            "energy": 10
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 50,
+            "interface": 70,
+            "alignment": 85,
+            "energy": 10
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 60,
+            "interface": 75,
+            "alignment": 90,
+            "energy": 15
+          }
+        }
+      },
+      "research_premise": "Cloudflare’s September announcement describes AI-assisted vulnerability management integrated with its edge defense.",
+      "thesis": "We expect the edge to become an enforcement point for agents, identities, traffic, and runtime behavior. That expands Alignment and Interface power alongside distributed compute.",
+      "reconsider_if": "Cloud and identity incumbents capture agent enforcement before Cloudflare establishes durable control.",
+      "sources": [
+        {
+          "title": "AI-powered edge defense announcement",
+          "url": "https://www.cloudflare.com/press/press-releases/2026/cloudflare-partners-with-openai-daybreak-models-to-redefine-vulnerability-management-with-ai-powered-edge-defense/",
+          "date_label": "2026-09-03",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "cisco",
+      "company": "Cisco",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 50,
+            "alignment": 70,
+            "energy": 10
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 55,
+            "alignment": 75,
+            "energy": 10
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 55,
+            "alignment": 80,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Cisco AI Defense describes controls spanning model discovery, validation, runtime protection, and network security.",
+      "thesis": "Network position gives Cisco a route to enforce AI policy. We forecast stronger Alignment, with more modest growth elsewhere as specialized security platforms compete.",
+      "reconsider_if": "Network visibility does not translate into authority over application-level agent actions.",
+      "sources": [
+        {
+          "title": "Cisco AI Defense",
+          "url": "https://www.cisco.com/site/us/en/products/security/ai-defense/index.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "palo-alto-networks",
+      "company": "Palo Alto Networks",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 50,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 60,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 65,
+            "alignment": 95,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Palo Alto Networks announced the completed acquisition of Portkey to strengthen AI agent security.",
+      "thesis": "We expect model gateways and runtime controls to become powerful Alignment infrastructure. Its forecast assumes integration creates an actual enforcement layer, not merely a wider product catalog.",
+      "reconsider_if": "Cloud platforms bundle sufficient agent security and capture the enforcement point.",
+      "sources": [
+        {
+          "title": "Portkey acquisition completion",
+          "url": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-portkey-to-secure-ai-agents",
+          "date_label": "2026-05-29",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "crowdstrike",
+      "company": "CrowdStrike",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 50,
+            "alignment": 80,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 60,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 65,
+            "alignment": 90,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "CrowdStrike’s September announcement addresses trusted identities and security for AI agents.",
+      "thesis": "We expect endpoint and identity control to extend into autonomous actions. Alignment grows, while competition and limited compute ownership constrain the composite.",
+      "reconsider_if": "Agent identities consolidate with other identity or cloud providers.",
+      "sources": [
+        {
+          "title": "Agentic identity announcement",
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-agentic-identity-provider-foundation-for-ai-agent-identity-security/",
+          "date_label": "2026-09-02",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "synopsys",
+      "company": "Synopsys",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 55,
+            "alignment": 25,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 60,
+            "alignment": 30,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 65,
+            "alignment": 35,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Synopsys describes AI-enabled design, verification, simulation, and advanced semiconductor development tools.",
+      "thesis": "Design-tool dependence gives it Compute power and a specialized developer Interface. We forecast stronger influence as chip complexity rises; design verification is not scored as universal control of AI behavior.",
+      "reconsider_if": "Design automation becomes more substitutable or is internalized by major chip companies.",
+      "sources": [
+        {
+          "title": "Synopsys AI solutions",
+          "url": "https://www.synopsys.com/ai.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "cadence",
+      "company": "Cadence",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 55,
+            "alignment": 25,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 65,
+            "alignment": 30,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 70,
+            "alignment": 40,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Cadence’s April NVIDIA partnership covers engineering agents, simulation, and digital twins.",
+      "thesis": "We expect design and simulation environments to gain power as AI moves into engineering and physical systems. Energy-efficient design does not grant ownership of electricity.",
+      "reconsider_if": "Agent capabilities commoditize design interfaces faster than simulation platforms gain influence.",
+      "sources": [
+        {
+          "title": "Cadence–NVIDIA engineering partnership",
+          "url": "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-and-nvidia-expand-partnership-to-reinvent-engineering.html",
+          "date_label": "2026-04-15",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "applied-materials",
+      "company": "Applied Materials",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Applied Materials’ 2026 announcements include systems for DRAM and advanced packaging used in AI chips.",
+      "thesis": "We expect materials engineering to remain a major Compute bottleneck. Its narrow control across the other forces leaves its composite largely steady as broader platforms grow.",
+      "reconsider_if": "New process architectures increase its strategic dependence beyond our forecast.",
+      "sources": [
+        {
+          "title": "Applied Materials news releases",
+          "url": "https://ir.appliedmaterials.com/news-releases",
+          "date_label": "Current 2026 releases",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "lam-research",
+      "company": "Lam Research",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Lam announced an Oregon research expansion for semiconductor development in August.",
+      "thesis": "We expect increasing process complexity to strengthen its Compute position. Announced laboratory investment informs the forecast and is not treated as completed production capacity.",
+      "reconsider_if": "Process shifts favor rival equipment or reduce the value of its manufacturing steps.",
+      "sources": [
+        {
+          "title": "Oregon research expansion",
+          "url": "https://newsroom.lamresearch.com/2026-08-26-Lam-Research-Breaks-Ground-on-New-Oregon-Lab-to-Accelerate-AI-Era-Semiconductor-Research-Development-Locally,-Globally",
+          "date_label": "2026-08-26",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "kla",
+      "company": "KLA",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 15,
+            "alignment": 20,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 15,
+            "alignment": 20,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 20,
+            "alignment": 25,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "KLA’s July release reports its latest fiscal-year and quarterly operating results.",
+      "thesis": "Yield and process control remain consequential Compute bottlenecks. We expect gradual strengthening, while limiting Alignment credit to its own control systems rather than general AI governance.",
+      "reconsider_if": "Manufacturing changes reduce dependence on its inspection and process-control tools.",
+      "sources": [
+        {
+          "title": "FY2026 Q4 results",
+          "url": "https://ir.kla.com/news-events/press-releases/detail/518/kla-corporation-reports-fiscal-2026-fourth-quarter-and-full",
+          "date_label": "2026-07-28",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "schneider-electric",
+      "company": "Schneider Electric",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 40,
+            "alignment": 25,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 45,
+            "alignment": 30,
+            "energy": 95
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 50,
+            "alignment": 35,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Schneider’s data-center offering combines power infrastructure, management software, and operational planning.",
+      "thesis": "We expect electrical infrastructure and its operating software to become more valuable as powered capacity constrains AI. Energy leads; management interfaces add breadth. Schneider is not scored as owning its customers’ generation.",
+      "reconsider_if": "Equipment supply catches up quickly or large operators internalize the management layer.",
+      "sources": [
+        {
+          "title": "Data-center solutions",
+          "url": "https://www.se.com/ww/en/work/solutions/data-centers-and-networks/",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "vertiv",
+      "company": "Vertiv",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 25,
+            "alignment": 15,
+            "energy": 85
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 30,
+            "alignment": 20,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 35,
+            "alignment": 25,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Vertiv’s AI infrastructure offering addresses power delivery and thermal management for data centers.",
+      "thesis": "We expect dense AI systems to increase dependence on power and cooling integration. That raises Energy power and operating-interface importance without implying control over utility generation.",
+      "reconsider_if": "Standardized cooling and power designs make the supplier readily replaceable.",
+      "sources": [
+        {
+          "title": "AI infrastructure solutions",
+          "url": "https://www.vertiv.com/en-us/solutions/artificial-intelligence/",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "eaton",
+      "company": "Eaton",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 15,
+            "energy": 85
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 25,
+            "alignment": 20,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 30,
+            "alignment": 25,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Eaton’s data-center portfolio addresses electrical distribution, power continuity, and related infrastructure.",
+      "thesis": "We expect electrical bottlenecks to keep Eaton strategically relevant. Operating controls add modest breadth, but its power remains concentrated in Energy.",
+      "reconsider_if": "Capacity expansion eliminates equipment scarcity and customers regain bargaining power.",
+      "sources": [
+        {
+          "title": "Data-center power solutions",
+          "url": "https://www.eaton.com/us/en-us/markets/data-centers.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "ge-vernova",
+      "company": "GE Vernova",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 95
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 15,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "GE Vernova’s current announcements cover generation and transmission projects; its September nuclear material concerns future development rather than operating capacity.",
+      "thesis": "We expect generation equipment and grid infrastructure to remain scarce inputs to AI expansion. The forecast favors delivery of useful power over publicity around new reactor designs.",
+      "reconsider_if": "Project delays prevent equipment demand from becoming energized capacity.",
+      "sources": [
+        {
+          "title": "GE Vernova media hub",
+          "url": "https://www.gevernova.com/news/media-hub?type%5Bpress_release%5D=press_release",
+          "date_label": "Current September 2026 releases",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "siemens-energy",
+      "company": "Siemens Energy",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 85
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 15,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Siemens Energy offers a portfolio of gas turbines for electricity generation.",
+      "thesis": "We expect firm-generation and grid equipment to gain strategic importance as AI demand grows. Execution and service capacity determine how much of that scarcity it captures.",
+      "reconsider_if": "Delivery constraints or competing technologies weaken its role in new powered capacity.",
+      "sources": [
+        {
+          "title": "Gas turbine portfolio",
+          "url": "https://www.siemens-energy.com/global/en/home/products-services/product-offerings/gas-turbines.html",
+          "date_label": "Current product documentation",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "constellation-energy",
+      "company": "Constellation Energy",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 95
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 100
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 100
+          }
+        }
+      },
+      "research_premise": "Constellation’s current materials emphasize nuclear electricity and discuss the Crane restart as an ongoing project.",
+      "thesis": "We forecast maximum Energy power from scarce firm generation and the ability to contract it to large buyers. Future restarts receive forecast credit only. Limited Interface and Alignment power constrain the overall score.",
+      "reconsider_if": "Grid access, outages, or contract structures prevent firm generation from translating into bargaining power.",
+      "sources": [
+        {
+          "title": "Constellation news",
+          "url": "https://www.constellationenergy.com/news.html",
+          "date_label": "Current 2026 company material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "nextera-energy",
+      "company": "NextEra Energy",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "NextEra’s July release describes a proposed combination with Dominion and the required approval process.",
+      "thesis": "We expect development scale, generation, and storage to support rising Energy power. Dominion’s assets are not included as currently owned, and our score improvement does not require that transaction to close.",
+      "reconsider_if": "Interconnection and execution delays prevent development scale from becoming dependable power.",
+      "sources": [
+        {
+          "title": "Proposed Dominion combination",
+          "url": "https://newsroom.nexteraenergy.com/2026-07-15-NextEra-Energy-and-Dominion-Energy-file-to-combine,-building-a-stronger-company-to-meet-growing-power-demand-across-four-of-Americas-fastest-growing-states-while-keeping-energy-affordable-and-reliable",
+          "date_label": "2026-07-15",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "vistra",
+      "company": "Vistra",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 85
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Vistra describes long-term Meta power agreements covering existing nuclear output and future uprates.",
+      "thesis": "We expect firm-generation scarcity and long-duration AI contracts to strengthen Energy power. Planned uprates are forecast capacity, not electricity already available today.",
+      "reconsider_if": "Uprates slip or the value of firm output fails to translate into stronger commercial control.",
+      "sources": [
+        {
+          "title": "Vistra company announcements",
+          "url": "https://vistracorp.com/",
+          "date_label": "Current company material",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "equinix",
+      "company": "Equinix",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 45,
+            "alignment": 35,
+            "energy": 65
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 60,
+            "interface": 50,
+            "alignment": 40,
+            "energy": 70
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 65,
+            "interface": 55,
+            "alignment": 50,
+            "energy": 75
+          }
+        }
+      },
+      "research_premise": "Equinix’s September announcement describes enterprise AI inference with NVIDIA and Together AI.",
+      "thesis": "We expect inference to increase the value of connected, powered locations near enterprise workloads. Compute access, interconnection, and operating controls give it breadth even without owning frontier models.",
+      "reconsider_if": "Inference stays concentrated inside hyperscalers rather than moving to distributed enterprise locations.",
+      "sources": [
+        {
+          "title": "Enterprise AI inference announcement",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1122/equinix-accelerates-ai-inference-for-enterprises-with",
+          "date_label": "2026-09-02",
+          "accessed_on": "2026-09-18"
+        }
+      ]
+    }
+  ]
+}

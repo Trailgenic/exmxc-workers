@@ -1,3 +1,4 @@
+import { getPowerRankings, POWER_METHODOLOGY, POWER_EDITIONS } from './lib/ai-power-rankings.js';
 import { createMcpHandler } from "agents/mcp";
 import { ADSUpstreamError, classifyPostings, computeADS } from "./lib/ads-classifier.js";
 import { CACHE, emptyResponse, jsonResponse, mcpCorsHeaders, textResponse } from "./lib/http.js";
@@ -361,6 +362,14 @@ export default {
     if (url.pathname === "/mcp") return handleMcp(request, env, ctx);
     if (request.method === "OPTIONS") return emptyResponse({ status: 204 });
 
+    if (url.pathname === "/ai-power/rankings" || url.pathname.startsWith("/ai-power/rankings/")) {
+      if (request.method !== "GET") return jsonResponse({ error: "Method not allowed" }, { status: 405, headers: { Allow: "GET, OPTIONS" } });
+      if (url.pathname === "/ai-power/rankings/methodology") return jsonResponse(POWER_METHODOLOGY);
+      if (url.pathname === "/ai-power/rankings/editions") return jsonResponse(POWER_EDITIONS, { headers: { "Cache-Control": "public, max-age=300" } });
+      if (url.pathname !== "/ai-power/rankings") return jsonResponse({ error: "Not found" }, { status: 404 });
+      const result = getPowerRankings(queryArgs(url, ["edition", "year"]));
+      return jsonResponse(result, { status: result.status || 200, headers: { "Cache-Control": result.success === false ? "no-store" : url.searchParams.has("edition") ? "public, max-age=31536000, immutable" : "public, max-age=300" } });
+    }
     const discoveryHeaders = { "Cache-Control": CACHE.NO_CACHE };
     const noStore = { "Cache-Control": CACHE.NO_STORE };
     if (url.pathname === "/webmcp-power-lens.js") {
