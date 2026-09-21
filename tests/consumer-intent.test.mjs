@@ -5,6 +5,7 @@ import {
   normalizeConsumerObservation,
   resolveConsumerEntity
 } from '../lib/consumer-intent.js';
+import { buildConsumerIntentRelease } from '../lib/consumer-intent-release.js';
 
 assert.equal(resolveConsumerEntity('TJ Maxx').parent_company_id, 'company-tjx');
 assert.equal(resolveConsumerEntity('NKE').id, 'company-nike');
@@ -60,5 +61,26 @@ assert.equal(reading.direction, 'positive');
 const thin = aggregateConsumerFactor(fixture.slice(0, 10), 'purchase_intent');
 assert.equal(thin.status, 'insufficient_evidence');
 assert.equal(thin.balance, null);
+
+const sameOrigin = fixture.map((row, index) => ({
+  ...row,
+  source: 'one-origin.example',
+  source_type: index % 2 ? 'public_forum' : 'public_comment'
+}));
+const concentrated = aggregateConsumerFactor(sameOrigin, 'purchase_intent');
+assert.equal(concentrated.status, 'insufficient_evidence');
+assert.equal(concentrated.source_count, 1);
+assert.equal(concentrated.maximum_single_source_share, 1);
+
+const release = buildConsumerIntentRelease(fixture, {
+  asOf: '2026-09-21',
+  releaseId: 'consumer-intent-2026-09-21-test',
+  modelVersion: 'fixture-v1',
+  status: 'pilot'
+});
+assert.equal(release.release_id, 'consumer-intent-2026-09-21-test');
+assert.equal(release.coverage.unique_observation_count, 30);
+assert.equal(release.coverage.independent_source_count, 3);
+assert.equal(release.factor_readings.find((row) => row.factor === 'purchase_intent').status, 'measured');
 
 console.log('consumer intent tests passed');
