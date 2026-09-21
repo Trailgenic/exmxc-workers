@@ -21,7 +21,11 @@ const methodologySchema = JSON.parse(await readFile('schema/ai_power_methodology
 const profileSchema = JSON.parse(await readFile('schema/ai_power_profile_v2.schema.json', 'utf8'));
 const sourceManifestSchema = JSON.parse(await readFile('schema/ai_power_source_manifest_v2.schema.json', 'utf8'));
 const spegIndexSchema = JSON.parse(await readFile('schema/speg_index_profile_v1.schema.json', 'utf8'));
+const consumerIntentObservationSchema = JSON.parse(await readFile('schema/consumer_intent_observation_v1.schema.json', 'utf8'));
+const consumerIntentReleaseSchema = JSON.parse(await readFile('schema/consumer_intent_release_v1.schema.json', 'utf8'));
+const consumerIntentRelease = JSON.parse(await readFile('data/consumer_intent_v1/releases/2026-09-21-foundation.json', 'utf8'));
 ajv.compile(sourceManifestSchema);
+ajv.compile(consumerIntentObservationSchema);
 const validateMethodology = ajv.compile(methodologySchema);
 if (!validateMethodology(methodology)) throw new Error(`AI Power methodology schema failed: ${JSON.stringify(validateMethodology.errors)}`);
 const validateRelease = ajv.compile(profileSchema);
@@ -32,6 +36,12 @@ const validateSpegIndex = ajv.compile(spegIndexSchema);
 if (!validateSpegIndex(SPEG_INDEX_RELEASE)) throw new Error(`sPEG Index schema failed: ${JSON.stringify(validateSpegIndex.errors)}`);
 const spegIndexSemantic = validateSpegIndexReleaseSemantics(SPEG_INDEX_RELEASE);
 if (!spegIndexSemantic.ok) throw new Error(`sPEG Index semantic validation failed: ${spegIndexSemantic.errors.join(' | ')}`);
+const validateConsumerIntentRelease = ajv.compile(consumerIntentReleaseSchema);
+if (!validateConsumerIntentRelease(consumerIntentRelease)) throw new Error(`Consumer Intent release schema failed: ${JSON.stringify(validateConsumerIntentRelease.errors)}`);
+if (consumerIntentRelease.composite !== null) throw new Error('Consumer Intent v1 must not publish a composite.');
+if (consumerIntentRelease.coverage.observation_count === 0 && consumerIntentRelease.factor_readings.some(reading => reading.status !== 'insufficient_evidence')) {
+  throw new Error('Consumer Intent foundation release cannot publish measured factors without observations.');
+}
 
 const forbiddenV2Keys = new Set(['ai_power_index', 'rank', 'percentile', 'weighted_contribution']);
 function assertNoCompositeFields(value, path = 'release') {
@@ -43,4 +53,4 @@ function assertNoCompositeFields(value, path = 'release') {
   }
 }
 assertNoCompositeFields(release);
-console.log('json, AI Power v2, and sPEG Index v1 contracts valid');
+console.log('json, AI Power v2, sPEG Index v1, and Consumer Intent v1 contracts valid');

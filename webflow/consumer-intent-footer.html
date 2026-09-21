@@ -1,0 +1,77 @@
+<!-- exmxc.ai | Consumer Intent | Before Body Close -->
+<main class="cig" id="consumer-intent" data-release="consumer-intent-2026-09-21-foundation">
+  <header>
+    <div class="cig-kicker">exmxc · Consumer Intelligence</div>
+    <h1>Where is the consumer wallet moving?</h1>
+    <p class="cig-deck">Consumer Intent Graph measures observed digital consumer intent and wallet behavior extracted from naturally occurring public signals. Consumer Intent Pulse is the public reading generated from that graph.</p>
+    <div class="cig-boundary"><strong>This is observed digital behavior—not nationally representative sentiment.</strong> The instrument complements surveys, PCE, retail sales, and company reporting. It does not replace them.</div>
+    <nav class="cig-nav" aria-label="Consumer Intelligence sections">
+      <a href="#pulse">Intent Pulse</a><a href="#categories">Category Pulse</a><a href="#companies">Company Lens</a><a href="#graph">Intent Graph</a><a href="#history">Historical Data</a><a href="/consumer-intent-methodology">Methodology</a>
+    </nav>
+  </header>
+
+  <section class="cig-section" id="pulse" aria-labelledby="pulse-title">
+    <div class="cig-section-head"><div><div class="cig-label">Factor-level readings · no composite</div><h2 id="pulse-title">Consumer Intent Pulse</h2></div><div class="cig-meta" data-as-of>As of 2026-09-21 · Foundation release</div></div>
+    <div class="cig-factors" data-factors aria-live="polite"><div class="cig-loading">Loading factor readings…</div></div>
+  </section>
+
+  <section class="cig-section" id="categories" aria-labelledby="categories-title">
+    <div class="cig-label">Category pulse</div><h2 id="categories-title">Coverage before conclusions.</h2>
+    <div class="cig-empty" data-categories><strong>Insufficient evidence.</strong><p>Category readings will appear only when a category clears minimum observation, source-diversity, collection-day, and concentration gates.</p></div>
+  </section>
+
+  <section class="cig-section" id="companies" aria-labelledby="companies-title">
+    <div class="cig-section-head"><div><div class="cig-label">Initial research case</div><h2 id="companies-title">NKE / TJX company lens</h2></div><div class="cig-meta">Same ontology · different business models</div></div>
+    <p>The first test asks whether shared wallet pressure can produce divergent intent across full-price athletic footwear and off-price retail. The hypothesis is not the result.</p>
+    <div class="cig-company-grid" data-companies aria-live="polite"><div class="cig-loading">Loading company lenses…</div></div>
+  </section>
+
+  <section class="cig-section" id="graph" aria-labelledby="graph-title">
+    <div class="cig-label">Intelligence layer</div><h2 id="graph-title">Consumer Intent Graph</h2>
+    <p>Every admissible expression becomes a structured relationship. The graph preserves the consumer-facing entity and its corporate parent so wallet migration can be traced without collapsing brands into tickers.</p>
+    <div class="cig-graph" aria-label="Consumer Intent Graph relationship sequence">
+      <div class="cig-node"><span class="cig-label">Condition</span><strong>Economic pressure</strong></div>
+      <div class="cig-node"><span class="cig-label">Response</span><strong>Delay · trade down</strong></div>
+      <div class="cig-node"><span class="cig-label">Category</span><strong>Demand change</strong></div>
+      <div class="cig-node"><span class="cig-label">Migration</span><strong>Brand substitution</strong></div>
+      <div class="cig-node"><span class="cig-label">Exposure</span><strong>Public company</strong></div>
+    </div>
+  </section>
+
+  <section class="cig-section" id="history" aria-labelledby="history-title">
+    <div class="cig-section-head"><div><div class="cig-label">Longitudinal record</div><h2 id="history-title">Historical data</h2></div><a data-release-link href="https://mcp.exmxc.ai/consumer-intent/pulse">Machine-readable release</a></div>
+    <div class="cig-empty"><strong>Series begins with the foundation release.</strong><p>Every future snapshot will remain addressable by release ID with its original methodology and model versions. History will not be overwritten when the system changes.</p></div>
+  </section>
+
+  <section class="cig-section cig-method" aria-labelledby="method-title">
+    <div><div class="cig-label">Methodology v1.0.0</div><h2 id="method-title">Let the index emerge from evidence.</h2><p>V1 keeps Wallet Stress, Purchase Intent, Purchase Deferral, Trade-Down, Deal Sensitivity, Discretionary Appetite, Brand Desire, and Substitution separately observable. No arbitrary weights are used to manufacture a headline score.</p><p><a href="/consumer-intent-methodology">Read the full methodology</a> · <a href="https://mcp.exmxc.ai/schemas/consumer-intent-observation-v1">Observation schema</a></p></div>
+    <aside><div class="cig-label">Publication gate</div><p>At least 30 unique observations, 3 independent sources, and 5 collection days, with no single source above 60% of the factor sample. Until then: <strong>Insufficient evidence.</strong></p></aside>
+  </section>
+</main>
+<script>
+(() => {
+  const root = document.getElementById('consumer-intent');
+  if (!root) return;
+  const endpoint = 'https://mcp.exmxc.ai/consumer-intent';
+  const labels = {wallet_stress:'Wallet Stress',purchase_intent:'Purchase Intent',purchase_deferral:'Purchase Deferral',trade_down:'Trade-Down',deal_sensitivity:'Deal Sensitivity',discretionary_appetite:'Discretionary Appetite'};
+  const node = (tag,className,text) => { const el=document.createElement(tag); if(className)el.className=className;if(text!==undefined)el.textContent=text;return el; };
+  const statusText = value => value === 'insufficient_evidence' ? 'Insufficient evidence' : value.replaceAll('_',' ');
+  const fetchJson = async url => { const response=await fetch(url,{headers:{accept:'application/json'},signal:AbortSignal.timeout(12000)});if(!response.ok)throw new Error('Unavailable');return response.json(); };
+  function renderFactors(release){
+    const host=root.querySelector('[data-factors]');host.replaceChildren();
+    for(const reading of release.factor_readings){
+      const card=node('article','cig-factor');card.append(node('div','cig-label',labels[reading.factor]||reading.factor));
+      const value=node('div','cig-factor-value',reading.status==='measured'?(reading.balance>0?'+':'')+reading.balance:statusText(reading.status));value.dataset.status=reading.status;card.append(value);
+      card.append(node('div','cig-factor-detail',`${reading.observation_count} observations · ${reading.source_count} sources · 30-day window`));host.append(card);
+    }
+    root.querySelector('[data-as-of]').textContent=`As of ${release.as_of} · ${release.release_status} release`;
+    root.querySelector('[data-release-link]').href=`${endpoint}/pulse?release=${encodeURIComponent(release.release_id)}`;
+  }
+  function renderCompany(result){
+    const reading=result.reading, card=node('article','cig-company'), top=node('div','cig-company-top'), title=node('div');
+    title.append(node('div','cig-ticker',reading.ticker),node('h3','',reading.company));top.append(title,node('span','cig-status',statusText(reading.status)));card.append(top);
+    const detail=node('dl');for(const [label,value] of [['7-day trend',reading.windows['7d']??'—'],['30-day trend',reading.windows['30d']??'—'],['90-day trend',reading.windows['90d']??'—'],['Substitutions',reading.substitutions.length]]){const wrap=node('div');wrap.append(node('dt','',label),node('dd','',String(value)));detail.append(wrap);}card.append(detail);return card;
+  }
+  Promise.all([fetchJson(`${endpoint}/pulse`),fetchJson(`${endpoint}/entity?query=NKE`),fetchJson(`${endpoint}/entity?query=TJX`)]).then(([release,nke,tjx])=>{renderFactors(release);const host=root.querySelector('[data-companies]');host.replaceChildren(renderCompany(nke),renderCompany(tjx));}).catch(()=>{root.querySelector('[data-factors]').replaceChildren(node('div','cig-error','Factor readings are temporarily unavailable.'));root.querySelector('[data-companies]').replaceChildren(node('div','cig-error','Company lenses are temporarily unavailable.'));});
+})();
+</script>

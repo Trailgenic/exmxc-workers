@@ -1,0 +1,24 @@
+{
+  "registry_version": "consumer-entity-registry-v1.0.0",
+  "as_of": "2026-09-21",
+  "entities": [
+    { "id": "brand-nike", "display_name": "Nike", "entity_type": "brand", "ticker": "NKE", "parent_company_id": "company-nike", "aliases": ["Nike.com", "Nike Pegasus"] },
+    { "id": "company-nike", "display_name": "NIKE, Inc.", "entity_type": "public_company", "ticker": "NKE", "parent_company_id": null, "aliases": ["Nike Inc", "NKE"] },
+    { "id": "company-tjx", "display_name": "The TJX Companies", "entity_type": "public_company", "ticker": "TJX", "parent_company_id": null, "aliases": ["TJX Companies", "TJX"] },
+    { "id": "retailer-tj-maxx", "display_name": "TJ Maxx", "entity_type": "retailer", "ticker": "TJX", "parent_company_id": "company-tjx", "aliases": ["T.J. Maxx", "TJMaxx"] },
+    { "id": "retailer-marshalls", "display_name": "Marshalls", "entity_type": "retailer", "ticker": "TJX", "parent_company_id": "company-tjx", "aliases": [] },
+    { "id": "retailer-homegoods", "display_name": "HomeGoods", "entity_type": "retailer", "ticker": "TJX", "parent_company_id": "company-tjx", "aliases": ["Home Goods"] },
+    { "id": "brand-lululemon", "display_name": "lululemon", "entity_type": "brand", "ticker": "LULU", "parent_company_id": "company-lululemon", "aliases": ["Lulu Lemon", "Lululemon"] },
+    { "id": "company-lululemon", "display_name": "lululemon athletica", "entity_type": "public_company", "ticker": "LULU", "parent_company_id": null, "aliases": ["LULU"] },
+    { "id": "brand-hoka", "display_name": "HOKA", "entity_type": "brand", "ticker": "DECK", "parent_company_id": "company-deckers", "aliases": ["Hoka One One"] },
+    { "id": "company-deckers", "display_name": "Deckers Brands", "entity_type": "public_company", "ticker": "DECK", "parent_company_id": null, "aliases": ["Deckers", "DECK"] },
+    { "id": "brand-on", "display_name": "On", "entity_type": "brand", "ticker": "ONON", "parent_company_id": "company-on", "aliases": ["On Running", "On Cloud"] },
+    { "id": "company-on", "display_name": "On Holding", "entity_type": "public_company", "ticker": "ONON", "parent_company_id": null, "aliases": ["ONON"] },
+    { "id": "retailer-costco", "display_name": "Costco", "entity_type": "retailer", "ticker": "COST", "parent_company_id": "company-costco", "aliases": [] },
+    { "id": "company-costco", "display_name": "Costco Wholesale", "entity_type": "public_company", "ticker": "COST", "parent_company_id": null, "aliases": ["COST"] },
+    { "id": "retailer-walmart", "display_name": "Walmart", "entity_type": "retailer", "ticker": "WMT", "parent_company_id": "company-walmart", "aliases": [] },
+    { "id": "company-walmart", "display_name": "Walmart Inc.", "entity_type": "public_company", "ticker": "WMT", "parent_company_id": null, "aliases": ["WMT"] },
+    { "id": "retailer-target", "display_name": "Target", "entity_type": "retailer", "ticker": "TGT", "parent_company_id": "company-target", "aliases": [] },
+    { "id": "company-target", "display_name": "Target Corporation", "entity_type": "public_company", "ticker": "TGT", "parent_company_id": null, "aliases": ["TGT"] }
+  ]
+}

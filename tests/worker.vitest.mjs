@@ -10,6 +10,8 @@ const BASE = 'https://mcp.exmxc.ai';
 const toolIds = () => DATA_TOOLS.map((tool) => tool.id).sort();
 const resourceUris = () => MCP_RESOURCES.filter((resource) => resource.includeInDiscovery).map((resource) => resource.uri).sort();
 const validArgs = {
+  'ex.consumer_intent.pulse.get': { ticker: 'NKE' },
+  'ex.consumer_intent.entity.get': { query: 'TJ Maxx' },
   'ex.ai_power.rankings.get': { year: '2030', edition: '2026-09-18' },
   'ex.entities.get': { industry: 'Energy' },
   'ex.speg.get': { ticker: 'NVDA' },
@@ -50,6 +52,31 @@ describe('monthly AI Power rankings', () => {
     expect(ledger.editions.some(entry => entry.edition_id === ledger.latest)).toBe(true);
     const latest = await (await req('/ai-power/rankings')).json();
     expect(latest.edition_id).toBe(ledger.latest);
+  });
+});
+
+describe('Consumer Intent Graph production foundation', () => {
+  it('serves a non-fabricated foundation release with explicit evidence boundaries', async () => {
+    const response = await req('/consumer-intent/pulse?ticker=NKE');
+    expect(response.status).toBe(200);
+    const data = await response.json();
+    expect(data.methodology_id).toBe('consumer-intent-v1.0.0');
+    expect(data.composite).toBeNull();
+    expect(data.coverage.observation_count).toBe(0);
+    expect(data.entity_readings).toHaveLength(1);
+    expect(data.entity_readings[0].ticker).toBe('NKE');
+    expect(data.entity_readings[0].status).toBe('insufficient_evidence');
+  });
+
+  it('resolves consumer brands to public-company parents and exposes versioned schemas', async () => {
+    const hoka = await (await req('/consumer-intent/entity?query=HOKA')).json();
+    expect(hoka.found).toBe(true);
+    expect(hoka.identity.entity.id).toBe('brand-hoka');
+    expect(hoka.identity.parent.ticker).toBe('DECK');
+    expect(hoka.reading.status).toBe('insufficient_evidence');
+    expect((await req('/schemas/consumer-intent-observation-v1')).status).toBe(200);
+    expect((await req('/schemas/consumer-intent-release-v1')).status).toBe(200);
+    expect((await req('/consumer-intent/pulse', { method: 'POST' })).status).toBe(405);
   });
 });
 

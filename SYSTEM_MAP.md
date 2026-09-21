@@ -1,4 +1,4 @@
-# exmxc Workers System Map — v2.14
+# exmxc Workers System Map — v2.16
 
 ## Runtime topology
 
@@ -65,6 +65,20 @@ The following surfaces are generated from these constants rather than hand-maint
 ## Dataset routes
 
 All local datasets are bundled with JSON imports; there are no runtime fetches to GitHub raw URLs for local data.
+
+- `/consumer-intent/pulse`
+  - Source: immutable release under `data/consumer_intent_v1/releases/`
+  - Filters: `factor`, `ticker`, `release`
+  - Shared deterministic implementation in `lib/consumer-intent.js` via `ex.consumer_intent.pulse.get`
+- `/consumer-intent/entity`
+  - Required filter: `query` (brand, retailer, company, or ticker)
+  - Shared entity hierarchy and lens through `ex.consumer_intent.entity.get`
+- `/consumer-intent/methodology`
+- `/consumer-intent/releases`
+- `/consumer-intent/entities`
+- `/consumer-intent/categories`
+- `/schemas/consumer-intent-observation-v1`
+- `/schemas/consumer-intent-release-v1`
 
 - `/entities`
   - Source: `data/entities.json`
@@ -141,6 +155,9 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 
 `lib/queries.js` owns dataset and analysis logic used by both REST handlers and MCP `tools/call`:
 
+- `getConsumerIntentPulse` (implemented in `lib/consumer-intent.js`)
+- `getConsumerIntentEntity` (implemented in `lib/consumer-intent.js`)
+
 - `getEntities`
 - `getSpeg`
 - `getSpegIndexV1`
@@ -168,6 +185,8 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
 
 Callable JSON tools are the entries in `DATA_TOOLS`:
 
+- `ex.consumer_intent.pulse.get`
+- `ex.consumer_intent.entity.get`
 - `ex.entities.get`
 - `ex.speg.get`
 - `ex.speg.index.get`

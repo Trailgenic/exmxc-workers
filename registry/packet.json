@@ -7,13 +7,23 @@
   "auth": "none",
   "homepage": "https://exmxc.ai",
   "repository": "https://github.com/Trailgenic/exmxc-workers",
-  "version": "2.15.0",
+  "version": "2.16.0",
   "categories": [
     "institutional intelligence",
     "AI capital architecture",
     "entity intelligence"
   ],
   "tools": [
+    {
+      "name": "ex.consumer_intent.pulse.get",
+      "title": "Get Consumer Intent Pulse",
+      "description": "Versioned factor-level readings of observed digital consumer intent and wallet behavior. V1 publishes no arbitrary composite and returns insufficient_evidence below transparent coverage gates."
+    },
+    {
+      "name": "ex.consumer_intent.entity.get",
+      "title": "Get Consumer Intent Company Lens",
+      "description": "Resolve a supported brand, retailer, company, or ticker and return its parent-company mapping, dated factor evidence, substitutions, and explicit coverage status."
+    },
     {
       "name": "ex.ai_power.rankings.get",
       "title": "Get AI Power rankings",
