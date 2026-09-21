@@ -23,9 +23,9 @@ const sourceManifestSchema = JSON.parse(await readFile('schema/ai_power_source_m
 const spegIndexSchema = JSON.parse(await readFile('schema/speg_index_profile_v1.schema.json', 'utf8'));
 const consumerIntentObservationSchema = JSON.parse(await readFile('schema/consumer_intent_observation_v1.schema.json', 'utf8'));
 const consumerIntentReleaseSchema = JSON.parse(await readFile('schema/consumer_intent_release_v1.schema.json', 'utf8'));
-const consumerIntentRelease = JSON.parse(await readFile('data/consumer_intent_v1/releases/2026-09-21-foundation.json', 'utf8'));
+const consumerIntentArchive = JSON.parse(await readFile('data/consumer_intent_v1/release-archive.json', 'utf8'));
 ajv.compile(sourceManifestSchema);
-ajv.compile(consumerIntentObservationSchema);
+const validateConsumerIntentObservation = ajv.compile(consumerIntentObservationSchema);
 const validateMethodology = ajv.compile(methodologySchema);
 if (!validateMethodology(methodology)) throw new Error(`AI Power methodology schema failed: ${JSON.stringify(validateMethodology.errors)}`);
 const validateRelease = ajv.compile(profileSchema);
@@ -37,10 +37,21 @@ if (!validateSpegIndex(SPEG_INDEX_RELEASE)) throw new Error(`sPEG Index schema f
 const spegIndexSemantic = validateSpegIndexReleaseSemantics(SPEG_INDEX_RELEASE);
 if (!spegIndexSemantic.ok) throw new Error(`sPEG Index semantic validation failed: ${spegIndexSemantic.errors.join(' | ')}`);
 const validateConsumerIntentRelease = ajv.compile(consumerIntentReleaseSchema);
-if (!validateConsumerIntentRelease(consumerIntentRelease)) throw new Error(`Consumer Intent release schema failed: ${JSON.stringify(validateConsumerIntentRelease.errors)}`);
-if (consumerIntentRelease.composite !== null) throw new Error('Consumer Intent v1 must not publish a composite.');
-if (consumerIntentRelease.coverage.observation_count === 0 && consumerIntentRelease.factor_readings.some(reading => reading.status !== 'insufficient_evidence')) {
-  throw new Error('Consumer Intent foundation release cannot publish measured factors without observations.');
+if (!Array.isArray(consumerIntentArchive.releases) || !consumerIntentArchive.releases.length) throw new Error('Consumer Intent release archive is empty.');
+if (!consumerIntentArchive.releases.some((candidate) => candidate.release_id === consumerIntentArchive.latest)) throw new Error('Consumer Intent archive latest pointer is invalid.');
+for (const consumerIntentRelease of consumerIntentArchive.releases) {
+  if (!validateConsumerIntentRelease(consumerIntentRelease)) throw new Error(`Consumer Intent release ${consumerIntentRelease.release_id} schema failed: ${JSON.stringify(validateConsumerIntentRelease.errors)}`);
+  if (consumerIntentRelease.composite !== null) throw new Error('Consumer Intent v1 must not publish a composite.');
+  if (consumerIntentRelease.coverage.observation_count === 0 && consumerIntentRelease.factor_readings.some(reading => reading.status !== 'insufficient_evidence')) {
+    throw new Error(`Consumer Intent release ${consumerIntentRelease.release_id} cannot publish measured factors without observations.`);
+  }
+}
+for (const file of await jsonFiles('data/consumer_intent_v1/observations')) {
+  const run = JSON.parse(await readFile(file, 'utf8'));
+  if (!Array.isArray(run.accepted)) throw new Error(`Consumer Intent run ${file} has no accepted observation array.`);
+  for (const observation of run.accepted) {
+    if (!validateConsumerIntentObservation(observation)) throw new Error(`Consumer Intent observation ${observation.observation_id || 'unknown'} in ${file} failed schema validation: ${JSON.stringify(validateConsumerIntentObservation.errors)}`);
+  }
 }
 
 const forbiddenV2Keys = new Set(['ai_power_index', 'rank', 'percentile', 'weighted_contribution']);

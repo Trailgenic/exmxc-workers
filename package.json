@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "node scripts/source-check.mjs",
-    "test": "node tests/registry.test.mjs && node tests/ai-power-rankings.test.mjs && node tests/power-lens.test.mjs && node tests/consumer-intent.test.mjs",
+    "test": "node tests/registry.test.mjs && node tests/ai-power-rankings.test.mjs && node tests/power-lens.test.mjs && node tests/consumer-intent.test.mjs && node tests/consumer-intent-collector.test.mjs",
     "test:workers": "vitest run --config vitest.config.mjs",
     "validate:json": "node scripts/validate-json.mjs",
     "validate:ai-power": "node scripts/validate-json.mjs",
@@ -19,7 +19,8 @@
     "deploy:dry-run": "wrangler deploy --dry-run",
     "test:ai-power-rankings": "node tests/ai-power-rankings.test.mjs",
     "build:ai-power-rankings": "node scripts/build-ai-power-rankings.mjs",
-    "build:consumer-intent": "node scripts/build-consumer-intent-release.mjs"
+    "build:consumer-intent": "node scripts/build-consumer-intent-release.mjs",
+    "collect:consumer-intent": "node scripts/collect-consumer-intent.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.29.0",

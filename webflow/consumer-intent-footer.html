@@ -53,7 +53,7 @@
   const root = document.getElementById('consumer-intent');
   if (!root) return;
   const endpoint = 'https://mcp.exmxc.ai/consumer-intent';
-  const labels = {wallet_stress:'Wallet Stress',purchase_intent:'Purchase Intent',purchase_deferral:'Purchase Deferral',trade_down:'Trade-Down',deal_sensitivity:'Deal Sensitivity',discretionary_appetite:'Discretionary Appetite'};
+  const labels = {wallet_stress:'Wallet Stress',purchase_intent:'Purchase Intent',purchase_deferral:'Purchase Deferral',trade_down:'Trade-Down',deal_sensitivity:'Deal Sensitivity',discretionary_appetite:'Discretionary Appetite',brand_desire:'Brand Desire'};
   const node = (tag,className,text) => { const el=document.createElement(tag); if(className)el.className=className;if(text!==undefined)el.textContent=text;return el; };
   const statusText = value => value === 'insufficient_evidence' ? 'Insufficient evidence' : value.replaceAll('_',' ');
   const fetchJson = async url => { const response=await fetch(url,{headers:{accept:'application/json'},signal:AbortSignal.timeout(12000)});if(!response.ok)throw new Error('Unavailable');return response.json(); };
