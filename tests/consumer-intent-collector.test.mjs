@@ -81,9 +81,11 @@ function modelResponse(text, urls = []) {
 }
 
 let requestCount = 0;
+const responseFormats = [];
 const fakeFetch = async (_url, init) => {
   requestCount += 1;
   const request = JSON.parse(init.body);
+  responseFormats.push(request.text?.format);
   const prompt = request.input[0].content[0].text;
   let body;
   if (prompt.startsWith("Independently verify")) {
@@ -105,6 +107,19 @@ const collected = await collectConsumerIntent({
   fetchImpl: fakeFetch
 });
 assert.equal(requestCount, 4);
+assert.deepEqual(responseFormats.map((format) => format?.name), [
+  "consumer_intent_discovery",
+  "consumer_intent_verification",
+  "consumer_intent_discovery",
+  "consumer_intent_discovery"
+]);
+assert.ok(responseFormats.every((format) => format?.type === "json_schema" && format?.strict === true));
+assert.deepEqual(responseFormats[0].schema.properties.observations.items.properties.intensity, {
+  type: "number",
+  minimum: 0,
+  maximum: 1
+});
+assert.deepEqual(responseFormats[1].schema.properties.verifications.items.required, ["candidate_id", "verified", "reason"]);
 assert.equal(collected.accepted.length, 1);
 assert.equal(collected.accepted[0].source_url, canonicalUrl);
 assert.equal(collected.runs[0].accepted, 1);
