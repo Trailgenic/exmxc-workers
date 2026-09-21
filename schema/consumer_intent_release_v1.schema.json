@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/consumer-intent-release-v1",
+  "title": "Consumer Intent Pulse Release v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "release_id", "release_status", "as_of", "methodology_id", "definition", "coverage",
+    "windows", "factor_readings", "category_readings", "entity_readings", "substitutions",
+    "composite", "change_note", "interpretation_boundary"
+  ],
+  "properties": {
+    "release_id": { "type": "string" },
+    "release_status": { "type": "string", "enum": ["foundation", "pilot", "published", "superseded"] },
+    "as_of": { "type": "string", "format": "date" },
+    "methodology_id": { "type": "string" },
+    "model_version": { "type": ["string", "null"] },
+    "definition": { "type": "string" },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collection_started", "observation_count", "unique_observation_count", "independent_source_count", "collection_days", "categories_observed", "entities_observed"],
+      "properties": {
+        "collection_started": { "type": "boolean" },
+        "observation_count": { "type": "integer", "minimum": 0 },
+        "unique_observation_count": { "type": "integer", "minimum": 0 },
+        "independent_source_count": { "type": "integer", "minimum": 0 },
+        "collection_days": { "type": "integer", "minimum": 0 },
+        "categories_observed": { "type": "integer", "minimum": 0 },
+        "entities_observed": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "windows": { "type": "array", "items": { "type": "string", "enum": ["7d", "30d", "90d"] }, "uniqueItems": true },
+    "factor_readings": { "type": "array", "items": { "$ref": "#/$defs/reading" } },
+    "category_readings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category_id", "label", "status", "factors"],
+        "properties": {
+          "category_id": { "type": "string" },
+          "label": { "type": "string" },
+          "status": { "type": "string", "enum": ["measured", "insufficient_evidence"] },
+          "factors": { "type": "array", "items": { "$ref": "#/$defs/reading" } }
+        }
+      }
+    },
+    "entity_readings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entity_id", "company", "ticker", "status", "windows", "factors", "substitutions", "major_reasons"],
+        "properties": {
+          "entity_id": { "type": "string" },
+          "company": { "type": "string" },
+          "ticker": { "type": "string" },
+          "status": { "type": "string", "enum": ["measured", "insufficient_evidence"] },
+          "windows": { "type": "object" },
+          "factors": { "type": "array", "items": { "$ref": "#/$defs/reading" } },
+          "substitutions": { "type": "array" },
+          "major_reasons": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "substitutions": { "type": "array" },
+    "composite": { "type": "null" },
+    "change_note": { "type": "string" },
+    "interpretation_boundary": { "type": "string" }
+  },
+  "$defs": {
+    "reading": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "factor": { "type": "string" },
+        "window": { "type": "string" },
+        "status": { "type": "string", "enum": ["measured", "insufficient_evidence"] },
+        "balance": { "type": ["number", "null"], "minimum": -100, "maximum": 100 },
+        "direction": { "type": "string", "enum": ["positive", "negative", "mixed", "unknown"] },
+        "observation_count": { "type": "integer", "minimum": 0 },
+        "source_count": { "type": "integer", "minimum": 0 },
+        "collection_days": { "type": "integer", "minimum": 0 },
+        "maximum_single_source_share": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence": { "type": "string", "enum": ["low", "moderate", "high"] },
+        "dominant_drivers": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

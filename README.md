@@ -7,6 +7,12 @@ Cloudflare Worker implementation for the `mcp.exmxc.ai` executable intelligence 
 
 The code keeps the ES-module Worker entrypoint (`export default { fetch(request, env) }`) and stores no secrets in source.
 
+## Consumer Intent Graph + Consumer Intent Pulse
+
+The production foundation for exmxc Consumer Intelligence is served at `GET /consumer-intent/pulse` and exposed to agents through `ex.consumer_intent.pulse.get`. It defines a structured observation ontology for naturally occurring public signals, resolves consumer brands and retailers to public-company parents, preserves immutable releases, and publishes factor-level evidence states without an arbitrary composite.
+
+The September 21 foundation release intentionally contains zero observations and no NKE or TJX directional conclusion. Public readings remain `insufficient_evidence` until they clear the documented coverage gates. The method is `/consumer-intent/methodology`; the entity and category registries are `/consumer-intent/entities` and `/consumer-intent/categories`; company lenses are available through `/consumer-intent/entity?query=NKE` or `ex.consumer_intent.entity.get`. See [operations](docs/consumer-intent-operations.md).
+
 ## AI Power Index — monthly ranked edition
 
 The current ranked index is served at `GET /ai-power/rankings` and exposed to agents through `ex.ai_power.rankings.get`. It covers 50 companies with scores and ranks for 2026, 2027, and 2030. Query `year=2030` to sort that forecast, and `edition=2026-09-18` for the immutable inaugural edition. The ledger is `/ai-power/rankings/editions`; the fixed method is `/ai-power/rankings/methodology`.
@@ -19,8 +25,8 @@ GitHub stores dated editions and the locked Four Forces methodology. Webflow pre
 - Domain: `https://exmxc.ai`
 - Founder: Mike Ye
 - Worker host: `https://mcp.exmxc.ai`
-- Build version: `2.15.0`
-- Stable build date / `last_updated`: `2026-09-18`
+- Build version: `2.16.0`
+- Stable build date / `last_updated`: `2026-09-21`
 
 `lib/registry.js` is the single source of truth for entity metadata, build metadata, dataset registrations, callable data tools, content links, and federated registries.
 
@@ -83,6 +89,8 @@ Example tool call:
 
 Callable JSON tools from `DATA_TOOLS`:
 
+- `ex.consumer_intent.pulse.get`
+- `ex.consumer_intent.entity.get`
 - `ex.entities.get`
 - `ex.speg.get`
 - `ex.speg.index.get`
@@ -102,6 +110,8 @@ Callable JSON tools from `DATA_TOOLS`:
 
 Content links from `CONTENT_LINKS`:
 
+- `ex.consumer_intent.page` — `https://www.exmxc.ai/consumer-intent`
+- `ex.consumer_intent.methodology` — `https://www.exmxc.ai/consumer-intent-methodology`
 - `ex.speg_index.page` — `https://www.exmxc.ai/speg-index`
 - `ex.speg_index.methodology` — `https://www.exmxc.ai/speg-methodology`
 - `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
@@ -142,6 +152,18 @@ npm run verify:webmcp
 ## REST data endpoints
 
 Bundled datasets are imported directly into the Worker. Dataset updates require a Worker deploy.
+
+- `GET /consumer-intent/pulse`
+  - Latest or exact immutable Consumer Intent Pulse release; optional `factor`, `ticker`, and `release` filters
+  - V1 publishes independent factors and explicit evidence states; it has no composite
+- `GET /consumer-intent/entity?query=NKE`
+  - Brand, retailer, company, or ticker resolution with public-company parent and dated readings
+- `GET /consumer-intent/methodology`
+- `GET /consumer-intent/releases`
+- `GET /consumer-intent/entities`
+- `GET /consumer-intent/categories`
+- `GET /schemas/consumer-intent-observation-v1`
+- `GET /schemas/consumer-intent-release-v1`
 
 - `GET /entities`
   - Source: `data/entities.json`

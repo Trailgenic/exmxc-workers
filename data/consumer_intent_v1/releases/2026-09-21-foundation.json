@@ -1,0 +1,35 @@
+{
+  "release_id": "consumer-intent-2026-09-21-foundation",
+  "release_status": "foundation",
+  "as_of": "2026-09-21",
+  "methodology_id": "consumer-intent-v1.0.0",
+  "model_version": null,
+  "definition": "Consumer Intent Graph measures observed digital consumer intent and wallet behavior extracted from naturally occurring public signals.",
+  "coverage": {
+    "collection_started": false,
+    "observation_count": 0,
+    "unique_observation_count": 0,
+    "independent_source_count": 0,
+    "collection_days": 0,
+    "categories_observed": 0,
+    "entities_observed": 0
+  },
+  "windows": ["7d", "30d", "90d"],
+  "factor_readings": [
+    { "factor": "wallet_stress", "window": "30d", "status": "insufficient_evidence", "balance": null, "direction": "unknown", "observation_count": 0, "source_count": 0, "confidence": "low", "dominant_drivers": [] },
+    { "factor": "purchase_intent", "window": "30d", "status": "insufficient_evidence", "balance": null, "direction": "unknown", "observation_count": 0, "source_count": 0, "confidence": "low", "dominant_drivers": [] },
+    { "factor": "purchase_deferral", "window": "30d", "status": "insufficient_evidence", "balance": null, "direction": "unknown", "observation_count": 0, "source_count": 0, "confidence": "low", "dominant_drivers": [] },
+    { "factor": "trade_down", "window": "30d", "status": "insufficient_evidence", "balance": null, "direction": "unknown", "observation_count": 0, "source_count": 0, "confidence": "low", "dominant_drivers": [] },
+    { "factor": "deal_sensitivity", "window": "30d", "status": "insufficient_evidence", "balance": null, "direction": "unknown", "observation_count": 0, "source_count": 0, "confidence": "low", "dominant_drivers": [] },
+    { "factor": "discretionary_appetite", "window": "30d", "status": "insufficient_evidence", "balance": null, "direction": "unknown", "observation_count": 0, "source_count": 0, "confidence": "low", "dominant_drivers": [] }
+  ],
+  "category_readings": [],
+  "entity_readings": [
+    { "entity_id": "company-nike", "company": "NIKE, Inc.", "ticker": "NKE", "status": "insufficient_evidence", "windows": { "7d": null, "30d": null, "90d": null }, "factors": [], "substitutions": [], "major_reasons": [] },
+    { "entity_id": "company-tjx", "company": "The TJX Companies", "ticker": "TJX", "status": "insufficient_evidence", "windows": { "7d": null, "30d": null, "90d": null }, "factors": [], "substitutions": [], "major_reasons": [] }
+  ],
+  "substitutions": [],
+  "composite": null,
+  "change_note": "Production ontology, schemas, query layer, and public research surface established. No consumer observations are published in the foundation release.",
+  "interpretation_boundary": "No directional conclusion about NKE, TJX, any category, or the overall consumer is supported by this foundation release."
+}
