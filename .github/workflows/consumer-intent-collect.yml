@@ -81,7 +81,7 @@ jobs:
           retention-days: 30
       - name: Commit accepted observations and release state
         run: |
-          if git diff --quiet -- data/consumer_intent_v1; then
+          if [ -z "$(git status --porcelain -- data/consumer_intent_v1)" ]; then
             echo "No repository changes to commit."
             exit 0
           fi
