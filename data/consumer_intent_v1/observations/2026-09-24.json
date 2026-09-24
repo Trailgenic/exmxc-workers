@@ -1,0 +1,51 @@
+{
+  "run_id": "consumer-intent-2026-09-24-a978a50db0b0",
+  "collection_date": "2026-09-24",
+  "plan_id": "consumer-intent-collection-v1.0.0",
+  "model_version": "gpt-5.6-luna",
+  "access_basis": "OpenAI Responses API web search over public HTTPS sources; no direct source scraping by this workflow.",
+  "runs": [
+    {
+      "target_id": "athletic-footwear-wallet",
+      "candidates": 4,
+      "preverified": 3,
+      "accepted": 0,
+      "consulted_sources": 29
+    },
+    {
+      "target_id": "off-price-retail-wallet",
+      "candidates": 7,
+      "preverified": 5,
+      "accepted": 0,
+      "consulted_sources": 22
+    },
+    {
+      "target_id": "consumer-wallet-pressure",
+      "candidates": 4,
+      "preverified": 2,
+      "accepted": 0,
+      "consulted_sources": 35
+    }
+  ],
+  "accepted": [],
+  "rejected_summary": {
+    "count": 15,
+    "reasons": {
+      "outside_collection_window": 2,
+      "promotion_probability_above_gate": 1,
+      "The cited Reddit page contains the first-person passage stating, “I went to the store to buy a pair of Nikes … so I bought a pair of Hoka and that's my shoe brand now.” It directly supports a completed substitution from Nike footwear to HOKA due to product availability. The page is dated before or on September 24, 2026.": 1,
+      "The cited Reddit page contains the first-person passage stating, “bought a pair of Nike knock off from shien for 40 dollars … why spend 150 for nikes.” It directly supports a completed price-driven substitution from Nike footwear to a Shein Nike knockoff. The page is dated before or on September 24, 2026.": 1,
+      "Although the cited page contains the first-person statement, “I ain't buying anything in that picture. They are all ugly,” the passage refers to Jordans and does not directly identify Nike as the entity. Treating Jordan sneakers as Nike requires inference, so the proposed Nike entity is not independently verified.": 1,
+      "no_explicit_consumer_behavior": 1,
+      "The cited Reddit page contains the exact first-person passage about buying work pants exclusively from Costco to avoid paying $50+ for pants damaged on the job site. It directly supports a repeat purchase, Costco, work pants, and affordability. The page is dated September 23, 2026, before the cutoff.": 1,
+      "The cited Reddit page contains the exact first-person passage stating that a $30 Costco winter coat performed as well as a several-hundred-dollar coat it replaced for two seasons. It directly supports a completed purchase, Costco, winter coat, affordability, and replacement comparison. The page is dated September 23, 2026, before the cutoff.": 1,
+      "The cited Reddit page does not contain the proposed first-person passage about Christian Siriano wide-leg pants, buying every new color, or having five pairs. The evidence is therefore inaccessible or mismatched.": 1,
+      "The cited Reddit page does not contain the proposed first-person passage mentioning buying the stripe, returning for the green sweater, or Zendaya. Related sweater comments do not directly establish the proposed purchase intent and entity without inference.": 1,
+      "The cited Reddit page contains the exact first-person passage, 'Yep! I get pants there for $7.97,' directly supporting repeat purchase, Costco, pants, and affordability. The page is dated September 21, 2026, before the cutoff.": 1,
+      "source_not_in_search_evidence": 2,
+      "The cited Reddit page contains the first-person passage: \"I am considering gifting the game to a friend of mine. Is it likely that it will come on sale anytime soon?\" It directly supports waiting for a sale for Satisfactory, a video game. The page is dated within the permitted period, and no substitute entity is claimed.": 1,
+      "The cited Reddit page does not contain the proposed first-person passage \"Cashed my doge check to buy some mac and cheese and could only afford 1 box.\" It contains no matching passage supporting a completed mac-and-cheese purchase caused by limited affordability.": 1
+    }
+  },
+  "new_accepted_count": 0
+}
