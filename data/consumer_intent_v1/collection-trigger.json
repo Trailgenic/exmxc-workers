@@ -1,4 +1,4 @@
 {
-  "requested_at": "2026-09-21T20:40:06Z",
-  "reason": "Rerun the first Consumer Intent pilot collection after fixing untracked daily-packet persistence."
+  "requested_at": "2026-09-25T17:53:54.652Z",
+  "reason": "Verify Consumer Intent structured evidence gate on the next dated pilot collection; existing run skip prevents duplicate paid collection."
 }
