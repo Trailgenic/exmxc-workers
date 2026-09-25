@@ -70,12 +70,26 @@ describe('AI Commerce Signal foundation', () => {
   it('publishes a separate Google Trends series without conflating it with purchases', async () => {
     const response = await req('/ai-commerce/signal');
     const data = await response.json();
-    expect(data.release_id).toBe('ai-commerce-2026-09-25-search-pilot');
+    expect(data.release_id).toBe('ai-commerce-2026-09-25-selection-method-pilot');
     expect(data.search_interest.source).toBe('Google Trends');
     expect(data.search_interest.last_complete_week).toBe('2026-09-13');
     expect(data.search_interest.series.map(row => row.points.at(-1).index)).toEqual([13, 5]);
     expect(data.coverage.transaction_event_count).toBe(0);
     expect(data.benchmarks).toHaveLength(4);
+  });
+
+  it('keeps app selection observations and API method checks in separate evidence lanes', async () => {
+    const response = await req('/ai-commerce/selection');
+    expect(response.status).toBe(200);
+    const data = await response.json();
+    expect(data.selection_panel.summary).toMatchObject({ physical_attempts: 11, completed_two_turn_attempts: 7, clean_single_attempts: 6, contradictory_attempts: 1, technical_failure_attempts: 4, selection_share: null });
+    expect(data.api_method_check.surface).toBe('provider_api');
+    expect(data.api_method_check.completed_two_turn_tasks).toBe(10);
+    expect((await req('/ai-commerce/selection?release=ai-commerce-2026-09-25-foundation')).status).toBe(404);
+    const signal = await (await req('/ai-commerce/signal')).json();
+    expect(signal.coverage.selection_run_count).toBe(7);
+    expect(signal.coverage.verified_episode_count).toBe(0);
+    expect(signal.coverage.transaction_event_count).toBe(0);
   });
 
   it('retires broad wallet routes and exposes AI commerce contracts', async () => {

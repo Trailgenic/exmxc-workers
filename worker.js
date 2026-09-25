@@ -46,7 +46,8 @@ import { getSpegIndexMethodologyV1, getSpegIndexReleasesV1 } from "./lib/speg-in
 import {
   AI_COMMERCE_METHODOLOGY,
   AI_COMMERCE_RELEASES,
-  getAiCommerceSignal
+  getAiCommerceSignal,
+  getAiCommerceSelection
 } from "./lib/ai-commerce.js";
 import baseline from "./data/ads-baseline.json" with { type: "json" };
 
@@ -384,6 +385,10 @@ export default {
       if (request.method !== "GET") return jsonResponse({ error: "Method not allowed" }, { status: 405, headers: { Allow: "GET, OPTIONS" } });
       if (url.pathname === "/ai-commerce" || url.pathname === "/ai-commerce/signal") {
         const result = getAiCommerceSignal(queryArgs(url, ["release"]));
+        return jsonResponse(result, { status: result.found === false ? 404 : 200, headers: { "Cache-Control": result.found === false ? "no-store" : url.searchParams.has("release") ? "public, max-age=31536000, immutable" : "public, max-age=300" } });
+      }
+      if (url.pathname === "/ai-commerce/selection") {
+        const result = getAiCommerceSelection(queryArgs(url, ["release"]));
         return jsonResponse(result, { status: result.found === false ? 404 : 200, headers: { "Cache-Control": result.found === false ? "no-store" : url.searchParams.has("release") ? "public, max-age=31536000, immutable" : "public, max-age=300" } });
       }
       if (url.pathname === "/ai-commerce/methodology") return jsonResponse(AI_COMMERCE_METHODOLOGY, { headers: { "Cache-Control": "public, max-age=3600" } });

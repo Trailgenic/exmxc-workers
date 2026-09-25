@@ -1,0 +1,18 @@
+{
+  "panel_id": "aci-everyday-five-category-api-2026-09-23",
+  "status": "method_validation",
+  "observed_on": "2026-09-23",
+  "geography": "US",
+  "representative": false,
+  "surface": "provider_api",
+  "provider_models": ["OpenAI gpt-5.6-luna", "Gemini gemini-3.5-flash"],
+  "intent_count": 5,
+  "completed_two_turn_tasks": 10,
+  "categories": ["travel_gear", "home_goods", "baby_gear", "beauty", "everyday_electronics"],
+  "requirement_review": { "reviewed": 25, "verified": 13, "unknown": 12, "contradicted": 0 },
+  "material_answer_claim_issue": "The Gemini answer described Zoe Twin V3 as 19 lb; the manufacturer specified 25 lb at review. This discrepancy is separate from the stroller's two-child hard requirement.",
+  "source_audit": "Trailgenic/exmxc-crawl-worker feat/agent-commerce-phase0 agent-commerce/data/phase0-everyday-pilot-audit-2026-09-23.md",
+  "source_product_audit": "Trailgenic/exmxc-crawl-worker feat/agent-commerce-phase0 agent-commerce/data/phase0-product-evidence-audit-2026-09-24.md",
+  "source_access": "public_summaries_private_raw_captures",
+  "interpretation": "Ten API method checks, distinct from signed-in consumer app behavior. Requirement review did not verify exact merchant offers or relevant battery life. No purchases, market share, or cross-surface quality ranking are established."
+}

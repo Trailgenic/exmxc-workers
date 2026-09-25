@@ -5,8 +5,13 @@
     <h1>What changes when AI shops with us?</h1>
     <p class="aic-lede">AI Commerce Signal follows the purchase journey from research and recommendations to selection and delegated checkout. It asks what shoppers use AI for, what products are involved, and how they experience that help.</p>
     <div class="aic-note"><strong>Evidence boundary.</strong> A recommendation is not a purchase. A visit referred by AI is not an agent-executed checkout. Survey results, referral analytics, and verified shopper episodes retain their own denominators.</div>
-    <nav aria-label="AI commerce sections"><a href="#market">Market evidence</a><a href="#search">Search interest</a><a href="#journey">Decision journey</a><a href="#episodes">Shopper experience</a><a href="#record">Release record</a><a href="/ai-commerce-methodology">Methodology</a></nav>
+    <nav aria-label="AI commerce sections"><a href="#selection">Selection monitor</a><a href="#market">Market evidence</a><a href="#search">Search interest</a><a href="#journey">Decision journey</a><a href="#episodes">Shopper experience</a><a href="#record">Release record</a><a href="/ai-commerce-methodology">Methodology</a></nav>
   </header>
+  <section id="selection" aria-labelledby="selection-title">
+    <div class="aic-label">Exmxc original observations · September 2026 method check</div><h2 id="selection-title">What the assistants chose</h2>
+    <p>Four buyer needs were tested in signed-in ChatGPT and Gemini apps with the same two-turn prompt. These are observed answers in a small convenience panel; they do not establish consumer demand, product quality, or completed purchases.</p>
+    <div data-selection aria-live="polite"><div class="aic-empty">Loading the selection pilot…</div></div>
+  </section>
   <section id="market" aria-labelledby="market-title">
     <div class="aic-label">Published research · original denominators</div><h2 id="market-title">Signals of adoption, with their limits</h2>
     <p>These are attributed findings from published research. They are not exmxc's own consumer survey or a count of agent purchases.</p>
@@ -30,6 +35,33 @@
   const base='https://mcp.exmxc.ai/ai-commerce';
   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
   fetch(`${base}/signal`,{headers:{accept:'application/json'},signal:AbortSignal.timeout(12000)}).then(r=>{if(!r.ok)throw Error('API unavailable');return r.json()}).then(data=>{
+    const selection=root.querySelector('[data-selection]');selection.replaceChildren();
+    if(data.selection_panel){
+      const panel=data.selection_panel,s=panel.summary,counts=el('div','aic-selection-counts');
+      for(const [number,label] of [[s.original_app_intent_cells,'original app-intent cells'],[s.physical_attempts,'saved attempts, including retries'],[s.completed_two_turn_attempts,'completed answers'],[s.contradictory_attempts,'contradictory answer'],[s.technical_failure_attempts,'first-turn failures']]){
+        const item=el('div','aic-selection-count');item.append(el('strong','',String(number)),el('span','',label));counts.append(item);
+      }
+      const wrap=el('div','aic-selection-scroll'),table=el('table','aic-selection-table'),head=el('thead'),tr=el('tr');
+      for(const label of ['Buyer need','ChatGPT app','Gemini app'])tr.append(el('th','',label));head.append(tr);table.append(head);
+      const body=el('tbody');
+      for(const intent of panel.intents){
+        const row=el('tr');row.append(el('th','',intent.label));
+        for(const surface of ['ChatGPT','Gemini']){
+          const cell=s.cell_outcomes.find(item=>item.intent_id===intent.intent_id&&item.surface===surface),td=el('td');
+          const chosen=cell?.primary_selection;
+          td.append(el('strong','',chosen?chosen.brand+' · '+chosen.product:cell?.outcome==='contradictory'?'Contradictory final answer':'Technical failure'));
+          const last=panel.attempts.find(item=>item.attempt_id===cell?.attempt_ids.at(-1));
+          td.append(el('small','',last?.evidence_limit||'Outcome unresolved.'));
+          row.append(td);
+        }
+        body.append(row);
+      }
+      table.append(body);wrap.append(table);
+      const boundary=el('p','aic-meta','Six clean selections among seven completed answers. One Gemini sofa cell never completed, including retries. The later user-pasted sofa result has no archived browser capture and is excluded. Product names may lack exact SKU or current offer verification. No Agent Selection Share or purchase rate is reported.');
+      const inspect=el('a','','Inspect the selection records');inspect.href=`${base}/selection?release=${encodeURIComponent(data.release_id)}`;
+      selection.append(counts,wrap,boundary,inspect);
+      if(data.api_method_check){const api=el('p','aic-selection-api',`Separate API method check: ${data.api_method_check.completed_two_turn_tasks} completed tasks across ${data.api_method_check.intent_count} buyer intents, with product requirements reviewed independently. API outputs are not pooled with the signed-in app results.`);selection.append(api)}
+    }else selection.append(el('div','aic-empty','No selection panel is included in this release.'));
     const host=root.querySelector('[data-benchmarks]');host.replaceChildren();
     for(const row of data.benchmarks){const card=el('article','aic-card');card.append(el('div','aic-label',row.lane+' · '+row.period),el('strong','aic-value',row.value+'%'),el('h3','',row.label),el('p','',row.interpretation));const source=el('a','',row.source_organization+' · Source');source.href=row.source_url;source.target='_blank';source.rel='noopener noreferrer';card.append(source,el('small','',row.denominator));host.append(card)}
     if(!data.benchmarks.length)host.append(el('div','aic-empty','No sourced benchmark is available.'));
@@ -55,7 +87,7 @@
       const link=el('a','','Explore these terms in Google Trends');link.href=trends.source_url;link.target='_blank';link.rel='noopener noreferrer';
       search.append(summary,svg,label,link);
     }else search.append(el('div','aic-empty','No search-interest export is published for this release.'));
-    root.querySelector('[data-release]').textContent=`${data.status} release · ${data.as_of} · ${data.coverage.verified_episode_count} verified shopping episodes · ${data.coverage.transaction_event_count} instrumented purchases`;
+    root.querySelector('[data-release]').textContent=`${data.status} release · ${data.as_of} · ${data.coverage.selection_run_count} completed app selection attempts · ${data.coverage.verified_episode_count} verified shopper episodes · ${data.coverage.transaction_event_count} instrumented purchases`;
     root.querySelector('[data-release-link]').href=`${base}/signal?release=${encodeURIComponent(data.release_id)}`;
     if(data.coverage.verified_episode_count)root.querySelector('[data-episodes]').querySelector('p').textContent=`${data.coverage.verified_episode_count} verified episodes. Experience readings remain gated by source diversity and sample coverage.`;
   }).catch(()=>{root.querySelector('[data-benchmarks]').replaceChildren(el('div','aic-empty','The evidence feed is temporarily unavailable.'));});

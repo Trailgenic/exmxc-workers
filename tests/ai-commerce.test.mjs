@@ -2,8 +2,9 @@ import assert from 'node:assert/strict';
 import Ajv2020 from 'ajv/dist/2020.js';
 import episodeSchema from '../schema/ai_commerce_episode_v1.schema.json' with { type: 'json' };
 import releaseSchema from '../schema/ai_commerce_release_v1.schema.json' with { type: 'json' };
-import { AI_COMMERCE_LATEST, buildAiCommerceRelease, getAiCommerceSignal, validateAiCommerceEpisode } from '../lib/ai-commerce.js';
+import { AI_COMMERCE_LATEST, buildAiCommerceRelease, getAiCommerceSignal, getAiCommerceSelection, validateAiCommerceEpisode } from '../lib/ai-commerce.js';
 import { parseAiCommerceTrendsCsv } from '../lib/ai-commerce-trends.js';
+import { summarizeSelectionPilot } from '../lib/ai-commerce-selection.js';
 import { readFileSync } from 'node:fs';
 
 const ajv = new Ajv2020({ strict: false, validateFormats: false });
@@ -17,6 +18,19 @@ const csv = readFileSync('data/ai_commerce_v1/search_interest/google-trends-us-a
 assert.deepEqual(parseAiCommerceTrendsCsv(csv, { asOf: '2026-09-25', rawFile: AI_COMMERCE_LATEST.search_interest.raw_file }), AI_COMMERCE_LATEST.search_interest);
 assert.equal(AI_COMMERCE_LATEST.search_interest.series[0].points.at(-1).index, 13);
 assert.equal(AI_COMMERCE_LATEST.search_interest.series[1].points.at(-1).index, 5);
+assert.equal(AI_COMMERCE_LATEST.coverage.selection_run_count, 7);
+assert.equal(AI_COMMERCE_LATEST.selection_panel.summary.physical_attempts, 11);
+assert.equal(AI_COMMERCE_LATEST.selection_panel.summary.clean_single_attempts, 6);
+assert.equal(AI_COMMERCE_LATEST.selection_panel.summary.contradictory_attempts, 1);
+assert.equal(AI_COMMERCE_LATEST.selection_panel.summary.technical_failure_attempts, 4);
+assert.equal(AI_COMMERCE_LATEST.selection_panel.summary.selection_share, null);
+assert.equal(AI_COMMERCE_LATEST.api_method_check.completed_two_turn_tasks, 10);
+assert.equal(getAiCommerceSelection({ release: 'ai-commerce-2026-09-25-foundation' }).found, false);
+const selectionSource = JSON.parse(readFileSync('data/ai_commerce_v1/selection/2026-09-23-signed-in-app-pilot.json', 'utf8'));
+assert.deepEqual(summarizeSelectionPilot(selectionSource), AI_COMMERCE_LATEST.selection_panel);
+assert.equal(JSON.stringify(AI_COMMERCE_LATEST.selection_panel).includes('chatgpt.com/c/'), false);
+assert.equal(JSON.stringify(AI_COMMERCE_LATEST.selection_panel).includes('gemini.google.com/app/'), false);
+assert.throws(() => summarizeSelectionPilot({ ...selectionSource, attempts: selectionSource.attempts.filter(row => row.attempt_id !== 'run-06-gemini-e-dry-foundation') }), /Every intent/);
 assert.throws(() => parseAiCommerceTrendsCsv(csv.replace('2026-09-13,13,5', '2026-09-13,113,5'), { asOf: '2026-09-25', rawFile: 'test.csv' }), /0–100/);
 assert.equal(getAiCommerceSignal({ release: 'missing' }).found, false);
 

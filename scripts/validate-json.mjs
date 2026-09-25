@@ -4,6 +4,7 @@ import { validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
 import { SPEG_INDEX_RELEASE, validateSpegIndexReleaseSemantics } from '../lib/speg-index-v1.js';
 import { validateAiCommerceEpisode } from '../lib/ai-commerce.js';
 import { parseAiCommerceTrendsCsv } from '../lib/ai-commerce-trends.js';
+import { summarizeSelectionPilot } from '../lib/ai-commerce-selection.js';
 
 async function jsonFiles(dir) {
   const files = [];
@@ -50,6 +51,15 @@ for (const release of aiCommerceArchive.releases) {
     const parsed = parseAiCommerceTrendsCsv(csv, { asOf: release.search_interest.exported_on, rawFile: release.search_interest.raw_file });
     if (JSON.stringify(parsed) !== JSON.stringify(release.search_interest)) throw new Error('Search interest differs from its archived raw export.');
     if (release.search_interest.exported_on > release.as_of) throw new Error('Search export is later than release.');
+  }
+  if (release.selection_panel) {
+    const source = JSON.parse(await readFile('data/ai_commerce_v1/selection/2026-09-23-signed-in-app-pilot.json', 'utf8'));
+    const summarized = summarizeSelectionPilot(source);
+    if (JSON.stringify(summarized) !== JSON.stringify(release.selection_panel)) throw new Error('Selection panel differs from reviewed public labels.');
+    if (release.coverage.selection_run_count !== summarized.summary.completed_two_turn_attempts) throw new Error('Selection run count must mean completed two-turn app attempts.');
+    if (!release.api_method_check || release.api_method_check.surface !== 'provider_api') throw new Error('API method check must stay on its own surface.');
+    const apiSource = JSON.parse(await readFile('data/ai_commerce_v1/selection/2026-09-23-api-method-check.json', 'utf8'));
+    if (JSON.stringify(apiSource) !== JSON.stringify(release.api_method_check)) throw new Error('API method check differs from source summary.');
   }
 }
 for (const file of await jsonFiles('data/ai_commerce_v1/episodes')) {

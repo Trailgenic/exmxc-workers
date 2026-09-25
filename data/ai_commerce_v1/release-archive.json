@@ -1,6 +1,6 @@
 {
   "series_id": "ai-commerce-signal-v1",
-  "latest": "ai-commerce-2026-09-25-search-pilot",
+  "latest": "ai-commerce-2026-09-25-selection-method-pilot",
   "releases": [
     {
       "release_id": "ai-commerce-2026-09-25-foundation",
@@ -635,6 +635,934 @@
         ]
       },
       "notes": "Published market benchmarks and normalized Google search interest remain distinct from verified shopping episodes and instrumented purchases."
+    },
+    {
+      "release_id": "ai-commerce-2026-09-25-selection-method-pilot",
+      "series_id": "ai-commerce-signal-v1",
+      "as_of": "2026-09-25",
+      "methodology_id": "ai-commerce-v1.0.0",
+      "status": "pilot",
+      "coverage": {
+        "verified_episode_count": 0,
+        "selection_run_count": 7,
+        "transaction_event_count": 0
+      },
+      "experience_readings": [
+        {
+          "target": "usefulness",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "accuracy",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "trust",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "price_confidence",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "control",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "privacy",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "disclosure",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        },
+        {
+          "target": "friction",
+          "status": "insufficient_evidence",
+          "episode_count": 0,
+          "sentiment_share": null
+        }
+      ],
+      "episode_count_by_stage": {},
+      "episode_count_by_category": {},
+      "benchmarks": [
+        {
+          "id": "adobe-2026-ai-shopping-use",
+          "lane": "survey",
+          "label": "Have used AI assistants for online shopping",
+          "value": 39,
+          "unit": "percent_of_surveyed_consumers",
+          "period": "2026-03",
+          "geography": "US",
+          "denominator": "All respondents to Adobe's March 2026 consumer survey; companion survey of more than 5,000 US respondents",
+          "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+          "source_organization": "Adobe Digital Insights",
+          "interpretation": "Survey-reported use for online shopping; includes assistance short of agent-executed checkout."
+        },
+        {
+          "id": "adobe-2026-ai-shopping-experience",
+          "lane": "survey",
+          "label": "Say AI improved online shopping experience",
+          "value": 85,
+          "unit": "percent_of_ai_shopping_users_in_survey",
+          "period": "2026-03",
+          "geography": "US",
+          "denominator": "Respondents who reported using AI for online shopping in Adobe's March 2026 consumer survey",
+          "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+          "source_organization": "Adobe Digital Insights",
+          "interpretation": "Self-reported experience among users, not an exmxc sentiment score or an agent purchase rate."
+        },
+        {
+          "id": "adobe-2026-ai-assisted-tech-purchase",
+          "lane": "survey",
+          "label": "Report a tech/software purchase with AI help",
+          "value": 21,
+          "unit": "percent_of_surveyed_consumers",
+          "period": "2026-03",
+          "geography": "US",
+          "denominator": "Consumers in Adobe's March 2026 consumer survey; exact category question wording is not published in the summary",
+          "source_url": "https://business.adobe.com/resources/sdk/.2026-q2-ai-traffic-report/q2-2026-adi-ai-sourced-traffic-insights.pdf",
+          "source_organization": "Adobe Digital Insights, page 38",
+          "interpretation": "Self-reported purchase with AI help in tech/software. The source does not establish agent-executed checkout."
+        },
+        {
+          "id": "adobe-2026-ai-retail-referral-growth",
+          "lane": "referral",
+          "label": "Growth in AI-sourced visits to US retail sites",
+          "value": 393,
+          "unit": "percent_year_over_year",
+          "period": "2026-Q1",
+          "geography": "US",
+          "denominator": "AI-sourced retail visits in Q1 2025; Adobe Analytics retail-site coverage",
+          "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+          "source_organization": "Adobe Digital Insights",
+          "interpretation": "Growth in visits, not share of purchases or completed agent checkouts."
+        }
+      ],
+      "search_interest": {
+        "source": "Google Trends",
+        "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=US&q=ChatGPT%20shopping,AI%20shopping%20assistant",
+        "exported_on": "2026-09-25",
+        "raw_file": "data/ai_commerce_v1/search_interest/google-trends-us-ai-shopping-2026-09-25.csv",
+        "raw_sha256": "118d565708da42433ff8286f81a3a1e8f20450251e47cf2f5e474a8f30bd6089",
+        "geography": "US",
+        "search_type": "Web Search",
+        "category": "All categories",
+        "window": "Past 12 months as of 2026-09-25",
+        "interval": "week",
+        "scale": "Jointly normalized 0–100 search-interest index for these two terms and this query window; not search volume, shopper share, AI use, sentiment, or purchases. Different exports need not share a scale.",
+        "last_complete_week": "2026-09-13",
+        "excluded_incomplete_weeks": [
+          "2026-09-20"
+        ],
+        "series": [
+          {
+            "term": "ChatGPT shopping",
+            "points": [
+              {
+                "week": "2025-09-21",
+                "index": 24
+              },
+              {
+                "week": "2025-09-28",
+                "index": 25
+              },
+              {
+                "week": "2025-10-05",
+                "index": 24
+              },
+              {
+                "week": "2025-10-12",
+                "index": 29
+              },
+              {
+                "week": "2025-10-19",
+                "index": 23
+              },
+              {
+                "week": "2025-10-26",
+                "index": 32
+              },
+              {
+                "week": "2025-11-02",
+                "index": 42
+              },
+              {
+                "week": "2025-11-09",
+                "index": 35
+              },
+              {
+                "week": "2025-11-16",
+                "index": 34
+              },
+              {
+                "week": "2025-11-23",
+                "index": 100
+              },
+              {
+                "week": "2025-11-30",
+                "index": 97
+              },
+              {
+                "week": "2025-12-07",
+                "index": 80
+              },
+              {
+                "week": "2025-12-14",
+                "index": 60
+              },
+              {
+                "week": "2025-12-21",
+                "index": 61
+              },
+              {
+                "week": "2025-12-28",
+                "index": 49
+              },
+              {
+                "week": "2026-01-04",
+                "index": 42
+              },
+              {
+                "week": "2026-01-11",
+                "index": 48
+              },
+              {
+                "week": "2026-01-18",
+                "index": 52
+              },
+              {
+                "week": "2026-01-25",
+                "index": 48
+              },
+              {
+                "week": "2026-02-01",
+                "index": 44
+              },
+              {
+                "week": "2026-02-08",
+                "index": 43
+              },
+              {
+                "week": "2026-02-15",
+                "index": 39
+              },
+              {
+                "week": "2026-02-22",
+                "index": 50
+              },
+              {
+                "week": "2026-03-01",
+                "index": 59
+              },
+              {
+                "week": "2026-03-08",
+                "index": 46
+              },
+              {
+                "week": "2026-03-15",
+                "index": 44
+              },
+              {
+                "week": "2026-03-22",
+                "index": 44
+              },
+              {
+                "week": "2026-03-29",
+                "index": 37
+              },
+              {
+                "week": "2026-04-05",
+                "index": 50
+              },
+              {
+                "week": "2026-04-12",
+                "index": 46
+              },
+              {
+                "week": "2026-04-19",
+                "index": 42
+              },
+              {
+                "week": "2026-04-26",
+                "index": 40
+              },
+              {
+                "week": "2026-05-03",
+                "index": 36
+              },
+              {
+                "week": "2026-05-10",
+                "index": 42
+              },
+              {
+                "week": "2026-05-17",
+                "index": 45
+              },
+              {
+                "week": "2026-05-24",
+                "index": 58
+              },
+              {
+                "week": "2026-05-31",
+                "index": 53
+              },
+              {
+                "week": "2026-06-07",
+                "index": 76
+              },
+              {
+                "week": "2026-06-14",
+                "index": 61
+              },
+              {
+                "week": "2026-06-21",
+                "index": 56
+              },
+              {
+                "week": "2026-06-28",
+                "index": 53
+              },
+              {
+                "week": "2026-07-05",
+                "index": 40
+              },
+              {
+                "week": "2026-07-12",
+                "index": 26
+              },
+              {
+                "week": "2026-07-19",
+                "index": 19
+              },
+              {
+                "week": "2026-07-26",
+                "index": 19
+              },
+              {
+                "week": "2026-08-02",
+                "index": 17
+              },
+              {
+                "week": "2026-08-09",
+                "index": 22
+              },
+              {
+                "week": "2026-08-16",
+                "index": 17
+              },
+              {
+                "week": "2026-08-23",
+                "index": 11
+              },
+              {
+                "week": "2026-08-30",
+                "index": 12
+              },
+              {
+                "week": "2026-09-06",
+                "index": 16
+              },
+              {
+                "week": "2026-09-13",
+                "index": 13
+              }
+            ]
+          },
+          {
+            "term": "AI shopping assistant",
+            "points": [
+              {
+                "week": "2025-09-21",
+                "index": 45
+              },
+              {
+                "week": "2025-09-28",
+                "index": 27
+              },
+              {
+                "week": "2025-10-05",
+                "index": 21
+              },
+              {
+                "week": "2025-10-12",
+                "index": 20
+              },
+              {
+                "week": "2025-10-19",
+                "index": 14
+              },
+              {
+                "week": "2025-10-26",
+                "index": 9
+              },
+              {
+                "week": "2025-11-02",
+                "index": 18
+              },
+              {
+                "week": "2025-11-09",
+                "index": 15
+              },
+              {
+                "week": "2025-11-16",
+                "index": 10
+              },
+              {
+                "week": "2025-11-23",
+                "index": 18
+              },
+              {
+                "week": "2025-11-30",
+                "index": 23
+              },
+              {
+                "week": "2025-12-07",
+                "index": 15
+              },
+              {
+                "week": "2025-12-14",
+                "index": 16
+              },
+              {
+                "week": "2025-12-21",
+                "index": 14
+              },
+              {
+                "week": "2025-12-28",
+                "index": 8
+              },
+              {
+                "week": "2026-01-04",
+                "index": 16
+              },
+              {
+                "week": "2026-01-11",
+                "index": 14
+              },
+              {
+                "week": "2026-01-18",
+                "index": 16
+              },
+              {
+                "week": "2026-01-25",
+                "index": 20
+              },
+              {
+                "week": "2026-02-01",
+                "index": 15
+              },
+              {
+                "week": "2026-02-08",
+                "index": 15
+              },
+              {
+                "week": "2026-02-15",
+                "index": 36
+              },
+              {
+                "week": "2026-02-22",
+                "index": 22
+              },
+              {
+                "week": "2026-03-01",
+                "index": 19
+              },
+              {
+                "week": "2026-03-08",
+                "index": 17
+              },
+              {
+                "week": "2026-03-15",
+                "index": 23
+              },
+              {
+                "week": "2026-03-22",
+                "index": 18
+              },
+              {
+                "week": "2026-03-29",
+                "index": 17
+              },
+              {
+                "week": "2026-04-05",
+                "index": 18
+              },
+              {
+                "week": "2026-04-12",
+                "index": 20
+              },
+              {
+                "week": "2026-04-19",
+                "index": 19
+              },
+              {
+                "week": "2026-04-26",
+                "index": 12
+              },
+              {
+                "week": "2026-05-03",
+                "index": 15
+              },
+              {
+                "week": "2026-05-10",
+                "index": 22
+              },
+              {
+                "week": "2026-05-17",
+                "index": 22
+              },
+              {
+                "week": "2026-05-24",
+                "index": 30
+              },
+              {
+                "week": "2026-05-31",
+                "index": 21
+              },
+              {
+                "week": "2026-06-07",
+                "index": 29
+              },
+              {
+                "week": "2026-06-14",
+                "index": 24
+              },
+              {
+                "week": "2026-06-21",
+                "index": 30
+              },
+              {
+                "week": "2026-06-28",
+                "index": 29
+              },
+              {
+                "week": "2026-07-05",
+                "index": 37
+              },
+              {
+                "week": "2026-07-12",
+                "index": 13
+              },
+              {
+                "week": "2026-07-19",
+                "index": 8
+              },
+              {
+                "week": "2026-07-26",
+                "index": 9
+              },
+              {
+                "week": "2026-08-02",
+                "index": 8
+              },
+              {
+                "week": "2026-08-09",
+                "index": 6
+              },
+              {
+                "week": "2026-08-16",
+                "index": 8
+              },
+              {
+                "week": "2026-08-23",
+                "index": 5
+              },
+              {
+                "week": "2026-08-30",
+                "index": 0
+              },
+              {
+                "week": "2026-09-06",
+                "index": 1
+              },
+              {
+                "week": "2026-09-13",
+                "index": 5
+              }
+            ]
+          }
+        ]
+      },
+      "selection_panel": {
+        "panel_id": "aci-signed-in-app-four-intent-2026-09-23",
+        "status": "method_validation",
+        "geography": "US",
+        "representative": false,
+        "protocol_version": "ass-v0.1-two-turn",
+        "protocol_sha": "22d326d7394cc0a199acddc463ad93eb56363133",
+        "intent_panel_version": "everyday-forum-v1-2026-09-23",
+        "intent_panel_sha": "92bbe72f9376abd20ebe15dd78677a2f15cc4b75",
+        "observed_on": "2026-09-23",
+        "adjudicated_on": "2026-09-24",
+        "source_archive_name": "aci-signed-in-app-raw-records-2026-09-23.zip",
+        "source_archive_sha256": "1e898f5d3e678304dc114fb76ad4618abe678668f4e14668b3c9f962f34ee93f",
+        "source_access": "private_operator_supplied_captures",
+        "intents": [
+          {
+            "intent_id": "e-family-sofa",
+            "category": "home_goods",
+            "label": "Family sofa under 90 inches"
+          },
+          {
+            "intent_id": "e-twins-stroller",
+            "category": "baby_gear",
+            "label": "Travel stroller for two children"
+          },
+          {
+            "intent_id": "e-dry-foundation",
+            "category": "beauty",
+            "label": "Medium-coverage foundation for dry skin"
+          },
+          {
+            "intent_id": "e-work-laptop",
+            "category": "everyday_electronics",
+            "label": "15-inch-plus work laptop"
+          }
+        ],
+        "attempts": [
+          {
+            "attempt_id": "run-01-chatgpt-e-family-sofa",
+            "intent_id": "e-family-sofa",
+            "surface": "ChatGPT",
+            "displayed_mode": "Chat; Think off; model ID not displayed",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "single",
+            "turns_completed": 2,
+            "selection": {
+              "brand": "Room & Board",
+              "product": "André 89-inch sofa with reversible chaise",
+              "granularity": "variant"
+            },
+            "evidence_limit": "Deep-seat requirement is weakened by the listed regular seat depth; exact offer unresolved.",
+            "raw_capture_sha256": "7bacc10d483049017b0bc72afb747c594d8784434f8c2c23d0313a589ae3b5a4"
+          },
+          {
+            "attempt_id": "run-02-gemini-e-family-sofa",
+            "intent_id": "e-family-sofa",
+            "surface": "Gemini",
+            "displayed_mode": "Flash Extended (3.6 Flash with Extended thinking)",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "technical_failure",
+            "turns_completed": 0,
+            "selection": null,
+            "evidence_limit": "First turn stopped; second turn not sent.",
+            "raw_capture_sha256": "79ea4919b305be9a223014b92cb38cfc3d260c68d00a6c9d239f5b0a6fb99a7a"
+          },
+          {
+            "attempt_id": "run-03-chatgpt-e-twins-stroller",
+            "intent_id": "e-twins-stroller",
+            "surface": "ChatGPT",
+            "displayed_mode": "Chat; Think off; model ID not displayed",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "single",
+            "turns_completed": 2,
+            "selection": {
+              "brand": "Zoe",
+              "product": "Twin V3",
+              "granularity": "model"
+            },
+            "evidence_limit": "Precise infant car-seat adapter pairing and total offer unresolved.",
+            "raw_capture_sha256": "b22f4609f38fb2710af6c38af37789dd61cef42d26897eca330b53643df9b544"
+          },
+          {
+            "attempt_id": "run-04-gemini-e-twins-stroller",
+            "intent_id": "e-twins-stroller",
+            "surface": "Gemini",
+            "displayed_mode": "Flash Extended (3.6 Flash with Extended thinking)",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "technical_failure",
+            "turns_completed": 0,
+            "selection": null,
+            "evidence_limit": "First turn error; second turn not sent.",
+            "raw_capture_sha256": "c6aa87fc44a3c7cd3080880c4102721272b3489d63841a579a8c60ece49cb1ed"
+          },
+          {
+            "attempt_id": "run-05-chatgpt-e-dry-foundation",
+            "intent_id": "e-dry-foundation",
+            "surface": "ChatGPT",
+            "displayed_mode": "Chat; Think off; model ID not displayed",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "single",
+            "turns_completed": 2,
+            "selection": {
+              "brand": "Maybelline",
+              "product": "Fit Me Dewy + Smooth",
+              "granularity": "model"
+            },
+            "evidence_limit": "No exact neutral-to-cool shade or merchant offer selected.",
+            "raw_capture_sha256": "bb236c52e09d43125410c1f8e3234d99b9e97dc797eb6defab5684e5fe6860f1"
+          },
+          {
+            "attempt_id": "run-06-gemini-e-dry-foundation",
+            "intent_id": "e-dry-foundation",
+            "surface": "Gemini",
+            "displayed_mode": "3.6 Flash",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "contradictory",
+            "turns_completed": 2,
+            "selection": null,
+            "evidence_limit": "Named L’Oréal True Match Nude Hyaluronic Tinted Serum, then stated it could not choose. Candidate is not a primary selection; its light coverage weakens the requested medium-coverage fit.",
+            "raw_capture_sha256": "c3c821c7aa03739acffd00c11a30cd88be0c102cb3c61d8f17250b63952aff31"
+          },
+          {
+            "attempt_id": "run-07-chatgpt-e-work-laptop",
+            "intent_id": "e-work-laptop",
+            "surface": "ChatGPT",
+            "displayed_mode": "Chat; Think off; model ID not displayed",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "single",
+            "turns_completed": 2,
+            "selection": {
+              "brand": "Lenovo",
+              "product": "ThinkPad E16 Gen 3 Intel, conditional 400-nit/64Wh configuration",
+              "granularity": "conditional_configuration"
+            },
+            "evidence_limit": "No verified exact SKU, merchant offer, or relevant six-hour battery result.",
+            "raw_capture_sha256": "d6a3fb0b63f51d312f02a24e387ef416a388279851c17197094508f06951e4d7"
+          },
+          {
+            "attempt_id": "run-08-gemini-e-work-laptop",
+            "intent_id": "e-work-laptop",
+            "surface": "Gemini",
+            "displayed_mode": "3.6 Flash",
+            "observed_on": "2026-09-23",
+            "attempt_number": 1,
+            "outcome": "single",
+            "turns_completed": 2,
+            "selection": {
+              "brand": "Lenovo",
+              "product": "ThinkPad E16 Gen 2/3 AMD family",
+              "granularity": "model_family"
+            },
+            "evidence_limit": "No pinned generation or offer. AMD Gen 3 specification does not show the suggested 400-nit panel.",
+            "raw_capture_sha256": "46b110a8b9bbc8d0aa6e4e931c4ef0b57317a35ca48011eac7f72d5941a80af6"
+          },
+          {
+            "attempt_id": "retry-01-gemini-e-family-sofa",
+            "intent_id": "e-family-sofa",
+            "surface": "Gemini",
+            "displayed_mode": "3.6 Flash",
+            "observed_on": "2026-09-23",
+            "attempt_number": 2,
+            "outcome": "technical_failure",
+            "turns_completed": 0,
+            "selection": null,
+            "evidence_limit": "No visible first answer; second turn not sent.",
+            "raw_capture_sha256": "01e0ae5b289bbd9e10845aaf1078a983a81d737bcd87e3b0f694c02cbdf54e16"
+          },
+          {
+            "attempt_id": "retry-02-gemini-e-family-sofa",
+            "intent_id": "e-family-sofa",
+            "surface": "Gemini",
+            "displayed_mode": "3.6 Flash",
+            "observed_on": "2026-09-23",
+            "attempt_number": 3,
+            "outcome": "technical_failure",
+            "turns_completed": 0,
+            "selection": null,
+            "evidence_limit": "First turn error and empty regeneration; second turn not sent.",
+            "raw_capture_sha256": "151c5ad4c85e738698973e6fa8acabb68f56bc3995ef0fffb3ca9bea41b5b8af"
+          },
+          {
+            "attempt_id": "retry-03-gemini-e-twins-stroller",
+            "intent_id": "e-twins-stroller",
+            "surface": "Gemini",
+            "displayed_mode": "3.6 Flash",
+            "observed_on": "2026-09-23",
+            "attempt_number": 2,
+            "outcome": "single",
+            "turns_completed": 2,
+            "selection": {
+              "brand": "Zoe",
+              "product": "Twin V3",
+              "granularity": "model"
+            },
+            "evidence_limit": "Answer gave 19–21 lb; manufacturer specifies 25 lb. Adapter pairing and offer unresolved.",
+            "raw_capture_sha256": "2157129299e19ea27e30dad2658f5f15ca6084ff9a83eb8bc7d6946dd1b45987"
+          }
+        ],
+        "supplemental_observations": [
+          {
+            "intent_id": "e-family-sofa",
+            "surface": "Gemini",
+            "provenance": "operator_pasted_without_browser_capture",
+            "outcome": "single",
+            "product": "Lovesac Sactional",
+            "included_in_counts": false,
+            "limitation": "Conversation URL, date, and original raw capture unavailable; cannot replace the archived failed attempts."
+          }
+        ],
+        "notes": "Eight original app-intent cells, three saved retries. A clean final selection is observed model output; exact offer and product fit require independent checks. No purchases occurred in these captures. Raw personal app transcripts and URLs remain private.",
+        "summary": {
+          "original_app_intent_cells": 8,
+          "physical_attempts": 11,
+          "retry_attempts": 3,
+          "completed_two_turn_attempts": 7,
+          "clean_single_attempts": 6,
+          "contradictory_attempts": 1,
+          "technical_failure_attempts": 4,
+          "clean_selection_cells": 6,
+          "contradictory_cells": 1,
+          "unresolved_failure_cells": 1,
+          "selection_share": null,
+          "cell_outcomes": [
+            {
+              "intent_id": "e-family-sofa",
+              "surface": "ChatGPT",
+              "attempt_ids": [
+                "run-01-chatgpt-e-family-sofa"
+              ],
+              "outcome": "single",
+              "primary_selection": {
+                "brand": "Room & Board",
+                "product": "André 89-inch sofa with reversible chaise",
+                "granularity": "variant"
+              }
+            },
+            {
+              "intent_id": "e-family-sofa",
+              "surface": "Gemini",
+              "attempt_ids": [
+                "run-02-gemini-e-family-sofa",
+                "retry-01-gemini-e-family-sofa",
+                "retry-02-gemini-e-family-sofa"
+              ],
+              "outcome": "technical_failure",
+              "primary_selection": null
+            },
+            {
+              "intent_id": "e-twins-stroller",
+              "surface": "ChatGPT",
+              "attempt_ids": [
+                "run-03-chatgpt-e-twins-stroller"
+              ],
+              "outcome": "single",
+              "primary_selection": {
+                "brand": "Zoe",
+                "product": "Twin V3",
+                "granularity": "model"
+              }
+            },
+            {
+              "intent_id": "e-twins-stroller",
+              "surface": "Gemini",
+              "attempt_ids": [
+                "run-04-gemini-e-twins-stroller",
+                "retry-03-gemini-e-twins-stroller"
+              ],
+              "outcome": "single",
+              "primary_selection": {
+                "brand": "Zoe",
+                "product": "Twin V3",
+                "granularity": "model"
+              }
+            },
+            {
+              "intent_id": "e-dry-foundation",
+              "surface": "ChatGPT",
+              "attempt_ids": [
+                "run-05-chatgpt-e-dry-foundation"
+              ],
+              "outcome": "single",
+              "primary_selection": {
+                "brand": "Maybelline",
+                "product": "Fit Me Dewy + Smooth",
+                "granularity": "model"
+              }
+            },
+            {
+              "intent_id": "e-dry-foundation",
+              "surface": "Gemini",
+              "attempt_ids": [
+                "run-06-gemini-e-dry-foundation"
+              ],
+              "outcome": "contradictory",
+              "primary_selection": null
+            },
+            {
+              "intent_id": "e-work-laptop",
+              "surface": "ChatGPT",
+              "attempt_ids": [
+                "run-07-chatgpt-e-work-laptop"
+              ],
+              "outcome": "single",
+              "primary_selection": {
+                "brand": "Lenovo",
+                "product": "ThinkPad E16 Gen 3 Intel, conditional 400-nit/64Wh configuration",
+                "granularity": "conditional_configuration"
+              }
+            },
+            {
+              "intent_id": "e-work-laptop",
+              "surface": "Gemini",
+              "attempt_ids": [
+                "run-08-gemini-e-work-laptop"
+              ],
+              "outcome": "single",
+              "primary_selection": {
+                "brand": "Lenovo",
+                "product": "ThinkPad E16 Gen 2/3 AMD family",
+                "granularity": "model_family"
+              }
+            }
+          ]
+        }
+      },
+      "api_method_check": {
+        "panel_id": "aci-everyday-five-category-api-2026-09-23",
+        "status": "method_validation",
+        "observed_on": "2026-09-23",
+        "geography": "US",
+        "representative": false,
+        "surface": "provider_api",
+        "provider_models": [
+          "OpenAI gpt-5.6-luna",
+          "Gemini gemini-3.5-flash"
+        ],
+        "intent_count": 5,
+        "completed_two_turn_tasks": 10,
+        "categories": [
+          "travel_gear",
+          "home_goods",
+          "baby_gear",
+          "beauty",
+          "everyday_electronics"
+        ],
+        "requirement_review": {
+          "reviewed": 25,
+          "verified": 13,
+          "unknown": 12,
+          "contradicted": 0
+        },
+        "material_answer_claim_issue": "The Gemini answer described Zoe Twin V3 as 19 lb; the manufacturer specified 25 lb at review. This discrepancy is separate from the stroller's two-child hard requirement.",
+        "source_audit": "Trailgenic/exmxc-crawl-worker feat/agent-commerce-phase0 agent-commerce/data/phase0-everyday-pilot-audit-2026-09-23.md",
+        "source_product_audit": "Trailgenic/exmxc-crawl-worker feat/agent-commerce-phase0 agent-commerce/data/phase0-product-evidence-audit-2026-09-24.md",
+        "source_access": "public_summaries_private_raw_captures",
+        "interpretation": "Ten API method checks, distinct from signed-in consumer app behavior. Requirement review did not verify exact merchant offers or relevant battery life. No purchases, market share, or cross-surface quality ranking are established."
+      },
+      "notes": "The signed-in app panel is a nonrepresentative method check, with all failures and contradictions retained. API method checks, surveys, and search interest are separate. No observed purchases or representative Agent Selection Share."
     }
   ]
 }
