@@ -67,6 +67,17 @@ describe('AI Commerce Signal foundation', () => {
     expect(response.headers.get('cache-control')).toContain('immutable');
   });
 
+  it('publishes a separate Google Trends series without conflating it with purchases', async () => {
+    const response = await req('/ai-commerce/signal');
+    const data = await response.json();
+    expect(data.release_id).toBe('ai-commerce-2026-09-25-search-pilot');
+    expect(data.search_interest.source).toBe('Google Trends');
+    expect(data.search_interest.last_complete_week).toBe('2026-09-13');
+    expect(data.search_interest.series.map(row => row.points.at(-1).index)).toEqual([13, 5]);
+    expect(data.coverage.transaction_event_count).toBe(0);
+    expect(data.benchmarks).toHaveLength(4);
+  });
+
   it('retires broad wallet routes and exposes AI commerce contracts', async () => {
     const retired = await req('/consumer-intent/pulse');
     expect(retired.status).toBe(410);

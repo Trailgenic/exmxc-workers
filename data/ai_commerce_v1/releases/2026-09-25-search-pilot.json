@@ -1,0 +1,564 @@
+{
+  "release_id": "ai-commerce-2026-09-25-search-pilot",
+  "series_id": "ai-commerce-signal-v1",
+  "as_of": "2026-09-25",
+  "methodology_id": "ai-commerce-v1.0.0",
+  "status": "pilot",
+  "coverage": {
+    "verified_episode_count": 0,
+    "selection_run_count": 0,
+    "transaction_event_count": 0
+  },
+  "experience_readings": [
+    {
+      "target": "usefulness",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "accuracy",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "trust",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "price_confidence",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "control",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "privacy",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "disclosure",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    },
+    {
+      "target": "friction",
+      "status": "insufficient_evidence",
+      "episode_count": 0,
+      "sentiment_share": null
+    }
+  ],
+  "episode_count_by_stage": {},
+  "episode_count_by_category": {},
+  "benchmarks": [
+    {
+      "id": "adobe-2026-ai-shopping-use",
+      "lane": "survey",
+      "label": "Have used AI assistants for online shopping",
+      "value": 39,
+      "unit": "percent_of_surveyed_consumers",
+      "period": "2026-03",
+      "geography": "US",
+      "denominator": "All respondents to Adobe's March 2026 consumer survey; companion survey of more than 5,000 US respondents",
+      "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+      "source_organization": "Adobe Digital Insights",
+      "interpretation": "Survey-reported use for online shopping; includes assistance short of agent-executed checkout."
+    },
+    {
+      "id": "adobe-2026-ai-shopping-experience",
+      "lane": "survey",
+      "label": "Say AI improved online shopping experience",
+      "value": 85,
+      "unit": "percent_of_ai_shopping_users_in_survey",
+      "period": "2026-03",
+      "geography": "US",
+      "denominator": "Respondents who reported using AI for online shopping in Adobe's March 2026 consumer survey",
+      "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+      "source_organization": "Adobe Digital Insights",
+      "interpretation": "Self-reported experience among users, not an exmxc sentiment score or an agent purchase rate."
+    },
+    {
+      "id": "adobe-2026-ai-assisted-tech-purchase",
+      "lane": "survey",
+      "label": "Report a tech/software purchase with AI help",
+      "value": 21,
+      "unit": "percent_of_surveyed_consumers",
+      "period": "2026-03",
+      "geography": "US",
+      "denominator": "Consumers in Adobe's March 2026 consumer survey; exact category question wording is not published in the summary",
+      "source_url": "https://business.adobe.com/resources/sdk/.2026-q2-ai-traffic-report/q2-2026-adi-ai-sourced-traffic-insights.pdf",
+      "source_organization": "Adobe Digital Insights, page 38",
+      "interpretation": "Self-reported purchase with AI help in tech/software. The source does not establish agent-executed checkout."
+    },
+    {
+      "id": "adobe-2026-ai-retail-referral-growth",
+      "lane": "referral",
+      "label": "Growth in AI-sourced visits to US retail sites",
+      "value": 393,
+      "unit": "percent_year_over_year",
+      "period": "2026-Q1",
+      "geography": "US",
+      "denominator": "AI-sourced retail visits in Q1 2025; Adobe Analytics retail-site coverage",
+      "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+      "source_organization": "Adobe Digital Insights",
+      "interpretation": "Growth in visits, not share of purchases or completed agent checkouts."
+    }
+  ],
+  "search_interest": {
+    "source": "Google Trends",
+    "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=US&q=ChatGPT%20shopping,AI%20shopping%20assistant",
+    "exported_on": "2026-09-25",
+    "raw_file": "data/ai_commerce_v1/search_interest/google-trends-us-ai-shopping-2026-09-25.csv",
+    "raw_sha256": "118d565708da42433ff8286f81a3a1e8f20450251e47cf2f5e474a8f30bd6089",
+    "geography": "US",
+    "search_type": "Web Search",
+    "category": "All categories",
+    "window": "Past 12 months as of 2026-09-25",
+    "interval": "week",
+    "scale": "Jointly normalized 0–100 search-interest index for these two terms and this query window; not search volume, shopper share, AI use, sentiment, or purchases. Different exports need not share a scale.",
+    "last_complete_week": "2026-09-13",
+    "excluded_incomplete_weeks": [
+      "2026-09-20"
+    ],
+    "series": [
+      {
+        "term": "ChatGPT shopping",
+        "points": [
+          {
+            "week": "2025-09-21",
+            "index": 24
+          },
+          {
+            "week": "2025-09-28",
+            "index": 25
+          },
+          {
+            "week": "2025-10-05",
+            "index": 24
+          },
+          {
+            "week": "2025-10-12",
+            "index": 29
+          },
+          {
+            "week": "2025-10-19",
+            "index": 23
+          },
+          {
+            "week": "2025-10-26",
+            "index": 32
+          },
+          {
+            "week": "2025-11-02",
+            "index": 42
+          },
+          {
+            "week": "2025-11-09",
+            "index": 35
+          },
+          {
+            "week": "2025-11-16",
+            "index": 34
+          },
+          {
+            "week": "2025-11-23",
+            "index": 100
+          },
+          {
+            "week": "2025-11-30",
+            "index": 97
+          },
+          {
+            "week": "2025-12-07",
+            "index": 80
+          },
+          {
+            "week": "2025-12-14",
+            "index": 60
+          },
+          {
+            "week": "2025-12-21",
+            "index": 61
+          },
+          {
+            "week": "2025-12-28",
+            "index": 49
+          },
+          {
+            "week": "2026-01-04",
+            "index": 42
+          },
+          {
+            "week": "2026-01-11",
+            "index": 48
+          },
+          {
+            "week": "2026-01-18",
+            "index": 52
+          },
+          {
+            "week": "2026-01-25",
+            "index": 48
+          },
+          {
+            "week": "2026-02-01",
+            "index": 44
+          },
+          {
+            "week": "2026-02-08",
+            "index": 43
+          },
+          {
+            "week": "2026-02-15",
+            "index": 39
+          },
+          {
+            "week": "2026-02-22",
+            "index": 50
+          },
+          {
+            "week": "2026-03-01",
+            "index": 59
+          },
+          {
+            "week": "2026-03-08",
+            "index": 46
+          },
+          {
+            "week": "2026-03-15",
+            "index": 44
+          },
+          {
+            "week": "2026-03-22",
+            "index": 44
+          },
+          {
+            "week": "2026-03-29",
+            "index": 37
+          },
+          {
+            "week": "2026-04-05",
+            "index": 50
+          },
+          {
+            "week": "2026-04-12",
+            "index": 46
+          },
+          {
+            "week": "2026-04-19",
+            "index": 42
+          },
+          {
+            "week": "2026-04-26",
+            "index": 40
+          },
+          {
+            "week": "2026-05-03",
+            "index": 36
+          },
+          {
+            "week": "2026-05-10",
+            "index": 42
+          },
+          {
+            "week": "2026-05-17",
+            "index": 45
+          },
+          {
+            "week": "2026-05-24",
+            "index": 58
+          },
+          {
+            "week": "2026-05-31",
+            "index": 53
+          },
+          {
+            "week": "2026-06-07",
+            "index": 76
+          },
+          {
+            "week": "2026-06-14",
+            "index": 61
+          },
+          {
+            "week": "2026-06-21",
+            "index": 56
+          },
+          {
+            "week": "2026-06-28",
+            "index": 53
+          },
+          {
+            "week": "2026-07-05",
+            "index": 40
+          },
+          {
+            "week": "2026-07-12",
+            "index": 26
+          },
+          {
+            "week": "2026-07-19",
+            "index": 19
+          },
+          {
+            "week": "2026-07-26",
+            "index": 19
+          },
+          {
+            "week": "2026-08-02",
+            "index": 17
+          },
+          {
+            "week": "2026-08-09",
+            "index": 22
+          },
+          {
+            "week": "2026-08-16",
+            "index": 17
+          },
+          {
+            "week": "2026-08-23",
+            "index": 11
+          },
+          {
+            "week": "2026-08-30",
+            "index": 12
+          },
+          {
+            "week": "2026-09-06",
+            "index": 16
+          },
+          {
+            "week": "2026-09-13",
+            "index": 13
+          }
+        ]
+      },
+      {
+        "term": "AI shopping assistant",
+        "points": [
+          {
+            "week": "2025-09-21",
+            "index": 45
+          },
+          {
+            "week": "2025-09-28",
+            "index": 27
+          },
+          {
+            "week": "2025-10-05",
+            "index": 21
+          },
+          {
+            "week": "2025-10-12",
+            "index": 20
+          },
+          {
+            "week": "2025-10-19",
+            "index": 14
+          },
+          {
+            "week": "2025-10-26",
+            "index": 9
+          },
+          {
+            "week": "2025-11-02",
+            "index": 18
+          },
+          {
+            "week": "2025-11-09",
+            "index": 15
+          },
+          {
+            "week": "2025-11-16",
+            "index": 10
+          },
+          {
+            "week": "2025-11-23",
+            "index": 18
+          },
+          {
+            "week": "2025-11-30",
+            "index": 23
+          },
+          {
+            "week": "2025-12-07",
+            "index": 15
+          },
+          {
+            "week": "2025-12-14",
+            "index": 16
+          },
+          {
+            "week": "2025-12-21",
+            "index": 14
+          },
+          {
+            "week": "2025-12-28",
+            "index": 8
+          },
+          {
+            "week": "2026-01-04",
+            "index": 16
+          },
+          {
+            "week": "2026-01-11",
+            "index": 14
+          },
+          {
+            "week": "2026-01-18",
+            "index": 16
+          },
+          {
+            "week": "2026-01-25",
+            "index": 20
+          },
+          {
+            "week": "2026-02-01",
+            "index": 15
+          },
+          {
+            "week": "2026-02-08",
+            "index": 15
+          },
+          {
+            "week": "2026-02-15",
+            "index": 36
+          },
+          {
+            "week": "2026-02-22",
+            "index": 22
+          },
+          {
+            "week": "2026-03-01",
+            "index": 19
+          },
+          {
+            "week": "2026-03-08",
+            "index": 17
+          },
+          {
+            "week": "2026-03-15",
+            "index": 23
+          },
+          {
+            "week": "2026-03-22",
+            "index": 18
+          },
+          {
+            "week": "2026-03-29",
+            "index": 17
+          },
+          {
+            "week": "2026-04-05",
+            "index": 18
+          },
+          {
+            "week": "2026-04-12",
+            "index": 20
+          },
+          {
+            "week": "2026-04-19",
+            "index": 19
+          },
+          {
+            "week": "2026-04-26",
+            "index": 12
+          },
+          {
+            "week": "2026-05-03",
+            "index": 15
+          },
+          {
+            "week": "2026-05-10",
+            "index": 22
+          },
+          {
+            "week": "2026-05-17",
+            "index": 22
+          },
+          {
+            "week": "2026-05-24",
+            "index": 30
+          },
+          {
+            "week": "2026-05-31",
+            "index": 21
+          },
+          {
+            "week": "2026-06-07",
+            "index": 29
+          },
+          {
+            "week": "2026-06-14",
+            "index": 24
+          },
+          {
+            "week": "2026-06-21",
+            "index": 30
+          },
+          {
+            "week": "2026-06-28",
+            "index": 29
+          },
+          {
+            "week": "2026-07-05",
+            "index": 37
+          },
+          {
+            "week": "2026-07-12",
+            "index": 13
+          },
+          {
+            "week": "2026-07-19",
+            "index": 8
+          },
+          {
+            "week": "2026-07-26",
+            "index": 9
+          },
+          {
+            "week": "2026-08-02",
+            "index": 8
+          },
+          {
+            "week": "2026-08-09",
+            "index": 6
+          },
+          {
+            "week": "2026-08-16",
+            "index": 8
+          },
+          {
+            "week": "2026-08-23",
+            "index": 5
+          },
+          {
+            "week": "2026-08-30",
+            "index": 0
+          },
+          {
+            "week": "2026-09-06",
+            "index": 1
+          },
+          {
+            "week": "2026-09-13",
+            "index": 5
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Published market benchmarks and normalized Google search interest remain distinct from verified shopping episodes and instrumented purchases."
+}

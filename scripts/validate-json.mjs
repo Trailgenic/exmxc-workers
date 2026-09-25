@@ -3,6 +3,7 @@ import Ajv2020 from 'ajv/dist/2020.js';
 import { validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
 import { SPEG_INDEX_RELEASE, validateSpegIndexReleaseSemantics } from '../lib/speg-index-v1.js';
 import { validateAiCommerceEpisode } from '../lib/ai-commerce.js';
+import { parseAiCommerceTrendsCsv } from '../lib/ai-commerce-trends.js';
 
 async function jsonFiles(dir) {
   const files = [];
@@ -44,6 +45,12 @@ for (const release of aiCommerceArchive.releases) {
   if (!validateAiCommerceRelease(release)) throw new Error(`AI commerce release ${release.release_id} schema failed: ${JSON.stringify(validateAiCommerceRelease.errors)}`);
   if (release.coverage.verified_episode_count === 0 && release.experience_readings.some(reading => reading.status === 'measured')) throw new Error('Cannot publish measured experience without episodes.');
   for (const metric of release.benchmarks) if (!metric.denominator || !metric.source_url || !metric.interpretation) throw new Error('Benchmark lacks provenance.');
+  if (release.search_interest) {
+    const csv = await readFile(release.search_interest.raw_file, 'utf8');
+    const parsed = parseAiCommerceTrendsCsv(csv, { asOf: release.search_interest.exported_on, rawFile: release.search_interest.raw_file });
+    if (JSON.stringify(parsed) !== JSON.stringify(release.search_interest)) throw new Error('Search interest differs from its archived raw export.');
+    if (release.search_interest.exported_on > release.as_of) throw new Error('Search export is later than release.');
+  }
 }
 for (const file of await jsonFiles('data/ai_commerce_v1/episodes')) {
   const episodes = JSON.parse(await readFile(file, 'utf8'));

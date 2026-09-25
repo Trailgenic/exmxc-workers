@@ -46,8 +46,13 @@ ok(
     && commerce.json?.coverage?.transaction_event_count === 0
     && commerce.json?.benchmarks?.length === 4
     && commerce.json?.benchmarks?.every(row => row.denominator && row.source_url),
-  'AI commerce foundation separates sourced benchmarks from unobserved transactions'
+  'AI commerce separates sourced benchmarks from unobserved transactions'
 );
+ok(commerce.json?.search_interest?.source === 'Google Trends'
+  && commerce.json?.search_interest?.last_complete_week === '2026-09-13'
+  && JSON.stringify(commerce.json?.search_interest?.series?.map(row => row.points.at(-1).index)) === '[13,5]'
+  && commerce.json?.search_interest?.excluded_incomplete_weeks?.includes('2026-09-20'),
+  'AI commerce exposes reproducible completed-week Google Trends series');
 ok((await raw('/ai-commerce/methodology')).json?.publication_policy?.transaction_rule?.includes('explicit'), 'AI commerce methodology requires purchase evidence');
 ok((await raw('/schemas/ai-commerce-episode-v1')).json?.$id === 'https://mcp.exmxc.ai/schemas/ai-commerce-episode-v1', 'AI commerce episode schema is live');
 ok((await raw('/consumer-intent/pulse')).response.status === 410, 'legacy wallet endpoint is retired');

@@ -14,7 +14,7 @@
     "surveys": "Published consumer surveys, retaining question wording, sample, geography, date, and denominator when reported.",
     "referrals": "Published analytics of AI-sourced visits and conversion. A referral or conversion cohort is not an agent-executed checkout.",
     "selection": "Controlled, repeatable AI shopping tasks with captured responses. A model recommendation is not consumer choice or purchase.",
-    "search_interest": "Google Trends exports for explicit AI-shopping terms, if available. Normalized search share is not AI shopping usage or purchasing."
+    "search_interest": "Google Trends CSV exports for named AI-shopping search terms, United States, Web Search, All categories, past 12 months. Weekly 0–100 values are sampled and jointly normalized within the export; incomplete weeks are excluded. They are not AI shopping usage, consumer sentiment, purchase counts, or comparable across independently scaled exports."
   },
   "publication_policy": {
     "no_composite": true,

@@ -3,12 +3,21 @@ import Ajv2020 from 'ajv/dist/2020.js';
 import episodeSchema from '../schema/ai_commerce_episode_v1.schema.json' with { type: 'json' };
 import releaseSchema from '../schema/ai_commerce_release_v1.schema.json' with { type: 'json' };
 import { AI_COMMERCE_LATEST, buildAiCommerceRelease, getAiCommerceSignal, validateAiCommerceEpisode } from '../lib/ai-commerce.js';
+import { parseAiCommerceTrendsCsv } from '../lib/ai-commerce-trends.js';
+import { readFileSync } from 'node:fs';
 
 const ajv = new Ajv2020({ strict: false, validateFormats: false });
 assert.equal(ajv.compile(releaseSchema)(AI_COMMERCE_LATEST), true);
 assert.equal(AI_COMMERCE_LATEST.coverage.verified_episode_count, 0);
 assert.equal(AI_COMMERCE_LATEST.benchmarks.length, 4);
 assert.ok(AI_COMMERCE_LATEST.benchmarks.every(row => row.denominator && row.source_url && row.interpretation));
+assert.equal(AI_COMMERCE_LATEST.search_interest.last_complete_week, '2026-09-13');
+assert.deepEqual(AI_COMMERCE_LATEST.search_interest.excluded_incomplete_weeks, ['2026-09-20']);
+const csv = readFileSync('data/ai_commerce_v1/search_interest/google-trends-us-ai-shopping-2026-09-25.csv', 'utf8');
+assert.deepEqual(parseAiCommerceTrendsCsv(csv, { asOf: '2026-09-25', rawFile: AI_COMMERCE_LATEST.search_interest.raw_file }), AI_COMMERCE_LATEST.search_interest);
+assert.equal(AI_COMMERCE_LATEST.search_interest.series[0].points.at(-1).index, 13);
+assert.equal(AI_COMMERCE_LATEST.search_interest.series[1].points.at(-1).index, 5);
+assert.throws(() => parseAiCommerceTrendsCsv(csv.replace('2026-09-13,13,5', '2026-09-13,113,5'), { asOf: '2026-09-25', rawFile: 'test.csv' }), /0–100/);
 assert.equal(getAiCommerceSignal({ release: 'missing' }).found, false);
 
 const episode = {

@@ -5,19 +5,24 @@
     <h1>What changes when AI shops with us?</h1>
     <p class="aic-lede">AI Commerce Signal follows the purchase journey from research and recommendations to selection and delegated checkout. It asks what shoppers use AI for, what products are involved, and how they experience that help.</p>
     <div class="aic-note"><strong>Evidence boundary.</strong> A recommendation is not a purchase. A visit referred by AI is not an agent-executed checkout. Survey results, referral analytics, and verified shopper episodes retain their own denominators.</div>
-    <nav aria-label="AI commerce sections"><a href="#market">Market evidence</a><a href="#journey">Decision journey</a><a href="#episodes">Shopper experience</a><a href="#record">Release record</a><a href="/ai-commerce-methodology">Methodology</a></nav>
+    <nav aria-label="AI commerce sections"><a href="#market">Market evidence</a><a href="#search">Search interest</a><a href="#journey">Decision journey</a><a href="#episodes">Shopper experience</a><a href="#record">Release record</a><a href="/ai-commerce-methodology">Methodology</a></nav>
   </header>
   <section id="market" aria-labelledby="market-title">
     <div class="aic-label">Published research · original denominators</div><h2 id="market-title">Signals of adoption, with their limits</h2>
     <p>These are attributed findings from published research. They are not exmxc's own consumer survey or a count of agent purchases.</p>
     <div class="aic-grid" data-benchmarks aria-live="polite"><div class="aic-empty">Loading sourced benchmarks…</div></div>
   </section>
+  <section id="search" aria-labelledby="search-title">
+    <div class="aic-label">Google Trends · United States · Web Search</div><h2 id="search-title">What people search for</h2>
+    <p>Named AI-shopping queries provide context for discovery. The 0–100 values are normalized within this two-term export; they do not measure shoppers, sentiment, or purchases.</p>
+    <div class="aic-search" data-search-interest aria-live="polite"><div class="aic-empty">Loading search-interest series…</div></div>
+  </section>
   <section id="journey" aria-labelledby="journey-title">
     <div class="aic-label">Agent Decision Graph</div><h2 id="journey-title">Keep each step distinct</h2>
     <div class="aic-stages"><div class="aic-stage"><strong>Discover and compare</strong><span>The shopper asks an assistant to find or evaluate options.</span></div><div class="aic-stage"><strong>Recommend and select</strong><span>The assistant suggests; selection requires explicit evidence.</span></div><div class="aic-stage"><strong>Refer and prepare</strong><span>A merchant click or filled cart remains short of checkout.</span></div><div class="aic-stage"><strong>Authorize and transact</strong><span>Delegated purchase requires a completed action and proof of authority.</span></div></div>
   </section>
-  <section id="episodes" aria-labelledby="episodes-title"><div class="aic-label">First-person evidence</div><h2 id="episodes-title">What shoppers say about using AI</h2><div class="aic-empty" data-episodes><strong>Insufficient evidence for an exmxc sentiment reading.</strong><p>Verified, permissioned episodes will appear by shopping task, category, AI tool, autonomy, outcome, and experience. The foundation has no qualifying episodes.</p></div></section>
-  <section id="record" aria-labelledby="record-title"><div class="aic-label">Versioned public record</div><h2 id="record-title">Inspect the release</h2><p class="aic-meta" data-release>Foundation release · September 25, 2026</p><div class="aic-links"><a href="https://mcp.exmxc.ai/ai-commerce/signal" data-release-link>Machine-readable evidence</a><a href="https://mcp.exmxc.ai/ai-commerce/releases">Release ledger</a><a href="/ai-commerce-methodology">Methodology and source policy</a></div></section>
+  <section id="episodes" aria-labelledby="episodes-title"><div class="aic-label">First-person evidence</div><h2 id="episodes-title">What shoppers say about using AI</h2><div class="aic-empty" data-episodes><strong>Insufficient evidence for an exmxc sentiment reading.</strong><p>Verified, permissioned episodes will appear by shopping task, category, AI tool, autonomy, outcome, and experience. The current release has no qualifying episodes.</p></div></section>
+  <section id="record" aria-labelledby="record-title"><div class="aic-label">Versioned public record</div><h2 id="record-title">Inspect the release</h2><p class="aic-meta" data-release>Loading current release…</p><div class="aic-links"><a href="https://mcp.exmxc.ai/ai-commerce/signal" data-release-link>Machine-readable evidence</a><a href="https://mcp.exmxc.ai/ai-commerce/releases">Release ledger</a><a href="/ai-commerce-methodology">Methodology and source policy</a></div></section>
 </main>
 <script>
 (() => {
@@ -28,6 +33,28 @@
     const host=root.querySelector('[data-benchmarks]');host.replaceChildren();
     for(const row of data.benchmarks){const card=el('article','aic-card');card.append(el('div','aic-label',row.lane+' · '+row.period),el('strong','aic-value',row.value+'%'),el('h3','',row.label),el('p','',row.interpretation));const source=el('a','',row.source_organization+' · Source');source.href=row.source_url;source.target='_blank';source.rel='noopener noreferrer';card.append(source,el('small','',row.denominator));host.append(card)}
     if(!data.benchmarks.length)host.append(el('div','aic-empty','No sourced benchmark is available.'));
+    const search=root.querySelector('[data-search-interest]');search.replaceChildren();
+    if(data.search_interest){
+      const trends=data.search_interest;
+      const summary=el('div','aic-search-summary');
+      for(const [index,series] of trends.series.entries()){
+        const last=series.points.at(-1),card=el('div','aic-search-card');
+        card.append(el('span','aic-search-dot aic-search-dot-'+index),el('strong','',series.term),el('span','aic-search-value',String(last.index)));
+        summary.append(card);
+      }
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('viewBox','0 0 520 120');svg.setAttribute('role','img');
+      svg.setAttribute('aria-label','Weekly normalized search interest for ChatGPT shopping and AI shopping assistant, from '+trends.series[0].points[0].week+' to '+trends.last_complete_week);
+      for(const [index,series] of trends.series.entries()){
+        const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+        line.setAttribute('points',series.points.map((point,i)=>`${10+i*500/(series.points.length-1)},${110-point.index}`).join(' '));
+        line.setAttribute('fill','none');line.setAttribute('stroke',index?'#d5bd7c':'#cbb8fa');line.setAttribute('stroke-width','2.5');line.setAttribute('vector-effect','non-scaling-stroke');
+        svg.append(line);
+      }
+      const label=el('p','aic-meta',`Latest completed week: ${trends.last_complete_week} · ${trends.window} · ${trends.category}. Values may change with a new sample or comparison window.`);
+      const link=el('a','','Explore these terms in Google Trends');link.href=trends.source_url;link.target='_blank';link.rel='noopener noreferrer';
+      search.append(summary,svg,label,link);
+    }else search.append(el('div','aic-empty','No search-interest export is published for this release.'));
     root.querySelector('[data-release]').textContent=`${data.status} release · ${data.as_of} · ${data.coverage.verified_episode_count} verified shopping episodes · ${data.coverage.transaction_event_count} instrumented purchases`;
     root.querySelector('[data-release-link]').href=`${base}/signal?release=${encodeURIComponent(data.release_id)}`;
     if(data.coverage.verified_episode_count)root.querySelector('[data-episodes]').querySelector('p').textContent=`${data.coverage.verified_episode_count} verified episodes. Experience readings remain gated by source diversity and sample coverage.`;
