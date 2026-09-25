@@ -1,6 +1,6 @@
 # Agentic commerce signal: product direction
 
-Status: AI commerce v1 foundation, 2026-09-25. The broad Consumer Intent pilot and its dated packets were removed from the active tree. Git history retains the old work for audit; the public API returns HTTP 410 for legacy routes. The new foundation has no qualifying AI-mediated shopping episodes or agent purchases.
+Status: AI commerce v1 foundation, 2026-09-25. The broad Consumer Intent pilot and its dated packets were removed from the active tree. Git history retains the old work for audit; the public API returns HTTP 410 for legacy routes, while the two old Webflow page URLs hand off to AI Commerce. The new foundation has no qualifying AI-mediated shopping episodes or agent purchases.
 
 ## Research question
 

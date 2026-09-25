@@ -11,7 +11,7 @@ The code keeps the ES-module Worker entrypoint (`export default { fetch(request,
 
 The AI commerce foundation is served at `GET /ai-commerce/signal` and through `ex.ai_commerce.signal.get`. It distinguishes shopping research, recommendations, selection, referrals, and delegated checkout. Experience sentiment must refer to using AI for the shopping task. Publication gates prevent thin anecdotal samples from becoming a sentiment reading.
 
-The September 25 foundation contains zero verified shopper episodes and zero agent transaction events. Four sourced Adobe benchmarks are displayed separately as survey and referral context. The previous broad wallet packets and NKE/TJX instrument have been removed from the active tree; legacy routes return HTTP 410 with a successor URL. No paid daily collection is scheduled. See [method and operations](docs/agentic-commerce-signal-design.md).
+The September 25 foundation contains zero verified shopper episodes and zero agent transaction events. Four sourced Adobe benchmarks are displayed separately as survey and referral context. The previous broad wallet packets and NKE/TJX instrument have been removed from the active tree; legacy API routes return HTTP 410 with a successor URL, and the old Webflow page URLs hand off to the new pages. No paid daily collection is scheduled. See [method and operations](docs/agentic-commerce-signal-design.md).
 
 ## AI Power Index — monthly ranked edition
 
