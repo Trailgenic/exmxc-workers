@@ -1,4 +1,4 @@
 {
-  "requested_at": "2026-09-25T17:53:54.652Z",
-  "reason": "Verify Consumer Intent structured evidence gate on the next dated pilot collection; existing run skip prevents duplicate paid collection."
+  "requested_at": "2026-09-25T18:02:16.507Z",
+  "reason": "Rerun September 25 pilot on corrected stable-permalink gate and release tests after older scheduled job failed before commit."
 }
