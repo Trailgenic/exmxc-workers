@@ -57,7 +57,7 @@ describe('monthly AI Power rankings', () => {
 
 describe('Consumer Intent Graph production foundation', () => {
   it('serves a non-fabricated foundation release with explicit evidence boundaries', async () => {
-    const response = await req('/consumer-intent/pulse?ticker=NKE');
+    const response = await req('/consumer-intent/pulse?release=consumer-intent-2026-09-21-foundation&ticker=NKE');
     expect(response.status).toBe(200);
     const data = await response.json();
     expect(data.methodology_id).toBe('consumer-intent-v1.0.0');
@@ -66,6 +66,7 @@ describe('Consumer Intent Graph production foundation', () => {
     expect(data.entity_readings).toHaveLength(1);
     expect(data.entity_readings[0].ticker).toBe('NKE');
     expect(data.entity_readings[0].status).toBe('insufficient_evidence');
+    expect(response.headers.get('cache-control')).toContain('immutable');
   });
 
   it('resolves consumer brands to public-company parents and exposes versioned schemas', async () => {
