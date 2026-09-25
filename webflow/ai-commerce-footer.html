@@ -87,7 +87,7 @@
       const link=el('a','','Explore these terms in Google Trends');link.href=trends.source_url;link.target='_blank';link.rel='noopener noreferrer';
       search.append(summary,svg,label,link);
     }else search.append(el('div','aic-empty','No search-interest export is published for this release.'));
-    root.querySelector('[data-release]').textContent=`${data.status} release · ${data.as_of} · ${data.coverage.selection_run_count} completed app selection attempts · ${data.coverage.verified_episode_count} verified shopper episodes · ${data.coverage.transaction_event_count} instrumented purchases`;
+    root.querySelector('[data-release]').textContent=`${data.status} release · ${data.as_of} · ${data.coverage.selection_run_count} completed two-turn app answers · ${data.coverage.verified_episode_count} verified shopper episodes · ${data.coverage.transaction_event_count} instrumented purchases`;
     root.querySelector('[data-release-link]').href=`${base}/signal?release=${encodeURIComponent(data.release_id)}`;
     if(data.coverage.verified_episode_count)root.querySelector('[data-episodes]').querySelector('p').textContent=`${data.coverage.verified_episode_count} verified episodes. Experience readings remain gated by source diversity and sample coverage.`;
   }).catch(()=>{root.querySelector('[data-benchmarks]').replaceChildren(el('div','aic-empty','The evidence feed is temporarily unavailable.'));});
