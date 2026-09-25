@@ -4,7 +4,8 @@ import {
   collectConsumerIntent,
   consumerSearchSources,
   parseConsumerModelJson,
-  validateConsumerCandidate
+  validateConsumerCandidate,
+  validateConsumerVerification
 } from "../lib/consumer-intent-collector.js";
 
 const sourceUrl = "https://community.example/posts/nike-sale?utm_source=test";
@@ -71,6 +72,21 @@ const promotional = validateConsumerCandidate({ ...candidate, source_url: "https
 assert.equal(promotional.accepted, false);
 assert.ok(promotional.reasons.includes("source_host_excluded"));
 
+const verified = {
+  candidate_id: "athletic-footwear-wallet-1",
+  verified: true,
+  reason: "The cited page contains this consumer's purchase statement.",
+  source_url: sourceUrl,
+  evidence_quote: "I waited for the sale and bought Nike shoes yesterday",
+  published_date: "2026-09-20"
+};
+assert.equal(validateConsumerVerification(verified, candidate, "2026-09-21").accepted, true);
+assert.equal(validateConsumerVerification({ ...verified, source_url: "https://other.example/post" }, candidate, "2026-09-21").reason, "verification_source_mismatch");
+assert.equal(validateConsumerVerification({ ...verified, evidence_quote: "I bought an entirely different product" }, candidate, "2026-09-21").reason, "verification_quote_mismatch");
+assert.equal(validateConsumerVerification({ ...verified, published_date: "2026-09-01" }, candidate, "2026-09-21").reason, "verification_date_outside_window");
+assert.equal(validateConsumerVerification({ ...verified, published_date: "2026-09-19" }, candidate, "2026-09-21").reason, "verification_date_mismatch");
+assert.equal(validateConsumerVerification({ ...verified, verified: false }, candidate, "2026-09-21").accepted, false);
+
 function modelResponse(text, urls = []) {
   return {
     output: [
@@ -90,8 +106,8 @@ const fakeFetch = async (_url, init) => {
   let body;
   if (prompt.startsWith("Independently verify")) {
     body = modelResponse(JSON.stringify({
-      verifications: [{ candidate_id: "athletic-footwear-wallet-1", verified: true, reason: "Passage verified." }]
-    }), [canonicalUrl]);
+      verifications: [verified]
+    })); // The verifier can omit a URL from search metadata while checking the cited page.
   } else if (prompt.includes("Nike, HOKA, On, or lululemon")) {
     body = modelResponse(JSON.stringify({ observations: [candidate] }), [canonicalUrl]);
   } else {
@@ -119,7 +135,7 @@ assert.deepEqual(responseFormats[0].schema.properties.observations.items.propert
   minimum: 0,
   maximum: 1
 });
-assert.deepEqual(responseFormats[1].schema.properties.verifications.items.required, ["candidate_id", "verified", "reason"]);
+assert.deepEqual(responseFormats[1].schema.properties.verifications.items.required, ["candidate_id", "verified", "reason", "source_url", "evidence_quote", "published_date"]);
 assert.equal(collected.accepted.length, 1);
 assert.equal(collected.accepted[0].source_url, canonicalUrl);
 assert.equal(collected.runs[0].accepted, 1);
