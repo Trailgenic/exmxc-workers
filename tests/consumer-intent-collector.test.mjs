@@ -149,5 +149,30 @@ assert.equal(collected.accepted.length, 1);
 assert.equal(collected.accepted[0].source_url, canonicalUrl);
 assert.equal(collected.runs[0].accepted, 1);
 assert.equal(collected.rejected_summary.count, 0);
+assert.deepEqual(collected.rejected_summary.source_diagnostics, []);
+
+const mismatchedUrl = "https://community.example/posts/nike-sale-missing";
+const unmatched = await collectConsumerIntent({
+  collectionDate: "2026-09-21",
+  model: "fixture-model",
+  apiKey: "fixture-key",
+  fetchImpl: async (_url, init) => {
+    const prompt = JSON.parse(init.body).input[0].content[0].text;
+    return {
+      ok: true,
+      status: 200,
+      json: async () => prompt.includes("Nike, HOKA, On, or lululemon")
+        ? modelResponse(JSON.stringify({ observations: [{ ...candidate, source_url: mismatchedUrl }] }), [canonicalUrl])
+        : modelResponse(JSON.stringify({ observations: [] }))
+    };
+  }
+});
+assert.equal(unmatched.accepted.length, 0);
+assert.deepEqual(unmatched.rejected_summary.source_diagnostics, [{
+  target_id: "athletic-footwear-wallet",
+  candidate_id: "athletic-footwear-wallet-1",
+  proposed_url: mismatchedUrl,
+  consulted_same_host_urls: [canonicalUrl]
+}]);
 
 console.log("consumer intent collector tests passed");
