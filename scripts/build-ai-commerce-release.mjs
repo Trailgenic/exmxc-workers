@@ -2,12 +2,13 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import Ajv2020 from 'ajv/dist/2020.js';
 import { buildAiCommerceRelease } from '../lib/ai-commerce.js';
+import { parseAiCommerceTrendsCsv } from '../lib/ai-commerce-trends.js';
 import episodeSchema from '../schema/ai_commerce_episode_v1.schema.json' with { type: 'json' };
 import releaseSchema from '../schema/ai_commerce_release_v1.schema.json' with { type: 'json' };
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((pairs, arg, index, all) => arg.startsWith('--') ? [...pairs, [arg.slice(2), all[index + 1]]] : pairs, []));
-if (!args.input || !args['as-of'] || !args['release-id']) throw new Error('Usage: node scripts/build-ai-commerce-release.mjs --input episodes.json --as-of YYYY-MM-DD --release-id ai-commerce-YYYY-MM-DD-pilot [--promote true]');
-const episodes = JSON.parse(await readFile(resolve(args.input), 'utf8'));
+if ((!args.input && !args['search-csv']) || !args['as-of'] || !args['release-id']) throw new Error('Usage: node scripts/build-ai-commerce-release.mjs [--input episodes.json] [--search-csv export.csv] --as-of YYYY-MM-DD --release-id ai-commerce-YYYY-MM-DD-pilot [--promote true]');
+const episodes = args.input ? JSON.parse(await readFile(resolve(args.input), 'utf8')) : [];
 if (!Array.isArray(episodes)) throw new Error('Input must be an array of AI commerce episodes.');
 const ajv = new Ajv2020({ allErrors: true, strict: false, validateFormats: false });
 const validateEpisode = ajv.compile(episodeSchema);
@@ -15,10 +16,12 @@ for (const episode of episodes) if (!validateEpisode(episode)) throw new Error(`
 const archivePath = resolve('data/ai_commerce_v1/release-archive.json');
 const archive = JSON.parse(await readFile(archivePath, 'utf8'));
 const latest = archive.releases.find(row => row.release_id === archive.latest);
+const searchInterest = args['search-csv'] ? parseAiCommerceTrendsCsv(await readFile(resolve(args['search-csv']), 'utf8'), { asOf: args['as-of'], rawFile: args['search-csv'] }) : latest?.search_interest;
 const release = buildAiCommerceRelease(episodes, {
   releaseId: args['release-id'], asOf: args['as-of'],
   benchmarks: latest?.benchmarks || [],
-  notes: 'Verified AI shopping episodes. Published benchmarks retain their original source and denominator.'
+  searchInterest,
+  notes: 'Published market benchmarks and normalized Google search interest remain distinct from verified shopping episodes and instrumented purchases.'
 });
 const validateRelease = ajv.compile(releaseSchema);
 if (!validateRelease(release)) throw new Error(`Release schema failed: ${JSON.stringify(validateRelease.errors)}`);

@@ -16,6 +16,20 @@
     "episode_count_by_stage":{"type":"object","additionalProperties":{"type":"integer","minimum":0}},
     "episode_count_by_category":{"type":"object","additionalProperties":{"type":"integer","minimum":0}},
     "benchmarks":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["id","lane","label","value","unit","period","geography","denominator","source_url","source_organization","interpretation"],"properties":{"id":{"type":"string"},"lane":{"enum":["survey","referral","search_interest"]},"label":{"type":"string"},"value":{"type":"number"},"unit":{"type":"string"},"period":{"type":"string"},"geography":{"type":"string"},"denominator":{"type":"string"},"source_url":{"type":"string","format":"uri"},"source_organization":{"type":"string"},"interpretation":{"type":"string"}}}},
+    "search_interest":{
+      "type":"object","additionalProperties":false,
+      "required":["source","source_url","exported_on","raw_file","raw_sha256","geography","search_type","category","window","interval","scale","last_complete_week","excluded_incomplete_weeks","series"],
+      "properties":{
+        "source":{"const":"Google Trends"},"source_url":{"type":"string","format":"uri"},
+        "exported_on":{"type":"string","format":"date"},"raw_file":{"type":"string","minLength":1},
+        "raw_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "geography":{"const":"US"},"search_type":{"const":"Web Search"},"category":{"const":"All categories"},
+        "window":{"type":"string"},"interval":{"const":"week"},"scale":{"type":"string","minLength":40},
+        "last_complete_week":{"type":"string","format":"date"},
+        "excluded_incomplete_weeks":{"type":"array","items":{"type":"string","format":"date"}},
+        "series":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"object","additionalProperties":false,"required":["term","points"],"properties":{"term":{"enum":["ChatGPT shopping","AI shopping assistant"]},"points":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["week","index"],"properties":{"week":{"type":"string","format":"date"},"index":{"type":"integer","minimum":0,"maximum":100}}}}}}}
+      }
+    },
     "notes":{"type":"string"}
   }
 }
