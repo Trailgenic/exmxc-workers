@@ -72,6 +72,7 @@ All local datasets are bundled with JSON imports; there are no runtime fetches t
   - Shared implementation in `lib/ai-commerce.js` via `ex.ai_commerce.signal.get`
 - `/ai-commerce/methodology`
 - `/ai-commerce/releases`
+- `/ai-commerce/selection` (reviewed app attempt labels, retries, contradictions, private-archive digests; API method check separately)
 - `/schemas/ai-commerce-episode-v1`
 - `/schemas/ai-commerce-release-v1`
 - `/consumer-intent/*` returns 410 with the successor URL

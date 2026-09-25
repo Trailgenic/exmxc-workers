@@ -23,7 +23,7 @@ node scripts/build-registry-packet.mjs
 
 ## Tools
 
-- ex.ai_commerce.signal.get — Get AI Commerce Signal: Versioned evidence for AI-assisted shopping, consumer experience, and distinct published survey and referral benchmarks. No inferred agent purchases or composite score.
+- ex.ai_commerce.signal.get — Get AI Commerce Signal: Versioned AI commerce evidence: signed-in app selection method checks, separate provider-API tests, shopper experience gates, and attributed survey, referral, and search context. No inferred agent purchases or market-share score.
 - ex.ai_power.rankings.get — Get AI Power rankings: Current exmxc editorial rankings and forecasts for 50 companies in 2026, 2027, and 2030 using the fixed Four Forces methodology. Immutable monthly editions preserve prior judgments.
 - ex.entities.get — Get Entity Intelligence Records: Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring.
 - ex.speg.get — Get sPEG Valuation Records: Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies.

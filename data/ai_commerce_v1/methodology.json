@@ -13,7 +13,7 @@
     "episodes": "Verified first-person reports or consented instrumented events. Self-selected reports do not estimate population prevalence.",
     "surveys": "Published consumer surveys, retaining question wording, sample, geography, date, and denominator when reported.",
     "referrals": "Published analytics of AI-sourced visits and conversion. A referral or conversion cohort is not an agent-executed checkout.",
-    "selection": "Controlled, repeatable AI shopping tasks with captured responses. A model recommendation is not consumer choice or purchase.",
+    "selection": "Versioned buyer intents and an exact two-turn protocol on explicitly identified consumer-app surfaces. Preserve the first completed answer, all original failures and retries, contradictory final answers, model or mode labels, and independent product checks. API experiments remain a distinct surface. This September pilot is a nonrepresentative method check; no Agent Selection Share is published.",
     "search_interest": "Google Trends CSV exports for named AI-shopping search terms, United States, Web Search, All categories, past 12 months. Weekly 0–100 values are sampled and jointly normalized within the export; incomplete weeks are excluded. They are not AI shopping usage, consumer sentiment, purchase counts, or comparable across independently scaled exports."
   },
   "publication_policy": {

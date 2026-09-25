@@ -53,6 +53,16 @@ ok(commerce.json?.search_interest?.source === 'Google Trends'
   && JSON.stringify(commerce.json?.search_interest?.series?.map(row => row.points.at(-1).index)) === '[13,5]'
   && commerce.json?.search_interest?.excluded_incomplete_weeks?.includes('2026-09-20'),
   'AI commerce exposes reproducible completed-week Google Trends series');
+const selection = await raw('/ai-commerce/selection');
+ok(selection.response.status === 200
+  && selection.json?.selection_panel?.summary?.physical_attempts === 11
+  && selection.json?.selection_panel?.summary?.completed_two_turn_attempts === 7
+  && selection.json?.selection_panel?.summary?.clean_single_attempts === 6
+  && selection.json?.selection_panel?.summary?.contradictory_attempts === 1
+  && selection.json?.selection_panel?.summary?.technical_failure_attempts === 4
+  && selection.json?.selection_panel?.summary?.selection_share === null
+  && selection.json?.api_method_check?.surface === 'provider_api',
+  'AI commerce selection method pilot preserves app failures and API separation');
 ok((await raw('/ai-commerce/methodology')).json?.publication_policy?.transaction_rule?.includes('explicit'), 'AI commerce methodology requires purchase evidence');
 ok((await raw('/schemas/ai-commerce-episode-v1')).json?.$id === 'https://mcp.exmxc.ai/schemas/ai-commerce-episode-v1', 'AI commerce episode schema is live');
 ok((await raw('/consumer-intent/pulse')).response.status === 410, 'legacy wallet endpoint is retired');

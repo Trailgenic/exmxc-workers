@@ -1,0 +1,218 @@
+{
+  "panel_id": "aci-signed-in-app-four-intent-2026-09-23",
+  "status": "method_validation",
+  "geography": "US",
+  "representative": false,
+  "protocol_version": "ass-v0.1-two-turn",
+  "protocol_sha": "22d326d7394cc0a199acddc463ad93eb56363133",
+  "intent_panel_version": "everyday-forum-v1-2026-09-23",
+  "intent_panel_sha": "92bbe72f9376abd20ebe15dd78677a2f15cc4b75",
+  "observed_on": "2026-09-23",
+  "adjudicated_on": "2026-09-24",
+  "source_archive_name": "aci-signed-in-app-raw-records-2026-09-23.zip",
+  "source_archive_sha256": "1e898f5d3e678304dc114fb76ad4618abe678668f4e14668b3c9f962f34ee93f",
+  "source_access": "private_operator_supplied_captures",
+  "intents": [
+    {
+      "intent_id": "e-family-sofa",
+      "category": "home_goods",
+      "label": "Family sofa under 90 inches"
+    },
+    {
+      "intent_id": "e-twins-stroller",
+      "category": "baby_gear",
+      "label": "Travel stroller for two children"
+    },
+    {
+      "intent_id": "e-dry-foundation",
+      "category": "beauty",
+      "label": "Medium-coverage foundation for dry skin"
+    },
+    {
+      "intent_id": "e-work-laptop",
+      "category": "everyday_electronics",
+      "label": "15-inch-plus work laptop"
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": "run-01-chatgpt-e-family-sofa",
+      "intent_id": "e-family-sofa",
+      "surface": "ChatGPT",
+      "displayed_mode": "Chat; Think off; model ID not displayed",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "single",
+      "turns_completed": 2,
+      "selection": {
+        "brand": "Room & Board",
+        "product": "André 89-inch sofa with reversible chaise",
+        "granularity": "variant"
+      },
+      "evidence_limit": "Deep-seat requirement is weakened by the listed regular seat depth; exact offer unresolved.",
+      "raw_capture_sha256": "7bacc10d483049017b0bc72afb747c594d8784434f8c2c23d0313a589ae3b5a4"
+    },
+    {
+      "attempt_id": "run-02-gemini-e-family-sofa",
+      "intent_id": "e-family-sofa",
+      "surface": "Gemini",
+      "displayed_mode": "Flash Extended (3.6 Flash with Extended thinking)",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "technical_failure",
+      "turns_completed": 0,
+      "selection": null,
+      "evidence_limit": "First turn stopped; second turn not sent.",
+      "raw_capture_sha256": "79ea4919b305be9a223014b92cb38cfc3d260c68d00a6c9d239f5b0a6fb99a7a"
+    },
+    {
+      "attempt_id": "run-03-chatgpt-e-twins-stroller",
+      "intent_id": "e-twins-stroller",
+      "surface": "ChatGPT",
+      "displayed_mode": "Chat; Think off; model ID not displayed",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "single",
+      "turns_completed": 2,
+      "selection": {
+        "brand": "Zoe",
+        "product": "Twin V3",
+        "granularity": "model"
+      },
+      "evidence_limit": "Precise infant car-seat adapter pairing and total offer unresolved.",
+      "raw_capture_sha256": "b22f4609f38fb2710af6c38af37789dd61cef42d26897eca330b53643df9b544"
+    },
+    {
+      "attempt_id": "run-04-gemini-e-twins-stroller",
+      "intent_id": "e-twins-stroller",
+      "surface": "Gemini",
+      "displayed_mode": "Flash Extended (3.6 Flash with Extended thinking)",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "technical_failure",
+      "turns_completed": 0,
+      "selection": null,
+      "evidence_limit": "First turn error; second turn not sent.",
+      "raw_capture_sha256": "c6aa87fc44a3c7cd3080880c4102721272b3489d63841a579a8c60ece49cb1ed"
+    },
+    {
+      "attempt_id": "run-05-chatgpt-e-dry-foundation",
+      "intent_id": "e-dry-foundation",
+      "surface": "ChatGPT",
+      "displayed_mode": "Chat; Think off; model ID not displayed",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "single",
+      "turns_completed": 2,
+      "selection": {
+        "brand": "Maybelline",
+        "product": "Fit Me Dewy + Smooth",
+        "granularity": "model"
+      },
+      "evidence_limit": "No exact neutral-to-cool shade or merchant offer selected.",
+      "raw_capture_sha256": "bb236c52e09d43125410c1f8e3234d99b9e97dc797eb6defab5684e5fe6860f1"
+    },
+    {
+      "attempt_id": "run-06-gemini-e-dry-foundation",
+      "intent_id": "e-dry-foundation",
+      "surface": "Gemini",
+      "displayed_mode": "3.6 Flash",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "contradictory",
+      "turns_completed": 2,
+      "selection": null,
+      "evidence_limit": "Named L’Oréal True Match Nude Hyaluronic Tinted Serum, then stated it could not choose. Candidate is not a primary selection; its light coverage weakens the requested medium-coverage fit.",
+      "raw_capture_sha256": "c3c821c7aa03739acffd00c11a30cd88be0c102cb3c61d8f17250b63952aff31"
+    },
+    {
+      "attempt_id": "run-07-chatgpt-e-work-laptop",
+      "intent_id": "e-work-laptop",
+      "surface": "ChatGPT",
+      "displayed_mode": "Chat; Think off; model ID not displayed",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "single",
+      "turns_completed": 2,
+      "selection": {
+        "brand": "Lenovo",
+        "product": "ThinkPad E16 Gen 3 Intel, conditional 400-nit/64Wh configuration",
+        "granularity": "conditional_configuration"
+      },
+      "evidence_limit": "No verified exact SKU, merchant offer, or relevant six-hour battery result.",
+      "raw_capture_sha256": "d6a3fb0b63f51d312f02a24e387ef416a388279851c17197094508f06951e4d7"
+    },
+    {
+      "attempt_id": "run-08-gemini-e-work-laptop",
+      "intent_id": "e-work-laptop",
+      "surface": "Gemini",
+      "displayed_mode": "3.6 Flash",
+      "observed_on": "2026-09-23",
+      "attempt_number": 1,
+      "outcome": "single",
+      "turns_completed": 2,
+      "selection": {
+        "brand": "Lenovo",
+        "product": "ThinkPad E16 Gen 2/3 AMD family",
+        "granularity": "model_family"
+      },
+      "evidence_limit": "No pinned generation or offer. AMD Gen 3 specification does not show the suggested 400-nit panel.",
+      "raw_capture_sha256": "46b110a8b9bbc8d0aa6e4e931c4ef0b57317a35ca48011eac7f72d5941a80af6"
+    },
+    {
+      "attempt_id": "retry-01-gemini-e-family-sofa",
+      "intent_id": "e-family-sofa",
+      "surface": "Gemini",
+      "displayed_mode": "3.6 Flash",
+      "observed_on": "2026-09-23",
+      "attempt_number": 2,
+      "outcome": "technical_failure",
+      "turns_completed": 0,
+      "selection": null,
+      "evidence_limit": "No visible first answer; second turn not sent.",
+      "raw_capture_sha256": "01e0ae5b289bbd9e10845aaf1078a983a81d737bcd87e3b0f694c02cbdf54e16"
+    },
+    {
+      "attempt_id": "retry-02-gemini-e-family-sofa",
+      "intent_id": "e-family-sofa",
+      "surface": "Gemini",
+      "displayed_mode": "3.6 Flash",
+      "observed_on": "2026-09-23",
+      "attempt_number": 3,
+      "outcome": "technical_failure",
+      "turns_completed": 0,
+      "selection": null,
+      "evidence_limit": "First turn error and empty regeneration; second turn not sent.",
+      "raw_capture_sha256": "151c5ad4c85e738698973e6fa8acabb68f56bc3995ef0fffb3ca9bea41b5b8af"
+    },
+    {
+      "attempt_id": "retry-03-gemini-e-twins-stroller",
+      "intent_id": "e-twins-stroller",
+      "surface": "Gemini",
+      "displayed_mode": "3.6 Flash",
+      "observed_on": "2026-09-23",
+      "attempt_number": 2,
+      "outcome": "single",
+      "turns_completed": 2,
+      "selection": {
+        "brand": "Zoe",
+        "product": "Twin V3",
+        "granularity": "model"
+      },
+      "evidence_limit": "Answer gave 19–21 lb; manufacturer specifies 25 lb. Adapter pairing and offer unresolved.",
+      "raw_capture_sha256": "2157129299e19ea27e30dad2658f5f15ca6084ff9a83eb8bc7d6946dd1b45987"
+    }
+  ],
+  "supplemental_observations": [
+    {
+      "intent_id": "e-family-sofa",
+      "surface": "Gemini",
+      "provenance": "operator_pasted_without_browser_capture",
+      "outcome": "single",
+      "product": "Lovesac Sactional",
+      "included_in_counts": false,
+      "limitation": "Conversation URL, date, and original raw capture unavailable; cannot replace the archived failed attempts."
+    }
+  ],
+  "notes": "Eight original app-intent cells, three saved retries. A clean final selection is observed model output; exact offer and product fit require independent checks. No purchases occurred in these captures. Raw personal app transcripts and URLs remain private."
+}
