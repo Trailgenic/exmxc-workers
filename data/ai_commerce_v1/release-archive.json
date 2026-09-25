@@ -1,0 +1,76 @@
+{
+  "series_id": "ai-commerce-signal-v1",
+  "latest": "ai-commerce-2026-09-25-foundation",
+  "releases": [
+    {
+      "release_id": "ai-commerce-2026-09-25-foundation",
+      "series_id": "ai-commerce-signal-v1",
+      "as_of": "2026-09-25",
+      "methodology_id": "ai-commerce-v1.0.0",
+      "status": "foundation",
+      "coverage": {
+        "verified_episode_count": 0,
+        "selection_run_count": 0,
+        "transaction_event_count": 0
+      },
+      "experience_readings": [],
+      "episode_count_by_stage": {},
+      "episode_count_by_category": {},
+      "benchmarks": [
+        {
+          "id": "adobe-2026-ai-shopping-use",
+          "lane": "survey",
+          "label": "Have used AI assistants for online shopping",
+          "value": 39,
+          "unit": "percent_of_surveyed_consumers",
+          "period": "2026-03",
+          "geography": "US",
+          "denominator": "All respondents to Adobe's March 2026 consumer survey; companion survey of more than 5,000 US respondents",
+          "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+          "source_organization": "Adobe Digital Insights",
+          "interpretation": "Survey-reported use for online shopping; includes assistance short of agent-executed checkout."
+        },
+        {
+          "id": "adobe-2026-ai-shopping-experience",
+          "lane": "survey",
+          "label": "Say AI improved online shopping experience",
+          "value": 85,
+          "unit": "percent_of_ai_shopping_users_in_survey",
+          "period": "2026-03",
+          "geography": "US",
+          "denominator": "Respondents who reported using AI for online shopping in Adobe's March 2026 consumer survey",
+          "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+          "source_organization": "Adobe Digital Insights",
+          "interpretation": "Self-reported experience among users, not an exmxc sentiment score or an agent purchase rate."
+        },
+        {
+          "id": "adobe-2026-ai-assisted-tech-purchase",
+          "lane": "survey",
+          "label": "Report a tech/software purchase with AI help",
+          "value": 21,
+          "unit": "percent_of_surveyed_consumers",
+          "period": "2026-03",
+          "geography": "US",
+          "denominator": "Consumers in Adobe's March 2026 consumer survey; exact category question wording is not published in the summary",
+          "source_url": "https://business.adobe.com/resources/sdk/.2026-q2-ai-traffic-report/q2-2026-adi-ai-sourced-traffic-insights.pdf",
+          "source_organization": "Adobe Digital Insights, page 38",
+          "interpretation": "Self-reported purchase with AI help in tech/software. The source does not establish agent-executed checkout."
+        },
+        {
+          "id": "adobe-2026-ai-retail-referral-growth",
+          "lane": "referral",
+          "label": "Growth in AI-sourced visits to US retail sites",
+          "value": 393,
+          "unit": "percent_year_over_year",
+          "period": "2026-Q1",
+          "geography": "US",
+          "denominator": "AI-sourced retail visits in Q1 2025; Adobe Analytics retail-site coverage",
+          "source_url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+          "source_organization": "Adobe Digital Insights",
+          "interpretation": "Growth in visits, not share of purchases or completed agent checkouts."
+        }
+      ],
+      "notes": "First-party episode and controlled selection lanes have no qualifying evidence in this foundation release. The published Adobe aggregates remain separate from exmxc observations."
+    }
+  ]
+}

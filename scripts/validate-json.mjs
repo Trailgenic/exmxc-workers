@@ -2,6 +2,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import Ajv2020 from 'ajv/dist/2020.js';
 import { validateAiPowerReleaseSemantics } from '../lib/ai-power-v2.js';
 import { SPEG_INDEX_RELEASE, validateSpegIndexReleaseSemantics } from '../lib/speg-index-v1.js';
+import { validateAiCommerceEpisode } from '../lib/ai-commerce.js';
 
 async function jsonFiles(dir) {
   const files = [];
@@ -21,11 +22,11 @@ const methodologySchema = JSON.parse(await readFile('schema/ai_power_methodology
 const profileSchema = JSON.parse(await readFile('schema/ai_power_profile_v2.schema.json', 'utf8'));
 const sourceManifestSchema = JSON.parse(await readFile('schema/ai_power_source_manifest_v2.schema.json', 'utf8'));
 const spegIndexSchema = JSON.parse(await readFile('schema/speg_index_profile_v1.schema.json', 'utf8'));
-const consumerIntentObservationSchema = JSON.parse(await readFile('schema/consumer_intent_observation_v1.schema.json', 'utf8'));
-const consumerIntentReleaseSchema = JSON.parse(await readFile('schema/consumer_intent_release_v1.schema.json', 'utf8'));
-const consumerIntentArchive = JSON.parse(await readFile('data/consumer_intent_v1/release-archive.json', 'utf8'));
+const aiCommerceEpisodeSchema = JSON.parse(await readFile('schema/ai_commerce_episode_v1.schema.json', 'utf8'));
+const aiCommerceReleaseSchema = JSON.parse(await readFile('schema/ai_commerce_release_v1.schema.json', 'utf8'));
+const aiCommerceArchive = JSON.parse(await readFile('data/ai_commerce_v1/release-archive.json', 'utf8'));
 ajv.compile(sourceManifestSchema);
-const validateConsumerIntentObservation = ajv.compile(consumerIntentObservationSchema);
+const validateAiCommerceEpisodeSchema = ajv.compile(aiCommerceEpisodeSchema);
 const validateMethodology = ajv.compile(methodologySchema);
 if (!validateMethodology(methodology)) throw new Error(`AI Power methodology schema failed: ${JSON.stringify(validateMethodology.errors)}`);
 const validateRelease = ajv.compile(profileSchema);
@@ -36,21 +37,21 @@ const validateSpegIndex = ajv.compile(spegIndexSchema);
 if (!validateSpegIndex(SPEG_INDEX_RELEASE)) throw new Error(`sPEG Index schema failed: ${JSON.stringify(validateSpegIndex.errors)}`);
 const spegIndexSemantic = validateSpegIndexReleaseSemantics(SPEG_INDEX_RELEASE);
 if (!spegIndexSemantic.ok) throw new Error(`sPEG Index semantic validation failed: ${spegIndexSemantic.errors.join(' | ')}`);
-const validateConsumerIntentRelease = ajv.compile(consumerIntentReleaseSchema);
-if (!Array.isArray(consumerIntentArchive.releases) || !consumerIntentArchive.releases.length) throw new Error('Consumer Intent release archive is empty.');
-if (!consumerIntentArchive.releases.some((candidate) => candidate.release_id === consumerIntentArchive.latest)) throw new Error('Consumer Intent archive latest pointer is invalid.');
-for (const consumerIntentRelease of consumerIntentArchive.releases) {
-  if (!validateConsumerIntentRelease(consumerIntentRelease)) throw new Error(`Consumer Intent release ${consumerIntentRelease.release_id} schema failed: ${JSON.stringify(validateConsumerIntentRelease.errors)}`);
-  if (consumerIntentRelease.composite !== null) throw new Error('Consumer Intent v1 must not publish a composite.');
-  if (consumerIntentRelease.coverage.observation_count === 0 && consumerIntentRelease.factor_readings.some(reading => reading.status !== 'insufficient_evidence')) {
-    throw new Error(`Consumer Intent release ${consumerIntentRelease.release_id} cannot publish measured factors without observations.`);
-  }
+const validateAiCommerceRelease = ajv.compile(aiCommerceReleaseSchema);
+if (!Array.isArray(aiCommerceArchive.releases) || !aiCommerceArchive.releases.length) throw new Error('AI commerce release archive is empty.');
+if (!aiCommerceArchive.releases.some(candidate => candidate.release_id === aiCommerceArchive.latest)) throw new Error('AI commerce latest release is missing.');
+for (const release of aiCommerceArchive.releases) {
+  if (!validateAiCommerceRelease(release)) throw new Error(`AI commerce release ${release.release_id} schema failed: ${JSON.stringify(validateAiCommerceRelease.errors)}`);
+  if (release.coverage.verified_episode_count === 0 && release.experience_readings.some(reading => reading.status === 'measured')) throw new Error('Cannot publish measured experience without episodes.');
+  for (const metric of release.benchmarks) if (!metric.denominator || !metric.source_url || !metric.interpretation) throw new Error('Benchmark lacks provenance.');
 }
-for (const file of await jsonFiles('data/consumer_intent_v1/observations')) {
-  const run = JSON.parse(await readFile(file, 'utf8'));
-  if (!Array.isArray(run.accepted)) throw new Error(`Consumer Intent run ${file} has no accepted observation array.`);
-  for (const observation of run.accepted) {
-    if (!validateConsumerIntentObservation(observation)) throw new Error(`Consumer Intent observation ${observation.observation_id || 'unknown'} in ${file} failed schema validation: ${JSON.stringify(validateConsumerIntentObservation.errors)}`);
+for (const file of await jsonFiles('data/ai_commerce_v1/episodes')) {
+  const episodes = JSON.parse(await readFile(file, 'utf8'));
+  if (!Array.isArray(episodes)) throw new Error(`AI commerce episodes in ${file} must be an array.`);
+  for (const episode of episodes) {
+    if (!validateAiCommerceEpisodeSchema(episode)) throw new Error(`Episode ${episode.episode_id || 'unknown'} schema failed: ${JSON.stringify(validateAiCommerceEpisodeSchema.errors)}`);
+    const result = validateAiCommerceEpisode(episode);
+    if (!result.ok) throw new Error(`Episode ${episode.episode_id} semantic validation failed: ${result.errors.join(' ')}`);
   }
 }
 
@@ -64,4 +65,4 @@ function assertNoCompositeFields(value, path = 'release') {
   }
 }
 assertNoCompositeFields(release);
-console.log('json, AI Power v2, sPEG Index v1, and Consumer Intent v1 contracts valid');
+console.log('json, AI Power v2, sPEG Index v1, and AI Commerce v1 contracts valid');

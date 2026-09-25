@@ -7,11 +7,11 @@ Cloudflare Worker implementation for the `mcp.exmxc.ai` executable intelligence 
 
 The code keeps the ES-module Worker entrypoint (`export default { fetch(request, env) }`) and stores no secrets in source.
 
-## Consumer Intent Graph + Consumer Intent Pulse
+## Agent Commerce Intelligence + AI Commerce Signal
 
-The production foundation for exmxc Consumer Intelligence is served at `GET /consumer-intent/pulse` and exposed to agents through `ex.consumer_intent.pulse.get`. It defines a structured observation ontology for naturally occurring public signals, resolves consumer brands and retailers to public-company parents, preserves immutable releases, and publishes factor-level evidence states without an arbitrary composite.
+The AI commerce foundation is served at `GET /ai-commerce/signal` and through `ex.ai_commerce.signal.get`. It distinguishes shopping research, recommendations, selection, referrals, and delegated checkout. Experience sentiment must refer to using AI for the shopping task. Publication gates prevent thin anecdotal samples from becoming a sentiment reading.
 
-The September 21 foundation release intentionally contains zero observations and no NKE or TJX directional conclusion. A daily GitHub Actions workflow now collects and independently verifies recent public consumer expressions, preserves accepted observations in dated run files, and promotes an immutable pilot release only when new verified evidence exists. Public readings remain `insufficient_evidence` until they clear the documented coverage gates. The method is `/consumer-intent/methodology`; the entity and category registries are `/consumer-intent/entities` and `/consumer-intent/categories`; company lenses are available through `/consumer-intent/entity?query=NKE` or `ex.consumer_intent.entity.get`. See [operations](docs/consumer-intent-operations.md).
+The September 25 foundation contains zero verified shopper episodes and zero agent transaction events. Four sourced Adobe benchmarks are displayed separately as survey and referral context. The previous broad wallet packets and NKE/TJX instrument have been removed from the active tree; legacy routes return HTTP 410 with a successor URL. No paid daily collection is scheduled. See [method and operations](docs/agentic-commerce-signal-design.md).
 
 ## AI Power Index — monthly ranked edition
 
@@ -89,8 +89,7 @@ Example tool call:
 
 Callable JSON tools from `DATA_TOOLS`:
 
-- `ex.consumer_intent.pulse.get`
-- `ex.consumer_intent.entity.get`
+- `ex.ai_commerce.signal.get`
 - `ex.entities.get`
 - `ex.speg.get`
 - `ex.speg.index.get`
@@ -110,8 +109,8 @@ Callable JSON tools from `DATA_TOOLS`:
 
 Content links from `CONTENT_LINKS`:
 
-- `ex.consumer_intent.page` — `https://www.exmxc.ai/consumer-intent`
-- `ex.consumer_intent.methodology` — `https://www.exmxc.ai/consumer-intent-methodology`
+- `ex.ai_commerce.page` — `https://www.exmxc.ai/ai-commerce`
+- `ex.ai_commerce.methodology` — `https://www.exmxc.ai/ai-commerce-methodology`
 - `ex.speg_index.page` — `https://www.exmxc.ai/speg-index`
 - `ex.speg_index.methodology` — `https://www.exmxc.ai/speg-methodology`
 - `ex.ai_power.page` — `https://www.exmxc.ai/ai-power-index`
@@ -153,17 +152,12 @@ npm run verify:webmcp
 
 Bundled datasets are imported directly into the Worker. Dataset updates require a Worker deploy.
 
-- `GET /consumer-intent/pulse`
-  - Latest or exact immutable Consumer Intent Pulse release; optional `factor`, `ticker`, and `release` filters
-  - V1 publishes independent factors and explicit evidence states; it has no composite
-- `GET /consumer-intent/entity?query=NKE`
-  - Brand, retailer, company, or ticker resolution with public-company parent and dated readings
-- `GET /consumer-intent/methodology`
-- `GET /consumer-intent/releases`
-- `GET /consumer-intent/entities`
-- `GET /consumer-intent/categories`
-- `GET /schemas/consumer-intent-observation-v1`
-- `GET /schemas/consumer-intent-release-v1`
+- `GET /ai-commerce/signal` — latest or immutable release, optional `release` ID
+- `GET /ai-commerce/methodology`
+- `GET /ai-commerce/releases`
+- `GET /schemas/ai-commerce-episode-v1`
+- `GET /schemas/ai-commerce-release-v1`
+- `GET /consumer-intent/*` — retired (HTTP 410, successor URL)
 
 - `GET /entities`
   - Source: `data/entities.json`

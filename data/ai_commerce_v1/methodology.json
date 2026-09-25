@@ -1,0 +1,32 @@
+{
+  "methodology_id": "ai-commerce-v1.0.0",
+  "product": "exmxc Agent Commerce Intelligence",
+  "public_instrument": "AI Commerce Signal",
+  "effective_date": "2026-09-25",
+  "definition": "Evidence of how AI assistants participate in product discovery, comparison, recommendation, selection, and transactions, and what shoppers report about that experience.",
+  "unit_of_analysis": "An AI-mediated shopping episode with an explicit AI tool, shopping task, and product or service category.",
+  "stages": ["discovery", "comparison", "recommendation", "selection", "cart", "checkout", "post_purchase"],
+  "delegation_levels": ["human_directed", "ai_assisted", "agent_prepared", "agent_executed"],
+  "outcomes": ["unknown", "considered", "referred", "carted", "purchased", "abandoned", "returned"],
+  "experience_targets": ["usefulness", "accuracy", "trust", "price_confidence", "control", "privacy", "disclosure", "friction"],
+  "evidence_lanes": {
+    "episodes": "Verified first-person reports or consented instrumented events. Self-selected reports do not estimate population prevalence.",
+    "surveys": "Published consumer surveys, retaining question wording, sample, geography, date, and denominator when reported.",
+    "referrals": "Published analytics of AI-sourced visits and conversion. A referral or conversion cohort is not an agent-executed checkout.",
+    "selection": "Controlled, repeatable AI shopping tasks with captured responses. A model recommendation is not consumer choice or purchase.",
+    "search_interest": "Google Trends exports for explicit AI-shopping terms, if available. Normalized search share is not AI shopping usage or purchasing."
+  },
+  "publication_policy": {
+    "no_composite": true,
+    "minimum_unique_episodes_for_experience_reading": 30,
+    "minimum_independent_origins": 3,
+    "minimum_collection_days": 5,
+    "maximum_single_origin_share": 0.6,
+    "status_below_gate": "insufficient_evidence",
+    "transaction_rule": "A purchase requires an explicit first-person completed purchase claim or a consented transaction event. Agent execution additionally requires explicit delegated checkout evidence.",
+    "sentiment_rule": "Sentiment must target the AI shopping experience, not the product, merchant, or general AI opinion.",
+    "denominator_rule": "Never merge survey percentages, referral growth, search interest, and episode counts into one rate or score."
+  },
+  "source_policy": "Collect only material with permitted access and stable provenance; do not scrape around access controls or assume commercial API rights.",
+  "limitations": ["Self-selected accounts are not representative", "Published aggregates may lack category and merchant detail", "Search interest does not establish usage", "AI referrals do not establish agent-executed purchases", "Merchant or platform announcements describe capability rather than adoption"]
+}

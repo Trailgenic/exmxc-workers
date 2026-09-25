@@ -44,13 +44,10 @@ import {
 } from "./lib/queries.js";
 import { getSpegIndexMethodologyV1, getSpegIndexReleasesV1 } from "./lib/speg-index-v1.js";
 import {
-  CONSUMER_INTENT_CATEGORIES,
-  CONSUMER_INTENT_ENTITIES,
-  CONSUMER_INTENT_METHODOLOGY,
-  CONSUMER_INTENT_RELEASES,
-  getConsumerIntentEntity,
-  getConsumerIntentPulse
-} from "./lib/consumer-intent.js";
+  AI_COMMERCE_METHODOLOGY,
+  AI_COMMERCE_RELEASES,
+  getAiCommerceSignal
+} from "./lib/ai-commerce.js";
 import baseline from "./data/ads-baseline.json" with { type: "json" };
 
 const SYNTHETIC_DISCLAIMER = "Postings are model-generated illustrations for ADS analysis, not scraped or verified labor-market data.";
@@ -381,27 +378,18 @@ export default {
     const discoveryHeaders = { "Cache-Control": CACHE.NO_CACHE };
     const noStore = { "Cache-Control": CACHE.NO_STORE };
     if (url.pathname === "/consumer-intent" || url.pathname.startsWith("/consumer-intent/") || url.pathname.startsWith("/schemas/consumer-intent-")) {
+      return jsonResponse({ error: "Retired broad consumer-intent endpoint.", successor: `${MCP_ORIGIN}/ai-commerce` }, { status: 410, headers: noStore });
+    }
+    if (url.pathname === "/ai-commerce" || url.pathname.startsWith("/ai-commerce/") || url.pathname.startsWith("/schemas/ai-commerce-")) {
       if (request.method !== "GET") return jsonResponse({ error: "Method not allowed" }, { status: 405, headers: { Allow: "GET, OPTIONS" } });
-      if (url.pathname === "/consumer-intent" || url.pathname === "/consumer-intent/pulse") {
-        const result = getConsumerIntentPulse(queryArgs(url, ["factor", "ticker", "release"]));
-        return jsonResponse(result, { status: result.found === false ? 404 : 200, headers: { "Cache-Control": url.searchParams.has("release") ? "public, max-age=31536000, immutable" : "public, max-age=300" } });
+      if (url.pathname === "/ai-commerce" || url.pathname === "/ai-commerce/signal") {
+        const result = getAiCommerceSignal(queryArgs(url, ["release"]));
+        return jsonResponse(result, { status: result.found === false ? 404 : 200, headers: { "Cache-Control": result.found === false ? "no-store" : url.searchParams.has("release") ? "public, max-age=31536000, immutable" : "public, max-age=300" } });
       }
-      if (url.pathname === "/consumer-intent/methodology") return jsonResponse(CONSUMER_INTENT_METHODOLOGY, { headers: { "Cache-Control": "public, max-age=3600" } });
-      if (url.pathname === "/consumer-intent/releases") return jsonResponse(CONSUMER_INTENT_RELEASES, { headers: { "Cache-Control": "public, max-age=300" } });
-      if (url.pathname === "/consumer-intent/entities") return jsonResponse(CONSUMER_INTENT_ENTITIES, { headers: { "Cache-Control": "public, max-age=3600" } });
-      if (url.pathname === "/consumer-intent/categories") return jsonResponse(CONSUMER_INTENT_CATEGORIES, { headers: { "Cache-Control": "public, max-age=3600" } });
-      if (url.pathname === "/consumer-intent/entity") {
-        const query = url.searchParams.get("query");
-        if (!query || query.length > 120) return jsonResponse({ found: false, error: "A brand, retailer, company, or ticker query is required." }, { status: 400, headers: noStore });
-        const result = getConsumerIntentEntity(query);
-        return jsonResponse(result, { status: result.found ? 200 : 404 });
-      }
-      if (url.pathname.startsWith("/consumer-intent/entities/")) {
-        const result = getConsumerIntentEntity(decodeURIComponent(url.pathname.slice("/consumer-intent/entities/".length)));
-        return jsonResponse(result, { status: result.found ? 200 : 404 });
-      }
-      if (url.pathname === "/schemas/consumer-intent-observation-v1") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "consumer_intent_observation_v1")?.data);
-      if (url.pathname === "/schemas/consumer-intent-release-v1") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "consumer_intent_release_v1")?.data);
+      if (url.pathname === "/ai-commerce/methodology") return jsonResponse(AI_COMMERCE_METHODOLOGY, { headers: { "Cache-Control": "public, max-age=3600" } });
+      if (url.pathname === "/ai-commerce/releases") return jsonResponse(AI_COMMERCE_RELEASES, { headers: { "Cache-Control": "public, max-age=300" } });
+      if (url.pathname === "/schemas/ai-commerce-episode-v1") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "ai_commerce_episode_v1")?.data);
+      if (url.pathname === "/schemas/ai-commerce-release-v1") return jsonResponse(MCP_RESOURCES.find((resource) => resource.id === "ai_commerce_release_v1")?.data);
       return jsonResponse({ error: "Not found" }, { status: 404 });
     }
     if (url.pathname === "/webmcp-power-lens.js") {
