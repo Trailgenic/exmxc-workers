@@ -1,0 +1,40 @@
+{
+  "run_id": "consumer-intent-2026-09-25-d1c06fe0c193",
+  "collection_date": "2026-09-25",
+  "plan_id": "consumer-intent-collection-v1.0.0",
+  "model_version": "gpt-5.6-luna",
+  "access_basis": "OpenAI Responses API web search over public HTTPS sources; no direct source scraping by this workflow.",
+  "runs": [
+    {
+      "target_id": "athletic-footwear-wallet",
+      "candidates": 3,
+      "preverified": 0,
+      "accepted": 0,
+      "consulted_sources": 31
+    },
+    {
+      "target_id": "off-price-retail-wallet",
+      "candidates": 5,
+      "preverified": 0,
+      "accepted": 0,
+      "consulted_sources": 28
+    },
+    {
+      "target_id": "consumer-wallet-pressure",
+      "candidates": 4,
+      "preverified": 0,
+      "accepted": 0,
+      "consulted_sources": 41
+    }
+  ],
+  "accepted": [],
+  "rejected_summary": {
+    "count": 12,
+    "reasons": {
+      "source_not_in_search_evidence": 12,
+      "no_explicit_consumer_behavior": 1,
+      "outside_collection_window": 2
+    }
+  },
+  "new_accepted_count": 0
+}
