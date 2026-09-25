@@ -1,13 +1,7 @@
-name: Consumer Intent Daily Collection
+name: Legacy Consumer Intent Collection (manual)
 
 on:
-  schedule:
-    - cron: "17 13 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - data/consumer_intent_v1/collection-trigger.json
 
 permissions:
   contents: write

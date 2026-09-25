@@ -1,5 +1,7 @@
 # Consumer Intent Graph operations
 
+> **Legacy pilot, paused 2026-09-25.** The broad consumer-wallet collection does not establish whether AI participated in shopping. Its scheduled and push-triggered runs are disabled while the product is redesigned around AI-assisted commerce. Existing foundation and dated audit packets remain available; the workflow can be dispatched manually for troubleshooting. See [Agentic commerce signal design](agentic-commerce-signal-design.md). Do not publish broad wallet factors as evidence of AI shopping adoption.
+
 ## Production boundary
 
 The Git-versioned release packet is the public source of truth. Collection and model extraction may run elsewhere, but only normalized, quality-controlled observations enter a release. Raw source material must be retained only where access rights and source terms permit.
@@ -19,9 +21,9 @@ The foundation release deliberately contains no observations or directional conc
 
 Adapters with `review_required` access status fail closed. The system does not bypass access controls.
 
-## Daily public-web collection
+## Legacy public-web collection (manual only)
 
-`.github/workflows/consumer-intent-collect.yml` runs at 13:17 UTC each day and can also be dispatched manually. It uses the OpenAI Responses API web-search tool to discover recent public, first-person consumer expressions and then runs a separate verification pass against every cited URL. The workflow does not directly scrape source sites.
+`.github/workflows/consumer-intent-collect.yml` can be dispatched manually for troubleshooting. Its former daily schedule is paused because its broad consumer-wallet ontology does not measure AI-mediated shopping. It uses the OpenAI Responses API web-search tool to discover recent public, first-person consumer expressions and then runs a separate verification pass against every cited URL. The workflow does not directly scrape source sites.
 
 Deterministic gates reject unsupported URLs, company and retailer pages, non-consumer source types, stale or future timestamps, weak behavioral evidence, unregistered taxonomy values, low-confidence classifications, and likely spam or promotion. A source origin counts only once toward source diversity regardless of its model-assigned source type. At most one accepted observation is retained per URL.
 
