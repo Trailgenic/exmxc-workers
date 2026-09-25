@@ -38,6 +38,19 @@ const mcpDatasets = await rpc(4, 'resources/read', { uri: 'exmxc://datasets/inde
 ok(JSON.stringify(JSON.parse(mcpDatasets.json.result.contents[0].text)) === JSON.stringify(restDatasets.json), 'dataset index resource matches REST');
 ok((await raw('/mcp', { method: 'OPTIONS', headers: { origin: 'https://evil.example' } })).response.status === 403, 'disallowed origin preflight rejected');
 ok((await raw('/?cb=' + Date.now())).response.headers.get('cache-control')?.includes('no-cache'), 'root discovery no-cache');
+const commerce = await raw('/ai-commerce/signal');
+ok(
+  commerce.response.status === 200
+    && commerce.json?.methodology_id === 'ai-commerce-v1.0.0'
+    && commerce.json?.coverage?.verified_episode_count === 0
+    && commerce.json?.coverage?.transaction_event_count === 0
+    && commerce.json?.benchmarks?.length === 4
+    && commerce.json?.benchmarks?.every(row => row.denominator && row.source_url),
+  'AI commerce foundation separates sourced benchmarks from unobserved transactions'
+);
+ok((await raw('/ai-commerce/methodology')).json?.publication_policy?.transaction_rule?.includes('explicit'), 'AI commerce methodology requires purchase evidence');
+ok((await raw('/schemas/ai-commerce-episode-v1')).json?.$id === 'https://mcp.exmxc.ai/schemas/ai-commerce-episode-v1', 'AI commerce episode schema is live');
+ok((await raw('/consumer-intent/pulse')).response.status === 410, 'legacy wallet endpoint is retired');
 ok((await raw('/api/ai-jobs-signal')).json?.mode === 'benchmark', 'ADS benchmark only');
 const auditOk = await raw('/audit/run?url=https%3A%2F%2Fexample.com');
 ok(
