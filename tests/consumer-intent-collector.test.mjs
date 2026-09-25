@@ -72,6 +72,15 @@ const promotional = validateConsumerCandidate({ ...candidate, source_url: "https
 assert.equal(promotional.accepted, false);
 assert.ok(promotional.reasons.includes("source_host_excluded"));
 
+const listingUrl = "https://hellofresh.pissedconsumer.com/review.html";
+const listing = validateConsumerCandidate({ ...candidate, source_url: listingUrl }, {
+  collectionDate: "2026-09-21",
+  model: "fixture-model",
+  consultedUrls: new Set([listingUrl])
+});
+assert.equal(listing.accepted, false);
+assert.ok(listing.reasons.includes("source_not_stable_observation_permalink"));
+
 const verified = {
   candidate_id: "athletic-footwear-wallet-1",
   verified: true,
