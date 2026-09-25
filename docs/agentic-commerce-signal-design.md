@@ -1,6 +1,6 @@
 # Agentic commerce signal: product direction
 
-Status: design proposal, 2026-09-25. The legacy Consumer Intent Graph pilot remains a historical foundation, not evidence of agentic commerce. No observations or directional readings have been promoted from that pilot.
+Status: AI commerce v1 foundation, 2026-09-25. The broad Consumer Intent pilot and its dated packets were removed from the active tree. Git history retains the old work for audit; the public API returns HTTP 410 for legacy routes. The new foundation has no qualifying AI-mediated shopping episodes or agent purchases.
 
 ## Research question
 
@@ -43,4 +43,4 @@ Platform feature announcements (for example [ChatGPT shopping research](https://
 
 ## Migration
 
-Keep `consumer_intent_v1` immutable as the audit trail. Build a versioned agentic-commerce ontology and a small historical baseline from published, methodologically described reports. Then pilot narrow, permitted first-person episode collection; measure acceptance and category coverage before scheduling it. The public surface should be relabeled around AI-mediated commerce only after the new evidence and release contract pass review.
+The versioned ontology, separate Adobe survey/referral benchmark lane, release contract, and public API are in `data/ai_commerce_v1`, `schema/ai_commerce_*`, and `lib/ai-commerce.js`. Add dated, permission-reviewed episode arrays under `data/ai_commerce_v1/episodes/`; validate and build with `npm run build:ai-commerce -- --input path/to/episodes.json --as-of YYYY-MM-DD --release-id ai-commerce-YYYY-MM-DD-pilot --promote true`. Do not schedule collection until source access, acceptance rate, and category coverage pass review. Controlled agent-selection runs require their own captured-response contract before a selection count can increase.

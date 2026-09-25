@@ -23,8 +23,7 @@ node scripts/build-registry-packet.mjs
 
 ## Tools
 
-- ex.consumer_intent.pulse.get — Get Consumer Intent Pulse: Versioned factor-level readings of observed digital consumer intent and wallet behavior. V1 publishes no arbitrary composite and returns insufficient_evidence below transparent coverage gates.
-- ex.consumer_intent.entity.get — Get Consumer Intent Company Lens: Resolve a supported brand, retailer, company, or ticker and return its parent-company mapping, dated factor evidence, substitutions, and explicit coverage status.
+- ex.ai_commerce.signal.get — Get AI Commerce Signal: Versioned evidence for AI-assisted shopping, consumer experience, and distinct published survey and referral benchmarks. No inferred agent purchases or composite score.
 - ex.ai_power.rankings.get — Get AI Power rankings: Current exmxc editorial rankings and forecasts for 50 companies in 2026, 2027, and 2030 using the fixed Four Forces methodology. Immutable monthly editions preserve prior judgments.
 - ex.entities.get — Get Entity Intelligence Records: Institutional entity intelligence dataset including industry, entity_type, posture, capability, and ECC scoring.
 - ex.speg.get — Get sPEG Valuation Records: Scarcity-adjusted PEG valuation dataset covering AI infrastructure companies.

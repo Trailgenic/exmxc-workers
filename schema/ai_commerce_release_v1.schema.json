@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mcp.exmxc.ai/schemas/ai-commerce-release-v1",
+  "title": "AI Commerce Signal Release v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["release_id", "series_id", "as_of", "methodology_id", "status", "coverage", "experience_readings", "episode_count_by_stage", "episode_count_by_category", "benchmarks", "notes"],
+  "properties": {
+    "release_id":{"type":"string","minLength":1},
+    "series_id":{"const":"ai-commerce-signal-v1"},
+    "as_of":{"type":"string","format":"date"},
+    "methodology_id":{"const":"ai-commerce-v1.0.0"},
+    "status":{"enum":["foundation","pilot"]},
+    "coverage":{"type":"object","additionalProperties":false,"required":["verified_episode_count","selection_run_count","transaction_event_count"],"properties":{"verified_episode_count":{"type":"integer","minimum":0},"selection_run_count":{"type":"integer","minimum":0},"transaction_event_count":{"type":"integer","minimum":0}}},
+    "experience_readings":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["target","status","episode_count","sentiment_share"],"properties":{"target":{"type":"string"},"status":{"enum":["measured","insufficient_evidence"]},"episode_count":{"type":"integer","minimum":0},"sentiment_share":{"type":["object","null"],"additionalProperties":{"type":"number","minimum":0,"maximum":1}}}}},
+    "episode_count_by_stage":{"type":"object","additionalProperties":{"type":"integer","minimum":0}},
+    "episode_count_by_category":{"type":"object","additionalProperties":{"type":"integer","minimum":0}},
+    "benchmarks":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["id","lane","label","value","unit","period","geography","denominator","source_url","source_organization","interpretation"],"properties":{"id":{"type":"string"},"lane":{"enum":["survey","referral","search_interest"]},"label":{"type":"string"},"value":{"type":"number"},"unit":{"type":"string"},"period":{"type":"string"},"geography":{"type":"string"},"denominator":{"type":"string"},"source_url":{"type":"string","format":"uri"},"source_organization":{"type":"string"},"interpretation":{"type":"string"}}}},
+    "notes":{"type":"string"}
+  }
+}
