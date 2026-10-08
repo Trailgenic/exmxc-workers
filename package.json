@@ -13,13 +13,15 @@
     "assess:ai-power": "node scripts/assess-ai-power-v2.mjs",
     "check:ai-power-sources": "node scripts/check-ai-power-sources.mjs",
     "reconcile:ai-power": "node scripts/reconcile-ai-power-v2.mjs",
-    "validate:webflow": "node scripts/check-webflow.mjs",
+    "validate:webflow": "node scripts/check-webflow.mjs && npm run verify:speg-static",
     "verify:webmcp": "node scripts/verify-webmcp-power-lens.mjs",
     "registry:check": "node scripts/check-registry-packet.mjs",
     "deploy:dry-run": "wrangler deploy --dry-run",
     "test:ai-power-rankings": "node tests/ai-power-rankings.test.mjs",
     "build:ai-power-rankings": "node scripts/build-ai-power-rankings.mjs",
-    "build:ai-commerce": "node scripts/build-ai-commerce-release.mjs"
+    "build:ai-commerce": "node scripts/build-ai-commerce-release.mjs",
+    "verify:speg-static": "node scripts/build-speg-static.mjs --check",
+    "build:speg-static": "node scripts/build-speg-static.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.29.0",
