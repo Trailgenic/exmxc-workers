@@ -35,6 +35,19 @@ function req(path, init = {}) {
   return SELF.fetch(`${BASE}${path}`, init);
 }
 
+describe('Convergence evidence freshness', () => {
+  it('explicitly labels the lone June 15 reading as historical in API responses', async () => {
+    const latest=await (await req('/convergence/latest')).json();
+    expect(latest.latest.date).toBe('2026-06-15');
+    expect(latest.freshness.freshness_status).toBe('historical_stale');
+    expect(latest.freshness.is_live_market_signal).toBe(false);
+    expect(latest.freshness.published_observations).toBe(1);
+    const log=await (await req('/convergence/log')).json();
+    expect(log.total).toBe(1);
+    expect(log.freshness.freshness_status).toBe('historical_stale');
+  });
+});
+
 describe('monthly AI Power rankings', () => {
   it('serves an immutable edition, sorts a forecast, and rejects unknown inputs', async () => {
     const response = await req('/ai-power/rankings?edition=2026-09-18&year=2030');
