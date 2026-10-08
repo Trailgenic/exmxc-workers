@@ -23,6 +23,18 @@
   .spi-empty, .spi-error { border: .5px solid var(--ex-border); padding: 20px; color: var(--ex-text-dim); font-family: var(--ex-font-body); }
   @media (max-width: 760px) { .spi-grid { grid-template-columns: 1fr; } .spi-status { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 520px) { .spi-root { padding: 48px 22px 68px; } .spi-status { grid-template-columns: 1fr; } }
+  .spi-card h3 a{color:inherit;text-decoration:none}
+  .spi-card h3 a:hover{text-decoration:underline}
+  .spi-card-rule{margin:12px 0 0;font-size:.87rem!important;color:var(--ex-text-dim)!important}
+  #spi-company-choice{font-family:var(--ex-font-body);font-size:1rem;background:var(--ex-surface);color:#fff;border:1px solid var(--ex-border-gold);padding:11px 12px;margin:10px 0 20px;min-width:min(100%,320px);max-width:100%}
+  #spi-company-choice:focus-visible{outline:3px solid var(--ex-lavender);outline-offset:3px}
+  .spi-evidence-result{background:var(--ex-surface);border:1px solid var(--ex-border);padding:18px 22px}
+  .spi-evidence-result h3{font-family:var(--ex-font-display);font-size:1.65rem;color:#fff;margin:8px 0 12px;font-weight:400}
+  .spi-evidence-result dl{display:grid;grid-template-columns:minmax(120px,1fr) minmax(120px,2fr);gap:8px 18px;margin:16px 0}
+  .spi-evidence-result dt{font-family:var(--ex-font-mono);color:var(--ex-text-muted);font-size:.72rem}
+  .spi-evidence-result dd{margin:0;color:var(--ex-text-dim)}
+  .spi-evidence-result a{color:var(--ex-lavender)}
+  @media(max-width:520px){.spi-evidence-result dl{grid-template-columns:1fr;gap:4px}.spi-evidence-result dt{margin-top:7px}}
 </style>
 <main class="spi-root">
   <header class="spi-hero">
@@ -36,19 +48,122 @@
       <a class="spi-btn" href="https://mcp.exmxc.ai/schemas/speg-index-profile-v1" target="_blank" rel="noopener">Schema</a>
     </div>
     <div class="spi-boundary"><strong>Business quality is not price.</strong> Membership does not mean “cheap,” and a missing PEG does not erase durable scarcity. SDS never changes PEG or an economic multiplier. Release v1 names five members; all valuation fields remain unavailable until a separately qualified valuation packet exists.</div>
-    <div class="spi-status" id="spi-status" aria-live="polite"></div>
+    <div class="spi-status" id="spi-status" aria-live="polite" data-speg-release="speg-index-2026-09-17-v1">
+<div class="spi-stat"><div class="spi-stat-label">Candidates</div><div class="spi-stat-value">10</div></div>
+<div class="spi-stat"><div class="spi-stat-label">Members</div><div class="spi-stat-value">5</div></div>
+<div class="spi-stat"><div class="spi-stat-label">Watchlist</div><div class="spi-stat-value">5</div></div>
+<div class="spi-stat"><div class="spi-stat-label">Release</div><div class="spi-stat-value">2026-09-17</div></div>
+</div>
   </header>
 
   <section class="spi-section" aria-labelledby="spi-includes-title">
     <div class="spi-eyebrow">Membership state · member</div>
     <h2 id="spi-includes-title">Meets every admission gate</h2>
-    <div class="spi-grid" id="spi-includes"><div class="spi-empty">Loading profiles…</div></div>
+    <div class="spi-grid" id="spi-includes" data-speg-release="speg-index-2026-09-17-v1">
+<!-- BEGIN SPEG STATIC spi-includes -->
+<article class="spi-card" data-speg-issuer="asml">
+  <div class="spi-eyebrow">Released member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-asml">ASML</a></h3>
+  <div class="spi-vector">SDS 17/20 · [4 · 4 · 3 · 3 · 3]</div>
+  <p class="spi-card-rule">Dimension floors met. See the full admission gate and evidence packet.</p>
+  <div class="spi-meta"><div>Evidence packet: 5 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/asml">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="cadence">
+  <div class="spi-eyebrow">Released member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-cadence">Cadence</a></h3>
+  <div class="spi-vector">SDS 15/20 · [3 · 3 · 3 · 3 · 3]</div>
+  <p class="spi-card-rule">Dimension floors met. See the full admission gate and evidence packet.</p>
+  <div class="spi-meta"><div>Evidence packet: 2 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/cadence">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="nvidia">
+  <div class="spi-eyebrow">Released member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-nvidia">NVIDIA</a></h3>
+  <div class="spi-vector">SDS 15/20 · [3 · 3 · 3 · 3 · 3]</div>
+  <p class="spi-card-rule">Dimension floors met. See the full admission gate and evidence packet.</p>
+  <div class="spi-meta"><div>Evidence packet: 3 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/nvidia">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="synopsys">
+  <div class="spi-eyebrow">Released member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-synopsys">Synopsys</a></h3>
+  <div class="spi-vector">SDS 14/20 · [3 · 3 · 3 · 3 · 2]</div>
+  <p class="spi-card-rule">Dimension floors met. See the full admission gate and evidence packet.</p>
+  <div class="spi-meta"><div>Evidence packet: 2 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/synopsys">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="tsmc">
+  <div class="spi-eyebrow">Released member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-tsmc">TSMC</a></h3>
+  <div class="spi-vector">SDS 14/20 · [3 · 3 · 3 · 3 · 2]</div>
+  <p class="spi-card-rule">Dimension floors met. See the full admission gate and evidence packet.</p>
+  <div class="spi-meta"><div>Evidence packet: 4 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/tsmc">Structured profile</a></div></div>
+</article>
+<!-- END SPEG STATIC spi-includes -->
+</div>
   </section>
 
   <section class="spi-section" aria-labelledby="spi-watch-title">
     <div class="spi-eyebrow">Research decision · watchlist</div>
     <h2 id="spi-watch-title">A named gate remains unmet</h2>
-    <div class="spi-grid" id="spi-watch"><div class="spi-empty">Loading profiles…</div></div>
+    <div class="spi-grid" id="spi-watch" data-speg-release="speg-index-2026-09-17-v1">
+<!-- BEGIN SPEG STATIC spi-watch -->
+<article class="spi-card" data-speg-issuer="analog-devices">
+  <div class="spi-eyebrow">Watchlist · non-member · Low research confidence</div>
+  <h3><a href="/speg-index-company-analog-devices">Analog Devices</a></h3>
+  <div class="spi-vector">SDS 14/20 · [2 · 3 · 3 · 3 · 3]</div>
+  <p class="spi-card-rule">Below floor: Constraint: 2/3</p>
+  <div class="spi-meta"><div>Evidence packet: 4 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/analog-devices">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="arista">
+  <div class="spi-eyebrow">Watchlist · non-member · Low research confidence</div>
+  <h3><a href="/speg-index-company-arista">Arista</a></h3>
+  <div class="spi-vector">SDS 13/20 · [2 · 3 · 3 · 2 · 3]</div>
+  <p class="spi-card-rule">Below floor: Constraint: 2/3; Persistence: 2/3</p>
+  <div class="spi-meta"><div>Evidence packet: 2 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/arista">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="sk-hynix">
+  <div class="spi-eyebrow">Watchlist · non-member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-sk-hynix">SK hynix</a></h3>
+  <div class="spi-vector">SDS 13/20 · [3 · 3 · 3 · 2 · 2]</div>
+  <p class="spi-card-rule">Below floor: Persistence: 2/3</p>
+  <div class="spi-meta"><div>Evidence packet: 3 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/sk-hynix">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="micron">
+  <div class="spi-eyebrow">Watchlist · non-member · Moderate research confidence</div>
+  <h3><a href="/speg-index-company-micron">Micron</a></h3>
+  <div class="spi-vector">SDS 12/20 · [3 · 2 · 3 · 2 · 2]</div>
+  <p class="spi-card-rule">Below floor: Substitution resistance: 2/3; Persistence: 2/3</p>
+  <div class="spi-meta"><div>Evidence packet: 4 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/micron">Structured profile</a></div></div>
+</article>
+<article class="spi-card" data-speg-issuer="vertiv">
+  <div class="spi-eyebrow">Watchlist · non-member · Low research confidence</div>
+  <h3><a href="/speg-index-company-vertiv">Vertiv</a></h3>
+  <div class="spi-vector">SDS 11/20 · [2 · 2 · 3 · 2 · 2]</div>
+  <p class="spi-card-rule">Below floor: Constraint: 2/3; Substitution resistance: 2/3; Persistence: 2/3</p>
+  <div class="spi-meta"><div>Evidence packet: 2 referenced source IDs</div><div><a href="https://mcp.exmxc.ai/speg/index/v1/profiles/vertiv">Structured profile</a></div></div>
+</article>
+<!-- END SPEG STATIC spi-watch -->
+</div>
+  </section>
+
+  <section class="spi-section" id="spi-evidence-explorer" aria-labelledby="spi-explorer-title" data-speg-release="speg-index-2026-09-17-v1">
+    <div class="spi-eyebrow">Explainable eligibility · immutable 2026-09-17 release</div>
+    <h2 id="spi-explorer-title">Inspect the admission rule, evidence and falsifiers</h2>
+    <p>Every outcome comes from the published sPEG Index evidence object. The interface does not recalculate SDS, change membership or estimate investment returns.</p>
+    <label for="spi-company-choice" class="spi-eyebrow">Company evidence</label>
+    <select id="spi-company-choice" disabled>
+      <option value="asml">ASML</option>
+      <option value="cadence">Cadence</option>
+      <option value="nvidia">NVIDIA</option>
+      <option value="synopsys">Synopsys</option>
+      <option value="tsmc">TSMC</option>
+      <option value="analog-devices">Analog Devices</option>
+      <option value="arista">Arista</option>
+      <option value="sk-hynix">SK hynix</option>
+      <option value="micron">Micron</option>
+      <option value="vertiv">Vertiv</option>
+    </select>
+    <div id="spi-company-evidence" class="spi-evidence-result" role="status" aria-live="polite">
+      <p>Selected research packets are accessible in the company links above and in the <a href="https://mcp.exmxc.ai/speg/index/v1?release=speg-index-2026-09-17-v1">canonical JSON release</a>. The detailed selector activates only if that exact release can be verified.</p>
+    </div>
   </section>
 
   <section class="spi-section">
@@ -58,66 +173,67 @@
 </main>
 <script>
 (() => {
-  const endpoint = "https://mcp.exmxc.ai/speg/index/v1";
-  const status = document.getElementById("spi-status");
-  const includes = document.getElementById("spi-includes");
-  const watch = document.getElementById("spi-watch");
-
-  const element = (tag, className, text) => {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
-    return node;
+  "use strict";
+  const releaseId = "speg-index-2026-09-17-v1";
+  const endpoint = "https://mcp.exmxc.ai/speg/index/v1?release=" + encodeURIComponent(releaseId);
+  const selector = document.getElementById("spi-company-choice");
+  const output = document.getElementById("spi-company-evidence");
+  if (!selector || !output) return;
+  const gateNames = {
+    dimension_floors:"Dimension floors",materiality:"Company materiality",
+    decisive_confidence:"Decisive confidence",source_packet:"Evidence packet",
+    current_review:"Review current at cutoff",material_event:"Material event clear at cutoff"
   };
-
-  const renderStats = (release) => {
-    status.replaceChildren();
-    const stats = [
-      ["Candidates", release.coverage.candidate_count],
-      ["Members", release.coverage.released_members],
-      ["Watchlist", release.coverage.watchlist],
-      ["Qualified members", release.coverage.qualified_member_count]
-    ];
-    for (const [label, value] of stats) {
-      const box = element("div", "spi-stat");
-      box.append(element("div", "spi-stat-label", label), element("div", "spi-stat-value", String(value)));
-      status.append(box);
+  const dims = {
+    constraint:"Constraint",substitution_resistance:"Substitution resistance",
+    economic_capture:"Economic capture",persistence:"Persistence",cost_of_defense:"Cost of defense"
+  };
+  const el = (tag,text) => { const node=document.createElement(tag);if(text!==undefined)node.textContent=String(text);return node; };
+  const makeLink = (url,label) => {
+    const a=el("a",label);if(typeof url==="string"&&url.startsWith("https://"))a.href=url;return a;
+  };
+  const dataField = (list,title,value) => {
+    list.append(el("dt",title),el("dd",value));
+  };
+  let release=null;
+  function render() {
+    const p=release?.profiles?.find(x=>x.identity?.stable_slug===selector.value);
+    if (!p) return;
+    output.replaceChildren();
+    output.append(el("h3",p.identity.display_name+" — "+(p.decision.membership_state==="member"?"Member":"Watchlist")));
+    output.append(el("p","SDS "+p.score.total+"/20 · "+p.score.vector.join(" / ")+" · "+p.scope.mechanism_family+" · Method "+release.method_id));
+    const dl=el("dl");
+    for (const [key,label] of Object.entries(gateNames)) {
+      const gate=p.eligibility[key];
+      dataField(dl,label,(gate?.pass===true?"Pass":"Not passed")+": "+(gate?.reason||"No reason recorded"));
     }
-  };
-
-  const renderCard = (profile) => {
-    const link = element("a", "spi-card");
-    link.href = `/speg-index-company-${encodeURIComponent(profile.identity.stable_slug)}`;
-    link.append(element("div", "spi-eyebrow", `${profile.decision.membership_state ?? profile.decision.research_decision} · ${profile.dimensions.constraint.confidence} confidence`));
-    link.append(element("h3", "", profile.identity.display_name));
-    link.append(element("div", "spi-vector", `SDS ${profile.score.total ?? "—"}/20 · [${profile.score.vector.map(value => value ?? "?").join(" · ")}]`));
-    const meta = element("div", "spi-meta");
-    meta.append(element("div", "", `Mechanism: ${profile.scope.mechanism_id.replaceAll("-", " ")}`));
-    meta.append(element("div", "", profile.valuation.peg_eligible ? `PEG ${profile.valuation.peg}` : `PEG unavailable: ${profile.valuation.peg_null_reason.replaceAll("_", " ")}`));
-    link.append(meta);
-    return link;
-  };
-
-  const renderGroup = (node, profiles) => {
-    node.replaceChildren();
-    if (!profiles.length) node.append(element("div", "spi-empty", "No profiles in this group."));
-    for (const profile of profiles) node.append(renderCard(profile));
-  };
-
-  fetch(endpoint, { headers: { accept: "application/json" } })
-    .then((response) => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
-    })
-    .then((release) => {
-      renderStats(release);
-      renderGroup(includes, release.profiles.filter(profile => profile.decision.membership_state === "member"));
-      renderGroup(watch, release.profiles.filter(profile => profile.decision.research_decision === "watchlist"));
-    })
-    .catch(() => {
-      status.replaceChildren(element("div", "spi-error", "The index feed is temporarily unavailable."));
-      includes.replaceChildren(element("div", "spi-error", "Profiles could not be loaded."));
-      watch.replaceChildren(element("div", "spi-error", "Profiles could not be loaded."));
+    dataField(dl,"Sensitivity",p.sensitivity.binding_dimensions.length
+       ?"A one-step downgrade fails a floor for: "+p.sensitivity.binding_dimensions.map(x=>dims[x]||x).join(", ")
+       :"No single one-step dimension downgrade crosses a floor");
+    dataField(dl,"Next falsifier",p.decision.falsifiers.join(" · "));
+    dataField(dl,"Next observation",p.decision.next_observation);
+    dataField(dl,"Review cutoff",p.review.as_of_cutoff);
+    output.append(dl);
+    const sources=el("p","Evidence sources: ");
+    const sourceIds=[...new Set(Object.values(p.dimensions).flatMap(x=>x.source_ids||[]))];
+    sourceIds.forEach((id,i)=>{
+      const record=release.sources?.find(x=>x.id===id);
+      if(i)sources.append(document.createTextNode(" · "));
+      sources.append(record?.url?makeLink(record.url,id+" ("+record.publisher+")"):el("span",id));
     });
+    output.append(sources);
+    output.append(el("p","Historical research snapshot; score is ordinal and not a valuation or current trading signal."));
+  }
+  fetch(endpoint,{headers:{accept:"application/json"}}).then(r=>{if(!r.ok)throw Error("Release unavailable");return r.json();}).then(data=>{
+    if(data.release_id!==releaseId||data.release_state!=="released"||data.profiles?.length!==10||
+       data.coverage?.released_members!==5||data.coverage?.watchlist!==5)throw Error("Release mismatch");
+    release=data;
+    selector.disabled=false;
+    selector.addEventListener("change",render);
+    render();
+  }).catch(()=>{
+    selector.disabled=true;
+    output.append(el("p","Interactive evidence inspection is unavailable. The 10 original snapshot profiles and direct machine-readable evidence links above remain accessible."));
+  });
 })();
 </script>

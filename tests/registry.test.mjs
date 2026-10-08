@@ -6,6 +6,8 @@ import spegIndexProfileV1Schema from '../schema/speg_index_profile_v1.schema.jso
 import {
   calculateRealityGapScores,
   getStrategicConsequence,
+  getConvergenceLatest,
+  getConvergenceLog,
   realityGapClassification,
   strategicConsequenceClassification
 } from '../lib/queries.js';
@@ -19,6 +21,15 @@ import {
   evaluateSpegIndexEligibility,
   validateSpegIndexReleaseSemantics
 } from '../lib/speg-index-v1.js';
+
+const convergenceLatest = getConvergenceLatest();
+assert.equal(convergenceLatest.latest?.date, "2026-06-15");
+assert.equal(convergenceLatest.freshness.last_observation_date, "2026-06-15");
+assert.equal(convergenceLatest.freshness.published_observations, 1);
+assert.equal(convergenceLatest.freshness.freshness_status, "historical_stale");
+assert.equal(convergenceLatest.freshness.is_live_market_signal, false);
+assert.equal(getConvergenceLog({limit:1}).freshness.published_observations, 1);
+
 assert.equal(new Set(DATA_TOOLS.map(t=>t.id)).size, DATA_TOOLS.length);
 assert.ok(MCP_PROTOCOL_VERSIONS.includes('2025-11-25'));
 assert.ok(MCP_RESOURCES.some(r=>r.uri === 'exmxc://datasets/index'));
