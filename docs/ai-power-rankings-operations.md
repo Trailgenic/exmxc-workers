@@ -27,11 +27,11 @@ The Webflow HTML includes the complete latest table. A small browser script sort
 3. Preserve old edition bytes. Corrections use a new `-rN` edition with `supersedes` and `correction_reason`; keep the original address. No fictitious monthly history. Cohort changes require an explicit membership note and authorization; do not silently replace an acquired company or double count its assets.
 4. Append a ledger entry with the new file's SHA-256 hash and point `latest` to it. Keep the methodology hash unchanged. Run `npm run build:ai-power-rankings`; it generates the edition imports and all six Webflow code blocks from the same source.
 5. Run `npm test`, `npm run test:workers`, `npm run validate:json`, `npm run validate:webflow`, `npm run lint`, `npm run registry:check`, and `npm run deploy:dry-run`. Update build metadata and regenerate `node scripts/build-registry-packet.mjs` when releasing. Verify all three year sorts, edition selection, an unavailable-edition failure, mobile scrolling, static table readability, and displayed/API agreement.
-6. Commit and open a pull request. Merge only after its checks pass, respecting current user authorization. Main deploys the data service. Verify the published data before updating Webflow.
-7. Read current page code before changing it. Replace only the index, methodology, and Power Lens page head/footer blocks with the generated files, preserving site-wide code and unrelated pages. Update matching SEO/OG settings. Publish the scoped pages where supported. Verify public HTML, all three sorts, edition history, and metadata.
+6. Commit and open a pull request. Merge only after its checks pass, respecting current user authorization. Main deploys the data service. Verify the published data before rebuilding the Vercel frontend.
+7. Publish the frontend through Trailgenic/exmxc-site on Vercel. Read its PUBLISHING.md and current source. Sync generated index and Power Lens snapshots into pages/ai-power-index.html and pages/ai-power-index/companies.html, retaining Vercel path handling and edition query parameters. Methodology lives at /ai-power-index/methodology. Run the site checks/build, push reviewed changes, and verify production HTML, all three sorts, edition history and metadata. Webflow is no longer the exmxc frontend.
 8. Report the dated edition, largest changes, and public link. Monthly reviews are scheduled for the 18th, beginning October 18, 2026, in America/Los_Angeles.
 
-## Webflow identifiers
+## Historical Webflow identifiers (do not publish here)
 
 - Site: `68bf4541648aa50f5744573f`
 - Index page: `6aa494125624023334f8b483`
@@ -51,3 +51,7 @@ Power Lens uses the same edition as the index, including all force scores, thesi
 The generated head embeds a compact complete snapshot for all 50 companies; the footer includes a readable first profile and shared browser renderer. Both blocks must be published together and stay below Webflow's 50,000-character limit. The build enforces those limits. JSON is escaped for safe embedding. The saved edition works if the data service is unavailable. Archive requests are checked and failures retain a clearly labeled saved profile. Monthly history loads dated snapshots and never fabricates a prior month.
 
 After a monthly build, publish all six generated blocks and test an index company link, company switching, edition preservation, the four-force table, and monthly history. Updating this runbook extends the existing monthly automation; do not create a duplicate schedule.
+
+## November 9, 2026 release
+
+The next published snapshot is 2026-11-09; no October snapshot was fabricated. Current assessments use November 9. Forecast targets remain 2027-09-18 and 2030-09-18 so revisions compare fixed horizons. See docs/ai-power-rankings-review-2026-11-09.md. Generated webflow/ filenames are retained as build intermediates for compatibility; publication is to Vercel.

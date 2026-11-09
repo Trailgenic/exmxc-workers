@@ -1,0 +1,2435 @@
+{
+  "edition_id": "2026-11-09",
+  "as_of": "2026-11-09",
+  "methodology_id": "ai-power-rankings-1.0.0",
+  "cohort_id": "global-50-2026-09",
+  "company_count": 50,
+  "years": [
+    2026,
+    2027,
+    2030
+  ],
+  "change_note": "November 9 review of all 50 companies. Deployed compute, enterprise controls and scarce power infrastructure strengthen selected scores; external cloud dependence tempers frontier-lab Energy forecasts. Same cohort and locked methodology. September is preserved; no October edition is backfilled. The 2026 assessment advances to November 9; 2027 and 2030 forecast target dates remain September 18.",
+  "supersedes": null,
+  "rows": [
+    {
+      "id": "alphabet",
+      "company": "Alphabet",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 100,
+            "interface": 100,
+            "alignment": 90,
+            "energy": 70
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 80
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Alphabet reports Q3 Google Cloud revenue of $30.7 billion, up 103%, with TPU systems sales contributing. Search revenue grew 12%.",
+      "thesis": "Compute rises to 100: deployed cloud scale and external TPU commercialization strengthen the infrastructure bottleneck. Interface was already at 100. Future OCI TPU deployments do not add current Energy credit.",
+      "reconsider_if": "Agents displace Google’s discovery surfaces faster than Gemini captures the new interaction.",
+      "sources": [
+        {
+          "title": "Alphabet Q3 2026 results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Compute 95 → 100."
+    },
+    {
+      "id": "microsoft",
+      "company": "Microsoft",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 95,
+            "interface": 95,
+            "alignment": 95,
+            "energy": 75
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 80
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 100,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Microsoft reports Azure revenue of $33.2 billion, up 48%, and Microsoft Cloud growth of 30% in the September quarter.",
+      "thesis": "Compute rises to 95 as operating Azure capacity and adoption substantiate more of the platform position. Existing enterprise Interface and Alignment judgments hold; revenue growth alone does not establish greater electricity control.",
+      "reconsider_if": "Customers move their agent orchestration and identities outside Microsoft’s products.",
+      "sources": [
+        {
+          "title": "Microsoft FY2027 Q1 results",
+          "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2027-Q1/press-release-webcast",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Compute 90 → 95."
+    },
+    {
+      "id": "amazon",
+      "company": "Amazon",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 90,
+            "energy": 80
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 90,
+            "alignment": 95,
+            "energy": 85
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 95,
+            "alignment": 95,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Amazon reports AWS Q3 revenue of $46.0 billion, up 39%, and operating income of $17.8 billion.",
+      "thesis": "All inputs hold. Strong operating evidence reinforces the already high Compute score; faster revenue growth is not a separate force or an automatic upgrade.",
+      "reconsider_if": "Custom-chip commitments fail to convert into useful capacity or customers bypass AWS’s agent layer.",
+      "sources": [
+        {
+          "title": "Amazon Q3 2026 results",
+          "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report",
+          "date_label": "Q3 2026 results; accessed 2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "nvidia",
+      "company": "NVIDIA",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 100,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 30
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 90,
+            "alignment": 70,
+            "energy": 35
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 75,
+            "energy": 45
+          }
+        }
+      },
+      "research_premise": "NVIDIA announced an independent board inquiry following reporting concerning its CEO. The board stated it had no reason to believe national security or company secrets had been compromised and retained confidence in leadership.",
+      "thesis": "All inputs hold. The inquiry is an unresolved risk, not a finding of lost Compute control. Alignment measures authority over AI actions, not executive reputation. Reassess if findings change export access, operating leadership, or enforceable controls.",
+      "reconsider_if": "The board inquiry produces verified findings that impair export access, operational continuity, or enforceable controls; or alternative compute stacks erode customer dependence faster than forecast.",
+      "sources": [
+        {
+          "title": "NVIDIA board statement",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors?embed=true",
+          "date_label": "2026-11-08",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "meta",
+      "company": "Meta",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 90,
+            "interface": 95,
+            "alignment": 65,
+            "energy": 65
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 95,
+            "alignment": 70,
+            "energy": 70
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 95,
+            "alignment": 80,
+            "energy": 80
+          }
+        }
+      },
+      "research_premise": "Meta reports 3.64 billion daily active people, launches of Muse and Muse Wonder, and $34.91 billion of quarterly capital expenditure. Its $135–145 billion annual capex range is guidance.",
+      "thesis": "All inputs hold. Distribution remains a major strength; model launches and planned spending do not by themselves demonstrate a new five-point step in control.",
+      "reconsider_if": "Meta turns messaging into the dominant environment for commercial agent transactions.",
+      "sources": [
+        {
+          "title": "Meta Q3 2026 results",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/",
+          "date_label": "2026-10-21",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "openai",
+      "company": "OpenAI",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 85,
+            "interface": 100,
+            "alignment": 80,
+            "energy": 45
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 85,
+            "energy": 60
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 100,
+            "alignment": 95,
+            "energy": 75
+          }
+        }
+      },
+      "research_premise": "OpenAI reports more than 1.2 billion weekly ChatGPT users and availability of ChatGPT Enterprise through AWS Marketplace. Its October Google Cloud announcement plans model availability in coming weeks.",
+      "thesis": "Current Interface rises to 100 for direct reach and procurement distribution. We temper forecast infrastructure sovereignty: cloud purchasing and partnerships provide access, not ownership of suppliers or their electricity. This revises the September forecast, not observed capacity.",
+      "reconsider_if": "Direct user and enterprise adoption stalls, or external compute and firm-power delivery fails to convert contracted access into reliable capacity. Verified control of more energized infrastructure would support higher forecasts.",
+      "sources": [
+        {
+          "title": "ChatGPT Enterprise in AWS Marketplace",
+          "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/",
+          "date_label": "2026-11-09",
+          "accessed_on": "2026-11-09"
+        },
+        {
+          "title": "OpenAI models coming to Google Cloud",
+          "url": "https://openai.com/index/openai-models-google-cloud/",
+          "date_label": "2026-10-21; availability prospective",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 95 → 100; 2027 Energy 65 → 60; 2030 Compute 100 → 95; 2030 Energy 85 → 75."
+    },
+    {
+      "id": "apple",
+      "company": "Apple",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 65,
+            "interface": 100,
+            "alignment": 90,
+            "energy": 20
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 70,
+            "interface": 100,
+            "alignment": 90,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 95,
+            "alignment": 90,
+            "energy": 30
+          }
+        }
+      },
+      "research_premise": "Apple expanded Siri AI beta to additional languages with personal context, onscreen awareness and systemwide app actions. Regional restrictions and daily limits remain.",
+      "thesis": "Current Alignment rises to 90 for OS-mediated access to personal context and actions. Interface remains at its existing maximum. The 2027 Alignment forecast rises to 90; this is authority over execution, not a claim that beta reliability is solved.",
+      "reconsider_if": "Siri becomes the default agent for most device actions, preserving Apple’s maximum interface position.",
+      "sources": [
+        {
+          "title": "Siri AI language and action availability",
+          "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+          "date_label": "2026-10-26",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Alignment 85 → 90; 2027 Alignment 85 → 90."
+    },
+    {
+      "id": "huawei",
+      "company": "Huawei",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 75,
+            "energy": 45
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 85,
+            "alignment": 80,
+            "energy": 55
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "Huawei reports over 1,000 deployed Atlas 900 A3 SuperPoDs and large-scale commercial use of Atlas 950. Ascend 960 variants remain scheduled for 2027.",
+      "thesis": "Current Compute rises to 90 for disclosed commercial deployment and a broader software ecosystem. Existing 2027 and 2030 scores already anticipate an alternative stack; no credit is assigned for unshipped roadmap hardware.",
+      "reconsider_if": "Manufacturing limits or weak developer adoption prevent Ascend from becoming a durable alternative.",
+      "sources": [
+        {
+          "title": "Huawei compute deployment and roadmap",
+          "url": "https://www.huawei.com/en/news/2026/9/hc-wang-keynote",
+          "date_label": "HUAWEI CONNECT September 2026",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Compute 85 → 90."
+    },
+    {
+      "id": "alibaba",
+      "company": "Alibaba",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 85,
+            "alignment": 75,
+            "energy": 50
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 90,
+            "alignment": 80,
+            "energy": 55
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 65
+          }
+        }
+      },
+      "research_premise": "Alibaba unveiled a full-stack roadmap, Qwen Intelligence and Zhenwu V900 silicon scheduled for commercial release in Q1 2027. Its more-than-20-GW target is for 2032.",
+      "thesis": "Forecast Compute rises five points in 2027 and 2030 as the proprietary stack becomes more credible. Current scores hold: scheduled chips and the 2032 capacity target are not deployed control at this cutoff.",
+      "reconsider_if": "Model use grows without Alibaba retaining the cloud workload or customer interaction.",
+      "sources": [
+        {
+          "title": "Alibaba Apsara 2026 roadmap",
+          "url": "https://www.alibabagroup.com/en-US/document-2041268239081668608",
+          "date_label": "2026-09-25",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2027 Compute 85 → 90; 2030 Compute 90 → 95."
+    },
+    {
+      "id": "tencent",
+      "company": "Tencent",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 70,
+            "interface": 90,
+            "alignment": 75,
+            "energy": 35
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 90,
+            "alignment": 80,
+            "energy": 40
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 90,
+            "alignment": 85,
+            "energy": 50
+          }
+        }
+      },
+      "research_premise": "Tencent describes WorkBuddy and CodeBuddy subscriptions, Hy model services and a prototype Xiaowei agent embedded in Weixin.",
+      "thesis": "All inputs hold. Weixin distribution remains powerful; a prototype is not full deployment of permissioned transactions across that user base.",
+      "reconsider_if": "Commercial agents bypass Tencent’s interaction and transaction environment.",
+      "sources": [
+        {
+          "title": "Tencent October company disclosure",
+          "url": "https://www.tencent.com/wp-content/uploads/2026/10/c700_Joshua-PS-Publication-Announcement.pdf",
+          "date_label": "October 2026 company publication",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "bytedance",
+      "company": "ByteDance",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 95,
+            "alignment": 55,
+            "energy": 35
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 95,
+            "alignment": 60,
+            "energy": 40
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 50
+          }
+        }
+      },
+      "research_premise": "ByteDance Seed lists Seedream 5.5 alongside Dola, Dreamina and BytePlus distribution. Its portfolio spans models, consumer creation and enterprise delivery.",
+      "thesis": "All inputs hold. Additional model releases reinforce breadth but do not establish a new step in infrastructure, permission or electricity control.",
+      "reconsider_if": "Agent products capture enterprise permissions at the same scale as its consumer products capture attention.",
+      "sources": [
+        {
+          "title": "ByteDance Seed product portfolio",
+          "url": "https://seed.bytedance.com/en/",
+          "date_label": "Current product page; Seedream 5.5 dated 2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "oracle",
+      "company": "Oracle",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 85,
+            "interface": 70,
+            "alignment": 85,
+            "energy": 65
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 75,
+            "alignment": 85,
+            "energy": 75
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 80
+          }
+        }
+      },
+      "research_premise": "Oracle and Google announced TPUs on OCI starting in calendar 2027, ramping over multiple years. OCI supplies datacenter power, cooling and networking.",
+      "thesis": "Forecast Compute rises to 95 in 2027 and 2030 for a more diversified accelerator offering. Current scores hold; the future TPU service is not current capacity and does not transfer Google silicon ownership.",
+      "reconsider_if": "Large AI customers internalize capacity or fail to meet commitments.",
+      "sources": [
+        {
+          "title": "Google TPUs on OCI: 2027 availability",
+          "url": "https://www.oracle.com/news/announcement/ai-world-oracle-brings-google-tpus-to-oracle-cloud-infrastructure-2026-10-27/",
+          "date_label": "2026-10-27",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2027 Compute 90 → 95; 2030 Compute 90 → 95."
+    },
+    {
+      "id": "anthropic",
+      "company": "Anthropic",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 85,
+            "alignment": 85,
+            "energy": 35
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 95,
+            "alignment": 90,
+            "energy": 45
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 95,
+            "alignment": 90,
+            "energy": 60
+          }
+        }
+      },
+      "research_premise": "Claude Enterprise adds generally available inference hooks and centralized security controls. Anthropic also released Fable 5.2 and restricted-access Mythos 5.2 on November 9. A financed Broadcom compute arrangement starts deliveries in 2027.",
+      "thesis": "Current Interface and Alignment rise to 85 for expanded work surfaces and enforceable policy checks; 2027 Interface and Alignment rise to 95 and 90. Forecast Energy is moderated to 45 in 2027 and 60 in 2030: financed external compute is not ownership of firm generation.",
+      "reconsider_if": "Direct user and enterprise adoption stalls, or external compute and firm-power delivery fails to convert contracted access into reliable capacity. Verified control of more energized infrastructure would support higher forecasts.",
+      "sources": [
+        {
+          "title": "Claude Enterprise security controls",
+          "url": "https://claude.com/resources/articles/claude-enterprise-security-updates",
+          "date_label": "2026-11-05",
+          "accessed_on": "2026-11-09"
+        },
+        {
+          "title": "Claude Fable 5.2 and Mythos 5.2",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "date_label": "2026-11-09",
+          "accessed_on": "2026-11-09"
+        },
+        {
+          "title": "Broadcom–Anthropic compute financing",
+          "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/10/bank-of-america--blackstone--citi-and-morgan-stanley-announce-la",
+          "date_label": "2026-10-26; deliveries from 2027",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 80 → 85; 2026 Alignment 80 → 85; 2027 Interface 90 → 95; 2027 Alignment 85 → 90; 2027 Energy 50 → 45; 2030 Energy 65 → 60."
+    },
+    {
+      "id": "spacex",
+      "company": "SpaceX (including xAI)",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 85,
+            "interface": 80,
+            "alignment": 50,
+            "energy": 40
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 85,
+            "alignment": 55,
+            "energy": 55
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "The xAI product site lists Grok, Grok Bot, Grok Build and multimodal APIs, with October and November enterprise product updates.",
+      "thesis": "All inputs hold. Retain SpaceX including xAI and X as the group boundary, with Tesla separate. New product surfaces reinforce the thesis without proving a five-point increase in control; announced campuses do not count as energized capacity.",
+      "reconsider_if": "Infrastructure expansion fails to produce durable AI usage and governing authority.",
+      "sources": [
+        {
+          "title": "SpaceX superintelligence product portfolio",
+          "url": "https://x.ai/",
+          "date_label": "Current product page; accessed 2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "samsung-electronics",
+      "company": "Samsung Electronics",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 60,
+            "energy": 20
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 65,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 80,
+            "alignment": 70,
+            "energy": 30
+          }
+        }
+      },
+      "research_premise": "Samsung reports materially expanded HBM4 sales and continued growth in AI memory and server SSD demand.",
+      "thesis": "Current Compute rises to 90 for HBM execution within a diversified semiconductor platform. Future scores already anticipate that position. Other Samsung group businesses remain excluded.",
+      "reconsider_if": "Memory and foundry improvements fail to turn into durable competitive positions.",
+      "sources": [
+        {
+          "title": "Samsung Q3 2026 results",
+          "url": "https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results",
+          "date_label": "2026-10-29",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Compute 85 → 90."
+    },
+    {
+      "id": "tsmc",
+      "company": "TSMC",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 100,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 20
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 25
+          }
+        }
+      },
+      "research_premise": "TSMC reports $46.72 billion of Q3 revenue; 2-nanometer accounts for 8% of wafer revenue and 7-nanometer-and-better technologies for 79%.",
+      "thesis": "All inputs hold. Leading-edge manufacturing remains a defining Compute bottleneck already scored at 100. Better revenue does not create new Interface or Alignment power.",
+      "reconsider_if": "Leading-edge production diversifies enough to weaken TSMC’s bottleneck.",
+      "sources": [
+        {
+          "title": "TSMC Q3 2026 results",
+          "url": "https://pr.tsmc.com/english/news/3346",
+          "date_label": "2026-10-15",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "asml",
+      "company": "ASML",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 100,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 100,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "ASML reports record Q3 sales and expects planned 2027–2028 supply to fall short of customer demand.",
+      "thesis": "All inputs hold. The evidence reinforces the existing 100 Compute anchor; customer demand and future orders do not grant broad AI permission authority.",
+      "reconsider_if": "Customers achieve comparable leading-edge production with materially less dependence on ASML.",
+      "sources": [
+        {
+          "title": "ASML Q3 2026 results",
+          "url": "https://www.investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+          "date_label": "2026-10-14",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "broadcom",
+      "company": "Broadcom",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 90,
+            "interface": 35,
+            "alignment": 35,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 40,
+            "alignment": 35,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 45,
+            "alignment": 45,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "A $63 billion financing structure supports Broadcom accelerators and networking to be leased to Anthropic, with deliveries expected from 2027 and residual-value support from Broadcom.",
+      "thesis": "All force scores hold. The arrangement strengthens the existing 95 forecast Compute call, while creating financing exposure. A funding structure is not shipped hardware or customer ownership.",
+      "reconsider_if": "Hyperscalers internalize chip design and networking value faster than Broadcom expands.",
+      "sources": [
+        {
+          "title": "Broadcom compute financing: primary partner disclosure",
+          "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/10/bank-of-america--blackstone--citi-and-morgan-stanley-announce-la",
+          "date_label": "2026-10-26",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "amd",
+      "company": "AMD",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 90,
+            "interface": 55,
+            "alignment": 30,
+            "energy": 10
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 60,
+            "alignment": 35,
+            "energy": 10
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 70,
+            "alignment": 40,
+            "energy": 15
+          }
+        }
+      },
+      "research_premise": "AMD reports Q3 datacenter revenue of $8.5 billion, up 97%, with Instinct MI450 launch sales and EPYC demand; further Helios and Venice scaling is forward guidance.",
+      "thesis": "Current Compute rises to 90 as a second accelerator ecosystem gains operating scale. Forecasts hold: more sales alone do not establish ownership of customers or their action permissions.",
+      "reconsider_if": "Accelerator adoption remains episodic and developers remain locked into competing stacks.",
+      "sources": [
+        {
+          "title": "AMD Q3 2026 results",
+          "url": "https://newsroom.amd.com/news/amd-reports-third-quarter-2026-earnings/",
+          "date_label": "2026-11-03",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Compute 85 → 90."
+    },
+    {
+      "id": "sk-hynix",
+      "company": "SK hynix",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 95,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 20,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 95,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "SK hynix reports HBM4 shipments ramping and long-term agreements covering more than half of 2027–2028 production capacity. Its expectation of shortage through 2030 is a forecast.",
+      "thesis": "All inputs hold. The 95 Compute score already recognizes a difficult-to-substitute memory position. Contracted production and forecast scarcity do not justify maximum control over a market with credible suppliers.",
+      "reconsider_if": "Competing supply or architectural changes reduce memory scarcity and differentiation.",
+      "sources": [
+        {
+          "title": "SK hynix Q3 2026 results",
+          "url": "https://news.skhynix.com/en/q3-2026-business-results/",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "micron",
+      "company": "Micron",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 85,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "Micron reports HBM4 volume production and HBM4 16-high samples; HBM4E volume ramp remains expected in calendar 2027.",
+      "thesis": "All inputs hold. HBM4 execution supports the existing 85 Compute score; HBM4E remains prospective and lower chip power consumption is not control of electricity.",
+      "reconsider_if": "HBM execution or customer qualification fails to sustain the expected gains.",
+      "sources": [
+        {
+          "title": "Micron FY2026 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+          "date_label": "FY2026 Form 10-K; year ended 2026-09-03",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "arm",
+      "company": "Arm",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 85,
+            "interface": 60,
+            "alignment": 25,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 65,
+            "alignment": 30,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 70,
+            "alignment": 35,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Arm reports doubled datacenter royalties and growing Neoverse adoption. Its own AGI CPU commercial deliveries are still scheduled for fiscal Q4 2027.",
+      "thesis": "Current Compute rises to 85 for deployed architecture reach. Forecast Compute rises to 90 in 2027 and 2030 for the move toward a more complete compute platform; direct silicon shipments remain prospective.",
+      "reconsider_if": "Customers capture AI growth through architectures or software layers that reduce Arm’s influence.",
+      "sources": [
+        {
+          "title": "Arm FY2027 Q2 results",
+          "url": "https://newsroom.arm.com/news/arm-q2-fye27-results",
+          "date_label": "2026-11-04",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Compute 80 → 85; 2027 Compute 85 → 90; 2030 Compute 85 → 90."
+    },
+    {
+      "id": "tesla",
+      "company": "Tesla",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 65,
+            "interface": 80,
+            "alignment": 50,
+            "energy": 60
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 70,
+            "interface": 80,
+            "alignment": 55,
+            "energy": 60
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 90,
+            "alignment": 65,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "Tesla reports Cybercab rides in Austin and the start of Megafactory Texas production. Planned 50-GWh factory capacity is distinct from achieved output; FSD Supervised still requires driver supervision.",
+      "thesis": "Current Interface rises to 80 and Energy to 60 for deployed physical action and storage manufacturing. Forecasts hold. We do not generalize Austin service to unrestricted autonomy or treat planned factory capacity as delivered output.",
+      "reconsider_if": "Autonomy and robotics fail to scale operationally, or deployments require substantially more human supervision.",
+      "sources": [
+        {
+          "title": "Tesla Q3 2026 update",
+          "url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q3-2026-Update.pdf",
+          "date_label": "2026-10-21",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 75 → 80; 2026 Energy 55 → 60."
+    },
+    {
+      "id": "palantir",
+      "company": "Palantir",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 20,
+            "interface": 75,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 25,
+            "interface": 75,
+            "alignment": 95,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 25,
+            "interface": 85,
+            "alignment": 95,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "Palantir reports Q3 revenue growth of 96%, US commercial growth of 148%, and net dollar retention of 165%, describing AIP deployment through its Ontology.",
+      "thesis": "Current Interface rises to 75 as deployment and expansion deepen the workflow position. Alignment stays at 90: adoption supports the thesis but revenue is not proof of a new class of enforcement authority.",
+      "reconsider_if": "Customers standardize agent permissions and workflows on competing enterprise platforms.",
+      "sources": [
+        {
+          "title": "Palantir Q3 2026 results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm",
+          "date_label": "2026-11-02",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 70 → 75."
+    },
+    {
+      "id": "servicenow",
+      "company": "ServiceNow",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 15,
+            "interface": 80,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 85,
+            "alignment": 95,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "ServiceNow reports $3.988 billion of subscription revenue and raises its 2026 AI annual contract value target to $1.7 billion. Its Control Tower strategy remains central.",
+      "thesis": "Current Interface rises to 80 for enterprise workflow adoption. Alignment stays at 85 until broader evidence shows increased enforcement authority. The AI ACV target is guidance, not current recognized revenue.",
+      "reconsider_if": "The control layer remains a reporting dashboard while other platforms enforce permissions.",
+      "sources": [
+        {
+          "title": "ServiceNow Q3 2026 results",
+          "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Reports-Third-Quarter-2026-Financial-Results/default.aspx",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 75 → 80."
+    },
+    {
+      "id": "sap",
+      "company": "SAP",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 85,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 25,
+            "interface": 80,
+            "alignment": 95,
+            "energy": 5
+          }
+        }
+      },
+      "research_premise": "SAP reports cloud ERP Suite revenue growth of 29% and continued customer adoption of its Business AI and Joule Work strategy.",
+      "thesis": "All inputs hold. Strong ERP adoption reinforces authority over business records and transactions, but does not independently establish a new five-point force step.",
+      "reconsider_if": "Customers move authoritative business actions and permissions outside SAP.",
+      "sources": [
+        {
+          "title": "SAP Q3 2026 results",
+          "url": "https://news.sap.com/2026/10/sap-announces-q3-2026-results/",
+          "date_label": "2026-10-21",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "salesforce",
+      "company": "Salesforce",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 80,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 20,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Salesforce describes AIforce across Claude, Slack and its own applications, governed by existing permissions. Claudeforce is beta; Agentforce Coworker was generally available at announcement.",
+      "thesis": "All inputs hold. External interfaces can preserve Salesforce permission authority while sharing the user relationship. Preview functionality receives no blanket current-control uplift.",
+      "reconsider_if": "External agents reduce Salesforce to replaceable data storage and capture the workflow logic.",
+      "sources": [
+        {
+          "title": "Salesforce Dreamforce 2026 release and availability summary",
+          "url": "https://www.salesforce.com/blog/dreamforce-2026-announcements/",
+          "date_label": "2026-09-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "ibm",
+      "company": "IBM",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 55,
+            "interface": 60,
+            "alignment": 80,
+            "energy": 25
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 60,
+            "alignment": 80,
+            "energy": 25
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 50,
+            "interface": 55,
+            "alignment": 75,
+            "energy": 25
+          }
+        }
+      },
+      "research_premise": "IBM reports accelerated growth led by Software and Infrastructure and describes customer adoption of AI in operating workflows.",
+      "thesis": "All inputs hold. The hybrid enterprise position remains meaningful, but current earnings do not disprove the longer-term competitive pressure embedded in the forecast.",
+      "reconsider_if": "Its hybrid governance becomes the default across heterogeneous AI environments.",
+      "sources": [
+        {
+          "title": "IBM Q3 2026 results",
+          "url": "https://newsroom.ibm.com/2026-10-21-IBM-RELEASES-THIRD-QUARTER-RESULTS",
+          "date_label": "2026-10-21",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "coreweave",
+      "company": "CoreWeave",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 35,
+            "alignment": 30,
+            "energy": 55
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 45,
+            "alignment": 35,
+            "energy": 70
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 40,
+            "alignment": 45,
+            "energy": 70
+          }
+        }
+      },
+      "research_premise": "CoreWeave schedules Q3 results for November 10, after this edition cutoff, and describes its specialized cloud as serving nine of ten leading foundation model providers.",
+      "thesis": "All inputs hold. No November 10 earnings are anticipated or inserted. Specialized infrastructure remains valuable, with supplier, funding and customer concentration limiting independent control.",
+      "reconsider_if": "Independent GPU cloud platforms retain pricing and customer control as infrastructure matures.",
+      "sources": [
+        {
+          "title": "CoreWeave reporting calendar and platform disclosure",
+          "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Date-of-Third-Quarter-2026-Financial-Results-and-Conference-Call/default.aspx",
+          "date_label": "2026-10-27",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "deepseek",
+      "company": "DeepSeek",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 65,
+            "interface": 65,
+            "alignment": 45,
+            "energy": 15
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 75,
+            "interface": 70,
+            "alignment": 50,
+            "energy": 20
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 80,
+            "alignment": 60,
+            "energy": 25
+          }
+        }
+      },
+      "research_premise": "DeepSeek opened its in-house Search and Fetch API and updated V4.1 Flash across its API, web and app products. Search scale and benchmark results are company-reported.",
+      "thesis": "Current Interface rises five points to 65 for direct retrieval and developer integration beyond model weights. Forecasts hold; an open API does not establish authority over downstream action permissions.",
+      "reconsider_if": "Adoption fails to create durable infrastructure access or direct user relationships.",
+      "sources": [
+        {
+          "title": "DeepSeek October release notes",
+          "url": "https://api-docs.deepseek.com/updates/",
+          "date_label": "2026-10-17 release entry",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 60 → 65."
+    },
+    {
+      "id": "databricks",
+      "company": "Databricks",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 40,
+            "interface": 65,
+            "alignment": 85,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 45,
+            "interface": 75,
+            "alignment": 85,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 50,
+            "interface": 80,
+            "alignment": 90,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Databricks made AI Functions Unity Catalog permissions and default OAuth clients for external agents generally available, alongside gateway usage controls. Other catalog features remain beta.",
+      "thesis": "Current Alignment rises to 85 for documented permissions applied to AI execution. Other forces and forecasts hold; a usage dashboard alone would not warrant this upgrade.",
+      "reconsider_if": "Open standards or cloud-native catalogs displace its authority over AI execution.",
+      "sources": [
+        {
+          "title": "Databricks October product release notes",
+          "url": "https://docs.databricks.com/aws/en/release-notes/product/2026/october",
+          "date_label": "October 2026 release notes; updated 2026-11-04",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Alignment 80 → 85."
+    },
+    {
+      "id": "snowflake",
+      "company": "Snowflake",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 35,
+            "interface": 60,
+            "alignment": 75,
+            "energy": 5
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 40,
+            "interface": 65,
+            "alignment": 80,
+            "energy": 5
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 45,
+            "interface": 70,
+            "alignment": 85,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Snowflake announced Business Ontology and Cortex AI Gateway capabilities for context, model access, tools and agent actions. The related Horizon Context release is a public preview.",
+      "thesis": "All inputs hold. The roadmap supports our existing governance forecast; announcements and previews are not evidence of broad deployed enforcement.",
+      "reconsider_if": "Agent builders access governed data without adopting Snowflake’s execution or control layer.",
+      "sources": [
+        {
+          "title": "Snowflake Expedition 2026 agent governance announcement",
+          "url": "https://www.snowflake.com/en/news/press-releases/expedition-2026-business-ontology-ai-gateway/",
+          "date_label": "2026-11-03",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "cloudflare",
+      "company": "Cloudflare",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 45,
+            "interface": 60,
+            "alignment": 75,
+            "energy": 10
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 50,
+            "interface": 70,
+            "alignment": 85,
+            "energy": 10
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 60,
+            "interface": 75,
+            "alignment": 90,
+            "energy": 15
+          }
+        }
+      },
+      "research_premise": "Cloudflare reports revenue growth of 39% and current remaining performance obligation growth of 37%, while emphasizing its developer and security platform.",
+      "thesis": "All inputs hold. Platform adoption reinforces the edge-control thesis; company-wide revenue does not isolate agent enforcement sufficiently to justify another step.",
+      "reconsider_if": "Cloud and identity incumbents capture agent enforcement before Cloudflare establishes durable control.",
+      "sources": [
+        {
+          "title": "Cloudflare Q3 2026 results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477333/000147733326000060/q326exhibit991.htm",
+          "date_label": "2026-11-05",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "cisco",
+      "company": "Cisco",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 55,
+            "interface": 50,
+            "alignment": 70,
+            "energy": 10
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 55,
+            "alignment": 75,
+            "energy": 10
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 55,
+            "interface": 55,
+            "alignment": 80,
+            "energy": 10
+          }
+        }
+      },
+      "research_premise": "Cisco reports two AI Defense integrations already on the ServiceNow Store and participation in the Control Tower Alliance.",
+      "thesis": "All inputs hold. Integrations improve the route to enterprise enforcement, but partnership membership is not proof that Cisco controls the entire permission layer.",
+      "reconsider_if": "Network visibility does not translate into authority over application-level agent actions.",
+      "sources": [
+        {
+          "title": "Cisco AI Defense and ServiceNow integrations",
+          "url": "https://blogs.cisco.com/ai/cisco-ai-defense-joins-servicenows-control-tower-alliance",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "palo-alto-networks",
+      "company": "Palo Alto Networks",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 10,
+            "interface": 50,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 60,
+            "alignment": 90,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 65,
+            "alignment": 95,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Strata Cloud Manager adds scoped roles for AI Gateway, Agent Identity Security, Runtime Security and related applications, including third-party identity-provider mappings.",
+      "thesis": "Current Alignment rises to 90 for granular, documented access authority across AI security services. Other inputs hold; customer adoption and enforcement coverage remain the limiting questions.",
+      "reconsider_if": "Cloud platforms bundle sufficient agent security and capture the enforcement point.",
+      "sources": [
+        {
+          "title": "Palo Alto Networks October access-control release",
+          "url": "https://docs.paloaltonetworks.com/strata-cloud-manager/new-features/by-date/strata-cloud-manager/october-2026",
+          "date_label": "October 2026 product release",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Alignment 85 → 90."
+    },
+    {
+      "id": "crowdstrike",
+      "company": "CrowdStrike",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 5,
+            "interface": 50,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 60,
+            "alignment": 85,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 10,
+            "interface": 65,
+            "alignment": 90,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "CrowdStrike reports Falcon Guardian deployment at hundreds of organizations since September. Its separate NVIDIA hardware-enforcement collaboration is an expansion announcement.",
+      "thesis": "Current Alignment rises to 85 for deployed agent-runtime protection. Forecasts hold. We do not treat an announced silicon integration as universally deployed.",
+      "reconsider_if": "Agent identities consolidate with other identity or cloud providers.",
+      "sources": [
+        {
+          "title": "CrowdStrike Falcon Guardian deployment report",
+          "url": "https://www.crowdstrike.com/en-us/blog/why-organizations-secure-ai-agents-with-falcon-guardian/",
+          "date_label": "2026-10-23",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Alignment 80 → 85."
+    },
+    {
+      "id": "synopsys",
+      "company": "Synopsys",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 55,
+            "alignment": 25,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 60,
+            "alignment": 30,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 65,
+            "alignment": 35,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Synopsys reports strength in Design Automation and Ansys, with the latter already part of the group. No later quarterly result is assumed at this cutoff.",
+      "thesis": "All inputs hold. Existing design and simulation breadth remains consistent with the baseline; verification tooling is not general authority over AI agent actions.",
+      "reconsider_if": "Design automation becomes more substitutable or is internalized by major chip companies.",
+      "sources": [
+        {
+          "title": "Synopsys latest available quarterly results",
+          "url": "https://news.synopsys.com/2026-08-26-Synopsys-Posts-Financial-Results-for-Third-Quarter-Fiscal-Year-2026",
+          "date_label": "2026-08-26; re-reviewed 2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "cadence",
+      "company": "Cadence",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 75,
+            "interface": 60,
+            "alignment": 25,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 80,
+            "interface": 65,
+            "alignment": 30,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 70,
+            "alignment": 40,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Cadence reports more than 100 active AI Super Agent customer engagements, new domain models and growth in core EDA, hardware and system design.",
+      "thesis": "Current Interface rises to 60 as engineering workflows deepen. Future scores hold. Specialized design control is distinct from universal AI Alignment authority.",
+      "reconsider_if": "Agent capabilities commoditize design interfaces faster than simulation platforms gain influence.",
+      "sources": [
+        {
+          "title": "Cadence Q3 2026 results",
+          "url": "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr-ir/2026/cadence-reports-third-quarter-2026-financial-results.html",
+          "date_label": "2026-10-26",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Interface 55 → 60."
+    },
+    {
+      "id": "applied-materials",
+      "company": "Applied Materials",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 85,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Applied Materials outlines longer-term growth expectations and its materials-engineering role in AI semiconductor manufacturing at SEMICON West.",
+      "thesis": "All inputs hold. The evidence supports a major Compute position; growth expectations and research investment do not yet establish a higher control anchor.",
+      "reconsider_if": "New process architectures increase its strategic dependence beyond our forecast.",
+      "sources": [
+        {
+          "title": "Applied Materials SEMICON West investor presentation release",
+          "url": "https://ir.appliedmaterials.com/node/29776/pdf",
+          "date_label": "2026-10-13",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "lam-research",
+      "company": "Lam Research",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 90,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "Lam reports September-quarter revenue of $8.22 billion, up 22% sequentially, and stronger operating margins.",
+      "thesis": "All inputs hold. Execution reinforces process-equipment dependence, but a quarterly sales increase alone does not demonstrate a structural step in control.",
+      "reconsider_if": "Process shifts favor rival equipment or reduce the value of its manufacturing steps.",
+      "sources": [
+        {
+          "title": "Lam Research September 2026 quarter results",
+          "url": "https://newsroom.lamresearch.com/2026-10-21-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-September-27%2C-2026",
+          "date_label": "2026-10-21",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "kla",
+      "company": "KLA",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 80,
+            "interface": 15,
+            "alignment": 20,
+            "energy": 0
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 15,
+            "alignment": 20,
+            "energy": 0
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 85,
+            "interface": 20,
+            "alignment": 25,
+            "energy": 0
+          }
+        }
+      },
+      "research_premise": "KLA reports September-quarter revenue of $4.14 billion and results above the midpoint of guidance.",
+      "thesis": "All inputs hold. Process-control importance persists; manufacturing inspection is not general authority over AI systems or their actions.",
+      "reconsider_if": "Manufacturing changes reduce dependence on its inspection and process-control tools.",
+      "sources": [
+        {
+          "title": "KLA FY2027 Q1 results",
+          "url": "https://ir.kla.com/sec-filings/all-sec-filings/content/0000319201-26-000032/exhibit991earningsrelease0.htm",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "schneider-electric",
+      "company": "Schneider Electric",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 10,
+            "interface": 40,
+            "alignment": 25,
+            "energy": 95
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 45,
+            "alignment": 30,
+            "energy": 95
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 50,
+            "alignment": 35,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Schneider reports record revenue, strong Energy Management execution and triple-digit datacenter demand growth, with electrical, prefabricated and cooling solutions contributing.",
+      "thesis": "Current Energy rises to 95 as scarce electrical and thermal delivery strengthens the supplier position. Forecasts already recognize that level. Pending PTC acquisition assets are not treated as currently controlled.",
+      "reconsider_if": "Equipment supply catches up quickly or large operators internalize the management layer.",
+      "sources": [
+        {
+          "title": "Schneider Electric Q3 2026 financial results",
+          "url": "https://www.se.com/ww/en/about-us/investor-relations/financial-results/",
+          "date_label": "2026-10-16 Q3 release",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Energy 90 → 95."
+    },
+    {
+      "id": "vertiv",
+      "company": "Vertiv",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 10,
+            "interface": 25,
+            "alignment": 15,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 30,
+            "alignment": 20,
+            "energy": 95
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 15,
+            "interface": 35,
+            "alignment": 25,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Vertiv reports sales growth of 61%, organic order growth above 100% and continuing capacity investment in critical digital infrastructure.",
+      "thesis": "Current Energy rises to 90 and the 2027 forecast to 95 as power and cooling integration becomes harder to substitute. The 2030 forecast holds; this is enabling infrastructure control, not ownership of generation.",
+      "reconsider_if": "Standardized cooling and power designs make the supplier readily replaceable.",
+      "sources": [
+        {
+          "title": "Vertiv Q3 2026 results",
+          "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Third-Quarter-2026-with-Net-Sales-Growth-of-61-Organic-Orders-Growth-over-100-and-Diluted-EPS-Growth-of-91-Adjusted-Diluted-EPS-Growth-of-78-Raises-Full-Year-2026-Guidance-Across-All-Key-Metrics/",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Energy 85 → 90; 2027 Energy 90 → 95."
+    },
+    {
+      "id": "eaton",
+      "company": "Eaton",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 15,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 25,
+            "alignment": 20,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 30,
+            "alignment": 25,
+            "energy": 90
+          }
+        }
+      },
+      "research_premise": "Eaton reports record electrical orders, electrical backlog growth of 46% and an agreement to acquire COL Group.",
+      "thesis": "Current Energy rises to 90 for electrical delivery and continuity infrastructure. Future scores hold. COL Group is pending and is not added to current ownership.",
+      "reconsider_if": "Capacity expansion eliminates equipment scarcity and customers regain bargaining power.",
+      "sources": [
+        {
+          "title": "Eaton Q3 2026 results",
+          "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-third-quarter-2026-results.html",
+          "date_label": "Q3 2026 release; accessed 2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Energy 85 → 90."
+    },
+    {
+      "id": "ge-vernova",
+      "company": "GE Vernova",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 5,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 95
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 95
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 15,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "GE Vernova reports gas-equipment backlog and slot reservations of 122 GW and growing power and grid equipment demand. The Trench acquisition is expected to close in late 2027.",
+      "thesis": "Current Energy rises to 95 for scarce delivery slots and installed service capability. Orders are not operating generation. Trench remains excluded from current ownership and the forecast does not require its completion.",
+      "reconsider_if": "Project delays prevent equipment demand from becoming energized capacity.",
+      "sources": [
+        {
+          "title": "GE Vernova Q3 2026 results and transaction status",
+          "url": "https://www.gevernova.com/news/articles/ge-vernova-releases-third-quarter-2026-financial-results-announces-agreement-acquire",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Energy 90 → 95."
+    },
+    {
+      "id": "siemens-energy",
+      "company": "Siemens Energy",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 5,
+            "interface": 15,
+            "alignment": 10,
+            "energy": 85
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 10,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 5,
+            "interface": 20,
+            "alignment": 15,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Siemens Energy lists its August FY2026 Q3 release and a November 11 annual press conference, after this cutoff. Its operating portfolio includes gas turbines and grid equipment.",
+      "thesis": "All inputs hold. Do not substitute Siemens AG automation announcements for Siemens Energy or anticipate November 11 results. Existing generation-equipment scarcity remains central.",
+      "reconsider_if": "Delivery constraints or competing technologies weaken its role in new powered capacity.",
+      "sources": [
+        {
+          "title": "Siemens Energy reporting calendar and portfolio",
+          "url": "https://www.siemens-energy.com/us/en/home/press.html",
+          "date_label": "Current press calendar; accessed 2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "constellation-energy",
+      "company": "Constellation Energy",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 95
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 100
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 100
+          }
+        }
+      },
+      "research_premise": "Constellation reports a 97.2% nuclear capacity factor, includes Calpine acquired in January, and details new nuclear contracts. Google uprates begin no earlier than 2028; RISEC is a pending acquisition.",
+      "thesis": "All inputs hold. Current Energy at 95 already recognizes firm-generation scarcity. Calpine is within the group, but future uprates, conditional financing and pending RISEC are not current output.",
+      "reconsider_if": "Grid access, outages, or contract structures prevent firm generation from translating into bargaining power.",
+      "sources": [
+        {
+          "title": "Constellation Q3 2026 results",
+          "url": "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-third-quarter-2026-results",
+          "date_label": "2026-11-09",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "nextera-energy",
+      "company": "NextEra Energy",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 90
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "NextEra reports 3.7 GW of new renewables and storage origination and a 36.7-GW backlog. Its Dominion combination remains pending despite shareholder approval.",
+      "thesis": "All inputs hold. Development scale supports the thesis, but backlog is not operating power and Dominion assets remain outside current ownership.",
+      "reconsider_if": "Interconnection and execution delays prevent development scale from becoming dependable power.",
+      "sources": [
+        {
+          "title": "NextEra Q3 2026 results",
+          "url": "https://www.investor.nexteraenergy.com/~/media/Files/N/NEE-IR/reports-and-fillings/quarterly-earnings/2026/Q3%202026/2026-1021%20NEEQ32026News%20Release%20vFinal.pdf",
+          "date_label": "2026-10-21",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    },
+    {
+      "id": "vistra",
+      "company": "Vistra",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 0,
+            "interface": 10,
+            "alignment": 5,
+            "energy": 90
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 95
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 0,
+            "interface": 15,
+            "alignment": 5,
+            "energy": 95
+          }
+        }
+      },
+      "research_premise": "Vistra reports completion of the Cogentrix acquisition in October, adding approximately 5,500 MW of natural-gas generation.",
+      "thesis": "Current Energy rises to 90 for completed, controlled generation; the 2027 forecast rises to 95 as firm-power bargaining capacity strengthens. The 2030 forecast holds at 95. Nuclear uprates remain prospective.",
+      "reconsider_if": "Uprates slip or the value of firm output fails to translate into stronger commercial control.",
+      "sources": [
+        {
+          "title": "Vistra Q3 2026 investor results",
+          "url": "https://investor.vistracorp.com/2026-11-06-Vistra-Reports-Third-Quarter-2026-Results",
+          "date_label": "2026-11-06",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "2026 Energy 85 → 90; 2027 Energy 90 → 95."
+    },
+    {
+      "id": "equinix",
+      "company": "Equinix",
+      "assessments": {
+        "2026": {
+          "kind": "current_assessment",
+          "target_date": "2026-11-09",
+          "forces": {
+            "compute": 55,
+            "interface": 45,
+            "alignment": 35,
+            "energy": 65
+          }
+        },
+        "2027": {
+          "kind": "forecast",
+          "target_date": "2027-09-18",
+          "forces": {
+            "compute": 60,
+            "interface": 50,
+            "alignment": 40,
+            "energy": 70
+          }
+        },
+        "2030": {
+          "kind": "forecast",
+          "target_date": "2030-09-18",
+          "forces": {
+            "compute": 65,
+            "interface": 55,
+            "alignment": 50,
+            "energy": 75
+          }
+        }
+      },
+      "research_premise": "Equinix reports Q3 revenue of $2.571 billion and raises annual guidance while continuing investment in its connected datacenter footprint.",
+      "thesis": "All inputs hold. Connected, powered locations remain useful to inference, but company-wide results do not establish a new step in independent compute or electricity control.",
+      "reconsider_if": "Inference stays concentrated inside hyperscalers rather than moving to distributed enterprise locations.",
+      "sources": [
+        {
+          "title": "Equinix Q3 2026 results",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1128/equinix-reports-third-quarter-results-and-raises-2026",
+          "date_label": "2026-10-28",
+          "accessed_on": "2026-11-09"
+        }
+      ],
+      "change_note": "All 12 force inputs retained after review; rank may move as peers change."
+    }
+  ],
+  "previous_edition": "2026-09-18"
+}
