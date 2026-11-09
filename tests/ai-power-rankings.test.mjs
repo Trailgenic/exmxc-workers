@@ -33,7 +33,8 @@ for(const line of approved) {
   }
 }
 // Request sorting must not mutate the baseline or another horizon.
-getPowerRankings({year:2030});assert.equal(getPowerRankings().rows[2].company,'Amazon');
+const initialOrder=getPowerRankings().rows.map(r=>r.id);
+getPowerRankings({year:2030});assert.deepEqual(getPowerRankings().rows.map(r=>r.id),initialOrder);
 const html=await readFile('webflow/ai-power-index-footer.html','utf8');
 assert.equal((html.match(/<th scope="row"/g)||[]).length,50);
 assert.ok(html.length<50000);

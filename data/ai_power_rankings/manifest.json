@@ -1,5 +1,5 @@
 {
-  "latest": "2026-09-18",
+  "latest": "2026-11-09",
   "methodology_id": "ai-power-rankings-1.0.0",
   "methodology_sha256": "e6ce8222876707cad5ff4c97d9be9b9d93fcdbe2984f07fbb40dc71429d8d7fc",
   "editions": [
@@ -9,6 +9,13 @@
       "label": "September 2026",
       "sha256": "252e1ff94f495d14d3fc5aa83fa3dabb43e4622e4398cb4c3cfa0554ac5a346e",
       "change_note": "Inaugural ranked edition. New longitudinal baseline; prior v1 exposure and v2 pilot profiles are separate series."
+    },
+    {
+      "edition_id": "2026-11-09",
+      "as_of": "2026-11-09",
+      "label": "November 2026 \u00b7 November 9",
+      "sha256": "b836e18a77d5f0d6322a02b9faf6427b6a304d37e58361bb234e0bdd434dfd74",
+      "change_note": "November 9 review of all 50 companies. Deployed compute, enterprise controls and scarce power infrastructure strengthen selected scores; external cloud dependence tempers frontier-lab Energy forecasts. Same cohort and locked methodology. September is preserved; no October edition is backfilled. The 2026 assessment advances to November 9; 2027 and 2030 forecast target dates remain September 18."
     }
   ]
 }
