@@ -104,8 +104,7 @@ Callable JSON tools from `DATA_TOOLS`:
 - `ex.strategic_consequence.get`
 - `ex.ai_power.analysis.top`
 - `ex.eei.audit.run`
-- `ex.convergence.latest`
-- `ex.convergence.log`
+The former Convergence Monitor feed redirects to the [archived June 15 reading](https://www.exmxc.ai/capital/convergence-monitor).
 
 Content links from `CONTENT_LINKS`:
 

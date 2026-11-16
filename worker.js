@@ -24,8 +24,6 @@ import {
   getAiPowerIndex,
   getAiPowerMethodologyV2,
   getAiPowerProfilesV2,
-  getConvergenceLatest,
-  getConvergenceLog,
   getDatasetIndex,
   getEntities,
   getFourForces,
@@ -507,9 +505,9 @@ export default {
       }
       return jsonResponse(getStrategicConsequence(args));
     }
-    if (url.pathname === "/datasets/convergence_monitor") return jsonResponse(DATASETS.convergence_monitor.data);
-    if (url.pathname === "/convergence/latest") return jsonResponse(getConvergenceLatest());
-    if (url.pathname === "/convergence/log") return jsonResponse(getConvergenceLog(queryArgs(url, ["limit"])));
+    if (/^\/(?:convergence(?:\/(?:latest|log))?|datasets\/convergence_monitor)\/?$/.test(url.pathname)) {
+      return Response.redirect("https://www.exmxc.ai/capital/convergence-monitor", 308);
+    }
     if (url.pathname === "/audit/run") {
       const args = queryArgs(url, ["url"]);
       const valid = validateAuditTarget(args.url);

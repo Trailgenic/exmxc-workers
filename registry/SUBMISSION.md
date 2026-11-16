@@ -35,12 +35,10 @@ node scripts/build-registry-packet.mjs
 - ex.power_lens.v2.get — Read an AI Power v2 Evidence Profile: Resolve a pilot company and return its scoped mechanism, Four Forces mapping, four anchored judgments or explicit unknowns, evidence status, confidence, and versioned release metadata. No universal composite or rank is generated.
 - ex.entity_in_a_box.get — Get Entity-in-a-Box Ontology: System-level ontology dataset defining AI-era entity structure across ontology, dataset, schema, MCP endpoint, and interpretation layers.
 - ex.power_lens.get — Generate a Legacy Power Lens v1 Card: Historical v1 exposure view. Resolves a supported company name or ticker and returns the original weighted exposure scaffold and adjacent datasets. It is not a current evidence-backed measurement of company power.
-- ex.reality_gap.get — Get AI Reality Gap Scores: Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence.
+- ex.reality_gap.get — Get AI Reality Gap Scores: Archived July 21, 2026 edition (10 companies), not updated. Current company assessments: the AI Power Index.
 - ex.strategic_consequence.get — Run a Legacy Experimental Strategic Consequence Scenario: Experimental scenario engine pinned to the legacy v1 exposure scaffold. Its relative outputs are not AI Power v2 profiles, probabilities, or universal measures of advantage.
 - ex.ai_power.analysis.top — Get Legacy AI Power v1 Ranking: Retrieve historical weighted exposure rankings from the v1 scaffold. Alphabetical presentation within ties does not imply different merit.
 - ex.eei.audit.run — Collect Entity Clarity Evidence: Collect page delivery, declared provider-purpose access policy, machine-readable identity evidence, a deterministic five-dimension Entity Clarity v2.1 score when assessable, a separate static-content adequacy flag, and a clearly labeled legacy website diagnostic for one public HTTPS URL.
-- ex.convergence.latest — Get Latest Convergence Read: Retrieve the most recent weekly read of the AI Infrastructure Convergence Framework — overall status, count of categories in breach, per-signal state (Latent/Watch/Breach/Pending), and exit posture. Derived reference layer; not investment advice.
-- ex.convergence.log — Get Convergence Monitor Log: Retrieve the longitudinal weekly log of convergence reads — each entry time-stamping status, breach count, categories breached, per-signal state, and posture. Optional limit returns the most recent N entries (newest first). Derived reference layer; not investment advice.
 
 ## Submission targets
 

@@ -25,9 +25,7 @@ const validArgs = {
   'ex.reality_gap.get': { query: 'AAPL' },
   'ex.strategic_consequence.get': { scenario: 'power_binding_constraint', query: 'NVDA', limit: 3 },
   'ex.ai_power.analysis.top': { limit: 1 },
-  'ex.eei.audit.run': { url: 'https://example.com' },
-  'ex.convergence.latest': {},
-  'ex.convergence.log': { limit: 1 }
+  'ex.eei.audit.run': { url: 'https://example.com' }
 };
 expect(Object.keys(validArgs).sort()).toEqual(toolIds());
 
@@ -35,17 +33,15 @@ function req(path, init = {}) {
   return SELF.fetch(`${BASE}${path}`, init);
 }
 
-describe('Convergence evidence freshness', () => {
-  it('explicitly labels the lone June 15 reading as historical in API responses', async () => {
-    const latest=await (await req('/convergence/latest')).json();
-    expect(latest.latest.date).toBe('2026-06-15');
-    expect(latest.freshness.freshness_status).toBe('historical_stale');
-    expect(latest.freshness.is_live_market_signal).toBe(false);
-    expect(latest.freshness.published_observations).toBe(1);
-    const log=await (await req('/convergence/log')).json();
-    expect(log.total).toBe(1);
-    expect(log.freshness.freshness_status).toBe('historical_stale');
-  });
+describe('retired Convergence Monitor feed', () => {
+  it.each(['/convergence', '/convergence/latest', '/convergence/log?limit=1', '/datasets/convergence_monitor'])(
+    'redirects %s to the archived monitor',
+    async (path) => {
+      const response = await req(path, { redirect: 'manual' });
+      expect(response.status).toBe(308);
+      expect(response.headers.get('location')).toBe('https://www.exmxc.ai/capital/convergence-monitor');
+    }
+  );
 });
 
 describe('monthly AI Power rankings', () => {
