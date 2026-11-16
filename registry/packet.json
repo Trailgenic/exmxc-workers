@@ -77,7 +77,7 @@
     {
       "name": "ex.reality_gap.get",
       "title": "Get AI Reality Gap Scores",
-      "description": "Retrieve the full AI Reality Gap benchmark or filter a supported company by name, alias, ticker, or classification. Scores compare public AI narrative with observed capability from dated official evidence."
+      "description": "Archived July 21, 2026 edition (10 companies), not updated. Current company assessments: the AI Power Index."
     },
     {
       "name": "ex.strategic_consequence.get",
