@@ -39,8 +39,6 @@ node scripts/build-registry-packet.mjs
 - ex.strategic_consequence.get — Run a Legacy Experimental Strategic Consequence Scenario: Experimental scenario engine pinned to the legacy v1 exposure scaffold. Its relative outputs are not AI Power v2 profiles, probabilities, or universal measures of advantage.
 - ex.ai_power.analysis.top — Get Legacy AI Power v1 Ranking: Retrieve historical weighted exposure rankings from the v1 scaffold. Alphabetical presentation within ties does not imply different merit.
 - ex.eei.audit.run — Collect Entity Clarity Evidence: Collect page delivery, declared provider-purpose access policy, machine-readable identity evidence, a deterministic five-dimension Entity Clarity v2.1 score when assessable, a separate static-content adequacy flag, and a clearly labeled legacy website diagnostic for one public HTTPS URL.
-- ex.convergence.latest — Get Latest Convergence Read: Retrieve the most recent weekly read of the AI Infrastructure Convergence Framework — overall status, count of categories in breach, per-signal state (Latent/Watch/Breach/Pending), and exit posture. Derived reference layer; not investment advice.
-- ex.convergence.log — Get Convergence Monitor Log: Retrieve the longitudinal weekly log of convergence reads — each entry time-stamping status, breach count, categories breached, per-signal state, and posture. Optional limit returns the most recent N entries (newest first). Derived reference layer; not investment advice.
 
 ## Submission targets
 
