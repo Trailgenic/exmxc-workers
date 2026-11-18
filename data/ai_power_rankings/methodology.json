@@ -1,6 +1,6 @@
 {
-  "id": "ai-power-rankings-1.0.0",
-  "locked_on": "2026-09-18",
+  "id": "ai-power-rankings-2.0.0",
+  "locked_on": "2026-11-18",
   "name": "exmxc AI Power Index — Four Forces",
   "forces": [
     "compute",
@@ -33,9 +33,9 @@
     "energy": "Control over electricity, continuity, location, and enabling power infrastructure."
   },
   "framework_url": "https://www.exmxc.ai/frameworks/four-forces-of-ai-power",
-  "canonical_url": "https://www.exmxc.ai/ai-power-index-methodology",
+  "canonical_url": "https://www.exmxc.ai/ai-power-index/methodology",
   "assessment_type": "exmxc editorial judgment",
-  "cadence": "monthly",
+  "cadence": "quarterly (December, March, June, September) plus event reviews within five trading days",
   "years": [
     2026,
     2027,
@@ -43,5 +43,29 @@
   ],
   "history_policy": "Append immutable editions; corrections use a new edition with supersedes and correction_reason. Never rewrite earlier scores or forecasts. Keep named target years; freeze completed-year assessments rather than rolling them forward.",
   "company_policy": "Consolidate controlled subsidiaries. Do not assign a partner’s assets to the company. Preserve the 50-company baseline cohort; document any subsequently authorized membership change separately.",
-  "forecast_policy": "Central editorial forecast from current research. Announced capacity is prospective. Scores are neither probabilities nor measured market shares."
+  "forecast_policy": "Central editorial forecast from current research. Announced capacity is prospective. Scores are neither probabilities nor measured market shares. Forecasts are not capped; the bias tripwire tests them.",
+  "supersedes": "ai-power-rankings-1.0.0",
+  "forecast_scoring": {
+    "calls": "Each edition freezes its 2027 forecast rank for all 50 companies.",
+    "tolerance": "Right if the September 2027 assessed rank is within 3 places (forecast rank 1-20) or 5 places (21-50).",
+    "pass": "At least 60% of calls right AND a hit rate at least 6 percentage points above the unchanged-rank baseline (2026 rank carried forward).",
+    "order": "Publish the September 2027 assessment before computing any hit rate."
+  },
+  "bias_tripwire": {
+    "measure": "Mean of (September 2027 assessed score minus frozen 2027 forecast score) across the 50 companies.",
+    "rule": "Below -2.0 points demonstrates forecast inflation: from the next edition every forecast increase must cite new evidence of capacity or control. Above +2.0 is noted as under-forecasting. No cap on forecasts.",
+    "disclosure": "Every edition publishes the cohort mean and median score for each year."
+  },
+  "evidence_policy": {
+    "compute": "A score of 75 or more cites one figure: AI compute owned or operated (GW) or share of a bottleneck.",
+    "interface": "A score of 75 or more cites one figure: users or enterprise seats reached.",
+    "energy": "A score of 75 or more cites one figure: firm power owned or under energized contract (GW).",
+    "alignment": "A score of 75 or more requires primary-source evidence (product documentation or filing) that the company can block, revoke and audit AI actions in production. Without it the score is 70 or lower. Scale (governed actions per month preferred; otherwise governed agents, tenants or regulated deployments) is cited when disclosed and is not required.",
+    "first_application": "Applied to all companies at the December 2026 quarterly review."
+  },
+  "event_policy": {
+    "capital": "IPOs, raises and placements change forecasts only, and only once proceeds are committed to specific capacity or control. Never current scores.",
+    "leadership_and_investigations": "Change forecasts, unless access, supply or permissions are already cut, in which case they change the current score through the affected force.",
+    "partnerships": "Partnerships, investments and cornerstone stakes transfer no control."
+  }
 }

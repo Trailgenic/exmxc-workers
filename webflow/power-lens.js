@@ -16,7 +16,7 @@
     const url=new URL(location.href);url.search='';url.searchParams.set('company',company);url.searchParams.set('edition',current.edition_id);history.replaceState(null,'',url);
   }
   function historyTable(snapshots) {
-    return '<div class="apr-scroll" tabindex="0" role="region" aria-label="Monthly company ranking history"><table class="apr-table pl-history-table"><caption>Monthly judgments for the same target years · Rank / score</caption><thead><tr><th scope="col">Edition</th>'+lensYears.map(y=>'<th scope="col">'+y+'</th>').join('')+'</tr></thead><tbody>'+snapshots.map(s=>{
+    return '<div class="apr-scroll" tabindex="0" role="region" aria-label="Company ranking history"><table class="apr-table pl-history-table"><caption>Judgments for the same target years · Rank / score</caption><thead><tr><th scope="col">Edition</th>'+lensYears.map(y=>'<th scope="col">'+y+'</th>').join('')+'</tr></thead><tbody>'+snapshots.map(s=>{
       const r=s.rows.find(x=>x.id===company);return '<tr><th scope="row"><a href="'+lensEscape(lensProfileUrl(company,s.edition_id))+'">'+lensEscape(s.edition_id)+'</a></th>'+lensYears.map(y=>'<td>'+(r?'#'+r.assessments[y].rank+' / '+r.assessments[y].score.toFixed(1):'Not in edition')+'</td>').join('')+'</tr>';
     }).join('')+'</tbody></table></div>';
   }
@@ -24,7 +24,7 @@
     ++historySequence;
     const row=current.rows.find(r=>r.id===company);
     companySelect.value=company;editionSelect.value=current.edition_id;
-    root.querySelector('[data-as-of]').textContent='As of '+current.as_of+' · Methodology 1.0.0';
+    root.querySelector('[data-as-of]').textContent='As of '+current.as_of+' · Methodology '+(current.methodology_id||'').replace('ai-power-rankings-','');
     root.querySelector('[data-index-link]').href='/ai-power-index?edition='+encodeURIComponent(current.edition_id);
     root.querySelector('[data-data-link]').href=api+'?edition='+encodeURIComponent(current.edition_id);
     root.querySelector('[data-permalink]').href=lensProfileUrl(company,current.edition_id);
@@ -32,7 +32,7 @@
     profile.innerHTML=renderLensProfile(row,current);
     document.title=row.company+' — Power Lens | exmxc';
     root.querySelector('[data-change-note]').textContent=current.change_note;
-    historyBox.innerHTML=historyTable([current])+(ledger.editions.length===1?'<p class="apr-note">September 2026 is the first edition. Monthly comparisons will appear as new editions are published.</p>':'<div class="pl-actions"><button type="button" data-load-history>Load all monthly editions</button></div>');
+    historyBox.innerHTML=historyTable([current])+(ledger.editions.length===1?'<p class="apr-note">September 2026 is the first edition. Comparisons will appear as new editions are published.</p>':'<div class="pl-actions"><button type="button" data-load-history>Load all monthly editions</button></div>');
     historyBox.querySelector('[data-load-history]')?.addEventListener('click',loadHistory);
     status.textContent=row.company+' · '+current.edition_id+' edition.';
   }
@@ -43,7 +43,7 @@
   async function snapshot(id) {
     if(cache.has(id))return cache.get(id);
     const result=await read(api+'?edition='+encodeURIComponent(id));
-    if(result.edition_id!==id||result.methodology_id!==saved.methodology_id||result.rows?.length!==50)throw new Error('Invalid edition');
+    if(result.edition_id!==id||!/^ai-power-rankings-\d+\.\d+\.\d+$/.test(result.methodology_id||'')||result.rows?.length!==50)throw new Error('Invalid edition');
     cache.set(id,result);return result;
   }
   async function choose(id,requestedCompany) {
@@ -58,7 +58,7 @@
   }
   async function loadHistory() {
     const token=++historySequence;
-    historyBox.textContent='Loading monthly history…';
+    historyBox.textContent='Loading edition history…';
     const results=await Promise.allSettled([...ledger.editions].reverse().map(e=>snapshot(e.edition_id)));
     if(token!==historySequence)return;
     const available=results.filter(r=>r.status==='fulfilled').map(r=>r.value);
@@ -73,7 +73,7 @@
   });
   const initial=new URL(location.href), requestedCompany=resolve(initial.searchParams.get('company')||initial.searchParams.get('q')||company), requestedEdition=initial.searchParams.get('edition');
   company=requestedCompany;render();
-  if(requestedEdition&&requestedEdition!==current.edition_id)profile.innerHTML='<p>Loading the requested monthly edition…</p>';
+  if(requestedEdition&&requestedEdition!==current.edition_id)profile.innerHTML='<p>Loading the requested edition…</p>';
   read(api+'/editions').then(next=>{
     if(!next.editions?.length||!next.editions.some(e=>e.edition_id===next.latest))throw new Error('Invalid archive');
     ledger=next;editionSelect.replaceChildren(...[...ledger.editions].reverse().map(e=>new Option(e.label,e.edition_id)));editionSelect.value=current.edition_id;
@@ -82,7 +82,7 @@
   }).catch(()=>{
     if(sequence!==0)return;
     if(requestedEdition&&requestedEdition!==current.edition_id){render();status.textContent='Requested edition unavailable. Showing saved edition '+current.edition_id+'.';}
-    else status.textContent='Showing saved edition '+current.edition_id+'. Monthly archive temporarily unavailable.';
+    else status.textContent='Showing saved edition '+current.edition_id+'. Edition archive temporarily unavailable.';
     urlState();
   });
 })();
