@@ -31,7 +31,7 @@
     return response.json();
   }
   function render(snapshot) {
-    if (!Array.isArray(snapshot.rows) || snapshot.rows.length !== 50 || snapshot.methodology_id !== 'ai-power-rankings-1.0.0') throw new Error('Invalid edition');
+    if (!Array.isArray(snapshot.rows) || snapshot.rows.length !== 50 || !/^ai-power-rankings-\d+\.\d+\.\d+$/.test(snapshot.methodology_id)) throw new Error('Invalid edition');
     const fragment = document.createDocumentFragment();
     for (const row of snapshot.rows) {
       const tr = document.createElement('tr'), name = document.createElement('th');
@@ -47,7 +47,7 @@
       fragment.appendChild(tr);
     }
     body.replaceChildren(fragment);edition=snapshot.edition_id;select.value=edition;
-    root.querySelector('[data-as-of]').textContent='As of '+snapshot.as_of+' · Monthly editions';
+    root.querySelector('[data-as-of]').textContent='As of '+snapshot.as_of+' · Quarterly editions';
     root.querySelector('[data-change-note]').textContent=snapshot.change_note;
     root.querySelector('[data-json-link]').href=api+'?edition='+encodeURIComponent(edition);
     for (const y of years) {

@@ -1,10 +1,31 @@
-# AI Power Index: monthly ranked series
+# AI Power Index: ranked series (methodology 2.0.0)
 
 ## Authority
 
 Mike approved the 50-company 2026 / 2027 / 2030 ranked edition on September 18, 2026 and directed monthly updates under the same methodology. This supersedes the v2 pilot's no-composite policy for this new series. Research informs exmxc editorial judgments; do not turn missing disclosure into a blanket abstention rule. Preserve the original Four Forces: Compute, Interface, Alignment, Energy.
 
 Methodology `ai-power-rankings-1.0.0` is locked. Its formula, five-point input steps, anchors, entity boundaries, rounding, and tie-breaks remain fixed. The ranked series starts here; do not splice legacy exposure rankings or v2 pilot grades into its history.
+
+
+## Methodology 2.0.0 (locked 2026-11-18)
+
+Mike approved 2.0.0 on November 18, 2026, after a two-round review between Claude and Ella. The record is in exmxc-site `docs/DECISIONS.md` and in the review doc "AI Power Index: Scoring Review". The formula, anchors, four forces and 50-company cohort are unchanged. What changed:
+
+1. **Rank calls, scored.** Each edition's 2027 forecast ranks are frozen calls. After the September 2027 assessment is published (publish first, then grade), a call is right within ±3 places for forecast ranks 1-20 and ±5 for 21-50. Pass = at least 60% right AND at least 6 percentage points above the unchanged-rank baseline (2026 rank carried forward).
+2. **No forecast cap.** Each edition publishes `cohort_stats` (mean and median per year). Bias tripwire: if September 2027 assessments average more than 2 points below their frozen forecasts, every later forecast increase must cite new evidence of capacity or control.
+3. **Evidence for top scores.** A force score of 75 or more cites one primary-source figure (Compute: GW owned or operated, or bottleneck share; Interface: users or seats; Energy: firm GW owned or energized under contract). Alignment 75 or more needs documentation that the company can block, revoke and audit AI actions in production; otherwise 70 or lower. Scale is cited where disclosed. First applied at the December 2026 review.
+4. **Cadence.** Full reviews in December, March, June and September. Between reviews, re-score only companies with a material event, only in the forces it touches, within five trading days. No monthly re-scoring.
+5. **Event channels.** Capital (IPOs, raises, placements) changes forecasts only, once committed to specific capacity. Leadership changes and investigations change forecasts, and change current scores only when access, supply or permissions are already cut. Partnerships and stakes transfer no control.
+6. **Ownership.** Ella owns Anthropic's scores (Claude is an Anthropic model).
+
+The 1.0.0 file is kept byte-identical as `methodology-1.0.0.json`; `manifest.json` lists both in `methodology_history`. Event editions set `edition_type: "event_review"` and carry forward unchanged rows with a one-line change note.
+
+## Quarterly and event procedure (replaces the monthly procedure below)
+
+- **Quarterly:** follow the edition steps below for all 50 companies, apply the evidence rule, and compute `cohort_stats`.
+- **Event:** copy the latest edition, change only the affected company and forces, set `edition_type: "event_review"`, write the change note, then follow steps 4-7.
+- **First quarterly edition under 2.0.0:** December 2026.
+- **Scoring:** first scoring in September 2027, after that assessment is published.
 
 ## Architecture
 
@@ -20,7 +41,7 @@ Methodology `ai-power-rankings-1.0.0` is locked. Its formula, five-point input s
 
 The Webflow HTML includes the complete latest table. A small browser script sorts the existing rows and retrieves archived editions. No iframe, framework, runtime model calls, paid API, or database is needed. Without JavaScript or network access, the saved table remains readable. With JavaScript, URLs retain the requested edition and sorting year.
 
-## Monthly procedure
+## Edition procedure (originally monthly; now quarterly plus events, see above)
 
 1. Read the current GitHub edition, method, and ledger. Research current primary disclosures. Reassess the same 50-company cohort, keeping stable company IDs and the named years 2026, 2027, 2030. Separate current deployments from announcements. Keep company ownership boundaries current and explicit.
 2. Create a new edition file. Record the actual research cutoff and target dates, source access/publication labels, each force judgment, a company thesis, and what would change it. Add a concise `change_note` explaining meaningful changes. Distinguish a changed view of a fixed forecast horizon from elapsed time. Do not automatically advance the target years. Completed-year assessments remain historical; never substitute a later current assessment for an earlier year.
@@ -29,7 +50,7 @@ The Webflow HTML includes the complete latest table. A small browser script sort
 5. Run `npm test`, `npm run test:workers`, `npm run validate:json`, `npm run validate:webflow`, `npm run lint`, `npm run registry:check`, and `npm run deploy:dry-run`. Update build metadata and regenerate `node scripts/build-registry-packet.mjs` when releasing. Verify all three year sorts, edition selection, an unavailable-edition failure, mobile scrolling, static table readability, and displayed/API agreement.
 6. Commit and open a pull request. Merge only after its checks pass, respecting current user authorization. Main deploys the data service. Verify the published data before rebuilding the Vercel frontend.
 7. Publish the frontend through Trailgenic/exmxc-site on Vercel. Read its PUBLISHING.md and current source. Sync generated index and Power Lens snapshots into pages/ai-power-index.html and pages/ai-power-index/companies.html, retaining Vercel path handling and edition query parameters. Methodology lives at /ai-power-index/methodology. Run the site checks/build, push reviewed changes, and verify production HTML, all three sorts, edition history and metadata. Webflow is no longer the exmxc frontend.
-8. Report the dated edition, largest changes, and public link. Monthly reviews are scheduled for the 18th, beginning October 18, 2026, in America/Los_Angeles.
+8. Report the dated edition, largest changes, and public link. Full reviews are quarterly (December, March, June, September). The monthly schedule on the 18th is retired.
 
 ## Historical Webflow identifiers (do not publish here)
 

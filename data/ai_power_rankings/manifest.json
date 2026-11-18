@@ -1,7 +1,7 @@
 {
-  "latest": "2026-11-09",
-  "methodology_id": "ai-power-rankings-1.0.0",
-  "methodology_sha256": "e6ce8222876707cad5ff4c97d9be9b9d93fcdbe2984f07fbb40dc71429d8d7fc",
+  "latest": "2026-11-18",
+  "methodology_id": "ai-power-rankings-2.0.0",
+  "methodology_sha256": "7f68c4b48c8af05910bf366752009ac50e9b287431ef6a2707cb3b2c271c072e",
   "editions": [
     {
       "edition_id": "2026-09-18",
@@ -16,6 +16,32 @@
       "label": "November 2026 \u00b7 November 9",
       "sha256": "b836e18a77d5f0d6322a02b9faf6427b6a304d37e58361bb234e0bdd434dfd74",
       "change_note": "November 9 review of all 50 companies. Deployed compute, enterprise controls and scarce power infrastructure strengthen selected scores; external cloud dependence tempers frontier-lab Energy forecasts. Same cohort and locked methodology. September is preserved; no October edition is backfilled. The 2026 assessment advances to November 9; 2027 and 2030 forecast target dates remain September 18."
+    },
+    {
+      "edition_id": "2026-11-18",
+      "as_of": "2026-11-18",
+      "label": "November 2026 \u00b7 November 18 (event review)",
+      "sha256": "4912d6d96e86044f8c0a1944e166b1e638977188eaf5c3a4ecc8e4ad8447cb51",
+      "methodology_id": "ai-power-rankings-2.0.0",
+      "change_note": "Event review under methodology 2.0.0. NVIDIA: the CEO's resignation and the board investigation cut forecast Compute to 95 for 2027 and 90 for 2030; current scores hold because control of the bottleneck has not yet changed. Anthropic's IPO pricing changes no score: capital is not control until it is committed to capacity. All other companies carry their November 9 judgments. The 2027 forecast ranks in this edition are frozen rank calls, graded after the September 2027 assessment is published. The first full quarterly review under 2.0.0 is in December."
+    }
+  ],
+  "methodology_history": [
+    {
+      "id": "ai-power-rankings-1.0.0",
+      "locked_on": "2026-09-18",
+      "file": "methodology-1.0.0.json",
+      "sha256": "e6ce8222876707cad5ff4c97d9be9b9d93fcdbe2984f07fbb40dc71429d8d7fc",
+      "editions": [
+        "2026-09-18",
+        "2026-11-09"
+      ]
+    },
+    {
+      "id": "ai-power-rankings-2.0.0",
+      "locked_on": "2026-11-18",
+      "file": "methodology.json",
+      "sha256": "7f68c4b48c8af05910bf366752009ac50e9b287431ef6a2707cb3b2c271c072e"
     }
   ]
 }
