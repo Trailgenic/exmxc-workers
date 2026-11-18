@@ -32,7 +32,7 @@
     profile.innerHTML=renderLensProfile(row,current);
     document.title=row.company+' — Power Lens | exmxc';
     root.querySelector('[data-change-note]').textContent=current.change_note;
-    historyBox.innerHTML=historyTable([current])+(ledger.editions.length===1?'<p class="apr-note">September 2026 is the first edition. Comparisons will appear as new editions are published.</p>':'<div class="pl-actions"><button type="button" data-load-history>Load all monthly editions</button></div>');
+    historyBox.innerHTML=historyTable([current])+(ledger.editions.length===1?'<p class="apr-note">September 2026 is the first edition. Comparisons will appear as new editions are published.</p>':'<div class="pl-actions"><button type="button" data-load-history>Load all editions</button></div>');
     historyBox.querySelector('[data-load-history]')?.addEventListener('click',loadHistory);
     status.textContent=row.company+' · '+current.edition_id+' edition.';
   }
@@ -63,7 +63,7 @@
     if(token!==historySequence)return;
     const available=results.filter(r=>r.status==='fulfilled').map(r=>r.value);
     const missed=results.filter(r=>r.status==='rejected').length;
-    historyBox.innerHTML=historyTable(available)+(missed?'<p class="apr-error">'+missed+' edition(s) could not be loaded. Reload the page to retry; unavailable editions are not shown.</p>':'<p class="apr-note">Each row preserves the judgment made in that monthly edition. Forecast revisions are not realized performance.</p>');
+    historyBox.innerHTML=historyTable(available)+(missed?'<p class="apr-error">'+missed+' edition(s) could not be loaded. Reload the page to retry; unavailable editions are not shown.</p>':'<p class="apr-note">Each row preserves the judgment made in that edition. Forecast revisions are not realized performance.</p>');
   }
   companySelect.addEventListener('change',()=>choose(current.edition_id,companySelect.value));
   editionSelect.addEventListener('change',()=>choose(editionSelect.value,company));
