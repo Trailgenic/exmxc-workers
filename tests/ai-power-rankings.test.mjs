@@ -8,7 +8,8 @@ assert.throws(()=>powerScore({compute:101,interface:50,alignment:50,energy:50}))
 assert.equal(getPowerRankings({edition:'missing'}).status,404);
 assert.equal(getPowerRankings({year:'2028'}).status,400);
 assert.equal(hash(await readFile('data/ai_power_rankings/methodology.json')),POWER_EDITIONS.methodology_sha256);
-assert.equal(POWER_METHODOLOGY.id,'ai-power-rankings-2.0.0');
+assert.equal(POWER_METHODOLOGY.id,'ai-power-rankings-2.1.0');
+assert.ok(POWER_METHODOLOGY.event_policy.triggers.includes('Major model or product launch'));
 // Earlier methodologies stay byte-identical to what their editions were made under.
 for(const m of POWER_EDITIONS.methodology_history) assert.equal(hash(await readFile(`data/ai_power_rankings/${m.file}`)),m.sha256);
 assert.deepEqual(getPowerRankings({edition:'2026-11-18',year:2027}).rows.find(r=>r.id==='nvidia').assessments[2027].forces.compute,95);

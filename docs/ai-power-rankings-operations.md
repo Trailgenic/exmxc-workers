@@ -1,4 +1,4 @@
-# AI Power Index: ranked series (methodology 2.0.0)
+# AI Power Index: ranked series (methodology 2.1.0)
 
 ## Authority
 
@@ -19,6 +19,16 @@ Mike approved 2.0.0 on November 18, 2026, after a two-round review between Claud
 6. **Ownership.** Ella owns Anthropic's scores (Claude is an Anthropic model).
 
 The 1.0.0 file is kept byte-identical as `methodology-1.0.0.json`; `manifest.json` lists both in `methodology_history`. Event editions set `edition_type: "event_review"` and carry forward unchanged rows with a one-line change note.
+
+## Methodology 2.1.0 (locked 2026-11-18, same day as 2.0.0)
+
+Mike's ruling after the cadence review: stay quarterly, but treat fast model releases as events.
+
+1. **Launch trigger.** A major model or product launch by a cohort company, or by an outside lab (frontier or Chinese) that shifts users or compute away from cohort companies, triggers an event review of the forces it touches within five trading days. A release or benchmark lead changes forecasts only; current scores move only on evidence that usage, distribution or compute demand shifted (users, seats, API or token share, downloads, enterprise adoption, chips trained and served on).
+2. **Trigger list** (`event_policy.triggers`): leadership change; investigation or enforcement; export or access restriction; capacity commitment; major customer loss or win; major model or product launch. Ella flags these from daily collection; the Tuesday desk turn builds the event edition.
+3. **Cadence test** (`cadence_review`): on the Dec 2026, Mar 2027 and Jun 2027 editions, count top-20 companies (2026 ranks) that moved 5+ places from the previous edition for a cause public more than five trading days before cut-off that no event review caught. Two of three editions with such a miss → move to monthly editions. Record the count in each quarterly edition's desk note.
+
+`methodology-2.0.0.json` is kept byte-identical and governs the 2026-11-18 edition.
 
 ## Quarterly and event procedure (replaces the monthly procedure below)
 
