@@ -1,5 +1,5 @@
 {
-  "id": "ai-power-rankings-2.0.0",
+  "id": "ai-power-rankings-2.1.0",
   "locked_on": "2026-11-18",
   "name": "exmxc AI Power Index — Four Forces",
   "forces": [
@@ -44,7 +44,7 @@
   "history_policy": "Append immutable editions; corrections use a new edition with supersedes and correction_reason. Never rewrite earlier scores or forecasts. Keep named target years; freeze completed-year assessments rather than rolling them forward.",
   "company_policy": "Consolidate controlled subsidiaries. Do not assign a partner’s assets to the company. Preserve the 50-company baseline cohort; document any subsequently authorized membership change separately.",
   "forecast_policy": "Central editorial forecast from current research. Announced capacity is prospective. Scores are neither probabilities nor measured market shares. Forecasts are not capped; the bias tripwire tests them.",
-  "supersedes": "ai-power-rankings-1.0.0",
+  "supersedes": "ai-power-rankings-2.0.0",
   "forecast_scoring": {
     "calls": "Each edition freezes its 2027 forecast rank for all 50 companies.",
     "tolerance": "Right if the September 2027 assessed rank is within 3 places (forecast rank 1-20) or 5 places (21-50).",
@@ -66,6 +66,16 @@
   "event_policy": {
     "capital": "IPOs, raises and placements change forecasts only, and only once proceeds are committed to specific capacity or control. Never current scores.",
     "leadership_and_investigations": "Change forecasts, unless access, supply or permissions are already cut, in which case they change the current score through the affected force.",
-    "partnerships": "Partnerships, investments and cornerstone stakes transfer no control."
-  }
+    "partnerships": "Partnerships, investments and cornerstone stakes transfer no control.",
+    "model_and_product_launches": "A major model or product launch by any company in the cohort, or by an outside lab whose launch shifts users or compute demand away from cohort companies (frontier and Chinese labs included), triggers an event review of the forces it touches, within five trading days. A benchmark lead or a release alone changes forecasts only. Current scores change only with evidence that usage, distribution or compute demand has shifted: users, seats, API or token share, downloads, enterprise adoption, or the chips the model was trained and served on.",
+    "triggers": [
+      "Leadership change",
+      "Investigation or enforcement action",
+      "Export or access restriction",
+      "Capacity commitment",
+      "Major customer loss or win",
+      "Major model or product launch"
+    ]
+  },
+  "cadence_review": "The quarterly cadence is tested on the December 2026, March 2027 and June 2027 editions. If, in two of those three, a company ranked in the 2026 top 20 moves five or more places from the previous edition for a cause that was public more than five trading days before the cut-off and that no event review captured, the Index moves to monthly editions."
 }

@@ -1,7 +1,7 @@
 {
   "latest": "2026-11-18",
-  "methodology_id": "ai-power-rankings-2.0.0",
-  "methodology_sha256": "7f68c4b48c8af05910bf366752009ac50e9b287431ef6a2707cb3b2c271c072e",
+  "methodology_id": "ai-power-rankings-2.1.0",
+  "methodology_sha256": "082618679d3a5b36b0c6a5de41808e2f1ff3709d6745899ef8ab4e03fcd8b4e6",
   "editions": [
     {
       "edition_id": "2026-09-18",
@@ -40,8 +40,17 @@
     {
       "id": "ai-power-rankings-2.0.0",
       "locked_on": "2026-11-18",
+      "file": "methodology-2.0.0.json",
+      "sha256": "7f68c4b48c8af05910bf366752009ac50e9b287431ef6a2707cb3b2c271c072e",
+      "editions": [
+        "2026-11-18"
+      ]
+    },
+    {
+      "id": "ai-power-rankings-2.1.0",
+      "locked_on": "2026-11-18",
       "file": "methodology.json",
-      "sha256": "7f68c4b48c8af05910bf366752009ac50e9b287431ef6a2707cb3b2c271c072e"
+      "sha256": "082618679d3a5b36b0c6a5de41808e2f1ff3709d6745899ef8ab4e03fcd8b4e6"
     }
   ]
 }
