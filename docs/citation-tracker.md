@@ -35,13 +35,17 @@ Keep the question list fixed so weeks can be compared. When it has to change, ch
 
 API answers are close to the consumer apps but not identical. Read trends, not single weeks.
 
-## The call (set 2026-11-22)
-- Baseline: the first run.
-- Target: unbranded citation rate on ChatGPT at 10% or more within 90 days.
-- What would prove it wrong: after 60 days, below 5% with no upward trend despite content changes. Then AI-citation work is not worth the effort at our scale, and effort goes back to plain Google rankings.
+## The call (reset 2026-11-22 after the first run)
+- Baseline (2026-11-22, ChatGPT): unbranded 2 of 20 cited (10%); branded 5 of 5 cited.
+  - The two wins: the power-ranking index question (u02) and the scarcity-adjusted PEG question (u08), where exmxc is the only real answer.
+  - Broad questions are won by company sites, SEC filings, the International Energy Agency, Stanford's AI Index and Epoch AI.
+- Target: unbranded 5 of 20 (25%) on ChatGPT by 2026-02-20.
+- What would prove it wrong: still at 2 of 20 or fewer by late January 2027. Then pages written to answer the broad questions directly are not working, and effort goes back to plain Google rankings.
+- The original 10% target was set before any baseline and was met on day one, so it was replaced.
 
 ## Cost
 About 25 questions per engine per week. Expected well under $10 a month per engine at current API prices.
 
 ## Change log
 - 2026-11-22: created. exmxc only. ChatGPT live; Perplexity and Claude wait on keys.
+- 2026-11-22: first run recorded; target reset from 10% to 25% (5 of 20) by 2026-02-20.
