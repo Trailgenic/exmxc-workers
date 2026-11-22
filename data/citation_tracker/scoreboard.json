@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "site": "exmxc",
+    "date": "2026-11-22",
+    "engine": "chatgpt",
+    "unbranded": {
+      "answered": 20,
+      "errors": 0,
+      "cited_own": 2,
+      "mentioned_brand": 2,
+      "cited_rate": 0.1,
+      "mentioned_rate": 0.1
+    },
+    "branded": {
+      "answered": 5,
+      "errors": 0,
+      "cited_own": 5,
+      "mentioned_brand": 5,
+      "cited_rate": 1,
+      "mentioned_rate": 1
+    }
+  }
+]
