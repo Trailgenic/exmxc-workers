@@ -1,0 +1,33 @@
+{
+  "site": "exmxc",
+  "own_domains": ["exmxc.ai", "mcp.exmxc.ai"],
+  "brand_terms": ["exmxc", "Ex Machina Collective", "Four Forces of AI Power", "sPEG Index", "Convergence Monitor"],
+  "watch_domains": ["epoch.ai", "semianalysis.com", "stratechery.com", "artificialanalysis.ai", "cbinsights.com", "lmarena.ai"],
+  "questions": [
+    { "id": "u01", "type": "unbranded", "text": "Which companies have the most power in the AI economy right now?" },
+    { "id": "u02", "type": "unbranded", "text": "Is there an index that ranks AI companies by power or control, not just market cap?" },
+    { "id": "u03", "type": "unbranded", "text": "What framework can I use to measure which company controls AI?" },
+    { "id": "u04", "type": "unbranded", "text": "What are the biggest chokepoints in the AI supply chain?" },
+    { "id": "u05", "type": "unbranded", "text": "Who controls AI compute, energy, and data, and who depends on them?" },
+    { "id": "u06", "type": "unbranded", "text": "Rank the top 10 most powerful AI companies for 2030." },
+    { "id": "u07", "type": "unbranded", "text": "How do I value a stock whose earnings depend on a scarce input like GPUs or power?" },
+    { "id": "u08", "type": "unbranded", "text": "Is there a version of the PEG ratio that adjusts for scarcity?" },
+    { "id": "u09", "type": "unbranded", "text": "Which AI stocks have the most durable bottleneck advantage?" },
+    { "id": "u10", "type": "unbranded", "text": "How dependent is OpenAI on Microsoft and Nvidia?" },
+    { "id": "u11", "type": "unbranded", "text": "Is TSMC the most important company in AI?" },
+    { "id": "u12", "type": "unbranded", "text": "Are AI labs and cloud providers converging into the same business?" },
+    { "id": "u13", "type": "unbranded", "text": "Which company is most likely to win the AI race, and why?" },
+    { "id": "u14", "type": "unbranded", "text": "How much of AI power comes from energy access versus chips?" },
+    { "id": "u15", "type": "unbranded", "text": "Where can I find a monthly ranking of AI companies with a published method?" },
+    { "id": "u16", "type": "unbranded", "text": "How will AI shopping agents change who wins in ecommerce?" },
+    { "id": "u17", "type": "unbranded", "text": "What is the best way for an investor to think about AI power concentration?" },
+    { "id": "u18", "type": "unbranded", "text": "Which AI companies are most exposed if they lose access to compute?" },
+    { "id": "u19", "type": "unbranded", "text": "Is Anthropic more powerful than OpenAI in enterprise AI?" },
+    { "id": "u20", "type": "unbranded", "text": "What independent research tracks structural power in the AI industry?" },
+    { "id": "b01", "type": "branded", "text": "What is exmxc.ai?" },
+    { "id": "b02", "type": "branded", "text": "What are the Four Forces of AI Power?" },
+    { "id": "b03", "type": "branded", "text": "What is the sPEG ratio for stocks?" },
+    { "id": "b04", "type": "branded", "text": "What does the exmxc AI Power Index rank?" },
+    { "id": "b05", "type": "branded", "text": "What is the exmxc Convergence Monitor?" }
+  ]
+}
