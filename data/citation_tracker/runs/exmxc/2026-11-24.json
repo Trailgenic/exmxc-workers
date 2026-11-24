@@ -1,0 +1,464 @@
+{
+  "site": "exmxc",
+  "date": "2026-11-24",
+  "summary": {
+    "chatgpt": {
+      "unbranded": {
+        "answered": 20,
+        "errors": 0,
+        "cited_own": 1,
+        "mentioned_brand": 1,
+        "cited_rate": 0.05,
+        "mentioned_rate": 0.05
+      },
+      "branded": {
+        "answered": 5,
+        "errors": 0,
+        "cited_own": 4,
+        "mentioned_brand": 4,
+        "cited_rate": 0.8,
+        "mentioned_rate": 0.8
+      }
+    }
+  },
+  "top_cited_domains": [
+    {
+      "domain": "exmxc.ai",
+      "citations": 5
+    },
+    {
+      "domain": "microsoft.com",
+      "citations": 4
+    },
+    {
+      "domain": "iea.org",
+      "citations": 4
+    },
+    {
+      "domain": "abc.xyz",
+      "citations": 3
+    },
+    {
+      "domain": "investor.tsmc.com",
+      "citations": 3
+    },
+    {
+      "domain": "sec.gov",
+      "citations": 3
+    },
+    {
+      "domain": "openai.com",
+      "citations": 3
+    },
+    {
+      "domain": "investor.nvidia.com",
+      "citations": 2
+    },
+    {
+      "domain": "ourbrand.asml.com",
+      "citations": 2
+    },
+    {
+      "domain": "news.skhynix.com",
+      "citations": 2
+    },
+    {
+      "domain": "menlovc.com",
+      "citations": 2
+    },
+    {
+      "domain": "schwab.com",
+      "citations": 2
+    },
+    {
+      "domain": "oecd.org",
+      "citations": 2
+    },
+    {
+      "domain": "hai.stanford.edu",
+      "citations": 2
+    },
+    {
+      "domain": "arxiv.org",
+      "citations": 2
+    },
+    {
+      "domain": "am.jpmorgan.com",
+      "citations": 1
+    },
+    {
+      "domain": "alpha.cognitivecoefficient.com",
+      "citations": 1
+    },
+    {
+      "domain": "aipowerrankings.com",
+      "citations": 1
+    },
+    {
+      "domain": "newsletter.computenotes.co",
+      "citations": 1
+    },
+    {
+      "domain": "digitallibrary.un.org",
+      "citations": 1
+    },
+    {
+      "domain": "investors.micron.com",
+      "citations": 1
+    },
+    {
+      "domain": "gartner.com",
+      "citations": 1
+    },
+    {
+      "domain": "ftc.gov",
+      "citations": 1
+    },
+    {
+      "domain": "iea.blob.core.windows.net",
+      "citations": 1
+    },
+    {
+      "domain": "digital-strategy.ec.europa.eu",
+      "citations": 1
+    }
+  ],
+  "results": {
+    "chatgpt": [
+      {
+        "id": "u01",
+        "type": "unbranded",
+        "question": "Which companies have the most power in the AI economy right now?",
+        "cited_domains": [
+          "investor.nvidia.com",
+          "microsoft.com",
+          "abc.xyz",
+          "am.jpmorgan.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u02",
+        "type": "unbranded",
+        "question": "Is there an index that ranks AI companies by power or control, not just market cap?",
+        "cited_domains": [
+          "alpha.cognitivecoefficient.com",
+          "exmxc.ai",
+          "aipowerrankings.com",
+          "newsletter.computenotes.co",
+          "digitallibrary.un.org"
+        ],
+        "cited_own": true,
+        "mentioned_brand": true,
+        "watch_cited": []
+      },
+      {
+        "id": "u03",
+        "type": "unbranded",
+        "question": "What framework can I use to measure which company controls AI?",
+        "cited_domains": [],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u04",
+        "type": "unbranded",
+        "question": "What are the biggest chokepoints in the AI supply chain?",
+        "cited_domains": [
+          "iea.org",
+          "investors.micron.com",
+          "investor.tsmc.com",
+          "ourbrand.asml.com",
+          "news.skhynix.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u05",
+        "type": "unbranded",
+        "question": "Who controls AI compute, energy, and data, and who depends on them?",
+        "cited_domains": [
+          "sec.gov",
+          "gartner.com",
+          "ftc.gov",
+          "iea.org",
+          "iea.blob.core.windows.net",
+          "digital-strategy.ec.europa.eu"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u06",
+        "type": "unbranded",
+        "question": "Rank the top 10 most powerful AI companies for 2030.",
+        "cited_domains": [
+          "bcg.com",
+          "iot-analytics.com",
+          "menlovc.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u07",
+        "type": "unbranded",
+        "question": "How do I value a stock whose earnings depend on a scarce input like GPUs or power?",
+        "cited_domains": [
+          "pages.stern.nyu.edu",
+          "cfainstitute.org"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u08",
+        "type": "unbranded",
+        "question": "Is there a version of the PEG ratio that adjusts for scarcity?",
+        "cited_domains": [
+          "schwab.com",
+          "github.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u09",
+        "type": "unbranded",
+        "question": "Which AI stocks have the most durable bottleneck advantage?",
+        "cited_domains": [
+          "ebrd.com",
+          "investor.tsmc.com",
+          "news.skhynix.com",
+          "investors.broadcom.com",
+          "investor.nvidia.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u10",
+        "type": "unbranded",
+        "question": "How dependent is OpenAI on Microsoft and Nvidia?",
+        "cited_domains": [
+          "openai.com",
+          "blogs.microsoft.com",
+          "microsoft.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u11",
+        "type": "unbranded",
+        "question": "Is TSMC the most important company in AI?",
+        "cited_domains": [
+          "oecd.org",
+          "investor.tsmc.com",
+          "ourbrand.asml.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u12",
+        "type": "unbranded",
+        "question": "Are AI labs and cloud providers converging into the same business?",
+        "cited_domains": [
+          "microsoft.com",
+          "abc.xyz",
+          "sec.gov",
+          "time.com",
+          "apnews.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u13",
+        "type": "unbranded",
+        "question": "Which company is most likely to win the AI race, and why?",
+        "cited_domains": [
+          "cloud.google.com",
+          "hai.stanford.edu",
+          "abc.xyz",
+          "microsoft.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u14",
+        "type": "unbranded",
+        "question": "How much of AI power comes from energy access versus chips?",
+        "cited_domains": [
+          "hai.stanford.edu",
+          "iea.org"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u15",
+        "type": "unbranded",
+        "question": "Where can I find a monthly ranking of AI companies with a published method?",
+        "cited_domains": [
+          "rankmyai.com",
+          "moconvo.com",
+          "answerlift.io",
+          "genrank.com",
+          "theaiindex.dev"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u16",
+        "type": "unbranded",
+        "question": "How will AI shopping agents change who wins in ecommerce?",
+        "cited_domains": [
+          "blog.google",
+          "business.adobe.com",
+          "aboutamazon.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u17",
+        "type": "unbranded",
+        "question": "What is the best way for an investor to think about AI power concentration?",
+        "cited_domains": [
+          "stanford-hai-index-2026-data-pilot.lovable.app",
+          "oecd.org",
+          "iea.org",
+          "federalreserve.gov"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u18",
+        "type": "unbranded",
+        "question": "Which AI companies are most exposed if they lose access to compute?",
+        "cited_domains": [
+          "sec.gov",
+          "openai.com",
+          "x.ai",
+          "trust.mistral.ai",
+          "api.safeguard.sh"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u19",
+        "type": "unbranded",
+        "question": "Is Anthropic more powerful than OpenAI in enterprise AI?",
+        "cited_domains": [
+          "menlovc.com",
+          "anthropic.com",
+          "help.openai.com",
+          "openai.com",
+          "arxiv.org"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "u20",
+        "type": "unbranded",
+        "question": "What independent research tracks structural power in the AI industry?",
+        "cited_domains": [
+          "ainowinstitute.org",
+          "oii.ox.ac.uk",
+          "yalelawandpolicy.org",
+          "datasociety.net",
+          "arxiv.org",
+          "youtube.com",
+          "ideas.repec.org",
+          "en.wikipedia.org"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "b01",
+        "type": "branded",
+        "question": "What is exmxc.ai?",
+        "cited_domains": [
+          "exmxc.ai"
+        ],
+        "cited_own": true,
+        "mentioned_brand": true,
+        "watch_cited": []
+      },
+      {
+        "id": "b02",
+        "type": "branded",
+        "question": "What are the Four Forces of AI Power?",
+        "cited_domains": [
+          "exmxc.ai"
+        ],
+        "cited_own": true,
+        "mentioned_brand": true,
+        "watch_cited": []
+      },
+      {
+        "id": "b03",
+        "type": "branded",
+        "question": "What is the sPEG ratio for stocks?",
+        "cited_domains": [
+          "schwab.com",
+          "stockanalysis.com"
+        ],
+        "cited_own": false,
+        "mentioned_brand": false,
+        "watch_cited": []
+      },
+      {
+        "id": "b04",
+        "type": "branded",
+        "question": "What does the exmxc AI Power Index rank?",
+        "cited_domains": [
+          "exmxc.ai"
+        ],
+        "cited_own": true,
+        "mentioned_brand": true,
+        "watch_cited": []
+      },
+      {
+        "id": "b05",
+        "type": "branded",
+        "question": "What is the exmxc Convergence Monitor?",
+        "cited_domains": [
+          "exmxc.ai"
+        ],
+        "cited_own": true,
+        "mentioned_brand": true,
+        "watch_cited": []
+      }
+    ]
+  }
+}

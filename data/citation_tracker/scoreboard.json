@@ -19,5 +19,26 @@
       "cited_rate": 1,
       "mentioned_rate": 1
     }
+  },
+  {
+    "site": "exmxc",
+    "date": "2026-11-24",
+    "engine": "chatgpt",
+    "unbranded": {
+      "answered": 20,
+      "errors": 0,
+      "cited_own": 1,
+      "mentioned_brand": 1,
+      "cited_rate": 0.05,
+      "mentioned_rate": 0.05
+    },
+    "branded": {
+      "answered": 5,
+      "errors": 0,
+      "cited_own": 4,
+      "mentioned_brand": 4,
+      "cited_rate": 0.8,
+      "mentioned_rate": 0.8
+    }
   }
 ]
